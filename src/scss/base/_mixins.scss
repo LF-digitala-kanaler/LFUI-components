@@ -113,6 +113,12 @@
  * Reset related
  */
 
+@mixin reset-list() {
+  list-style-image: none;
+  list-style-type: none;
+  padding-left: 0;
+}
+
 @mixin reset-button() {
   border: 0;
   padding: 0;
@@ -382,6 +388,7 @@
     box-shadow: inset 0 0 0 2px $blue;
     cursor: grab;
     transition: 200ms ease-in-out;
+    outline: 0;
 
     &:hover {
       box-shadow: inset 0 0 0 5px $blue;
@@ -400,6 +407,15 @@
 
   &::-ms-fill-upper {
     background: $track-color;
+  }
+  // fix for edge background size bug
+  @supports (-ms-ime-align: auto) {
+    background-size: 0 !important;
+    margin-top: 0;
+
+    &::-ms-thumb {
+      margin-top: 2px;
+    }
   }
 }
 

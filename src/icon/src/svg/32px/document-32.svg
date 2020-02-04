@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>document-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="document-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="document-32-crop" transform="translate(6.000000, 3.000000)" fill="#FF0000">
+            <path d="M0,-0.0003 L0,25.9997 L20,25.9997 L19.993,5.0857 L14.915,-0.0003 L0,-0.0003 Z M2,2.0007 L14.085,2.0007 L17.993,5.9147 L18,24.0007 L2,24.0007 L2,2.0007 Z" id="Fill-1"></path>
+            <polygon id="Fill-2" points="5 10 15 10 15 8 5 8"></polygon>
+            <polygon id="Fill-3" points="5 14 15 14 15 12 5 12"></polygon>
+            <polygon id="Fill-4" points="5 18 15 18 15 16 5 16"></polygon>
+        </g>
+    </g>
+</svg>

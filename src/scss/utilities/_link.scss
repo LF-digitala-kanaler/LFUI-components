@@ -122,3 +122,20 @@
 .link-no-underline:active {
   background-image: none !important;
 }
+
+.link-dark {
+  color: $link-color-dark;
+
+  &:hover {
+    color: $link-hover-color-dark;
+  }
+}
+
+/**
+ * If you want to add transition to your link.
+ */
+
+.link-transition {
+  transition: 200ms linear;
+  transition-property: all;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>login-pincode-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="login-pincode-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="login-pincode-crop" transform="translate(2.000000, 9.000000)" fill="#FF0000">
+            <path d="M23,11 L23,0 L0,0 L0,11 L23,11 Z M21,9 L21,2 L2,2 L2,9 L21,9 Z" id="Fill-1"></path>
+            <polygon id="Fill-2" points="29.4818571 9.8140714 20.6563571 18.6395714 16.253 14.2362143 17.7682857 12.721 20.6563571 15.6091429 27.9665714 8.29885714"></polygon>
+            <path d="M7,5.5 C7,6.32870589 6.32870589,7 5.5,7 C4.67129411,7 4,6.32870589 4,5.5 C4,4.67129412 4.67129411,4 5.5,4 C6.32870589,4 7,4.67129412 7,5.5" id="Fill-3"></path>
+            <path d="M9.50000002,7 C8.67129413,7 8,6.32870589 8,5.5 C8,4.67129412 8.67129413,4 9.50000002,4 C10.3287059,4 11,4.67129412 11,5.5 C11,6.32870589 10.3287059,7 9.50000002,7 Z" id="Fill-4"></path>
+            <path d="M15,5.5 C15,6.32870589 14.3287059,7 13.5,7 C12.6712941,7 12,6.32870589 12,5.5 C12,4.67129412 12.6712941,4 13.5,4 C14.3287059,4 15,4.67129412 15,5.5" id="Fill-5"></path>
+            <path d="M19,5.5 C19,6.32870589 18.3287059,7 17.5,7 C16.6712941,7 16,6.32870589 16,5.5 C16,4.67129412 16.6712941,4 17.5,4 C18.3287059,4 19,4.67129412 19,5.5" id="Fill-6"></path>
+        </g>
+    </g>
+</svg>

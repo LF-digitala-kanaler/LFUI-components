@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>offer-multicolor-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="offer-multicolor-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2.000000, 1.000000)" fill-rule="nonzero">
+            <polygon id="Stroke-2" fill="#E30613" points="12 18 12 24 14 24 14 18"></polygon>
+            <polygon id="Stroke-2" fill="#005AA0" points="6 18 6 24 8 24 8 18"></polygon>
+            <polygon id="Stroke-3" fill="#005AA0" points="2 25.0087719 2 12 15 12 15 10 0 10 0 27.0087719 20 27.0087719 20 15.0552808 18 15.0552808 18 25.0087719"></polygon>
+            <path d="M6,12 L6,7 L14,7 L14,12 L6,12 Z M12,10 L12,9 L8,9 L8,10 L12,10 Z" id="Stroke-5" fill="#005AA0"></path>
+            <polygon id="Stroke-7" fill="#005AA0" points="5.62982016 15.0013379 4.30718719 12.923092 2.6199057 13.9969081 4.53197864 17.0013379 5.0808994 17.0013379 15 17.0013379 15 15.0013379"></polygon>
+            <path d="M22.7639397,7.84187027 L21.490172,5.49739042 L20.6213558,8.01315905 L17.9602168,7.93669591 L19.7053374,9.9523138 L18.3130127,12.2243604 L20.933336,11.7258863 L22.2071398,14.0704327 L23.0760238,11.5546977 L25.7370958,11.6311033 L23.9919383,9.61544272 L25.384263,7.34339615 L22.7639397,7.84187027 Z M28.9432549,4.88497162 L26.15311,9.43803248 L29.6652939,13.4946122 L24.3105542,13.3408651 L22.5650111,18.3948471 L20.005466,13.6837824 L14.7540209,14.6827849 L17.5441657,10.129724 L14.0319449,6.07310168 L19.3867967,6.22696392 L21.1322284,1.1728429 L23.6918097,5.88397412 L28.9432549,4.88497162 Z" id="Stroke-1" fill="#005AA0" transform="translate(21.848619, 9.783845) rotate(4.500000) translate(-21.848619, -9.783845) "></path>
+        </g>
+    </g>
+</svg>

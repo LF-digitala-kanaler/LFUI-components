@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>logout-20</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logout-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logout-20-crop" transform="translate(1.000000, 2.000000)" fill="#FF0000">
+            <path d="M13.7817,5.6968 L15.0467,6.9998 L8.9977,6.9998 L8.9977,8.9998 L15.0467,8.9998 L13.7817,10.3028 L15.2157,11.6968 L18.8077,7.9998 L15.2157,4.3038 L13.7817,5.6968 Z M15.9987,7.9788 L16.0187,7.9998 L15.9987,8.0218 L15.9987,7.9788 Z" id="Fill-1"></path>
+            <path d="M7.9075,14 C6.3285,14 4.8455,13.378 3.7315,12.25 C1.4185,9.906 1.4185,6.093 3.7315,3.75 C4.8455,2.622 6.3285,2 7.9075,2 C9.4865,2 10.9695,2.622 12.0835,3.75 L13.5075,2.345 C12.0135,0.833 10.0255,0 7.9075,0 C5.7895,0 3.8015,0.833 2.3075,2.345 C-0.7695,5.463 -0.7695,10.536 2.3075,13.655 C3.8015,15.167 5.7895,16 7.9075,16 C10.0255,16 12.0135,15.167 13.5075,13.655 L12.0835,12.25 C10.9695,13.378 9.4865,14 7.9075,14" id="Fill-2"></path>
+        </g>
+    </g>
+</svg>

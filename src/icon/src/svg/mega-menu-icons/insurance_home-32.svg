@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>insurance_home-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="insurance_home-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 3.000000)" fill="#FF0000" fill-rule="nonzero">
+            <polygon id="Shape" points="28.3924383 13.2650495 29.6075617 11.6765045 15.0042867 0.74111384 0.392648848 11.6763435 1.60735115 13.2652105 15.003953 3.25888616"></polygon>
+            <polygon id="Shape" points="17.3924383 10.0884279 18.6075617 8.49988293 15.0009908 5.74111384 11.3926488 8.49972191 12.6073512 10.0885889 15.0006571 8.25888616"></polygon>
+            <polygon id="Shape" points="13 16 17 16 17 24 19 24 19 14 11 14 11 24 13 24"></polygon>
+            <polygon id="Line" points="4 10 4 24 6 24 6 10"></polygon>
+            <polygon id="Line" points="24 10 24 24 26 24 26 10"></polygon>
+        </g>
+    </g>
+</svg>

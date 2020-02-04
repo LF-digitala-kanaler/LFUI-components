@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>text-2-round-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="text-2-round-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="text-2-round-32-crop" transform="translate(3.000000, 3.000000)" fill="#FF0000">
+            <path d="M13,24 C6.935,24 2,19.065 2,13 C2,6.935 6.935,2 13,2 C19.065,2 24,6.935 24,13 C24,19.065 19.065,24 13,24 M13,0 C5.832,0 0,5.832 0,13 C0,20.168 5.832,26 13,26 C20.168,26 26,20.168 26,13 C26,5.832 20.168,0 13,0" id="Fill-1"></path>
+            <path d="M15.04,13.125 C16.75,10.335 15.595,7.351 13.135,7.351 C11.365,7.351 10.285,8.535 10.3,10.59 L12.085,10.59 C12.085,9.721 12.415,9.271 13.045,9.271 C13.63,9.271 13.945,9.705 13.945,10.561 C13.945,11.175 13.6,11.775 13.3,12.285 L10.195,17.52 L10.195,18 L15.985,18 L15.985,16.05 L13.255,16.05 L15.04,13.125 Z" id="Fill-3"></path>
+        </g>
+    </g>
+</svg>

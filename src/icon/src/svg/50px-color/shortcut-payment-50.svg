@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="40px" viewBox="0 0 50 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>shortcut-payment-50</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shortcut-payment-50">
+            <g id="shortcut-payment-50-crop" transform="translate(6.000000, 3.000000)">
+                <path d="M30.4393651,11.9307925 L28.1142857,0.288679245 L14.104127,3.23962264 L13.0755556,3.45901887 M9.83111111,4.11528302 L2.85333333,5.59075472 L5.01587302,16.356566 L5.06984127,16.5201509" id="Shape" stroke="#005AA0" stroke-width="2"></path>
+                <path d="M22,12 L21.4,15" id="Shape" stroke="#0058A0" stroke-width="1.5"></path>
+                <ellipse id="Oval" stroke="#0058A0" stroke-width="1.5" cx="24.6966029" cy="14.2620103" rx="1.02793651" ry="1.03860377"></ellipse>
+                <ellipse id="Oval" stroke="#0058A0" stroke-width="1.5" cx="28.1626395" cy="14.9610787" rx="1.02793651" ry="1.03860377"></ellipse>
+                <path d="M18.9187302,4.06075472 L19.5130159,7.06622642" id="Shape" stroke="#E30613" stroke-width="1.5"></path>
+                <ellipse id="Oval" stroke="#E30613" stroke-width="1.5" cx="21.837936" cy="4.98966038" rx="1.02793651" ry="1.03860377"></ellipse>
+                <ellipse id="Oval" stroke="#E30613" stroke-width="1.5" cx="25.3015873" cy="4.27886792" rx="1.02793651" ry="1.03860377"></ellipse>
+                <polyline id="Shape" stroke="#005AA0" stroke-width="2" points="7.75553707 22.1332983 4 21.3403029 7.00505925 7.42593467 32 12.6626851 28.9955703 26.5758113 16.7134216 23.9838279"></polyline>
+                <path d="M6,30.9019217 C6,32.5237196 4.72009738,33.8511698 3.15527732,33.8511698 C2.30275088,33.8511698 1.49696871,33.457552 0.974991033,32.8180672 C0.785788038,32.5727775 0.643329312,32.3257563 0.548171335,32.0804666 C0.406269088,31.7364839 0.311111111,31.342866 0.311111111,30.9504025 C0.311111111,29.3274502 1.59101373,28 3.15472084,28 C4.7195409,28 6,29.2783923 6,30.9019217 L6,30.9019217 Z" id="Shape" stroke="#005AA0" stroke-width="2"></path>
+                <circle id="Oval" stroke="#005AA0" stroke-width="2" cx="11.5" cy="26.5" r="3.5"></circle>
+                <polyline id="Shape" stroke="#005AA0" stroke-width="2" points="26 29 31 34 41 24"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

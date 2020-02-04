@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/40px/house-40</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/40px/house-40" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+            <g id="lines" transform="translate(2.000000, 3.000000)" fill="#FF0000" fill-rule="nonzero">
+                <polygon id="Path" points="4 35 4 12 2 12 2 35"></polygon>
+                <polygon id="Path" points="32 12 32 35 34 35 34 12"></polygon>
+                <polygon id="Path-2" points="20 22 28 22 28 33 30 33 30 20 18 20 18 33 20 33"></polygon>
+                <polygon id="Path-3" points="23.3598156 11.7682213 24.6401844 10.2317787 18 4.69829172 11.3598156 10.2317787 12.6401844 11.7682213 18 7.30170828"></polygon>
+                <polygon id="Path-3" points="18 1.30170828 35.3598156 15.7682213 36.6401844 14.2317787 18 -1.30170828 -0.6401844 14.2317787 0.6401844 15.7682213"></polygon>
+                <polygon id="Path-4" points="16 35 36 35 36 33 16 33"></polygon>
+                <polygon id="Path-4" points="0 35 11 35 11 33 0 33"></polygon>
+                <path d="M16,20 L16,29 L7,29 L7,20 L16,20 Z M9,22 L9,27 L14,27 L14,22 L9,22 Z" id="Path-9"></path>
+            </g>
+        </g>
+    </g>
+</svg>

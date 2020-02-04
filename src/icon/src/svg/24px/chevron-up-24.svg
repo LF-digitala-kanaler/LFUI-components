@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-up-24</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="chevron-up-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chevron-up-20" transform="translate(6.000000, 8.000000)" fill="#FF0000" fill-rule="nonzero">
+            <g id="chevron-up-crop" transform="translate(6.100000, 4.100000) rotate(-90.000000) translate(-6.100000, -4.100000) translate(2.600000, -1.400000)">
+                <polygon id="Page-1" points="1.414 0.0001 -8.8817842e-16 1.4141 4 5.4131 -8.8817842e-16 9.4141 1.414 10.8281 5.415 6.8281 6.828 5.4131 5.415 4.0001"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,6 +6,10 @@
   font-size: $font-size-sm;
 }
 
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0;
+}
+
 .breadcrumb-item::before {
   @include glyph-chevron-right($breadcrumb-divider-color);
 

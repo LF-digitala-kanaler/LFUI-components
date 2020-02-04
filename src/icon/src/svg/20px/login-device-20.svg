@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/20px/login-device-20</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/20px/login-device-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-20" x="0" y="0" width="20" height="20"></rect>
+            <g id="lines" transform="translate(4.000000, 2.000000)" fill="#FF0000">
+                <path d="M2,-1 L10,-1 C11.6568542,-1 13,0.343145751 13,2 L13,14 C13,15.6568542 11.6568542,17 10,17 L2,17 C0.343145751,17 -1,15.6568542 -1,14 L-1,2 C-1,0.343145751 0.343145751,-1 2,-1 Z M2,1 C1.44771525,1 1,1.44771525 1,2 L1,14 C1,14.5522847 1.44771525,15 2,15 L10,15 C10.5522847,15 11,14.5522847 11,14 L11,2 C11,1.44771525 10.5522847,1 10,1 L2,1 Z" id="Rectangle" fill-rule="nonzero"></path>
+                <circle id="Oval-2" cx="3.5" cy="8.5" r="1.5"></circle>
+                <circle id="Oval-2-Copy-2" cx="3.5" cy="12.5" r="1.5"></circle>
+                <circle id="Oval-2-Copy" cx="8.5" cy="8.5" r="1.5"></circle>
+                <circle id="Oval-2-Copy-3" cx="8.5" cy="12.5" r="1.5"></circle>
+                <polygon id="Path-3" fill-rule="nonzero" points="2 5 10 5 10 3 2 3"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

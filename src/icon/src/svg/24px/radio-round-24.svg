@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>radio-round-24</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="radio-round-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(3.000000, 3.000000)" fill="#FF0000" fill-rule="nonzero">
+            <path d="M9,2 C5.141,2 2,5.14 2,9 C2,12.86 5.141,16 9,16 C12.859,16 16,12.86 16,9 C16,5.14 12.859,2 9,2 M9,18 C4.037,18 0,13.962 0,9 C0,4.038 4.037,0 9,0 C13.963,0 18,4.038 18,9 C18,13.962 13.963,18 9,18" id="Fill-1"></path>
+            <path d="M9,10.5 C9.82842712,10.5 10.5,9.82842712 10.5,9 C10.5,8.17157288 9.82842712,7.5 9,7.5 C8.17157288,7.5 7.5,8.17157288 7.5,9 C7.5,9.82842712 8.17157288,10.5 9,10.5 Z M9,13 C6.790861,13 5,11.209139 5,9 C5,6.790861 6.790861,5 9,5 C11.209139,5 13,6.790861 13,9 C13,11.209139 11.209139,13 9,13 Z" id="Oval"></path>
+        </g>
+    </g>
+</svg>

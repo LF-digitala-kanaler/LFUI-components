@@ -378,7 +378,7 @@
 
 .table tbody tr.table-active {
   background-color: $white;
-  transition: background 40ms linear;
+  transition: background 40ms, border 40ms linear;
   z-index: 4;
   border-top: 10px solid $body-bg;
   box-shadow: 0 8px 5px 1px #d9d9d9;

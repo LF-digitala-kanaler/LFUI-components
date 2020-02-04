@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Icons/24px/briefcase-24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/24px/briefcase-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="lines">
+            <g>
+                <rect id="invisible-24" x="0" y="0" width="24" height="24"></rect>
+                <path d="M16,3 L16,6 L19.5,6 C20.8807119,6 22,7.11928813 22,8.5 L22,17.5 C22,18.8807119 20.8807119,20 19.5,20 L4.5,20 C3.11928813,20 2,18.8807119 2,17.5 L2,8.5 C2,7.11928813 3.11928813,6 4.5,6 L8,6 L8,3 L16,3 Z M20,10.999 L17.3333333,13 L17,13 L17,18 L19.5,18 C19.7761424,18 20,17.7761424 20,17.5 L20,10.999 Z M4,11.001 L4,17.5 C4,17.7761424 4.22385763,18 4.5,18 L7,18 L7,13 L6.66666667,13 L4,11.001 Z M9,18 L15,18 L15,13 L9,13 L9,18 Z M19.5,8 L4.5,8 C4.22385763,8 4,8.22385763 4,8.5 L4,8.501 L7.33333333,11 L16.6666667,11 L20,8.5 C20,8.22385763 19.7761424,8 19.5,8 Z M14,5 L10,5 L10,6 L14,6 L14,5 Z" id="Combined-Shape" fill="#FF0000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

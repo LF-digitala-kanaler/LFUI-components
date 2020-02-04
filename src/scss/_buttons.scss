@@ -383,7 +383,8 @@
   &:focus,
   &.focus,
   &:hover,
-  &:hover:focus {
+  &:hover:focus,
+  &:not(:disabled):not(.disabled):active:focus {
     color: $border-hover;
     background-color: $bg;
     border-color: $border-hover;
@@ -628,14 +629,14 @@ a.btn:active {
 
   font-family: inherit;
   font-size: $font-size-md;
-  margin: $input-btn-padding-y 0;
+  margin: 0.313rem 0;
   position: relative;
-  line-height: 1.1;
+  line-height: 1.32;
   border: calc(0.025rem + 2px) solid transparent;
   border-right-width: 0;
   border-left-width: 0;
   vertical-align: baseline;
-  background-position-y: 1rem;
+  background-position-y: 1.1rem;
 
   @include font-smoothing(auto);
 

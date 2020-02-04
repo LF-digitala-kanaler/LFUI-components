@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="50px" viewBox="0 0 84 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="17 24 17 28.9523976 17 31 10 31 10 24"></polygon>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="singel">
+            <rect id="invicible" x="0" y="0" width="84" height="50"></rect>
+            <g id="Icons/40px/houseV2-mc-40-Copy-7" transform="translate(21.000000, 10.000000)">
+                <g id="lines-new">
+                    <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+                    <path d="M5,38 L5,15" id="Path" stroke="#005AA0" stroke-width="2"></path>
+                    <path d="M35,15 L35,38" id="Path" stroke="#005AA0" stroke-width="2"></path>
+                    <polyline id="Path-2" stroke="#005AA0" stroke-width="2" points="21 36 21 24 31 24 31 36"></polyline>
+                    <polyline id="Path-3" stroke="#0059A0" stroke-width="2" points="26 14 20 9 14 14"></polyline>
+                    <polyline id="Path-3" stroke="#005AA0" stroke-width="2" points="38 18 20 3 2 18"></polyline>
+                    <path d="M18,37 L38,37" id="Path-4" stroke="#005AA0" stroke-width="2"></path>
+                    <path d="M2,37 L13,37" id="Path-4" stroke="#005AA0" stroke-width="2"></path>
+                    <g id="Path-9">
+                        <use stroke="#979797" stroke-width="1" xlink:href="#path-1"></use>
+                        <use stroke="#005AA0" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+            <path d="M61,3.79491045 L61.9048696,2.97330419 C63.3424393,1.66801532 65.5362766,1.66801532 66.9738462,2.97330419 L66.9738462,2.97330419 C68.2448039,4.12731217 68.3396103,6.09313523 67.1856023,7.36409287 C67.1184601,7.43803941 67.0477928,7.50870676 66.9738462,7.57584897 L61,13 L55.0261538,7.57584897 C53.7551961,6.42184098 53.6603897,4.45601793 54.8143977,3.18506029 C54.8815399,3.11111375 54.9522072,3.04044639 55.0261538,2.97330419 L55.0261538,2.97330419 C56.4637234,1.66801532 58.6575607,1.66801532 60.0951304,2.97330419 L61,3.79491045 Z" id="Path-10-Copy-2" stroke="#E30613" stroke-width="2" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

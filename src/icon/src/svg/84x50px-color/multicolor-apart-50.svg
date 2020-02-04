@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="50px" viewBox="0 0 84 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="17 24 17 28.9523976 17 31 10 31 10 24"></polygon>
+        <polygon id="path-2" points="17 24 17 28.9523976 17 31 10 31 10 24"></polygon>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-Copy-3" transform="translate(29.000000, 2.000000)" fill-rule="nonzero" stroke="#E30613" stroke-width="2">
+            <path d="M16,6.79491045 L16.9048696,5.97330419 C18.3424393,4.66801532 20.5362766,4.66801532 21.9738462,5.97330419 L21.9738462,5.97330419 C23.2448039,7.12731217 23.3396103,9.09313523 22.1856023,10.3640929 C22.1184601,10.4380394 22.0477928,10.5087068 21.9738462,10.575849 L16,16 L10.0261538,10.575849 C8.75519614,9.42184098 8.6603897,7.45601793 9.81439769,6.18506029 C9.88153989,6.11111375 9.95220724,6.04044639 10.0261538,5.97330419 L10.0261538,5.97330419 C11.4637234,4.66801532 13.6575607,4.66801532 15.0951304,5.97330419 L16,6.79491045 Z" id="Path-10"></path>
+            <path d="M9.32937937,8.83818887 L7,11 L1.03627681,5.57103909 C-0.309424337,4.34600589 -0.349774439,2.32169189 0.94615233,1.04960722 C0.975625155,1.02067662 1.00567198,0.992273509 1.03627681,0.964412993 C2.44882265,-0.321470998 4.6841179,-0.321470998 6.09666374,0.964412993 L7,1.78674781 L7.90333626,0.964412993 C9.3158821,-0.321470998 11.5511774,-0.321470998 12.9637232,0.964412993 C13.9403906,1.85350345 14.2294777,3.16360695 13.8191616,4.30159489" id="Path"></path>
+        </g>
+        <g id="Icons/40px/houseV2-mc-40-Copy-7" transform="translate(0.000000, 10.000000)">
+            <g id="lines-new">
+                <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+                <path d="M5,38 L5,15" id="Path" stroke="#005AA0" stroke-width="2"></path>
+                <path d="M35,15 L35,38" id="Path" stroke="#005AA0" stroke-width="2"></path>
+                <polyline id="Path-2" stroke="#005AA0" stroke-width="2" points="21 36 21 24 31 24 31 36"></polyline>
+                <polyline id="Path-3" stroke="#0059A0" stroke-width="2" points="26 14 20 9 14 14"></polyline>
+                <polyline id="Path-3" stroke="#005AA0" stroke-width="2" points="38 18 20 3 2 18"></polyline>
+                <path d="M18,37 L38,37" id="Path-4" stroke="#005AA0" stroke-width="2"></path>
+                <path d="M2,37 L13,37" id="Path-4" stroke="#005AA0" stroke-width="2"></path>
+                <g id="Path-9">
+                    <use stroke="#979797" stroke-width="1" xlink:href="#path-1"></use>
+                    <use stroke="#005AA0" stroke-width="2" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+        <g id="Icons/40px/houseV2-mc-40-Copy-7" transform="translate(44.000000, 10.000000)">
+            <g id="lines-new">
+                <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+                <path d="M5,38 L5,15" id="Path" stroke="#005AA0" stroke-width="2"></path>
+                <path d="M35,15 L35,38" id="Path" stroke="#005AA0" stroke-width="2"></path>
+                <polyline id="Path-2" stroke="#005AA0" stroke-width="2" points="21 36 21 24 31 24 31 36"></polyline>
+                <polyline id="Path-3" stroke="#0059A0" stroke-width="2" points="26 14 20 9 14 14"></polyline>
+                <polyline id="Path-3" stroke="#005AA0" stroke-width="2" points="38 18 20 3 2 18"></polyline>
+                <path d="M18,37 L38,37" id="Path-4" stroke="#005AA0" stroke-width="2"></path>
+                <path d="M2,37 L13,37" id="Path-4" stroke="#005AA0" stroke-width="2"></path>
+                <g id="Path-9">
+                    <use stroke="#979797" stroke-width="1" xlink:href="#path-2"></use>
+                    <use stroke="#005AA0" stroke-width="2" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

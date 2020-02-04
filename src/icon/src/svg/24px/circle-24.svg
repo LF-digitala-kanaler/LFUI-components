@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Icons/24px/radio-enclosed-24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/24px/radio-enclosed-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(3.000000, 3.000000)" fill="#FF0000" fill-rule="nonzero" id="lines">
+            <g>
+                <path d="M9,-1 C3.4771525,-1 -1,3.4771525 -1,9 C-1,14.5228475 3.4771525,19 9,19 C14.5228475,19 19,14.5228475 19,9 C19,3.4771525 14.5228475,-1 9,-1 Z M9,1 C13.418278,1 17,4.581722 17,9 C17,13.418278 13.418278,17 9,17 C4.581722,17 1,13.418278 1,9 C1,4.581722 4.581722,1 9,1 Z" id="Oval"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>tab-house-70</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="tab-house-70" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tab-house-70-crop" transform="translate(2.000000, 9.000000)" fill-rule="nonzero">
+            <polygon id="Shape" fill="#005AA0" points="63.1002957 24.4929421 64.2365464 22.8470579 32.2779442 0.784155067 0.430517462 22.8479966 1.56948254 24.4920034 32.2799506 3.21584493"></polygon>
+            <polygon id="Shape" fill="#E30613" points="36.0366062 12.0732692 37.1423412 10.4067308 32.2717022 7.17510051 27.5160992 10.4134397 28.6417956 12.0665603 32.2861925 9.58489949"></polygon>
+            <polygon id="Shape" fill="#005AA0" points="8 18.06 8 44.13 10 44.13 10 18.06"></polygon>
+            <polygon id="Shape" fill="#005AA0" points="55 18.06 55 44.13 57 44.13 57 18.06"></polygon>
+            <polygon id="Shape" fill="#005AA0" points="46 26 46 44 48 44 48 24 36 24 36 44 38 44 38 26"></polygon>
+            <path d="M18,26 L18,34 L28,34 L28,26 L18,26 Z M30,24 L30,36 L16,36 L16,24 L30,24 Z" id="Rectangle-path" fill="#005AA0"></path>
+            <polygon id="Shape" fill="#005AA0" points="3 45 20.0105263 45 20.0105263 43 3 43"></polygon>
+            <polygon id="Shape" fill="#005AA0" points="30 45 62 45 62 43 30 43"></polygon>
+        </g>
+    </g>
+</svg>

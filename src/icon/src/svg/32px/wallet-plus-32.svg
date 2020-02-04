@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>wallet-plus-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="wallet-plus-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wallet-plus-32-crop" transform="translate(2.000000, 2.000000)" fill="#FF0000">
+            <path d="M9,26 C5.14,26 2,22.908 2,19.107 C2,15.306 5.14,12.214 9,12.214 C12.823,12.214 15.936,15.249 15.995,19 L15.986,19 L15.986,19.373 C15.843,23.05 12.769,26 9,26 L9,26 Z M27,8.995 L27,4 L8,4 L8,6 L25,6 L25,8.995 L22.059,8.995 L22.059,10.995 L26,10.995 L26,14 L22.059,14 L22.059,16 L25.042,16 L25.042,19 L17.995,19 C17.936,14.146 13.926,10.214 9,10.214 C7.943,10.214 6.933,10.404 5.99,10.736 L5.99,4.092 C5.99,2.95 6.937,2.021 8.104,2.021 L25.001,2 L24.999,0 L8.103,0.021 C5.835,0.021 3.99,1.847 3.99,4.092 L3.99,11.724 C1.585,13.322 0,16.035 0,19.107 C0,24.011 4.038,28 9,28 C13.305,28 16.909,24.997 17.79,21 L27.042,21 L27.042,16 L28,16 L28,8.995 L27,8.995 Z" id="Fill-1"></path>
+            <polygon id="Fill-3" points="10 15 8 15 8 18 5 18 5 20 8 20 8 23 10 23 10 20 13 20 13 18 10 18"></polygon>
+        </g>
+    </g>
+</svg>

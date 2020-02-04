@@ -1,0 +1,167 @@
+$timeline-icon-border-size: 2px;
+
+$timeline-icon-size: 24px;
+$timeline-icon-size-large: 36px;
+$timeline-icon-background: $blue;
+$timeline-header-padding: 0.5rem 1.25rem 0 3.125rem;
+$timeline-header-padding-large: 0.875rem 1.25rem 0.875rem 5rem;
+$timeline-icon-x: 14px;
+$timeline-icon-y: 18px;
+$timeline-icon-x-large: 21px;
+$timeline-icon-y-large: 27px;
+
+.timeline {
+  position: relative;
+}
+
+.timeline-list {
+  @include reset-list;
+
+  background-color: $body-bg; // need to have this to be able to get the wave diveder to work with the blue line
+  margin-bottom: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: calc(100% - (#{$timeline-icon-size} + #{$timeline-icon-size} / 2));
+    background-color: $timeline-icon-background;
+    top: calc(#{$timeline-icon-size} + #{$timeline-icon-size} / 2);
+    left: 1.5625rem;
+    z-index: 2;
+
+    @include media-breakpoint-up(md) {
+      top: calc(#{$timeline-icon-size-large} + #{$timeline-icon-size-large} / 2);
+      left: 2.75rem;
+      height: calc(100% - (#{$timeline-icon-size-large} + #{$timeline-icon-size-large} / 2));
+    }
+  }
+
+  .timeline-item:first-child {
+    margin-top: 0;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin: 4px 0;
+}
+
+.timeline-spacing {
+  position: absolute;
+  top: $timeline-icon-y;
+  left: $timeline-icon-x;
+  z-index: 2;
+  padding: 2px 0;
+  background-color: $white;
+
+  @include media-breakpoint-up(md) {
+    top: $timeline-icon-x-large;
+    left: $timeline-icon-y-large;
+
+    &.is-ongoing {
+      top: 19px;
+      left: 24px;
+      padding: 0;
+    }
+  }
+}
+
+.timeline-icon {
+  width: $timeline-icon-size;
+  height: $timeline-icon-size;
+  border: $timeline-icon-border-size solid $timeline-icon-background;
+  background-color: $white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media-breakpoint-up(md) {
+    width: $timeline-icon-size-large;
+    height: $timeline-icon-size-large;
+  }
+
+  &.is-done {
+    background-color: $blue;
+    color: $white;
+  }
+
+  .is-ongoing & {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMiI+ICA8cGF0aCBmaWxsPSIjMDA1QUEwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04LjIwNy4yOTNMMTMuOTE0IDZsLTUuNzA3IDUuNzA3LTEuNDE0LTEuNDE0TDEwLjA4NSA3SDBWNWgxMC4wODVMNi43OTMgMS43MDcgOC4yMDcuMjkzeiIvPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: $blue;
+
+    @include media-breakpoint-up(md) {
+      width: 2.625rem;
+      height: 2.625rem;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIxMiI+ICA8cGF0aCBmaWxsPSIjMDA1QUEwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS4yMDcuMjkzTDIwLjkxNCA2bC01LjcwNyA1LjcwNy0xLjQxNC0xLjQxNEwxNy4wODUgN0gwVjVoMTcuMDg1bC0zLjI5Mi0zLjI5M0wxNS4yMDcuMjkzeiIvPjwvc3ZnPg==);
+    }
+  }
+}
+
+.timeline-container {
+  background-color: $white;
+  transition: background-color 40ms linear, margin 300ms linear;
+
+  &.is-open {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    margin: 16px 0;
+  }
+}
+
+.timeline-header {
+  padding: $timeline-header-padding;
+  border: 0;
+  background: transparent;
+  outline: none;
+  -webkit-appearence: none;
+  width: 100%;
+  text-align: left;
+  min-height: 4rem;
+
+  @include media-breakpoint-up(md) {
+    min-height: 5rem;
+    padding: $timeline-header-padding-large;
+
+    &:hover {
+      background-color: #f9fbfd;
+    }
+  }
+}
+
+.timeline-heading {
+  margin: 0;
+  color: $gray;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+}
+
+.timeline-content {
+  padding: 1rem 0;
+  margin-left: 3.125rem;
+  margin-right: 0.8rem;
+  border-top: 2px solid $body-bg;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 5rem;
+    margin-right: 4.5rem;
+  }
+}
+
+.timeline-divider {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  background-color: inherit;
+  padding-top: 1rem;
+  margin-top: -3px;
+
+  + .timeline-item {
+    margin-top: 0;
+  }
+}

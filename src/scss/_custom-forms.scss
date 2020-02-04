@@ -12,13 +12,13 @@
   color: inherit;
   display: inline-block; /* 1 */
   margin-bottom: 0;
+  padding-left: $custom-control-gutter;
 }
 
 .custom-control-label::before,
-.custom-control-input:focus ~ .custom-control-label::before /* 2 */ {
+.custom-control-input:focus ~ .custom-control-label::before {
   border: 0;
-  box-shadow: inset 0 0 0 $border-width $gray-200;
-  top: 0.1rem; /* 1 */
+  box-shadow: inset 0 0 0 $border-width $silver;
 }
 
 .custom-control-label {
@@ -29,6 +29,12 @@
   cursor: pointer;
 
   @include font-smoothing(auto);
+
+  &::before,
+  &::after {
+    left: 0;
+    top: 2px;
+  }
 }
 
 /* Focus state */
@@ -49,10 +55,11 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
 
 .custom-control-input[disabled] ~ .custom-control-label::before {
   pointer-events: none;
+  box-shadow: inset 0 0 0 2px $gray-200;
 }
 
 .custom-control-input:checked[disabled] ~ .custom-control-label::before {
-  box-shadow: inset 0 0 0 5px #bfd4e5;
+  box-shadow: inset 0 0 0 2px #bfd4e5;
 }
 
 /* Hover state */
@@ -81,11 +88,46 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
 /* Active state. Gotta love selectors like these */
 
 .custom-control .custom-control-input:not(input[type="radio"]):not([disabled]):not(:checked):active ~ .custom-control-label::before {
-  box-shadow: inset 0 0 0 1.13rem $blue;
+  box-shadow: inset 0 0 0 3px $blue;
 }
 
 .custom-control .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::before {
-  box-shadow: inset 0 0 0 5px $blue;
+  box-shadow: inset 0 0 0 2px $blue;
+}
+
+/**
+ * Radio tweaks
+ */
+.custom-radio {
+  .custom-control-input:checked ~ .custom-control-label,
+  .custom-control-input:not([disabled]):checked:active ~ .custom-control-label {
+    &::before {
+      box-shadow: inset 0 0 0 5px $white;
+      background-color: $blue;
+    }
+
+    &::after {
+      box-shadow: inset 0 0 0 2px #005aa0;
+      border-radius: 50%;
+    }
+  }
+
+  .custom-control-label::before,
+  .custom-control-input:focus ~ .custom-control-label::before {
+    top: 2px;
+  }
+
+  .custom-control-input:disabled:checked ~ .custom-control-label::after {
+    box-shadow: inset 0 0 0 2px #bfd4e5;
+  }
+
+  .custom-control-input:disabled:checked ~ .custom-control-label::before {
+    background-color: #bfd4e5;
+  }
+
+  .custom-control-label {
+    position: static;
+  }
 }
 
 /**
@@ -101,30 +143,43 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
     transition-property: box-shadow, background-size;
   }
 
+  .custom-control-input:checked:not([disabled]) ~ .custom-control-label::before {
+    box-shadow: inset 0 0 0 2px $blue;
+  }
+
   .custom-control-input:checked:not([disabled]) ~ .custom-control-label::after {
     // Uh. For some reason, the $custom-checkbox-checked-icon variable does not function in IE
     // so we copy-paste the variable string here, which solves it.
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
-    background-color: $blue;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==);
+    background-color: none;
     box-shadow: none;
   }
 
   .custom-control-input:checked[disabled] ~ .custom-control-label::after {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
-    background-color: #bfd4e5;
-    box-shadow: none;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0NoZWNrZWQtYW5kLWRpc2FibGVkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNy4wMDAwMDAsIC02LjAwMDAwMCkiIGZpbGw9IiNCRkQ0RTUiPiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYWdlLTEiIHBvaW50cz0iMTcuOTA4OTYxOSA2IDExLjMyODEwMzYgMTIuOTE5MjYxNSA4LjQxMTMxNjYgOS44MDA2NzY5MiA3IDExLjI3MDUyMzEgMTEuMzE0MjI4MyAxNS44ODMwMTU0IDE5LjMwNTQxMjEgNy40ODM0NDYxNSI+PC9wb2x5Z29uPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+    box-shadow: inset 0 0 0 2px #bfd4e5;
+    background-color: $white;
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-label::before {
+    box-shadow: inset 0 0 0 2px $blue;
+    background: transparent;
   }
 
   .custom-control-input:indeterminate ~ .custom-control-label::after {
     background-color: $custom-checkbox-indeterminate-bg;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E") !important;
-    background-size: 38% 50%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDEwIDMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+TGluZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZyBpZD0iQ3VzdG9tLWZvcm1zIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj4gICAgICAgIDxnIGlkPSJDdXN0b20tZm9ybS9DaGVja2JveC9BZGQtY2hlY2tib3gvRGVmYXVsdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQuMDAwMDAwLCAtOC4wMDAwMDApIiBzdHJva2U9IiMwMDVBQTAiIHN0cm9rZS13aWR0aD0iMiI+ICAgICAgICAgICAgPHBhdGggZD0iTTUsOS41IEwxMyw5LjUiIGlkPSJMaW5lIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=) !important;
+    background-size: 49% 49%;
     box-shadow: none;
   }
 
   label + .form-text,
   label + .form-control-feedback {
     margin-top: 0;
+  }
+
+  .custom-control-label {
+    position: static;
   }
 }
 
@@ -232,6 +287,13 @@ select.form-control:not([size]):not([multiple]) {
     .custom-file-label {
       background-color: $input-hover;
     }
+  }
+}
+
+.custom-file-input {
+  &:focus ~ .custom-file-label {
+    border-color: $input-focus-border-color;
+    box-shadow: none;
   }
 }
 
@@ -489,11 +551,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
  */
 
 .radio-card {
-  padding: 1.3rem 1rem 1em;
+  padding: 1.25rem 1rem 1em;
   z-index: 1;
   background-color: $white;
   display: flex;
-  transition: all ease-out 200ms;
+  transition: box-shadow ease-out 200ms;
 
   .custom-radio {
     padding-left: 0;
@@ -531,6 +593,12 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
     hyphens: auto;
 
     @include font-smoothing;
+
+    &::before,
+    &::after {
+      left: 0;
+      top: 3px;
+    }
   }
 
   &::before {
@@ -557,6 +625,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
         background-image: none;
       }
     }
+  }
+
+  .custom-radio .custom-control-input:active ~ .custom-control-label::before,
+  .custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+    top: 3px;
   }
 }
 
@@ -635,29 +708,38 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
     padding: 1.3rem 0.5rem 1rem;
     margin: 0 auto;
     text-align: center;
-    font-size: 1em;
+    font-size: 1rem;
+    position: static;
   }
 
   .custom-control-label::before,
-  .custom-control-input:focus ~ .custom-control-label::before {
-    top: 0.5rem;
-    left: 0.5rem;
+  .custom-control-input:focus ~ .custom-control-label::before,
+  .custom-radio .custom-control-input:checked ~ .custom-control-label::after,
+  .custom-radio .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::after,
+  .custom-radio .custom-control-input:focus ~ .custom-control-label::before,
+  .custom-radio .custom-control-input:active ~ .custom-control-label::before {
+    top: 0.75rem;
+    left: 0.75rem;
   }
 
   &::before {
-    width: calc(100% + 2px);
-    height: calc(100% + 1px);
+    width: 100%;
+    // height: calc(100% + 1px);
     background-color: transparent;
+    transform: none;
   }
 
   &.active {
-    background-color: inherit !important;
-
     &::before {
-      top: -1px;
+      box-shadow: inset 0 0 0 2px $navy;
+      border: 0;
       transform: none;
-      left: -1px;
-      right: -1px;
+    }
+
+    &:hover {
+      &::before {
+        border: 0;
+      }
     }
   }
 }
@@ -673,8 +755,14 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 
   &.active {
     &::before {
-      height: calc(100% + 2px);
-      top: -2px;
+      box-shadow: 0 0 0 2px $navy;
+      border: 0;
+    }
+
+    &:hover {
+      &::before {
+        border: 0;
+      }
     }
   }
 
@@ -684,9 +772,19 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 
   .custom-control-label {
     margin: 0;
-    font-size: 1.0625em;
-    padding: 0.5rem 2rem 0.15rem;
+    font-size: 1.125rem;
+    padding: 0.75rem 2rem 0.15rem 2.25rem;
     text-align: left;
+  }
+
+  .custom-control-label::before,
+  .custom-control-input:focus ~ .custom-control-label::before,
+  .custom-radio .custom-control-input:checked ~ .custom-control-label::after,
+  .custom-radio .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::after,
+  .custom-radio .custom-control-input:focus ~ .custom-control-label::before,
+  .custom-radio .custom-control-input:active ~ .custom-control-label::before {
+    top: 0.875rem;
+    left: 0.75rem;
   }
 }
 
@@ -696,3 +794,17 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   }
 }
 
+.custom-multi-select {
+  .dropdown-item.custom-control {
+    display: flex;
+
+    .custom-control-label::before,
+    .custom-control-label::after {
+      top: 2px;
+    }
+  }
+
+  .custom-control-label {
+    position: relative;
+  }
+}

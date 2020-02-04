@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>search-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="search-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="search-32-crop" transform="translate(4.000000, 4.000000)" fill="#FF0000">
+            <polygon id="Fill-1" points="22.0708276 23.4850411 17 18.4142136 18.4142136 17 23.4850411 22.0708276"></polygon>
+            <path d="M1.98355483,9.5 C1.98355483,13.6447115 5.35530038,17.0164571 9.49958721,17.0164571 C13.6442987,17.0164571 17.0160443,13.6447115 17.0160443,9.5 C17.0160443,5.35528847 13.6442987,1.98354292 9.49958721,1.98354292 C5.35530038,1.98354292 1.98355483,5.35528847 1.98355483,9.5 L1.98355483,9.5 Z M0,9.5 C0,4.26173095 4.26173095,0 9.49959912,0 C14.7378682,0 18.9995991,4.26173095 18.9995991,9.5 C18.9995991,14.7386699 14.7378682,19 9.49959912,19 C4.26173095,19 0,14.7386699 0,9.5 L0,9.5 Z" id="Fill-2"></path>
+        </g>
+    </g>
+</svg>

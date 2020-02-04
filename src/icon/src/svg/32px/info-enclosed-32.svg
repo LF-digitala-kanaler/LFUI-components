@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>info-enclosed-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="info-enclosed-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="info-enclosed-32-crop" transform="translate(3.000000, 3.000000)" fill="#FF0000">
+            <polygon id="Fill-3" points="12 20 14 20 14 11 12 11"></polygon>
+            <path d="M13.0166,6.0616 C12.1886,6.0616 11.5166,6.7336 11.5166,7.5616 C11.5166,8.3896 12.1886,9.0616 13.0166,9.0616 C13.8446,9.0616 14.5166,8.3896 14.5166,7.5616 C14.5166,6.7336 13.8446,6.0616 13.0166,6.0616" id="Fill-5"></path>
+            <path d="M13,24 C6.935,24 2,19.065 2,13 C2,6.935 6.935,2 13,2 C19.065,2 24,6.935 24,13 C24,19.065 19.065,24 13,24 M13,0 C5.832,0 0,5.832 0,13 C0,20.168 5.832,26 13,26 C20.168,26 26,20.168 26,13 C26,5.832 20.168,0 13,0" id="Page-1"></path>
+        </g>
+    </g>
+</svg>

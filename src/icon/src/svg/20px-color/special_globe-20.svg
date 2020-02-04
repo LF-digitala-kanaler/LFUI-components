@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Icons/20px/special_globe-20</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="80.7584418%" id="linearGradient-1">
+            <stop stop-color="#0578B5" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons/20px/special_globe-20">
+            <rect id="invisible-24" x="0" y="0" width="20" height="20"></rect>
+            <g id="lines" transform="translate(0.750000, 0.717318)">
+                <circle id="Oval" fill="url(#linearGradient-1)" cx="9" cy="9.0326821" r="9"></circle>
+                <circle id="Oval" stroke="#035F8C" cx="9" cy="9.0326821" r="7"></circle>
+                <path d="M2,9.0326821 L16,9.0326821" id="Path-9" stroke="#035F8C"></path>
+                <path d="M9,2.0326821 L9,16.0326821" id="Path-10" stroke="#035F8C"></path>
+                <path d="M9,16.0326821 C6.69059245,14.6728188 5.53588867,12.3394855 5.53588867,9.0326821 C5.53588867,5.72587872 6.69059245,3.39254538 9,2.0326821" id="Path-11" stroke="#035F8C"></path>
+                <path d="M12.4641113,16.0326821 C10.1547038,14.6728188 9,12.3394855 9,9.0326821 C9,5.72587872 10.1547038,3.39254538 12.4641113,2.0326821" id="Path-11" stroke="#035F8C" transform="translate(10.732056, 9.032682) scale(-1, 1) translate(-10.732056, -9.032682) "></path>
+                <path d="M9.85442438,18.0132628 C8.7229262,16.6525211 8.15717711,14.8148261 8.15717711,12.5001778 C8.15717711,10.1429145 8.74394998,8.2803286 9.91749573,6.91242003" id="Path-11" stroke="#035F8C" transform="translate(9.037336, 12.462841) rotate(-270.000000) translate(-9.037336, -12.462841) "></path>
+                <path d="M9.8741563,11.1946578 C8.71508463,9.82912882 8.13554879,7.97502362 8.13554879,5.63234222 C8.13554879,3.24936731 8.73519181,1.37191991 9.93447784,1.86517468e-14" id="Path-11" stroke="#035F8C" transform="translate(9.035013, 5.597329) scale(1, -1) rotate(-270.000000) translate(-9.035013, -5.597329) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

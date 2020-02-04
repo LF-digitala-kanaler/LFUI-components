@@ -53,6 +53,10 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
     &::before {
       right: 100%;
     }
+
+    @supports (-ms-ime-align: auto) {
+      bottom: 40px;
+    }
   }
 }
 
@@ -71,6 +75,10 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
 
     &::before {
       left: 100%;
+    }
+
+    @supports (-ms-ime-align: auto) {
+      bottom: 40px;
     }
   }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/40px/tablet-40</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/40px/tablet-40" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+            <g id="lines" transform="translate(6.000000, 3.000000)" fill="#FF0000">
+                <path d="M2,-1 L26,-1 C27.6568542,-1 29,0.343145751 29,2 L29,32 C29,33.6568542 27.6568542,35 26,35 L2,35 C0.343145751,35 -1,33.6568542 -1,32 L-1,2 C-1,0.343145751 0.343145751,-1 2,-1 Z M2,1 C1.44771525,1 1,1.44771525 1,2 L1,32 C1,32.5522847 1.44771525,33 2,33 L26,33 C26.5522847,33 27,32.5522847 27,32 L27,2 C27,1.44771525 26.5522847,1 26,1 L2,1 Z" id="Rectangle-7" fill-rule="nonzero"></path>
+                <circle id="Oval-2" cx="14" cy="30.5" r="1.5"></circle>
+                <polygon id="Path-4" fill-rule="nonzero" points="9.29289322 3.29289322 3.29289322 9.29289322 4.70710678 10.7071068 10.7071068 4.70710678"></polygon>
+                <polygon id="Path-7" fill-rule="nonzero" points="3.70710678 6.70710678 6.70710678 3.70710678 5.29289322 2.29289322 2.29289322 5.29289322"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

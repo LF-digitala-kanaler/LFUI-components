@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Icons/32px/print-32</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/32px/print-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-32" x="0" y="0" width="32" height="32"></rect>
+            <g id="lines" transform="translate(3.000000, 2.000000)" fill="#FF0000" fill-rule="nonzero">
+                <path d="M1,18 L1,12.2142857 C1,10.9899881 1.98387709,10 3.19444444,10 L22.8055556,10 C24.0161229,10 25,10.9899881 25,12.2142857 L25,18 L19.1757813,18 L19.1757813,20 L27,20 L27,12.2142857 C27,9.88818134 25.1234741,8 22.8055556,8 L3.19444444,8 C0.876525898,8 -1,9.88818134 -1,12.2142857 L-1,20 L6.02075195,20 L6.02075195,18 L1,18 Z" id="Oval"></path>
+                <path d="M5,0 L20,0 L20,10 L5,10 L5,0 Z M7,2 L7,8 L18,8 L18,2 L7,2 Z" id="Rectangle"></path>
+                <path d="M5,14 L21,14 L21,28 L5,28 L5,14 Z M7,16 L7,26 L19,26 L19,16 L7,16 Z" id="Rectangle"></path>
+                <polygon id="Path-28-Copy" points="9 24 17.0650635 24 17.0650635 22 9 22"></polygon>
+                <polygon id="Path-28-Copy" points="9 20 17.0650635 20 17.0650635 18 9 18"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

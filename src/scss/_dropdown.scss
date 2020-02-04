@@ -301,6 +301,13 @@
       margin: 10px;
     }
 
+    .custom-control-label::before,
+    .custom-control-label::after {
+      margin: 0;
+      top: -0.1rem;
+      left: -2.0625rem;
+    }
+
     .custom-control {
       display: inline-flex;
     }
@@ -308,11 +315,6 @@
 
   .dropdown-item-sub {
     padding-left: 74px;
-
-    .custom-control-label::before,
-    .custom-control-label::after {
-      margin-left: 42px;
-    }
   }
 }
 

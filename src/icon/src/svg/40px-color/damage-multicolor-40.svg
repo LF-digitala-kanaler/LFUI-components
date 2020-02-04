@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="32px" viewBox="0 0 28 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/40px/damage-40</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22,30 L26,30 L26,19.5028702 L19.4615385,14.6457274 L19.4615385,10.2857143 L14.6334751,10.2857143 L13.2365686,7.69145922 L9,6.38014038 L9,2 L2,2 L2,17.3 L9.91573643,17.3 L12.926698,15.8579079 L18.1326939,19.1824386 L16.8097051,22.9842904 L22,25.4701685 L22,30 Z M20,30 L20,26.7298315 L14.333152,24.0157096 L15.724449,20.0175614 L12.7875877,18.1420921 L10.3699779,19.3 L2,19.3 L2,30 L5,30 L5,32 L0,32 L0,0 L28,0 L28,32 L17,32 L17,30 L20,30 Z M26,17.0114155 L26,2 L11,2 L11,4.90557391 L14.6095853,6.02282649 L15.8280633,8.28571429 L21.4615385,8.28571429 L21.4615385,13.6399869 L26,17.0114155 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons-40-multicolor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="damage-multicolor-40" transform="translate(-6.000000, -4.000000)">
+            <g id="Icons/40px/damage-40">
+                <polygon id="Rectangle-7" fill="#E30613" fill-rule="nonzero" points="21 34 21 36 13 36 13 34"></polygon>
+                <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+                <g id="outlines" transform="translate(6.000000, 4.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#FF0000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

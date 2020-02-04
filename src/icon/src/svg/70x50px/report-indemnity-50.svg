@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="70px" height="50px" viewBox="0 0 70 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-report-indemnity-50</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-report-indemnity-50">
+            <g id="icon-report-indemnity-50-crop" transform="translate(6.000000, -1.000000)">
+                <g id="Group" transform="translate(31.974517, 26.026853) rotate(-3.000000) translate(-31.974517, -26.026853) translate(5.974517, 2.026853)" fill="#005AA0">
+                    <polygon id="Stroke-1" points="24.8405355 14.5408148 14.7315208 26.9390646 16.2815782 28.2029167 27.6544327 14.2546244 16.3310536 5.0218325 4.95818469 18.969707 6.50822279 20.2335827 16.6172231 7.83573759"></polygon>
+                    <polygon id="Stroke-2" points="13.628791 30.1359864 3.59860535 21.9575437 4.97434882 20.2704568 7.17905804 22.0604163 8.43966343 20.5077174 4.68559136 17.459861 0.78462456 22.2436525 13.9148875 32.9498454 17.8171827 28.1644247 10.7618327 22.4115744 9.49795258 23.9616089 15.003206 28.4505285"></polygon>
+                    <g id="Group-7" transform="translate(13.560748, 0.174355)">
+                        <path d="M8.85192536,7.00016867 L6.77897547,5.31006272 L4.79142248,3.68936977 L3.41702404,5.37480727 L13.4472097,13.5532499 L14.8216247,11.8677921 L8.85192536,7.00016867 Z M10.1157711,5.45010607 L17.6356014,11.5816883 L13.7333062,16.367109 L0.603043252,5.6609161 L4.50535509,0.87547509 L5.28034416,1.50741765 L8.04283648,3.76001261 L10.1157711,5.45010607 Z" id="Stroke-3"></path>
+                        <polygon id="Stroke-5" points="33.8132665 43.7779228 6.54296912 21.5417605 5.27907947 23.0917872 34.0993242 46.5917744 37.9621763 41.854891 9.14143085 18.35484 7.87755233 19.9048759 35.1481714 42.1409745"></polygon>
+                    </g>
+                </g>
+                <polygon id="Stroke-8" fill="#005AA0" points="8 42 8 40 4 40 4 44.4751776 6 44.4751776 6 42"></polygon>
+                <polygon id="Stroke-9" fill="#005AA0" points="24 44.4751776 26 44.4751776 26 40 18 40 18 42 24 42"></polygon>
+                <polygon id="Stroke-10" fill="#E30613" points="10 42 16 42 16 40 10 40"></polygon>
+                <path d="M2,45 L2,46 L28,46 L28,45 L2,45 Z M30,43 L30,48 L0,48 L2.22044605e-16,43 L30,43 Z" id="Stroke-11" fill="#005AA0"></path>
+            </g>
+        </g>
+    </g>
+</svg>

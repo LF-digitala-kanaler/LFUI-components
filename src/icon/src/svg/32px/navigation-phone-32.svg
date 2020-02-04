@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>navigation-phone-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="navigation-phone-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="navigation-phone-crop" transform="translate(7.000000, 2.000000)" fill="#FF0000">
+            <path d="M2,3.31855463 C2,2.627521 2.62456025,2 3.3076153,2 L14.6923847,2 C15.3754398,2 16,2.627521 16,3.31855463 L16,24.6814454 C16,25.3722922 15.375624,26 14.6923847,26 L3.3076153,26 C2.57651007,26 2,25.4061572 2,24.6814454 L2,3.31855463 Z M3.3076153,28 L14.6923847,28 C16.4825832,28 18,26.474486 18,24.6814454 L18,3.31855463 C18,1.52506334 16.4821322,0 14.6923847,0 L3.3076153,0 C1.51786784,0 0,1.52506334 0,3.31855463 L0,24.6814454 C0,26.4976859 1.45846537,28 3.3076153,28 Z" id="Shape" fill-rule="nonzero"></path>
+            <polygon id="Shape" fill-rule="nonzero" points="16 8 16 6 2 6 2 8"></polygon>
+            <polygon id="Shape" fill-rule="nonzero" points="16 21 16 19 2 19 2 21"></polygon>
+            <path d="M9,22 C9.828,22 10.5,22.6715523 10.5,23.4990007 C10.5,24.3284477 9.828,25 9,25 C8.169,25 7.5,24.3284477 7.5,23.4990007 C7.5,22.6715523 8.17,22 9,22" id="Shape"></path>
+        </g>
+    </g>
+</svg>

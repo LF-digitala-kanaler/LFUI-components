@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>card-block-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="card-block-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="card-block-32-crop" transform="translate(2.000000, 5.000000)" fill="#FF0000" fill-rule="nonzero">
+            <polygon id="Shape" points="1 4 1 6 23 6 23 4"></polygon>
+            <polygon id="Shape" points="9.99999998 10 9.99999998 8 3.99999998 8 3.99999998 10"></polygon>
+            <path d="M14,16 L2.99961498,16 C2.44765897,16 2,15.5533151 2,15.0059397 L2,2.99406028 C2,2.44396878 2.44304564,2 2.991155,2 L21.008845,2 C21.559447,2 22,2.44205818 22,3.00591905 L22,11 L24,11 L24,3.00591905 C24,1.3390128 22.6655463,1.42108547e-14 21.008845,1.42108547e-14 L2.991155,0 C1.33754318,0 5.32907052e-15,1.3403301 0,2.99406028 L0,15.0059397 C0,16.658861 1.34406356,18 2.99961498,18 L14,18 L14,16 Z" id="Rectangle"></path>
+            <polygon id="Line" points="14.5857864 12 24.3509314 21.7651449 25.7651449 20.3509314 16 10.5857864"></polygon>
+            <path d="M20.5,22 C23.5375661,22 26,19.5375661 26,16.5 C26,13.4624339 23.5375661,11 20.5,11 C17.4624339,11 15,13.4624339 15,16.5 C15,19.5375661 17.4624339,22 20.5,22 Z M20.5,24 C16.3578644,24 13,20.6421356 13,16.5 C13,12.3578644 16.3578644,9 20.5,9 C24.6421356,9 28,12.3578644 28,16.5 C28,20.6421356 24.6421356,24 20.5,24 Z" id="Oval-2"></path>
+        </g>
+    </g>
+</svg>

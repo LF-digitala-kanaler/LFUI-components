@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Icons/70px/guide-70</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22,55 L22,56 L38,56 L38,55 L22,55 Z M30,0 C31.6568542,0 33,1.34314575 33,3 C33,4.30625206 32.1651499,5.41751442 30.9999111,5.82932572 L31,7 L52.3889837,7 L59.4798928,13.5 L52.3889837,20 L34,20 L34,18 L51.6110163,18 L56.5201072,13.5 L51.6110163,9 L31,9 L30.9991072,53 L40,53 L40,58 L20,58 L20,53 L28.9991072,53 L29,15 L8.38898369,15 L3.47989278,19.5 L8.38898369,24 L26,24 L26,26 L7.61101631,26 L0.520107219,19.5 L7.61101631,13 L29,13 L28.9990993,5.82897577 C27.8343774,5.41688515 27,4.30588222 27,3 C27,1.34314575 28.3431458,0 30,0 Z M30,2 C29.4477153,2 29,2.44771525 29,3 C29,3.55228475 29.4477153,4 30,4 C30.5522847,4 31,3.55228475 31,3 C31,2.44771525 30.5522847,2 30,2 Z M34,12 L34,14 L32,14 L32,10 L49,10 L49,12 L34,12 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/70px/guide-70" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-70" x="0" y="0" width="70" height="70"></rect>
+            <g id="outlines" transform="translate(5.000000, 6.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#FF0000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

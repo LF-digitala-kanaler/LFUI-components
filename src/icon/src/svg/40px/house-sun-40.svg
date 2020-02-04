@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/40px/house-sun-40</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/40px/house-sun-40" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+            <g id="lines" transform="translate(3.000000, 2.000000)" fill="#FF0000" fill-rule="nonzero">
+                <path d="M24,0 C24,6.07513225 28.9248678,11 35,11 L35,9 C30.0294373,9 26,4.97056275 26,0 L24,0 Z" id="Oval-11"></path>
+                <polygon id="Path-3" points="22 0 17 0 17 2 22 2"></polygon>
+                <polygon id="Path-4" points="33 13 33 18 35 18 35 13"></polygon>
+                <polygon id="Path" points="4 36 4 23 2 23 2 36"></polygon>
+                <polygon id="Path" points="24 23 24 36 26 36 26 23"></polygon>
+                <polygon id="Path-2" points="12 29 16 29 16 36 18 36 18 27 10 27 10 36 12 36"></polygon>
+                <polygon id="Path-3" points="27.3821784 25.7863183 28.6178216 24.2136817 14 12.7282504 -0.617821552 24.2136817 0.617821552 25.7863183 14 15.2717496"></polygon>
+                <polygon id="Path-5" points="24.2928932 9.29289322 20.2928932 13.2928932 21.7071068 14.7071068 25.7071068 10.7071068"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

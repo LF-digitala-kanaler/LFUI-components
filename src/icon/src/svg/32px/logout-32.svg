@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>logout-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logout-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logout-32-crop" transform="translate(3.500000, 4.600000)" fill="#FF0000">
+            <polygon id="Fill-1" points="20.1555 7.3992 23.1165 10.4132 12.4995 10.4132 12.4995 12.4132 23.1165 12.4132 20.1565 15.4252 21.5815 16.8282 26.9015 11.4132 21.5825 5.9982"></polygon>
+            <path d="M11.387,20.8252 C8.875,20.8252 6.517,19.8472 4.746,18.0732 C1.083,14.4002 1.083,8.4252 4.746,4.7522 C6.517,2.9772 8.875,2.0002 11.387,2.0002 C13.899,2.0002 16.257,2.9772 18.028,4.7522 L19.444,3.3402 C17.295,1.1862 14.434,0.0002 11.387,0.0002 C8.34,0.0002 5.479,1.1862 3.33,3.3402 C-1.11,7.7912 -1.11,15.0342 3.33,19.4852 C5.479,21.6392 8.34,22.8252 11.387,22.8252 C14.434,22.8252 17.295,21.6392 19.444,19.4852 L18.028,18.0732 C16.257,19.8472 13.899,20.8252 11.387,20.8252" id="Fill-2"></path>
+        </g>
+    </g>
+</svg>

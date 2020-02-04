@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="facebook-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2.000000, 2.000000)" fill="#FF0000" fill-rule="nonzero">
+            <path d="M2,2 L2,26 L26,26 L26,2 L2,2 Z M0,0 L28,0 L28,28 L0,28 L0,0 Z" id="Rectangle-3"></path>
+            <path d="M12.0122336,22.984375 L12.0122336,14.96875 L10,14.96875 L10,12.0588555 L12.0122336,12.0588555 L12.0122336,9.91285836 C12.0122336,7.42290742 13.533172,6.06708972 15.7545876,6.06708972 C16.8184446,6.06708972 17.7331787,6.14593626 18,6.18136007 L18,8.7838673 L16.4590643,8.78443865 C15.2506554,8.78443865 15.0169725,9.35864716 15.0169725,10.201391 L15.0169725,12.0588555 L17.8982994,12.0588555 L17.5229213,14.96875 L15.0169725,14.96875 L15.0169725,22.984375 L12.0122336,22.984375 Z" id="Fill-2"></path>
+        </g>
+    </g>
+</svg>

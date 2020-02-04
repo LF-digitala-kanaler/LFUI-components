@@ -9,7 +9,7 @@ window.jQuery = jQuery;
 console.log(jQuery)
 
 import './components/utilities';
-
+import './../icon';
 import './components/alert';
 import './components/animation';
 import './components/buttons';

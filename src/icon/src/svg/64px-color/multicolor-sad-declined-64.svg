@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>multicolor-sad-declined-64</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="34.5034 0.2504 31.1724 0.2504 31.1724 7.1573 34.5034 7.1573"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="multicolor-sad-declined-64">
+            <g id="multicolor-sad-declined-64-crop" transform="translate(8.000000, 1.000000)">
+                <path d="M23,54.9854 C10.318,54.9854 0,44.6684 0,31.9854 C0,19.3024 10.318,8.9854 23,8.9854 C29.694,8.9854 36.07,11.9124 40.493,17.0144 L38.981,18.3254 C34.939,13.6604 29.114,10.9854 23,10.9854 C11.42,10.9854 2,20.4064 2,31.9854 C2,43.5644 11.42,52.9854 23,52.9854 C34.58,52.9854 44,43.5644 44,31.9854 C44,29.6484 43.628,27.3464 42.894,25.1444 L42.834,24.9854 L28.158,24.9854 C16.262,24.9854 14.119,17.4064 14.033,17.0844 L15.965,16.5664 C16.038,16.8284 17.871,22.9854 28.158,22.9854 L44.219,22.9854 L44.779,24.4774 C45.593,26.9184 46,29.4324 46,31.9854 C46,44.6684 35.682,54.9854 23,54.9854" id="Fill-1" fill="#005AA0" fill-rule="nonzero"></path>
+                <path d="M22.9991281,47 C19.6752868,47 17,44.3243243 17,41 C17,37.6756757 19.6752868,35 22.9991281,35 C26.3229693,35 28.9982561,37.6756757 28.9982561,41 C29.0793254,44.2432432 26.3229693,47 22.9991281,47 L22.9991281,47 Z M22.9983673,37 C20.8174397,37 19,38.8181818 19,41 C19,43.1818182 20.8174397,45 22.9983673,45 C25.179295,45 26.9967347,43.1818182 26.9967347,41 C27.0876067,38.8181818 25.270167,37 22.9983673,37 L22.9983673,37 Z" id="Shape" fill="#005AA0" fill-rule="nonzero"></path>
+                <ellipse id="Oval" fill="#005AA0" fill-rule="nonzero" cx="14.25" cy="29.25" rx="1.25" ry="1.25"></ellipse>
+                <ellipse id="Oval" fill="#005AA0" fill-rule="nonzero" cx="31.25" cy="29.25" rx="1.25" ry="1.25"></ellipse>
+                <polygon id="Fill-12" fill="#E30613" fill-rule="nonzero" points="41.2915 11.0499 39.6915 9.8489 43.6805 4.5369 45.2805 5.7379"></polygon>
+                <polygon id="Fill-14" fill="#E30613" fill-rule="nonzero" points="46.0649 18.1915 45.1259 16.4255 50.9819 13.3105 51.9209 15.0765"></polygon>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="path-1"></g>
+                <polygon id="Fill-9" fill="#E30613" fill-rule="nonzero" mask="url(#mask-2)" points="33.1294 7.1573 31.1724 6.7433 32.5464 0.2503 34.5034 0.6643"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

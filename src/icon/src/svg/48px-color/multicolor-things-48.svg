@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>multicolor-things-48</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="multicolor-things-48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M22.0815884,33.0180451 L35.9359345,33.0180451" id="Path-2" stroke="#005C9C" stroke-width="2"></path>
+        <path d="M17,21.286495 L17,14 C17,12.8954305 17.8954305,12 19,12 L39,12 C40.1045695,12 41,12.8954305 41,14 L41,27 C41,28.1045695 40.1045695,29 39,29 L21.4878883,29 L17,21.286495 Z" id="Rectangle-4" stroke="#005C9C" stroke-width="2"></path>
+        <path d="M11.6333257,25 L12.2159962,23.0372117 L17.25425,23.0372117 L17.8069639,25 L18,25 C19.1045695,25 20,25.8954305 20,27 L20,33 C20,34.1045695 19.1045695,35 18,35 L8,35 C6.8954305,35 6,34.1045695 6,33 L6,27 C6,25.8954305 6.8954305,25 8,25 L11.6333257,25 Z" id="Rectangle-3" stroke="#005C9C" stroke-width="2"></path>
+        <circle id="Oval-2" stroke="#E30613" stroke-width="2" cx="14.6999998" cy="30" r="2"></circle>
+        <circle id="Oval-2" fill="#005C9C" cx="9" cy="28" r="1"></circle>
+        <path d="M29.0363981,29.0432377 L29.0363981,33.0395274" id="Path-5" stroke="#005C9C" stroke-width="2"></path>
+    </g>
+</svg>

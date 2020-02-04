@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>flag-20</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="flag-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flag-20-crop" transform="translate(3.000000, 1.000000)" fill="#FF0000">
+            <path d="M12,10.5879 C10.345,10.7469 9.154,10.2969 7.805,9.7839 C6.273,9.2019 4.547,8.5599 2,8.7409 L2,2.8409 C4.12,2.5029 5.55,3.0739 7.052,3.6879 C8.428,4.2509 9.966,4.8749 12,4.7269 L12,10.5879 Z M12.795,2.5969 C10.728,3.0279 9.375,2.4769 7.809,1.8369 C6.253,1.2009 4.501,0.4989 2,0.8199 L2,-0.0001 L0,-0.0001 L0,18.0329 L2,18.0329 L2,10.7459 C4.184,10.5599 5.605,11.0889 7.094,11.6539 C8.354,12.1319 9.644,12.6229 11.317,12.6229 C11.894,12.6229 12.516,12.5649 13.197,12.4279 L14,12.2659 L14,2.3439 L12.795,2.5969 Z" id="Fill-1"></path>
+        </g>
+    </g>
+</svg>

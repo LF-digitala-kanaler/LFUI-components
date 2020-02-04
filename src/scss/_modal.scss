@@ -166,3 +166,7 @@
 .modal-backdrop.fade {
   transition: opacity 150ms ease-out;
 }
+
+.modal-backdrop.show {
+  opacity: 0.7;
+}

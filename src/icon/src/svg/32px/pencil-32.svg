@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>pencil-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="pencil-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pencil-32-crop" transform="translate(5.000000, 2.100000)" fill="#FF0000">
+            <polygon id="Fill-4" points="0 0.8743 0 26.8743 19 26.8743 19 16.8743 17 16.8743 17 24.8743 2 24.8743 2 2.8743 17 2.8743 17 0.8743"></polygon>
+            <path d="M21.3639611,5.12842736 L11,15.4923884 L11,16.9066019 L12.4142136,16.9066019 L22.7781746,6.54264086 L21.3639611,5.12842736 Z M13.2426407,18.9066019 L12.8284272,18.9066019 L9,18.9066019 L9,14.6639613 L21.3639611,2.30000019 L25.6066018,6.54264086 L13.2426407,18.9066019 Z" id="Line" fill-rule="nonzero"></path>
+            <rect id="Rectangle-2" transform="translate(20.121320, 7.621320) rotate(-315.000000) translate(-20.121320, -7.621320) " x="18.1213203" y="6.62132034" width="4" height="2"></rect>
+        </g>
+    </g>
+</svg>

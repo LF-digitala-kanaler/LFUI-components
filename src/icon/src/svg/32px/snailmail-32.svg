@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/32px/snailmail-32</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/32px/snailmail-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-32" x="0" y="0" width="32" height="32"></rect>
+            <g id="lines" transform="translate(2.000000, 3.000000)" fill="#FF0000" fill-rule="nonzero">
+                <polygon id="Path" points="-6.92779167e-14 23 28 23 28 21 -6.92779167e-14 21"></polygon>
+                <polygon id="Path-4" points="18 1 20 1 20 -1 16 -1 16 10.3434506 18 10.3434506"></polygon>
+                <polygon id="Path-12" points="17 3 6 3 6 5 17 5"></polygon>
+                <polygon id="Path-14" points="13 23 13 27 15 27 15 23"></polygon>
+                <path d="M11,22 L11,8 C11,5.23857625 8.76142375,3 6,3 C3.23857625,3 1,5.23857625 1,8 L1,19 L3,19 L3,8 C3,6.34314575 4.34314575,5 6,5 C7.65685425,5 9,6.34314575 9,8 L9,22 L11,22 Z" id="Oval"></path>
+                <path d="M28,22 C28,11.8060927 28,11.8060927 28,8 C28,5.23857625 25.7614237,3 23,3 L20,3 L20,5 L23,5 C24.6568542,5 26,6.34314575 26,8 C26,11.8060927 26,11.8060927 26,22 L28,22 Z" id="Oval"></path>
+            </g>
+        </g>
+    </g>
+</svg>

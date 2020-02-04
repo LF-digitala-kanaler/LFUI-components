@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Icons/70px/check-70</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="31.5010221 42.5664924 50.2839999 23.3018999 51.7160001 24.6981001 31.4989779 45.4335076 20.2830051 33.8970784 21.7169949 32.5029216"></polygon>
+    </defs>
+    <g id="Icons/70px/check-70" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="outlines">
+            <g>
+                <rect id="invisible-70" x="0" y="0" width="70" height="70"></rect>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#FF0000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

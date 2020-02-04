@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>tab-bank-70</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="tab-bank-70" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tab-bank-70-crop" transform="translate(7.000000, 16.000000)" fill-rule="nonzero">
+            <path d="M2,2.99765987 L2,35.0023401 C2,35.5486177 2.4493095,36 2.99100514,36 L53.0089949,36 C53.5533124,36 54,35.552694 54,35.0023401 L54,2.99765987 C54,2.45138231 53.5506905,2 53.0089949,2 L2.99100514,2 C2.44668764,2 2,2.44730596 2,2.99765987 Z M0,2.99765987 C0,1.34209804 1.34275388,0 2.99100514,0 L53.0089949,0 C54.6608814,0 56,1.35244012 56,2.99765987 L56,35.0023401 C56,36.657902 54.6572461,38 53.0089949,38 L2.99100514,38 C1.33911861,38 0,36.6475599 0,35.0023401 L0,2.99765987 Z" id="Rectangle-3" fill="#005AA0"></path>
+            <polygon id="Line" fill="#005AA0" points="56 7 0.143795795 7 0.143795795 9 56 9"></polygon>
+            <polygon id="Line-Copy" fill="#005AA0" points="55.0555556 14 1.14555571 14 1.14555571 16 55.0555556 16"></polygon>
+            <polygon id="Line-Copy-2" fill="#005AA0" points="25 25 6 25 6 27 25 27"></polygon>
+            <polygon id="Rectangle-2" fill="#E30613" points="45 19 43 19 43 26 50 26 50 24 45 24"></polygon>
+            <polygon id="Line-Copy-3" fill="#E30613" points="17 30 6 30 6 32 7 32 16 32 17 32"></polygon>
+        </g>
+    </g>
+</svg>

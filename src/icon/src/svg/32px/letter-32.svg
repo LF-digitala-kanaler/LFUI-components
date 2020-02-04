@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>letter-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="letter-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter-32-crop" transform="translate(3.000000, 6.000000)" fill="#FF0000" fill-rule="nonzero">
+            <path d="M2,18 L24,18 L24,2 L2,2 L2,18 Z M26,0 L26,20 L0,20 L0,0 L26,0 Z" id="Rectangle-path"></path>
+            <polygon id="Shape" points="13.0383854 10.9623985 1.67714031 0.587454343 0.322859692 2.0591622 13.0426115 13.6842181 25.6794221 2.05705592 24.3205779 0.589560624"></polygon>
+            <polygon id="Shape" points="24.7327935 17.3195489 19.2327935 11.3195489 17.7672065 12.6804511 23.2672065 18.6804511"></polygon>
+            <polygon id="Shape" points="2.73279349 18.6804511 8.23279349 12.6804511 6.76720651 11.3195489 1.26720651 17.3195489"></polygon>
+        </g>
+    </g>
+</svg>

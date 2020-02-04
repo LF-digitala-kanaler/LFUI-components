@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>accont-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="accont-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(5.000000, 6.000000)" fill="#FF0000" id="Konton-32">
+            <path d="M23,9 L22,9 L22,4 L4.067,4 L4.067,6 L20,6 L20,9 L17,9 L17,11 L21,11 L21,13 L17,13 L17,15 L20,15 L20,18 L3.898,18 C2.852,18 2,17.177 2,16.165 L2,3.835 C2,2.823 2.852,2 3.898,2 L20,2 L20,0 L3.898,0 C1.749,0 0,1.721 0,3.835 L0,16.165 C0,18.279 1.749,20 3.898,20 L22,20 L22,15 L23,15 L23,9 Z"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons/40px/chat-40</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/40px/chat-40" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-40" x="0" y="0" width="40" height="40"></rect>
+            <g id="Lines" transform="translate(3.000000, 6.000000)" fill="#FF0000" fill-rule="nonzero">
+                <path d="M17.1333333,26.1879207 L12.9420186,21.04 L11.02,21.04 C5.48610681,21.04 1,16.5538932 1,11.02 C1,5.48610681 5.48610681,1 11.02,1 L22.98,1 C28.5138932,1 33,5.48610681 33,11.02 C33,16.5538932 28.5138932,21.04 22.98,21.04 L21.5333333,21.04 L21.5333333,23.04 L22.98,23.04 C29.6184627,23.04 35,17.6584627 35,11.02 C35,4.38153731 29.6184627,-1 22.98,-1 L11.02,-1 C4.38153731,-1 -1,4.38153731 -1,11.02 C-1,17.6584627 4.38153731,23.04 11.02,23.04 L11.9913147,23.04 L19.1333333,31.8120793 L19.1333333,20.88 L17.1333333,20.88 L17.1333333,26.1879207 Z" id="Rectangle"></path>
+            </g>
+        </g>
+    </g>
+</svg>

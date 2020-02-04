@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>contract-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="contract-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="contract-32-crop" transform="translate(5.000000, 3.000000)" fill="#FF0000">
+            <polygon id="Rectangle-2" fill-rule="nonzero" points="2 24 2 2 18 2 18 7 20 7 20 0 0 0 0 26 20 26 20 21 18 21 18 24"></polygon>
+            <polygon id="Line" fill-rule="nonzero" points="5 8 15 8 15 6 5 6"></polygon>
+            <polygon id="Line" fill-rule="nonzero" points="5 12 15 12 15 10 5 10"></polygon>
+            <polygon id="Line" fill-rule="nonzero" points="5 16 12 16 12 14 5 14"></polygon>
+            <polygon id="Line" fill-rule="nonzero" points="8 22 15 22 15 20 8 20"></polygon>
+            <path d="M21.378175,10.2142138 L13.0142139,18.5781748 L13.0142139,19.9923883 L14.4284275,19.9923883 L22.7923885,11.6284273 L21.378175,10.2142138 Z M15.2568546,21.9923883 L14.8426411,21.9923883 L11.0142139,21.9923883 L11.0142139,17.7497477 L21.378175,7.38578663 L25.6208157,11.6284273 L15.2568546,21.9923883 Z" id="Line" fill-rule="nonzero"></path>
+            <rect id="Rectangle-2" transform="translate(20.621320, 12.621320) rotate(-315.000000) translate(-20.621320, -12.621320) " x="18.6213203" y="11.6213203" width="4" height="2"></rect>
+        </g>
+    </g>
+</svg>

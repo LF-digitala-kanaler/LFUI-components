@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>notification-envelope-20</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="notification-envelope-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="notification-envelope-20-crop" transform="translate(1.000000, 3.000000)" fill="#FF0000" fill-rule="nonzero">
+            <path d="M2,12 L16,12 L16,2 L2,2 L2,12 Z M18,0 L18,14 L0,14 L0,0 L18,0 Z" id="Rectangle-path"></path>
+            <polygon id="Shape" points="9.03838541 6.37494413 2.67714031 1 1.32285969 2.47170786 9.04261147 9.09676372 16.6794221 2.46960157 15.3205779 1.00210628"></polygon>
+            <polygon id="Shape" points="16.7327935 11.5 13.2327935 7.5 11.7672065 8.8609022 15.2672065 12.8609022"></polygon>
+            <polygon id="Shape" points="2.73279349 12.8609022 6.23279349 8.8609022 4.76720651 7.5 1.26720651 11.5"></polygon>
+        </g>
+    </g>
+</svg>

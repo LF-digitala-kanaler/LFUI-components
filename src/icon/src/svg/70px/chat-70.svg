@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Icons/70px/chat-70</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M35,58.1985922 L35,49 L37,49 L37,63.8014078 L26.5261209,51 L25,51 C14.5065898,51 6,42.4934102 6,32 C6,21.5065898 14.5065898,13 25,13 L45,13 C55.4934102,13 64,21.5065898 64,32 C64,42.4934102 55.4934102,51 45,51 L39,51 L39,49 L45,49 C54.3888407,49 62,41.3888407 62,32 C62,22.6111593 54.3888407,15 45,15 L25,15 C15.6111593,15 8,22.6111593 8,32 C8,41.3888407 15.6111593,49 25,49 L27.4738791,49 L35,58.1985922 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/70px/chat-70" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Outlines">
+            <g>
+                <rect id="invisible-70" x="0" y="0" width="70" height="70"></rect>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Rectangle" fill="#FF0000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

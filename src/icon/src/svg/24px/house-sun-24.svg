@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>house-sun-24</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="house-sun-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="house-sun-20" transform="translate(3.000000, 2.000000)" fill="#FF0000" fill-rule="nonzero">
+            <path d="M16,0 L14,0 C14,2.757 16.243,5 19,5 L19,3 C17.318,3 16,1.682 16,0 Z" id="Fill-1"></path>
+            <polygon id="Fill-3" points="11.6729 5.9131 13.0869 7.3271 15.2069 5.2071 13.7929 3.7931"></polygon>
+            <polygon id="Fill-5" points="10 2 13 2 13 0 10 0"></polygon>
+            <polygon id="Fill-7" points="17 9 19 9 19 6 17 6"></polygon>
+            <polygon id="Fill-8" points="7.0015 4.7412 0.0005 10.0942 0.0005 19.0002 2.0005 19.0002 2.0005 11.0822 7.0015 7.2592 12.0005 11.0822 12.0005 19.0002 14.0005 19.0002 14.0005 10.0942"></polygon>
+            <polygon id="Fill-9" points="4 19 6 19 6 14 8 14 8 19 10 19 10 12 4 12"></polygon>
+        </g>
+    </g>
+</svg>

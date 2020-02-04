@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Icons/70px/percent-70</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M41.1545111,0.466007009 L42.8454889,1.53399299 L6.8454889,58.533993 L5.1545111,57.466007 L41.1545111,0.466007009 Z M37.5,37 C43.2989899,37 48,41.7010101 48,47.5 C48,53.2989899 43.2989899,58 37.5,58 C31.7010101,58 27,53.2989899 27,47.5 C27,41.7010101 31.7010101,37 37.5,37 Z M37.5,39 C32.8055796,39 29,42.8055796 29,47.5 C29,52.1944204 32.8055796,56 37.5,56 C42.1944204,56 46,52.1944204 46,47.5 C46,42.8055796 42.1944204,39 37.5,39 Z M10.5,0 C16.2989899,0 21,4.70101013 21,10.5 C21,16.2989899 16.2989899,21 10.5,21 C4.70101013,21 0,16.2989899 0,10.5 C0,4.70101013 4.70101013,0 10.5,0 Z M10.5,2 C5.80557963,2 2,5.80557963 2,10.5 C2,15.1944204 5.80557963,19 10.5,19 C15.1944204,19 19,15.1944204 19,10.5 C19,5.80557963 15.1944204,2 10.5,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/70px/percent-70" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-70" x="0" y="0" width="70" height="70"></rect>
+            <g id="outlines" transform="translate(11.000000, 6.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#FF0000" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

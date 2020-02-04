@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>linkedin-32</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="linkedin-32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2.000000, 2.000000)" fill="#FF0000">
+            <path d="M2,2 L2,26 L26,26 L26,2 L2,2 Z M0,0 L28,0 L28,28 L0,28 L0,0 Z" id="Rectangle-3" fill-rule="nonzero"></path>
+            <g id="Group" transform="translate(6.000000, 6.250000)">
+                <path d="M2.49280023,0 C1.53460023,0 0.760000229,0.777 0.760000229,1.7334 C0.760000229,2.691 1.53460023,3.4674 2.49280023,3.4674 C3.44920023,3.4674 4.22620023,2.691 4.22620023,1.7334 C4.22620023,0.777 3.44920023,0 2.49280023,0 Z" id="Fill-2"></path>
+                <path d="M6,4.75000023 L6,14.3710002 L8.9892,14.3710002 L8.9892,9.61180023 C8.9892,8.35660023 9.2268,7.14160023 10.7826,7.14160023 C12.315,7.14160023 12.3366,8.57620023 12.3366,9.69220023 L12.3366,14.3710002 L15.324,14.3710002 L15.324,9.09400023 C15.324,6.50260023 14.7648,4.51000023 11.739,4.51000023 C10.2846,4.51000023 9.309,5.30800023 8.9094,6.06460023 L8.8686,6.06460023 L8.8686,4.75000023 L6,4.75000023 Z" id="Fill-4"></path>
+                <polygon id="Fill-6" points="1 14.371 4 14.371 4 4.75 1 4.75"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

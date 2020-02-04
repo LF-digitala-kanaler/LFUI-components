@@ -48,6 +48,8 @@
   font-family: $font-family-sans-serif;
   position: relative;
   border-color: $blue;
+  min-height: 3.125rem;
+  padding-top: 0.4375rem;
 
   &::before {
     content: "";
