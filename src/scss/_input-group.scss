@@ -1,0 +1,192 @@
+@import "bootstrap/scss/_input-group.scss";
+
+.input-group.disabled {
+  .input-group-append,
+  .input-group-prepend {
+    span,
+    div {
+      cursor: not-allowed;
+      background-color: $input-disabled-bg;
+      opacity: 1;
+    }
+  }
+}
+
+/**
+ * Addon text
+ */
+
+.input-group-append,
+.input-group-prepend {
+  border-width: 0 0 $input-btn-border-width;
+  transition: border-color 60ms linear;
+  min-width: $input-group-addon-min-width;
+  height: 40px;
+  justify-content: center;
+  margin: 0;
+  border-bottom: $border-width solid $input-group-addon-border-color;
+  background-color: $input-bg;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    display: block;
+  }
+}
+
+.input-group-text {
+  border-width: 0 0 $input-btn-border-width;
+  transition: border-color 60ms linear;
+  min-width: $input-group-addon-min-width;
+  justify-content: center;
+  margin: 0;
+  background-color: $input-bg;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-bottom: none;
+  padding-top: 0.69rem;
+  max-height: 38px;
+}
+
+// Bug fix for FireFox and IE11 when using flex. See https://github.com/twbs/bootstrap/issues/17784#issuecomment-237840119
+.form-control {
+  min-width: 0;
+}
+
+// Padding control for the input field.
+.input-group {
+  // If the input field is before the addon
+  input.form-control:first-child {
+    padding-right: 0;
+  }
+  // or in the middle between two addons
+  input.form-control:nth-child(2) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  // or after the addon
+  input.form-control:last-child {
+    padding-left: 0;
+    padding-right: 0.75rem;
+  }
+  // or default
+  input.form-control:only-child {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+// Or if the first addon is an image
+.input-group-prepend-img {
+  border-width: 0;
+  padding: 0 2px;
+
+  + input.form-control,
+  + input.form-control:last-child {
+    padding-left: 0.75rem !important;
+  }
+}
+
+// ... or a button
+.input-group-append {
+  ~ input.form-control,
+  ~ input.form-control:last-child {
+    padding-left: 0.75rem !important;
+  }
+}
+
+/**
+ * Addon button
+ *
+ * Looks like it's positioned above the input.
+ *
+ * Todo: support it being before the input, not just after
+ */
+
+.input-group-append [class*="btn-"] {
+  @include warning("Supports regular 'btn' only");
+}
+
+.input-group-append > .btn,
+.input-group-append > .btn:hover,
+.input-group-append > .btn:focus,
+.input-group-append > .btn.focus,
+.input-group-append > .btn:active,
+.input-group-append > .btn.active {
+  @include reset-button;
+
+  font-family: $font-family-sans-serif;
+  height: 100%;
+  margin-top: 2px;
+  font-size: $font-size-md;
+  border-width: 0 0 $input-btn-border-width;
+  transition: border-color 60ms linear;
+  min-width: $input-group-addon-min-width;
+  min-height: 40px;
+  border-bottom: $border-width solid $input-border-color;
+  background: $input-bg;
+  padding-left: calc(#{$input-padding-left} - 2px);
+  padding-right: calc(#{$input-padding-right} - 2px);
+  color: $blue;
+}
+
+.input-group-append:hover > .btn {
+  background: $input-hover;
+}
+
+.input-group-append > .btn:active {
+  color: rgba($blue, 0.7);
+}
+
+/**
+ * Make sure the button background and border reflects the state of the input
+ */
+
+form:not([novalidate]) .form-control:valid + .input-group-append .btn,
+.form-control:focus + .input-group-append .btn {
+  border-color: $input-group-addon-focus-border-color;
+
+  &:hover {
+    background: $input-hover;
+  }
+}
+
+form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .btn {
+  background: $cloud;
+
+  &:hover {
+    background: $input-valid-hover;
+  }
+}
+
+.has-valid .input-group-append .btn {
+  border-color: $input-group-addon-focus-border-color;
+  background-color: $cloud !important;
+}
+
+.has-success .input-group-append .btn {
+  border-color: $green !important;
+}
+
+.has-warning .input-group-append .btn {
+  border-color: $orange !important;
+}
+
+.has-danger .input-group-append .btn {
+  border-color: $red !important;
+}
+
+/**
+ * Button active state
+ */
+
+.input-group-append > .btn.active {
+  background: $white !important;
+  border-color: $white !important;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+  padding-bottom: $border-width;
+  border-bottom: 0;
+  z-index: 3;
+}

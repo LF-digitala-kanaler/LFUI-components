@@ -1,0 +1,117 @@
+/**
+ * Change Bootstraps default collapse transition
+ */
+
+.collapsing {
+  transition-timing-function: $collapse-timing-function;
+  transition-duration: $collapse-duration;
+}
+
+/**
+ * Collapse chevron icon
+ */
+
+.collapse-chevron {
+  &::after {
+    content: "";
+
+    @include glyph-chevron-down($blue);
+
+    padding: 0;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    vertical-align: middle;
+    margin-left: 0.7rem;
+    position: relative;
+    top: -1px;
+    cursor: pointer;
+    // background-color: currentColor;
+    background-size: 11px;
+    background-position: center;
+  }
+}
+
+[aria-expanded="true"].collapse-chevron,
+[aria-expanded="true"] > .collapse-chevron {
+  &::after {
+    transform: scaleY(-1);
+  }
+}
+
+/**
+ * Collapse toggle. Much like a card header but can expand the card content
+ */
+
+.collapse-toggle {
+  @include header-block(true);
+
+  padding-right: 3rem;
+  position: relative;
+  cursor: pointer;
+
+  /* Chevron icon */
+
+  &::after {
+    content: "";
+
+    @include glyph-chevron-down($blue);
+
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 100ms ease;
+  }
+
+  &[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &[disabled]::after {
+    opacity: 0.3;
+  }
+
+  &[aria-expanded="true"] {
+    @include header-block-border($link-color);
+  }
+}
+
+/**
+ * Loading state for the collapse toggle
+ */
+
+.collapse-toggle.loading {
+  @include header-block-border($link-color);
+}
+
+.collapse-toggle::before {
+  content: "";
+  width: calc(100% + 0.5rem);
+  height: $border-width;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-right: 0.5rem solid $white;
+  background-color: $red;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.collapse-toggle:not(.loading)[aria-expanded="true"]::before {
+  transition:
+    opacity 250ms 100ms ease,
+    transform 0ms 350ms linear;
+}
+
+.collapse-toggle.loading::before {
+  transform-origin: left;
+  transition: transform 15000ms cubic-bezier(0.02, 0.96, 0.37, 0.81);
+  transform: translateX($border-width * 2);
+  opacity: 1;
+}
+
+.collapse-toggle.loading[aria-expanded="true"]::before {
+  transform: scaleX(1);
+  transition: transform $collapse-duration $collapse-timing-function;
+}

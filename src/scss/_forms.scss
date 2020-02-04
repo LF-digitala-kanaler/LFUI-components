@@ -1,0 +1,277 @@
+@import "bootstrap/scss/_forms.scss";
+
+/**
+ * Label styles
+ */
+
+.label,
+label,
+legend {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  font-family: $font-family-sans-serif;
+
+  @include font-smoothing;
+}
+
+legend {
+  display: inline-block;
+  width: auto;
+  font-size: inherit;
+}
+
+/**
+ * Utility class to align inline items with input fields if they have labels.
+ * Label height 23px + label margin bottom .3rem = 27.8px;
+ */
+
+.form-align {
+  margin-top: 27.8px;
+}
+
+/**
+ * Hide the number arrows from number and date inputs
+ */
+
+input[type="number"],
+input[type="date"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+// Bootstrap issue https://github.com/twbs/bootstrap/issues/18842
+// See base/_variables.scss
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"] {
+  height: $input-height;
+}
+
+input[disabled] {
+  cursor: $cursor-disabled;
+}
+
+/**
+ * Base
+ *
+ * 1. Fix bleading background issue
+ * 2. Make sure it overrides validation states
+ */
+
+.form-control {
+  font-weight: normal;
+  line-height: $input-line-height;
+  border-width: 0 0 $input-btn-border-width 0;
+  transition: border-color 60ms linear;
+  background-clip: inherit; /* 1 */
+  padding: $input-padding;
+  min-height: $input-height;
+}
+
+.form-control {
+  &:disabled + .input-group-append,
+  &[readonly] + .input-group-append {
+    background-color: $input-disabled-bg;
+    opacity: 1;
+    cursor: not-allowed;
+
+    span,
+    div {
+      cursor: not-allowed;
+      background-color: $input-disabled-bg;
+      opacity: 1;
+    }
+  }
+}
+
+.form-control:focus {
+  border-color: $input-focus-border-color; /* 2 */
+
+  + .input-group-append,
+  + .input-group-append > .input-group-text {
+    border-color: $input-focus-border-color;
+  }
+}
+
+.form-control:hover:not([disabled]) {
+  background: $input-hover;
+  transition: background 0.2s;
+
+  + .input-group-append,
+  + .input-group-append > .input-group-text {
+    background: $input-hover;
+    transition: background 0.2s;
+  }
+}
+
+/**
+ * Design help text and feedback
+ */
+
+.form-text,
+.form-control-feedback {
+  margin-top: 4px;
+  font-size: $font-size-sm;
+  line-height: 1.2;
+}
+
+.form-control-feedback {
+  font-weight: bold;
+  transition: color 60ms linear;
+  font-family: $font-family-sans-serif;
+
+  @include font-smoothing;
+}
+
+// Overwrite Bootstrap's non-vertically-centered shit.
+.col-form-label {
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  margin-bottom: 0; // Override the `<label>` default
+  line-height: $line-height-base;
+  height: $input-height;
+}
+
+.form-control-plaintext {
+  padding: $input-padding-y 0;
+  border-width: 1px 0;
+  line-height: 1.25;
+}
+
+/**
+ * :invalid mozilla styling (hides box shadow in Firefox when invalid)
+ */
+
+.form-control:invalid {
+  box-shadow: none;
+}
+
+/**
+ * Remove Bootstrap default validation graphics
+ */
+
+.form-control-success,
+.form-control-warning,
+.form-control-danger {
+  padding-right: $input-padding-right;
+}
+
+.has-success .form-control,
+.has-warning .form-control,
+.has-danger .form-control {
+  background-image: none;
+}
+
+/**
+ * Add a "valid" control state
+ */
+
+.has-valid {
+  @include form-control-validation($blue);
+
+  .form-control,
+  .form-control-valid {
+    background-color: $cloud;
+
+    &:hover {
+      background: $input-valid-hover;
+      transition: background 0.2s;
+
+      + .input-group-append,
+      + .input-group-append > .input-group-text {
+        background: $input-valid-hover;
+      }
+    }
+  }
+
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $cloud;
+  }
+
+  .form-control-feedback {
+    color: $body-color;
+  }
+}
+
+.has-danger {
+  @include form-control-validation($red);
+
+  .form-control:focus {
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      border-color: $red;
+    }
+  }
+
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $input-bg;
+    border-color: $red;
+  }
+}
+
+.has-warning {
+  @include form-control-validation($orange);
+
+  .form-control:focus {
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      border-color: $orange;
+    }
+  }
+
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $input-bg;
+    border-color: $orange;
+  }
+}
+
+.has-success {
+  @include form-control-validation($green);
+
+  .form-control:focus {
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      border-color: $green;
+    }
+  }
+
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $input-bg;
+    border-color: $green;
+  }
+}
+
+/**
+ * Date input (hide Webkits default calendar junk)
+ */
+
+.form-control[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.form-control[type="date"]::-webkit-input-placeholder {
+  visibility: hidden !important;
+}
+
+.form-check {
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+}

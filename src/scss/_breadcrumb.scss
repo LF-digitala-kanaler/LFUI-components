@@ -1,0 +1,23 @@
+@import "bootstrap/scss/_breadcrumb.scss";
+
+.breadcrumb {
+  cursor: default;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-sm;
+}
+
+.breadcrumb-item::before {
+  @include glyph-chevron-right($breadcrumb-divider-color);
+
+  position: relative;
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+  margin: 0 -0.25rem 0 0.625rem;
+  bottom: -0.1875rem;
+}
+
+.breadcrumb-transparent {
+  background: none;
+  padding: 0;
+}

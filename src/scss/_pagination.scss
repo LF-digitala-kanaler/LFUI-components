@@ -1,0 +1,289 @@
+@import "bootstrap/scss/_pagination.scss";
+
+.pagination {
+  font-family: $font-family-sans-serif;
+}
+
+.page-link,
+.page-link:hover,
+.page-link:focus,
+.page-link:active {
+  background-image: none;
+  font-weight: bold;
+  margin-left: 2px;
+  background-color: $pagination-bg;
+
+  @include font-smoothing;
+}
+
+.pagination:not(.pagination-progress):not(.pagination-flex):not(.pagination-colored) .page-item:not(.active) {
+  .page-link:hover,
+  .page-link:focus {
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
+    cursor: pointer;
+    color: $pagination-hover-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      bottom: 7px;
+      right: 11px;
+      margin: auto;
+      background: $pagination-hover-color;
+      height: 2px;
+    }
+  }
+}
+
+.pagination {
+  .page-item.active ~ .page-item {
+    .page-link {
+      &,
+      &:focus {
+        color: $smoke !important;
+        font-weight: bold;
+        pointer-events: none;
+
+        &::after {
+          content: none !important;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * When the pagination is not used for navigation but only to show what step the
+ * user is in a given flow. Often when it's not allowed to go back.
+ */
+
+.pagination-static {
+  pointer-events: none;
+}
+
+// Colored
+// TODO: This was marked deprecated in 5.3.0. Code can be removed in the release after.
+.pagination-colored {
+  .page-item {
+    .page-link {
+      background-color: $green;
+      color: $white;
+
+      &:hover {
+        color: $white !important;
+        background-color: $green !important;
+      }
+    }
+  }
+
+  .page-item.active {
+    .page-link {
+      background-image: none;
+      background-color: $blue;
+      color: $white;
+      flex-grow: 1;
+      padding: $pagination-padding-y $pagination-padding-x;
+      min-width: 35px;
+
+      &:hover {
+        background-color: $blue !important;
+        color: $white;
+        cursor: default;
+      }
+    }
+  }
+
+  .page-item.active ~ .page-item {
+    .page-link {
+      background-color: $white;
+      border-top-color: #d9d9d9;
+      color: #d9d9d9;
+      font-weight: bold;
+      pointer-events: none;
+      padding: $pagination-padding-y $pagination-padding-x;
+      min-width: 35px;
+    }
+  }
+}
+
+// "Stretchy"
+
+.pagination-flex {
+  display: flex;
+  align-items: stretch;
+
+  .page-item {
+    flex-grow: 1;
+
+    &:last-of-type {
+      .page-link {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+
+    &:not(.active) {
+      .page-link:hover {
+        background-color: $white;
+        color: $blue;
+      }
+    }
+
+    .page-link {
+      width: calc(100% - 2px);
+      margin-right: 2px;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    a.page-link:hover,
+    a.page-link:focus {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 11px;
+        bottom: 7px;
+        right: 11px;
+        margin: auto;
+        background: $blue;
+        height: 2px;
+        width: 12px;
+      }
+    }
+  }
+}
+
+/**
+ * A version with styling from the progress component
+ */
+// TODO: This was marked deprecated in 5.3.0. Code can be removed in the release after.
+
+.pagination-progress {
+  display: flex;
+  font-size: $font-size-sm;
+  align-items: stretch;
+}
+
+.pagination-progress .page-item {
+  flex-grow: 1;
+
+  .page-link {
+    width: calc(100% - 4px);
+    padding: 10px 0 0;
+    border: none;
+    border-top: 10px solid $login-logout-blue;
+    background-color: transparent;
+    color: #6d6e71;
+    text-align: left;
+    font-weight: normal;
+
+    &:hover {
+      cursor: pointer;
+      border-color: darken($login-logout-blue, 14%);
+      color: darken(#6d6e71, 10%);
+    }
+
+    &:active,
+    &:active:hover,
+    &:focus:hover {
+      border-color: $login-logout-blue;
+      opacity: 0.6;
+    }
+  }
+
+  &.active {
+    flex-grow: 1;
+    display: inline;
+
+    .page-link {
+      color: $black;
+      background-color: transparent;
+      font-weight: bold;
+    }
+
+    &:hover {
+      cursor: auto;
+      border-color: $login-logout-blue;
+    }
+  }
+}
+
+// Make all pages after the .active one a certain style
+.pagination-progress {
+  .page-item.active ~ .page-item {
+    .page-link {
+      border-top-color: #d9d9d9;
+      color: $black;
+      font-weight: normal;
+      pointer-events: none;
+    }
+  }
+}
+
+// Static styling
+.pagination-progress.pagination-static {
+  .page-item.active {
+    .page-link {
+      border-color: $login-logout-blue;
+    }
+  }
+}
+
+/**
+ * Sizes, not supported yet
+ */
+
+.pagination-sm .page-link,
+.pagination-lg .page-link {
+  font-size: 1rem;
+}
+
+/**
+ * "Your are on this step" thing
+ */
+// TODO: This was marked deprecated in 5.3.0. Code can be removed in the release after.
+
+.pagination-steps {
+  @extend .breadcrumb;
+
+  border: none;
+  font-size: $font-size-lg;
+  font-weight: bold;
+  list-style: inside decimal;
+  color: #6d6e71;
+
+  @include font-smoothing;
+}
+
+.pagination-steps .page-item {
+  background: none;
+  display: list-item;
+  float: left;
+
+  + .page-item {
+    list-style-type: decimal;
+    margin-left: 2em;
+  }
+
+  &::before {
+    content: none;
+    background-image: none;
+  }
+
+  strong {
+    font-weight: normal;
+
+    @include font-smoothing(auto);
+  }
+
+  &.active {
+    color: $red;
+
+    strong {
+      font-weight: bold;
+      color: $blue;
+    }
+  }
+}

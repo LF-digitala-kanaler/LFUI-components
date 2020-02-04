@@ -1,0 +1,172 @@
+.price-box,
+.price-box-bottom {
+  background-color: $white;
+}
+
+.price-box {
+  .price-box-header {
+    padding: 1rem;
+  }
+
+  .your-price {
+    color: $blue;
+    line-height: 1.3;
+    font-size: 1.125rem;
+    font-family: $font-family-sans-serif;
+    font-weight: bold;
+
+    @include font-smoothing;
+  }
+
+  .price-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    display: block;
+    font-size: 3.3rem;
+    font-weight: bold;
+    font-family: $font-family-sans-serif;
+    margin: 0 1rem 0 0;
+    color: $blue;
+    float: left;
+    line-height: 0.9;
+    white-space: nowrap;
+
+    @include font-smoothing;
+  }
+
+  .price-secondary {
+    display: inline-block;
+    margin: auto 0 0;
+    white-space: nowrap;
+
+    > .year {
+      @extend .text-muted;
+
+      margin: 0;
+      font-weight: normal;
+      font-family: $font-family-base;
+      font-size: $font-size-md;
+    }
+
+    > .month {
+      color: $blue;
+      margin-bottom: 0;
+      font-family: $font-family-sans-serif;
+      line-height: 1.2;
+      font-size: 1.4375rem;
+      font-weight: bold;
+
+      @include font-smoothing;
+
+      > .red-kr {
+        color: $red;
+      }
+    }
+  }
+}
+
+.price-box-content {
+  padding-bottom: 1rem;
+
+  label {
+    margin-bottom: 0;
+  }
+
+  p.price-box-content-text,
+  span.price-box-content-text {
+    margin: 0;
+    font-size: $font-size-md;
+    font-family: $font-family-base;
+  }
+}
+
+/**
+ * Price-box-bottom
+ **/
+
+.price-box-bottom {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  z-index: 40;
+  border-top: $navy solid 2px;
+  box-shadow: 0 0 15px 4px $smoke;
+  cursor: pointer;
+  transition: bottom 360ms ease-in-out;
+
+  .price-box-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .your-price {
+      font-size: 1.125rem;
+      line-height: 1.3;
+      font-family: $font-family-sans-serif;
+      font-weight: bold;
+      color: $blue;
+      margin-top: auto !important;
+
+      @include font-smoothing;
+    }
+
+    .price-container {
+      margin-bottom: 0;
+    }
+
+    .price {
+      font-size: 36px;
+    }
+
+    .price-secondary {
+      .year {
+        display: none;
+      }
+    }
+  }
+
+  .price-box-chevron {
+    @include glyph-chevron-up($blue);
+
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: 0;
+    left: 0;
+    align-self: center;
+    background-size: 18px 12px;
+    background-position: center center;
+
+    svg {
+      position: absolute;
+    }
+
+    color: $blue;
+  }
+
+  .price-box-content {
+    padding-top: 1rem;
+  }
+}
+
+.price-box-bottom.active {
+  transition: bottom 360ms ease-in-out;
+
+  .price-box-chevron {
+    @include glyph-chevron-down($blue);
+
+    // align-self: center;
+    width: 32px;
+    height: 32px;
+    background-size: 18px 12px;
+    // background-position: center center;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

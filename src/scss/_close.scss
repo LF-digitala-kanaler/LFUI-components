@@ -1,0 +1,100 @@
+@import "bootstrap/scss/_close.scss";
+
+/**
+ * The Bootstrap .close is terrible. Let's override it
+ *
+ * Todo: redesign?
+ */
+
+.close.close {
+  //position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  transition: opacity 100ms ease;
+  z-index: 1;
+  font-size: 0;
+  opacity: 1;
+  margin-right: -3px;
+}
+
+.close.close,
+.close.close:hover,
+.close.close:focus,
+.close.close:active {
+  opacity: 0.7;
+  color: $close-color;
+}
+
+.close.close:hover {
+  opacity: 1;
+}
+
+.close.close:active {
+  opacity: 0.6;
+  transition: none;
+}
+
+.close.close::before,
+.close.close::after {
+  content: "";
+  width: 18px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1px 0 0 -9px;
+  background: currentColor;
+}
+
+.close.close::after {
+  width: 2px;
+  height: 18px;
+  margin: -9px 0 0 -1px;
+}
+
+/**
+* Large button
+*/
+
+.close.close-large,
+.close.close-large:hover,
+.close.close-large:focus,
+.close.close-large:active {
+  width: 26px;
+  height: 26px;
+  margin-right: -4px;
+  opacity: 0.3;
+}
+
+.close.close-large:hover {
+  opacity: 0.8;
+}
+
+.close.close-large:active {
+  opacity: 0.4;
+  transition: none;
+}
+
+.close.close-large::before,
+.close.close-large::after {
+  width: 26px;
+  height: 2px;
+  margin: -1px 0 0 -13px;
+}
+
+.close.close-large::after {
+  width: 2px;
+  height: 26px;
+  margin: -13px 0 0 -1px;
+}
+
+/**
+* Position helper
+*/
+
+.close.close-absolute {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}

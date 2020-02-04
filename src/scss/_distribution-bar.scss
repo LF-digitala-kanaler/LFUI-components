@@ -1,0 +1,180 @@
+/**
+ * Much like a progress bar
+ */
+
+.distribution {
+  position: relative;
+  font-family: $font-family-base;
+}
+
+.distribution-bar {
+  display: flex;
+  justify-content: flex-start;
+  height: 2em;
+  background-color: $white;
+}
+
+.distribution-value {
+  font-family: $font-family-sans-serif;
+  width: 0;
+  position: relative;
+  text-align: center;
+  color: $white;
+  line-height: 2;
+  transition:
+    color $distribution-duration cubic-bezier(0.7, 0.75, 0.3, 1),
+    width $distribution-duration cubic-bezier(0.7, 0.75, 0.3, 1);
+
+  @include font-smoothing(auto);
+}
+
+.distribution-value:not(:last-child) {
+  margin-right: 4px;
+}
+
+@for $i from 2 through 10 {
+  .distribution-value:nth-child(#{$i}) {
+    transition-delay: $distribution-duration * ($i - 1);
+  }
+}
+
+.distribution-value.distribution-navy:nth-child(1n),
+.distribution-value:nth-child(4n+1),
+.distribution-title.distribution-navy:nth-child(1n),
+.distribution-title:nth-of-type(4n+1) {
+  @include distribution-color-value($navy, $white);
+}
+
+.distribution-value.distribution-blue:nth-child(1n),
+.distribution-value:nth-child(4n+2),
+.distribution-title.distribution-blue:nth-child(1n),
+.distribution-title:nth-of-type(4n+2) {
+  @include distribution-color-value($blue, $white);
+}
+
+.distribution-value.distribution-sky:nth-child(1n),
+.distribution-value:nth-child(4n+3),
+.distribution-title.distribution-sky:nth-child(1n),
+.distribution-title:nth-of-type(4n+3) {
+  @include distribution-color-value-striped($stripes-alert-info, $alert-info-bg, $alert-info-border, $alert-info-text);
+}
+
+.distribution-value.distribution-baby:nth-child(1n),
+.distribution-value:nth-child(4n+4),
+.distribution-title.distribution-baby:nth-child(1n),
+.distribution-title:nth-of-type(4n+4) {
+  @include distribution-color-value($baby, $alert-info-text);
+}
+
+.distribution-value.distribution-red:nth-child(1n),
+.distribution-title.distribution-red:nth-child(1n) {
+  @include distribution-color-value($red, $white);
+}
+
+/**
+ * Pointed separator
+ */
+
+.distribution-value.distribution-value-with-pointer {
+  margin-right: 0;
+  position: relative;
+
+  &::after,
+  &::before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &::after {
+    border-color: transparent;
+    border-left-color: $blue;
+    border-width: 16px 0 16px 10px;
+    margin-top: -16px;
+  }
+
+  &::before {
+    border-color: transparent;
+    border-left-color: white;
+    border-width: 24px 0 24px 15px;
+    margin-top: -24px;
+  }
+}
+
+/**
+ * Label and description
+ */
+
+.distribution-bar-labeled {
+  margin-top: 3rem;
+}
+
+.distribution-label {
+  padding: 0.2em 1em 0.8rem;
+  position: absolute;
+  bottom: 46px;
+  right: 0;
+  pointer-events: none;
+  color: $gray;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  transform: translate(50%, 5px);
+  z-index: 1;
+  transition:
+    transform 200ms cubic-bezier(0.29, 0.86, 0.58, 1.35),
+    opacity 150ms linear;
+}
+
+.distribution-label::before {
+  @include glyph-arrow-right($gray);
+
+  content: "";
+  display: block;
+  width: 18px;
+  height: 10px;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  left: 52%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.distribution-legend {
+  @include clearfix;
+
+  margin: 1rem 0;
+}
+
+.distribution-title {
+  @extend dt;
+}
+
+.distribution-description {
+  @extend dd;
+}
+
+/**
+ * Some ready-to-use striped classes
+ */
+
+.distribution-title.distribution-green-stripes,
+.distribution-value.distribution-green-stripes {
+  @include distribution-color-value-striped($stripes-alert-success, $alert-success-bg, $alert-success-border, $alert-success-text);
+}
+
+.distribution-title.distribution-yellow-stripes,
+.distribution-value.distribution-yellow-stripes {
+  @include distribution-color-value-striped($stripes-alert-warning, $alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
+
+.distribution-title.distribution-red-stripes,
+.distribution-value.distribution-red-stripes {
+  @include distribution-color-value-striped($stripes-alert-danger, $alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
