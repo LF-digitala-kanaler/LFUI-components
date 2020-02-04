@@ -2,8 +2,8 @@ import Danger from "./danger.html";
 import Warning from "./warning.html";
 import Success from "./success.html";
 import Info from "./info.html";
-import WithButton from "./with-button.html";
-import WithCloseButton from "./with-close-button.html";
+import WithButton from "./withButton.html";
+import WithCloseButton from "./withCloseButton.html";
 
 export default { title: 'Alert' }; // Component title
 
