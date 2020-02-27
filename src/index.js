@@ -1,4 +1,4 @@
-// build for dist
+// This is what will be build to dist and used in other projects
 
 import './js/components/utilities';
 

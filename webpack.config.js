@@ -16,11 +16,14 @@ const importer = require('node-sass-import-once');
  */
 const  moduleImporter = require('sass-module-importer');
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    lf: './src/index.js',
+    docs: './src/docs/index.js'
+  },
   performance: { hints: false } ,
   output: {
     libraryTarget: 'umd',
-    filename: 'lf.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   externals: {
@@ -32,16 +35,17 @@ module.exports = {
     }
   },
   plugins: [
+    // copy html files to be used in LFUI-website to show examples
     new CopyPlugin([
       { 
-        from: 'src/components/',
+        from: 'src/docs/',
         to: 'html/',
         ignore: ['*.js'] // ignore stories 
       },
   
     ]),
     new MiniCssExtractPlugin({
-        filename: 'lf.css'
+        filename: '[name].css'
     }),
     new OptimizeCssAssetsPlugin({
       

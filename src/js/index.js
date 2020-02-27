@@ -6,7 +6,7 @@ import jQuery from 'jquery';
 window.$ = $;
 window.jQuery = jQuery;
 
-console.log(jQuery)
+
 
 import './components/utilities';
 import './../icon';
