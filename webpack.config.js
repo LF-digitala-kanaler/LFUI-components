@@ -24,7 +24,8 @@ module.exports = {
   output: {
     libraryTarget: 'umd',
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    globalObject: 'this'
   },
   externals: {
     jquery: {
