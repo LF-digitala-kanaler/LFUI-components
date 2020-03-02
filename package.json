@@ -1,4 +1,7 @@
 {
+  "name": "lfui-components",
+  "version": "7.0.0",
+  "license": "ISC",
   "dependencies": {
     "bootstrap": "4.3.1",
     "eonasdan-bootstrap-datetimepicker": "https://github.com/LF-digitala-kanaler/bootstrap-datetimepicker/tarball/release/4.17.52",
