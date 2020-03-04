@@ -35,7 +35,7 @@ const timepickerExample = () => {
     });
 }
 
-const disabledDatesExample = () => {
+const  disabledDatesExample = () => {
   $('#datetimepicker-disabled-input').datetimepicker({
       format: 'YYYY-MM-DD',
       locale: 'sv',
@@ -56,4 +56,5 @@ const disabledDatesExample = () => {
       $('.datepicker button').removeClass('active');
     });
 }
-export { datepickerExample , timepickerExample, disabledDatesExample};
+
+export default {disabledDatesExample,timepickerExample,datepickerExample}

@@ -1033,3 +1033,14 @@ a.btn:active {
     }
   }
 }
+
+.btn-sm-block {
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 100%;
+
+    + .btn-sm-block {
+      margin-top: $btn-block-spacing-y;
+    }
+  }
+}
