@@ -57,4 +57,4 @@ const  disabledDatesExample = () => {
     });
 }
 
-export default {disabledDatesExample,timepickerExample,datepickerExample}
+export  {disabledDatesExample,timepickerExample,datepickerExample}
