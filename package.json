@@ -1,7 +1,7 @@
 {
   "name": "lfui-components",
   "version": "7.0.0",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "4.3.1",
     "eonasdan-bootstrap-datetimepicker": "https://github.com/LF-digitala-kanaler/bootstrap-datetimepicker/tarball/release/4.17.52",
@@ -55,7 +55,10 @@
     "build:icons": "cd src/icon && npm run build",
     "build-storybook": " npm run build:icons && build-storybook",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "version": "npm version `auto version` -m 'Bump version to: %s [skip ci]'",
+    "publish": "git push --follow-tags --set-upstream origin $branch",
+    "release": "auto changelog && npm run version && auto release"
   },
   "browserslist": {
     "production": [
