@@ -13,14 +13,15 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@storybook/addon-a11y": "^5.3.13",
-    "@storybook/addon-actions": "^5.3.13",
-    "@storybook/addon-backgrounds": "^5.3.13",
-    "@storybook/addon-links": "^5.3.13",
-    "@storybook/addon-viewport": "^5.3.13",
+    "@storybook/addon-a11y": "^5.3.14",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-backgrounds": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
     "@storybook/addon-storyshots": "^5.3.14",
     "@storybook/addon-storyshots-puppeteer": "^5.3.14",
-    "@storybook/html": "^5.3.13",
+    "@storybook/addon-viewport": "^5.3.14",
+    "@storybook/html": "^5.3.14",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
@@ -65,13 +66,12 @@
     "test": "jest --no-cache"
   },
   "jest": {
-    
     "transform": {
       "^.+\\.stories\\.js?$": "@storybook/addon-storyshots/injectFileName",
       "^.+\\.js?$": "babel-jest"
     },
     "transformIgnorePatterns": [
-    "node_modules/(?!(bootstrap)/)"
+      "node_modules/(?!(bootstrap)/)"
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|html)$": "<rootDir>/src/test/__mocks__/fileMock.js",
@@ -81,9 +81,10 @@
       "<rootDir>/.jest/register-context.js"
     ],
     "testPathIgnorePatterns": [
-      "node_modules", ".cache", "public"
+      "node_modules",
+      ".cache",
+      "public"
     ]
-    
   },
   "browserslist": {
     "production": [
