@@ -42,7 +42,10 @@ module.exports = {
         to: 'html/',
         ignore: ['*.js'] // ignore stories 
       },
-  
+      { 
+        from: 'src/data/componentsStatus.json',
+        to: 'data/'
+      },
     ]),
     new MiniCssExtractPlugin({
         filename: '[name].css'

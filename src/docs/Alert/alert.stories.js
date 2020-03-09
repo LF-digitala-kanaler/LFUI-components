@@ -5,7 +5,16 @@ import Info from "./info.html";
 import WithButton from "./withButton.html";
 import WithCloseButton from "./withCloseButton.html";
 
-export default { title: 'Alert' }; // Component title
+
+
+export default { 
+  title: 'Alert',
+  
+}; // Component title
+
+/**
+ * Use `Danger` to highlight key info with a predefined status.
+ */
 
 export const danger = () => `${Danger}`;
 export const warning = () => `${Warning}`;

@@ -1,4 +1,4 @@
- 
+
 const datepickerExample = () => {
   $('#datepicker').datetimepicker({
     locale: 'sv',
