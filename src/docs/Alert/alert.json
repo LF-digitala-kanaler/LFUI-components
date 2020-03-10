@@ -1,8 +1,0 @@
-{
-  "component": "Alert",
-  "vanilla": {
-    "new": false,
-    "deprectated": false,
-    "changedInVersion":[ "5.2.0", "4.2.0", "3.4.0"]
-  }
-}
