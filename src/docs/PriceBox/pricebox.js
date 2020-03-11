@@ -1,8 +1,8 @@
 const priceBoxExample = () => {
-  const priceBoxBottom = document.getElementsByClassName("price-box-bottom")[0];
-  priceBoxBottom.addEventListener("click", function() {
-    priceBoxBottom.classList.toggle('active');
-  })
+  $('.price-box-bottom').click(function() {
+    $(this).toggleClass('active')
+  });
+
 }
 
 export {priceBoxExample}
