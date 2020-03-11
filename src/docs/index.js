@@ -1,6 +1,7 @@
 import {disabledDatesExample,timepickerExample,datepickerExample} from './Datepicker/datepicker';
 import {selectExample} from './Dropdown/dropdown';
 import {calloutExample} from './Callout/callout';
+import {priceBoxExample} from './PriceBox/pricebox';
 
 // run your functions 
 disabledDatesExample();
@@ -10,3 +11,5 @@ datepickerExample();
 selectExample();
 
 calloutExample();
+
+priceBoxExample();
