@@ -59,7 +59,7 @@
     "start": "npm run build:icons && start-storybook -p 6006",
     "build:icons": "cd src/icon && npm run build",
     "build-storybook": " npm run build:icons && build-storybook",
-    "build": "webpack --mode production",
+    "build": "npm run build:icons && webpack --mode production",
     "dev": "webpack --mode development",
     "version": "npm version `auto version` -m 'Bump version to: %s [skip ci]'",
     "publish": "git push --follow-tags --set-upstream origin $branch",
