@@ -4,6 +4,8 @@ import {calloutExample} from './Callout/callout';
 import {priceBoxExample} from './PriceBox/pricebox';
 import {sliderExample} from './Slider/slider';
 import {panelExample} from './Panel/panel';
+import {mapExample} from './GraphsandCharts/graphsandcharts';
+
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -18,3 +20,5 @@ priceBoxExample();
 sliderExample();
 
 panelExample();
+
+mapExample();
