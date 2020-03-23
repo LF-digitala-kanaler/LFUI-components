@@ -1,5 +1,8 @@
- <style>
 
+.pie-chart {
+  position: relative;
+  display: inline-block;
+}
 
 .legend rect {
   cursor: pointer;
@@ -32,6 +35,20 @@ rect {
 .axis text {
   fill: #969696;
   font: 10px Arial;
+}
+
+.lineChart2 .valueLine,
+.lineChart2 .area {
+  opacity: 0;
+}
+
+.lineChart2 .valueLine.active,
+.lineChart2 .area.active {
+  opacity: 1;
+}
+
+.lineChart2 .legend:not(.active) {
+  fill: #d9d9d9 !important;
 }
 
 .axis path,
@@ -71,7 +88,12 @@ rect {
   stroke-width: 2px;
 }
 
+.lineChart .mouse-over-effects {
+  cursor: pointer;
+}
 
+.lineChart .y.axis .tick line,
+.lineChart2 .y.axis .tick line,
 .barChart .y.axis .tick line {
   opacity: 0.1;
 }
@@ -89,5 +111,10 @@ rect {
   stroke-width: 0;
 }
 
-</style>
- <svg class="barChart"></svg>
+svg #map {
+  fill: #ffffff;
+}
+
+#map .active {
+  stroke: #fff;
+} 
