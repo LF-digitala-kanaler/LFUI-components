@@ -126,6 +126,10 @@ module.exports = {
           }
         ]
       },
+      {
+      test: /\.csv$/,
+      use: 'dsv-loader'
+    },
     ]
   }
   

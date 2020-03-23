@@ -65,7 +65,10 @@ module.exports = async ({
         path.resolve(__dirname, '../node_modules/eonasdan-bootstrap-datetimepicker'),
       ],
     },
-    
+    {
+      test: /\.csv$/,
+      use: 'dsv-loader'
+    },
   );
   
   // Return the altered config
