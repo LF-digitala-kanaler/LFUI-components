@@ -5,7 +5,7 @@ import {priceBoxExample} from './PriceBox/pricebox';
 import {sliderExample} from './Slider/slider';
 import {panelExample} from './Panel/panel';
 import {mapExample} from './GraphsandCharts/graphsandcharts';
-
+import {uploadExample} from './Upload/upload';
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -20,5 +20,7 @@ priceBoxExample();
 sliderExample();
 
 panelExample();
+
+uploadExample();
 
 mapExample();
