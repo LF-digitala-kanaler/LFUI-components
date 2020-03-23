@@ -6,6 +6,8 @@ import {sliderExample} from './Slider/slider';
 import {panelExample} from './Panel/panel';
 import {mapExample} from './GraphsandCharts/graphsandcharts';
 import {uploadExample} from './Upload/upload';
+import {timelineExample} from './Timeline/timeline';
+
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -22,5 +24,5 @@ sliderExample();
 panelExample();
 
 uploadExample();
-
+timelineExample();
 mapExample();
