@@ -33,7 +33,7 @@
       }
     },
     {
-      "component": "Progressbar",
+      "component": "Progress-bar",
       "bootstrap": {
         "new": false,
         "deprectated": false,
