@@ -39,6 +39,14 @@
         "deprectated": false,
         "changedInVersion":[ "3.1.0"]
       }
+    },
+    {
+      "component": "Avatar",
+      "bootstrap": {
+        "new": false,
+        "deprectated": false,
+        "changedInVersion":[ "4.2.0"]
+      }
     }
   ]
 }
