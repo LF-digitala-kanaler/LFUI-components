@@ -1,19 +1,8 @@
+import ProgressBar from "./progressBar.html";
 
-// import Shortcut from "./datepicker.html";
+export default { title: 'Progress Bar' }; 
 
-// import {datepickerExample, timepickerExample, disabledDatesExample} from "./datepicker"
-
-// export default {
-//   title: 'Datepicker'
-// };
-
-// export const datepicker = () => {
-//   useEffect(() => {
-//    datepickerExample()
-//   }, []);
-//   return Datepicker
-  
-// };
+export const progressBar = () => `${ProgressBar}`;
 
 
 
