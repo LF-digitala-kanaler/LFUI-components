@@ -36,7 +36,7 @@
       "component": "Progress-bar",
       "bootstrap": {
         "new": false,
-        "deprectated": false,
+        "deprectated": true,
         "changedInVersion":[ "3.1.0"]
       }
     },
