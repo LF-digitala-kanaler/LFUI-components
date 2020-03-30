@@ -1,10 +1,9 @@
 const path = require('path');
 const  moduleImporter = require('sass-module-importer');
-const custom = require('../webpack.config.js');
+
 // Export a function. Accept the base config as the only param.
 module.exports = async ({
   config,
-  mode
 }) => {
   // `mode` has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
