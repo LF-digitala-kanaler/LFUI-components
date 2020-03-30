@@ -1,7 +1,7 @@
-import Links from "./links.html";
-import List from "./linkList.html";
+import Primary from "./primary.html";
+import Regular from "./regular.html";
 
 export default { title: 'Links' }; 
 
-export const links = () => `${Links}`;
-export const list = () => `${List}`;
+export const primary = () => `${Primary}`;
+export const regular = () => `${Regular}`;
