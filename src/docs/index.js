@@ -7,7 +7,7 @@ import {panelExample} from './Panel/panel';
 import {mapExample} from './GraphsandCharts/graphsandcharts';
 import {uploadExample} from './Upload/upload';
 import {timelineExample} from './Timeline/timeline';
-
+import {navbarExample} from './Navbar/navbar';
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -26,3 +26,5 @@ panelExample();
 uploadExample();
 timelineExample();
 mapExample();
+
+navbarExample();

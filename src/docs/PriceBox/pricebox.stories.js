@@ -1,17 +1,17 @@
-import PriceBox from "./pricebox.html";
-import PriceBoxBottom from "./smallDevices.html";
+import Desktop from "./desktop.html";
+import Responsive from "./responsive.html";
 import { useEffect } from "@storybook/client-api";
 import {priceBoxExample} from "./pricebox"
 
 export default { title: 'Price box' }; 
 
-export const priceBox = () => `${PriceBox}`;
+export const desktop = () => `${Desktop}`;
 
-export const priceBoxBottom = () => {
+export const responsive = () => {
   useEffect(() => {
    priceBoxExample()
   }, []);
-  return PriceBoxBottom
+  return Responsive
   
 };
 

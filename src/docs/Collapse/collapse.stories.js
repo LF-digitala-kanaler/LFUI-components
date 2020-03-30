@@ -1,5 +1,7 @@
-import Collapse from "./collapse.html";
+import White from "./white.html";
+import Grey from "./grey.html";
 
 export default { title: 'Collapse' }; 
 
-export const collapse = () => `${Collapse}`;
+export const white = () => `${White}`;
+export const grey = () => `${Grey}`;
