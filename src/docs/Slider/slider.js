@@ -55,7 +55,14 @@ const sliderExample = () => {
     $(this).css('background', '-webkit-linear-gradient(left, #005aa0 0%, #005aa0 ' + percent + '%, #d9d9d9 ' + percent + '%)');
 
     $('#lf-slider-value-4').val(this.value);
-  });  
+  });
+  $('#lf-slider-value-4').on('input', function () {
+    $('#lf-slider-4').val(this.value);
+
+    var percent = Math.ceil(((this.value - $('#lf-slider-4').attr('min')) / ($('#lf-slider-4').attr('max') - $('#lf-slider-4').attr('min'))) * 100);
+
+    $('#lf-slider-4').css('background', '-webkit-linear-gradient(left, #005aa0 0%, #005aa0 ' + percent + '%, #d9d9d9 ' + percent + '%)');
+  });
 }
 
 export {sliderExample}
