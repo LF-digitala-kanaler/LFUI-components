@@ -1,20 +1,12 @@
-import Default from "./default.html";
-import Modifier from "./modifier.html";
-import TwoLines from "./twoLines.html";
-import WithIcon from "./withIcon.html";
-
-
+import Alerting from "./alerting.html";
+import LandingPage from "./landingPage.html";
+import Navigational from "./navigational.html";
 
 export default { 
   title: 'Shortcut',
   
-}; // Component title
+}; 
 
-/**
- * Use `Danger` to highlight key info with a predefined status.
- */
-
-export const normal = () => `${Default}`;
-export const modifier = () => `${Modifier}`;
-export const twoLines = () => `${TwoLines}`;
-export const withIcon = () => `${WithIcon}`;
+export const landingPage = () => `${LandingPage}`;
+export const alerting = () => `${Alerting}`;
+export const navigational = () => `${Navigational}`;
