@@ -1,9 +1,9 @@
-import Main from "./main.html";
+import Default from "./default.html";
 import Red from "./red.html";
 
 export default { title: 'Spinner' }; 
 
-export const main = () => `${Main}`;
+export const defaultt = () => `${Default}`;
 export const red = () => `${Red}`;
 
 
