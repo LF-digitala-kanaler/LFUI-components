@@ -47,6 +47,14 @@
         "deprecated": false,
         "changedInVersion":[ "4.2.0"]
       }
+    },
+    {
+      "component": "Tabs",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":[ "6.5.0", "6.3.0", "6.5.0", "5.2.0", "4.2.0", "3.4.0", "3.1.0"]
+      }
     }
   ]
 }

@@ -385,3 +385,52 @@
 .nav-link.primary-link {
   padding-right: 3px !important; // Important here because the gigantic :not rule at the top is pretty reluctant to let anyone else through.
 }
+
+// Overflow scroll for reponsive supprt
+
+.nav-overflow {
+  width: 100%;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0;
+    display: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    position: relative;
+    bottom: -1px;
+  }
+
+  .nav-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: flex-end;
+
+    // needed to hide the scrollbar spacing in safari and chrome on Ios
+
+    .nav-item {
+      @include media-breakpoint-down(md) {
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .nav-page {
+    .nav-item {
+      @include media-breakpoint-down(md) {
+        margin-bottom: -2px;
+      }
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+}
