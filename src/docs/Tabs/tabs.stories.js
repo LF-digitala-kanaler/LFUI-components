@@ -1,5 +1,5 @@
-import InPage from "./In-pageNavigation.html";
-import PageLevel from "./Page-levelNavigation.html";
+import InPage from "./InPageNavigation.html";
+import PageLevel from "./PageLevelNavigation.html";
 
 export default { title: 'Tabs' }; 
 
