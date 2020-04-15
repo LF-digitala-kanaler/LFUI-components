@@ -21,7 +21,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion":[ "3.3.0"]
+        "changedInVersion":[ "6.5.0", "3.3.0"]
       }
     },
     {

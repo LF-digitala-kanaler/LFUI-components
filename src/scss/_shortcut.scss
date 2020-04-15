@@ -192,3 +192,22 @@ button.shortcut-important:disabled {
     margin-right: 1rem;
   }
 }
+
+.shortcut.shortcut-multi-lines {
+  display: flex;
+  font-size: 1rem;
+
+  .icon {
+    margin-right: 1.5rem;
+  }
+}
+
+.shortcut-title {
+  color: $blue;
+  font-size: 1rem;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-xl;
+  }
+}
