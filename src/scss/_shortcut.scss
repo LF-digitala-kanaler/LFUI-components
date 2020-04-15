@@ -197,8 +197,18 @@ button.shortcut-important:disabled {
   display: flex;
   font-size: 1rem;
 
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+  }
+
   .icon {
-    margin-right: 1.5rem;
+    min-width: 24px;
+    margin-right: 1rem;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 1.5rem;
+      min-width: 40px;
+    }
   }
 }
 
