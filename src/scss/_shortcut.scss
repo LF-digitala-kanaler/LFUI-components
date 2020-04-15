@@ -221,3 +221,26 @@ button.shortcut-important:disabled {
     font-size: $font-size-xl;
   }
 }
+.shortcut-landing-page {
+  padding: 0.5rem 3.7rem 0.75rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+
+  @include media-breakpoint-up(md) {
+    text-align: center;
+    padding: 1.3rem 0.5rem 1rem;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+    display: flex;
+
+    .icon {
+      margin-right: 1rem;
+    }
+  }
+}
