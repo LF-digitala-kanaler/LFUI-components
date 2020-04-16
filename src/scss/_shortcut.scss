@@ -238,6 +238,7 @@ button.shortcut-important:disabled {
   @include media-breakpoint-down(sm) {
     align-items: center;
     display: flex;
+    margin-bottom: 0.5rem;
 
     .icon {
       margin-right: 1rem;
