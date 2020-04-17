@@ -13,7 +13,8 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion":["4.2.0"]
+        "changedInVersion":[ "6.4.0", "5.4.0", "5.3.0", "5.2.0", "5.1.0"]
+
       }
     },
     {
@@ -29,7 +30,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion":[ "6.5.0", "6.4.0", "6.3.0"]
+        "changedInVersion":[ "5.2.0", "4.2.0", "3.4.0"]
       }
     },
     {
@@ -54,6 +55,14 @@
         "new": false,
         "deprecated": false,
         "changedInVersion":["6.4.0","6.3.0","6.2.0","6.1.0","5.4.0", "5.3.0", "5.2.2", "5.2.0", "5.1.0", "4.2.0", "4.1.0", "3.4.0", "3.2.0", "3.1.0"]
+      }
+    },
+    {
+      "component": "Navbar",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":["5.3.0", "4.2.0", "4.1.0", "3.1.0"]
       }
     },
     {
@@ -121,11 +130,75 @@
       }
     },
     {
+      "component": "Badge",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":[ "5.4.0", "5.2.0"]
+      }
+    },
+     {
+      "component": "Callout",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":["6.0.0", "5.2.0", "4.1.0"]
+      }
+    },
+    {
+      "component": "Card",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":["5.3.0", "5.2.0", "3.0.0"]
+      }
+    },
+    {
+      "component": "Collapse",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":["5.2.0"]
+      }
+    },
+     {
+      "component": "Breadcrumb",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":[ "4.2.0","3.4.0"]
+      }
+    },
+    {
+      "component": "Modal",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":[ "5.4.0", "5.1.0", "4.2.0","3.4.0", "3.3.0", "3.2.0"]
+      }
+    },
+    {
       "component": "Tabs",
       "bootstrap": {
         "new": false,
         "deprecated": false,
         "changedInVersion":[ "6.5.0", "6.3.0", "6.5.0", "5.2.0", "4.2.0", "3.4.0", "3.1.0"]
+      }
+    },
+    {
+      "component": "Value-box",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":[ "6.5.0", "3.0.0"]
+      }
+    },
+    {
+      "component": "distribution-bar",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion":[ "6.5.0"]
       }
     }
   ]

@@ -69,8 +69,6 @@ const uploadExample = () => {
       if (file.type.match(fileType)) { 
         reader.readAsDataURL(file);
         
-        
-        
         let data = {
           src: '#',
           name: ' ',
