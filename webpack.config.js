@@ -17,8 +17,8 @@ const importer = require('node-sass-import-once');
 const  moduleImporter = require('sass-module-importer');
 module.exports = {
   entry: {
-    lf: './src/index.js',
-    docs: './src/docs/index.js'
+    '/lfui/lfui': './src/index.js',
+    '/docs/docs': './src/docs/index.js'
   },
   performance: { hints: false } ,
   output: {
@@ -40,12 +40,16 @@ module.exports = {
     new CopyPlugin([
       { 
         from: 'src/docs/',
-        to: 'html/',
+        to: 'docs/html/',
         ignore: ['*.js'] // ignore stories 
       },
       { 
         from: 'src/data/componentsStatus.json',
-        to: 'data/'
+        to: 'docs/data/'
+      },
+      { 
+        from: 'src/icon/README.md',
+        to: 'docs/icons/icons.md'
       },
     ]),
     new MiniCssExtractPlugin({
@@ -121,7 +125,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[ext]'
+              name: 'lfui/fonts/[name].[ext]'
             }
           }
         ]

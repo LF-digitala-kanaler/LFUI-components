@@ -14,7 +14,7 @@ exports['index.js'] = icons => dedent`
   }(jQuery));
 `;
 
-exports['README.md'] = directories => dedent`
+exports['README.md'] = (directories, icons) => dedent`
   <!-- NOTICE: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN. SEE \`src/templates.js\` -->
 
   ## Building the icons
