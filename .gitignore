@@ -1,5 +1,7 @@
 node_modules
 .jest-test-results.json
+.jest
 .DS_Store
 .vscode
-.storybook-static
+.storybook
+storybook-static
