@@ -4,6 +4,6 @@
   "main": "index.js",
   "style": "index.scss",
   "scripts": {
-    "build": "node build.js --out=../../dist/"
+    "build": "node build.js --out=../../dist/lfui"
   }
 }

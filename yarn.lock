@@ -8178,10 +8178,10 @@ jest@^25.1.0:
     import-local "^3.0.2"
     jest-cli "^25.1.0"
 
-jquery-ui-bundle@^1.12.1-migrate:
-  version "1.12.1-migrate"
-  resolved "https://registry.yarnpkg.com/jquery-ui-bundle/-/jquery-ui-bundle-1.12.1-migrate.tgz#b9343e2c310743527632cff8bedb0c5e9600b14c"
-  integrity sha1-uTQ+LDEHQ1J2Ms/4vtsMXpYAsUw=
+jquery-ui-bundle@1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/jquery-ui-bundle/-/jquery-ui-bundle-1.12.1.tgz#d6be2e4c377494e2378b1cae2920a91d1182d8c4"
+  integrity sha1-1r4uTDd0lOI3ixyuKSCpHRGC2MQ=
 
 jquery@>=1.11, "jquery@^1.8.3 || ^2.0 || ^3.0", jquery@^3.4.1:
   version "3.4.1"
