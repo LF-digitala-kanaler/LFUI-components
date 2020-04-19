@@ -24,16 +24,8 @@ Sketch files of the icons and other svg resources can be found [here](https://ww
 An icon rarely shows up alone. Together with any text component, be it a link, heading, or paragrah, an icon should have **distance of 10px between itself and the text**. To achieve this, you can use the `.icon-left` if the icon is to be placed to the left of the text, or `.icon-right` for the opposite.
 
 <div data-example>
-  <h3>10 px icons</h3>
-  <div class="mt-1 row text-blue">
-    <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="10" height="10"><use xlink:href="#icon-plus-10"></use></svg>
-        <span class="text-sm ml-05">plus-10</span>
-    </div>
-    </div>
-  </div>
-   <div data-example>
-  <h3>20 px icons</h3>
+  
+  <h3>20 pixels icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="20" height="20"><use xlink:href="#icon-accident-20"></use></svg>
@@ -368,6 +360,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">thumbs-up-20</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="20" height="20"><use xlink:href="#icon-thumbup-20"></use></svg>
+        <span class="text-sm ml-05">thumbup-20</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="20" height="20"><use xlink:href="#icon-trash-20"></use></svg>
         <span class="text-sm ml-05">trash-20</span>
     </div>
@@ -402,7 +398,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>20 px color icons</h3>
+  
+  <h3>20 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="20" height="20"><use xlink:href="#icon-bankid-mc-20"></use></svg>
@@ -427,7 +424,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>24 px icons</h3>
+  
+  <h3>24 pixels icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-apartment-24"></use></svg>
@@ -444,6 +442,14 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-attach_24"></use></svg>
         <span class="text-sm ml-05">attach_24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-atv-24"></use></svg>
+        <span class="text-sm ml-05">atv-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-baby-24"></use></svg>
+        <span class="text-sm ml-05">baby-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-bank-24"></use></svg>
@@ -488,6 +494,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-car-damage-24"></use></svg>
         <span class="text-sm ml-05">car-damage-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-caravan-24"></use></svg>
+        <span class="text-sm ml-05">caravan-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-card-24"></use></svg>
@@ -582,12 +592,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">damage-24</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-digital-services-24"></use></svg>
+        <span class="text-sm ml-05">digital-services-24</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-document-24"></use></svg>
         <span class="text-sm ml-05">document-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-dog-24"></use></svg>
         <span class="text-sm ml-05">dog-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-e-invoice-24"></use></svg>
+        <span class="text-sm ml-05">e-invoice-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-ellipsis-enclosed-24"></use></svg>
@@ -604,6 +622,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-family-24"></use></svg>
         <span class="text-sm ml-05">family-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-farm-24"></use></svg>
+        <span class="text-sm ml-05">farm-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-flag-24"></use></svg>
@@ -650,6 +672,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">id-sign-24</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-image-doc-24"></use></svg>
+        <span class="text-sm ml-05">image-doc-24</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-info-enclosed-24"></use></svg>
         <span class="text-sm ml-05">info-enclosed-24</span>
     </div>
@@ -662,12 +688,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">logout-24</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-mc-24"></use></svg>
+        <span class="text-sm ml-05">mc-24</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-menu-24"></use></svg>
         <span class="text-sm ml-05">menu-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-mobile-phone-24"></use></svg>
         <span class="text-sm ml-05">mobile-phone-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-moped-24"></use></svg>
+        <span class="text-sm ml-05">moped-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-mortgage-24"></use></svg>
@@ -730,6 +764,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">plus-24</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-pregnant-24"></use></svg>
+        <span class="text-sm ml-05">pregnant-24</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-print-24"></use></svg>
         <span class="text-sm ml-05">print-24</span>
     </div>
@@ -740,6 +778,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-radio-round-24"></use></svg>
         <span class="text-sm ml-05">radio-round-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-rv-24"></use></svg>
+        <span class="text-sm ml-05">rv-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-save-24"></use></svg>
@@ -762,8 +804,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">shield-24</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-smalltruck-24"></use></svg>
+        <span class="text-sm ml-05">smalltruck-24</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-snailmail-24"></use></svg>
         <span class="text-sm ml-05">snailmail-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-snowmobile-24"></use></svg>
+        <span class="text-sm ml-05">snowmobile-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-star-24"></use></svg>
@@ -788,6 +838,14 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-text-3-round-24"></use></svg>
         <span class="text-sm ml-05">text-3-round-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-tractor-24"></use></svg>
+        <span class="text-sm ml-05">tractor-24</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-trailer-24"></use></svg>
+        <span class="text-sm ml-05">trailer-24</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-trash-24"></use></svg>
@@ -828,7 +886,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>24 px color icons</h3>
+  
+  <h3>24 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-bankid-mc-24"></use></svg>
@@ -849,22 +908,22 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>26 px icons</h3>
+  
+  <h3>32 pixels icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="26" height="26"><use xlink:href="#icon-calendar-26"></use></svg>
-        <span class="text-sm ml-05">calendar-26</span>
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-about_LF-32"></use></svg>
+        <span class="text-sm ml-05">about_LF-32</span>
     </div>
         <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="26" height="26"><use xlink:href="#icon-kontakta_oss-26"></use></svg>
-        <span class="text-sm ml-05">kontakta_oss-26</span>
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-accont-32"></use></svg>
+        <span class="text-sm ml-05">accont-32</span>
     </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-apply_job-32"></use></svg>
+        <span class="text-sm ml-05">apply_job-32</span>
     </div>
-  </div>
-   <div data-example>
-  <h3>32 px icons</h3>
-  <div class="mt-1 row text-blue">
-    <div class="col-4 mb-2">
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-arrow-enclosed-32"></use></svg>
         <span class="text-sm ml-05">arrow-enclosed-32</span>
     </div>
@@ -879,6 +938,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-attach-32"></use></svg>
         <span class="text-sm ml-05">attach-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-bank-32"></use></svg>
+        <span class="text-sm ml-05">bank-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-bills-coins-32"></use></svg>
@@ -915,6 +978,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-card-block-32"></use></svg>
         <span class="text-sm ml-05">card-block-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-card_payment-32"></use></svg>
+        <span class="text-sm ml-05">card_payment-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-chat-32"></use></svg>
@@ -965,6 +1032,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">coins-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-contact-32"></use></svg>
+        <span class="text-sm ml-05">contact-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-contact-menu-32"></use></svg>
         <span class="text-sm ml-05">contact-menu-32</span>
     </div>
@@ -981,12 +1052,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">cross-enclosed-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-digital_services-32"></use></svg>
+        <span class="text-sm ml-05">digital_services-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-document-32"></use></svg>
         <span class="text-sm ml-05">document-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-dog-32"></use></svg>
         <span class="text-sm ml-05">dog-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-economy-32"></use></svg>
+        <span class="text-sm ml-05">economy-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-ellipsis-enclosed-32"></use></svg>
@@ -1001,8 +1080,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">facebook-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-finance-32"></use></svg>
+        <span class="text-sm ml-05">finance-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-flag-32"></use></svg>
         <span class="text-sm ml-05">flag-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-forms-32"></use></svg>
+        <span class="text-sm ml-05">forms-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-gear-32"></use></svg>
@@ -1057,6 +1144,38 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">institution-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance-32"></use></svg>
+        <span class="text-sm ml-05">insurance-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_animal-32"></use></svg>
+        <span class="text-sm ml-05">insurance_animal-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_boat-32"></use></svg>
+        <span class="text-sm ml-05">insurance_boat-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_car-32"></use></svg>
+        <span class="text-sm ml-05">insurance_car-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_home-32"></use></svg>
+        <span class="text-sm ml-05">insurance_home-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_truck-32"></use></svg>
+        <span class="text-sm ml-05">insurance_truck-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_vehicle-32"></use></svg>
+        <span class="text-sm ml-05">insurance_vehicle-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-investment-32"></use></svg>
+        <span class="text-sm ml-05">investment-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-letter-32"></use></svg>
         <span class="text-sm ml-05">letter-32</span>
     </div>
@@ -1067,6 +1186,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-list-32"></use></svg>
         <span class="text-sm ml-05">list-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-loan-32"></use></svg>
+        <span class="text-sm ml-05">loan-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-login-bankid-32"></use></svg>
@@ -1153,6 +1276,14 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">navigation-wages-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-offer-32"></use></svg>
+        <span class="text-sm ml-05">offer-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-other_vehicles-32"></use></svg>
+        <span class="text-sm ml-05">other_vehicles-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-padlock-32"></use></svg>
         <span class="text-sm ml-05">padlock-32</span>
     </div>
@@ -1189,6 +1320,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">pension-state-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-pension_mega-32"></use></svg>
+        <span class="text-sm ml-05">pension_mega-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-percent-32"></use></svg>
         <span class="text-sm ml-05">percent-32</span>
     </div>
@@ -1205,6 +1340,14 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">plus-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-press_Media-32"></use></svg>
+        <span class="text-sm ml-05">press_Media-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-prevent-32"></use></svg>
+        <span class="text-sm ml-05">prevent-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-print-32"></use></svg>
         <span class="text-sm ml-05">print-32</span>
     </div>
@@ -1217,8 +1360,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">radio-round-32</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-report_damage-32"></use></svg>
+        <span class="text-sm ml-05">report_damage-32</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-save-32"></use></svg>
         <span class="text-sm ml-05">save-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-save_profile-32"></use></svg>
+        <span class="text-sm ml-05">save_profile-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-screen-32"></use></svg>
@@ -1239,6 +1390,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-star-32"></use></svg>
         <span class="text-sm ml-05">star-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-subsidiaries-32"></use></svg>
+        <span class="text-sm ml-05">subsidiaries-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-sustainability-32"></use></svg>
@@ -1267,6 +1422,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-travel-32"></use></svg>
         <span class="text-sm ml-05">travel-32</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-travel_plane-32"></use></svg>
+        <span class="text-sm ml-05">travel_plane-32</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-triangle-32"></use></svg>
@@ -1315,7 +1474,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>32 px color icons</h3>
+  
+  <h3>32 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-bankid-mc-32"></use></svg>
@@ -1364,11 +1524,24 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>40 px icons</h3>
+  
+  <h3>40 pixels icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-apartment-40"></use></svg>
         <span class="text-sm ml-05">apartment-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-atv-40"></use></svg>
+        <span class="text-sm ml-05">atv-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-baby-40"></use></svg>
+        <span class="text-sm ml-05">baby-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-bank-40"></use></svg>
+        <span class="text-sm ml-05">bank-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-bike-40"></use></svg>
@@ -1403,6 +1576,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">car-damage-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-caravan-40"></use></svg>
+        <span class="text-sm ml-05">caravan-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-card-40"></use></svg>
         <span class="text-sm ml-05">card-40</span>
     </div>
@@ -1415,12 +1592,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">check-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-circle-40"></use></svg>
+        <span class="text-sm ml-05">circle-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-circlediagram-40"></use></svg>
         <span class="text-sm ml-05">circlediagram-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-clipboard-40"></use></svg>
         <span class="text-sm ml-05">clipboard-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-clock-40"></use></svg>
+        <span class="text-sm ml-05">clock-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-coins-40"></use></svg>
@@ -1451,8 +1636,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">damage-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-digital-services-40"></use></svg>
+        <span class="text-sm ml-05">digital-services-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-dog-40"></use></svg>
         <span class="text-sm ml-05">dog-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-e-invoice-40"></use></svg>
+        <span class="text-sm ml-05">e-invoice-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-envelope-40"></use></svg>
@@ -1467,8 +1660,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">family-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-farm-40"></use></svg>
+        <span class="text-sm ml-05">farm-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-glasses-40"></use></svg>
         <span class="text-sm ml-05">glasses-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-gravestones-40"></use></svg>
+        <span class="text-sm ml-05">gravestones-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-growth-arrow-40"></use></svg>
@@ -1503,6 +1704,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">letter-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-mc-40"></use></svg>
+        <span class="text-sm ml-05">mc-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-mobile-phone-40"></use></svg>
         <span class="text-sm ml-05">mobile-phone-40</span>
     </div>
@@ -1511,8 +1716,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">mobile-phone-broken-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-moped-40"></use></svg>
+        <span class="text-sm ml-05">moped-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-mortgage-40"></use></svg>
         <span class="text-sm ml-05">mortgage-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-notification-swish-40"></use></svg>
+        <span class="text-sm ml-05">notification-swish-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-padlock-40"></use></svg>
@@ -1547,12 +1760,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">pin-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-pregnant-40"></use></svg>
+        <span class="text-sm ml-05">pregnant-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-radio-enclosed-40"></use></svg>
         <span class="text-sm ml-05">radio-enclosed-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-retro-phone-40"></use></svg>
         <span class="text-sm ml-05">retro-phone-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-rv-40"></use></svg>
+        <span class="text-sm ml-05">rv-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-save-40"></use></svg>
@@ -1563,8 +1784,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">shield-40</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-smalltruck-40"></use></svg>
+        <span class="text-sm ml-05">smalltruck-40</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-snailmail-40"></use></svg>
         <span class="text-sm ml-05">snailmail-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-snowmobile-40"></use></svg>
+        <span class="text-sm ml-05">snowmobile-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-star-40"></use></svg>
+        <span class="text-sm ml-05">star-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-sustainability-40"></use></svg>
@@ -1581,6 +1814,14 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-thumbup-40"></use></svg>
         <span class="text-sm ml-05">thumbup-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-tractor-40"></use></svg>
+        <span class="text-sm ml-05">tractor-40</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-trailer-40"></use></svg>
+        <span class="text-sm ml-05">trailer-40</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-travel-40"></use></svg>
@@ -1617,7 +1858,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>40 px color icons</h3>
+  
+  <h3>40 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-bankid-mc-40"></use></svg>
@@ -1630,7 +1872,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>48 px color icons</h3>
+  
+  <h3>48 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="48" height="48"><use xlink:href="#icon-multicolor-bike-48"></use></svg>
@@ -1671,7 +1914,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>50 px color icons</h3>
+  
+  <h3>50 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="50" height="50"><use xlink:href="#icon-shortcut-bankid-50"></use></svg>
@@ -1708,7 +1952,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>70x50 px color icons</h3>
+  
+  <h3>70x50 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="50"><use xlink:href="#icon-report-building-50"></use></svg>
@@ -1737,7 +1982,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>56 px color icons</h3>
+  
+  <h3>56 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="56" height="56"><use xlink:href="#icon-facebook-56"></use></svg>
@@ -1762,7 +2008,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>64 px color icons</h3>
+  
+  <h3>64 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="64" height="64"><use xlink:href="#icon-multicolor-chat-heart-64"></use></svg>
@@ -1787,11 +2034,24 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>70 px icons</h3>
+  
+  <h3>70 pixels icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-apartment-70"></use></svg>
         <span class="text-sm ml-05">apartment-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-atv-70"></use></svg>
+        <span class="text-sm ml-05">atv-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-baby-70"></use></svg>
+        <span class="text-sm ml-05">baby-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-bank-70"></use></svg>
+        <span class="text-sm ml-05">bank-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-bills-coins-70"></use></svg>
@@ -1816,6 +2076,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-car-damage-70"></use></svg>
         <span class="text-sm ml-05">car-damage-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-caravan-70"></use></svg>
+        <span class="text-sm ml-05">caravan-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-card-70"></use></svg>
@@ -1874,12 +2138,32 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">damage-70</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-digital-services-70"></use></svg>
+        <span class="text-sm ml-05">digital-services-70</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-dog-70"></use></svg>
         <span class="text-sm ml-05">dog-70</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-e-invoice-70"></use></svg>
+        <span class="text-sm ml-05">e-invoice-70</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-family-70"></use></svg>
         <span class="text-sm ml-05">family-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-farm-70"></use></svg>
+        <span class="text-sm ml-05">farm-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-gravestones-70"></use></svg>
+        <span class="text-sm ml-05">gravestones-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-growth-arrow-70"></use></svg>
+        <span class="text-sm ml-05">growth-arrow-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-guide-70"></use></svg>
@@ -1910,6 +2194,10 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">letter-70</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-mc-70"></use></svg>
+        <span class="text-sm ml-05">mc-70</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-menu-envelope-70"></use></svg>
         <span class="text-sm ml-05">menu-envelope-70</span>
     </div>
@@ -1918,8 +2206,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">mobile-phone-70</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-moped-70"></use></svg>
+        <span class="text-sm ml-05">moped-70</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-mortgage-70"></use></svg>
         <span class="text-sm ml-05">mortgage-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-notification-swish-70"></use></svg>
+        <span class="text-sm ml-05">notification-swish-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-padlock-70"></use></svg>
@@ -1962,12 +2258,20 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">pin-70</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-pregnant-70"></use></svg>
+        <span class="text-sm ml-05">pregnant-70</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-radio-enclosed-70"></use></svg>
         <span class="text-sm ml-05">radio-enclosed-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-retro-phone-70"></use></svg>
         <span class="text-sm ml-05">retro-phone-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-rv-70"></use></svg>
+        <span class="text-sm ml-05">rv-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-save-70"></use></svg>
@@ -1978,8 +2282,16 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <span class="text-sm ml-05">shield-70</span>
     </div>
         <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-smalltruck-70"></use></svg>
+        <span class="text-sm ml-05">smalltruck-70</span>
+    </div>
+        <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-snailmail-70"></use></svg>
         <span class="text-sm ml-05">snailmail-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-snowmobile-70"></use></svg>
+        <span class="text-sm ml-05">snowmobile-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-sustainability-70"></use></svg>
@@ -1988,6 +2300,14 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-tag-70"></use></svg>
         <span class="text-sm ml-05">tag-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-tractor-70"></use></svg>
+        <span class="text-sm ml-05">tractor-70</span>
+    </div>
+        <div class="col-4 mb-2">
+        <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-trailer-70"></use></svg>
+        <span class="text-sm ml-05">trailer-70</span>
     </div>
         <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-travel-70"></use></svg>
@@ -2016,7 +2336,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>70 px color icons</h3>
+  
+  <h3>70 pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="70" height="70"><use xlink:href="#icon-bankid-mc-70"></use></svg>
@@ -2085,7 +2406,8 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>84x50  px color icons</h3>
+  
+  <h3>84x50  pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
         <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-adult_children-50"></use></svg>
@@ -2114,123 +2436,32 @@ An icon rarely shows up alone. Together with any text component, be it a link, h
     </div>
   </div>
    <div data-example>
-  <h3>Mega menu icons</h3>
+  
+  <h3>84x50  pixels color icons</h3>
   <div class="mt-1 row text-blue">
     <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-about_LF-32"></use></svg>
-        <span class="text-sm ml-05">about_LF-32</span>
+        <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-adult_children-50"></use></svg>
+        <span class="text-sm ml-05">multicolor-adult_children-50</span>
     </div>
         <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-accont-32"></use></svg>
-        <span class="text-sm ml-05">accont-32</span>
+        <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-alone-50"></use></svg>
+        <span class="text-sm ml-05">multicolor-alone-50</span>
     </div>
         <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-apply_job-32"></use></svg>
-        <span class="text-sm ml-05">apply_job-32</span>
+        <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-apart-50"></use></svg>
+        <span class="text-sm ml-05">multicolor-apart-50</span>
     </div>
         <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-bank-32"></use></svg>
-        <span class="text-sm ml-05">bank-32</span>
+        <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-married-50"></use></svg>
+        <span class="text-sm ml-05">multicolor-married-50</span>
     </div>
         <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-card_payment-32"></use></svg>
-        <span class="text-sm ml-05">card_payment-32</span>
+        <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-single-50"></use></svg>
+        <span class="text-sm ml-05">multicolor-single-50</span>
     </div>
         <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-contact-32"></use></svg>
-        <span class="text-sm ml-05">contact-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-digital_services-32"></use></svg>
-        <span class="text-sm ml-05">digital_services-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-economy-32"></use></svg>
-        <span class="text-sm ml-05">economy-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-finance-32"></use></svg>
-        <span class="text-sm ml-05">finance-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-forms-32"></use></svg>
-        <span class="text-sm ml-05">forms-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance-32"></use></svg>
-        <span class="text-sm ml-05">insurance-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_animal-32"></use></svg>
-        <span class="text-sm ml-05">insurance_animal-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_boat-32"></use></svg>
-        <span class="text-sm ml-05">insurance_boat-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_car-32"></use></svg>
-        <span class="text-sm ml-05">insurance_car-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_home-32"></use></svg>
-        <span class="text-sm ml-05">insurance_home-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_truck-32"></use></svg>
-        <span class="text-sm ml-05">insurance_truck-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_vehicle-32"></use></svg>
-        <span class="text-sm ml-05">insurance_vehicle-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-investment-32"></use></svg>
-        <span class="text-sm ml-05">investment-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-loan-32"></use></svg>
-        <span class="text-sm ml-05">loan-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-offer-32"></use></svg>
-        <span class="text-sm ml-05">offer-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-other_vehicles-32"></use></svg>
-        <span class="text-sm ml-05">other_vehicles-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-pension_mega-32"></use></svg>
-        <span class="text-sm ml-05">pension_mega-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-press_Media-32"></use></svg>
-        <span class="text-sm ml-05">press_Media-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-prevent-32"></use></svg>
-        <span class="text-sm ml-05">prevent-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-report_damage-32"></use></svg>
-        <span class="text-sm ml-05">report_damage-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-save_profile-32"></use></svg>
-        <span class="text-sm ml-05">save_profile-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-subsidiaries-32"></use></svg>
-        <span class="text-sm ml-05">subsidiaries-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-sustainability-32"></use></svg>
-        <span class="text-sm ml-05">sustainability-32</span>
-    </div>
-        <div class="col-4 mb-2">
-        <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-travel_plane-32"></use></svg>
-        <span class="text-sm ml-05">travel_plane-32</span>
+        <svg role="presentation" class="icon" width="84" height="50"><use xlink:href="#icon-multicolor-small_children-50"></use></svg>
+        <span class="text-sm ml-05">multicolor-small_children-50</span>
     </div>
     </div>
   </div>
