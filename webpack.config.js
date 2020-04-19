@@ -48,8 +48,12 @@ module.exports = {
         to: 'docs/data/'
       },
       { 
-        from: 'src/icon/README.md',
-        to: 'docs/icons/icons.md'
+        from: 'src/icon/Regular.md',
+        to: 'docs/icons/regular.md'
+      },
+       { 
+        from: 'src/icon/Special.md',
+        to: 'docs/icons/special.md'
       },
     ]),
     new MiniCssExtractPlugin({
