@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icons/24px/trailer-24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/24px/trailer-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="invisible-24" x="0" y="0" width="24" height="24"></rect>
+            <g id="lines" transform="translate(2.000000, 8.000000)" fill="#FF0000" fill-rule="nonzero">
+                <path d="M15,7 L8.82896868,7.00091594 C8.41686162,8.16564651 7.30581791,9 5.9999173,9 C4.84584146,9 3.8091395,8.34184605 3.30784437,7.32497803 C3.25598585,7.21968714 3.21042989,7.11159911 3.17136731,7.00120912 L0,7 L0,0 L20,0 L20,3 L18,3 L17.999,2 L15,2 L15,7 Z M5.9999173,5 C5.44763371,5 5,5.44765222 5,6 C5,6.15630354 5.03515932,6.30552292 5.10186908,6.44096716 C5.26937244,6.78074461 5.61473615,7 5.9999173,7 C6.55225801,7 7,6.55229065 7,6 C7,5.44770935 6.55225801,5 5.9999173,5 Z M2,2 L2,5 L3.1706629,5.00007136 C3.58244849,3.83482243 4.69365156,3 5.9999173,3 C7.30618775,3 8.41749091,3.83482614 8.82931865,5.00007372 L13,5 L13,2 L2,2 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
