@@ -20,15 +20,15 @@ const ICON_DIRS = [
     { directory: '32px-color', width: 32, height: 32, header: '32 pixels color icons' , special: false},
     { directory: '40px', width: 40, height: 40, header: '40 pixels icons' , special: false},
     { directory: '40px-color', width: 40, height: 40, header: '40 pixels color icons' , special: false},
-    { directory: '48px-color', width: 48, height: 48, header: '48 pixels color icons' , special: false},
-    { directory: '50px-color', width: 50, height: 50, header: '50 pixels color icons', special: false },
-    { directory: '70x50px', width: 70, height: 50, header: '70x50 pixels color icons' , special: false},
-    { directory: '56px', width: 56, height: 56, header: '56 pixels color icons', special: false },
-    { directory: '64px-color', width: 64, height: 64, header: '64 pixels color icons', special: false },
+    { directory: '48px-color', width: 48, height: 48, header: '48 pixels color icons' , special: true},
+    { directory: '50px-color', width: 50, height: 50, header: '50 pixels color icons', special: true },
+    { directory: '70x50px', width: 70, height: 50, header: '70x50 pixels color icons' , special: true},
+    { directory: '56px', width: 56, height: 56, header: '56 pixels color icons', special: true },
+    { directory: '64px-color', width: 64, height: 64, header: '64 pixels color icons', special: true },
     { directory: '70px', width: 70, height: 70, header: '70 pixels icons', special: false },
     { directory: '70px-color', width: 70, height: 70, header: '70 pixels color icons', special: false },
-    { directory: '84x50px-color', width: 84, height: 50, header: '84x50  pixels color icons', special: false },
-    { directory: '84x50px-color', width: 84, height: 50, header: '84x50  pixels color icons', special: false },
+    { directory: '84x50px-color', width: 84, height: 50, header: '84x50  pixels color icons', special: true },
+    { directory: '84x50px-color', width: 84, height: 50, header: '84x50  pixels color icons', special: true },
 ];
 
 const spriter = new SVGSpriter({
