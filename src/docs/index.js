@@ -8,7 +8,7 @@ import {mapExample} from './GraphsandCharts/graphsandcharts';
 import {uploadExample} from './Upload/upload';
 import {timelineExample} from './Timeline/timeline';
 import {navbarExample} from './Navbar/navbar';
-import {popoverTooltip} from './PopoverTooltip/popovertooltip'
+import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
 import {valueboxExample} from './Valuebox/valuebox';
 
 // run your functions 
