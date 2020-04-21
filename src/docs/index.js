@@ -32,4 +32,4 @@ mapExample();
 
 navbarExample();
 valueboxExample();
-popoverTooltip();
+popoverTooltipExample();
