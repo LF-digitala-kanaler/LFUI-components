@@ -28,7 +28,7 @@ panelExample();
 
 uploadExample();
 timelineExample();
-mapExample();
+// mapExample();
 
 navbarExample();
 valueboxExample();
