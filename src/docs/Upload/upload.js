@@ -1,9 +1,12 @@
 const uploadExample = () => {
-  let element = document.querySelector('.upload');
-  let input = element.querySelector('.upload-input');
-  let placeholder = element.querySelector('.upload-placeholder');
-  let remove = element.querySelector('.upload-remove');
-
+  if (! $('.upload').length ){
+    return null
+  }
+    let element = document.querySelector('.upload');
+    let input = element.querySelector('.upload-input');
+    let placeholder = element.querySelector('.upload-placeholder');
+    let remove = element.querySelector('.upload-remove');
+  
   const popoverMarkup = (data) => {
       return `
         <div role="alert" id="popover" class="popover-tooltip popover-bottom popover-attach">
