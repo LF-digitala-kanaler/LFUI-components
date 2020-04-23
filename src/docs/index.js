@@ -4,14 +4,14 @@ import {calloutExample} from './Callout/callout';
 import {priceBoxExample} from './PriceBox/pricebox';
 import {sliderExample} from './Slider/slider';
 import {panelExample} from './Panel/panel';
-import {mapExample} from './GraphsandCharts/graphsandcharts';
 import {uploadExample} from './Upload/upload';
 import {timelineExample} from './Timeline/timeline';
 import {navbarExample} from './Navbar/navbar';
 import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
 import {valueboxExample} from './Valuebox/valuebox';
 import {barGraphExample} from './BarGraph/barGraph';
-import {mapChartExample} from './MapChart/mapChart'
+import {mapChartExample} from './MapChart/mapChart';
+import {lineGraphExample} from './LineGraph/lineGraph'
 
 // run your functions 
 disabledDatesExample();
@@ -30,6 +30,7 @@ panelExample();
 
 uploadExample();
 timelineExample();
+lineGraphExample();
 // mapExample();
 
 navbarExample();
