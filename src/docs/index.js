@@ -11,7 +11,7 @@ import {navbarExample} from './Navbar/navbar';
 import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
 import {valueboxExample} from './Valuebox/valuebox';
 import {barGraphExample} from './BarGraph/barGraph';
-import {mapChartExample} from './BarGraph/mapChart'
+import {mapChartExample} from './MapChart/mapChart'
 
 // run your functions 
 disabledDatesExample();
