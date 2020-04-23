@@ -208,7 +208,7 @@ const mapChartExample = () => {
       });
   });
 
-  d3.select(self.frameElement).style('height', mapHeight + 'px');
+  // d3.select(self.frameElement).style('height', mapHeight + 'px');
 }
 
 export {mapChartExample};
