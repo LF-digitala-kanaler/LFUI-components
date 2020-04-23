@@ -60,8 +60,6 @@ iconDirs.forEach(iconDir => {
 let iconsDirPresentation = {regular:[], special:[]}
 iconDirs.forEach(item => item.special == false ? iconsDirPresentation.regular.push(item) : iconsDirPresentation.special.push(item))
 
-console.log(iconsDirPresentation)
-
 
 fs.writeFileSync(
   path.resolve(__dirname, 'Regular.md'),

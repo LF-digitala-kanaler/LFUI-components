@@ -10,7 +10,7 @@ import {timelineExample} from './Timeline/timeline';
 import {navbarExample} from './Navbar/navbar';
 import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
 import {valueboxExample} from './Valuebox/valuebox';
-
+import {barGraphExample} from './BarGraph/barGraph'
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -33,5 +33,7 @@ timelineExample();
 navbarExample();
 valueboxExample();
 popoverTooltipExample();
+
+barGraphExample()
 
 import '../scss/DOCS.scss';
