@@ -11,8 +11,8 @@ import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
 import {valueboxExample} from './Valuebox/valuebox';
 import {barGraphExample} from './BarGraph/barGraph';
 import {mapChartExample} from './MapChart/mapChart';
-import {lineGraphExample} from './LineGraph/lineGraph'
-
+import {lineGraphExample} from './LineGraph/lineGraph';
+import {pieChartExample} from './PieChart/pieChart';
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -31,6 +31,7 @@ panelExample();
 uploadExample();
 timelineExample();
 lineGraphExample();
+pieChartExample();
 // mapExample();
 
 navbarExample();
