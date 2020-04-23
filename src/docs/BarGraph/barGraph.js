@@ -14,12 +14,12 @@ const barGraphExample = () => {
     // as well as giving the axes space to live.
     var margin = {top: 20, right: 30, bottom: 30, left: 40},
       width = 720 - margin.left - margin.right,
-      height = 350 - margin.top - margin.bottom;
+      barHeight = 350 - margin.top - margin.bottom;
 
     // The range and domain of the data, constraining the space to plot the data to the height (y) and
     // width variables.
     var y = d3.scaleLinear()
-      .rangeRound([height, 0])
+      .rangeRound([barHeight, 0])
       .domain([0, d3.max(data, function(d) { return d.value; })]);
 
     var x = d3.scaleBand()
@@ -42,15 +42,15 @@ const barGraphExample = () => {
     // Bind the dimensions to the .barChart itself
     var chart = d3.select('.barGraph')
       .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom)
-      .attr('viewBox', '0 0 ' + (width + margin.left + margin.right) + ' ' + (height + margin.top + margin.bottom))
+      .attr('height', barHeight + margin.top + margin.bottom)
+      .attr('viewBox', '0 0 ' + (width + margin.left + margin.right) + ' ' + (barHeight + margin.top + margin.bottom))
       .append('g')
       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     // The xAxis and yAxis
     chart.append('g')
       .attr('class', 'x axis')
-      .attr('transform', 'translate(0,' + height + ')')
+      .attr('transform', 'translate(0,' + barHeight + ')')
       .call(xAxis);
 
     chart.append('g')
@@ -68,7 +68,7 @@ const barGraphExample = () => {
       .attr('class', 'bar')
       .attr('x', function(d) { return x(d.name); })
       .attr('y', function(d) { return y(d.value); })
-      .attr('height', function(d) { return height - y(d.value); })
+      .attr('height', function(d) { return barHeight - y(d.value); })
       .attr('width', x.bandwidth());
 }
 

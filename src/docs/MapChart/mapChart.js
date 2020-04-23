@@ -46,12 +46,12 @@ const mapChartExample = () => {
     .range(['#032f55', '#00427a', '#005b9c', '#468abd', '#74b3d6', '#b9d7e7', '#7e0a0d', '#ad1015', '#d9222a', '#e05656', '#ea9093', '#f7d1d3', '#4d4d4d', '#747578', '#a9aaa9']);
 
   var width = 680;
-  var height = 675;
+  var mapHeight = 675;
 
   // We choose Mercator projection here
   var projection = d3.geoMercator()
       .scale(110)
-      .translate([(width / 2) + 120, (height / 2)])
+      .translate([(width / 2) + 120, (mapHeight / 2)])
       .precision(.1);
 
   var path = d3.geoPath()
@@ -62,8 +62,8 @@ const mapChartExample = () => {
   // draw the map
   var svg = d3.select('#map')
       .attr('width', '100%')
-      .attr('height', height)
-      .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+      .attr('height', mapHeight)
+      .attr('viewBox','0 0 '+Math.min(width,mapHeight)+' '+Math.min(width,mapHeight))
       .attr('preserveAspectRatio','xMinYMin');
 
   svg.append('defs').append('path')
@@ -177,7 +177,7 @@ const mapChartExample = () => {
     // Legend
     svg.append('g')
       .attr('class', 'legend')
-      .attr('transform', 'translate(0, ' + (height - 150) + ')');
+      .attr('transform', 'translate(0, ' + (mapHeight - 150) + ')');
 
     d3.select('#map .legend')
       .select(null)
@@ -208,7 +208,7 @@ const mapChartExample = () => {
       });
   });
 
-  d3.select(self.frameElement).style('height', height + 'px');
+  d3.select(self.frameElement).style('height', mapHeight + 'px');
 }
 
 export {mapChartExample};

@@ -21,9 +21,9 @@ const pieChartExample = () => {
       }
     ];
 
-    var height = 105 * 2;
+    var pieChartheight = 105 * 2;
     var width = 105 * 2;
-    var radius = Math.min(width, height) / 2;
+    var radius = Math.min(width, pieChartheight) / 2;
 
     var pie = d3.pie()
       .value(function(d) { return d.count; })
@@ -44,8 +44,8 @@ const pieChartExample = () => {
 
     var g = svg.append('g')
       .attr('width', width)
-      .attr('height', height)
-      .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+      .attr('height', pieChartheight)
+      .attr('transform', 'translate(' + width / 2 + ',' + pieChartheight / 2 + ')');
 
     var total = d3.sum(slices, function(d) {
       return d.count;
@@ -203,7 +203,7 @@ const pieChartExample = () => {
 
     svg.append('g')
       .attr('class', 'total')
-      .attr('transform', 'translate(' + width / 2 + ', ' + height / 2 + ')')
+      .attr('transform', 'translate(' + width / 2 + ', ' + pieChartheight / 2 + ')')
       .append('text')
       .classed('pie-title hidden', true)
       .attr('text-anchor', 'middle')
