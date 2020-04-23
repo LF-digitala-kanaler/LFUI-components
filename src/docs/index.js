@@ -33,3 +33,5 @@ timelineExample();
 navbarExample();
 valueboxExample();
 popoverTooltipExample();
+
+import '../scss/DOCS.scss';
