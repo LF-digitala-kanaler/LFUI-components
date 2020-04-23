@@ -1,0 +1,86 @@
+ <style>
+
+
+.barChart .legend rect {
+  cursor: pointer;
+  stroke-width: 1;
+}
+.barChart rect.disabled {
+  fill: #d9d9d9 !important;
+}
+
+.barChart rect {
+  shape-rendering: crispEdges;
+}
+.barChart .slice {
+  cursor: pointer;
+}
+.barChart .slice.disabled {
+  fill: #d9d9d9;
+}
+.barGraph .tick text {
+  fill: #6B7070; 
+}
+.barGraph rect:not(.mouseRect) {
+  fill: #005aa0;
+}
+
+.barChart .barGraph text {
+  fill: #d3d3d3;
+  font: 10px Arial;
+  text-anchor: end;
+}
+
+.barChart .axis text {
+  fill: #6B7070;
+  font: 10px Arial;
+}
+
+.barChart .axis path,
+.barChart .axis line {
+  fill: none;
+  stroke: #f3f3f3;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+
+
+
+.barChart #line4 {
+  fill: none;
+  stroke: #f3f3f3;
+  stroke-width: 2px;
+}
+
+.barChart rect:not(.mouseRect) {
+  fill: #005aa0;
+}
+
+.barChart text {
+  fill: #d3d3d3;
+  font: 10px Arial;
+  text-anchor: end;
+}
+.barChart .tick {
+  color: #6B7070;
+}
+.barGraph .y.axis .tick line {
+  opacity: 0.1;
+}
+
+.barChart .mouseRectText {
+  font-family: "Intro Cond";
+  fill: white;
+}
+
+.barGraph .legendText {
+  font-family: "Intro Cond"
+}
+
+.barChart .area {
+  stroke-width: 0;
+}
+
+</style>
+ <svg class="barGraph"></svg>
