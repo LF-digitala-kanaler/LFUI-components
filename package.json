@@ -45,6 +45,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-base64": "^0.7.1",
     "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-increase-specificity": "^0.6.0",
     "postcss-loader": "^3.0.0",
     "puppeteer": "^2.1.1",
     "react-test-renderer": "^16.11.0",

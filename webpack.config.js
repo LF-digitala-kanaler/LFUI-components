@@ -7,6 +7,7 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // Avoid duplicate imports in our modules
 const importer = require('node-sass-import-once');
+const increaseSpecificity = require('postcss-increase-specificity');
 
 /* We import files through our node_modules, using @import 'bootstrap/x/_x.scss'.
  * by default, this does not work as our build won't recognize the file path.
@@ -100,7 +101,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        
+        exclude: /DOCS\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -111,7 +112,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-                importLoaders: 1
+                importLoaders: 1,
             },
           },
           'postcss-loader',
@@ -119,6 +120,33 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               importer: moduleImporter()
+            },
+          }
+        ],
+      },
+      {
+        test: /DOCS\.Scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            // options: {
+            //   hmr: process.env.NODE_ENV === 'development',
+            // },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+                importLoaders: 1,
+            },
+          },
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              importer: moduleImporter(),
+              plugins: () => [
+                increaseSpecificity({ stackableRoot: '.lfui-theme' }),
+              ],
             },
           }
         ],
