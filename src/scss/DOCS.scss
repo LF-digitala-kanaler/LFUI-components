@@ -48,7 +48,7 @@ textarea {
 @import "tables";
 @import "forms";
 @import "buttons";
-.lfui-theme {
+
 // Components
 @import "alert";
 @import "animations";
@@ -106,10 +106,9 @@ textarea {
 @import "./utilities/selection";
 @import "./utilities/spacing";
 @import "./utilities/text";
-}
+
 /**
  * Bootstrap utilities
  */
 
 @import "bootstrap/scss/_utilities.scss";
-
