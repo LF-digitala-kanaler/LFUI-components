@@ -125,13 +125,10 @@ module.exports = {
         ],
       },
       {
-        test: /DOCS\.Scss$/,
+        test: /DOCS\.(sa|sc|c)ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            // options: {
-            //   hmr: process.env.NODE_ENV === 'development',
-            // },
           },
           {
             loader: 'css-loader',
@@ -139,16 +136,21 @@ module.exports = {
                 importLoaders: 1,
             },
           },
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                increaseSpecificity({repeat:1, stackableRoot: '.lfui-theme' }),
+              ],
+            }
+          },
           {
             loader: 'sass-loader',
             options: {
               importer: moduleImporter(),
-              plugins: () => [
-                increaseSpecificity({ stackableRoot: '.lfui-theme' }),
-              ],
             },
           }
+          
         ],
       },
       {
