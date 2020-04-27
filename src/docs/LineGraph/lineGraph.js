@@ -77,7 +77,7 @@ const lineGraphExample = () => {
       .attr('y', 6)
       .attr('dy', '.71em')
       .style('text-anchor', 'end')
-      .text('Värdeutveckling');
+      .text('Value');
 
     // In accordance with LFUI styling all line graphs should have a gradient covering the area
     // they cover. For this we use d3.area(). The gradient is then added to the svg's <defs> element,
