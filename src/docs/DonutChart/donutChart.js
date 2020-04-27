@@ -1,4 +1,4 @@
-const pieChartExample = () => {
+const donutChartExample = () => {
     var colorScale = d3.scaleOrdinal()
       .range(['#89070B', '#B60D15', '#E46161', '#DD272E']);
 
@@ -40,7 +40,7 @@ const pieChartExample = () => {
       .innerRadius(radius - 25)
       .outerRadius(radius);
 
-    var svg = d3.select('svg.pieChart');
+    var svg = d3.select('svg.donutChart');
 
     var g = svg.append('g')
       .attr('width', width)
@@ -51,7 +51,7 @@ const pieChartExample = () => {
       return d.count;
     });
 
-    var path = g.selectAll('.pieChart path.slice')
+    var path = g.selectAll('.donutChart path.slice')
       .data(pie(slices))
       .enter()
       .append('path')
@@ -63,7 +63,7 @@ const pieChartExample = () => {
       .each(function(d) { this.current = d; })
       .on('click', function(label) {
         var slice = d3.select(this);
-        var legends = d3.selectAll('.pieChart rect');
+        var legends = d3.selectAll('.donutChart rect');
         var enabled = false;
 
         var totalEnabled = d3.sum(slices.map(function(d) {
@@ -115,7 +115,7 @@ const pieChartExample = () => {
           }
         });
 
-        d3.selectAll('.pieChart .total text')
+        d3.selectAll('.donutChart .total text')
           .classed('hidden', false)
           .text(total + '%');
       });
@@ -129,7 +129,7 @@ const pieChartExample = () => {
     svg.append('g')
       .attr('class', 'legend')
       .attr('transform', 'translate(250, 42)')
-      .selectAll('.pieChart rect')
+      .selectAll('.donutChart rect')
       .data(pie(slices))
       .enter()
       .append('rect')
@@ -146,7 +146,7 @@ const pieChartExample = () => {
 
         if(totalEnabled === 0) {
           rect.attr('class', '');
-          d3.selectAll('.pieChart rect')
+          d3.selectAll('.donutChart rect')
            .each(function(d) {
              if(d.data.label !== label.data.label) {
                $(this).addClass('disabled');
@@ -186,12 +186,12 @@ const pieChartExample = () => {
           }
         });
 
-        d3.selectAll('.pieChart .total text')
+        d3.selectAll('.donutChart .total text')
           .classed('hidden', false)
           .text(total + '%');
       });
 
-    svg.selectAll('.pieChart .legend')
+    svg.selectAll('.donutChart .legend')
       .selectAll('text')
       .data(pie(slices))
       .enter()
@@ -212,4 +212,4 @@ const pieChartExample = () => {
       .text(total + '%');
   }
 
-  export {pieChartExample}
+  export {donutChartExample}

@@ -1,20 +1,23 @@
 <div>
 <style type="text/css">
-.barChart .legend rect {
+.barGraph {
+  max-width: 100%;
+}
+.barGraph .legend rect {
   cursor: pointer;
   stroke-width: 1;
 }
-.barChart rect.disabled {
+.barGraph rect.disabled {
   fill: #d9d9d9 !important;
 }
 
-.barChart rect {
+.barGraph rect {
   shape-rendering: crispEdges;
 }
-.barChart .slice {
+.barGraph .slice {
   cursor: pointer;
 }
-.barChart .slice.disabled {
+.barGraph .slice.disabled {
   fill: #d9d9d9;
 }
 .barGraph .tick text {
@@ -24,47 +27,47 @@
   fill: #005aa0;
 }
 
-.barChart .barGraph text {
+.barGraph text {
   fill: #d3d3d3;
   font: 10px Arial;
   text-anchor: end;
 }
 
-.barChart .axis text {
+.barGraph .axis text {
   fill: #6B7070;
   font: 10px Arial;
 }
 
-.barChart .axis path,
-.barChart .axis line {
+.barGraph .axis path,
+.barGraph .axis line {
   fill: none;
   stroke: #f3f3f3;
   stroke-width: 1px;
   shape-rendering: crispEdges;
 }
-.barChart #line4 {
+.barGraph #line4 {
   fill: none;
   stroke: #f3f3f3;
   stroke-width: 2px;
 }
 
-.barChart rect:not(.mouseRect) {
+.barGraph rect:not(.mouseRect) {
   fill: #005aa0;
 }
 
-.barChart text {
+.barGraph text {
   fill: #d3d3d3;
   font: 10px Arial;
   text-anchor: end;
 }
-.barChart .tick {
+.barGraph .tick {
   color: #6B7070;
 }
 .barGraph .y.axis .tick line {
   opacity: 0.1;
 }
 
-.barChart .mouseRectText {
+.barGraph .mouseRectText {
   font-family: "Intro Cond";
   fill: white;
 }
@@ -73,7 +76,7 @@
   font-family: "Intro Cond"
 }
 
-.barChart .area {
+.barGraph .area {
   stroke-width: 0;
 }
 </style>
