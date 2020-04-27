@@ -8,10 +8,10 @@ import {uploadExample} from './Upload/upload';
 import {timelineExample} from './Timeline/timeline';
 import {navbarExample} from './Navbar/navbar';
 import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
-import {valueboxExample} from './Valuebox/valuebox';
+import {valueboxExample} from './ValueBox/valuebox';
 import {barGraphExample} from './BarGraph/barGraph';
 import {mapChartExample} from './MapChart/mapChart';
-import {lineGraphExample} from './LineGraph/lineGraph';
+import {lineChartExample} from './LineChart/lineChart';
 import {donutChartExample} from './DonutChart/donutChart';
 // run your functions 
 disabledDatesExample();
@@ -30,7 +30,7 @@ panelExample();
 
 uploadExample();
 timelineExample();
-lineGraphExample();
+lineChartExample();
 donutChartExample();
 // mapExample();
 
