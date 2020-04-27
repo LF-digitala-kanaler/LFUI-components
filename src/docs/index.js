@@ -12,7 +12,7 @@ import {valueboxExample} from './Valuebox/valuebox';
 import {barGraphExample} from './BarGraph/barGraph';
 import {mapChartExample} from './MapChart/mapChart';
 import {lineGraphExample} from './LineGraph/lineGraph';
-import {pieChartExample} from './PieChart/pieChart';
+import {donutChartExample} from './DonutChart/donutChart';
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -31,7 +31,7 @@ panelExample();
 uploadExample();
 timelineExample();
 lineGraphExample();
-pieChartExample();
+donutChartExample();
 // mapExample();
 
 navbarExample();
