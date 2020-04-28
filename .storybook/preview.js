@@ -1,5 +1,5 @@
 import { addParameters, addDecorator } from '@storybook/html';
-import '../src/scss/LFUI.scss';
+import '../src/scss/DOCS.scss';
 import { withA11y } from '@storybook/addon-a11y';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
