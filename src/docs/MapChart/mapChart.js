@@ -25,25 +25,37 @@ const mapChartExample = () => {
     {
       'shares': 38,
       'countries': 'Northern Europe',
-      'countryCodes': ['248', '208', '233', '234', '233', '246', '831', '352', '372', '833', '832', '428', '440', '578', '744', '826'],
+      'countryCodes': ['248', '208', '233', '234', '233', '831', '352', '372', '833', '832', '428', '440', '578', '744', '826'],
       'color': 3
     },
     {
-      'shares': 45,
+      'shares': 1,
       'countries': 'North America',
       'countryCodes': ['840', '124', '484'],
       'color': 4
     },
     {
-      'shares': 12,
+      'shares': 99,
       'countries': 'Turkey',
       'countryCodes': ['792'],
       'color': 5
+    },
+    {
+      'shares': 40,
+      'countries': 'Finland',
+      'countryCodes': ['246'],
+      'color': 6
+    },
+    {
+      'shares': 75,
+      'countries': 'Russian Federation',
+      'countryCodes': ['643'],
+      'color': 7
     }
   ];
 
   var colorScale = d3.scaleOrdinal()
-    .range(['#032f55', '#00427a', '#005b9c', '#468abd', '#74b3d6', '#b9d7e7', '#7e0a0d', '#ad1015', '#d9222a', '#e05656', '#ea9093', '#f7d1d3', '#4d4d4d', '#747578', '#a9aaa9']);
+    .range(['#00427a', '#468abd', '#b9d7e7', '#ad1015', '#e05656', '#f7d1d3', '#032f55', '#005b9c', '#74b3d6', '#7e0a0d', '#d9222a', '#ea9093', '#4d4d4d', '#747578', '#a9aaa9']);
 
   var width = 680;
   var mapHeight = 675;
