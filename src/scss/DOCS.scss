@@ -1,10 +1,78 @@
-// Core variables, mixins, functions, fonts and helpers.
+/**
+ * Load in out custom variables and assets
+ */
 
 @import "./base/functions";
 @import "./base/variables";
 @import "./base/mixins";
 
 
+/**
+ * Have Bootstrap fill in all the blanks
+ */
+
+@import "bootstrap/scss/_mixins.scss";
+@import "bootstrap/scss/_variables.scss";
+
+$link-decoration: none;
+
+/**
+ * 1. Most waypoint (when-in-view) js libraries requires `body` to be relative.
+ * 2. Force scrollbars to prevent page jumping when content height is altered.
+ */
+
+html {
+  position: relative; /* 1 */
+}
+
+body {
+  position: relative; /* 1 */
+  overflow-y: scroll; /* 2 */
+  -ms-overflow-style: scrollbar; /* 2 */
+}
+
+/**
+ * Remove the border-radius in Chrome 62+ on macOS.
+ **/
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  border-radius: 0;
+}
+
+/**
+ * Link styles
+ *
+ * Inspired from:
+ * medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
+ */
+
+a {
+  @include link;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+/**
+ * Love-hate
+ */
+
+img {
+  max-width: 100%;
+}
+
+// Override font-family: sans-serif in normalize 5.0
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
 /**
  * Have Bootstrap fill in all the blanks
  */
@@ -92,24 +160,7 @@ textarea {
 @import "upload";
 // Utility classes
 
+// Utility classes
+@import "utilities";
 
-@import "./utilities/background";
-@import "./utilities/border";
-@import "./utilities/cursor";
-@import "./utilities/flex";
-@import "./utilities/visibility";
-@import "./utilities/layout";
-@import "./utilities/legend";
-@import "./utilities/link";
-@import "./utilities/position";
-@import "./utilities/reset";
-@import "./utilities/selection";
-@import "./utilities/spacing";
-@import "./utilities/text";
-
-/**
- * Bootstrap utilities
- */
-
-@import "bootstrap/scss/_utilities.scss";
 
