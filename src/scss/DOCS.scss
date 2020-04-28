@@ -1,6 +1,4 @@
-/**
- * Load in out custom variables and assets
- */
+// Core variables, mixins, functions, fonts and helpers.
 
 @import "./base/functions";
 @import "./base/variables";
@@ -13,6 +11,19 @@
 
 @import "bootstrap/scss/_mixins.scss";
 @import "bootstrap/scss/_variables.scss";
+
+
+/**
+ * Ensure consistent base styles
+ */
+
+@import "bootstrap/scss/_reboot.scss";
+
+
+
+a {
+  @include link;
+}
 
 $link-decoration: none;
 
@@ -150,13 +161,17 @@ body[data-focus-source="key"] .upload-input.has-focus + .upload-label {  // Fire
   background-color: transparent;
   border-color: #00325c;
 }
-/**
- * Stop iOS users from accidentally opening empty hash links in new tabs
- */
 
-a[href="#"] {
-  -webkit-touch-callout: none;
+// Override font-family: sans-serif in normalize 5.0
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
 }
+
+
 // Reset and dependencies
 @import "print";
 
@@ -212,7 +227,24 @@ a[href="#"] {
 @import "upload";
 // Utility classes
 
-// Utility classes
-@import "utilities";
 
+@import "./utilities/background";
+@import "./utilities/border";
+@import "./utilities/cursor";
+@import "./utilities/flex";
+@import "./utilities/visibility";
+@import "./utilities/layout";
+@import "./utilities/legend";
+@import "./utilities/link";
+@import "./utilities/position";
+@import "./utilities/reset";
+@import "./utilities/selection";
+@import "./utilities/spacing";
+@import "./utilities/text";
+
+/**
+ * Bootstrap utilities
+ */
+
+@import "bootstrap/scss/_utilities.scss";
 
