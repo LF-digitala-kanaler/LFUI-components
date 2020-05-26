@@ -18,7 +18,7 @@ $datepicker-button-prev-next-width: 48px;
 
 $datepicker-cell-height-big: 75px;
 
-@import "eonasdan-bootstrap-datetimepicker/src/sass/_bootstrap-datetimepicker.scss";
+@import "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4/src/sass/_bootstrap-datetimepicker.scss";
 
 .datepicker {
   th::first-letter,
@@ -378,3 +378,18 @@ $datepicker-cell-height-big: 75px;
   cursor: default;
   pointer-events: none;
 }
+// test small datepicker
+.datepicker-small .bootstrap-datetimepicker-widget {
+  min-width: 296px;
+  max-width: 296px;
+}
+
+.datepicker-small table td.day,
+.datepicker-small .timepicker table td.hour,
+.datepicker-small .timepicker table td.minute,
+.datepicker-small th {
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+}
+

@@ -41,9 +41,9 @@ const CustomSelect = (function ($) {
       this.val = _this.isMultiSelect ? [] : '';
       this.index = -1;
       this.searchString = '';
-
+      
       if (_this.isMultiSelect) {
-        _this.options.each(function (index, option) {
+        _this.element.find('.custom-dropdown > .dropdown-item').each(function (index, option) {
           _this._updateValueList($(option));
         });
       }
@@ -74,7 +74,7 @@ const CustomSelect = (function ($) {
         _this._addCustomSelectListeners();
       }
 
-      _this.element.on('keypress', function (e){
+      _this.element.on('keypress',function (e){
         let code = (e.keyCode ? e.keyCode : e.which);
         if(code === KeyCode.SPACE_KEYCODE || code === KeyCode.ENTER_KEYCODE) {
           if (code === KeyCode.SPACE_KEYCODE) {
@@ -82,31 +82,32 @@ const CustomSelect = (function ($) {
             e.preventDefault();
           }
 
-          if(_this.index !== -1 && !(_this.index >= _this.options.length)) {
-            _this._focusOption(_this.isMultiSelect, _this.options[_this.index]);
+          if(_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
+            _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
           }
         }
       }).on('keydown', function (e) {
         let code = (e.keyCode ? e.keyCode : e.which);
-
+        
         if(!_this._isDropdownOpen()) {
+         
           switch(code) {
             case KeyCode.ARROW_UP_KEYCODE:
               e.preventDefault();
               _this.dropdownElement.dropdown('toggle');
               if(_this.index === -1) {
-                _this.options[_this.options.length -1].focus();
-                _this.index = (_this.options.length -1);
+                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length -1].focus();
+                _this.index = (_this.element.find('.custom-dropdown > .dropdown-item').length -1);
               }
-              if(_this.index !== -1 && !(_this.index >= _this.options.length)) {
-                _this._focusOption(_this.isMultiSelect, _this.options[_this.index]);
+              if(_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
+                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
             case KeyCode.ARROW_DOWN_KEYCODE:
               e.preventDefault();
               _this.dropdownElement.dropdown('toggle');
-              if(_this.index !== -1 && !(_this.index >= _this.options.length)) {
-                _this._focusOption(_this.isMultiSelect, _this.options[_this.index]);
+              if(_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
+                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
             default:
@@ -117,25 +118,25 @@ const CustomSelect = (function ($) {
           switch(code){
             case KeyCode.ARROW_UP_KEYCODE:
               if(_this.index === -1) {
-                _this.options[_this.options.length -1].focus();
-                _this.index = _this.options.length;
+                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length -1].focus();
+                _this.index = _this.element.find('.custom-dropdown > .dropdown-item').length;
               }
               if (_this.index > 0) {
                 _this.index--;
               }
               e.preventDefault();
               if (_this.index >= 0) {
-                _this._focusOption(_this.isMultiSelect, _this.options[_this.index]);
+                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
             case KeyCode.ARROW_DOWN_KEYCODE:
-              if (_this.index < (_this.options.length -1)) {
+              if (_this.index < (_this.element.find('.custom-dropdown > .dropdown-item').length -1)) {
                 _this.index++;
               }
               e.preventDefault();
 
-              if (_this.index <= (_this.options.length -1)) {
-                _this._focusOption(_this.isMultiSelect, _this.options[_this.index]);
+              if (_this.index <= (_this.element.find('.custom-dropdown > .dropdown-item').length -1)) {
+                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
             case KeyCode.TAB_KEYCODE:
@@ -151,7 +152,7 @@ const CustomSelect = (function ($) {
                 _this.searchString += e.key;
 
                 let match = _this._getMatchingOption();
-
+                
                 if (match) {
                   if (_this.isMultiSelect) {
                     match.find('[type=checkbox]').focus();
@@ -175,8 +176,7 @@ const CustomSelect = (function ($) {
     _addCustomMultiSelectEventListeners() {
       let _this = this;
 
-      _this.options.on('change click keydown', function (e) {
-        
+      _this.options.on('change click keydown',function (e) {
         let code = (e.keyCode ? e.keyCode : e.which);
   
         if (e.target.tagName !== 'INPUT' || (e.target.tagName === 'INPUT' && code === KeyCode.SPACE_KEYCODE)) {
@@ -226,12 +226,17 @@ const CustomSelect = (function ($) {
     _addCustomSelectListeners() {
       let _this = this;
 
-      _this.options.on('click touchstart keypress', function (e) {
-        _this._setSelectedOption($(this));
+      _this.element.find($('.custom-dropdown:not(.custom-multi-select)')).on('click touchstart keypress', _this.element.find('.custom-dropdown > .dropdown-item'), function (e) {
+        var target = $(e.target);
+        if (!(target.is('.dropdown-item'))) { 
+          target = target.closest('.dropdown-item');
+        }
+        
+        _this._setSelectedOption(target);
         e.preventDefault();
         _this.dropdownElement.dropdown('toggle');
 
-        if (_this.config.onSelect) {
+        if (_this.config.onSelect) {
           _this.config.onSelect(e);
         }
       });
@@ -242,7 +247,7 @@ const CustomSelect = (function ($) {
       const _this = this;
 
       let matchingOption;
-      _this.options.each(function(index, option){
+      _this.element.find('.custom-dropdown > .dropdown-item').each(function(index, option){
         let text = option.text;
         if (_this.isMultiSelect) {
           text = $(option).find('.custom-control-label').text();
@@ -258,9 +263,9 @@ const CustomSelect = (function ($) {
 
     _setSelectedOption(option) {
       option.focus();
-      this.val = option.text();
+      this.val = option.html();
       this.index = option.index();
-      this.placeholder.text(this.val);
+      this.placeholder.html(this.val);
       this.parent.addClass('has-valid');
     }
 

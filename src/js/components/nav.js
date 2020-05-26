@@ -1,5 +1,6 @@
 import 'bootstrap/js/src/tab';
 
+
 $(document).on('click', '[data-tabs="overflow"] > .nav a', onClick);
 
 function onClick(event) {

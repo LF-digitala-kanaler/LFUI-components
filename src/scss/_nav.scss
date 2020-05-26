@@ -10,7 +10,7 @@
   padding-bottom: calc(#{$nav-link-padding-y} - 2px);
 }
 
-.nav:not(.navbar-nav):not(.nav-tabs):not(.nav-pills):not(.nav-tight):not(.nav-stacked):not(.nav-two-col):not(.nav-sub):not(.nav-sub-gray):not(.nav-page) {
+.nav:not(.navbar-nav):not(.nav-tabs):not(.nav-pills):not(.nav-tight):not(.nav-stacked):not(.nav-two-col):not(.nav-sub):not(.nav-sub-gray) {
   .nav-link {
     line-height: 1.2;
     padding: 0;

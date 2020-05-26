@@ -11,7 +11,6 @@ window.jQuery = jQuery;
 import './components/utilities';
 import './../icon';
 import './components/alert';
-import './components/animation';
 import './components/buttons';
 import './components/card';
 import './components/custom-forms';

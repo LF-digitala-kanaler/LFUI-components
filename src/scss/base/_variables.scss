@@ -55,7 +55,7 @@ $sky: #76bbe7;
 $baby: #badaf3;
 $cloud: #eff4f9;
 $black: #222;
-$gray: #747578;
+$gray: #6b7070; //6b7070
 $silver: #b1b3b6;
 $smoke: #d9d9d9;
 $shadow: #e5e5e5;
@@ -397,7 +397,7 @@ $input-btn-focus-box-shadow:  none;
 
 $btn-font-weight: bold;
 $btn-box-shadow: none;
-$btn-focus-box-shadow: none;
+$btn-focus-box-shadow:  0 0 0 rgba(0, 0, 0, 0.1);  // Focus state not working as it should with box-shadow set to none in Safari that's why we use such a strange value.
 $btn-active-box-shadow: none;
 
 $btn-link-disabled-color: $gray-600 !default;

@@ -3,7 +3,7 @@
 import './js/components/utilities';
 
 import './js/components/alert';
-import './js/components/animation';
+
 import './js/components/buttons';
 import './js/components/card';
 import './js/components/custom-forms';

@@ -3,7 +3,7 @@ import '../src/scss/DOCS.scss';
 import { withA11y } from '@storybook/addon-a11y';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-import '../node_modules/eonasdan-bootstrap-datetimepicker'
+import 'eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4';
 import '../src/js/index.js';
 addDecorator(withA11y)
 

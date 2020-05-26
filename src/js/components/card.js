@@ -45,4 +45,3 @@ function onClick(event) {
       .on('fail', () => $trigger.removeClass(LOADING_CLASS));
   }
 }
-

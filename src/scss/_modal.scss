@@ -102,39 +102,6 @@
   }
 }
 
-// Deprecated, but keeping it here for now.
-// (Is the same as the default)
-.modal-air {
-  .modal-header {
-    padding: 1.35rem 3.9rem 1.35rem $modal-inner-padding;
-    border-bottom: 2px solid #f3f3f3;
-
-    .close {
-      top: 2rem;
-      right: 1.4rem;
-
-      &.close-large {
-        top: 25px;
-        right: 27px;
-      }
-    }
-  }
-
-  .modal-body {
-    padding: 1.25rem $modal-inner-padding 1.5rem $modal-inner-padding;
-  }
-
-  .modal-footer {
-    padding-top: 0;
-    padding-bottom: 2.25rem;
-    padding-right: 1.9rem;
-  }
-
-  .modal-title {
-    font-size: 23px;
-  }
-}
-
 /**
  * Tweak link buttons spacing
  */
