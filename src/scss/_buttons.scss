@@ -592,6 +592,13 @@
   @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
 }
 
+.btn-default {
+  font-size: $font-size-md;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+
+  @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
+}
+
 .btn-outline-info {
   @extend .btn-info;
 

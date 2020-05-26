@@ -97,3 +97,24 @@ label.popover-tooltip-trigger,
 .popover-tooltip.popover-attach.popover-right {
   left: 100%;
 }
+
+.popover-tooltip.popover-attach.popover-bottom-right {
+  right: 0;
+  left: auto;
+}
+
+.popover-tooltip-trigger.popover-sm-center {
+  @include media-breakpoint-down(sm) {
+    position: static;
+  }
+}
+
+.popover-tooltip.popover-attach.popover-sm-center {
+  @include media-breakpoint-down(sm) {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: auto;
+  }
+}
+

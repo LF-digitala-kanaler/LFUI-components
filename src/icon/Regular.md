@@ -607,6 +607,10 @@
       <span class="text-sm ml-05">flag-24</span>
   </div>
       <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-fund-assortment-24"></use></svg>
+      <span class="text-sm ml-05">fund-assortment-24</span>
+  </div>
+      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-gear-24"></use></svg>
       <span class="text-sm ml-05">gear-24</span>
   </div>
@@ -697,6 +701,10 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-parasol-24"></use></svg>
       <span class="text-sm ml-05">parasol-24</span>
+  </div>
+      <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-payment-24"></use></svg>
+      <span class="text-sm ml-05">payment-24</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="24" height="24"><use xlink:href="#icon-pdf-doc-24"></use></svg>
@@ -887,18 +895,6 @@
 <h3>32 pixels icons</h3>
 <div class="mt-1 row text-blue">
   <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-about_LF-32"></use></svg>
-      <span class="text-sm ml-05">about_LF-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-accont-32"></use></svg>
-      <span class="text-sm ml-05">accont-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-apply_job-32"></use></svg>
-      <span class="text-sm ml-05">apply_job-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-arrow-enclosed-32"></use></svg>
       <span class="text-sm ml-05">arrow-enclosed-32</span>
   </div>
@@ -913,10 +909,6 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-attach-32"></use></svg>
       <span class="text-sm ml-05">attach-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-bank-32"></use></svg>
-      <span class="text-sm ml-05">bank-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-bills-coins-32"></use></svg>
@@ -953,10 +945,6 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-card-block-32"></use></svg>
       <span class="text-sm ml-05">card-block-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-card_payment-32"></use></svg>
-      <span class="text-sm ml-05">card_payment-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-chat-32"></use></svg>
@@ -1007,8 +995,8 @@
       <span class="text-sm ml-05">coins-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-contact-32"></use></svg>
-      <span class="text-sm ml-05">contact-32</span>
+      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-contact-menu-32 copy"></use></svg>
+      <span class="text-sm ml-05">contact-menu-32 copy</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-contact-menu-32"></use></svg>
@@ -1027,20 +1015,12 @@
       <span class="text-sm ml-05">cross-enclosed-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-digital_services-32"></use></svg>
-      <span class="text-sm ml-05">digital_services-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-document-32"></use></svg>
       <span class="text-sm ml-05">document-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-dog-32"></use></svg>
       <span class="text-sm ml-05">dog-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-economy-32"></use></svg>
-      <span class="text-sm ml-05">economy-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-ellipsis-enclosed-32"></use></svg>
@@ -1055,16 +1035,8 @@
       <span class="text-sm ml-05">facebook-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-finance-32"></use></svg>
-      <span class="text-sm ml-05">finance-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-flag-32"></use></svg>
       <span class="text-sm ml-05">flag-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-forms-32"></use></svg>
-      <span class="text-sm ml-05">forms-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-gear-32"></use></svg>
@@ -1119,38 +1091,6 @@
       <span class="text-sm ml-05">institution-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance-32"></use></svg>
-      <span class="text-sm ml-05">insurance-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_animal-32"></use></svg>
-      <span class="text-sm ml-05">insurance_animal-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_boat-32"></use></svg>
-      <span class="text-sm ml-05">insurance_boat-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_car-32"></use></svg>
-      <span class="text-sm ml-05">insurance_car-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_home-32"></use></svg>
-      <span class="text-sm ml-05">insurance_home-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_truck-32"></use></svg>
-      <span class="text-sm ml-05">insurance_truck-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-insurance_vehicle-32"></use></svg>
-      <span class="text-sm ml-05">insurance_vehicle-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-investment-32"></use></svg>
-      <span class="text-sm ml-05">investment-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-letter-32"></use></svg>
       <span class="text-sm ml-05">letter-32</span>
   </div>
@@ -1161,10 +1101,6 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-list-32"></use></svg>
       <span class="text-sm ml-05">list-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-loan-32"></use></svg>
-      <span class="text-sm ml-05">loan-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-login-bankid-32"></use></svg>
@@ -1251,14 +1187,6 @@
       <span class="text-sm ml-05">navigation-wages-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-offer-32"></use></svg>
-      <span class="text-sm ml-05">offer-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-other_vehicles-32"></use></svg>
-      <span class="text-sm ml-05">other_vehicles-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-padlock-32"></use></svg>
       <span class="text-sm ml-05">padlock-32</span>
   </div>
@@ -1295,10 +1223,6 @@
       <span class="text-sm ml-05">pension-state-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-pension_mega-32"></use></svg>
-      <span class="text-sm ml-05">pension_mega-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-percent-32"></use></svg>
       <span class="text-sm ml-05">percent-32</span>
   </div>
@@ -1315,14 +1239,6 @@
       <span class="text-sm ml-05">plus-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-press_Media-32"></use></svg>
-      <span class="text-sm ml-05">press_Media-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-prevent-32"></use></svg>
-      <span class="text-sm ml-05">prevent-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-print-32"></use></svg>
       <span class="text-sm ml-05">print-32</span>
   </div>
@@ -1335,16 +1251,8 @@
       <span class="text-sm ml-05">radio-round-32</span>
   </div>
       <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-report_damage-32"></use></svg>
-      <span class="text-sm ml-05">report_damage-32</span>
-  </div>
-      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-save-32"></use></svg>
       <span class="text-sm ml-05">save-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-save_profile-32"></use></svg>
-      <span class="text-sm ml-05">save_profile-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-screen-32"></use></svg>
@@ -1365,10 +1273,6 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-star-32"></use></svg>
       <span class="text-sm ml-05">star-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-subsidiaries-32"></use></svg>
-      <span class="text-sm ml-05">subsidiaries-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-sustainability-32"></use></svg>
@@ -1397,10 +1301,6 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-travel-32"></use></svg>
       <span class="text-sm ml-05">travel-32</span>
-  </div>
-      <div class="col-4 mb-2">
-      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-travel_plane-32"></use></svg>
-      <span class="text-sm ml-05">travel_plane-32</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-triangle-32"></use></svg>
@@ -1507,6 +1407,10 @@
       <span class="text-sm ml-05">apartment-40</span>
   </div>
       <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-arrows-apart-40"></use></svg>
+      <span class="text-sm ml-05">arrows-apart-40</span>
+  </div>
+      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-atv-40"></use></svg>
       <span class="text-sm ml-05">atv-40</span>
   </div>
@@ -1517,6 +1421,10 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-bank-40"></use></svg>
       <span class="text-sm ml-05">bank-40</span>
+  </div>
+      <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-bankid-40"></use></svg>
+      <span class="text-sm ml-05">bankid-40</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-bike-40"></use></svg>
@@ -1615,6 +1523,10 @@
       <span class="text-sm ml-05">digital-services-40</span>
   </div>
       <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-document-40"></use></svg>
+      <span class="text-sm ml-05">document-40</span>
+  </div>
+      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-dog-40"></use></svg>
       <span class="text-sm ml-05">dog-40</span>
   </div>
@@ -1637,6 +1549,14 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-farm-40"></use></svg>
       <span class="text-sm ml-05">farm-40</span>
+  </div>
+      <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-fund-assortment-40"></use></svg>
+      <span class="text-sm ml-05">fund-assortment-40</span>
+  </div>
+      <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-gear-40"></use></svg>
+      <span class="text-sm ml-05">gear-40</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-glasses-40"></use></svg>
@@ -1705,6 +1625,10 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-padlock-40"></use></svg>
       <span class="text-sm ml-05">padlock-40</span>
+  </div>
+      <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-payment-40"></use></svg>
+      <span class="text-sm ml-05">payment-40</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-pension-40"></use></svg>

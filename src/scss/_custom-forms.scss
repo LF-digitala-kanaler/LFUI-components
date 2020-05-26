@@ -71,14 +71,14 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
 .custom-control:hover .custom-control-input:not([disabled]),
 .custom-control:hover .custom-control-input:not([disabled]) {
   & ~ .custom-switch-label {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $text-muted 50%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $gray 50%);
     background-repeat: repeat-x;
     background-size: 2px 2px;
     background-position: 0 calc(100% - 3px);
   }
 
   & ~ .custom-control-label {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $text-muted 50%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $gray 50%);
     background-repeat: repeat-x;
     background-size: 2px 2px;
     background-position: 0 calc(100%);
@@ -110,6 +110,12 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
       box-shadow: inset 0 0 0 2px #005aa0;
       border-radius: 50%;
     }
+  }
+
+  .custom-control-label::before,
+  .custom-control-label::after {
+    height: 18px;
+    width: 18px;
   }
 
   .custom-control-label::before,
