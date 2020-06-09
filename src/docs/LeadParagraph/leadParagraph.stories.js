@@ -1,5 +1,5 @@
-import Preamble from "./preamble.html";
+import LeadParagraph from "./leadParagraph.html";
 
-export default { title: 'Preamble' }; 
+export default { title: 'Lead Paragraph' }; 
 
-export const preamble = () => `${Preamble}`;
+export const leadParagraph = () => `${LeadParagraph}`;
