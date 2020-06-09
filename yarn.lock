@@ -3549,11 +3549,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0.tgz#ceb03842c145fcc1b9b4e15da2a05656ba68469a"
-  integrity sha512-gulJE5dGFo6Q61V/whS6VM4WIyrlydXfCgkE+Gxe5hjrJ8rXLLZlALq7zq2RPhOc45PSwQpJkrTnc2KgD6cvmA==
-
 bootstrap@4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
@@ -5363,11 +5358,12 @@ env-ci@^2.1.0:
     execa "^1.0.0"
     java-properties "^0.2.9"
 
-"eonasdan-bootstrap-datetimepicker@https://github.com/LF-digitala-kanaler/bootstrap-datetimepicker/tarball/release/4.17.52":
-  version "4.17.51"
-  resolved "https://github.com/LF-digitala-kanaler/bootstrap-datetimepicker/tarball/release/4.17.52#66d9c2ed5696ca0007630572963179f2525afee1"
+eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4/-/eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4-1.0.0.tgz#a88931f0c8c32849e629fd1f3730579b065f20d7"
+  integrity sha512-klB2kBL6xe1WcAgBrmLs1estznQHs/NMN0ju26qsHy/CfrL5dwzAqJQQ5E/509nIkFbGrNyixeGkDSRaVmIf7g==
   dependencies:
-    bootstrap "4.0.0"
+    bootstrap "4.3.1"
     jquery "^1.8.3 || ^2.0 || ^3.0"
     moment "^2.19.4"
     moment-timezone "0.4.0"
@@ -9547,6 +9543,11 @@ object-assign@4.0.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.0.1.tgz#99504456c3598b5cad4fc59c26e8a9bb107fe0bd"
   integrity sha1-mVBEVsNZi1ytT8WcJuipuxB/4L0=
 
+object-assign@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
+  integrity sha1-m+3VygiXlJvKR+f/QIBi1Un1h/I=
+
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -10272,6 +10273,16 @@ postcss-flexbugs-fixes@^4.1.0:
   dependencies:
     postcss "^7.0.26"
 
+postcss-increase-specificity@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/postcss-increase-specificity/-/postcss-increase-specificity-0.6.0.tgz#28facf95b24527aaaf8e687915da837ab9bd814c"
+  integrity sha512-JlYoxbKBBchz69hO3s3O1CNU127bg1r72WjdePA906ovktGN/C7xdI17aai3FlBNg0i+JFJivaoh8WO1FfI1XA==
+  dependencies:
+    escape-string-regexp "^1.0.5"
+    object-assign "^3.0.0"
+    postcss "^5.1.2"
+    string.prototype.repeat "^0.2.0"
+
 postcss-load-config@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-2.1.0.tgz#c84d692b7bb7b41ddced94ee62e8ab31b417b003"
@@ -10559,7 +10570,7 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.0.2:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.0.3.tgz#651ff4593aa9eda8d5d0d66593a2417aeaeb325d"
   integrity sha512-N7h4pG+Nnu5BEIzyeaaIYWs0LI5XC40OrRh5L60z0QjFsqGWcHcbkBvpe1WYpcIS9yQ8sOi/vIPt1ejQCrMVrg==
 
-postcss@^5.0.12:
+postcss@^5.0.12, postcss@^5.1.2:
   version "5.2.18"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
   integrity sha512-zrUjRRe1bpXKsX1qAJNJjqZViErVuyEkMTRrwu4ud4sbTtIBRmtaYDrHmcGgmrbsW3MHfmtIf+vJumgQn+PrXg==
@@ -12601,6 +12612,11 @@ string.prototype.padstart@^3.0.0:
   dependencies:
     define-properties "^1.1.3"
     es-abstract "^1.17.0-next.1"
+
+string.prototype.repeat@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.repeat/-/string.prototype.repeat-0.2.0.tgz#aba36de08dcee6a5a337d49b2ea1da1b28fc0ecf"
+  integrity sha1-q6Nt4I3O5qWjN9SbLqHaGyj8Ds8=
 
 string.prototype.trimleft@^2.1.1:
   version "2.1.1"
