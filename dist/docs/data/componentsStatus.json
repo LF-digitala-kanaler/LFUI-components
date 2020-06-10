@@ -6,7 +6,20 @@
         "new": false,
         "deprecated": false,
         "changedInVersion":[ "6.5.0","5.2.0", "4.2.0", "3.4.0"],
-        "examples": ["Danger", "Info", "Success", "Warning"]
+         "examples": [
+              {
+                "name" : "Danger"
+              },
+              {
+                "name" : "Info"
+              },
+              {
+                "name" : "Success"
+              },
+              {
+                "name" : "Warning"
+              }
+            ]
       }
     },
     {
