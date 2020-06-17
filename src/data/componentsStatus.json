@@ -52,9 +52,6 @@
             "name" : "Secondary"
           },
           {
-            "name" : "Success"
-          },
-          {
             "name" : "Login"
           }
         ]
@@ -145,12 +142,6 @@
           },
           {
             "name" : "Multi Select"
-          },
-          {
-            "name" : "Success"
-          },
-          {
-            "name" : "Login"
           }
         ]
       }
@@ -358,9 +349,6 @@
           },
           {
             "name" : "Intervall"
-          },
-          {
-            "name" : "Landing page"
           }
         ]
       }
