@@ -208,6 +208,9 @@
           },
           {
             "name" : "Checkmarks"
+          },
+          {
+            "name" : "Link Lists"
           }
         ]
       }
