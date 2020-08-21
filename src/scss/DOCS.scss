@@ -5,6 +5,10 @@
 @import "./base/mixins";
 
 /**
+ * Only used for Docs, let us switch background in storybook
+ */
+$body-bg:transparent;
+/**
  * Have Bootstrap fill in all the blanks
  */
 
@@ -39,6 +43,7 @@ body {
   position: relative; /* 1 */
   overflow-y: scroll; /* 2 */
   -ms-overflow-style: scrollbar; /* 2 */
+  
 }
 
 /**
