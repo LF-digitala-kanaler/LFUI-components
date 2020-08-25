@@ -110,3 +110,9 @@
 .text-risk-5 { color: $risk-color-5 !important; }
 .text-risk-6 { color: $risk-color-6 !important; }
 .text-risk-7 { color: $risk-color-7 !important; }
+
+[dir="RTL"],
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
