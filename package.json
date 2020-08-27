@@ -65,7 +65,6 @@
     "build-storybook": " npm run build:icons && build-storybook -c .storybook -o public/$npm_package_version",
     "build": "webpack --mode production && npm run build:icons",
     "dev": "webpack --mode development",
-    "publish": "git push --follow-tags --set-upstream origin $branch",
     "release": "auto changelog && npm run version && auto release",
     "test": "jest --no-cache"
   },
