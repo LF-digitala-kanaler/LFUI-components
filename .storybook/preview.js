@@ -7,7 +7,6 @@ import '../src/js/index.js';
 // addDecorator(withA11y)
 
 export const parameters = {
-  layout: 'centered',
   backgrounds: {
   default: 'white',
   values: [
