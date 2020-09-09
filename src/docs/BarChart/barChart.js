@@ -1,7 +1,7 @@
 import graphColors from '../../data/graphColors';
 
-const barGraphExample = () => {
-  const ctx = document.getElementById('barGraph').getContext('2d');
+const barChartExample = () => {
+  const ctx = document.getElementById('barChart').getContext('2d');
   const data = [
     {x: '2015', y: 1}, 
     {x: '2016', y: -2},
@@ -41,4 +41,4 @@ const barGraphExample = () => {
   });
 }
 
-export  {barGraphExample}
+export  {barChartExample}
