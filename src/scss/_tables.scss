@@ -494,7 +494,7 @@
   width: 100%;
   border-top: 2px solid #f3f3f3;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     border-top: none;
   }
 
