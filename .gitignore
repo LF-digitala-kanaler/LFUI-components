@@ -5,3 +5,4 @@ node_modules
 .vscode
 .storybook
 storybook-static
+package-lock.json
