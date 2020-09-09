@@ -1,4 +1,4 @@
-import graphColors from '../../data/graphColors';
+import chartColors from '../../data/chartColors';
 
 
 const lineChartExample = () => {
@@ -12,7 +12,7 @@ const lineChartExample = () => {
     {x: 'Jun', y: 8},
     
   ]
-  const lineColors = graphColors.getColorScale(test.length);
+  const lineColors = chartColors.getColorScale(test.length);
 
   const datasets = [
     {
