@@ -494,6 +494,10 @@
   width: 100%;
   border-top: 2px solid #f3f3f3;
 
+  @include media-breakpoint-down(md) {
+    border-top: none;
+  }
+
   @include media-breakpoint-down(sm) {
     order: 2;
   }
