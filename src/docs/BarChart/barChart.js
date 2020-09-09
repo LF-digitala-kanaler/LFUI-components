@@ -1,4 +1,4 @@
-import graphColors from '../../data/graphColors';
+import chartColors from '../../data/chartColors';
 
 const barChartExample = () => {
   const ctx = document.getElementById('barChart').getContext('2d');
@@ -10,7 +10,7 @@ const barChartExample = () => {
     {x: '2019', y: 10},
     {x: '2020', y: 8}
   ]
-  const colors = data.map((value) => value.y < 0 ? graphColors.getNegativeColor() : graphColors.getPositiveColor());
+  const colors = data.map((value) => value.y < 0 ? chartColors.getNegativeColor() : chartColors.getPositiveColor());
 
   new Chart(ctx, {
     type: 'bar',

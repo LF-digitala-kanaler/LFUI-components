@@ -1,4 +1,4 @@
-const graphColors = {
+const chartColors = {
 
   _getColors: function(numberOfItems) {
 
@@ -70,4 +70,4 @@ const graphColors = {
 
 }
 
-export default graphColors;
+export default chartColors;
