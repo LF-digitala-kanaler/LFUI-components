@@ -67,7 +67,7 @@ const CustomSelect = (function ($) {
 
     _addEventListeners() {
       let _this = this;
-
+      
       if (_this.isMultiSelect) {
         _this._addCustomMultiSelectEventListeners();
       } else {
@@ -225,9 +225,10 @@ const CustomSelect = (function ($) {
 
     _addCustomSelectListeners() {
       let _this = this;
-
+     
       _this.element.find($('.custom-dropdown:not(.custom-multi-select)')).on('click touchstart keypress', _this.element.find('.custom-dropdown > .dropdown-item'), function (e) {
         var target = $(e.target);
+        
         if (!(target.is('.dropdown-item'))) { 
           target = target.closest('.dropdown-item');
         }
@@ -262,11 +263,14 @@ const CustomSelect = (function ($) {
     }
 
     _setSelectedOption(option) {
+      console.log(option, 'ot')
       option.focus();
       this.val = option.html();
       this.index = option.index();
       this.placeholder.html(this.val);
       this.parent.addClass('has-valid');
+
+      console.log(this.val, 'ot')
     }
 
     _updateValueList(option, eventType, shouldTriggerCheckbox) {
