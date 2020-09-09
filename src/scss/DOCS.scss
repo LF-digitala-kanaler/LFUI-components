@@ -4,7 +4,10 @@
 @import "./base/variables";
 @import "./base/mixins";
 
-
+/**
+ * Only used for Docs, let us switch background in storybook
+ */
+$body-bg:transparent;
 /**
  * Have Bootstrap fill in all the blanks
  */
