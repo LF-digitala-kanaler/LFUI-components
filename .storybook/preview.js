@@ -7,7 +7,6 @@ import '../src/js/index.js';
 // addDecorator(withA11y)
 
 export const parameters = {
-  
   backgrounds: {
   default: 'white',
   values: [

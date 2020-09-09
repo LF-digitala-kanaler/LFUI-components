@@ -1,0 +1,19 @@
+$graph-legend-box-size: 1rem;
+
+.graph-legends {
+  list-style-image: none;
+  list-style-type: none;
+  padding-left: 0
+}
+
+.graph-legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.graph-legend-box {
+  height: $graph-legend-box-size;
+  width: $graph-legend-box-size;
+  margin-right: 8px;
+}
