@@ -134,7 +134,8 @@ const uploadExample = () => {
 
 
     $('#upload-test-btn').on('click', function() {
-      
+      $('#upload2').parent().parent().removeClass('has-valid');
+      $('#upload2 .upload-progress-bar').removeAttr("style");
       $('#upload2').addClass('loading');
       var timeleft = 100;
       const loaderTest = setInterval(function() {
@@ -144,6 +145,7 @@ const uploadExample = () => {
           clearInterval(loaderTest);
         if(timeleft === 0)
           $('#upload2').parent().parent().addClass('has-valid');
+          $('#upload2').removeClass('loading')
       }, 15);
     });
   
