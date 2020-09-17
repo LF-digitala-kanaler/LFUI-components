@@ -1,8 +1,8 @@
-import Standard from "./standard.html";
+import Default from "./default.html";
 import Display from "./display.html";
 
 export default { title: 'Headings' }; 
 
-export const standard = () => `${Standard}`;
+export const defaultt = () => `${Default}`;
 export const display = () => `${Display}`;
 
