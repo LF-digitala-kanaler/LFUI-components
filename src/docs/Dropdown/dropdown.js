@@ -12,9 +12,7 @@ const dropdownExample = () => {
   new CustomSelect( $('#custom-multi-select-5') );
   
   
-  $('#custom-multi-select-1').on('click', function(){
-    console.log('click');
-  })
+  // Need for documentation only
   $('.dropdown .custom-select-dd').dropdown() 
 }
 
