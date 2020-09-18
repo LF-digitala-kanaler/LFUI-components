@@ -10,6 +10,10 @@ const selectExample = () => {
   new CustomSelect( $('#custom-multi-select-3') );
   new CustomSelect( $('#custom-multi-select-4') );
   new CustomSelect( $('#custom-multi-select-5') );
+
+  $('#custom-multi-select-1').on('click', function(){
+    console.log('click');
+  })
 }
 
 export  {selectExample}
