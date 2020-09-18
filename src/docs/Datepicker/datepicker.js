@@ -1,5 +1,6 @@
 
 const datepickerExample = () => {
+  var dateOk = new RegExp('[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])');
   $('#datepicker').datetimepicker({
     locale: 'sv',
     format: 'YYYY-MM-DD',
@@ -13,9 +14,20 @@ const datepickerExample = () => {
   $('#datepicker').on('dp.hide', function(){
     $('#datepicker button').removeClass('active');
   });
+  $('#datepicker').on('dp.hide', function(){
+    $('#datepicker button').removeClass('active');
+    var value = $('#datepicker-input').val();
+    if( dateOk.test(value) ) {
+      $(this).find('input').addClass('form-control-valid');
+      $(this).parent().addClass('has-valid');
+    } else {
+      $(this).parent().addClass('has-danger');
+    }
+  });
 }
 
 const timepickerExample = () => {
+  var dateOk = new RegExp('^([0-1][0-9]|[2][0-3]):([0-5][0-9])');
   $('#timepicker').datetimepicker({
       format: 'LT',
       locale: 'sv',
@@ -33,9 +45,20 @@ const timepickerExample = () => {
     $('#timepicker').on('dp.hide', function(){
       $('#timepicker button').removeClass('active');
     });
+    $('#timepicker').on('dp.hide', function(){
+      $('#timepicker button').removeClass('active');
+      var value = $('#timepicker-input').val();
+      if( dateOk.test(value) ) {
+        $(this).find('input').addClass('form-control-valid');
+        $(this).parent().addClass('has-valid');
+      } else {
+        $(this).parent().addClass('has-danger');
+      }
+    });
 }
 
 const disabledDatesExample = () => {
+  var dateOk = new RegExp('[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])');
   $('#datetimepicker-disabled').datetimepicker({
       format: 'YYYY-MM-DD',
       locale: 'sv',
@@ -46,6 +69,16 @@ const disabledDatesExample = () => {
         '2017/06/05',
         '2017/06/06'
       ]
+    });
+    $('#datetimepicker-disabled').on('dp.hide', function(){
+      $('#datetimepicker-disabled button').removeClass('active');
+      var value = $('#datetimepicker-disabled-input').val();
+      if( dateOk.test(value) ) {
+        $(this).find('input').addClass('form-control-valid');
+        $(this).parent().addClass('has-valid');
+      } else {
+        $(this).parent().addClass('has-danger');
+      }
     });
     $('#datetimepicker-disabled').on('dp.show', function(){
       $('#datetimepicker-disabled .bootstrap-datetimepicker-widget').attr('aria-hidden', 'true');
