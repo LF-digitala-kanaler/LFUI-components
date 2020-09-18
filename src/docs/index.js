@@ -39,8 +39,8 @@ navbarExample();
 valueboxExample();
 popoverTooltipExample();
 
-barGraphExample()
-mapChartExample();
+// barGraphExample()
+// mapChartExample();
 inputFieldExample();
 
 import '../scss/DOCS.scss';
