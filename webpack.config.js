@@ -80,6 +80,7 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
+     
       tether: 'tether',
       Tether: 'tether',
       'window.Tether': 'tether',
@@ -112,7 +113,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-                importLoaders: 1,
+                importLoaders: 2,
             },
           },
           'postcss-loader',
