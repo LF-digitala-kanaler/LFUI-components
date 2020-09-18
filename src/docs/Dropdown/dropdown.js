@@ -15,6 +15,7 @@ const dropdownExample = () => {
   $('#custom-multi-select-1').on('click', function(){
     console.log('click');
   })
+  $('.dropdown .custom-select-dd').dropdown() 
 }
 
 export  {dropdownExample}
