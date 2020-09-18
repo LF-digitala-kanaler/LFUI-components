@@ -13,6 +13,7 @@ import {barGraphExample} from './BarGraph/barGraph';
 import {mapChartExample} from './MapChart/mapChart';
 import {lineChartExample} from './LineChart/lineChart';
 import {donutChartExample} from './DonutChart/donutChart';
+import {inputFieldExample} from './InputField/inputField'
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -40,4 +41,6 @@ popoverTooltipExample();
 
 barGraphExample()
 mapChartExample();
+inputFieldExample();
+
 import '../scss/DOCS.scss';
