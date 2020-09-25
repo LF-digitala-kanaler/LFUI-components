@@ -29,8 +29,8 @@
     }
 
     .radio-card.activeRadio:hover::before,
-    .radio-card.active:hover::before {
-      border-bottom: 2px solid $navy;
+    .radio-card.active:not(.radio-card-sm.active):hover::before {
+      border-bottom: 2px solid #00427a;
     }
   }
 
@@ -200,3 +200,4 @@
         </label>
     </div>
   </div>
+</div>

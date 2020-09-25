@@ -17,13 +17,16 @@ import {mapChartExample} from './MapChart/mapChart';
 import {lineChartExample} from './LineChart/lineChart';
 import {donutChartExample} from './DonutChart/donutChart';
 import {inputFieldExample} from './InputField/inputField';
+import { paginationExample } from './Pagination/pagination';
+import { radioButtonsExample } from './RadioButtons/radioButtons';
+radioButtonsExample();
 // run your functions 
 disabledDatesExample();
 timepickerExample();
 datepickerExample();
 
 dropdownExample();
-
+paginationExample();
 calloutExample();
 
 priceBoxExample();
@@ -47,3 +50,4 @@ popoverTooltipExample();
 inputFieldExample();
 
 import '../scss/DOCS.scss';
+
