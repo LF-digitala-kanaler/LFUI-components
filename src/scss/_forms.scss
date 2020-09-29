@@ -275,3 +275,11 @@ input[disabled] {
   padding-left: 0;
   margin-bottom: 0.5rem;
 }
+
+/**
+ * If you need a fixed width input that can hold 3 numbers
+ */
+
+ .form-control-fixed {
+  width: 90px !important;
+}
