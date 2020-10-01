@@ -45,7 +45,7 @@ navbarExample();
 valueboxExample();
 popoverTooltipExample();
 
-// barGraphExample()
+barGraphExample()
 // mapChartExample();
 inputFieldExample();
 
