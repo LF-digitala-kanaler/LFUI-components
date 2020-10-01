@@ -39,14 +39,14 @@ uploadExample();
 timelineExample();
 lineChartExample();
 donutChartExample();
-// mapExample();
+
 
 navbarExample();
 valueboxExample();
 popoverTooltipExample();
 
 barGraphExample()
-// mapChartExample();
+mapChartExample();
 inputFieldExample();
 
 import '../scss/DOCS.scss';
