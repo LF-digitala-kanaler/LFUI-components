@@ -66,11 +66,11 @@ const disabledDatesExample = () => {
       format: 'YYYY-MM-DD',
       locale: 'sv',
       allowInputToggle: true,
-      defaultDate: '2017/06/02',
+      defaultDate: '2020/06/02',
       disabledDates: [
-        '2017/06/04',
-        '2017/06/05',
-        '2017/06/06'
+        '2020/06/04',
+        '2020/06/05',
+        '2020/06/06'
       ]
     });
     $('#datetimepicker-disabled').on('dp.hide', function(){
