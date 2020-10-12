@@ -40,13 +40,14 @@
 
   .price-secondary {
     display: inline-block;
-    margin: auto 0 0;
+    margin: 0;
     white-space: nowrap;
 
     > .year {
       @extend .text-muted;
 
       margin: 0;
+      line-height: 1.05;
       font-weight: normal;
       font-family: $font-family-base;
       font-size: $font-size-md;
@@ -56,7 +57,7 @@
       color: $blue;
       margin-bottom: 0;
       font-family: $font-family-sans-serif;
-      line-height: 1.2;
+      line-height: 1;
       font-size: 1.4375rem;
       font-weight: bold;
 
