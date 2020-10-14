@@ -1,7 +1,7 @@
-import graphColors from '../../data/graphColors';
+import chartColors from '../../data/chartColors';
 
-const barGraphExample = () => {
-  const ctx = document.getElementById('barGraph').getContext('2d');
+const barChartExample = () => {
+  const ctx = document.getElementById('barChart').getContext('2d');
   const data = [
     {x: '2015', y: 1}, 
     {x: '2016', y: -2},
@@ -10,7 +10,7 @@ const barGraphExample = () => {
     {x: '2019', y: 10},
     {x: '2020', y: 8}
   ]
-  const colors = data.map((value) => value.y < 0 ? graphColors.getNegativeColor() : graphColors.getPositiveColor());
+  const colors = data.map((value) => value.y < 0 ? chartColors.getNegativeColor() : chartColors.getPositiveColor());
 
   new Chart(ctx, {
     type: 'bar',
@@ -41,4 +41,4 @@ const barGraphExample = () => {
   });
 }
 
-export  {barGraphExample}
+export  {barChartExample}
