@@ -1,6 +1,19 @@
 
 const datepickerExample = () => {
   var dateOk = new RegExp('[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])');
+
+  if (/Mobi/.test(navigator.userAgent)) {
+    $('#datepicker-input, #datetimepicker-disabled-input').prop("type", "date");
+    $('#timepicker-input').prop("type", "time");
+  }
+  
+  //Hide the datepicker dropdown, called on 'dp.show' event.
+  $('.datepicker').on('dp.show', function(){
+    if (/Mobi/.test(navigator.userAgent)) {
+      $('.datepicker .bootstrap-datetimepicker-widget').css('display', 'none');
+    }
+  });
+
   $('#datepicker').datetimepicker({
     locale: 'sv',
     format: 'YYYY-MM-DD',
@@ -91,6 +104,10 @@ const disabledDatesExample = () => {
     $('#datetimepicker-disabled').on('dp.hide', function(){
       $('#datetimepicker-disabled button').removeClass('active');
     });
+
+      // use native on mobile 
+
+  
 }
 
 export  {disabledDatesExample,timepickerExample,datepickerExample}

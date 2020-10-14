@@ -11,7 +11,8 @@ const dropdownExample = () => {
   new CustomSelect( $('#custom-multi-select-4') );
   new CustomSelect( $('#custom-multi-select-5') );
   
-  
+
+
   // Need for documentation only
   $('.dropdown .custom-select-dd').dropdown() 
 }

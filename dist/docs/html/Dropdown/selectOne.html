@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <p class="text-sm mt-15 mb-05 text-muted">Default</p>
     <div class="form-group">
-      <div class="dropdown" id="custom-select" tabindex="0">
+      <div class="dropdown d-md-block d-none" id="custom-select" tabindex="0">
         <div type="text" class="custom-select-dd" id="customSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span>Välj</span>
         </div>
@@ -13,12 +13,18 @@
           <a class="dropdown-item" tabindex="0">Swedbank</a>
         </div>
       </div>
+      <select class="custom-select d-md-none">
+        <option>Nordea</option>
+        <option>Länsförsäkringar</option>
+        <option>Handelsbanken</option>
+        <option>Swedbank</option>
+      </select>
     </div>
   </div>
   <div class="col-md-4">
       <p class="text-sm mt-15 mb-05 text-muted">With heading</p>
       <div class="form-group">
-        <div class="dropdown" id="custom-select2" tabindex="0">
+        <div class="dropdown d-md-block d-none" id="custom-select2" tabindex="0">
           <div type="text" class="custom-select-dd" id="customSelect2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>Välj</span>
           </div>
@@ -30,6 +36,13 @@
             <a class="dropdown-item" tabindex="0">Barcelona</a>
           </div>
         </div>
+        <select class="custom-select d-md-none">
+          <option>Stockholm</option>
+          <option>Paris</option>
+          <optgroup label = "Spanish">Spanish</optgroup>
+          <option>Madrid</option>
+          <option>Barcelona</option>
+        </select>
       </div>
   </div>
 </div>
@@ -37,7 +50,7 @@
   <div class="col-md-4">
       <p class="text-sm mt-15 mb-05 text-muted">With more then 10 items</p>
       <div class="form-group">
-        <div class="dropdown" id="custom-select3" tabindex="0">
+        <div class="dropdown d-md-block d-none" id="custom-select3" tabindex="0">
           <div type="text" class="custom-select-dd" id="customSelect3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>Välj</span>
           </div>
@@ -56,12 +69,29 @@
             <a class="dropdown-item" tabindex="0">Seville</a>
           </div>
         </div>
+        <select class="custom-select d-md-none">
+          <option>Madrid</option>
+          <option>Barcelona</option>
+          <option>Seville</option>
+          <option>Madrid</option>
+          <option>Barcelona</option>
+          <option>Seville</option>
+          <option>Madrid</option>
+          <option>Barcelona</option>
+          <option>Seville</option>
+          <option>Madrid</option>
+          <option>Barcelona</option>
+          <option>Seville</option>
+          <option>Madrid</option>
+          <option>Barcelona</option>
+          <option>Seville</option>
+        </select>
       </div>
   </div>
   <div class="col-md-4">
       <p class="text-sm mt-15 mb-05 text-muted">With secondary text</p>
       <div class="form-group">
-        <div class="dropdown" id="custom-select4" tabindex="0">
+        <div class="dropdown d-md-block d-none" id="custom-select4" tabindex="0">
           <div type="text" class="custom-select-dd" id="customSelect4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>Välj</span>
           </div>
@@ -72,6 +102,12 @@
             <a class="dropdown-item" tabindex="0">Barcelona <small class="text-muted">21 kr/år</small></a>
           </div>
         </div>
+        <select class="custom-select d-md-none">
+          <option>Stockholm - 21 kr/år</option>
+          <option>Paris - 21 kr/år</option>
+          <option>Madrid - 21 kr/år</option>
+          <option>Barcelona - 21 kr/år</option>
+        </select>
       </div>
   </div>
 </div>
