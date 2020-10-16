@@ -1231,6 +1231,10 @@
       <span class="text-sm ml-05">phone-32</span>
   </div>
       <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-phone-landscape-32"></use></svg>
+      <span class="text-sm ml-05">phone-landscape-32</span>
+  </div>
+      <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="32" height="32"><use xlink:href="#icon-pin-32"></use></svg>
       <span class="text-sm ml-05">pin-32</span>
   </div>
@@ -1653,6 +1657,10 @@
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-phone-40"></use></svg>
       <span class="text-sm ml-05">phone-40</span>
+  </div>
+      <div class="col-4 mb-2">
+      <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-phone-landscape-40"></use></svg>
+      <span class="text-sm ml-05">phone-landscape-40</span>
   </div>
       <div class="col-4 mb-2">
       <svg role="presentation" class="icon" width="40" height="40"><use xlink:href="#icon-pin-40"></use></svg>
