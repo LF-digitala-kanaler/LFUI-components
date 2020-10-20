@@ -3,9 +3,7 @@ import moment from 'moment';
 import 'moment/locale/sv';
 moment.locale('sv');
 const chartUtils = {
-  generateLegend : function (color, name) {
-    return `<li class="chart-legend-item"><div class="chart-legend-box" style="background-color:${color}"></div>${name}</li>`
-  },
+  
   generateData : function () {
     var unit = 'day';
     
@@ -38,7 +36,7 @@ const chartUtils = {
     }
 
     var date = moment('2020 01 Jan', 'YYYY DD MMM ');
-    console.log(date)
+    
     var now = moment();
     var data = [];
   
