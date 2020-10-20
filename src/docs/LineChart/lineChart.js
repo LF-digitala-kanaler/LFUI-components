@@ -33,9 +33,7 @@ const lineChartExample = () => {
         display: false
       },
       legendCallback: function (chart) {  
-        
-        //document.getElementById('js-chartLegends').innerHTML = '';
-        
+       
         var text = [];
         for (var i = 0; i < chart.data.datasets.length; i++) {
             text.push('<li data-index="index-'+i+'" class="chart-legend-item chart-legend-item-clickable" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '"></div>'+ "Länsförsäkringar Dummy fond " + (i+1) +'</li>');
@@ -98,8 +96,6 @@ const lineChartExample = () => {
       
       var index = parseInt(datasetIndex);
       var ci = event.view.lineChart;
-      
-      
       var alreadyHidden = (ci.getDatasetMeta(index).hidden === null) ? false : ci.getDatasetMeta(index).hidden;  
       var anyOthersAlreadyHidden = false;
       var allOthersHidden = true;
@@ -117,12 +113,10 @@ const lineChartExample = () => {
       });
   
       if(!init) {
-        console.log('first')
         ci.data.datasets.forEach(function(e, i) {
           var meta = ci.getDatasetMeta(i);
 
           if (i !== index) {
-          
             meta.hidden = true
             legendColor = legendColor.map((item,ix) => {
               if(ix !== index) {
@@ -160,12 +154,8 @@ const lineChartExample = () => {
                
               }
             });
-            
         }
       }
-      
-      
-
       document.getElementById('js-chartLegends').innerHTML = '';
       document.getElementById('js-chartLegends').innerHTML = lineChart.generateLegend();
       ci.update();
@@ -173,13 +163,13 @@ const lineChartExample = () => {
   
   document.getElementById('addDataset').addEventListener('click', function() {
     
-    
     var newDataset = {
       borderWidth: 2,
       lineTension: 0,
       fill: false,
       data: chartUtils.generateData()
     };
+
     config.data.datasets.push(newDataset);
     
     color = chartColors.getColorScale(config.data.datasets.length)
@@ -189,9 +179,7 @@ const lineChartExample = () => {
     document.getElementById('js-chartLegends').innerHTML = lineChart.generateLegend();
     
     config.data.datasets.map((item,i) =>  item.borderColor = color[i]);
-    
-    
-    
+
     lineChart.update();
     
 });
