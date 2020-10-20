@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
   for all charts included in LFUI. See migration guide for more info. (#7)
 
   * New example of Bar chart. (#12)
+  * New example of Line chart. (#9)
 
 ### Fixed
 
