@@ -9,7 +9,7 @@ import {timelineExample} from './Timeline/timeline';
 import {navbarExample} from './Navbar/navbar';
 import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
 import {valueboxExample} from './ValueBox/valuebox';
-import {barGraphExample} from './BarGraph/barGraph';
+import {barChartExample} from './BarChart/barChart';
 import {mapChartExample} from './MapChart/mapChart';
 import {lineChartExample} from './LineChart/lineChart';
 import {donutChartExample} from './DonutChart/donutChart';
@@ -38,6 +38,6 @@ navbarExample();
 valueboxExample();
 popoverTooltipExample();
 
-barGraphExample()
+barChartExample()
 mapChartExample();
 import '../scss/DOCS.scss';
