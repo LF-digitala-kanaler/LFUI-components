@@ -13,6 +13,7 @@ import {barChartExample} from './BarChart/barChart';
 import {mapChartExample} from './MapChart/mapChart';
 import {lineChartExample} from './LineChart/lineChart';
 import {donutChartExample} from './DonutChart/donutChart';
+import {xyPlotExample} from './xyPlot/xyPlot';
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -32,6 +33,7 @@ uploadExample();
 timelineExample();
 lineChartExample();
 donutChartExample();
+xyPlotExample();
 // mapExample();
 
 navbarExample();
