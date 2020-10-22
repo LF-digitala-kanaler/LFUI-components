@@ -64,8 +64,8 @@ const chartColors = {
   getPositiveColor: function() {
     return '#005AA0';
   },
-  getIndexColor: function() {
-    return '#f9b233';
+  getGridColor: function() {
+    return '#F3F3F3'
   }
 
 }
