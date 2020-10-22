@@ -33,7 +33,15 @@ const barChartExample = () => {
       scales:{
         xAxes: [{
             display: false //this will remove all the x-axis grid lines
-        }]
+        }],
+        yAxes: [{
+          gridLines: {
+            drawTicks: false,
+            color: '#F3F3F3',
+            zeroLineColor: '#F3F3F3'
+
+          },
+        }],
       }
       
     }
