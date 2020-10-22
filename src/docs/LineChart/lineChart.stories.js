@@ -1,5 +1,3 @@
-
-
 import LineChart from "./lineChart.html";
 import {lineChartExample} from "./lineChart"
 import { useEffect } from "@storybook/client-api";
@@ -13,4 +11,3 @@ export const lineChart = () => {
   return LineChart
   
 };
-
