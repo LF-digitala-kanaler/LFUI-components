@@ -13,6 +13,7 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
+    "chartjs-chart-geo": "^2.1.0",
     "@storybook/addon-a11y": "^6.0.26",
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-backgrounds": "^6.0.26",
@@ -89,16 +90,11 @@
       "public"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 8",
+    "safari >= 4"
+  ]
 }
