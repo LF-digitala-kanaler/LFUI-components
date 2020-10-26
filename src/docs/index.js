@@ -34,12 +34,12 @@ timelineExample();
 lineChartExample();
 donutChartExample();
 xyPlotExample();
-// mapExample();
+barChartExample()
+mapChartExample();
 
 navbarExample();
 valueboxExample();
 popoverTooltipExample();
 
-barChartExample()
-mapChartExample();
+
 import '../scss/DOCS.scss';
