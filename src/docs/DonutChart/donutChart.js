@@ -33,7 +33,7 @@ const donutChartExample = () => {
       });
     })
   }
-  console.log(legend(), 'leg')
+
   const isHighlighted = (index) => {
     return !_.isEmpty(_.filter(highlightedArc, (arc) => {
       return arc === index;
@@ -43,6 +43,7 @@ const donutChartExample = () => {
   window.highlight = (evt, elements, index) => {
     legendStyles = [];
     let dataset = donutChart.data.datasets[0];
+    console.log(dataset)
     if (elements.length) {
       index = elements[0]._index;
     } else if (typeof index === 'undefined') {
@@ -73,8 +74,7 @@ const donutChartExample = () => {
     
     document.getElementById('js-chartLegends').innerHTML = '';
     document.getElementById('js-chartLegends').innerHTML = donutChart.generateLegend();
-    donutChart.update()
-    
+    donutChart.update();
     
   }
 
