@@ -8,4 +8,3 @@ addons: [
   '@storybook/addon-docs'
 ]
 };
-
