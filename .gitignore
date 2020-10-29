@@ -11,7 +11,7 @@ storybook-static
 node_modules
 .cache/
 # Build directory
-public/
+
 static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
@@ -115,7 +115,7 @@ typings/
 # End of https://www.gitignore.io/api/node
 
 # gatsby
-public
+
 
 # Vscode settings
 .vscode/settings.json
