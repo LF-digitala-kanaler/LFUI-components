@@ -162,7 +162,9 @@ const lineChartExample = () => {
   };
   
   document.getElementById('addDataset').addEventListener('click', function() {
-    
+    if(config.data.datasets.length > 14) {
+      config.data.datasets.length = 0;
+    }
     var newDataset = {
       borderWidth: 2,
       lineTension: 0,
