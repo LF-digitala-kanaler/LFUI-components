@@ -6,6 +6,7 @@
     "bootstrap": "4.3.1",
     "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
     "jquery": "^3.4.1",
+    "lfui-icons": "https://github.com/lf-digitala-kanaler/LFUI-icons.git",
     "popper.js": "1.14.7",
     "vivus": "0.4.0"
   },
@@ -13,7 +14,6 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "chartjs-chart-geo": "^2.1.0",
     "@storybook/addon-a11y": "^6.0.26",
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-backgrounds": "^6.0.26",
@@ -27,6 +27,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "chartjs-chart-geo": "^2.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "corejs-typeahead": "^1.1.1",
@@ -51,6 +52,7 @@
     "puppeteer": "^2.1.1",
     "react-test-renderer": "^16.11.0",
     "remove": "^0.1.5",
+    "rimraf": "^3.0.2",
     "sass-loader": "^7.1.0",
     "sass-module-importer": "^1.4.0",
     "start-server-and-test": "^1.10.8",
@@ -60,14 +62,14 @@
     "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "start": "npm run build:icons && start-storybook -p 6006",
-    "build:icons": "cd src/icon && npm run build",
-    "build-storybook": " npm run build:icons && build-storybook -c .storybook -o public/$npm_package_version",
-    "build": "webpack --mode production && npm run build:icons",
+    "start": "start-storybook -s ./public -p 6006 -s ./dist/lfui",
+    "build-storybook": "build-storybook -c .storybook -o public/$npm_package_version",
+    "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "release": "auto changelog && npm run version && auto release",
     "test": "jest --no-cache",
-    "test:update": "jest -u"
+    "test:update": "jest -u",
+    "copy:icons": "rimraf src/icons && cp -r node_modules/lfui-icons/dist/ src/icons"
   },
   "jest": {
     "transform": {
