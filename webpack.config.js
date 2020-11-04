@@ -26,6 +26,7 @@ module.exports = {
     libraryTarget: 'umd',
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
   },
   externals: {
     jquery: {
@@ -36,7 +37,7 @@ module.exports = {
     }
   },
   plugins: [
-    // copy html files to be used in LFUI-website to show examples
+    // copy html files used in LFDS to show examples
     new CleanWebpackPlugin(),
     new CopyPlugin([
       { 
@@ -48,13 +49,10 @@ module.exports = {
         from: 'src/data/componentsStatus.json',
         to: 'docs/data/'
       },
+      // copy icons
       { 
-        from: 'src/icon/Regular.md',
-        to: 'docs/icons/regular.md'
-      },
-       { 
-        from: 'src/icon/Special.md',
-        to: 'docs/icons/special.md'
+        from: 'src/icons/',
+        to: 'lfui/icons/'
       },
     ]),
     new MiniCssExtractPlugin({
@@ -105,9 +103,6 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            // options: {
-            //   hmr: process.env.NODE_ENV === 'development',
-            // },
           },
           {
             loader: 'css-loader',
@@ -159,6 +154,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.(svg)$/,
+        loader: 'file-loader',
+      },
+      {
         test: /\.(woff|woff2)$/,
         use: [
           {
@@ -170,9 +169,9 @@ module.exports = {
         ]
       },
       {
-      test: /\.csv$/,
-      use: 'dsv-loader'
-    },
+        test: /\.csv$/,
+        use: 'dsv-loader'
+      },
     ]
   }
   
