@@ -19,8 +19,10 @@ import {donutChartExample} from './DonutChart/donutChart';
 import {inputFieldExample} from './InputField/inputField';
 import { paginationExample } from './Pagination/pagination';
 import { radioButtonsExample } from './RadioButtons/radioButtons';
+import { checkboxCardExample } from './Checkbox/checkbox';
+
 radioButtonsExample();
-// run your functions 
+checkboxCardExample();
 disabledDatesExample();
 timepickerExample();
 datepickerExample();

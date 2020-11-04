@@ -561,17 +561,19 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 // }
 
 /**
- * Radio card
+ * Radio card and checkbox card
  */
 
-.radio-card {
+.radio-card,
+.checkbox-card {
   padding: 1.25rem 1rem 1em;
   z-index: 1;
   background-color: $white;
   display: flex;
   transition: box-shadow ease-out 200ms;
 
-  .custom-radio {
+  .custom-radio,
+  .custom-checkbox {
     padding-left: 0;
     margin-right: 0;
     font-weight: normal;
@@ -681,7 +683,8 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   }
 }
 
-.radio-card.active {
+.radio-card.active,
+.checkbox-card.active {
   background-color: $white !important;
   z-index: 2;
   transition: all ease-out 200ms;
@@ -710,9 +713,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 }
 
 /**
- * Radio card small
+ * Radio card small and checkbox card
  */
-.radio-card-sm {
+
+.radio-card-sm,
+.checkbox-card {
   padding: 0;
   position: relative;
   border: 1px solid $body-bg;
@@ -731,7 +736,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   .custom-radio .custom-control-input:checked ~ .custom-control-label::after,
   .custom-radio .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::after,
   .custom-radio .custom-control-input:focus ~ .custom-control-label::before,
-  .custom-radio .custom-control-input:active ~ .custom-control-label::before {
+  .custom-radio .custom-control-input:active ~ .custom-control-label::before,
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after,
+  .custom-checkbox .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::after,
+  .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before,
+  .custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
     top: 0.75rem;
     left: 0.75rem;
   }
