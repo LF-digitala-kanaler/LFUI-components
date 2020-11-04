@@ -64,7 +64,6 @@
         "changedInVersion":["5.2.0"]
       }
     },
-    
     {
       "component": "Datepicker",
       "bootstrap": {
