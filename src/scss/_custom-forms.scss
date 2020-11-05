@@ -715,8 +715,8 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 .checkbox-card .custom-control:hover  .custom-control-label {
     background-image: none!important;
 }
-.checkbox-card.active .custom-control:hover {
-  box-shadow: inset 0 0 0 3px $navy;
+.checkbox-card.active:hover .custom-control-input:checked ~ .custom-control-label::before {
+  box-shadow: inset 0 0 0 2px #b1b3b6;
 }
 /**
  * Radio card small and checkbox card
