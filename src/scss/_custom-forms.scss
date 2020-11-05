@@ -712,10 +712,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   }
 }
 .checkbox-card .custom-control .icon {
-  transition: transform ease-in-out 250ms;
+  transition: transform ease-in 250ms; // down
 }
 .checkbox-card .custom-control:hover .icon {
   transform: translateY(-2px);
+  transition: transform ease-out 250ms; // upp
 }
 
 .checkbox-card .custom-control:hover  .custom-control-label {
