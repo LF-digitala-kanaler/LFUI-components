@@ -715,6 +715,13 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 .checkbox-card .custom-control:hover  .custom-control-label {
     background-image: none!important;
 }
+
+.checkbox-card.active:hover {
+  &:before {
+    box-shadow: inset 0 0 0 2px olive;
+  }
+  
+}
 .checkbox-card.active:hover .custom-control-input:checked ~ .custom-control-label::before {
   box-shadow: inset 0 0 0 2px #00427A;
 }
