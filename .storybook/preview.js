@@ -1,10 +1,7 @@
 
 import '../src/scss/DOCS.scss';
-
-
 import 'eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4';
 import '../src/js/index.js';
-// addDecorator(withA11y)
 
 export const parameters = {
   backgrounds: {
