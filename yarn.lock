@@ -9459,6 +9459,10 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+"lfui-icons@https://github.com/lf-digitala-kanaler/LFUI-icons.git":
+  version "1.0.0"
+  resolved "https://github.com/lf-digitala-kanaler/LFUI-icons.git#94c7387fc4767e0f9d38c230301e085755ebbeb1"
+
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
