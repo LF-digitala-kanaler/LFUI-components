@@ -9461,7 +9461,7 @@ levn@~0.3.0:
 
 "lfui-icons@https://github.com/lf-digitala-kanaler/LFUI-icons.git":
   version "1.0.0"
-  resolved "https://github.com/lf-digitala-kanaler/LFUI-icons.git#94c7387fc4767e0f9d38c230301e085755ebbeb1"
+  resolved "https://github.com/lf-digitala-kanaler/LFUI-icons.git#436e18f1483c9f1b67e12f1ec1b10fefc421a413"
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
