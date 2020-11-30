@@ -3,10 +3,19 @@ import chartColors from '../../data/chartColors';
 import chartUtils from  './utils.js';
 
 
+
+
 const lineChartExample = () => {
   
   let color = chartColors.getColorScale(0) // get default color scale
   let legendColor = chartColors.getColorScale(0);
+  
+    var gradientFill = window.lineChart.ctx.createLinearGradient(0, 800, 0, 0);
+    gradientFill.addColorStop(1, chartColors.getGradient(color[0], 0.3));
+    gradientFill.addColorStop(0, chartColors.getGradient(color[0], 0));
+  
+  
+  
   var config = {
     type: 'line',
    
@@ -14,9 +23,11 @@ const lineChartExample = () => {
       datasets: [{
         borderColor: color[0],
         borderWidth: 2,
+        fill: true,
+        backgroundColor: gradientFill,
         lineTension: 0,
         data: chartUtils.generateData(),
-        fill: false,
+        
       }],
       
     },
@@ -27,7 +38,11 @@ const lineChartExample = () => {
       elements: {
         point:{
             radius: 0
-        }
+        },
+        line: {
+          tension: 0,
+          borderJoinStyle: 'round'
+        },
       },
       legend: {
         display: false
@@ -48,6 +63,7 @@ const lineChartExample = () => {
           type: 'time',
           time: {
             stepSize: 1,
+            minUnit: 'day',
             displayFormats: {
               month: 'D MMM',
             }
@@ -60,7 +76,7 @@ const lineChartExample = () => {
             source: 'data',
             autoSkip: true,
             maxRotation: 0,
-            maxTicksLimit: 6,
+            maxTicksLimit: 10,
             autoSkipPadding: 40
           },
           
@@ -74,6 +90,7 @@ const lineChartExample = () => {
           ticks: {
             mirror: true,
             padding: -5,
+            maxTicksLimit: 5,
             callback: function (value, index, values) {
               return (value + ' kr');
             }
@@ -90,6 +107,8 @@ const lineChartExample = () => {
   
   let ctx = document.getElementById("lineChart").getContext("2d");
   window.lineChart = new Chart(ctx, config);
+  
+  
   document.getElementById('js-chartLegends').insertAdjacentHTML('beforeend', lineChart.generateLegend());
   let init = false;
   window.updateDataset = function(event, datasetIndex) {
@@ -180,8 +199,20 @@ const lineChartExample = () => {
     document.getElementById('js-chartLegends').innerHTML = '';
     document.getElementById('js-chartLegends').innerHTML = lineChart.generateLegend();
     
+  
     config.data.datasets.map((item,i) =>  item.borderColor = color[i]);
 
+    // remove graident from first 
+
+    config.data.datasets[0].fill = false
+    console.log(config.data.datasets.length)
+    if(config.data.datasets.length === 1) { 
+      config.data.datasets[0].fill = true
+      var gradientFill = window.lineChart.ctx.createLinearGradient(0, 800, 0, 0);
+      gradientFill.addColorStop(1, chartColors.getGradient(color[0], 0.3));
+      gradientFill.addColorStop(0, chartColors.getGradient(color[0], 0));
+      config.data.datasets[0].backgroundColor = gradientFill
+    }
     lineChart.update();
     
 });
