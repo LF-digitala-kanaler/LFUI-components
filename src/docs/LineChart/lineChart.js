@@ -1,23 +1,29 @@
 
 import chartColors from '../../data/chartColors';
 import chartUtils from  './utils.js';
-
+import moment from 'moment';
+import 'moment/locale/sv';
+moment.locale('sv');
 
 
 
 const lineChartExample = () => {
   
+  
+    
+  
   let color = chartColors.getColorScale(0) // get default color scale
   let legendColor = chartColors.getColorScale(0);
+   
   
-    var gradientFill = window.lineChart.ctx.createLinearGradient(0, 800, 0, 0);
-    gradientFill.addColorStop(1, chartColors.getGradient(color[0], 0.3));
-    gradientFill.addColorStop(0, chartColors.getGradient(color[0], 0));
+  var gradientFill = window.lineChart.ctx.createLinearGradient(0, 800, 0, 0);
+  gradientFill.addColorStop(1, chartColors.getGradient(color[0], 0.3));
+  gradientFill.addColorStop(0, chartColors.getGradient(color[0], 0));
   
   
   
   var config = {
-    type: 'line',
+    type: 'LineWithLine',
    
     data: {
       datasets: [{
@@ -47,6 +53,15 @@ const lineChartExample = () => {
       legend: {
         display: false
       },
+      plugins: {
+        zoom: {
+          zoom: {
+            enabled: true,
+            drag: true,
+            mode: 'x',
+          }
+        }
+      },
       legendCallback: function (chart) {  
        
         var text = [];
@@ -56,7 +71,29 @@ const lineChartExample = () => {
         return text.join("");   
       },
       tooltips: {
-        enabled: false
+        mode: 'nearest',
+        axis: 'x',
+        intersect: false,
+        position: 'average',
+        backgroundColor: '#005AA0',
+        cornerRadius: 0,
+        xPadding: 16,
+        yPadding: 16,
+        bodySpacing: 8,
+        titleMarginBottom: 10,
+        displayColors: false,
+        callbacks: {
+          title: function (tooltipItems) {
+            return moment(tooltipItems[0].label, 'MMM DD, YYYY, hh:mm:ss').format('D MMM YYYY');
+          },
+          label: function (tooltipItem) {
+            var label = '';
+            label += 'Länsförsäkringar Dummy fond ' + (tooltipItem.datasetIndex + 1);
+            label += ': ';
+            label += chartUtils.format(tooltipItem.yLabel);
+            return label;
+          }
+        }
       },
       scales:{
         xAxes: [{
@@ -65,7 +102,11 @@ const lineChartExample = () => {
             stepSize: 1,
             minUnit: 'day',
             displayFormats: {
+              year: 'YYYY',
+              quarter: 'MMM YYYY',
               month: 'D MMM',
+              week: 'D MMM',
+              day: 'D MMM'
             }
           },
 
@@ -85,7 +126,7 @@ const lineChartExample = () => {
           gridLines: {
             drawTicks: false,
             color: '#F3F3F3',
-            zeroLineColor: '#F3F3F3'
+            zeroLineColor: '#F3F3F3',
           },
           ticks: {
             mirror: true,
@@ -108,7 +149,7 @@ const lineChartExample = () => {
   let ctx = document.getElementById("lineChart").getContext("2d");
   window.lineChart = new Chart(ctx, config);
   
-  
+   
   document.getElementById('js-chartLegends').insertAdjacentHTML('beforeend', lineChart.generateLegend());
   let init = false;
   window.updateDataset = function(event, datasetIndex) {
@@ -213,9 +254,36 @@ const lineChartExample = () => {
       gradientFill.addColorStop(0, chartColors.getGradient(color[0], 0));
       config.data.datasets[0].backgroundColor = gradientFill
     }
+    // verticalLineStyle();
     lineChart.update();
     
-});
-
+  });
+  
 }
-export {lineChartExample}
+const lineChartVerticalLine = () => {
+  Chart.defaults.LineWithLine = Chart.defaults.line;
+    console.log(window.lineChart, 'chart')
+    Chart.controllers.LineWithLine = Chart.controllers.line.extend({
+      draw: function (ease) {
+        Chart.controllers.line.prototype.draw.call(this, ease);
+          
+          if (this.chart.tooltip._active && this.chart.tooltip._active.length ) {
+          const activePoint = this.chart.tooltip._active[0];
+          const ctx = this.chart.ctx;
+          const x = activePoint.tooltipPosition().x;
+          const topY = this.chart.scales['y-axis-0'].top;
+          const bottomY = this.chart.scales['y-axis-0'].bottom;
+
+          ctx.save();
+          ctx.beginPath()
+          ctx.moveTo(x, topY);
+          ctx.lineTo(x, bottomY);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#005AA0';
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+    })
+}
+export {lineChartExample, lineChartVerticalLine}

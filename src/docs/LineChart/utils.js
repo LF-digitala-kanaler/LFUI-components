@@ -51,6 +51,27 @@ const chartUtils = {
     }
     
     return data;
+  },
+  format: function(value) {
+    if (!value) {
+      return '-';
+    }
+    if (value != 0) {
+      value = Math.round(parseFloat(value));
+    }
+    return value.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' }).replace(',00', '');
+  },
+  returnFormater: function(value) {
+    if (!value) {
+      return '-';
+    }
+    if (value != 0) {
+      value = parseFloat(value).toFixed(2);
+    }
+    if (value > 0) {
+      return '+' + value.replace('.', ',') + ' %';
+    }
+    return value.replace('.', ',') + ' %';
   }
 }
 
