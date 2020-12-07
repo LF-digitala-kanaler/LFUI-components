@@ -17,11 +17,12 @@ const list = (data, countryList, legendColor) => {
   let countries = ChartGeo.topojson.feature(data, data.objects.countries).features.filter((f) => f.properties.name !== 'Antarctica');
   
   let visibleCountries = countryList.filter(item => {
-    if ( item.hidden != true){
+    console.log(item, 'ittem')
+    if ( item.hidden === false){
       return item
     }
   })
-
+  console.log(visibleCountries, 'vis')
   let lookup = new Map(visibleCountries.map((d) => [d.country, d.value]));
   legendColor = window.init ? legendColor : chartColors.getColorScale(visibleCountries.length);
   
@@ -105,10 +106,10 @@ const click = (mapChart, countryList, legendColor) => {
 
     var index = parseInt(datasetIndex);
     
-    let alreadyHidden = countryList[index].hidden === true; 
+    let alreadyHidden = countryList[index].hidden = true; 
     var anyOthersAlreadyHidden = false;
     var allOthersHidden = true;
-    
+    console.log(alreadyHidden)
     countryList.forEach(function(e, i) {
       if (i !== index) {
         if (i.hidden) {
@@ -120,10 +121,10 @@ const click = (mapChart, countryList, legendColor) => {
     });
     
     if(!window.init) {
-      
+      console.log('fiirst')
       countryList.forEach(function(e, i) {
         if (i !== index) {
-          countryList[index].hidden = true
+          countryList[index].hidden = false
           legendColor = legendColor.map((item,ix) => {
             if(ix !== index) {
               return item = chartColors.getDisabledColor()
@@ -131,17 +132,20 @@ const click = (mapChart, countryList, legendColor) => {
               return item
             }
           })
+        }else {
+          countryList[index].hidden = true
         }
       });
-      console.log('first click', countryList)
+      
       window.init = true;
      
     }else{
-      console.log('else')
+      console.log('not first')
       if(alreadyHidden) {
-        legendColor[index] = countryList[index].hidden === false ?  chartColors.getDisabledColor() : legendColor[index]
+        console.log('already hidden')
+        legendColor[index] = countryList[index].hidden = false ?  chartColors.getDisabledColor() : legendColor[index]
         countryList[index].hidden = false
-      
+        console.log(countryList)
       }else {
         countryList.forEach(function(e, i) {
               
@@ -149,21 +153,21 @@ const click = (mapChart, countryList, legendColor) => {
             if (!anyOthersAlreadyHidden && !allOthersHidden) {
               countryList[index].hidden = true;
               legendColor[index] = chartColors.getDisabledColor();
-              console.log('he')
+              console.log('first')
             }
             else if(anyOthersAlreadyHidden && !allOthersHidden){
               legendColor[index] = chartColors.getDisabledColor();
-              countryList[index].hidden = true;
-              
+              countryList[index].hidden = false;
+              console.log('second')
             }
            
           }
         });
       }
     }
-    console.log(countryList, 'data')
-    getData(legendColor)
     
+    getData(legendColor)
+    console.log(countryList, 'data')
   }
  
 }
