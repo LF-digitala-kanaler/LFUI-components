@@ -2,8 +2,8 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - 7.0.0
-      - 6.6.0
+      - release/7.0.0
+      - release/6.6.0
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
