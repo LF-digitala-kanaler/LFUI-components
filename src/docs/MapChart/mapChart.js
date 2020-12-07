@@ -3,7 +3,7 @@ import chartColors from '../../data/chartColors';
 
 const getData = (legendColor, updateCountry) => {
   console.log(legendColor)
-  let countryList = updateCountry ? updateCountry : [{country: 'Sweden',value:10, hidden: false},{country:'Germany',value:15, hidden: false},{country:'France',value:8, hidden: false}, {country:'Norway',value:8, hidden: false}];
+  let countryList = [{country: 'Sweden',value:10, hidden: false},{country:'Germany',value:15, hidden: false},{country:'France',value:8, hidden: false}, {country:'Norway',value:8, hidden: false}];
   
   Promise.all([
     fetch('https://unpkg.com/world-atlas/countries-50m.json').then((r) => r.json())
@@ -100,23 +100,17 @@ const map = (display_list, selected, visibleCountries, legendColor) => {
   document.getElementById('js-chartLegends').insertAdjacentHTML('beforeend', mapChart.generateLegend());
 }
 const click = (mapChart, countryList, legendColor) => {
-
+  
   window.updateDataset = function(event, datasetIndex) {
-    
-    
-    // getData(countryList)
-    //mapChart.update();
-     
-    //console.log(alreadyHidden)
+
     var index = parseInt(datasetIndex);
     
     let alreadyHidden = countryList[index].hidden === true; 
     var anyOthersAlreadyHidden = false;
     var allOthersHidden = true;
-
+    
     countryList.forEach(function(e, i) {
-      
-    if (i !== index) {
+      if (i !== index) {
         if (i.hidden) {
           anyOthersAlreadyHidden = true;
         } else {
@@ -126,6 +120,7 @@ const click = (mapChart, countryList, legendColor) => {
     });
     
     if(!window.init) {
+      
       countryList.forEach(function(e, i) {
         if (i !== index) {
           countryList[index].hidden = true
@@ -138,17 +133,35 @@ const click = (mapChart, countryList, legendColor) => {
           })
         }
       });
+      console.log('first click', countryList)
       window.init = true;
      
     }else{
+      console.log('else')
       if(alreadyHidden) {
-        legendColor[index] = countryList[index].hidden === null ?  chartColors.getDisabledColor() : legendColor[index]
+        legendColor[index] = countryList[index].hidden === false ?  chartColors.getDisabledColor() : legendColor[index]
         countryList[index].hidden = false
       
       }else {
+        countryList.forEach(function(e, i) {
+              
+          if (i !== index) {
+            if (!anyOthersAlreadyHidden && !allOthersHidden) {
+              countryList[index].hidden = true;
+              legendColor[index] = chartColors.getDisabledColor();
+              console.log('he')
+            }
+            else if(anyOthersAlreadyHidden && !allOthersHidden){
+              legendColor[index] = chartColors.getDisabledColor();
+              countryList[index].hidden = true;
+              
+            }
+           
+          }
+        });
       }
     }
-    console.log(window.init, legendColor, 'clikc')
+    console.log(countryList, 'data')
     getData(legendColor)
     
   }
