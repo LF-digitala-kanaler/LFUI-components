@@ -1,5 +1,5 @@
 
-const checkboxExample = () => {
+const checkboxCardExample = () => {
 
   let checkboxCards = document.getElementsByClassName('checkbox-card');
   if(checkboxCards.length){
@@ -15,4 +15,4 @@ const checkboxExample = () => {
       }
   }
 }
-export {checkboxExample}
+export {checkboxCardExample}

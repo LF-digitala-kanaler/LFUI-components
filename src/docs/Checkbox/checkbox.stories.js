@@ -1,7 +1,7 @@
 import Checkbox from "./styledCheckbox.html";
 import CheckboxCards from "./checkboxCards.html";
 import { useEffect } from "@storybook/client-api";
-import {checkboxExample} from "./checkbox"
+import {checkboxCardExample} from "./checkbox"
 
 
 export default { title: 'Checkbox' }; 
@@ -10,7 +10,7 @@ export const checkbox = () => `${Checkbox}`;
 
 export const checkboxCard = () => {
   useEffect(() => {
-    checkboxExample()
+    checkboxCardExample()
   }, []);
   return CheckboxCards
 };
