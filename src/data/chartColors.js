@@ -54,7 +54,12 @@ const chartColors = {
     const colorScale = this._getColors(numberOfItems);
     return colorScale;
   },
-
+  getGradient(hex, alpha) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+  },
   getDisabledColor: function() {
     return '#d9d9d9';
   },
