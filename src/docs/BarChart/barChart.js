@@ -28,19 +28,41 @@ const barChartExample = () => {
         display: false
       },
       tooltips: {
-        enabled: false
+        backgroundColor: '#005AA0',
+        cornerRadius: 0,
+        bodyFontColor: '#FFF',
+        position: 'nearest',
+        xPadding: 16,
+        yPadding: 16,
+        displayColors: false,
+        callbacks: {
+          title: function () {
+            return '';
+          },
+          label: function (tooltipItem) {
+            return (tooltipItem.yLabel.toFixed(1) + '').replace('.', ',') + ' %';
+          }
+
+        }
       },
       scales:{
         xAxes: [{
-            display: false //this will remove all the x-axis grid lines
+          gridLines: { 
+            display: false,
+            color: '#F3F3F3',
+          },
+          
         }],
         yAxes: [{
           gridLines: {
             drawTicks: false,
             color: '#F3F3F3',
-            zeroLineColor: '#F3F3F3'
-
+            zeroLineColor: '#F3F3F3',
+            zeroLineWidth: 2,
           },
+          ticks: {
+            padding: 12,
+          }
         }],
       }
       
