@@ -143,7 +143,7 @@ const click = (mapChart, countryList, legendColor) => {
       console.log('not first')
       if(alreadyHidden) {
         console.log('already hidden')
-        legendColor[index] = countryList[index].hidden = false ?  chartColors.getDisabledColor() : legendColor[index]
+        legendColor[index] = countryList[index].hidden = false ?  chartColors.getDisabledColor() : chartColors.getColorScale[index]
         countryList[index].hidden = false
         console.log(countryList)
       }else {
@@ -157,7 +157,7 @@ const click = (mapChart, countryList, legendColor) => {
             }
             else if(anyOthersAlreadyHidden && !allOthersHidden){
               legendColor[index] = chartColors.getDisabledColor();
-              countryList[index].hidden = false;
+              countryList[index].hidden = true;
               console.log('second')
             }
            
