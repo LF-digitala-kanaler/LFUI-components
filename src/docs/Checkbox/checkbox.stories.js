@@ -1,5 +1,5 @@
 import Checkbox from "./checkbox.html";
-import CheckboxCard from "./checkboxCard.html";
+import CheckboxCards from "./checkboxCards.html";
 import { useEffect } from "@storybook/client-api";
 import {checkboxExample} from "./checkbox"
 
@@ -12,5 +12,5 @@ export const checkboxCard = () => {
   useEffect(() => {
     checkboxExample()
   }, []);
-  return CheckboxCard
+  return CheckboxCards
 };
