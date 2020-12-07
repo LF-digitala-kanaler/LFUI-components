@@ -1,4 +1,4 @@
-import Checkbox from "./checkbox.html";
+import Checkbox from "./styledCheckbox.html";
 import CheckboxCards from "./checkboxCards.html";
 import { useEffect } from "@storybook/client-api";
 import {checkboxExample} from "./checkbox"
