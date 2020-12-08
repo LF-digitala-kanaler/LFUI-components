@@ -4,16 +4,12 @@ const xyPlotExample = () => {
   const ctx = document.getElementById('xyPlot').getContext('2d');
   const data = [{
     x: 5.5,
-    y: 4
+    y: 2
 }, {
     x: 3,
     y: 5
 },
 
-{
-    x: 3,
-    y: 5
-},
 {
     x: 3,
     y: 6.5
@@ -42,7 +38,23 @@ const xyPlotExample = () => {
         duration: 1
       },
       tooltips: {
-        enabled: false
+        backgroundColor: '#005AA0',
+        cornerRadius: 0,
+        bodyFontColor: '#FFF',
+        position: 'nearest',
+        xPadding: 16,
+        yPadding: 16,
+        displayColors: false,
+        callbacks: {
+          title: function () {
+            return '';
+          },
+          label: function (tooltipItem) {
+            
+            return (tooltipItem.value).replace('.', ',') + ' %';
+          }
+
+        }
       },
       legend: false,
       
