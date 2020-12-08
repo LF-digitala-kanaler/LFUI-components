@@ -1,42 +1,44 @@
 
 import chartColors from '../../data/chartColors';
 
-const getData = (legendColor, updateCountry) => {
-  console.log(legendColor)
-  let countryList = [{country: 'Sweden',value:10, hidden: false},{country:'Germany',value:15, hidden: false},{country:'France',value:8, hidden: false}, {country:'Norway',value:8, hidden: false}];
+const getData = (countryList,legendColor, colors) => {
   
   Promise.all([
     fetch('https://unpkg.com/world-atlas/countries-50m.json').then((r) => r.json())
     ]).then(([data]) => {
-      list(data, countryList, legendColor)
-    
+      list(data, countryList, legendColor, colors)
+      
   });
 }
-const list = (data, countryList, legendColor) => {
-
+const list = (data, countryList, legendColor, colors) => {
+ 
   let countries = ChartGeo.topojson.feature(data, data.objects.countries).features.filter((f) => f.properties.name !== 'Antarctica');
   
   let visibleCountries = countryList.filter(item => {
-    if ( item.hidden != true){
+    if ( item.hidden === false){
       return item
     }
   })
-
-  let lookup = new Map(visibleCountries.map((d) => [d.country, d.value]));
-  legendColor = window.init ? legendColor : chartColors.getColorScale(visibleCountries.length);
   
+  let lookup = new Map(visibleCountries.map((d) => [d.country, d.value]));
+  legendColor = window.init ? legendColor : chartColors.getColorScale(countryList.length);
+  colors = chartColors.getColorScale(countryList.length);
   let count = 0;
-
   let selected = countries.map((item) => { 
-    
     if(lookup.get(item.properties.name)){
+      
       count++
-      return legendColor[count-1]
+      for (var i = 0; i < countryList.length; i++) {
+        if(countryList[i].country === item.properties.name ) {
+          return colors[i]
+        }
+      }
+      
+      
     }else{
       return chartColors.getDisabledColor();
     }
   })
-    
   let display_list = countries.map((element) => {
     return {
         feature: element,
@@ -44,11 +46,12 @@ const list = (data, countryList, legendColor) => {
       };
     });
     
-    
-    map(display_list, selected, visibleCountries, legendColor)
+    map(display_list, selected, countryList, legendColor)
     click(mapChart, countryList, legendColor)
 }
-const map = (display_list, selected, visibleCountries, legendColor) => {
+
+const map = (display_list, selected, countryList, legendColor) => {
+  
   window.mapChart = new Chart(document.getElementById("mapChart").getContext("2d"), {
     type: 'choropleth',
     data: {
@@ -56,9 +59,7 @@ const map = (display_list, selected, visibleCountries, legendColor) => {
         data: display_list,
         hoverBackgroundColor: selected,
         backgroundColor: selected,
-
-      }],
-      
+      }],  
     },
     
     options: {
@@ -73,10 +74,10 @@ const map = (display_list, selected, visibleCountries, legendColor) => {
       },
       
       legendCallback: function () {  
-        console.log(legendColor, 'callback')
+       
         var text = [];
-        for (var i = 0; i < visibleCountries.length; i++) {
-            text.push('<li  class="chart-legend-item"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"></div>'+ visibleCountries[i].country +'</li>');
+        for (var i = 0; i < countryList.length; i++) {
+            text.push('<li  class="chart-legend-item chart-legend-item-clickable"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"></div>'+ countryList[i].country +'</li>');
         }
         return text.join("");   
       },
@@ -98,32 +99,35 @@ const map = (display_list, selected, visibleCountries, legendColor) => {
   });
   document.getElementById('js-chartLegends').innerHTML = '';
   document.getElementById('js-chartLegends').insertAdjacentHTML('beforeend', mapChart.generateLegend());
+  
 }
 const click = (mapChart, countryList, legendColor) => {
-  
+  let updatedCountryList = countryList;
   window.updateDataset = function(event, datasetIndex) {
-
+    
+    let colors = chartColors.getColorScale(updatedCountryList.length);
+    
     var index = parseInt(datasetIndex);
+    let alreadyHidden = updatedCountryList[index].hidden === true; 
     
-    let alreadyHidden = countryList[index].hidden === true; 
-    var anyOthersAlreadyHidden = false;
-    var allOthersHidden = true;
-    
-    countryList.forEach(function(e, i) {
+    let anyOthersAlreadyHidden = false;
+    let allOthersHidden = true;
+
+    updatedCountryList.forEach(function(e,i, item) {
+      
       if (i !== index) {
-        if (i.hidden) {
+        if (item[i].hidden === true) {
           anyOthersAlreadyHidden = true;
-        } else {
+        } else { 
           allOthersHidden = false;
         }
       }
     });
     
     if(!window.init) {
-      
-      countryList.forEach(function(e, i) {
+      updatedCountryList.forEach(function(e, i) {
         if (i !== index) {
-          countryList[index].hidden = true
+          updatedCountryList[i].hidden = true
           legendColor = legendColor.map((item,ix) => {
             if(ix !== index) {
               return item = chartColors.getDisabledColor()
@@ -131,45 +135,46 @@ const click = (mapChart, countryList, legendColor) => {
               return item
             }
           })
+        }else {
+          updatedCountryList[i].hidden = false
         }
       });
-      console.log('first click', countryList)
+      
       window.init = true;
      
     }else{
-      console.log('else')
-      if(alreadyHidden) {
-        legendColor[index] = countryList[index].hidden === false ?  chartColors.getDisabledColor() : legendColor[index]
-        countryList[index].hidden = false
       
+      if(alreadyHidden) {
+        legendColor[index] = updatedCountryList[index].hidden === false ?  chartColors.getDisabledColor() : colors[index]
+        updatedCountryList[index].hidden = false
       }else {
-        countryList.forEach(function(e, i) {
-              
+        
+        updatedCountryList.forEach(function(e, i) {
           if (i !== index) {
             if (!anyOthersAlreadyHidden && !allOthersHidden) {
-              countryList[index].hidden = true;
+              updatedCountryList[index].hidden = true;
               legendColor[index] = chartColors.getDisabledColor();
-              console.log('he')
             }
             else if(anyOthersAlreadyHidden && !allOthersHidden){
               legendColor[index] = chartColors.getDisabledColor();
-              countryList[index].hidden = true;
-              
+              updatedCountryList[index].hidden = true;
             }
            
-          }
+          } 
         });
       }
     }
-    console.log(countryList, 'data')
-    getData(legendColor)
+   
+    getData(updatedCountryList,legendColor, colors)
     
   }
  
 }
 const mapChartExample = () => {
+  let countryList = [{country: 'Sweden',value:10, hidden: false},{country:'Germany',value:15, hidden: false},{country:'France',value:8, hidden: false}, {country:'Norway',value:8, hidden: false}];
+
   window.init = false;
-  getData()
+  getData(countryList)
   
 }
 
