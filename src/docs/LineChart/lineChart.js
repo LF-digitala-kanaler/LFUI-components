@@ -9,19 +9,15 @@ moment.locale('sv');
 
 const lineChartExample = () => {
   
-  
-    
-  
   let color = chartColors.getColorScale(0) // get default color scale
   let legendColor = chartColors.getColorScale(0);
-   
-  
-  var gradientFill = window.lineChart.ctx.createLinearGradient(0, 800, 0, 0);
+  let canvas = document.getElementById('lineChart');
+  let ctx = canvas.getContext('2d');
+  let gradientFill = ctx.createLinearGradient(0, 800, 0, 0);
   gradientFill.addColorStop(1, chartColors.getGradient(color[0], 0.3));
   gradientFill.addColorStop(0, chartColors.getGradient(color[0], 0));
   
-  
-  
+
   var config = {
     type: 'LineWithLine',
    
@@ -146,7 +142,6 @@ const lineChartExample = () => {
     }
   };
   
-  let ctx = document.getElementById("lineChart").getContext("2d");
   window.lineChart = new Chart(ctx, config);
   
    
