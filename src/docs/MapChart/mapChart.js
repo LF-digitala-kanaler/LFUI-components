@@ -77,7 +77,7 @@ const map = (display_list, selected, countryList, legendColor) => {
        
         var text = [];
         for (var i = 0; i < countryList.length; i++) {
-            text.push('<li  class="chart-legend-item"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"></div>'+ countryList[i].country +'</li>');
+            text.push('<li  class="chart-legend-item chart-legend-item-clickable"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"></div>'+ countryList[i].country +'</li>');
         }
         return text.join("");   
       },
