@@ -1,5 +1,19 @@
 
 const datepickerExample = () => {
+  var dateOk = new RegExp('[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])');
+
+  if (/Mobi/.test(navigator.userAgent)) {
+    $('#datepicker-input, #datetimepicker-disabled-input').prop("type", "date");
+    $('#timepicker-input').prop("type", "time");
+  }
+  
+  //Hide the datepicker dropdown, called on 'dp.show' event.
+  $('.datepicker').on('dp.show', function(){
+    if (/Mobi/.test(navigator.userAgent)) {
+      $('.datepicker .bootstrap-datetimepicker-widget').css('display', 'none');
+    }
+  });
+
   $('#datepicker').datetimepicker({
     locale: 'sv',
     format: 'YYYY-MM-DD',
@@ -13,9 +27,23 @@ const datepickerExample = () => {
   $('#datepicker').on('dp.hide', function(){
     $('#datepicker button').removeClass('active');
   });
+  $('#datepicker').on('click', function(){
+    console.log(this);
+  });
+  $('#datepicker').on('dp.hide', function(){
+    $('#datepicker button').removeClass('active');
+    var value = $('#datepicker-input').val();
+    if( dateOk.test(value) ) {
+      $(this).find('input').addClass('form-control-valid');
+      $(this).parent().addClass('has-valid');
+    } else {
+      $(this).parent().addClass('has-danger');
+    }
+  });
 }
 
 const timepickerExample = () => {
+  var dateOk = new RegExp('^([0-1][0-9]|[2][0-3]):([0-5][0-9])');
   $('#timepicker').datetimepicker({
       format: 'LT',
       locale: 'sv',
@@ -33,19 +61,40 @@ const timepickerExample = () => {
     $('#timepicker').on('dp.hide', function(){
       $('#timepicker button').removeClass('active');
     });
+    $('#timepicker').on('dp.hide', function(){
+      $('#timepicker button').removeClass('active');
+      var value = $('#timepicker-input').val();
+      if( dateOk.test(value) ) {
+        $(this).find('input').addClass('form-control-valid');
+        $(this).parent().addClass('has-valid');
+      } else {
+        $(this).parent().addClass('has-danger');
+      }
+    });
 }
 
 const disabledDatesExample = () => {
+  var dateOk = new RegExp('[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])');
   $('#datetimepicker-disabled').datetimepicker({
       format: 'YYYY-MM-DD',
       locale: 'sv',
       allowInputToggle: true,
-      defaultDate: '2017/06/02',
+      defaultDate: '2020/06/02',
       disabledDates: [
-        '2017/06/04',
-        '2017/06/05',
-        '2017/06/06'
+        '2020/06/04',
+        '2020/06/05',
+        '2020/06/06'
       ]
+    });
+    $('#datetimepicker-disabled').on('dp.hide', function(){
+      $('#datetimepicker-disabled button').removeClass('active');
+      var value = $('#datetimepicker-disabled-input').val();
+      if( dateOk.test(value) ) {
+        $(this).find('input').addClass('form-control-valid');
+        $(this).parent().addClass('has-valid');
+      } else {
+        $(this).parent().addClass('has-danger');
+      }
     });
     $('#datetimepicker-disabled').on('dp.show', function(){
       $('#datetimepicker-disabled .bootstrap-datetimepicker-widget').attr('aria-hidden', 'true');
@@ -55,6 +104,10 @@ const disabledDatesExample = () => {
     $('#datetimepicker-disabled').on('dp.hide', function(){
       $('#datetimepicker-disabled button').removeClass('active');
     });
+
+      // use native on mobile 
+
+  
 }
 
 export  {disabledDatesExample,timepickerExample,datepickerExample}
