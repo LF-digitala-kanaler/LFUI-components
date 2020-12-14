@@ -59,6 +59,7 @@
     width: auto;
   }
 }
+
 // Bug fix for FireFox and IE11 when using flex. See https://github.com/twbs/bootstrap/issues/17784#issuecomment-237840119
 .form-control {
   min-width: 0;

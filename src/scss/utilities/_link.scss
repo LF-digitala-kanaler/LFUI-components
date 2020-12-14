@@ -139,3 +139,23 @@
   transition: 200ms linear;
   transition-property: all;
 }
+
+/**
+ * If you want a link with an icon
+ */
+
+.icon-link,
+.icon-link:hover,
+.icon-link:focus {
+  display: inline-flex;
+  align-items: center;
+  background-image: none;
+}
+
+.icon-link:hover,
+.icon-link:focus {
+  > .icon-link-text {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%) repeat-x 0 100%;
+    background-size: 2px 2px;
+  }
+}
