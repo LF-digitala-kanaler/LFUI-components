@@ -1,12 +1,14 @@
 $timeline-icon-border-size: 2px;
 $timeline-icon-size: 24px;
-$timeline-icon-size-large: 36px;
+$timeline-icon-size-large: 32px;
 $timeline-icon-background: $blue;
-$timeline-header-padding: 0.5rem 1.25rem 0 3.125rem;
-$timeline-header-padding-large: 0.875rem 1.25rem 0.875rem 5rem;
-$timeline-icon-x: 14px;
+$timeline-padding-left: 2.875rem;
+$timeline-padding-left-large: 5.3rem;
+$timeline-header-padding: 0.35rem 1.25rem 0 $timeline-padding-left;
+$timeline-header-padding-large: 0.6rem 1.25rem 0.5rem $timeline-padding-left-large;
+$timeline-icon-x: 12px;
 $timeline-icon-y: 18px;
-$timeline-icon-x-large: 21px;
+$timeline-icon-x-large: 22px;
 $timeline-icon-y-large: 27px;
 
 .timeline {
@@ -26,13 +28,13 @@ $timeline-icon-y-large: 27px;
     height: calc(100% - (#{$timeline-icon-size} + #{$timeline-icon-size} * 2));
     background-color: $timeline-icon-background;
     top: calc(#{$timeline-icon-size} + #{$timeline-icon-size} / 2);
-    left: 1.5625rem;
+    left: 23px;
     z-index: 2;
 
     @include media-breakpoint-up(md) {
       top: calc(#{$timeline-icon-size-large} + #{$timeline-icon-size-large} / 2);
-      left: 2.75rem;
-      height: calc(100% - (#{$timeline-icon-size-large} + #{$timeline-icon-size-large} + 2px));
+      left: 42px;
+      height: calc(100% - (#{$timeline-icon-size-large} + #{$timeline-icon-size-large} + 10px));
     }
   }
 
@@ -54,14 +56,19 @@ $timeline-icon-y-large: 27px;
   padding: 2px 0;
   background-color: $white;
 
+  &.is-ongoing {
+    left: 9px;
+    top: 15px;
+    padding: 0;
+  }
+
   @include media-breakpoint-up(md) {
     top: $timeline-icon-x-large;
     left: $timeline-icon-y-large;
 
     &.is-ongoing {
-      top: 19px;
-      left: 24px;
-      padding: 0;
+      top: 20px;
+      left: 22px;
     }
   }
 }
@@ -87,15 +94,13 @@ $timeline-icon-y-large: 27px;
   }
 
   .is-ongoing & {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMiI+ICA8cGF0aCBmaWxsPSIjMDA1QUEwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04LjIwNy4yOTNMMTMuOTE0IDZsLTUuNzA3IDUuNzA3LTEuNDE0LTEuNDE0TDEwLjA4NSA3SDBWNWgxMC4wODVMNi43OTMgMS43MDcgOC4yMDcuMjkzeiIvPjwvc3ZnPg==);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
     color: $blue;
+    width: 30px;
+    height: 30px;
 
     @include media-breakpoint-up(md) {
       width: 2.625rem;
       height: 2.625rem;
-      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSIxMiI+ICA8cGF0aCBmaWxsPSIjMDA1QUEwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS4yMDcuMjkzTDIwLjkxNCA2bC01LjcwNyA1LjcwNy0xLjQxNC0xLjQxNEwxNy4wODUgN0gwVjVoMTcuMDg1bC0zLjI5Mi0zLjI5M0wxNS4yMDcuMjkzeiIvPjwvc3ZnPg==);
     }
   }
 }
@@ -107,6 +112,11 @@ $timeline-icon-y-large: 27px;
   &.is-open {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
     margin: 16px 0;
+
+    &::after {
+      content: '';
+      width: 100%;
+    }
   }
 }
 
@@ -120,47 +130,49 @@ $timeline-icon-y-large: 27px;
   text-align: left;
   min-height: 4rem;
 
+  small {
+    font-size: 0.875rem;
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      margin-top: -5px;
+    }
+  }
+
   @include media-breakpoint-up(md) {
     min-height: 5rem;
     padding: $timeline-header-padding-large;
 
     &:hover {
       background-color: #f9fbfd;
+
+      .timeline-spacing {
+        background-color: #f9fbfd;
+      }
     }
   }
 }
 
 .timeline-heading {
-  margin: 0;
+  margin: 0 0 6px;
   color: $gray;
 
   @include media-breakpoint-down(md) {
     font-size: 1.25rem;
-    line-height: 1.1;
+    line-height: 0.9;
   }
 }
 
 .timeline-content {
-  padding: 1rem 0;
-  margin-left: 3.125rem;
+  padding: 0.8rem 0;
+  margin-left: $timeline-padding-left;
   margin-right: 0.8rem;
   border-top: 2px solid $body-bg;
 
   @include media-breakpoint-up(md) {
-    margin-left: 5rem;
+    margin-left: $timeline-padding-left-large;
     margin-right: 4.5rem;
+    padding: 1.3rem 0;
   }
 }
 
-.timeline-divider {
-  position: relative;
-  z-index: 3;
-  overflow: hidden;
-  background-color: inherit;
-  padding-top: 1rem;
-  margin-top: -3px;
-
-  + .timeline-item {
-    margin-top: 0;
-  }
-}

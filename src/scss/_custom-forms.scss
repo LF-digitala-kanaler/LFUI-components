@@ -156,7 +156,7 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
   .custom-control-input:checked:not([disabled]) ~ .custom-control-label::after {
     // Uh. For some reason, the $custom-checkbox-checked-icon variable does not function in IE
     // so we copy-paste the variable string here, which solves it.
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==);
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
     background-color: none;
     box-shadow: none;
   }
@@ -186,6 +186,14 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
 
   .custom-control-label {
     position: static;
+
+    &::after {
+      height: 18px;
+      width: 18px;
+      background-size: auto;
+      background-position: 3px 4px;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -553,17 +561,19 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 // }
 
 /**
- * Radio card
+ * Radio card and checkbox card
  */
 
-.radio-card {
+.radio-card,
+.checkbox-card {
   padding: 1.25rem 1rem 1em;
   z-index: 1;
   background-color: $white;
   display: flex;
   transition: box-shadow ease-out 200ms;
 
-  .custom-radio {
+  .custom-radio,
+  .custom-checkbox {
     padding-left: 0;
     margin-right: 0;
     font-weight: normal;
@@ -639,6 +649,37 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   }
 }
 
+.checkbox-card .custom-control .icon {
+  transition: transform ease-in 200ms; // down
+}
+
+.checkbox-card .custom-control:hover .icon {
+  transform: translateY(-2px);
+  transition: transform ease-out 200ms; // upp
+}
+
+.checkbox-card .custom-control:hover .custom-control-label {
+  background-image: none !important;
+}
+
+.checkbox-card:hover {
+  background-color: $table-hover-bg;
+}
+
+.checkbox-card.active:hover {
+  &::before {
+    background-color: $table-hover-bg;
+  }
+}
+
+.checkbox-card:hover .custom-control-input ~ .custom-control-label::before {
+  box-shadow: inset 0 0 0 2px $navy;
+}
+
+.checkbox-card.active:hover {
+  box-shadow: inset 0 0 0 2px $navy;
+}
+
 .radio-card:not(:first-child) {
   border-left: 2px solid $body-bg;
 }
@@ -673,7 +714,8 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   }
 }
 
-.radio-card.active {
+.radio-card.active,
+.checkbox-card.active {
   background-color: $white !important;
   z-index: 2;
   transition: all ease-out 200ms;
@@ -702,9 +744,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
 }
 
 /**
- * Radio card small
+ * Radio card small and checkbox card
  */
-.radio-card-sm {
+
+.radio-card-sm,
+.checkbox-card {
   padding: 0;
   position: relative;
   border: 1px solid $body-bg;
@@ -723,7 +767,11 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   .custom-radio .custom-control-input:checked ~ .custom-control-label::after,
   .custom-radio .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::after,
   .custom-radio .custom-control-input:focus ~ .custom-control-label::before,
-  .custom-radio .custom-control-input:active ~ .custom-control-label::before {
+  .custom-radio .custom-control-input:active ~ .custom-control-label::before,
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after,
+  .custom-checkbox .custom-control-input:not([disabled]):checked:active ~ .custom-control-label::after,
+  .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before,
+  .custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
     top: 0.75rem;
     left: 0.75rem;
   }

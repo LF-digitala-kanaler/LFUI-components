@@ -50,6 +50,16 @@
   max-height: 38px;
 }
 
+// fixed width input. Room for a value of 3 numbers
+.input-group-fixed {
+  width: 90px;
+  flex-wrap: nowrap;
+
+  input.form-control {
+    width: auto;
+  }
+}
+
 // Bug fix for FireFox and IE11 when using flex. See https://github.com/twbs/bootstrap/issues/17784#issuecomment-237840119
 .form-control {
   min-width: 0;
