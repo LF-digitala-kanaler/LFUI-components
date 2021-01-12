@@ -5,6 +5,7 @@ import {priceBoxExample} from './PriceBox/pricebox';
 import {sliderExample} from './Slider/slider';
 import {panelExample} from './Panel/panel';
 import {uploadExample} from './Upload/upload';
+import {tableExample} from './Tables/table'
 import {timelineExample} from './Timeline/timeline';
 import {navbarExample} from './Navbar/navbar';
 import {popoverTooltipExample} from './PopoverTooltip/popovertooltip'
@@ -18,7 +19,7 @@ import {xyPlotExample} from './xyPlot/xyPlot';
 disabledDatesExample();
 timepickerExample();
 datepickerExample();
-
+tableExample();
 selectExample();
 
 calloutExample();
