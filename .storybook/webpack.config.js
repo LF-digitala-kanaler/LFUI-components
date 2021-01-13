@@ -55,7 +55,7 @@ module.exports = async ({
     {
       test: /\.(svg)$/,
       loaders: ['file-loader'],
-       
+      include: path.resolve(__dirname, '../lfui/'), 
     },
     {
       test: /\.(js)$/,
