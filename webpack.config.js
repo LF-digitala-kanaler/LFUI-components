@@ -51,7 +51,7 @@ module.exports = {
       },
       // copy icons
       { 
-        from: 'src/icons/',
+        from: 'src/icons/sprite/',
         to: 'lfui/icons/'
       },
     ]),
