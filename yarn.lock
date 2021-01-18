@@ -8662,8 +8662,8 @@ levn@~0.3.0:
     type-check "~0.3.2"
 
 "lfui-icons@git+https://24cd72455eb8aea8ea1c796c1421945df20fbe0f:x-oauth-basic@github.com/LF-digitala-kanaler/LFUI-icons.git":
-  version "1.0.15"
-  resolved "git+https://24cd72455eb8aea8ea1c796c1421945df20fbe0f:x-oauth-basic@github.com/LF-digitala-kanaler/LFUI-icons.git#a51b7443f54a7eefed74c95f6748fbe07bc09690"
+  version "1.0.0"
+  resolved "git+https://24cd72455eb8aea8ea1c796c1421945df20fbe0f:x-oauth-basic@github.com/LF-digitala-kanaler/LFUI-icons.git#5e1c368da996d465a5e5c31607c3ec2d0ab561f4"
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
