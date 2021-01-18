@@ -63,13 +63,12 @@
   },
   "scripts": {
     "start": "start-storybook -s ./public -p 6006 -s ./dist/lfui",
-    "build-storybook": "build-storybook -c .storybook -s ./dist/lfui .storybook -o public/$npm_package_version",
     "build": "build-storybook -c .storybook -s ./dist/lfui .storybook -o public/$npm_package_version && webpack --mode production",
     "dev": "webpack --mode development",
     "release": "auto changelog && npm run version && auto release",
     "test": "jest --no-cache",
     "test:update": "jest -u",
-    "copy:icons": "rimraf src/icons && cp -r node_modules/lfui-icons/dist/ src/icons"
+    "copy:icons": "rimraf src/icons && cp -r node_modules/lfui-icons/dist/sprite src/icons"
   },
   "jest": {
     "transform": {
