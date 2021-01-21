@@ -9,8 +9,9 @@ moment.locale('sv');
 
 const lineChartExample = () => {
   
-  let color = chartColors.getColorScale(0) // get default color scale
-  let legendColor = chartColors.getColorScale(0);
+  let color = chartColors.getColorScale(1) // get default color scale
+  console.log(color)
+  let legendColor = chartColors.getColorScale(1);
   let canvas = document.getElementById('lineChart');
   let ctx = canvas.getContext('2d');
   let gradientFill = ctx.createLinearGradient(0, 800, 0, 0);
@@ -105,7 +106,7 @@ const lineChartExample = () => {
               day: 'D MMM'
             }
           },
-
+          
           gridLines: {
             drawOnChartArea: false
           },
@@ -114,7 +115,8 @@ const lineChartExample = () => {
             autoSkip: true,
             maxRotation: 0,
             maxTicksLimit: 10,
-            autoSkipPadding: 40
+            autoSkipPadding: 40,
+            padding: 8
           },
           
         }],
@@ -126,7 +128,8 @@ const lineChartExample = () => {
           },
           ticks: {
             mirror: true,
-            padding: -5,
+            padding: -8,
+            
             maxTicksLimit: 5,
             callback: function (value, index, values) {
               return (value + ' kr');
