@@ -67,7 +67,7 @@ const xyPlotExample = () => {
             labelString: yAxisText
           },
           ticks: {
-            
+            padding: 8,
             maxTicksLimit: 6,
             beginAtZero: true,
           },
@@ -84,7 +84,7 @@ const xyPlotExample = () => {
             labelString: xAxisText
           },
           ticks: {
-           
+            padding: 8,
             maxTicksLimit: 6,
             beginAtZero: true,
            
