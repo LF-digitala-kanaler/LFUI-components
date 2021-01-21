@@ -8,7 +8,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // Avoid duplicate imports in our modules
 const importer = require('node-sass-import-once');
 const increaseSpecificity = require('postcss-increase-specificity');
-
 /* We import files through our node_modules, using @import 'bootstrap/x/_x.scss'.
  * by default, this does not work as our build won't recognize the file path.
  * In a beautiful world, we'd use webpacks tilde '~' import functionality to automatically find the relative path to
@@ -39,6 +38,11 @@ module.exports = {
   plugins: [
     // copy html files used in LFDS to show examples
     new CleanWebpackPlugin(),
+    // new StylelintPlugin({
+    //   configFile: path.resolve(__dirname, 'stylelint.config.js'),
+    //   context: path.resolve(__dirname, 'src/scss/'),
+    //   files: '*.scss',
+    // }),
     new CopyPlugin([
       { 
         from: 'src/docs/',
