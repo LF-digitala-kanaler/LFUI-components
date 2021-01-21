@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": null,
+    value-keyword-case: null,
+    no-duplicate-selectors: null
+  }
+}

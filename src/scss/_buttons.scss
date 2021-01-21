@@ -366,11 +366,12 @@
     }
   }
 }
-// less horizontal padding 
 
+// less horizontal padding
 .btn-tight {
   padding: $input-btn-padding-y $input-btn-padding-x/2;
 }
+
 // Secondary buttons
 @mixin button-custom-outline-variant($color, $border, $bg, $border-hover, $bg-pressed) {
   & {

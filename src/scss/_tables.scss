@@ -390,6 +390,7 @@
 
 .table-sort {
   @include reset-button;
+
   cursor: pointer;
   text-decoration: underline;
 }
@@ -407,6 +408,7 @@
 th[aria-sort='descending'] .table-sort,
 th[aria-sort='ascending'] .table-sort {
   position: relative;
+
   &::after {
     content: '';
     background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDVsMy0zIDMgMyIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==");

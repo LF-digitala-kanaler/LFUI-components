@@ -605,7 +605,7 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
     color: $navy;
     margin: 0 0 0.375rem;
     align-self: baseline;
-    max-width: 100%; // Needed for IE11 to line break long labels 
+    max-width: 100%; // Needed for IE11 to line break long labels
     hyphens: auto;
 
     @include font-smoothing;
@@ -821,7 +821,7 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
   }
 
   .custom-control {
-    font-family: arial;
+    font-family: $font-family-base;
   }
 
   .custom-control-label {
