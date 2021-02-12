@@ -64,6 +64,7 @@ module.exports = async ({
           {
             loader: 'sass-loader',
             options: {
+              sourceMap: true,
               importer: moduleImporter()
             },
           }

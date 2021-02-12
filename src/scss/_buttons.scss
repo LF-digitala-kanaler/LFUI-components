@@ -366,10 +366,67 @@
     }
   }
 }
-
 // less horizontal padding
+
 .btn-tight {
   padding: $input-btn-padding-y $input-btn-padding-x/2;
+}
+
+// alert buttons
+@mixin button-custom-outline-alert-variant($color, $border, $bg, $border-hover, $bg-pressed) {
+  color: $color;
+  background-color: $bg;
+  border-color: $border;
+  font-size: $font-size-md;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $border-hover;
+    background-color: $bg;
+    border-color: $border-hover;
+    box-shadow:
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover;
+  }
+
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
+    &,
+    &:hover,
+    &:focus:hover,
+    &.focus {
+      color: $border-hover;
+      background: $bg-pressed;
+      border-color: $border-hover;
+
+      /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+      box-shadow:
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &,
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      pointer-events: none;
+      background-color: inherit;
+      border-color: $border;
+      color: $border;
+      opacity: 0.65;
+      box-shadow: none;
+    }
+  }
 }
 
 // Secondary buttons
@@ -577,6 +634,8 @@
   @include button-custom-variant($btn-primary-color, $btn-primary-border, $btn-primary-bg, $btn-primary-bg-hover, $btn-primary-bg-pressed);
 }
 
+/* Outlined */
+
 .btn-outline-secondary,
 .btn-secondary {
   @extend .btn-secondary;
@@ -592,25 +651,19 @@
 }
 
 .btn-outline-info {
-  @extend .btn-info;
-
-  @include button-custom-outline-variant($btn-info-color, $btn-info-border, $btn-info-bg, $btn-info-border-hover, $btn-info-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-info-color, $btn-info-border, $btn-info-bg, $btn-info-border-hover, $btn-info-bg-pressed);
 }
 
 .btn-outline-success {
-  @extend .btn-success;
-
-  @include button-custom-outline-variant($btn-success-color, $btn-success-border, $btn-success-bg, $btn-success-border-hover, $btn-success-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-success-color, $btn-success-border, $btn-success-bg, $btn-success-border-hover, $btn-success-bg-pressed);
 }
 
 .btn-outline-warning {
-  @extend .btn-warning;
-
-  @include button-custom-outline-variant($btn-warning-color, $btn-warning-border, $btn-warning-bg, $btn-warning-border-hover, $btn-warning-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-warning-color, $btn-warning-border, $btn-warning-bg, $btn-warning-border-hover, $btn-warning-bg-pressed);
 }
 
 .btn-outline-danger {
-  @include button-custom-outline-variant($btn-danger-color, $btn-danger-border, $btn-danger-bg, $btn-danger-border-hover, $btn-danger-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-danger-color, $btn-danger-border, $btn-danger-bg, $btn-danger-border-hover, $btn-danger-bg-pressed);
 }
 
 /**
