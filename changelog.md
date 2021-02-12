@@ -22,7 +22,9 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-### Documenta
+### Documentation
 ### Deprecated
 
 ### Removed
+
+* `.btn-outline-primary` class removed use `.btn-primary` instead (#40)
