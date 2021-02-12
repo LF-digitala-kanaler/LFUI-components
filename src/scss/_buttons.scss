@@ -577,7 +577,6 @@
   @include button-custom-variant($btn-primary-color, $btn-primary-border, $btn-primary-bg, $btn-primary-bg-hover, $btn-primary-bg-pressed);
 }
 
-
 .btn-outline-secondary,
 .btn-secondary {
   @extend .btn-secondary;
