@@ -987,7 +987,7 @@ a.btn:active {
 
 .btn-link-lg,
 .primary-link {
-  @include btn-link-variant($wine, #910c19, #7a0b16);
+  @include btn-link-variant($wine, $btn-primary-bg-hover, $btn-primary-bg-pressed);
 
   a,
   span {
@@ -997,7 +997,7 @@ a.btn:active {
 
 .btn-link-lg-left,
 .primary-link-left {
-  @include btn-link-variant($wine, #910c19, #7a0b16, left);
+  @include btn-link-variant($wine, $btn-primary-bg-hover, $btn-primary-bg-pressed, left);
 }
 
 .arrow-right {
