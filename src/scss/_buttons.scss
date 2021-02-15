@@ -638,8 +638,6 @@
 
 .btn-outline-secondary,
 .btn-secondary {
-  @extend .btn-secondary;
-
   @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
 }
 
@@ -740,8 +738,14 @@ a.btn:active {
  * Large link button
  */
 @mixin btn-link-variant($color, $color-hover, $color-pressed, $arrow-position: right) {
-  @extend .btn;
-
+  -webkit-font-smoothing: antialiased;
+  font-size: $font-size-lg;
+  font-family: $font-family-sans-serif;
+  transition: 200ms linear;
+  transition-property: all;
+  white-space: normal;
+  position: relative;
+  cursor: pointer;
   color: $color;
   font-weight: bold;
   text-decoration: none;
@@ -889,6 +893,14 @@ a.btn:active {
 
         bottom: 0;
       }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::after {
+          @include btn-arrow-small-right($color-pressed);
+        }
+      }
     }
 
     @else {
@@ -905,6 +917,14 @@ a.btn:active {
         @include btn-arrow-small-left($color-hover);
 
         bottom: 0;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::before {
+          @include btn-arrow-small-left($color-pressed);
+        }
       }
     }
   }
@@ -927,6 +947,14 @@ a.btn:active {
 
         bottom: -3px;
       }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::after {
+          @include btn-arrow-large-right($color-pressed);
+        }
+      }
     }
 
     @else {
@@ -944,6 +972,14 @@ a.btn:active {
         @include btn-arrow-large-left($color-hover);
 
         bottom: -3px;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::before {
+          @include btn-arrow-large-left($color-pressed);
+        }
       }
     }
   }
@@ -1015,7 +1051,7 @@ a.btn:active {
 */
 
 .btn-more {
-  font-size: 16px;
+  font-size: $font-size-md;
   font-weight: bold;
   font-family: $font-family-sans-serif;
   line-height: 1.5rem;
@@ -1026,11 +1062,11 @@ a.btn:active {
 
   &.btn-lg {
     line-height: $input-btn-line-height-lg;
-    font-size: 18px;
+    font-size: $font-size-lg;
   }
 
   &.btn-sm {
-    font-size: 14px;
+    font-size: $font-size-sm;
   }
 
   &:focus {
