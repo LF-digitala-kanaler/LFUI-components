@@ -366,10 +366,67 @@
     }
   }
 }
-
 // less horizontal padding
+
 .btn-tight {
   padding: $input-btn-padding-y $input-btn-padding-x/2;
+}
+
+// alert buttons
+@mixin button-custom-outline-alert-variant($color, $border, $bg, $border-hover, $bg-pressed) {
+  color: $color;
+  background-color: $bg;
+  border-color: $border;
+  font-size: $font-size-md;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $border-hover;
+    background-color: $bg;
+    border-color: $border-hover;
+    box-shadow:
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover;
+  }
+
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
+    &,
+    &:hover,
+    &:focus:hover,
+    &.focus {
+      color: $border-hover;
+      background: $bg-pressed;
+      border-color: $border-hover;
+
+      /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+      box-shadow:
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &,
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      pointer-events: none;
+      background-color: inherit;
+      border-color: $border;
+      color: $border;
+      opacity: 0.65;
+      box-shadow: none;
+    }
+  }
 }
 
 // Secondary buttons
@@ -577,10 +634,10 @@
   @include button-custom-variant($btn-primary-color, $btn-primary-border, $btn-primary-bg, $btn-primary-bg-hover, $btn-primary-bg-pressed);
 }
 
+/* Outlined */
+
 .btn-outline-secondary,
 .btn-secondary {
-  @extend .btn-secondary;
-
   @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
 }
 
@@ -592,25 +649,19 @@
 }
 
 .btn-outline-info {
-  @extend .btn-info;
-
-  @include button-custom-outline-variant($btn-info-color, $btn-info-border, $btn-info-bg, $btn-info-border-hover, $btn-info-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-info-color, $btn-info-border, $btn-info-bg, $btn-info-border-hover, $btn-info-bg-pressed);
 }
 
 .btn-outline-success {
-  @extend .btn-success;
-
-  @include button-custom-outline-variant($btn-success-color, $btn-success-border, $btn-success-bg, $btn-success-border-hover, $btn-success-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-success-color, $btn-success-border, $btn-success-bg, $btn-success-border-hover, $btn-success-bg-pressed);
 }
 
 .btn-outline-warning {
-  @extend .btn-warning;
-
-  @include button-custom-outline-variant($btn-warning-color, $btn-warning-border, $btn-warning-bg, $btn-warning-border-hover, $btn-warning-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-warning-color, $btn-warning-border, $btn-warning-bg, $btn-warning-border-hover, $btn-warning-bg-pressed);
 }
 
 .btn-outline-danger {
-  @include button-custom-outline-variant($btn-danger-color, $btn-danger-border, $btn-danger-bg, $btn-danger-border-hover, $btn-danger-bg-pressed);
+  @include button-custom-outline-alert-variant($btn-danger-color, $btn-danger-border, $btn-danger-bg, $btn-danger-border-hover, $btn-danger-bg-pressed);
 }
 
 /**
@@ -687,8 +738,14 @@ a.btn:active {
  * Large link button
  */
 @mixin btn-link-variant($color, $color-hover, $color-pressed, $arrow-position: right) {
-  @extend .btn;
-
+  -webkit-font-smoothing: antialiased;
+  font-size: $font-size-lg;
+  font-family: $font-family-sans-serif;
+  transition: 200ms linear;
+  transition-property: all;
+  white-space: normal;
+  position: relative;
+  cursor: pointer;
   color: $color;
   font-weight: bold;
   text-decoration: none;
@@ -836,6 +893,14 @@ a.btn:active {
 
         bottom: 0;
       }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::after {
+          @include btn-arrow-small-right($color-pressed);
+        }
+      }
     }
 
     @else {
@@ -852,6 +917,14 @@ a.btn:active {
         @include btn-arrow-small-left($color-hover);
 
         bottom: 0;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::before {
+          @include btn-arrow-small-left($color-pressed);
+        }
       }
     }
   }
@@ -874,6 +947,14 @@ a.btn:active {
 
         bottom: -3px;
       }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::after {
+          @include btn-arrow-large-right($color-pressed);
+        }
+      }
     }
 
     @else {
@@ -892,13 +973,21 @@ a.btn:active {
 
         bottom: -3px;
       }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::before {
+          @include btn-arrow-large-left($color-pressed);
+        }
+      }
     }
   }
 }
 
 .btn-link-lg,
 .primary-link {
-  @include btn-link-variant($wine, #910c19, #7a0b16);
+  @include btn-link-variant($wine, $btn-primary-bg-hover, $btn-primary-bg-pressed);
 
   a,
   span {
@@ -908,7 +997,7 @@ a.btn:active {
 
 .btn-link-lg-left,
 .primary-link-left {
-  @include btn-link-variant($wine, #910c19, #7a0b16, left);
+  @include btn-link-variant($wine, $btn-primary-bg-hover, $btn-primary-bg-pressed, left);
 }
 
 .arrow-right {
@@ -962,7 +1051,7 @@ a.btn:active {
 */
 
 .btn-more {
-  font-size: 16px;
+  font-size: $font-size-md;
   font-weight: bold;
   font-family: $font-family-sans-serif;
   line-height: 1.5rem;
@@ -973,11 +1062,11 @@ a.btn:active {
 
   &.btn-lg {
     line-height: $input-btn-line-height-lg;
-    font-size: 18px;
+    font-size: $font-size-lg;
   }
 
   &.btn-sm {
-    font-size: 14px;
+    font-size: $font-size-sm;
   }
 
   &:focus {
