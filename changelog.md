@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 
   * New example of Bar chart. (#12)
   * New example of Line chart. (#9)
-
+  * Refactored _button.scss to remove incorrect use of @extand. Overall lfui.css file size went from 680kb to 451kb uncompressed.  (#4)
 ### Fixed
 
 ### Documentation
