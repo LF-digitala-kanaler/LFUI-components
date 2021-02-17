@@ -58,7 +58,7 @@
   },
   "scripts": {
     "start": "start-storybook -s ./src/icons -p 6006",
-    "build": "yarn build-lfui && build-storybook  -s ./src/icons  -o ./public/$npm_package_version",
+    "build": "yarn build-lfui && build-storybook  -s ./src/icons  -o public/$npm_package_version",
     "build-lfui": "webpack --mode production &&  rimraf dist/lfui/icons && cp -r src/icons dist/lfui/icons",
     "release": "auto changelog && npm run version && auto release",
     "test": "jest --no-cache",
