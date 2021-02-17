@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 ### Documentation
+ * removed node-sass for dart sass
 ### Deprecated
 
 ### Removed

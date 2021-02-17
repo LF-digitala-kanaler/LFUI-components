@@ -6,7 +6,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // Avoid duplicate imports in our modules
-const importer = require('node-sass-import-once');
 const increaseSpecificity = require('postcss-increase-specificity');
 /* We import files through our node_modules, using @import 'bootstrap/x/_x.scss'.
  * by default, this does not work as our build won't recognize the file path.
@@ -14,7 +13,6 @@ const increaseSpecificity = require('postcss-increase-specificity');
  * each dependency imported this way, but that won't work for, i.e ÖS that doesn't use webpack _but_ imports LFUI.scss.
  * Hence we need module importer, which allows us to omit the tilde from our imports in our build.
  */
-const  moduleImporter = require('sass-module-importer');
 module.exports = {
   entry: {
     '/lfui/lfui': './src/index.js',
@@ -70,14 +68,14 @@ module.exports = {
       },
       canPrint: true
     }),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        sassConfig:
-        {
-          importer: importer
-        },
-      },
-    }),
+    // new webpack.LoaderOptionsPlugin({
+    //   options: {
+    //     sassConfig:
+    //     {
+    //       importer: importer
+    //     },
+    //   },
+    // }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -117,9 +115,10 @@ module.exports = {
           'postcss-loader',
           {
             loader: 'sass-loader',
-            options: {
-              importer: moduleImporter()
-            },
+            // options: {
+            // implementation: require("sass"),
+            //   importer: moduleImporter()
+            // },
           }
         ],
       },
@@ -150,9 +149,9 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-            options: {
-              importer: moduleImporter(),
-            },
+            // options: {
+            //   importer: moduleImporter(),
+            // },
           }
           
         ],
