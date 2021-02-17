@@ -1,0 +1,33 @@
+/**
+ * The idea is to never style focus states on a component basis because they
+ * tend to show up when clicking. So, let's try to clear out any focus states
+ * and add a general very prominent outline when the user is navigating using
+ * the keyboard (detected using the focus.js script).
+ */
+
+html body :focus,
+html body .focus {
+  outline: none !important;
+}
+
+html body[data-focus-source="key"] :focus,
+html body[data-focus-source="key"] .focus {
+  outline: 4px solid $orange !important;
+  outline-offset: 0;
+  z-index: 10;
+}
+
+html body[data-focus-source="key"] [tabindex="-1"]:focus,
+html body[data-focus-source="key"] input:focus,
+html body[data-focus-source="key"] select:focus,
+html body[data-focus-source="key"] textarea:focus {
+  outline: none !important;
+}
+
+/**
+ * Stop iOS users from accidentally opening empty hash links in new tabs
+ */
+
+a[href="#"] {
+  -webkit-touch-callout: none;
+}
