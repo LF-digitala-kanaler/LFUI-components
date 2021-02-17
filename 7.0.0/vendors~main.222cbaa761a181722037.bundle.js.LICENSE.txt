@@ -290,7 +290,7 @@ object-assign
 
 /**
  * vivus - JavaScript library to make drawing animation on SVG
- * @version v0.4.0
+ * @version v0.4.5
  * @link https://github.com/maxwellito/vivus
  * @license MIT
  */
@@ -333,7 +333,7 @@ object-assign
 
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.14.7
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
