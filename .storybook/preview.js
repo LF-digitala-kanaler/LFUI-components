@@ -1,5 +1,5 @@
 
-import '../src/scss/DOCS.scss';
+import '../src/scss/LFUI.scss';
 import 'eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4';
 import '../src/js/index.js';
 
