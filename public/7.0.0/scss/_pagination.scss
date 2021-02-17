@@ -1,0 +1,160 @@
+@import "bootstrap/scss/_pagination.scss";
+
+.pagination {
+  font-family: $font-family-sans-serif;
+}
+
+.page-link,
+.page-link:hover,
+.page-link:focus,
+.page-link:active {
+  background-image: none;
+  font-weight: bold;
+  margin-left: 2px;
+  background-color: $pagination-bg;
+
+  @include font-smoothing;
+}
+
+.pagination:not(.pagination-flex) .page-item:not(.active) {
+  .page-link:hover,
+  .page-link:focus {
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
+    cursor: pointer;
+    color: $pagination-hover-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      bottom: 7px;
+      right: 11px;
+      margin: auto;
+      background: $pagination-hover-color;
+      height: 2px;
+    }
+  }
+}
+
+.pagination {
+  .page-item.active ~ .page-item {
+    .page-link {
+      &,
+      &:focus {
+        color: $smoke !important;
+        font-weight: bold;
+        pointer-events: none;
+
+        &::after {
+          content: none !important;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * When the pagination is not used for navigation but only to show what step the
+ * user is in a given flow. Often when it's not allowed to go back.
+ */
+
+.pagination-static {
+  pointer-events: none;
+}
+
+// "Stretchy"
+
+.pagination-flex {
+  display: flex;
+  align-items: stretch;
+
+  .page-item {
+    flex-grow: 1;
+
+    &:last-of-type {
+      .page-link {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+
+    &:not(.active) {
+      .page-link:hover {
+        background-color: $white;
+        color: $blue;
+      }
+    }
+
+    .page-link {
+      width: calc(100% - 2px);
+      margin-right: 2px;
+      margin-left: 0;
+      text-align: center;
+    }
+
+    a.page-link:hover,
+    a.page-link:focus {
+      &::after {
+        content: "";
+        position: absolute;
+        left: 11px;
+        bottom: 7px;
+        right: 11px;
+        margin: auto;
+        background: $blue;
+        height: 2px;
+        width: 12px;
+      }
+    }
+  }
+}
+
+// stretchy on small devices
+
+.pagination-sm-flex {
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    align-items: stretch;
+
+    .page-item {
+      flex-grow: 1;
+
+      &:last-of-type {
+        .page-link {
+          margin-right: 0;
+          width: 100%;
+        }
+      }
+
+      &:not(.active) {
+        .page-link:hover {
+          background-color: $white;
+          color: $blue;
+        }
+      }
+
+      .page-link {
+        width: calc(100% - 2px);
+        margin-right: 2px;
+        margin-left: 0;
+        text-align: center;
+      }
+
+      a.page-link:hover,
+      a.page-link:focus {
+        &::after {
+          content: "";
+          position: absolute;
+          left: 11px;
+          bottom: 7px;
+          right: 11px;
+          margin: auto;
+          background: $blue;
+          height: 2px;
+          width: 12px;
+        }
+      }
+    }
+  }
+}
