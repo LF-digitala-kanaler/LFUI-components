@@ -4,6 +4,7 @@ on:
     branches:
       - release/7.0.0
       - release/6.6.0
+      - border-radius-test
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
