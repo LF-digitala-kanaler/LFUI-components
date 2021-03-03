@@ -1,0 +1,19 @@
+@import "bootstrap/scss/_code.scss";
+
+code {
+  font-weight: normal;
+  background-color: $code-bg;
+  padding: 0.2rem 0.4rem;
+}
+
+/**
+ * Code blocks, why not in BS?
+ */
+
+pre code {
+  display: block;
+  padding: 1.2rem 1.4rem;
+  background: $code-bg;
+  color: $code-color;
+  overflow-x: auto;
+}
