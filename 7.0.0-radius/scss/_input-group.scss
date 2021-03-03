@@ -1,0 +1,217 @@
+@import "bootstrap/scss/_input-group.scss";
+
+.input-group.disabled {
+  .input-group-append,
+  .input-group-prepend {
+    span,
+    div {
+      cursor: not-allowed;
+      background-color: $input-disabled-bg;
+      opacity: 1;
+    }
+  }
+}
+
+/**
+ * Addon text
+ */
+
+.input-group-append,
+.input-group-prepend {
+  border-width: 0 0 $input-btn-border-width;
+  transition: border-color 60ms linear;
+  min-width: $input-group-addon-min-width;
+  height: 40px;
+  justify-content: center;
+  margin: 0;
+  border-bottom: $border-width solid $input-group-addon-border-color;
+  background-color: $input-bg;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    display: block;
+  }
+}
+
+.input-group-text {
+  border-width: 0 0 $input-btn-border-width;
+  transition: border-color 60ms linear;
+  min-width: $input-group-addon-min-width;
+  justify-content: center;
+  margin: 0;
+  background-color: $input-bg;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-bottom: none;
+  padding-top: 0.69rem;
+  max-height: 38px;
+}
+
+// fixed width input. Room for a value of 3 numbers
+.input-group-fixed {
+  width: 90px;
+  flex-wrap: nowrap;
+
+  input.form-control {
+    width: auto;
+  }
+}
+
+// Bug fix for FireFox and IE11 when using flex. See https://github.com/twbs/bootstrap/issues/17784#issuecomment-237840119
+.form-control {
+  min-width: 0;
+}
+
+// Padding control for the input field.
+.input-group {
+  // If the input field is before the addon
+  input.form-control:first-child {
+    padding-right: 0;
+  }
+  // or in the middle between two addons
+  input.form-control:nth-child(2) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  // or after the addon
+  input.form-control:last-child {
+    padding-left: 0;
+    padding-right: 0.75rem;
+  }
+  // or default
+  input.form-control:only-child {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+// Or if the first addon is an image
+.input-group-prepend-img {
+  border-width: 0;
+  padding: 0 2px;
+
+  + input.form-control,
+  + input.form-control:last-child {
+    padding-left: 0.75rem !important;
+  }
+}
+
+// ... or a button
+.input-group-append {
+  ~ input.form-control,
+  ~ input.form-control:last-child {
+    padding-left: 0.75rem !important;
+  }
+}
+
+.input-group-prepend-reg {
+  min-width: 1.5rem;
+  background-position: 50% 50%;
+  background-color: #039; // Special color to match the offical color
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNNCAyNS40NzhjLS4wMSAxLjY4MyAxLjMzMSAyLjQ0MiAyLjY3MyAyLjQ0MnMyLjY1MS0uNTYxIDIuNjUxLTIuMzc2YzAtMS40My0xLjAzNC0yLjEyMy0yLjU4NS0yLjI4OC0uNjYtLjA4OC0xLjEyMi0uMjUzLTEuMTIyLS45MzUgMC0uNTk0LjQ4NC0uOTAyLjk5LS45MDIuNTE3IDAgMS4wMDEuMjc1IDEuMDQ1LjkwMmgxLjQ1MkM5LjExNSAyMC41OTQgNy44NCAyMCA2LjU5NiAyMGMtMS41MDcgMC0yLjUwOC45MDItMi41MDggMi4zNTQgMCAxLjE2Ni43OTIgMi4wNTcgMi4zODcgMi4yLjU1LjA0NCAxLjMxLjExIDEuMzEuOTkgMCAuODAzLS41ODQuOTM1LTEuMTIzLjkzNS0uNTcyIDAtMS4xNTUtLjI5Ny0xLjE3Ny0xLjAwMUg0eiIgZmlsbD0iI0ZGRiIvPjxnIGZpbGw9IiNGQzAiPjxwYXRoIGQ9Ik03IDBsLS4zMS45NTEuNDc2LjE1NXoiLz48cGF0aCBkPSJNNyAwbC4zMS45NTEtLjQ3Ni4xNTV6Ii8+PHBhdGggZD0iTTcuOTUuNjloLTF2LjV6Ii8+PHBhdGggZD0iTTcuOTUxLjY5MWwtLjgwOS41ODgtLjI5NC0uNDA0eiIvPjxnPjxwYXRoIGQ9Ik03LjU4OCAxLjgwOWwtLjMxLS45NTEtLjQ3NS4xNTR6Ii8+PHBhdGggZD0iTTcuNTg3IDEuODFsLS44MDktLjU4OS4yOTQtLjQwNHoiLz48L2c+PGc+PHBhdGggZD0iTTYuMDUuNjloMXYuNXoiLz48cGF0aCBkPSJNNi4wNDkuNjkxbC44MDkuNTg4LjI5NC0uNDA0eiIvPjxnPjxwYXRoIGQ9Ik02LjQxMiAxLjgwOWwuMzEtLjk1MS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik02LjQxMyAxLjgxbC44MDktLjU4OS0uMjk0LS40MDR6Ii8+PC9nPjwvZz48Zz48cGF0aCBkPSJNNyAxMmwtLjMxLjk1MS40NzYuMTU1eiIvPjxwYXRoIGQ9Ik03IDEybC4zMS45NTEtLjQ3Ni4xNTV6Ii8+PHBhdGggZD0iTTcuOTUgMTIuNjloLTF2LjV6Ii8+PHBhdGggZD0iTTcuOTUxIDEyLjY5MWwtLjgwOS41ODgtLjI5NC0uNDA0eiIvPjxnPjxwYXRoIGQ9Ik03LjU4OCAxMy44MDlsLS4zMS0uOTUxLS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik03LjU4NyAxMy44MWwtLjgwOS0uNTg5LjI5NC0uNDA0eiIvPjwvZz48Zz48cGF0aCBkPSJNNi4wNSAxMi42OWgxdi41eiIvPjxwYXRoIGQ9Ik02LjA0OSAxMi42OTFsLjgwOS41ODguMjk0LS40MDR6Ii8+PGc+PHBhdGggZD0iTTYuNDEyIDEzLjgwOWwuMzEtLjk1MS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik02LjQxMyAxMy44MWwuODA5LS41ODktLjI5NC0uNDA0eiIvPjwvZz48L2c+PC9nPjxnPjxwYXRoIGQ9Ik0xIDZsLS4zMS45NTEuNDc2LjE1NXoiLz48cGF0aCBkPSJNMSA2bC4zMS45NTEtLjQ3Ni4xNTV6Ii8+PHBhdGggZD0iTTEuOTUgNi42OWgtMXYuNXoiLz48cGF0aCBkPSJNMS45NTEgNi42OTFsLS44MDkuNTg4LS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNMS41ODggNy44MDlsLS4zMS0uOTUxLS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik0xLjU4NyA3LjgxTC43NzggNy4yMmwuMjk0LS40MDR6Ii8+PGc+PHBhdGggZD0iTS4wNSA2LjY5aDF2LjV6Ii8+PHBhdGggZD0iTS4wNDkgNi42OTFsLjgwOS41ODguMjk0LS40MDR6Ii8+PGc+PHBhdGggZD0iTS40MTIgNy44MDlsLjMxLS45NTEuNDc1LjE1NHoiLz48cGF0aCBkPSJNLjQxMyA3LjgxbC44MDktLjU4OS0uMjk0LS40MDR6Ii8+PC9nPjwvZz48Zz48cGF0aCBkPSJNMy40MTMgMi42MTNsLjgwOS0uNTg4LS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNMy40MTIgMi42MTNsLjMxLS45NTEuNDc1LjE1NHoiLz48cGF0aCBkPSJNMy4wNDkgMS40OTVsLjgwOS41ODguMjk0LS40MDV6Ii8+PHBhdGggZD0iTTMuMDUgMS40OTVoMXYuNXoiLz48Zz48cGF0aCBkPSJNNCAuODA0bC0uMzEuOTUxLjQ3Ni4xNTV6Ii8+PHBhdGggZD0iTTQgLjgwNGwuMzEuOTUxLS40NzYuMTU1eiIvPjwvZz48Zz48cGF0aCBkPSJNNC41ODcgMi42MTNsLS44MDktLjU4OC4yOTQtLjQwNHoiLz48cGF0aCBkPSJNNC41ODggMi42MTNsLS4zMS0uOTUxLS40NzUuMTU0eiIvPjxnPjxwYXRoIGQ9Ik00Ljk1MSAxLjQ5NWwtLjgwOS41ODgtLjI5NC0uNDA1eiIvPjxwYXRoIGQ9Ik00Ljk1IDEuNDk1aC0xdi41eiIvPjwvZz48L2c+PC9nPjxnPjxwYXRoIGQ9Ik0yLjM5MiA0LjgwOWwtLjMxLS45NTEtLjQ3NS4xNTR6Ii8+PHBhdGggZD0iTTIuMzkxIDQuODFsLS44MDktLjU4OS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNMS4yMTYgNC44MWwuODEtLjU4OS0uMjk0LS40MDR6Ii8+PHBhdGggZD0iTTEuMjE2IDQuODA5bC4zMDktLjk1MS40NzUuMTU0eiIvPjxnPjxwYXRoIGQ9Ik0uODUzIDMuNjkxbC44MDkuNTg4LjI5NC0uNDA0eiIvPjxwYXRoIGQ9Ik0uODUzIDMuNjloMXYuNXoiLz48L2c+PGc+PHBhdGggZD0iTTIuNzU1IDMuNjkxbC0uODEuNTg4LS4yOTMtLjQwNHoiLz48cGF0aCBkPSJNMi43NTUgMy42OWgtMXYuNXoiLz48Zz48cGF0aCBkPSJNMS44MDQgM2wuMzEuOTUxLS40NzYuMTU1eiIvPjxwYXRoIGQ9Ik0xLjgwNCAzbC0uMzEuOTUxLjQ3Ni4xNTV6Ii8+PC9nPjwvZz48L2c+PGc+PHBhdGggZD0iTTIuNzU1IDkuNjloLTF2LjV6Ii8+PHBhdGggZD0iTTIuNzU1IDkuNjkxbC0uODEuNTg4LS4yOTMtLjQwNHoiLz48cGF0aCBkPSJNMi4zOTIgMTAuODA5bC0uMzEtLjk1MS0uNDc1LjE1NHoiLz48cGF0aCBkPSJNMi4zOTEgMTAuODFsLS44MDktLjU4OS4yOTQtLjQwNHoiLz48Zz48cGF0aCBkPSJNMS4yMTYgMTAuODFsLjgxLS41ODktLjI5NC0uNDA0eiIvPjxwYXRoIGQ9Ik0xLjIxNiAxMC44MDlsLjMwOS0uOTUxLjQ3NS4xNTR6Ii8+PC9nPjxnPjxwYXRoIGQ9Ik0xLjgwNCA5bC4zMS45NTEtLjQ3Ni4xNTV6Ii8+PHBhdGggZD0iTTEuODA0IDlsLS4zMS45NTEuNDc2LjE1NXoiLz48Zz48cGF0aCBkPSJNLjg1MyA5LjY5aDF2LjV6Ii8+PHBhdGggZD0iTS44NTMgOS42OTFsLjgwOS41ODguMjk0LS40MDR6Ii8+PC9nPjwvZz48L2c+PGc+PHBhdGggZD0iTTQuOTUgMTEuODg3aC0xdi41eiIvPjxwYXRoIGQ9Ik00Ljk1MSAxMS44ODdsLS44MDkuNTg4LS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNNC41ODggMTMuMDA1bC0uMzEtLjk1MS0uNDc1LjE1NHoiLz48cGF0aCBkPSJNNC41ODcgMTMuMDA1bC0uODA5LS41ODguMjk0LS40MDR6Ii8+PGc+PHBhdGggZD0iTTMuNDEzIDEzLjAwNWwuODA5LS41ODgtLjI5NC0uNDA0eiIvPjxwYXRoIGQ9Ik0zLjQxMiAxMy4wMDVsLjMxLS45NTEuNDc1LjE1NHoiLz48L2c+PGc+PHBhdGggZD0iTTQgMTEuMTk2bC4zMS45NTEtLjQ3Ni4xNTV6Ii8+PHBhdGggZD0iTTQgMTEuMTk2bC0uMzEuOTUxLjQ3Ni4xNTV6Ii8+PGc+PHBhdGggZD0iTTMuMDUgMTEuODg3aDF2LjV6Ii8+PHBhdGggZD0iTTMuMDQ5IDExLjg4N2wuODA5LjU4OC4yOTQtLjQwNHoiLz48L2c+PC9nPjwvZz48L2c+PGc+PHBhdGggZD0iTTEzIDZsLjMxLjk1MS0uNDc2LjE1NXoiLz48cGF0aCBkPSJNMTMgNmwtLjMxLjk1MS40NzYuMTU1eiIvPjxwYXRoIGQ9Ik0xMi4wNSA2LjY5aDF2LjV6Ii8+PHBhdGggZD0iTTEyLjA0OSA2LjY5MWwuODA5LjU4OC4yOTQtLjQwNHoiLz48cGF0aCBkPSJNMTIuNDEyIDcuODA5bC4zMS0uOTUxLjQ3NS4xNTR6Ii8+PHBhdGggZD0iTTEyLjQxMyA3LjgxbC44MDktLjU4OS0uMjk0LS40MDR6Ii8+PGc+PHBhdGggZD0iTTEzLjk1IDYuNjloLTF2LjV6Ii8+PHBhdGggZD0iTTEzLjk1MSA2LjY5MWwtLjgwOS41ODgtLjI5NC0uNDA0eiIvPjxnPjxwYXRoIGQ9Ik0xMy41ODggNy44MDlsLS4zMS0uOTUxLS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik0xMy41ODcgNy44MWwtLjgwOS0uNTg5LjI5NC0uNDA0eiIvPjwvZz48L2c+PGc+PHBhdGggZD0iTTEwLjU4NyAyLjYxM2wtLjgwOS0uNTg4LjI5NC0uNDA0eiIvPjxwYXRoIGQ9Ik0xMC41ODggMi42MTNsLS4zMS0uOTUxLS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik0xMC45NTEgMS40OTVsLS44MDkuNTg4LS4yOTQtLjQwNXoiLz48cGF0aCBkPSJNMTAuOTUgMS40OTVoLTF2LjV6Ii8+PGc+PHBhdGggZD0iTTEwIC44MDRsLjMxLjk1MS0uNDc2LjE1NXoiLz48cGF0aCBkPSJNMTAgLjgwNGwtLjMxLjk1MS40NzYuMTU1eiIvPjwvZz48Zz48cGF0aCBkPSJNOS40MTMgMi42MTNsLjgwOS0uNTg4LS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNOS40MTIgMi42MTNsLjMxLS45NTEuNDc1LjE1NHoiLz48Zz48cGF0aCBkPSJNOS4wNDkgMS40OTVsLjgwOS41ODguMjk0LS40MDV6Ii8+PHBhdGggZD0iTTkuMDUgMS40OTVoMXYuNXoiLz48L2c+PC9nPjwvZz48Zz48cGF0aCBkPSJNMTEuNjA4IDQuODA5bC4zMS0uOTUxLjQ3NS4xNTR6Ii8+PHBhdGggZD0iTTExLjYwOSA0LjgxbC44MDktLjU4OS0uMjk0LS40MDR6Ii8+PHBhdGggZD0iTTEyLjc4NCA0LjgxbC0uODEtLjU4OS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNMTIuNzg0IDQuODA5bC0uMzA5LS45NTEtLjQ3NS4xNTR6Ii8+PGc+PHBhdGggZD0iTTEzLjE0NyAzLjY5MWwtLjgwOS41ODgtLjI5NC0uNDA0eiIvPjxwYXRoIGQ9Ik0xMy4xNDcgMy42OWgtMXYuNXoiLz48L2c+PGc+PHBhdGggZD0iTTExLjI0NSAzLjY5MWwuODEuNTg4LjI5My0uNDA0eiIvPjxwYXRoIGQ9Ik0xMS4yNDUgMy42OWgxdi41eiIvPjxnPjxwYXRoIGQ9Ik0xMi4xOTYgM2wtLjMxLjk1MS40NzYuMTU1eiIvPjxwYXRoIGQ9Ik0xMi4xOTYgM2wuMzEuOTUxLS40NzYuMTU1eiIvPjwvZz48L2c+PC9nPjxnPjxwYXRoIGQ9Ik0xMS4yNDUgOS42OWgxdi41eiIvPjxwYXRoIGQ9Ik0xMS4yNDUgOS42OTFsLjgxLjU4OC4yOTMtLjQwNHoiLz48cGF0aCBkPSJNMTEuNjA4IDEwLjgwOWwuMzEtLjk1MS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik0xMS42MDkgMTAuODFsLjgwOS0uNTg5LS4yOTQtLjQwNHoiLz48Zz48cGF0aCBkPSJNMTIuNzg0IDEwLjgxbC0uODEtLjU4OS4yOTQtLjQwNHoiLz48cGF0aCBkPSJNMTIuNzg0IDEwLjgwOWwtLjMwOS0uOTUxLS40NzUuMTU0eiIvPjwvZz48Zz48cGF0aCBkPSJNMTIuMTk2IDlsLS4zMS45NTEuNDc2LjE1NXoiLz48cGF0aCBkPSJNMTIuMTk2IDlsLjMxLjk1MS0uNDc2LjE1NXoiLz48Zz48cGF0aCBkPSJNMTMuMTQ3IDkuNjloLTF2LjV6Ii8+PHBhdGggZD0iTTEzLjE0NyA5LjY5MWwtLjgwOS41ODgtLjI5NC0uNDA0eiIvPjwvZz48L2c+PC9nPjxnPjxwYXRoIGQ9Ik05LjA1IDExLjg4N2gxdi41eiIvPjxwYXRoIGQ9Ik05LjA0OSAxMS44ODdsLjgwOS41ODguMjk0LS40MDR6Ii8+PHBhdGggZD0iTTkuNDEyIDEzLjAwNWwuMzEtLjk1MS40NzUuMTU0eiIvPjxwYXRoIGQ9Ik05LjQxMyAxMy4wMDVsLjgwOS0uNTg4LS4yOTQtLjQwNHoiLz48Zz48cGF0aCBkPSJNMTAuNTg3IDEzLjAwNWwtLjgwOS0uNTg4LjI5NC0uNDA0eiIvPjxwYXRoIGQ9Ik0xMC41ODggMTMuMDA1bC0uMzEtLjk1MS0uNDc1LjE1NHoiLz48L2c+PGc+PHBhdGggZD0iTTEwIDExLjE5NmwtLjMxLjk1MS40NzYuMTU1eiIvPjxwYXRoIGQ9Ik0xMCAxMS4xOTZsLjMxLjk1MS0uNDc2LjE1NXoiLz48Zz48cGF0aCBkPSJNMTAuOTUgMTEuODg3aC0xdi41eiIvPjxwYXRoIGQ9Ik0xMC45NTEgMTEuODg3bC0uODA5LjU4OC0uMjk0LS40MDR6Ii8+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9zdmc+);
+  background-repeat: no-repeat;
+  border-width: 0;
+  padding: 0 2px;
+
+  + input.form-control,
+  + input.form-control:last-child {
+    padding-left: 0.75rem !important;
+  }
+}
+
+/**
+ * Addon button
+ *
+ * Looks like it's positioned above the input.
+ *
+ * Todo: support it being before the input, not just after
+ */
+
+.input-group-append [class*="btn-"] {
+  @include warning("Supports regular 'btn' only");
+}
+
+.input-group-append > .btn,
+.input-group-append > .btn:hover,
+.input-group-append > .btn:focus,
+.input-group-append > .btn.focus,
+.input-group-append > .btn:active,
+.input-group-append > .btn.active {
+  @include reset-button;
+
+  font-family: $font-family-sans-serif;
+  height: 100%;
+  margin-top: 2px;
+  font-size: $font-size-md;
+  border-width: 0 0 $input-btn-border-width;
+  transition: border-color 60ms linear;
+  min-width: $input-group-addon-min-width;
+  min-height: 40px;
+  border-bottom: $border-width solid $input-border-color;
+  background: $input-bg;
+  padding-left: calc(#{$input-padding-left} - 2px);
+  padding-right: calc(#{$input-padding-right} - 2px);
+  color: $blue;
+}
+
+.input-group-append:hover > .btn {
+  background: $input-hover;
+}
+
+.input-group-append > .btn:active {
+  color: rgba($blue, 0.7);
+}
+
+/**
+ * Make sure the button background and border reflects the state of the input
+ */
+
+form:not([novalidate]) .form-control:valid + .input-group-append .btn,
+.form-control:focus + .input-group-append .btn {
+  border-color: $input-group-addon-focus-border-color;
+
+  &:hover {
+    background: $input-hover;
+  }
+}
+
+form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .btn {
+  background: $cloud;
+
+  &:hover {
+    background: $input-valid-hover;
+  }
+}
+
+.has-valid .input-group-append .btn {
+  border-color: $input-group-addon-focus-border-color;
+  background-color: $cloud !important;
+}
+
+.has-success .input-group-append .btn {
+  border-color: $green !important;
+}
+
+.has-warning .input-group-append .btn {
+  border-color: $orange !important;
+}
+
+.has-danger .input-group-append .btn {
+  border-color: $red !important;
+}
+
+/**
+ * Button active state
+ */
+
+.input-group-append > .btn.active {
+  background: $white !important;
+  border-color: $white !important;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+  padding-bottom: $border-width;
+  border-bottom: 0;
+  z-index: 3;
+}
