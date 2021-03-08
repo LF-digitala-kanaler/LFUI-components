@@ -8,6 +8,11 @@
 
 .nav-link {
   padding-bottom: calc(#{$nav-link-padding-y} - 2px);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .nav:not(.navbar-nav):not(.nav-tabs):not(.nav-pills):not(.nav-tight):not(.nav-stacked):not(.nav-two-col):not(.nav-sub):not(.nav-sub-gray) {
@@ -34,12 +39,6 @@
   &:focus,
   &:active {
     color: $nav-link-disabled-color;
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 50%,
-        currentColor 50%
-      );
   }
 }
 

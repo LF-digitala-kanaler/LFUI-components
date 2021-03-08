@@ -41,7 +41,7 @@
   h6,
   .h6 {
     .link-complex-target {
-      background-image: none;
+      text-decoration: none;
     }
   }
 
@@ -102,7 +102,7 @@
 .link-adaptive {
   @extend .link;
 
-  background-image: none;
+  text-decoration: none;
 }
 
 .link-adaptive,
@@ -120,7 +120,7 @@
 .link-no-underline:hover,
 .link-no-underline:focus,
 .link-no-underline:active {
-  background-image: none !important;
+  text-decoration: none;
 }
 
 .link-dark {
@@ -144,18 +144,23 @@
  * If you want a link with an icon
  */
 
+.icon-link-text-underline {
+  @include link;
+}
+
 .icon-link,
 .icon-link:hover,
 .icon-link:focus {
-  display: inline-flex;
-  align-items: center;
-  background-image: none;
+  text-decoration: none;
 }
 
 .icon-link:hover,
 .icon-link:focus {
   > .icon-link-text {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%) repeat-x 0 100%;
-    background-size: 2px 2px;
+    @include link-hover;
+  }
+
+  > .icon-link-text-underline {
+    @include link-hover;
   }
 }

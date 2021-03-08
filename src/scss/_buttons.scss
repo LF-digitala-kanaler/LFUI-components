@@ -11,7 +11,7 @@
   font-size: $font-size-lg;
   font-family: $font-family-sans-serif;
   overflow: hidden;
-  background-image: none;
+  text-decoration: none;
   transition: 200ms linear;
   transition-property: all;
   white-space: normal;
@@ -636,14 +636,11 @@ a.btn:active {
 
   font-family: inherit;
   font-size: $font-size-md;
-  margin: 0.313rem 0;
+  // margin: 0.313rem 0;
   position: relative;
-  line-height: 1.32;
-  border: calc(0.025rem + 2px) solid transparent;
-  border-right-width: 0;
-  border-left-width: 0;
+  line-height: inherit;
+  border: 0;
   vertical-align: baseline;
-  background-position-y: 1.1rem;
 
   @include font-smoothing(auto);
 
@@ -652,18 +649,7 @@ a.btn:active {
   }
 
   &:active {
-    color: #02234a;
-  }
-
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    box-sizing: content-box;
-    padding: $input-btn-padding-y $input-btn-padding-x;
-    position: absolute;
-    top: 0;
-    left: 0;
+    color: $link-active-color;
   }
 }
 

@@ -39,6 +39,7 @@
   opacity: 1;
   background: $white;
   color: $body-color;
+  text-decoration: none;
 }
 
 .navbar-brand:hover,
@@ -71,7 +72,7 @@
 .navbar .nav-link {
   /* Reset button styles */
   border: 0;
-  background: transparent;
+  text-decoration: none;
   outline: none;
   -webkit-appearence: none;
   text-align: left;
