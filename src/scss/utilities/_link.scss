@@ -41,7 +41,7 @@
   h6,
   .h6 {
     .link-complex-target {
-      text-decoration: none;
+      background-image: none;
     }
   }
 
@@ -102,7 +102,7 @@
 .link-adaptive {
   @extend .link;
 
-  text-decoration: none;
+  background-image: none;
 }
 
 .link-adaptive,
@@ -120,7 +120,7 @@
 .link-no-underline:hover,
 .link-no-underline:focus,
 .link-no-underline:active {
-  text-decoration: none;
+  background-image: none !important;
 }
 
 .link-dark {
@@ -145,22 +145,20 @@
  */
 
 .icon-link-text-underline {
-  @include link;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 .icon-link,
 .icon-link:hover,
 .icon-link:focus {
-  text-decoration: none;
+  background-image: none;
 }
 
 .icon-link:hover,
 .icon-link:focus {
   > .icon-link-text {
-    @include link-hover;
-  }
-
-  > .icon-link-text-underline {
-    @include link-hover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%) repeat-x 0 100%;
+    background-size: 2px 2px;
   }
 }
