@@ -1,0 +1,42 @@
+@import "bootstrap/scss/_badge.scss";
+
+.badge {
+  border-radius: 0;
+  font-family: $font-family-sans-serif;
+}
+
+// Colors
+//
+// Contextual variations (linked badges get darker on :hover).
+
+.badge-default {
+  @include badge-variant($badge-default-bg);
+
+  color: $badge-color;
+}
+
+.badge-primary {
+  @include badge-variant($badge-primary-bg);
+
+  color: $black;
+}
+
+.badge-success {
+  @include badge-variant($badge-success-bg);
+  @include warning;
+}
+
+.badge-info {
+  @include badge-variant($badge-info-bg);
+  @include warning;
+}
+
+.badge-warning {
+  @include badge-variant($badge-warning-bg);
+  @include warning;
+}
+
+.badge-danger {
+  @include badge-variant($badge-danger-bg);
+  @include warning;
+}

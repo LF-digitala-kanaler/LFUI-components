@@ -1,0 +1,45 @@
+/**
+ * "Tips" component
+ */
+
+.callout {
+  @include clearfix;
+
+  display: block;
+  padding: 1.25rem 1rem 1.625rem 1.5rem;
+  border: $callout-border-width solid $blue;
+  margin-bottom: 1rem;
+  position: relative;
+  background: $white;
+  color: $body-color;
+}
+
+.callout-figure {
+  width: $callout-figure-size;
+  height: $callout-figure-size;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  pointer-events: none;
+}
+
+.callout > :last-child {
+  margin-bottom: 0;
+}
+
+.callout-title {
+  @extend .h3;
+
+  display: block;
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+  color: $navy;
+}
+
+.callout-text {
+  max-width: $legible-width;
+}
+
+.callout-text:last-child {
+  margin-bottom: 0;
+}
