@@ -366,11 +366,6 @@
     }
   }
 }
-// less horizontal padding
-
-.btn-tight {
-  padding: $input-btn-padding-y $input-btn-padding-x/2;
-}
 
 // alert buttons
 @mixin button-custom-outline-alert-variant($color, $border, $bg, $border-hover, $bg-pressed) {
@@ -514,7 +509,7 @@
   */
   &.btn-sm {
     font-size: $font-size-md;
-    padding: 0.125rem 0.625rem;
+    padding: $input-btn-padding-y-sm $input-btn-padding-x-lg;
   }
 
   &.btn-lg {
