@@ -110,10 +110,10 @@
 
 .btn > [class*="lf-spinner"] {
   border: none;
-  vertical-align: middle;
-  position: absolute;
+  vertical-align: text-bottom;
+  position: relative;
   top: 50%;
-  transform: translateY(-50%) rotate(263deg);
+  transform: rotate(263deg);
   -ms-animation: IEfallbackBtn $animation-time infinite linear;
 
   .lf-spinner-dash {
@@ -121,20 +121,18 @@
   }
 }
 
-.btn.loading.btn-arrow > [class*="lf-spinner"],
-.btn.loading:not(.btn-block):not(.btn-arrow-left) > [class*="lf-spinner"] {
-  right: 12px;
-}
+// .btn.loading.btn-arrow > [class*="lf-spinner"],
+// .btn.loading:not(.btn-block):not(.btn-arrow-left) > [class*="lf-spinner"] {
+//   right: 12px;
+// }
 
-.btn:not([class*="arrow"]):not([class*="link"]):not(.btn-block):not(.btn-tight) {
-  padding-right: 2.5rem;
-
+.btn:not([class*="arrow"]):not([class*="link"]):not(.btn-block) {
+ 
   > [class*="lf-spinner"] {
     margin-left: 5px;
   }
 
   &.btn-sm {
-    padding-right: 2.15rem;
 
     > [class*="lf-spinner"] {
       svg {
@@ -145,7 +143,6 @@
   }
 
   &.btn-lg {
-    padding-right: 2.9rem;
 
     > [class*="lf-spinner"] {
       svg {
@@ -156,36 +153,36 @@
   }
 }
 
-.btn-block.loading:not([class*="arrow"]):not([class*="link"]):not(.btn-tight) {
-  padding-right: 2.2rem;
+// .btn-block.loading:not([class*="arrow"]):not([class*="link"]) {
+//   padding-right: 2.2rem;
 
-  > [class*="lf-spinner"] {
-    margin-left: 10px;
-  }
+//   > [class*="lf-spinner"] {
+//     margin-left: 10px;
+//   }
 
-  &.btn-sm {
-    padding-right: 2.3rem;
-  }
+//   &.btn-sm {
+//     padding-right: 2.3rem;
+//   }
 
-  &.btn-lg {
-    padding-right: 2.6rem;
-  }
-}
+//   &.btn-lg {
+//     padding-right: 2.6rem;
+//   }
+// }
 
-.btn:not(.btn-block):not(.loading):not([class*="arrow"]):not([class*="more"]):not([class*="link"]):not(.btn-tight) {
-  padding-right: 1.632rem;
-  padding-left: 1.632rem;
+// .btn:not(.btn-block):not(.loading):not([class*="arrow"]):not([class*="more"]):not([class*="link"]) {
+//   padding-right: 1.632rem;
+//   padding-left: 1.632rem;
 
-  &.btn-sm {
-    padding-right: 1.39rem;
-    padding-left: 1.39rem;
-  }
+//   &.btn-sm {
+//     padding-right: 1.39rem;
+//     padding-left: 1.39rem;
+//   }
 
-  &.btn-lg {
-    padding-right: 1.95rem;
-    padding-left: 1.95rem;
-  }
-}
+//   &.btn-lg {
+//     padding-right: 1.95rem;
+//     padding-left: 1.95rem;
+//   }
+// }
 
 .btn-group .btn {
   padding-right: 1.25rem !important;
