@@ -1,0 +1,248 @@
+/**
+ * Shortcut
+ * Also known as "Link block"
+ *
+ * <a href="#" class="shortcut">Go to ...</a>
+ *
+ */
+
+.shortcut {
+  @include header-block(true);
+
+  padding: 1.1rem 3.7rem 1.1rem 19.5px;
+  font-size: 20px;
+  transition: 100ms 40ms linear;
+  transition-property: box-shadow;
+}
+
+.shortcut::after {
+  content: "";
+
+  @include btn-arrow-large-right($link-color);
+
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: right 100ms linear;
+}
+
+.shortcut {
+  &:active,
+  &:active:focus,
+  &:active:focus:hover {
+    &::after {
+      right: 0.8rem;
+      transition: right 100ms linear;
+    }
+  }
+}
+
+/**
+ * With icon
+ */
+
+.shortcut-icon {
+  padding-left: 56px;
+
+  svg {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 16px;
+    top: 22%;
+  }
+}
+
+.shortcut-important.shortcut-icon {
+  padding-left: 51px;
+
+  svg {
+    top: 12px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/**
+ * Square block shortcut
+ */
+
+.shortcut-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 0.5rem;
+  text-align: center;
+}
+
+.shortcut-block::after {
+  background: none;
+}
+
+/**
+ * Have it stand out a bit more
+ */
+
+.shortcut-important {
+  font-size: 1rem;
+  padding: 0.8rem 3.7rem 0.8rem 1.25rem;
+  background: lighten($baby, 9%);
+}
+
+.shortcut-important.shortcut-info-ice {
+  text-align: left;
+  background-color: $alert-info-bg;
+  color: $alert-info-text;
+
+  &::after {
+    @include btn-arrow-standard-right($alert-info-text);
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 $alert-info-text;
+  }
+}
+
+.shortcut-important.shortcut-ice-ice-baby {
+  text-align: left;
+  background-color: $white;
+  color: $blue;
+
+  &::after {
+    @include btn-arrow-standard-right($blue);
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 $blue;
+  }
+}
+
+.shortcut-important.shortcut-success-ice {
+  text-align: left;
+  background-color: $alert-success-bg;
+  color: $alert-success-text;
+
+  &::after {
+    @include btn-arrow-standard-right($alert-success-text);
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 $alert-success-text;
+  }
+}
+
+.shortcut-important.shortcut-warning-ice {
+  text-align: left;
+  background-color: $alert-warning-bg;
+  color: $alert-warning-text;
+
+  &::after {
+    @include btn-arrow-standard-right($alert-warning-text);
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 $alert-warning-text;
+  }
+}
+
+.shortcut-important.shortcut-danger-ice {
+  text-align: left;
+  background-color: $alert-danger-bg;
+  color: $alert-danger-text;
+
+  &::after {
+    @include btn-arrow-standard-right($alert-danger-text);
+  }
+
+  &:hover {
+    box-shadow: inset 0 -2px 0 $alert-danger-text;
+  }
+}
+
+.shortcut-important.disabled,
+button.shortcut-important:disabled {
+  text-align: left;
+  background-color: $smoke;
+  color: $gray;
+  box-shadow: none;
+  cursor: $cursor-disabled !important;
+
+  &::after {
+    background-image: none;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.shortcut.shortcut-two-lines {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+
+  > div div:not(:first-child) {
+    margin-top: 2px;
+  }
+
+  svg {
+    position: static;
+    margin-right: 1rem;
+  }
+}
+
+.shortcut.shortcut-multi-lines {
+  display: flex;
+  font-size: 1rem;
+
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+  }
+
+  .icon {
+    min-width: 24px;
+    margin-right: 1rem;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 1.5rem;
+      min-width: 40px;
+    }
+  }
+}
+
+.shortcut-title {
+  color: $blue;
+  font-size: 1rem;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.shortcut-landing-page {
+  padding: 0.5rem 3.7rem 0.75rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+
+  @include media-breakpoint-up(md) {
+    text-align: center;
+    padding: 1.3rem 0.5rem 1rem;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    align-items: center;
+    display: flex;
+    margin-bottom: 0.5rem;
+
+    .icon {
+      margin-right: 1rem;
+    }
+  }
+}

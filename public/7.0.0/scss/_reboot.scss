@@ -1,0 +1,67 @@
+@import "./base/index";
+
+/**
+ * Ensure consistent base styles
+ */
+
+@import "bootstrap/scss/_reboot.scss";
+
+$link-decoration: none;
+
+/**
+ * 1. Most waypoint (when-in-view) js libraries requires `body` to be relative.
+ * 2. Force scrollbars to prevent page jumping when content height is altered.
+ */
+
+html {
+  position: relative; /* 1 */
+}
+
+body {
+  position: relative; /* 1 */
+  overflow-y: scroll; /* 2 */
+  -ms-overflow-style: scrollbar; /* 2 */
+}
+
+/**
+ * Remove the border-radius in Chrome 62+ on macOS.
+ **/
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  border-radius: 0;
+}
+
+/**
+ * Link styles
+ *
+ * Inspired from:
+ * medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
+ */
+
+a {
+  @include link;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+/**
+ * Love-hate
+ */
+
+img {
+  max-width: 100%;
+}
+
+// Override font-family: sans-serif in normalize 5.0
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}

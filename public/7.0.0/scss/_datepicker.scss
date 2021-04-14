@@ -1,0 +1,394 @@
+@import "bootstrap/scss/utilities/_screenreaders.scss";
+
+// We need the old - removed - BS variables. Redeclaring them here.
+$gray-light: $gray-600;
+$gray-lighter: $gray-200;
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$border-radius-base: 0;
+
+$datepicker-color-border: #eee;
+$datepicker-color-th: #515151;
+$datepicker-color-grey: #f4f4f4;
+$datepicker-color-newold-date: #fbfbfb;
+
+$datepicker-button-prev-next-width: 48px;
+
+$datepicker-cell-height-big: 75px;
+
+@import "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4/src/sass/_bootstrap-datetimepicker.scss";
+
+.datepicker {
+  th::first-letter,
+  .month::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.datepicker {
+  .input-group-append {
+    z-index: 6;
+
+    > .btn {
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      padding-left: 0.625rem !important;
+      padding-right: 0.625rem !important;
+
+      svg {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+      }
+    }
+  }
+
+  .btn.active {
+    border-bottom: 2px $navy solid !important;
+    padding-bottom: 0;
+  }
+
+  // IE and Safari fix. Urgh.
+  .form-control {
+    min-height: 2.5rem;
+    height: auto !important;
+  }
+}
+
+.datepicker > div {
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.08);
+}
+
+.datepicker table {
+  width: 100%;
+  margin: 0;
+}
+
+.datepicker table td.day,
+.datepicker .timepicker table td.hour,
+.datepicker .timepicker table td.minute,
+.datepicker th {
+  width: 47px;
+  height: 47px;
+}
+
+.datepicker th {
+  color: $blue;
+}
+
+.datepicker td {
+  border: solid 1px $datepicker-color-border;
+  padding: 0;
+  background-color: $white;
+
+  @include font-smoothing;
+}
+
+.datepicker table td.day:hover,
+.datepicker table td.hour:hover,
+.datepicker table td.minute:hover {
+  background-color: $input-hover;
+  box-shadow: inset 0 -2px 0 0 $blue;
+  border-bottom: none;
+}
+
+.datepicker td.day.disabled {
+  background-color: #f4f4f4;
+  color: #515151;
+
+  &:hover {
+    box-shadow: none;
+    color: #515151;
+  }
+}
+
+.datepicker td.new,
+.datepicker td.old {
+  background-color: $datepicker-color-newold-date;
+  color: #8b8b8b;
+}
+
+.datepicker td.active.active,
+.datepicker td.active.active:hover {
+  text-shadow: none;
+  background-color: $cloud;
+  box-shadow: inset 0 -2px 0 0 $blue;
+  color: $blue;
+  font-weight: bold;
+}
+
+.datepicker td.day.active.today {
+  background-color: #eee;
+}
+
+//if a date is active/selected but disabled
+.datepicker td.day.active.disabled {
+  border: none;
+  background-color: $input-hover;
+  box-shadow: none;
+  color: $black;
+
+  &:hover {
+    box-shadow: none;
+    background-color: #eee;
+  }
+}
+
+.datepicker td.active.active,
+.datepicker td.active:hover.disabled,
+.datepicker td.active[disabled],
+.datepicker td.active:hover[disabled] {
+  border: none;
+  background-color: $cloud;
+  box-shadow: inset 0 -2px 0 0 $blue;
+}
+
+.datepicker td.active:active,
+.datepicker td.active:focus,
+.datepicker td.active:hover.active,
+.datepicker td.active:hover.disabled,
+.datepicker td.active:hover:active,
+.datepicker td.active:hover:focus,
+.datepicker td.active:hover:hover,
+.datepicker td.active:hover[disabled],
+.datepicker td.active[disabled] {
+  background-color: $cloud;
+  box-shadow: inset 0 -2px 0 0 $blue;
+}
+
+.datepicker td.day.active:hover,
+.datepicker span.month:hover.active,
+.datepicker span.year:hover.active,
+.datepicker span.decade:hover.active,
+.datepicker td.active:hover.active,
+.datepicker td.active:not(.disabled):hover {
+  background-color: $input-valid-hover;
+}
+
+.datepicker td.active.active {
+  border: none;
+  background-color: $cloud;
+}
+
+.datepicker td span:not(.timepicker-picker span):hover {
+  color: #222;
+  border: none;
+  background-color: $datepicker-color-grey;
+  box-shadow: inset 0 -2px 0 0 $blue;
+}
+
+.datepicker td span.active {
+  border: none;
+  background-color: $cloud;
+  box-shadow: inset 0 -2px 0 0 $blue;
+}
+
+.datepicker td span.active.active,
+.datepicker td span.active.disabled,
+.datepicker td span.active[disabled] {
+  border: none;
+  background-color: $cloud;
+  box-shadow: inset 0 -2px 0 0 $blue;
+}
+
+.datepicker td span.active:active,
+.datepicker td span.old {
+  color: #999;
+}
+
+.datepicker .datepicker-days th.next,
+.datepicker .datepicker-decades th.next,
+.datepicker .datepicker-months th.next,
+.datepicker .datepicker-years th.next {
+  @include btn-arrow-small-right($blue);
+
+  background-size: 21px 12px;
+  background-position: center;
+  width: $datepicker-button-prev-next-width;
+
+  &:hover {
+    @include btn-arrow-small-right($blue);
+
+    background-color: #dcddde;
+    background-size: 21px 12px;
+    background-position: center;
+    width: $datepicker-button-prev-next-width;
+  }
+}
+
+.datepicker .datepicker-days th.prev,
+.datepicker .datepicker-decades th.prev,
+.datepicker .datepicker-months th.prev,
+.datepicker .datepicker-years th.prev {
+  @include btn-arrow-small-left($blue);
+
+  // transform: rotate(180deg);
+  background-size: 21px 12px;
+  background-position: center;
+  width: $datepicker-button-prev-next-width;
+
+  &:hover {
+    @include btn-arrow-small-left($blue);
+
+    // transform: rotate(180deg);
+    background-color: #dcddde;
+    background-size: 21px 12px;
+    background-position: center;
+    width: $datepicker-button-prev-next-width;
+  }
+}
+
+.timepicker .next {
+  @include glyph-chevron-up($blue);
+
+  &:hover {
+    border: 0;
+    background-color: transparent;
+
+    @include glyph-chevron-up($blue);
+  }
+}
+
+.timepicker .prev {
+  @include glyph-chevron-down($blue);
+
+  &:hover {
+    border: 0;
+    background-color: transparent;
+
+    @include glyph-chevron-down($blue);
+  }
+}
+
+.timepicker .timepicker-hour:hover,
+.timepicker .timepicker-minute:hover {
+  background-color: transparent;
+}
+
+.datepicker .datepicker-days th.next,
+.datepicker .datepicker-days th.prev {
+  width: 45px;
+  font-size: $font-size-xl;
+
+  &:hover {
+    width: 45px;
+  }
+}
+
+.datepicker table thead {
+  background-color: $datepicker-color-grey;
+
+  tr:first-child {
+    height: 45px;
+    cursor: pointer;
+    color: $blue;
+    font-weight: bold;
+  }
+
+  tr:nth-child(2) {
+    height: 35px;
+
+    th {
+      color: #515151;
+      font-size: $font-size-xs;
+    }
+  }
+}
+
+.datepicker.dropdown-menu {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  // The eonasdan-bootstrap-datetimepicker does not add the bootstrap "open" class to the parent, so we need to include the open state style into the dropdown-menu class for the datepicker.
+  // It will not appear as open all the time, as the datepicker is added/removed from the DOM when toggled.
+  @include dropdown-menu-open();
+
+  min-width: 336px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.08);
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+  display: none;
+}
+
+.datepicker-decades td[colspan="7"],
+.datepicker-months td[colspan="7"],
+.datepicker-years td[colspan="7"] {
+  padding: 35px 0 0;
+  background-color: $datepicker-color-grey;
+  border: none;
+
+  span {
+    display: none;
+  }
+
+  .decade,
+  .month,
+  .year {
+    width: 25%;
+    height: $datepicker-cell-height-big;
+    margin: 0;
+    border: solid 1px $datepicker-color-border;
+    display: block;
+    line-height: $datepicker-cell-height-big;
+    float: left;
+    cursor: pointer;
+    background-color: $white;
+
+    @include font-smoothing;
+
+    &:hover {
+      background-color: $datepicker-color-grey;
+      box-shadow: inset 0 -2px 0 0 $blue;
+    }
+  }
+
+  .decade.active,
+  .month.active,
+  .year.active {
+    border: 1px solid #eee;
+    color: $blue;
+    font-weight: bold;
+    background-color: #eff4f9;
+    box-shadow: inset 0 -2px 0 0 $blue;
+    text-shadow: none;
+  }
+}
+
+// Disable the decade picker
+.bootstrap-datetimepicker-widget .datepicker-years thead .picker-switch {
+  cursor: default;
+  pointer-events: none;
+}
+// test small datepicker
+.datepicker-small .bootstrap-datetimepicker-widget {
+  min-width: 296px;
+  max-width: 296px;
+}
+
+.datepicker-small table td.day,
+.datepicker-small .timepicker table td.hour,
+.datepicker-small .timepicker table td.minute,
+.datepicker-small th {
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+}

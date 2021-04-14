@@ -1,0 +1,111 @@
+@import "bootstrap/scss/_popover.scss";
+
+/**
+ * Adaptaions of Bootstrap popover for use as a React component
+ *
+ * 1. Rely solely on the position modifiers
+ */
+
+.popover {
+  min-width: 250px;
+  padding: 0;
+  margin: 0;
+  border: solid $blue;
+  position: relative;
+  left: auto; /* 1 */
+  top: auto; /* 1 */
+  background-color: $popover-bg;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.06), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  outline: 0;
+  opacity: 0;
+  transition: opacity 75ms 50ms ease-in;
+}
+
+/**
+ * Hide the arrows added in alpha-5
+ */
+.popover {
+  &::before {
+    content: none;
+  }
+}
+
+.popover.is-visible {
+  opacity: 1;
+}
+
+.popover-top {
+  border-width: 0 0 $border-width;
+  transform-origin: bottom;
+}
+
+.popover-bottom {
+  border-width: $border-width 0 0;
+  transform-origin: top;
+}
+
+.popover-left {
+  border-width: 0 $border-width 0 0;
+  transform-origin: right;
+}
+
+.popover-right {
+  border-width: 0 0 0 $border-width;
+  transform-origin: left;
+}
+
+.popover-fill {
+  width: 100%;
+  max-width: none;
+}
+
+.popover-attach {
+  position: absolute;
+}
+
+.popover-attach.popover-top {
+  min-width: 100%;
+  bottom: 100%;
+}
+
+.popover-attach.popover-bottom {
+  min-width: 100%;
+  top: 100%;
+}
+
+.popover-attach.popover-left {
+  min-height: 100%;
+  right: 100%;
+}
+
+.popover-attach.popover-right {
+  min-height: 100%;
+  left: 100%;
+}
+
+/**
+ * 1. Use flex layout to restrain inner elements as content height is set
+ */
+
+.popover-content {
+  display: flex; /* 1 */
+  flex-direction: column;
+  overflow: auto;
+}
+
+.popover-title {
+  padding: 0.9em 1.2em 0.8em;
+  border-bottom: $border-width solid $body-bg;
+  cursor: default;
+  font-size: $font-size-xs;
+  color: $popover-title-color;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  line-height: $line-height-base;
+  letter-spacing: 0.5px;
+}
+
+.popover-footer {
+  padding: 0.75rem;
+  border-top: $border-width solid $body-bg;
+}
