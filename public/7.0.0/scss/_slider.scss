@@ -1,0 +1,94 @@
+@import "ui-slider";
+
+// We add a custom, proper keyboard focus appearance.
+html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
+  &::-webkit-slider-thumb {
+    box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
+    outline: none;
+  }
+
+  &::-moz-range-thumb {
+    box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
+    outline: none;
+  }
+
+  &::-ms-thumb {
+    box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
+    outline: none;
+  }
+}
+
+.lf-slider {
+  @include lf-slider($white, $smoke);
+}
+
+.lf-slider-gray {
+  @include lf-slider($body-bg, $smoke);
+}
+
+.slider-wrapper {
+  position: relative;
+  padding: 0 60px;
+}
+
+.lf-slider,
+.lf-slider-gray {
+  position: relative;
+}
+
+// Labels
+
+.slider-label-left {
+  left: 0;
+  text-align: right;
+
+  &.distribution-label {
+    width: 8px;
+    padding: 1em 0 0.8rem;
+    bottom: 30px;
+    top: auto !important;
+    transform: none;
+    text-align: left;
+
+    &::before {
+      right: 100%;
+    }
+
+    @supports (-ms-ime-align: auto) {
+      bottom: 40px;
+    }
+  }
+}
+
+.slider-label-right {
+  right: 0;
+  text-align: left;
+  white-space: nowrap;
+
+  &.distribution-label {
+    width: 8px;
+    bottom: 30px;
+    top: auto !important;
+    transform: none;
+    text-align: center;
+    text-align: right;
+
+    &::before {
+      left: 100%;
+    }
+
+    @supports (-ms-ime-align: auto) {
+      bottom: 40px;
+    }
+  }
+}
+
+.slider-label-left,
+.slider-label-right {
+  font-weight: bold;
+  font-family: $font-family-sans-serif;
+  position: absolute;
+  top: 5px;
+  width: 50px;
+  white-space: nowrap;
+}
