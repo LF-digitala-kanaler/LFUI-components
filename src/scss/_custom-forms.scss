@@ -304,6 +304,18 @@ select.form-control:not([size]):not([multiple]) {
   }
 }
 
+.custom-file-white {
+  .custom-file-label {
+    background-color: $input-white-bg;
+  }
+
+  &:hover {
+    .custom-file-label {
+      background-color: $input-white-bg-hover;
+    }
+  }
+}
+
 .custom-file-input {
   &:focus ~ .custom-file-label {
     border-color: $input-focus-border-color;
