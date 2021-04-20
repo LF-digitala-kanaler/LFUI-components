@@ -114,6 +114,30 @@ input[disabled] {
   }
 }
 
+.form-control-white:hover:not([disabled]) {
+  + .input-group-append,
+  + .input-group-append > .input-group-text {
+    background: $input-white-bg-hover;
+  }
+}
+
+/**
+ * Modifer for white forms
+ */
+
+.form-control-white {
+  background-color: $input-white-bg;
+
+  &:focus,
+  .has-valid & {
+    background-color: $input-white-bg !important;
+  }
+
+  &:hover:not([disabled]) {
+    background-color: $input-white-bg-hover !important;
+  }
+}
+
 /**
  * Design help text and feedback
  */

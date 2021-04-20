@@ -191,6 +191,10 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
   background-color: $cloud !important;
 }
 
+.has-valid .input-group-white .input-group-append .btn {
+  background-color: $input-white-bg !important;
+}
+
 .has-success .input-group-append .btn {
   border-color: $green !important;
 }
@@ -214,4 +218,23 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
   padding-bottom: $border-width;
   border-bottom: 0;
   z-index: 3;
+}
+
+/**
+ * White option
+ */
+
+.input-group-white {
+  .input-group-append,
+  .input-group-prepend {
+    span,
+    div,
+    .btn {
+      background-color: $input-white-bg;
+    }
+
+    &:hover > .btn {
+      background: $input-white-bg-hover;
+    }
+  }
 }
