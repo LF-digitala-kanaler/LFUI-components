@@ -43,16 +43,6 @@ body {
   
 }
 
-/**
- * Remove the border-radius in Chrome 62+ on macOS.
- **/
-
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  border-radius: 0;
-}
 
 /**
  * Link styles
