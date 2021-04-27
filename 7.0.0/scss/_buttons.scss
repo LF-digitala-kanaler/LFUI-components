@@ -1,0 +1,1129 @@
+@import "bootstrap/scss/_buttons.scss";
+
+[role="button"] {
+  cursor: pointer;
+}
+
+.btn {
+  @include font-smoothing;
+
+  border-width: $input-btn-border-width;
+  font-size: $font-size-lg;
+  font-family: $font-family-sans-serif;
+  overflow: hidden;
+  background-image: none;
+  transition: 200ms linear;
+  transition-property: all;
+  white-space: normal;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-image: none;
+  transition: 200ms linear;
+  transition-property: all;
+}
+
+@mixin button-arrow-right($color, $color-hover, $color-active, $size: standard) {
+  text-align: left;
+  // normal padding + arrow width + 10px;
+
+  @if $size == small {
+    padding-right: $input-btn-padding-x-sm + 1.3125rem + 0.625rem !important;
+  }
+
+  @else if $size == large {
+    padding-right: $input-btn-padding-x-lg + 1.75rem + 0.625rem !important;
+  }
+
+  @else {
+    padding-right: $input-btn-padding-x + 1.75rem + 0.625rem !important;
+  }
+
+  &::after {
+    @if $size == small {
+      @include btn-arrow-small-right($color);
+
+      right: $input-btn-padding-x-sm;
+    }
+
+    @else if $size == large {
+      @include btn-arrow-large-right($color);
+
+      right: $input-btn-padding-x-lg;
+    }
+
+    @else {
+      @include btn-arrow-standard-right($color);
+
+      right: $input-btn-padding-x;
+    }
+
+    top: 50%;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    margin-left: 0.625rem;
+    transform: translateX(0) translateY(-50%);
+    transition: transform 100ms linear;
+  }
+
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    &::after {
+      @if $size == small {
+        @include btn-arrow-small-right($color-hover);
+      }
+
+      @else if $size == large {
+        @include btn-arrow-large-right($color-hover);
+      }
+
+      @else {
+        @include btn-arrow-standard-right($color-hover);
+      }
+
+      transform: translateX(0) translateY(-50%);
+      transition: transform 100ms linear;
+    }
+  }
+
+  &:active:not([disabled]) {
+    &::after {
+      @if $size == small {
+        @include btn-arrow-small-right($color-active);
+      }
+
+      @else if $size == large {
+        @include btn-arrow-large-right($color-active);
+      }
+
+      @else {
+        @include btn-arrow-standard-right($color-active);
+      }
+
+      transform: translateX(3px) translateY(-50%);
+      transition: transform 100ms linear;
+    }
+  }
+}
+
+@mixin button-arrow-left($color, $color-hover, $color-active, $btn-padding, $size: standard) {
+  position: relative;
+  text-align: right;
+
+  @if $size == small {
+    padding-left: $input-btn-padding-x-sm + 1.3125rem + 0.625rem !important;
+  }
+
+  @else if $size == large {
+    padding-left: $input-btn-padding-x-lg + 1.75rem + 0.625rem !important;
+  }
+
+  @else {
+    padding-left: $input-btn-padding-x + 1.75rem + 0.625rem !important;
+  }
+
+  &::after {
+    @if $size == small {
+      @include btn-arrow-small-left($color);
+
+      left: $btn-padding;
+    }
+
+    @else if $size == large {
+      @include btn-arrow-large-left($color);
+
+      left: $btn-padding - 0.25rem;
+    }
+
+    @else {
+      @include btn-arrow-standard-left($color);
+
+      left: $btn-padding - 0.25rem;
+    }
+
+    position: absolute;
+    content: "";
+    top: 50%;
+    display: inline-block;
+    -webkit-backface-visibility: hidden;
+    transform: translateX(0) translateY(-50%);
+    -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+  }
+
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    &::after {
+      @if $size == small {
+        @include btn-arrow-small-left($color-hover);
+      }
+
+      @else if $size == large {
+        @include btn-arrow-large-left($color-hover);
+      }
+
+      @else {
+        @include btn-arrow-standard-left($color-hover);
+      }
+
+      transform: translateX(0) translateY(-50%);
+      transition: transform 100ms linear;
+      -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+    }
+  }
+
+  &:focus:hover:active:not([disabled]),
+  &:active:not([disabled]) {
+    &::after {
+      @if $size == small {
+        @include btn-arrow-small-left($color-active);
+      }
+
+      @else if $size == large {
+        @include btn-arrow-large-left($color-active);
+      }
+
+      @else {
+        @include btn-arrow-standard-left($color-active);
+      }
+
+      transform: translateX(-3px) translateY(-50%);
+      transition: transform 100ms linear;
+      -webkit-transform: translateZ(-1000px) translateX(-3px) translateY(-50%);
+    }
+  }
+}
+
+// Primary buttons
+@mixin button-custom-variant($color, $border, $bg, $bg-hover, $bg-pressed) {
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  background-color: $bg;
+  border-color: $bg;
+  border-radius: $btn-border-radius;
+
+  &:focus,
+  &.focus {
+    color: $white;
+    border-color: $border;
+    background-color: $bg;
+    // box-shadow: none;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1); // Focus state not working as it should with box-shadow set to none that's why we use such a strange value.
+  }
+
+  &:hover,
+  &:hover:focus {
+    border-color: $bg-hover;
+    background-color: $bg-hover;
+  }
+
+  &:active,
+  &.active,
+  &:active:hover,
+  &:active:focus,
+  &:active:hover {
+    border-color: $bg-pressed;
+    background-color: $bg-pressed;
+  }
+
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &,
+    &:hover,
+    &:focus,
+    &.focus {
+      border-color: $bg-pressed;
+      background-color: $bg-pressed;
+      box-shadow: none;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &,
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      pointer-events: none;
+      background-color: $bg;
+      opacity: 0.65;
+      border-color: $bg;
+    }
+  }
+
+  /*
+  ** SIZES
+  */
+  &.btn-sm {
+    font-size: $font-size-md;
+    padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+  }
+
+  &.btn-lg {
+    font-size: $font-size-xl;
+    padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+    line-height: $input-btn-line-height-lg;
+  }
+
+  /*
+  ** WITH ARROW
+  */
+  &.btn-arrow {
+    @include button-arrow-right($white, $white, $white, standard);
+
+    padding-right: 8px;
+  }
+
+  &.btn-arrow-left {
+    @include button-arrow-left($white, $white, $white, $input-btn-padding-x, standard);
+  }
+
+  /*
+  ** WITH ARROW && DIFFERENT SIZE
+  */
+  &.btn-sm.btn-arrow {
+    @include button-arrow-right($white, $white, $white, small);
+
+    padding-right: 8px;
+  }
+
+  &.btn-lg.btn-arrow {
+    @include button-arrow-right($white, $white, $white, large);
+
+    line-height: $input-btn-line-height-lg;
+    padding-right: 12px;
+  }
+
+  &.btn-sm.btn-arrow-left {
+    @include button-arrow-left($white, $white, $white, $input-btn-padding-x-sm, small);
+  }
+
+  &.btn-lg.btn-arrow-left {
+    @include button-arrow-left($white, $white, $white, $input-btn-padding-x-lg, large);
+  }
+
+  /*
+  ** AS BLOCKS
+  */
+  &.btn-block {
+    position: relative;
+  }
+
+  &.btn-block.btn-arrow {
+    padding-right: 45px;
+
+    &::after {
+      content: "";
+      right: 0.6rem;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      &::after {
+        transform: translateX(0) translateY(-50%);
+        transition: transform 100ms linear;
+      }
+    }
+
+    &:active:not([disabled]) {
+      &::after {
+        transform: translateX(3px) translateY(-50%);
+        transition: transform 100ms linear;
+      }
+    }
+  }
+
+  &.btn-block.btn-arrow-left {
+    &::after {
+      top: 50%;
+      transform: translateX(0) translateY(-50%);
+      -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+    }
+
+    &:hover:not([disabled]),
+    &:focus:not([disabled]),
+    &:focus:hover:not([disabled]) {
+      &::after {
+        margin-left: 0;
+        transform: translateX(0) translateY(-50%);
+        -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+        transition: transform 100ms linear;
+      }
+    }
+
+    &:active:not([disabled]),
+    &:focus:hover:active:not([disabled]) {
+      &::after {
+        transform: translateX(-3px) translateY(-50%);
+        transition: transform 100ms linear;
+        -webkit-transform: translateZ(-1000px) translateX(-3px) translateY(-50%);
+      }
+    }
+  }
+}
+
+// alert buttons
+@mixin button-custom-outline-alert-variant($color, $border, $bg, $border-hover, $bg-pressed) {
+  color: $color;
+  background-color: $bg;
+  border-color: $border;
+  font-size: $font-size-md;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $border-hover;
+    background-color: $bg;
+    border-color: $border-hover;
+    box-shadow:
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover;
+  }
+
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active {
+    &,
+    &:hover,
+    &:focus:hover,
+    &.focus {
+      color: $border-hover;
+      background: $bg-pressed;
+      border-color: $border-hover;
+
+      /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+      box-shadow:
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &,
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      pointer-events: none;
+      background-color: inherit;
+      border-color: $border;
+      color: $border;
+      opacity: 0.65;
+      box-shadow: none;
+    }
+  }
+}
+
+// Secondary buttons
+@mixin button-custom-outline-variant($color, $border, $bg, $border-hover, $bg-pressed) {
+  & {
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    color: $border;
+    background-color: $bg;
+    border-color: $border;
+    border-radius: $btn-border-radius;
+  }
+
+  &:focus,
+  &.focus,
+  &:hover,
+  &:hover:focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    color: $border-hover;
+    background-color: $bg;
+    border-color: $border-hover;
+
+    /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+    box-shadow:
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover;
+  }
+
+  &:active,
+  &.active,
+  &:active:hover,
+  &:active:focus,
+  &:active:hover,
+  &.focus {
+    color: $border-hover;
+    border-color: $border-hover;
+    background-color: $bg-pressed;
+
+    /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+    box-shadow:
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover,
+      inset 0 0 0 1px $border-hover;
+  }
+
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &,
+    &:hover,
+    &:focus:hover,
+    &.focus {
+      color: $border-hover;
+      background: $bg-pressed;
+      border-color: $border-hover;
+
+      /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+      box-shadow:
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover,
+        inset 0 0 0 1px $border-hover;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &,
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      pointer-events: none;
+      background-color: inherit;
+      border-color: $border;
+      color: $border;
+      opacity: 0.65;
+      box-shadow: none;
+    }
+  }
+
+  /*
+  ** SIZES
+  */
+  &.btn-sm {
+    font-size: $font-size-md;
+    padding: $input-btn-padding-y-sm $input-btn-padding-x-lg;
+  }
+
+  &.btn-lg {
+    line-height: $input-btn-line-height-lg;
+    font-size: $font-size-xl;
+    padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+  }
+
+  /*
+  ** WITH ARROW
+  ** ARROW RIGHT
+  */
+  &.btn-arrow {
+    @include button-arrow-right($border, $border-hover, $border-hover, standard);
+
+    padding-right: 8px;
+  }
+
+  /*
+  ** ARROW LEFT
+  */
+  &.btn-arrow-left {
+    @include button-arrow-left($border, $border-hover, $border-hover, $input-btn-padding-x, standard);
+  }
+
+  /*
+  ** WITH ARROW && DIFFERENT SIZE
+  */
+  &.btn-sm.btn-arrow {
+    @include button-arrow-right($border, $border-hover, $border-hover, small);
+
+    padding-right: 8px;
+  }
+
+  &.btn-lg.btn-arrow {
+    @include button-arrow-right($border, $border-hover, $border-hover, large);
+
+    padding-right: 12px;
+  }
+
+  &.btn-sm.btn-arrow-left {
+    @include button-arrow-left($border, $border-hover, $border-hover, $input-btn-padding-x-sm, small);
+  }
+
+  &.btn-lg.btn-arrow-left {
+    @include button-arrow-left($border, $border-hover, $border-hover, $input-btn-padding-x-lg, large);
+  }
+
+  /*
+  ** AS BLOCKS
+  */
+  &.btn-block {
+    position: relative;
+  }
+
+  &.btn-block.btn-arrow {
+    padding-right: 45px;
+
+    &::after {
+      content: "";
+      right: 0.6rem;
+      position: absolute;
+      top: 50% !important;
+      transform: translateY(-50%);
+    }
+
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      &::after {
+        transform: translateX(0) translateY(-50%);
+        transition: transform 100ms linear;
+      }
+    }
+
+    &:active:not([disabled]) {
+      &::after {
+        transform: translateX(3px) translateY(-50%);
+        transition: transform 100ms linear;
+      }
+    }
+  }
+
+  &.btn-block.btn-arrow-left {
+    &::after {
+      top: 50% !important;
+      transform: translateX(0) translateY(-50%);
+      -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+    }
+
+    &:hover:not([disabled]),
+    &:focus:not([disabled]),
+    &:focus:hover:not([disabled]) {
+      &::after {
+        margin-left: 0;
+        transform: translateX(0) translateY(-50%);
+        -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+        transition: transform 100ms linear;
+      }
+    }
+
+    &:active:not([disabled]),
+    &:focus:hover:active:not([disabled]) {
+      &::after {
+        transform: translateX(-3px) translateY(-50%);
+        transition: transform 100ms linear;
+        -webkit-transform: translateZ(-1000px) translateX(-3px) translateY(-50%);
+      }
+    }
+  }
+}
+
+/**
+ * Variants
+ */
+
+.btn-primary {
+  @include button-custom-variant($btn-primary-color, $btn-primary-border, $btn-primary-bg, $btn-primary-bg-hover, $btn-primary-bg-pressed);
+}
+
+/* Outlined */
+
+.btn-outline-secondary,
+.btn-secondary {
+  @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
+}
+
+.btn-default {
+  font-size: $font-size-md;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+
+  @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
+}
+
+.btn-outline-info {
+  @include button-custom-outline-alert-variant($btn-info-color, $btn-info-border, $btn-info-bg, $btn-info-border-hover, $btn-info-bg-pressed);
+}
+
+.btn-outline-success {
+  @include button-custom-outline-alert-variant($btn-success-color, $btn-success-border, $btn-success-bg, $btn-success-border-hover, $btn-success-bg-pressed);
+}
+
+.btn-outline-warning {
+  @include button-custom-outline-alert-variant($btn-warning-color, $btn-warning-border, $btn-warning-bg, $btn-warning-border-hover, $btn-warning-bg-pressed);
+}
+
+.btn-outline-danger {
+  @include button-custom-outline-alert-variant($btn-danger-color, $btn-danger-border, $btn-danger-bg, $btn-danger-border-hover, $btn-danger-bg-pressed);
+}
+
+/**
+ * Link button
+ */
+
+a.btn:active {
+  opacity: 1;
+}
+
+.btn-link {
+  transition: none;
+
+  @include link;
+
+  font-family: inherit;
+  font-size: $font-size-md;
+  margin: 0;
+  position: relative;
+  border: 0;
+  vertical-align: baseline !important;
+  background-position-y: 1.15rem;
+  line-height: 1.46;
+
+  @include font-smoothing(auto);
+
+  &.btn-link-margin {
+    margin-right: 2rem !important;
+  }
+
+  &:active {
+    color: #02234a;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/**
+ * As blocks
+ */
+
+.btn-link.btn-block {
+  @include link;
+
+  width: 100%;
+  background-image: none;
+  display: block;
+  text-align: center;
+  line-height: 1.1;
+
+  &:hover,
+  &:active {
+    background-image: none;
+  }
+
+  &::after {
+    // the content prevents from triggering states, so hiding it
+    display: none;
+  }
+}
+
+/**
+ * Large link button
+ */
+@mixin btn-link-variant($color, $color-hover, $color-pressed, $arrow-position: right) {
+  -webkit-font-smoothing: antialiased;
+  font-size: $font-size-lg;
+  font-family: $font-family-sans-serif;
+  transition: 200ms linear;
+  transition-property: all;
+  white-space: normal;
+  position: relative;
+  cursor: pointer;
+  color: $color;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: left;
+  padding: 0 3px 0 0;
+  background: transparent;
+  border: none;
+
+  @if $arrow-position == left {
+    padding: 0 0 0 43px;
+  }
+
+  // arrow
+  @if $arrow-position == right {
+    &::after {
+      content: "";
+      display: inline-block;
+      border: 0;
+      margin-left: 0.625rem;
+
+      @include btn-arrow-standard-right($color);
+
+      bottom: -3px;
+      position: relative;
+      height: 18px;
+      transition: transform 100ms linear;
+    }
+  }
+
+  @else {
+    &::before {
+      content: "";
+      display: inline-block;
+      border: 0;
+
+      @include btn-arrow-standard-left($color);
+
+      bottom: -3px;
+      height: 18px;
+      position: relative;
+      transition: transform 100ms linear;
+      -webkit-backface-visibility: hidden;
+      transform: translateX(0) translateY(0);
+      -webkit-transform: translateZ(-1000px) translateX(0) translateY(0%);
+      margin-left: -40px;
+      margin-right: 0.625rem;
+    }
+  }
+
+  //states
+  &:hover:not([disabled]),
+  &:focus:not([disabled]),
+  &:focus:hover:not([disabled]) {
+    background: transparent;
+    text-decoration: none;
+    color: $color-hover;
+
+    @if $arrow-position == right {
+      &::after {
+        @include btn-arrow-standard-right($color-hover);
+
+        height: 18px;
+        transform: translateX(0);
+      }
+    }
+
+    @else {
+      &::before {
+        @include btn-arrow-standard-left($color-hover);
+
+        height: 18px;
+        -webkit-transform: translateZ(-1000px) translateX(0) translateY(0%);
+      }
+    }
+  }
+
+  &:active:not([disabled]):not(.disabled),
+  &:hover:active:not([disabled]):not(.disabled),
+  &:focus:active:hover:not([disabled]):not(.disabled) {
+    color: $color-pressed;
+    opacity: 1;
+
+    @if $arrow-position == right {
+      &::after {
+        @include btn-arrow-standard-right($color-pressed);
+
+        height: 18px;
+        transform: translateX(3px);
+        transition: transform 100ms linear;
+      }
+    }
+
+    @else {
+      &::before {
+        @include btn-arrow-standard-left($color-pressed);
+
+        height: 18px;
+        transform: translateX(-3px);
+        -webkit-transform: translateZ(-1000px) translateX(-3px) translateY(0%);
+      }
+    }
+  }
+
+  // as a block
+  &.btn-block {
+    text-align: center;
+
+    a {
+      color: $color;
+      background-image: none;
+    }
+
+    &:hover {
+      a {
+        color: $color-hover;
+      }
+    }
+
+    &:active,
+    &:hover:active,
+    &:focus:active {
+      a {
+        color: $color-pressed;
+        opacity: 1;
+      }
+    }
+  }
+
+  // in different sizes, yo
+  &.btn-sm {
+    font-size: $font-size-md;
+
+    @if $arrow-position == right {
+      &::after {
+        @include btn-arrow-small-right($color);
+
+        margin-left: 0.625rem;
+        bottom: 0;
+      }
+
+      &:hover::after,
+      &:focus::after,
+      &:focus:hover::after {
+        @include btn-arrow-small-right($color-hover);
+
+        bottom: 0;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::after {
+          @include btn-arrow-small-right($color-pressed);
+        }
+      }
+    }
+
+    @else {
+      &::before {
+        @include btn-arrow-small-left($color);
+
+        margin-left: -38px;
+        bottom: 0;
+      }
+
+      &:hover::before,
+      &:focus::before,
+      &:focus:hover::before {
+        @include btn-arrow-small-left($color-hover);
+
+        bottom: 0;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::before {
+          @include btn-arrow-small-left($color-pressed);
+        }
+      }
+    }
+  }
+
+  &.btn-lg {
+    font-size: $font-size-xl;
+    line-height: $input-btn-line-height-lg;
+
+    @if $arrow-position == right {
+      &::after {
+        @include btn-arrow-large-right($color);
+
+        bottom: -3px;
+      }
+
+      &:hover::after,
+      &:focus::after,
+      &:focus:hover::after {
+        @include btn-arrow-large-right($color-hover);
+
+        bottom: -3px;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::after {
+          @include btn-arrow-large-right($color-pressed);
+        }
+      }
+    }
+
+    @else {
+      padding-left: 43px;
+
+      &::before {
+        @include btn-arrow-large-left($color);
+
+        bottom: -3px;
+      }
+
+      &:hover::before,
+      &:focus::before,
+      &:focus:hover::before {
+        @include btn-arrow-large-left($color-hover);
+
+        bottom: -3px;
+      }
+
+      &:active:not([disabled]):not(.disabled),
+      &:hover:active:not([disabled]):not(.disabled),
+      &:focus:active:hover:not([disabled]):not(.disabled) {
+        &::before {
+          @include btn-arrow-large-left($color-pressed);
+        }
+      }
+    }
+  }
+}
+
+.btn-link-lg,
+.primary-link {
+  @include btn-link-variant($wine, $btn-primary-bg-hover, $btn-primary-bg-pressed);
+
+  a,
+  span {
+    margin-right: -4px;
+  }
+}
+
+.btn-link-lg-left,
+.primary-link-left {
+  @include btn-link-variant($wine, $btn-primary-bg-hover, $btn-primary-bg-pressed, left);
+}
+
+.arrow-right {
+  @include btn-link-variant($blue, $btn-secondary-border, $btn-secondary-border-hover);
+
+  &::after {
+    margin-left: 0.625rem;
+    bottom: -3px;
+  }
+}
+
+.arrow-left {
+  @include btn-link-variant($blue, $btn-secondary-border, $btn-secondary-border-hover, left);
+
+  &::before {
+    margin-right: 0.625rem;
+    bottom: -3px;
+  }
+}
+
+/**
+ * Log in/Log out
+ */
+
+.btn-login-logout {
+  background-color: $btn-login-logout-bg;
+  font-size: 15px;
+  line-height: 1.3;
+  color: $white;
+
+  &:focus,
+  &:hover,
+  &:hover:focus {
+    background-color: $btn-login-logout-bg-hover;
+    color: $white;
+  }
+
+  &:active:focus,
+  &:hover:active {
+    background-color: $btn-login-logout-bg-pressed;
+    color: $white;
+  }
+}
+
+.btn-sm.btn-link {
+  @include warning("btn-link does not support btn-sm");
+}
+
+/**
+ * 'Läs mer'-button
+*/
+
+.btn-more {
+  font-size: $font-size-md;
+  font-weight: bold;
+  font-family: $font-family-sans-serif;
+  line-height: 1.5rem;
+  color: $blue;
+  background-color: transparent;
+  padding: 0;
+  border-width: 0;
+
+  &.btn-lg {
+    line-height: $input-btn-line-height-lg;
+    font-size: $font-size-lg;
+  }
+
+  &.btn-sm {
+    font-size: $font-size-sm;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover,
+  &:focus,
+  &:hover:focus {
+    color: $btn-secondary-bg-hover;
+
+    &::after {
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+      width: 12px;
+      height: 10px;
+    }
+  }
+
+  &:active,
+  &:hover:active,
+  &:hover:active:focus {
+    opacity: 0.6;
+    color: $btn-secondary-border-hover;
+
+    &::after {
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+      width: 12px;
+      height: 10px;
+      opacity: 0.6;
+    }
+  }
+
+  &::after {
+    content: "";
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    vertical-align: middle;
+    margin-left: 0.3125rem;
+    position: relative;
+    top: -1px;
+    cursor: pointer;
+    background-size: 12px;
+    background-position: center;
+  }
+
+  &[aria-expanded="true"] {
+    &::after {
+      transform: scaleY(-1);
+    }
+  }
+}
+
+.btn-sm-block {
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 100%;
+
+    + .btn-sm-block {
+      margin-top: $btn-block-spacing-y;
+    }
+  }
+}
