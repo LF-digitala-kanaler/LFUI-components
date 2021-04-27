@@ -260,7 +260,7 @@ $border-width: 2px;
 $border-color: $gray-200 !default;
 
 $border-radius:          0.25rem !default;
-$border-radius-lg:       0.3rem !default;
+$border-radius-lg:       0.375rem !default;
 $border-radius-sm:       0.2rem !default;
 
 $component-active-color: $white !default;
@@ -457,6 +457,8 @@ $btn-toolbar-margin:             0.5rem !default;
 // Forms
 
 $input-bg: $body-bg;
+$input-white-bg: $white;
+$input-white-bg-hover: #fbfbfb;
 $input-disabled-bg: $smoke;
 
 $input-color: $body-color;
