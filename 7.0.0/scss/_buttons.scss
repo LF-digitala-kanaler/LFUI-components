@@ -30,34 +30,34 @@
   // normal padding + arrow width + 10px;
 
   @if $size == small {
-    padding-right: $input-btn-padding-x-sm + 1.3125rem + 0.625rem !important;
+    padding-right: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width} + 29px )!important;
   }
 
   @else if $size == large {
-    padding-right: $input-btn-padding-x-lg + 1.75rem + 0.625rem !important;
+    padding-right: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width} + 36px )!important;
   }
 
   @else {
-    padding-right: $input-btn-padding-x + 1.75rem + 0.625rem !important;
+    padding-right: calc(#{$input-btn-padding-x} - #{$input-btn-border-width} + 36px )!important;
   }
 
   &::after {
     @if $size == small {
       @include btn-arrow-small-right($color);
 
-      right: $input-btn-padding-x-sm;
+      right: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width}*2);
     }
 
     @else if $size == large {
       @include btn-arrow-large-right($color);
 
-      right: $input-btn-padding-x-lg;
+      right: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width}*2);
     }
 
     @else {
       @include btn-arrow-standard-right($color);
 
-      right: $input-btn-padding-x;
+      right: calc(#{$input-btn-padding-x} - #{$input-btn-border-width}*2);
     }
 
     top: 50%;
@@ -114,34 +114,34 @@
   text-align: right;
 
   @if $size == small {
-    padding-left: $input-btn-padding-x-sm + 1.3125rem + 0.625rem !important;
+    padding-left: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width} + 29px )!important;
   }
 
   @else if $size == large {
-    padding-left: $input-btn-padding-x-lg + 1.75rem + 0.625rem !important;
+    padding-left: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width} + 36px )!important;
   }
 
   @else {
-    padding-left: $input-btn-padding-x + 1.75rem + 0.625rem !important;
+    padding-left: calc(#{$input-btn-padding-x} - #{$input-btn-border-width} + 36px )!important;
   }
 
   &::after {
     @if $size == small {
       @include btn-arrow-small-left($color);
 
-      left: $btn-padding;
+      left: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
     }
 
     @else if $size == large {
       @include btn-arrow-large-left($color);
 
-      left: $btn-padding - 0.25rem;
+      left: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width});
     }
 
     @else {
       @include btn-arrow-standard-left($color);
 
-      left: $btn-padding - 0.25rem;
+      left: calc(#{$input-btn-padding-x} - #{$input-btn-border-width});
     }
 
     position: absolute;
@@ -198,7 +198,8 @@
 
 // Primary buttons
 @mixin button-custom-variant($color, $border, $bg, $bg-hover, $bg-pressed) {
-  padding: $input-btn-padding-y $input-btn-padding-x;
+  padding: calc(#{$input-btn-padding-y} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x} - #{$input-btn-border-width});
+
   background-color: $bg;
   border-color: $bg;
   border-radius: $btn-border-radius;
@@ -259,12 +260,12 @@
   */
   &.btn-sm {
     font-size: $font-size-md;
-    padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+    padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
   }
 
   &.btn-lg {
     font-size: $font-size-xl;
-    padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+    padding: calc(#{$input-btn-padding-y-lg} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width});
     line-height: $input-btn-line-height-lg;
   }
 
@@ -374,7 +375,7 @@
   background-color: $bg;
   border-color: $border;
   font-size: $font-size-md;
-  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+  padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
 
   &:hover,
   &:focus,
@@ -428,7 +429,7 @@
 // Secondary buttons
 @mixin button-custom-outline-variant($color, $border, $bg, $border-hover, $bg-pressed) {
   & {
-    padding: $input-btn-padding-y $input-btn-padding-x;
+    padding: calc(#{$input-btn-padding-y} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x} - #{$input-btn-border-width});
     color: $border;
     background-color: $bg;
     border-color: $border;
@@ -511,13 +512,14 @@
   */
   &.btn-sm {
     font-size: $font-size-md;
-    padding: $input-btn-padding-y-sm $input-btn-padding-x-lg;
+    padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
   }
 
   &.btn-lg {
     line-height: $input-btn-line-height-lg;
     font-size: $font-size-xl;
-    padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+    padding: calc(#{$input-btn-padding-y-lg} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width});
+
   }
 
   /*
@@ -1022,6 +1024,7 @@ a.btn:active {
   font-size: 15px;
   line-height: 1.3;
   color: $white;
+  padding: $input-btn-padding-y $input-btn-padding-x;
 
   &:focus,
   &:hover,

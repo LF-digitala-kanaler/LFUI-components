@@ -129,7 +129,7 @@
 .btn:not([class*="arrow"]):not([class*="link"]):not(.btn-block) {
  
   > [class*="lf-spinner"] {
-    margin-left: 5px;
+    margin-left: 4px;
   }
 
   &.btn-sm {
@@ -138,6 +138,7 @@
       svg {
         width: 16 + px;
         height: 16 + px;
+        margin-top: 3px;
       }
     }
   }
