@@ -201,6 +201,7 @@
   padding: $input-btn-padding-y $input-btn-padding-x;
   background-color: $bg;
   border-color: $bg;
+  border-radius: $btn-border-radius;
 
   &:focus,
   &.focus {
@@ -431,6 +432,7 @@
     color: $border;
     background-color: $bg;
     border-color: $border;
+    border-radius: $btn-border-radius;
   }
 
   &:focus,
@@ -674,14 +676,12 @@ a.btn:active {
 
   font-family: inherit;
   font-size: $font-size-md;
-  margin: 0.313rem 0;
+  margin: 0;
   position: relative;
-  line-height: 1.32;
-  border: calc(0.025rem + 2px) solid transparent;
-  border-right-width: 0;
-  border-left-width: 0;
-  vertical-align: baseline;
-  background-position-y: 1.1rem;
+  border: 0;
+  vertical-align: baseline !important;
+  background-position-y: 1.15rem;
+  line-height: 1.46;
 
   @include font-smoothing(auto);
 

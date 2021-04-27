@@ -226,6 +226,7 @@ button.shortcut-important:disabled {
   padding: 0.5rem 3.7rem 0.75rem 1rem;
   text-align: left;
   font-size: 1rem;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
 
   @include media-breakpoint-up(md) {
     text-align: center;
