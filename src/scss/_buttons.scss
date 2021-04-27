@@ -201,7 +201,6 @@
   padding: $input-btn-padding-y $input-btn-padding-x;
   background-color: $bg;
   border-color: $bg;
-  border-radius: $btn-border-radius;
 
   &:focus,
   &.focus {
@@ -379,7 +378,6 @@
     color: $border;
     background-color: $bg;
     border-color: $border;
-    border-radius: $btn-border-radius;
   }
 
   &:focus,
