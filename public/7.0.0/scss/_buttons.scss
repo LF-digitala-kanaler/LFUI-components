@@ -1025,6 +1025,7 @@ a.btn:active {
   line-height: 1.3;
   color: $white;
   padding: $input-btn-padding-y $input-btn-padding-x;
+  border-radius: $btn-border-radius;
 
   &:focus,
   &:hover,

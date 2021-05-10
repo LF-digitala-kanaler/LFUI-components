@@ -78,6 +78,20 @@
 }
 
 /**
+ * modifier to remove bluee line and add baackground color
+ */
+
+ .collapse-simple {
+  &[aria-expanded="true"] {
+    @include header-block-border($body-bg);
+
+    &:hover {
+      @include header-block-border($link-color);
+    }
+  }
+}
+
+/**
  * Loading state for the collapse toggle
  */
 
