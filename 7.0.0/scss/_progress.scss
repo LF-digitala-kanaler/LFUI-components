@@ -1,0 +1,121 @@
+@import "bootstrap/scss/_progress.scss";
+
+// Since the text/value/description can be placed anywhere we give it a separate class
+.progress-text {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-sm;
+  font-weight: bold;
+}
+
+// Filled-in portion of the bar
+.progress-bar {
+  box-shadow: 4px 0 0 0 #fff;
+}
+
+.progress-container {
+  display: flex;
+  padding: 0 4rem;
+
+  .progress-divider-text {
+    top: -5px;
+    position: absolute;
+    font-family: $font-family-sans-serif;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .progress-circle-container {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    align-items: center;
+    width: $progress-bar-circle-default-size;
+  }
+
+  .progress-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $progress-bar-circle-default-size;
+    height: $progress-bar-circle-default-size;
+    min-width: $progress-bar-circle-default-size;
+    min-height: $progress-bar-circle-default-size;
+    border-radius: 50%;
+    border: 2px solid $blue;
+    color: $blue;
+    background: white;
+  }
+
+  .progress-circle.success {
+    border: 3px solid $blue;
+    background: $cloud;
+  }
+
+  .progress-circle-text {
+    width: 160px;
+    font-size: 15px;
+    padding-top: 10px;
+    color: $blue;
+    font-weight: bold;
+    text-align: center;
+    font-family: $font-family-sans-serif;
+  }
+
+  .progress-divider {
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    height: $progress-bar-circle-default-size;
+    color: $blue;
+    justify-content: center;
+    align-self: start;
+  }
+
+  .progress-divider-line {
+    align-self: center;
+    width: 100%;
+    border: 1px solid $blue;
+  }
+
+  &.progress-container-vertical {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+
+    .progress-circle-container {
+      flex-direction: row;
+      width: 100%;
+      height: $progress-bar-circle-default-size;
+    }
+
+    .progress-circle {
+      margin-right: 10px;
+    }
+
+    .progress-circle-text {
+      text-align: left;
+      padding: 0;
+      width: auto;
+    }
+
+    .progress-divider {
+      align-items: center;
+      height: 60px;
+    }
+
+    .progress-divider-line {
+      height: 100%;
+      width: auto;
+      margin-left: calc(#{$progress-bar-circle-default-size} / 2);
+      margin-right: 10px;
+    }
+
+    .progress-divider-text {
+      position: relative;
+      top: 0;
+      font-size: 14px;
+    }
+  }
+}
