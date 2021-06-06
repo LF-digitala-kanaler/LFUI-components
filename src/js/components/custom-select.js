@@ -41,7 +41,7 @@ const CustomSelect = (function ($) {
       this.val = _this.isMultiSelect ? [] : '';
       this.index = -1;
       this.searchString = '';
-      
+
       if (_this.isMultiSelect) {
         _this.element.find('.custom-dropdown > .dropdown-item').each(function (index, option) {
           _this._updateValueList($(option));
@@ -67,46 +67,46 @@ const CustomSelect = (function ($) {
 
     _addEventListeners() {
       let _this = this;
-      
+
       if (_this.isMultiSelect) {
         _this._addCustomMultiSelectEventListeners();
       } else {
         _this._addCustomSelectListeners();
       }
 
-      _this.element.on('keypress',function (e){
+      _this.element.on('keypress', function (e) {
         let code = (e.keyCode ? e.keyCode : e.which);
-        if(code === KeyCode.SPACE_KEYCODE || code === KeyCode.ENTER_KEYCODE) {
+        if (code === KeyCode.SPACE_KEYCODE || code === KeyCode.ENTER_KEYCODE) {
           if (code === KeyCode.SPACE_KEYCODE) {
             // prevent space from scrolling page
             e.preventDefault();
           }
 
-          if(_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
+          if (_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
             _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
           }
         }
       }).on('keydown', function (e) {
         let code = (e.keyCode ? e.keyCode : e.which);
-        
-        if(!_this._isDropdownOpen()) {
-         
-          switch(code) {
+
+        if (!_this._isDropdownOpen()) {
+
+          switch (code) {
             case KeyCode.ARROW_UP_KEYCODE:
               e.preventDefault();
               _this.dropdownElement.dropdown('toggle');
-              if(_this.index === -1) {
-                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length -1].focus();
-                _this.index = (_this.element.find('.custom-dropdown > .dropdown-item').length -1);
+              if (_this.index === -1) {
+                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length - 1].focus();
+                _this.index = (_this.element.find('.custom-dropdown > .dropdown-item').length - 1);
               }
-              if(_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
+              if (_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
                 _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
             case KeyCode.ARROW_DOWN_KEYCODE:
               e.preventDefault();
               _this.dropdownElement.dropdown('toggle');
-              if(_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
+              if (_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
                 _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
@@ -115,10 +115,10 @@ const CustomSelect = (function ($) {
           }
         }
         else {
-          switch(code){
+          switch (code) {
             case KeyCode.ARROW_UP_KEYCODE:
-              if(_this.index === -1) {
-                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length -1].focus();
+              if (_this.index === -1) {
+                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length - 1].focus();
                 _this.index = _this.element.find('.custom-dropdown > .dropdown-item').length;
               }
               if (_this.index > 0) {
@@ -130,12 +130,12 @@ const CustomSelect = (function ($) {
               }
               break;
             case KeyCode.ARROW_DOWN_KEYCODE:
-              if (_this.index < (_this.element.find('.custom-dropdown > .dropdown-item').length -1)) {
+              if (_this.index < (_this.element.find('.custom-dropdown > .dropdown-item').length - 1)) {
                 _this.index++;
               }
               e.preventDefault();
 
-              if (_this.index <= (_this.element.find('.custom-dropdown > .dropdown-item').length -1)) {
+              if (_this.index <= (_this.element.find('.custom-dropdown > .dropdown-item').length - 1)) {
                 _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index]);
               }
               break;
@@ -152,7 +152,7 @@ const CustomSelect = (function ($) {
                 _this.searchString += e.key;
 
                 let match = _this._getMatchingOption();
-                
+
                 if (match) {
                   if (_this.isMultiSelect) {
                     match.find('[type=checkbox]').focus();
@@ -160,7 +160,7 @@ const CustomSelect = (function ($) {
                     _this._setSelectedOption(match);
                   }
 
-                  setTimeout(function() {
+                  setTimeout(function () {
                     _this.searchString = '';
                   }, 1000);
                 } else {
@@ -176,18 +176,18 @@ const CustomSelect = (function ($) {
     _addCustomMultiSelectEventListeners() {
       let _this = this;
 
-      _this.options.on('change click keydown',function (e) {
+      _this.options.on('change click keydown', function (e) {
         let code = (e.keyCode ? e.keyCode : e.which);
-  
+
         if (e.target.tagName !== 'INPUT' || (e.target.tagName === 'INPUT' && code === KeyCode.SPACE_KEYCODE)) {
-         
+
           if ((code === KeyCode.SPACE_KEYCODE
             || code === KeyCode.ENTER_KEYCODE || e.type === 'click')) {
-           
+
             if (e.type === 'click' || e.type === 'keydown') {
               e.stopPropagation();
             }
-            if(e.target.tagName === 'DIV') {
+            if (e.target.tagName === 'DIV') {
               $(this).find('input').trigger('change');
             }
             let shouldTriggerCheckbox = e.target.tagName === 'DIV' || (!e.target.hasAttribute('for') && code !== KeyCode.SPACE_KEYCODE);
@@ -195,9 +195,9 @@ const CustomSelect = (function ($) {
             if (selectAll) {
               let isIndeterminate = $(this).find('[type=checkbox]').is(':indeterminate');
               _this._toggleSelectAll($(this), !$(this).find('[type=checkbox]').is(':checked'), isIndeterminate, shouldTriggerCheckbox);
-              
+
             } else {
-              
+
               _this._updateValueList($(this), e.type, shouldTriggerCheckbox);
             }
 
@@ -225,19 +225,19 @@ const CustomSelect = (function ($) {
 
     _addCustomSelectListeners() {
       let _this = this;
-     
+
       _this.element.find($('.custom-dropdown:not(.custom-multi-select)')).on('click touchstart keypress', _this.element.find('.custom-dropdown > .dropdown-item'), function (e) {
-        var target = $(e.target);
-        
-        if (!(target.is('.dropdown-item'))) { 
-          target = target.closest('.dropdown-item');
+        var target = $(e.target);
+
+        if (!(target.is('.dropdown-item'))) {
+          target = target.closest('.dropdown-item');
         }
-        
+
         _this._setSelectedOption(target);
         e.preventDefault();
         _this.dropdownElement.dropdown('toggle');
 
-        if (_this.config.onSelect) {
+        if (_this.config.onSelect) {
           _this.config.onSelect(e);
         }
       });
@@ -248,7 +248,7 @@ const CustomSelect = (function ($) {
       const _this = this;
 
       let matchingOption;
-      _this.element.find('.custom-dropdown > .dropdown-item').each(function(index, option){
+      _this.element.find('.custom-dropdown > .dropdown-item').each(function (index, option) {
         let text = option.text;
         if (_this.isMultiSelect) {
           text = $(option).find('.custom-control-label').text();
@@ -263,19 +263,16 @@ const CustomSelect = (function ($) {
     }
 
     _setSelectedOption(option) {
-      console.log(option, 'ot')
       option.focus();
       this.val = option.html();
       this.index = option.index();
       this.placeholder.html(this.val);
       this.parent.addClass('has-valid');
-
-      console.log(this.val, 'ot')
     }
 
     _updateValueList(option, eventType, shouldTriggerCheckbox) {
       if (eventType && option.hasClass('dropdown-item') && !option.find('[type=checkbox]').is(':checked')) {
-        
+
         if (shouldTriggerCheckbox && eventType === 'click') {
           option.find('[type=checkbox]').prop('checked', true);
         }
@@ -289,7 +286,7 @@ const CustomSelect = (function ($) {
           this.val.splice(index, 1);
         }
       }
-      
+
       if (this.selectAllOptionElement) {
         this._updateSelectAllCheckbox(shouldTriggerCheckbox);
       }
@@ -309,18 +306,18 @@ const CustomSelect = (function ($) {
       let selectAllCheckbox = this.selectAllOptionElement.find('[type=checkbox]');
       let isAllOptionIndeterminate = selectAllCheckbox.is(':indeterminate');
       let isAllOptionChecked = selectAllCheckbox.is(':checked');
-      
+
       if (isAllOptionIndeterminate && this.val.length === 0) {
         selectAllCheckbox.prop('indeterminate', false);
         if (!triggeredByClick) {
-          
+
           selectAllCheckbox.prop('checked', false);
         }
-      } else if (isAllOptionIndeterminate && this.val.length === this.options.length-1) {
+      } else if (isAllOptionIndeterminate && this.val.length === this.options.length - 1) {
         selectAllCheckbox.prop('indeterminate', false);
 
         if (!triggeredByClick) {
-          
+
           selectAllCheckbox.prop('checked', true);
         }
       } else if (isAllOptionChecked && this.val.length > 0) {
@@ -332,7 +329,7 @@ const CustomSelect = (function ($) {
       let _this = this;
       _this.selectAllOptionElement = selectAllOptionElement;
 
-      _this.options.each(function(index, option) {
+      _this.options.each(function (index, option) {
         if (!$(option).data(DataName.SELECT_ALL)) {
           let checkbox = $(option).find('[type=checkbox]');
 
@@ -382,8 +379,8 @@ const CustomSelect = (function ($) {
     }
   }
 
-  $.fn.customselect = function(option) {
-    return this.each(function() {
+  $.fn.customselect = function (option) {
+    return this.each(function () {
       let data = $(this).data('customselect');
       let options = typeof option === 'object' && option;
 
