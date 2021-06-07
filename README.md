@@ -5,11 +5,60 @@ LFUI is a HTML-, CSS- and JS framework built on top of Bootstrap to be used in L
 
 For information how to use LFUI 6.7.0 visit the old [lfui](https://github.com/LF-digitala-kanaler/LFUI) repository.
 
-## Install
+## Getting started 
 
-### Updates
+To install lfui-components in your project, you will need to run the following command using npm:
+```
+npm install https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.0
+```
+If you prefer Yarn, use the following command instead:
+```
+yarn add https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.0
+```
 
-### Releases
 
+The end of the command above is pointing towards a specific branch, in this case our latest release ```7.0.0-branch```. You can alter this number to point at the branch/release of your choice.
 
-## LFUI usage
+### Usage
+
+In the /dist folder you will find:
+
+* lf.css
+* lf.js
+* Fonts
+
+These files are built/compiled from the project's source files and assets. They can be used as is. Simply add ```jQuery```, ```lf.js``` and ```lf.css``` to your document.
+
+## in your build
+
+Import LFUI.scss in the very beginning of your main SCSS file:
+
+```@import "lfui-components/src/scss/LFUI.scss";```
+
+This will give you access to the full LFUI suit including its variables and mixins.
+
+### Fonts
+
+LFUI-components includes fonts for self-hosting. While you can requier them directly from node_module it's probaably easier to copy the files to your project 
+
+In this example we are using ```copyfiles``` to do this.  
+
+```
+npm install copyfiles --save-dev
+```
+
+Once installed you can add a script to your ```package.json``` to copy the files into your project
+
+```
+"scripts": {
+  "copy:fonts": "copyfiles --flat node_modules/lfui-components/dist/fonts/* fonts/YOUR_PATH"
+}
+```
+
+Depending on where in your project you place the font files, update the provided variable `$asset-path:` too match your setup. Place it before your ```lfui.scss``` import.
+
+```
+$asset-path: './';
+@import "lfui-components/src/scss/LFUI.scss";
+```
+
