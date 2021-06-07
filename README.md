@@ -43,6 +43,7 @@ LFUI-components includes fonts for self-hosting. While you can requier them dire
 
 In this example we are using ```copyfiles``` to do this.  
 
+
 ```
 npm install copyfiles --save-dev
 ```
@@ -61,6 +62,16 @@ Depending on where in your project you place the font files, update the provided
 $asset-path: './';
 @import "lfui-components/src/scss/LFUI.scss";
 ```
+
+LFUI-comonents provides a way to control the font loading technique using CSS [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display). This allows you to adjust the load performance of your app:
+
+```
+// Change the font loading technique in your app, swap is default
+// auto, block, swap, fallback, optional
+$font-display: auto;
+
+```
+
 ## Migrating from lfui 6.x.x
 
 There hasen't been so many changes to the core components in this version but there is a couple of steps you have to take to get it to work. 
