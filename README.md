@@ -61,4 +61,12 @@ Depending on where in your project you place the font files, update the provided
 $asset-path: './';
 @import "lfui-components/src/scss/LFUI.scss";
 ```
+## Migrating from lfui 6.x.x
 
+There hasen't been so many changes to the core components in this version but there is a couple of steps you have to take to get it to work. 
+
+* Remove the old `lfui` package and replace it with `lfui-components` in your `package.json` and install it. 
+* Depending on your build setup update lf.js and lf.css with the new once in `lfui-components`
+* If you want the updated fonts follow the steps above to copy them over.
+* Now it's time for the time consuming part. We have a new icon system and all icons in your project needs to be updated. Head [here](https://github.com/LF-digitala-kanaler/LFUI-icons) and follow the guide 
+* 
