@@ -16,6 +16,7 @@
     font-weight: normal;
     font-style: normal;
     font-kerning: normal;
+    font-display: $font-display;
   }
 
   @font-face {
@@ -25,6 +26,7 @@
       url('#{$asset-path}/fonts/intro-cond-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: $font-display;
   }
 
   @font-face {
@@ -34,6 +36,7 @@
       url('#{$asset-path}/fonts/intro-cond-regular-italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
+    font-display: $font-display;
   }
 
   @font-face {
@@ -43,6 +46,7 @@
       url('#{$asset-path}/fonts/intro-cond-bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: $font-display;
   }
 
   @font-face {
@@ -52,5 +56,6 @@
       url('#{$asset-path}/fonts/intro-cond-bold-italic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
+    font-display: $font-display;
   }
 }
