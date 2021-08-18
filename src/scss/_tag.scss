@@ -1,7 +1,7 @@
 $tag-radius: 1.25rem; // 20px
 $tag-color: $white;
 $tag-background: $blue;
-$tag-background-cloud: $cloud;
+$tag-background-info: $lf-info;
 $tag-background-danger: $lf-danger;
 
 .tag {
@@ -20,15 +20,21 @@ $tag-background-danger: $lf-danger;
   &:hover,
   &:focus {
     color: $tag-color;
+    svg {
+      fill: darken($tag-color, 10%)
+    }
   }
 
-  &.tag-bg-cloud {
-    background-color: $tag-background-cloud;
+  &.tag-bg-info {
+    background-color: $tag-background-info;
     color: $blue;
 
     &:hover,
     &:focus {
       color: $blue;
+      svg {
+        fill: darken($blue, 10%)
+      }
     }
   }
   &.tag-bg-danger {
@@ -38,6 +44,9 @@ $tag-background-danger: $lf-danger;
     &:hover,
     &:focus {
       color: $wine;
+      svg {
+        fill: darken($wine, 10%)
+      }
     }
   }
   
@@ -50,8 +59,12 @@ $tag-background-danger: $lf-danger;
   top: 9px;
   right: $spacer;
   color: inherit;
-
+  
+  
   svg {
     fill: currentColor;
+    transition: fill 100ms ease;
   }
+
+  
 }
