@@ -1,0 +1,57 @@
+$tag-radius: 1.25rem; // 20px
+$tag-color: $white;
+$tag-background: $blue;
+$tag-background-cloud: $cloud;
+$tag-background-danger: $lf-danger;
+
+.tag {
+
+  @include font-smoothing;
+  @include reset-button; // if button is used
+  @include reset-link;
+
+  border-radius: $tag-radius; 
+  background-color: $tag-background;
+  color: $tag-color;
+  display: inline-block;
+  padding: 0.53125rem 2.625rem 0.53125rem $spacer;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    color: $tag-color;
+  }
+
+  &.tag-bg-cloud {
+    background-color: $tag-background-cloud;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+    }
+  }
+  &.tag-bg-danger {
+    background-color: $tag-background-danger;
+    color: $wine;
+
+    &:hover,
+    &:focus {
+      color: $wine;
+    }
+  }
+  
+}
+
+.tag-dismissable {
+  @include reset-button;
+  margin-left: 0.375rem;
+  position: absolute;
+  top: 9px;
+  right: $spacer;
+  color: inherit;
+
+  svg {
+    fill: currentColor;
+  }
+}
