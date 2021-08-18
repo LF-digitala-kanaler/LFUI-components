@@ -21,7 +21,7 @@ $tag-background-danger: $lf-danger;
   &:focus {
     color: $tag-color;
     svg {
-      fill: darken($tag-color, 10%)
+      fill: darken($tag-color, 15%)
     }
   }
 
@@ -33,7 +33,7 @@ $tag-background-danger: $lf-danger;
     &:focus {
       color: $blue;
       svg {
-        fill: darken($blue, 10%)
+        fill: darken($blue, 15%)
       }
     }
   }
@@ -45,7 +45,7 @@ $tag-background-danger: $lf-danger;
     &:focus {
       color: $wine;
       svg {
-        fill: darken($wine, 10%)
+        fill: darken($wine, 15%)
       }
     }
   }
