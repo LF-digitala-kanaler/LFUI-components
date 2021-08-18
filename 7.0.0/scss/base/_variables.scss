@@ -281,6 +281,7 @@ $font-family-serif: "LF Rubrik", Georgia, "Times New Roman", Times, serif;
 $font-family-base: Arial, "Helvetica Neue", Helvetica, sans-serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
+$font-display: swap !default; 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root-value: 16; // LFUI-specific
 
