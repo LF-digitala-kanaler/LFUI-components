@@ -52,7 +52,7 @@ Once installed you can add a script to your ```package.json``` to copy the files
 
 ```
 "scripts": {
-  "copy:fonts": "copyfiles --flat node_modules/lfui-components/dist/fonts/* fonts/YOUR_PATH"
+  "copy:fonts": "copyfiles --flat node_modules/lfui-components/dist/lfui/fonts/* fonts/YOUR_PATH"
 }
 ```
 
