@@ -2,13 +2,14 @@ import chartColors from '../../data/chartColors';
 
 const barChartExample = () => {
   const ctx = document.getElementById('barChart').getContext('2d');
+  if (ctx === null) return;
   const data = [
-    {x: '2015', y: 1}, 
-    {x: '2016', y: -2},
-    {x: '2017', y: 5},
-    {x: '2018', y: -7},
-    {x: '2019', y: 10},
-    {x: '2020', y: 8}
+    { x: '2015', y: 1 },
+    { x: '2016', y: -2 },
+    { x: '2017', y: 5 },
+    { x: '2018', y: -7 },
+    { x: '2019', y: 10 },
+    { x: '2020', y: 8 }
   ]
   const colors = data.map((value) => value.y < 0 ? chartColors.getNegativeColor() : chartColors.getPositiveColor());
 
@@ -45,13 +46,13 @@ const barChartExample = () => {
 
         }
       },
-      scales:{
+      scales: {
         xAxes: [{
-          gridLines: { 
+          gridLines: {
             display: false,
             color: '#F3F3F3',
           },
-          
+
         }],
         yAxes: [{
           gridLines: {
@@ -65,10 +66,10 @@ const barChartExample = () => {
           }
         }],
       }
-      
+
     }
 
   });
 }
 
-export  {barChartExample}
+export { barChartExample }
