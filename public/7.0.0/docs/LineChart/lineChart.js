@@ -13,7 +13,7 @@ const lineChartExample = () => {
   let color = chartColors.getColorScale(1) // get default color scale
   let legendColor = chartColors.getColorScale(1);
   let canvas = document.getElementById('lineChart');
-  console.log('canvas', canvas)
+
   if (canvas === null) return;
   let ctx = canvas.getContext('2d');
   let gradientFill = ctx.createLinearGradient(0, 800, 0, 0);
@@ -261,8 +261,9 @@ const lineChartExample = () => {
 
 }
 const lineChartVerticalLine = () => {
+  if (window.lineChart === null) return;
   Chart.defaults.LineWithLine = Chart.defaults.line;
-  console.log(window.lineChart, 'chart')
+
   Chart.controllers.LineWithLine = Chart.controllers.line.extend({
     draw: function (ease) {
       Chart.controllers.line.prototype.draw.call(this, ease);
