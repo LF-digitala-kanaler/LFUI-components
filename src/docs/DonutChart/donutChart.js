@@ -8,8 +8,9 @@ window.highlightArcWithIndex = (index) => {
 }
 
 const donutChartExample = () => {
+  if (document.getElementById('donutChart') === null) return;
   const ctx = document.getElementById('donutChart').getContext('2d');
-  if (ctx === null) return;
+
   const data = [10, 20, 30];
   const colors = chartColors.getColorScale(data.length);
   const disabledColor = chartColors.getDisabledColor();

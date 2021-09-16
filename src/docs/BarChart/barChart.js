@@ -1,8 +1,9 @@
 import chartColors from '../../data/chartColors';
 
 const barChartExample = () => {
+  if (document.getElementById('barChart') === null) return;
   const ctx = document.getElementById('barChart').getContext('2d');
-  if (ctx === null) return;
+
   const data = [
     { x: '2015', y: 1 },
     { x: '2016', y: -2 },
