@@ -393,6 +393,7 @@ const CustomSelect = (function ($) {
       // Call customselect method.
       if (typeof option === 'string') {
         if (option === 'destroy') {
+          $(this).find('*').off();
           $(this).data('customselect', false);
         }
       }
