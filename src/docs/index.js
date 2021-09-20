@@ -1,12 +1,12 @@
 import '../scss/DOCS.scss';
 
 import { datepickerExample, disabledDatesExample, timepickerExample } from './Datepicker/datepicker';
+import { lineChartExample, lineChartVerticalLine } from './LineChart/lineChart';
 
 import { barChartExample } from './BarChart/barChart';
 import { calloutExample } from './Callout/callout';
 import { donutChartExample } from './DonutChart/donutChart';
 import { dropdownExample } from './Dropdown/dropdown';
-import { lineChartExample } from './LineChart/lineChart';
 import { mapChartExample } from './MapChart/mapChart';
 import { navbarExample } from './Navbar/navbar';
 import { panelExample } from './Panel/panel';
@@ -18,6 +18,7 @@ import { timelineExample } from './Timeline/timeline';
 import { uploadExample } from './Upload/upload';
 import { valueboxExample } from './ValueBox/valuebox';
 import { xyPlotExample } from './xyPlot/xyPlot';
+
 // run your functions 
 disabledDatesExample();
 timepickerExample();
@@ -35,6 +36,7 @@ panelExample();
 
 uploadExample();
 timelineExample();
+lineChartVerticalLine();
 lineChartExample();
 donutChartExample();
 xyPlotExample();
