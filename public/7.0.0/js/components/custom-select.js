@@ -45,6 +45,7 @@ const CustomSelect = (function ($) {
       if (_this.isMultiSelect) {
         _this.element.find('.custom-dropdown > .dropdown-item').each(function (index, option) {
           _this._updateValueList($(option));
+          _this._setSelectedValues($(option));
         });
       }
     }
@@ -268,6 +269,13 @@ const CustomSelect = (function ($) {
       this.index = option.index();
       this.placeholder.html(this.val);
       this.parent.addClass('has-valid');
+    }
+
+    _setSelectedValues(option) {
+      if (option.find('[type=checkbox]').is(':checked')) {
+        this.val.push(option.find('.custom-control-label').text());
+        this.placeholder.text(this._getPlaceholderText());
+      }
     }
 
     _updateValueList(option, eventType, shouldTriggerCheckbox) {
