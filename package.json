@@ -6,7 +6,7 @@
     "bootstrap": "4.3.1",
     "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
     "jquery": "^3.4.1",
-    "lfui-icons": "git+https://24cd72455eb8aea8ea1c796c1421945df20fbe0f:x-oauth-basic@github.com/lf-digitala-kanaler/LFUI-icons.git#v1.0.0",
+    "lfui-icons": "https://github.com/LF-digitala-kanaler/LFUI-icons.git#v1.0.0",
     "popper.js": "1.16.1",
     "vivus": "0.4.5"
   },
