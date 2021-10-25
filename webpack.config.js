@@ -18,7 +18,7 @@ module.exports = {
     '/lfui/lfui': './src/index.js',
     '/docs/docs': './src/docs/index.js'
   },
-  performance: { hints: false },
+  performance: { hints: false } ,
   output: {
     libraryTarget: 'umd',
     filename: '[name].js',
@@ -42,26 +42,26 @@ module.exports = {
     //   files: '*.scss',
     // }),
     new CopyPlugin([
-      {
+      { 
         from: 'src/docs/',
         to: 'docs/html/',
         ignore: ['*.js'] // ignore stories 
       },
-      {
+      { 
         from: 'src/data/componentsStatus.json',
         to: 'docs/data/'
       },
       // copy icons
-      {
+      { 
         from: 'src/icons/',
         to: 'lfui/icons/'
       },
     ]),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+        filename: '[name].css'
     }),
     new OptimizeCssAssetsPlugin({
-
+      
       cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
         preset: ['default', { discardComments: { removeAll: true } }],
@@ -92,7 +92,7 @@ module.exports = {
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /sv/),
 
-  ],
+  ], 
   module: {
     rules: [
       {
@@ -109,7 +109,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+                importLoaders: 1,
             },
           },
           'postcss-loader',
@@ -131,7 +131,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+                importLoaders: 1,
             },
           },
           {
@@ -142,8 +142,8 @@ module.exports = {
                   pattern: /<svg.*<\/svg>/i,
                   prepend: 'data:image/svg+xml;base64,'
                 }),
-                increaseSpecificity({ repeat: 1, stackableRoot: '.lfui-theme' }),
-
+                increaseSpecificity({repeat:1, stackableRoot: '.lfui-theme' }),
+                
               ],
             }
           },
@@ -153,7 +153,7 @@ module.exports = {
             //   importer: moduleImporter(),
             // },
           }
-
+          
         ],
       },
       {
@@ -177,5 +177,5 @@ module.exports = {
       },
     ]
   }
-
+  
 }
