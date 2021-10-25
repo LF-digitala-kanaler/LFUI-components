@@ -1,0 +1,70 @@
+$tag-radius: 1.25rem; // 20px
+$tag-color: $white;
+$tag-background: $blue;
+$tag-background-info: $lf-info;
+$tag-background-danger: $lf-danger;
+
+.tag {
+
+  @include font-smoothing;
+  @include reset-button; // if button is used
+  @include reset-link;
+
+  border-radius: $tag-radius; 
+  background-color: $tag-background;
+  color: $tag-color;
+  display: inline-block;
+  padding: 0.53125rem 2.625rem 0.53125rem $spacer;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    color: $tag-color;
+    svg {
+      fill: darken($tag-color, 15%)
+    }
+  }
+
+  &.tag-bg-info {
+    background-color: $tag-background-info;
+    color: $blue;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+      svg {
+        fill: darken($blue, 15%)
+      }
+    }
+  }
+  &.tag-bg-danger {
+    background-color: $tag-background-danger;
+    color: $wine;
+
+    &:hover,
+    &:focus {
+      color: $wine;
+      svg {
+        fill: darken($wine, 15%)
+      }
+    }
+  }
+  
+}
+
+.tag-dismissable {
+  @include reset-button;
+  margin-left: 0.375rem;
+  position: absolute;
+  top: 8px;
+  right: $spacer;
+  color: inherit;
+  
+  
+  svg {
+    fill: currentColor;
+    transition: fill 100ms ease;
+  }
+
+  
+}
