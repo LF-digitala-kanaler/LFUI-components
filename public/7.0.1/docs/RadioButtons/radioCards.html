@@ -1,0 +1,213 @@
+<style>
+  @media (max-width: 1199px) {
+    .radio-card .radio-card-footer .price-container {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1px) and (max-width: 992px) {
+    .radio-card {
+      transform: none;
+      border-left: none !important;
+      margin-bottom: 2px;
+    }
+
+    .radio-card:not(.radio-card-stacked)::before {
+      border-bottom: none;
+    }
+
+    .radio-card-footer {
+      border-top: none;
+    }
+
+    .radio-card-footer .price-container {
+      margin: 0 0 0 auto;
+    }
+
+    .radio-card.activeRadio::before,
+    .radio-card.active::before {
+      transform: none;
+    }
+
+    .radio-card.activeRadio:hover::before,
+    .radio-card.active:not(.radio-card-sm.active):hover::before {
+      border-bottom: 2px solid #00427a;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .radio-card-footer .price-container {
+      margin: 0 auto 0.5rem;
+      display: block;
+      float: none;
+      text-align: center;
+    }
+
+    .radio-card .custom-control-description {
+      font-size: 1.125rem !important;
+    }
+  }
+</style>
+
+
+
+<div class="row">
+  <div class="radio-card col-12 col-md-4">
+    <label class="custom-control custom-radio" for="radioCard1">
+      <input name="radio" type="radio" id="radioCard1" class="custom-control-input">
+      <span class="custom-control-label">Försäkring Stor</span>
+      <p>
+        Vår bästa försäkring som passar dig som har både familj och hus.
+      </p>
+      <ul class="ul-checks green">
+        <li>Fullvärde bostadsbyggnad</li>
+        <li>Allrisk lösegendom</li>
+        <li>Allrisk byggnad</li>
+        <li>Utökat reseskydd</li>
+      </ul>
+      <div class="radio-card-footer">
+        <div class="d-none d-xl-inline-block">
+          <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#myModal">Läs mer</button>
+        </div>
+        <div class="d-lg-none d-inline-block">
+          <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#myModal">Läs mer</button>
+        </div>
+        <div class="price-container">
+          <span class="price">1&nbsp;420</span>
+          &nbsp;kr/mån
+        </div>
+        <button class="btn btn-sm btn-block btn-secondary d-none d-lg-inline-block d-xl-none" data-toggle="modal"
+          data-target="#myModal">Läs mer</button>
+      </div>
+    </label>
+  </div>
+  <div class="radio-card active col-12 col-md-4">
+    <label class="custom-control custom-radio" for="radioCard2">
+      <input name="radio" type="radio" checked="" id="radioCard2" class="custom-control-input">
+      <span class="custom-control-label">Försäkring Medium</span>
+      <p>
+        Mycket bra försäkring. Förutom grundskyddet så ingår även vår otursförsäkring för alla familjemedlemmar.
+      </p>
+      <ul class="ul-checks green">
+        <li>Fullvärde bostadsbyggnad</li>
+        <li>Allrisk lösegendom</li>
+        <li>Allrisk byggnad</li>
+      </ul>
+      <div class="radio-card-footer">
+        <div class="d-none d-xl-inline-block">
+          <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#myModal">Läs mer</button>
+        </div>
+        <div class="d-lg-none d-inline-block">
+          <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#myModal">Läs mer</button>
+        </div>
+        <div class="price-container">
+          <span class="price">825</span>
+          &nbsp;kr/mån
+        </div>
+        <button class="btn btn-sm btn-block btn-secondary d-none d-lg-inline-block d-xl-none" data-toggle="modal"
+          data-target="#myModal">Läs mer</button>
+      </div>
+    </label>
+  </div>
+  <div class="radio-card col-12 col-md-4 ">
+    <label class="custom-control custom-radio">
+      <input name="radio" type="radio" id="radioCard3" class="custom-control-input">
+      <span class="custom-control-label">Försäkring Liten</span>
+      <p>
+        Bra försäkring som innehåller grundskydd för både dig och ditt skydd.
+      </p>
+      <ul class="ul-checks green">
+        <li>Fullvärde bostadsbyggnad</li>
+      </ul>
+      <div class="radio-card-footer">
+        <div class="d-none d-xl-inline-block">
+          <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#myModal">Läs mer</button>
+        </div>
+        <div class="d-lg-none d-inline-block">
+          <button class="btn btn-sm btn-secondary" data-toggle="modal" data-target="#myModal">Läs mer</button>
+        </div>
+        <div class="price-container">
+          <span class="price">250</span>
+          &nbsp;kr/mån
+        </div>
+        <button class="btn btn-sm btn-block btn-secondary d-none d-lg-inline-block d-xl-none" data-toggle="modal"
+          data-target="#myModal">Läs mer</button>
+      </div>
+    </label>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    what so ever
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close close-large" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title">So long farewell</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          So long, farewell,auf wiedersehen, good night.<br>
+          I hate to go and leave this pretty sight.
+        </p>
+        <p>
+          So long, farewell auf wiedersehen, adieu<br>
+          Adieu, adieu, to yieu and yieu and yieu.
+        </p>
+        <p>
+          So long, farewell, au revoir, auf wiedersehen.
+          I'd like to stay and taste my first champagne
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-dismiss="modal">Avbryt</button>
+        <button type="button" class="btn btn-primary btn-arrow">Take me there</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="text-sm mt-15 mb-05 text-muted">Radio card for primary choice</p>
+<div class="row row-tight form-group">
+  <div class="col-6 col-md-3 mb-1">
+    <div class="radio-card radio-card-sm">
+      <label class="custom-control custom-radio">
+        <input name="radio12" type="radio" id="radioCardSm3" class="custom-control-input">
+        <span class="custom-control-label">
+          <svg role="presentation" class="icon d-block mx-auto mb-05" width="40" height="40">
+            <use xlink:href="/icons/40/icons.svg#thumbup-40"></use>
+          </svg>
+          Rekommenderade
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 mb-1">
+    <div class="radio-card radio-card-sm">
+      <label class="custom-control custom-radio">
+        <input name="radio12" type="radio" id="radioCardSm2" class="custom-control-input">
+        <span class="custom-control-label">
+          <svg role="presentation" class="icon d-block mx-auto mb-05" width="40" height="40">
+            <use xlink:href="/icons/40/icons.svg#sustainability-40"></use>
+          </svg>
+          Hållbarhet
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="col-6 col-md-3 mb-1">
+    <div class="radio-card radio-card-sm">
+      <label class="custom-control custom-radio">
+        <input name="radio12" type="radio" id="radioCardSm" class="custom-control-input">
+        <span class="custom-control-label">
+          <svg role="presentation" class="icon d-block mx-auto mb-05" width="40" height="40">
+            <use xlink:href="/icons/40/icons.svg#coins-40"></use>
+          </svg>
+          Lägsta avgifter
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
