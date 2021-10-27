@@ -1,0 +1,647 @@
+{
+  "components": [
+    {
+      "component": "Alert",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "5.2.0",
+          "4.2.0",
+          "3.4.0"
+        ],
+        "examples": [
+          {
+            "name": "Danger"
+          },
+          {
+            "name": "Info"
+          },
+          {
+            "name": "Success"
+          },
+          {
+            "name": "Warning"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Avatar",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "4.2.0"
+        ]
+      }
+    },
+    {
+      "component": "Breadcrumb",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.6.0",
+          "4.2.0",
+          "3.4.0"
+        ]
+      }
+    },
+    {
+      "component": "Buttons",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.7.0",
+          "6.2.0",
+          "5.4.0",
+          "5.3.0",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.2.0",
+          "3.1.0"
+        ],
+        "examples": [
+          {
+            "name": "Primary"
+          },
+          {
+            "name": "Secondary"
+          },
+          {
+            "name": "Login"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Callout",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.0.0",
+          "5.2.0",
+          "4.1.0"
+        ]
+      }
+    },
+    {
+      "component": "Card",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "5.2.0",
+          "3.0.0"
+        ]
+      }
+    },
+    {
+      "component": "Checkbox",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "6.4.0",
+          "6.3.0",
+          "6.2.0",
+          "6.1.0",
+          "5.4.0",
+          "5.3.0",
+          "5.2.2",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.4.0",
+          "3.2.0",
+          "3.1.0"
+        ]
+      }
+    },
+    {
+      "component": "Collapse",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.2.0"
+        ],
+        "examples": [
+          {
+            "name": "White"
+          },
+          {
+            "name": "Gray"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Datepicker",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "6.1.0",
+          "5.4.0",
+          "5.2.1",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.4.0"
+        ],
+        "examples": [
+          {
+            "name": "Datepicker"
+          },
+          {
+            "name": "Timepicker"
+          }
+        ]
+      }
+    },
+    {
+      "component": "distribution-bar",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0"
+        ],
+        "examples": [
+          {
+            "name": "Default"
+          },
+          {
+            "name": "Progress Bar"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Dropdown",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "7.0.0",
+          "6.5.0",
+          "6.4.0",
+          "6.3.0",
+          "6.2.0",
+          "6.1.0",
+          "5.4.0",
+          "5.3.0",
+          "5.2.2",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.4.0",
+          "3.2.0",
+          "3.1.0"
+        ],
+        "examples": [
+          {
+            "name": "Select One"
+          },
+          {
+            "name": "Multi Select"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Headings",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.5.0",
+          "3.0.0"
+        ]
+      }
+    },
+    {
+      "component": "Input-field",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.4.0",
+          "6.3.0",
+          "6.2.0",
+          "6.1.0",
+          "5.4.0",
+          "5.3.0",
+          "5.2.2",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.4.0",
+          "3.2.0",
+          "3.1.0"
+        ],
+        "examples": [
+          {
+            "name": "One Lined"
+          },
+          {
+            "name": "Several Lines"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Lead-paragraph",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false
+      }
+    },
+    {
+      "component": "Links",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.6.0",
+          "6.4.0",
+          "5.4.0",
+          "5.3.0",
+          "5.2.0",
+          "5.1.0"
+        ],
+        "examples": [
+          {
+            "name": "Primary"
+          },
+          {
+            "name": "Regular"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Lists",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.5.0",
+          "3.0.0"
+        ],
+        "examples": [
+          {
+            "name": "Bullets"
+          },
+          {
+            "name": "Numbers"
+          },
+          {
+            "name": "Checkmarks"
+          },
+          {
+            "name": "Link Lists"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Modal",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.4.0",
+          "5.1.0",
+          "4.2.0",
+          "3.4.0",
+          "3.3.0",
+          "3.2.0"
+        ]
+      }
+    },
+    {
+      "component": "Navbar",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "4.2.0",
+          "4.1.0",
+          "3.1.0"
+        ],
+        "examples": [
+          {
+            "name": "Blue"
+          },
+          {
+            "name": "White"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Pagination",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0"
+        ]
+      }
+    },
+    {
+      "component": "Panel",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "5.2.0",
+          "3.0.0"
+        ],
+        "examples": [
+          {
+            "name": "Always Open"
+          },
+          {
+            "name": "Collapse Expand"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Paragraph",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false
+      }
+    },
+    {
+      "component": "popover-tooltip",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.2.0",
+          "5.1.0",
+          "4.2.0"
+        ]
+      }
+    },
+    {
+      "component": "Price-box",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "5.4.0",
+          "5.3.0",
+          "5.2.0",
+          "4.2.0"
+        ],
+        "examples": [
+          {
+            "name": "Desktop"
+          },
+          {
+            "name": "Responsive"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Progress-bar",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "3.1.0"
+        ]
+      }
+    },
+    {
+      "component": "Radio-buttons",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "6.1.0",
+          "5.4.0",
+          "5.2.1",
+          "5.2.0",
+          "5.1.0",
+          "4.2.0",
+          "4.1.0",
+          "3.4.0"
+        ],
+        "examples": [
+          {
+            "name": "Styled Radio Buttons"
+          },
+          {
+            "name": "Button Group"
+          },
+          {
+            "name": "Radio Cards"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Shortcut",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.7.0",
+          "6.5.0",
+          "3.3.0"
+        ],
+        "examples": [
+          {
+            "name": "Alerting"
+          },
+          {
+            "name": "Navigational"
+          },
+          {
+            "name": "Landing page"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Slider",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.4.0",
+          "5.3.0"
+        ],
+        "examples": [
+          {
+            "name": "Value"
+          },
+          {
+            "name": "Intervall"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Spinner",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "5.3.0",
+          "5.2.2",
+          "5.2.0",
+          "5.1.0",
+          "4.1.0",
+          "4.0.0",
+          "3.5.0"
+        ],
+        "examples": [
+          {
+            "name": "Default"
+          },
+          {
+            "name": "Red"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Tables",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "7.0.0.",
+          "6.5.0",
+          "5.2.0",
+          "4.2.0",
+          "4.1.0",
+          "3.5.0",
+          "3.4.0",
+          "3.3.0"
+        ],
+        "examples": [
+          {
+            "name": "Present"
+          },
+          {
+            "name": "Comparative"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Tabs",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "6.3.0",
+          "6.5.0",
+          "5.2.0",
+          "4.2.0",
+          "3.4.0",
+          "3.1.0"
+        ],
+        "examples": [
+          {
+            "name": "Page Level Navigation"
+          },
+          {
+            "name": "In Page Navigation"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Tag",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "7.0.0"
+        ],
+        "examples": [
+          {
+            "name": "Default"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Timeline",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "6.4.0",
+          "6.3.0"
+        ]
+      }
+    },
+    {
+      "component": "Upload",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "6.2.0"
+        ]
+      }
+    },
+    {
+      "component": "Value-box",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "6.5.0",
+          "3.0.0"
+        ]
+      }
+    }
+  ]
+}

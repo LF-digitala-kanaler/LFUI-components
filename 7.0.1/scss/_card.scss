@@ -1,0 +1,103 @@
+@import "bootstrap/scss/_card.scss";
+
+.card-block {
+  background-color: $card-cap-bg;
+  padding: $card-block-padding;
+}
+
+/**
+ * 1. Bootstrap issue https://github.com/twbs/bootstrap/issues/22448
+ *    Related to card images which stretch in height due to flexbox in IE11
+ *    Card decks/groups have the same issue, but we can't apply the same rule as that breaks the flexbox row... so they remain broken for now :/
+ */
+.card {
+  margin-bottom: $card-spacer-y;
+  display: block; /* 1 */
+  min-height: 4rem;
+}
+
+/**
+ * Card images
+ */
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  max-width: 100%;
+  background-color: $card-cap-bg;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+}
+
+.card-img-top {
+  + .card-block {
+    border: solid $navy;
+    border-width: $border-width 0 0;
+  }
+}
+
+.card-img-bottom {
+  + .card-block {
+    border: solid $navy;
+    border-width: 0 0 $border-width;
+  }
+}
+
+.card-img-overlay {
+  width: 100%;
+}
+
+/**
+ * Card title
+ */
+
+.card-title {
+  margin-top: 0;
+}
+
+/**
+ * Card text
+ * 1. Make sure text lines never span to wide (readability)
+ */
+
+.card-text {
+  margin-bottom: $card-spacer-y;
+  max-width: $legible-width; /* 1 */
+}
+
+/**
+ * Header and footer
+ */
+
+.card-header {
+  @include header-block;
+
+  color: $navy;
+  margin-bottom: 0;
+}
+
+.card-footer {
+  padding: $card-footer-padding;
+  border: solid $body-bg;
+  border-width: $border-width 0 0;
+  box-shadow: none;
+}
+
+.card.card-text-float {
+  background-color: transparent;
+  position: relative;
+
+  .card-block {
+    position: relative;
+    bottom: 4rem;
+    margin: 0 1rem;
+    border-top: none;
+  }
+
+  .card-footer {
+    position: relative;
+    bottom: 4rem;
+    margin: 0 1rem;
+  }
+}
