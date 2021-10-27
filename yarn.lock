@@ -8093,10 +8093,6 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-"lfui-icons@https://github.com/LF-digitala-kanaler/LFUI-icons.git#v1.0.0":
-  version "1.0.0"
-  resolved "https://github.com/LF-digitala-kanaler/LFUI-icons.git#aeda5b136a95498884f346ee8baecde75cffa7c3"
-
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
