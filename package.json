@@ -1,6 +1,6 @@
 {
   "name": "lfui-components",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "4.3.1",
