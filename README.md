@@ -9,15 +9,15 @@ For information how to use LFUI 6.7.0 visit the old [lfui](https://github.com/LF
 
 To install lfui-components in your project, you will need to run the following command using npm:
 ```
-npm install https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.1
+npm install https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.2
 ```
 If you prefer Yarn, use the following command instead:
 ```
-yarn add https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.1
+yarn add https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.2
 ```
 
 
-The end of the command above is pointing towards a specific branch, in this case our latest release ```7.0.1-branch```. You can alter this number to point at the branch/release of your choice.
+The end of the command above is pointing towards a specific branch, in this case our latest release ```7.0.2-branch```. You can alter this number to point at the branch/release of your choice.
 
 ### Usage
 
