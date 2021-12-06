@@ -2,9 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - release/7.0.1
-      - release/6.6.0
-      - border-radius-test
+      - release/7.1.0
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
