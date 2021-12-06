@@ -2,7 +2,10 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - release/7.1.0
+    - release/7.1.0
+    - release/7.0.2
+    - release/7.0.1
+    - release/7.0.0
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
