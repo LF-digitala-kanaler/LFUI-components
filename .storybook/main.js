@@ -11,7 +11,7 @@ module.exports = {
   ],
 
   webpackFinal: async (config, { configType }) => {
-    config.output.publicPath = 'LFUI-components';
+    config.output.publicPath = './';
     config.module.rules.push(
       {
         test: /\.svg$/,
