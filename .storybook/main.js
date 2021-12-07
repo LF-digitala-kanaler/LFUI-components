@@ -3,7 +3,7 @@ const URL = process.env.SB_URL
 module.exports = {
 
   stories: ['../src/**/*.stories.[tj]s'],
-  staticDirs: ['../src'],
+  staticDirs: [{ from: '../src/icons', to: 'icons' }],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
