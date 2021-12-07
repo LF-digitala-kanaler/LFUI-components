@@ -1,8 +1,8 @@
 const path = require('path');
 module.exports = {
-
+  logLevel: 'debug',
   stories: ['../src/**/*.stories.[tj]s'],
-  staticDirs: [{ from: '../src/icons', to: '/static/icons:./static/icons' }],
+  staticDirs: [{ from: './src/icons/', to: './static/icons' }],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
@@ -11,7 +11,14 @@ module.exports = {
   ],
 
   webpackFinal: async (config, { configType }) => {
-    config.output.publicPath = './';
+    config.module.rules = config.module.rules.map(rule => {
+      if (rule.test && rule.test.toString().includes('svg')) {
+        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
+        return { ...rule, test: new RegExp(test) }
+      } else {
+        return rule
+      }
+    });
     config.module.rules.push(
       {
         test: /\.svg$/,
