@@ -9,16 +9,24 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-docs'
   ],
+  managerHead: (head, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      return (`
+        ${head}
+        <base href="/LFUI-components/">
+      `);
+    }
+  },
   webpackFinal: async (config, { configType }) => {
 
-    config.module.rules = config.module.rules.map(rule => {
-      if (rule.test && rule.test.toString().includes('svg')) {
-        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
-        return { ...rule, test: new RegExp(test) }
-      } else {
-        return rule
-      }
-    });
+    // config.module.rules = config.module.rules.map(rule => {
+    //   if (rule.test && rule.test.toString().includes('svg')) {
+    //     const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
+    //     return { ...rule, test: new RegExp(test) }
+    //   } else {
+    //     return rule
+    //   }
+    // });
 
     config.module.rules.push(
       {
@@ -27,7 +35,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]'
+              name: '[path][name].[ext]',
+
             },
           },
         ],
