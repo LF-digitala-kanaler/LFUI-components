@@ -10,12 +10,12 @@ module.exports = {
     '@storybook/addon-docs'
   ],
   managerHead: (head, { configType }) => {
-    if (configType === 'PRODUCTION') {
-      return (`
+
+    return (`
         ${head}
-        <base href="/LFUI-components/">
+        <base href="/">
       `);
-    }
+
   },
   webpackFinal: async (config, { configType }) => {
 
