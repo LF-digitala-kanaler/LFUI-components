@@ -1,4 +1,5 @@
 const path = require('path');
+const URL = process.env.SB_URL
 module.exports = {
 
   stories: ['../src/**/*.stories.[tj]s'],
@@ -9,14 +10,7 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-docs'
   ],
-  managerHead: (head, { configType }) => {
 
-    return (`
-        ${head}
-        <base href="/">
-      `);
-
-  },
   webpackFinal: async (config, { configType }) => {
 
     // config.module.rules = config.module.rules.map(rule => {
@@ -27,7 +21,9 @@ module.exports = {
     //     return rule
     //   }
     // });
-
+    if (URL) {
+      config.output.publicPath = URL
+    }
     config.module.rules.push(
       {
         test: /\.svg$/,
@@ -67,5 +63,11 @@ module.exports = {
 
     // Return the altered config
     return config;
-  }
+  },
+  managerWebpack: async (config) => {
+    if (URL) {
+      config.output.publicPath = URL
+    }
+    return config
+  },
 };
