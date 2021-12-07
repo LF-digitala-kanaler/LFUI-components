@@ -29,7 +29,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^5.1.12",
+    "copy-webpack-plugin": "^5.1.2",
     "corejs-typeahead": "^1.1.1",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
