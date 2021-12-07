@@ -118,6 +118,7 @@ typings/
 
 
 # Vscode settings
+.vscode
 .vscode/settings.json
 
 # Build timestamp
