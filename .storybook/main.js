@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
   logLevel: 'debug',
   stories: ['../src/**/*.stories.[tj]s'],
-  staticDirs: [{ from: './src/icons/', to: './static/icons' }],
+  staticDirs: [{ from: './src/icons/', to: '../static/icons' }],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
