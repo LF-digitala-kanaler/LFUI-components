@@ -62,8 +62,7 @@
     "build-lfui": "webpack --mode production && rimraf dist/lfui/icons && cp -r src/icons dist/lfui/icons",
     "release": "auto changelog && npm run version && auto release",
     "test": "jest --no-cache",
-    "test:update": "jest -u",
-    "copy:icons": "rimraf src/icons && cp -r node_modules/lfui-icons/dist/sprite src/icons"
+    "test:update": "jest -u"
   },
   "jest": {
     "transform": {
