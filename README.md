@@ -1,6 +1,6 @@
-# LFUI
+# LFUI-components
 
-LFUI is a HTML-, CSS- and JS framework built on top of Bootstrap to be used in Länsförsäkringar's different applications and websites. LFUI has restyled many of Bootstrap's native components as well as included new ones specific for Länsförsäkringar, along with other custom features and utilities.
+LFUI-components is a HTML-, CSS- and JS framework built on top of Bootstrap 4 to be used in Länsförsäkringar's different applications and websites. LFUI has restyled many of Bootstrap's native components as well as included new ones specific for Länsförsäkringar, along with other custom features and utilities.
 
 
 For information how to use LFUI 6.7.0 visit the old [lfui](https://github.com/LF-digitala-kanaler/LFUI) repository.
@@ -9,13 +9,12 @@ For information how to use LFUI 6.7.0 visit the old [lfui](https://github.com/LF
 
 To install lfui-components in your project, you will need to run the following command using npm:
 ```
-npm install https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.2
+npm install https://github.com/lf-digitala-kanaler/LFUI-components.git#release/{LATEST_RELEASE}
 ```
 If you prefer Yarn, use the following command instead:
 ```
-yarn add https://github.com/lf-digitala-kanaler/LFUI-components.git#release/7.0.2
+yarn add https://github.com/lf-digitala-kanaler/LFUI-components.git#release/{LATEST_RELEASE}
 ```
-
 
 The end of the command above is pointing towards a specific branch, in this case our latest release ```7.0.2-branch```. You can alter this number to point at the branch/release of your choice.
 
@@ -29,7 +28,7 @@ In the /dist folder you will find:
 
 These files are built/compiled from the project's source files and assets. They can be used as is. Simply add ```jQuery```, ```lf.js``` and ```lf.css``` to your document.
 
-## in your build
+## In your build
 
 Import LFUI.scss in the very beginning of your main SCSS file:
 
@@ -81,4 +80,72 @@ There hasen't been so many changes to the core components in this version but th
 * If you want the updated fonts follow the steps above to copy them over.
 * Now it's time for the time consuming part. We have a new icon system and all icons in your project needs to be updated. Head [here](https://github.com/LF-digitala-kanaler/LFUI-icons) and follow the guide 
 
-That should be it! 
+## Development 
+
+LFUI-components uses [Storybook](https://storybook.js.org/) for UI development and testing. Documentation for each componet will be done in [LFDS](https://lf-digitala-kanaler.github.io/) 
+
+### Install
+
+To install, clone this repo and run 
+
+```jsx
+yarn install
+```
+
+### Work in a branch
+ 
+ When contributing to LFUI-Components, your work should always be done in a branch off the current release development branch.
+
+
+To create a new branch:
+
+```jsx
+ git checkout -b {your-branch-name}
+ ```
+ 
+ #### Build and start the development server
+```jsx
+
+# Install the project's dependencies
+
+yarn install
+
+# To get your development server running and to start coding
+
+yarn start
+```
+
+This will start a development server where you can see any changes you are making to the components
+
+When you are done with your development make sure you update `componentsStatus.json` - changedInVersion for the component you have work on. 
+This will be visible in LFDS when you decide to update LFDS with a new LFUI-components version. 
+
+```jsx
+
+yarn build
+
+```
+
+### Create a pull request
+
+When you are finished with your work it's time to make a pull request. To do so commit your code to your working branch and push it. 
+
+```jsx
+ git add .
+ git commit -m "YOUR COMMIT MESSAGE HERE"
+ git push origin { YOUR_BRANCH_NAME }
+
+ ```
+### Document your changes 
+
+Finally Update Shipping list with your changes.  
+ 
+### Deploy
+
+When your pull request is merged a Github action will build your changes to Github pages and be available [here](https://lf-digitala-kanaler.github.io/LFUI-components/7.1.0/)
+
+Automatic release with Github Action is only active for the current release branch, you can change this in main.yml if you need to add another branch. 
+
+When the pull request is accepted and merged a Github action will automaticly creat a new release and update the version number. 
+
+### 6. Update LFUI in LFDS 
