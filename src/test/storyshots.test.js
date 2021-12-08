@@ -1,5 +1,7 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import 'regenerator-runtime/runtime'
+
 import { imageSnapshot } from '@storybook/addon-storyshots-puppeteer';
+import initStoryshots from '@storybook/addon-storyshots';
 
 const getMatchOptions = ({ context: { kind, story }, url }) => {
   return {
@@ -9,7 +11,7 @@ const getMatchOptions = ({ context: { kind, story }, url }) => {
 };
 
 const beforeScreenshot = async page => {
-  
+
   await page.evaluate(() => {
     document.querySelectorAll('animate').forEach(el => {
       el.setAttribute('repeatCount', 'indefinite');
@@ -33,15 +35,15 @@ const beforeScreenshot = async page => {
       -o-animation: none !important;
       animation: none !important;
     }`
-  
+
   });
   return new Promise(resolve =>
     setTimeout(() => {
       resolve();
     }, 600)
   );
-  
-  
+
+
 };
 
 
