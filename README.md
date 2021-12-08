@@ -84,6 +84,44 @@ There hasen't been so many changes to the core components in this version but th
 
 LFUI-components uses [Storybook](https://storybook.js.org/) for UI development and testing. Documentation for each componet will be done in [LFDS](https://lf-digitala-kanaler.github.io/) 
 
+The project is structured as such:
+
+```
+LFUI-components/
+├── .storybook/
+│    **Configuration for storybook**
+├── dist/
+    ├── docs/
+    │   └── **component examples that will be used in LFDS**
+    ├── lfui/
+    │   ├── lfui.css
+    │   ├── lfui.js
+    │   └── fonts/
+    │ 
+    └── public/
+        └── **generated storybook site that will be pubished on Github Pages**
+    └── src/
+        ├── data/
+        ├── docs/
+        │   ├── Alert/
+        │       ├── *.html ** html for component  **
+        │       │── *.js ** custom js for example will not be included in lfui.js  **
+        │       └── *.stories.js ** Storybook file  **
+        │       .... 
+        │   ├── index.js ** Export all js/css to dist/docs that's needed for the example to work in LFDS ** 
+        │   ├── icons/
+        │   │   └── **icons from lfui-icons**
+        │   ├── js/
+        │   │   └── components / 
+        │   │       **js for components**
+        │   ├── scss/
+        │   │   └── ** styles for components **
+        │   ├── src/
+        │   │   └── **styleguide styling, jquery, and assets**
+        │   └── index.js ** Export for lfui.js and lfui.css**
+
+```
+
 ### Install
 
 To install, clone this repo and run 
