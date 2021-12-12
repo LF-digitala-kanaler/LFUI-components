@@ -178,12 +178,14 @@ When you are finished with your work it's time to make a pull request. To do so 
 
 Finally Update Shipping list with your changes.  
  
-### Deploy
+### Deploy storybook site
 
 When your pull request is merged a Github action will build your changes to Github pages and be available [here](https://lf-digitala-kanaler.github.io/LFUI-components/7.1.0/)
 
 Automatic release with Github Action is only active for the current release branch, you can change this in main.yml if you need to add another branch. 
 
-When the pull request is accepted and merged a Github action will automaticly creat a new release and update the version number. 
+When the pull request is accepted and merged a Github action will automatically create a new release and update the version number. 
 
-### 6. Update LFUI in LFDS 
+### Create a Release 
+
+### Update LFUI in LFDS 
