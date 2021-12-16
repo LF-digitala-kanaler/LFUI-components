@@ -187,5 +187,20 @@ Automatic release with Github Action is only active for the current release bran
 When the pull request is accepted and merged a Github action will automatically create a new release and update the version number. 
 
 ### Create a Release 
+* Update shipping list with all noteworthy PRs
+* If there is any **breaking changes** make sure those are explained
+* Update `changedInVersion` in `componentsStatus.json` if you made changes to that component in this release. This information will be visible in LFDS later.
+* Update version number in package.json
+* Run `yarn build` commit and push your code
+* Head to Github and create a new draft release with
 
-### Update LFUI in LFDS 
+    **Tag version:** (ex. 7.0.0)  
+    **Release Title**: LFUI-components + number (ex. LFUI-components 7.0.0)
+
+* Create release notes and paste your shipping list here. This information will be visible in LFDS when we do a new deploy of it.
+* Create a new production branch and make it your **default branch** Settings -> Branches -> Default Branch
+* Lock the previous branch Settings -> Branches -> Protected Branches
+* Create a new shipping list 
+* Open the LFDS repository and upgrade LFUI-components dependency in package.json to the release you just created
+* Run `yarn build` and `yarn deploy` to deploy LFDS wiith the new LFUI-components version
+* If you have added new components now it's time to document those in LFDS if it's not done already. Visit [LFDS repository](https://github.com/LF-digitala-kanaler/LFDS) for more information how to do that
