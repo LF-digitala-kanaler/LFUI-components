@@ -98,16 +98,16 @@ LFUI-components/
     │   ├── lfui.js
     │   └── fonts/
     │ 
-    └── public/
-        └── **generated storybook site that will be pubished on Github Pages**
+    ├── public/
+    │   └── **generated storybook site that will be pubished on Github Pages**
     └── src/
         ├── data/
         ├── docs/
         │   ├── Alert/
-        │       ├── *.html ** html for component  **
-        │       │── *.js ** custom js for example will not be included in lfui.js  **
-        │       └── *.stories.js ** Storybook file  **
-        │       .... 
+        │   │   ├── *.html ** html for component  **
+        │   │   │── *.js ** custom js for example will not be included in lfui.js  **
+        │   │   └── *.stories.js ** Storybook file  **
+        │   │   .... 
         │   ├── index.js ** Export all js/css to dist/docs that's needed for the example to work in LFDS ** 
         │   ├── icons/
         │   │   └── **icons from lfui-icons**
