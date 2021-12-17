@@ -204,3 +204,8 @@ When the pull request is accepted and merged a Github action will automatically 
 * Open the LFDS repository and upgrade LFUI-components dependency in package.json to the release you just created
 * Run `yarn build` and `yarn deploy` to deploy LFDS wiith the new LFUI-components version
 * If you have added new components now it's time to document those in LFDS if it's not done already. Visit [LFDS repository](https://github.com/LF-digitala-kanaler/LFDS) for more information how to do that
+
+### Share the release 
+
+* Add LFUI-componets to Nexus (see internal documentation) 
+
