@@ -174,9 +174,17 @@ When you are finished with your work it's time to make a pull request. To do so 
  git push origin { YOUR_BRANCH_NAME }
 
  ```
+ 
+### Testing 
+
+We use the official Storybook plugin "Storyshots" as a visual regression test. Storyshots is a Jest Snapshot addon that automatically tests every single story.
+
+One thing to mention, is that our tests depend on having an instance of Storybook running. I recommend managing two terminals at the same time. In one terminal you run `yar start` , and in the other `yarn test` 
+
+
 ### Document your changes 
 
-Finally Update Shipping list with your changes.  
+Finally update Shipping list with your changes.  
  
 ### Deploy storybook site
 
