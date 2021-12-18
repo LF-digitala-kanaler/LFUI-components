@@ -80,7 +80,7 @@ There hasen't been so many changes to the core components in this version but th
 * If you want the updated fonts follow the steps above to copy them over.
 * Now it's time for the time consuming part. We have a new icon system and all icons in your project needs to be updated. Head [here](https://github.com/LF-digitala-kanaler/LFUI-icons) and follow the guide 
 
-## Development 
+# Development 
 
 LFUI-components uses [Storybook](https://storybook.js.org/) for UI development and testing. Documentation for each componet will be done in [LFDS](https://lf-digitala-kanaler.github.io/) 
 
