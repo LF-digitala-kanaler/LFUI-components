@@ -1,0 +1,16 @@
+{
+	"name": "@lansforsakringar/components",
+	"settings": {
+  },
+	"extensions": [
+		"github.copilot",
+		"esbenp.prettier-vscode",
+		"stylelint.vscode-stylelint"
+	],
+	"forwardPorts": [6006],
+	"postCreateCommand": "npm install",
+  "features": {
+    "git": "latest",
+    "homebrew": "latest"
+  }
+}
