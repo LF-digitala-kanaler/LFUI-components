@@ -1,5 +1,5 @@
 {
-  "name": "lfui-components",
+  "name": "@lansforsakringar/components",
   "version": "7.1.0",
   "license": "MIT",
   "dependencies": {
@@ -65,6 +65,11 @@
     "test": "jest --no-cache",
     "test:update": "jest -u"
   },
+  "main": "dist/lfui/lfui.js",
+  "style": "dist/lfui/lfui.css",
+  "files": [
+    "dist"
+  ],
   "jest": {
     "transform": {
       "^.+\\.stories\\.js?$": "@storybook/addon-storyshots/injectFileName",
