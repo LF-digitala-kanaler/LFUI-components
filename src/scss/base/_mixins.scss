@@ -277,7 +277,7 @@
   width: 100%;
   margin: 10px 0;
   padding: 0;
-  background: linear-gradient(to right, #005aa0 0%, #005aa0 50%, $track-color 50%);
+  background: linear-gradient(to right, #005aa0 0%, #005aa0 calc(1% * var(--progress, 0)), $track-color calc(1% * var(--progress, 0)));
 
   // input[type="range"] is one of those fun html-elements that render
   // completely differently in each browser, so we'll need completely separate
