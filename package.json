@@ -49,6 +49,7 @@
     "rimraf": "^3.0.2",
     "sass": "^1.32.13",
     "sass-loader": "^10.2.0",
+    "standard": "^16.0.4",
     "start-server-and-test": "^1.12.0",
     "style-loader": "^2.0.0",
     "stylelint": "^14.1.0",
@@ -64,6 +65,8 @@
     "test": "jest --no-cache",
     "test:update": "jest -u",
     "posttest": "npm run lint",
+    "lint": "npm run lint:scss && npm run lint:js",
+    "lint:js": "standard src/js",
     "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss"
   },
   "main": "dist/lfui/lfui.js",
@@ -71,6 +74,12 @@
   "files": [
     "dist"
   ],
+  "standard": {
+    "global": [
+      "$",
+      "jQuery"
+    ]
+  },
   "jest": {
     "transform": {
       "^.+\\.stories\\.js?$": "@storybook/addon-storyshots/injectFileName",
