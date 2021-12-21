@@ -1,7 +1,5 @@
-/* global jQuery */
-
-let hadKeyboardEvent = false;
-let isHandlingKeyboardThrottle;
+let hadKeyboardEvent = false
+let isHandlingKeyboardThrottle
 const keyboardModalityWhitelist = [
   'input:not([type])',
   'input[type=text]',
@@ -12,58 +10,58 @@ const keyboardModalityWhitelist = [
   'textarea',
   '[role=textbox]',
   '[supports-focus=key]'
-].join(',');
+].join(',')
 
 const matcher = (function () {
-  const el = document.body;
+  const el = document.body
 
   if (el.matchesSelector) {
-    return el.matchesSelector;
+    return el.matchesSelector
   }
   if (el.webkitMatchesSelector) {
-    return el.webkitMatchesSelector;
+    return el.webkitMatchesSelector
   }
   if (el.mozMatchesSelector) {
-    return el.mozMatchesSelector;
+    return el.mozMatchesSelector
   }
   if (el.msMatchesSelector) {
-    return el.msMatchesSelector;
+    return el.msMatchesSelector
   }
 
-  return false;
-}());
+  return false
+}())
 
-function focusTriggersKeyboardModality(el) {
-  let triggers = false;
+function focusTriggersKeyboardModality (el) {
+  let triggers = false
 
   if (matcher) {
     triggers = matcher.call(
       el,
       keyboardModalityWhitelist) && matcher.call(el, ':not([readonly])'
-    );
+    )
   }
 
-  return triggers;
+  return triggers
 }
 
 document.body.addEventListener('keydown', () => {
-  hadKeyboardEvent = true;
+  hadKeyboardEvent = true
 
   if (isHandlingKeyboardThrottle) {
-    clearTimeout(isHandlingKeyboardThrottle);
+    clearTimeout(isHandlingKeyboardThrottle)
   }
 
   isHandlingKeyboardThrottle = setTimeout(() => {
-    hadKeyboardEvent = false;
-  }, 100);
-}, true);
+    hadKeyboardEvent = false
+  }, 100)
+}, true)
 
 document.body.addEventListener('focus', e => {
   if (hadKeyboardEvent || focusTriggersKeyboardModality(e.target)) {
-    document.body.setAttribute('data-focus-source', 'key');
+    document.body.setAttribute('data-focus-source', 'key')
   }
-}, true);
+}, true)
 
 document.body.addEventListener('blur', () => {
-  document.body.removeAttribute('data-focus-source');
-}, true);
+  document.body.removeAttribute('data-focus-source')
+}, true)

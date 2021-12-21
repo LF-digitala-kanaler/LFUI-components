@@ -4,8 +4,8 @@
   },
 	"extensions": [
 		"github.copilot",
-		"esbenp.prettier-vscode",
-		"stylelint.vscode-stylelint"
+		"stylelint.vscode-stylelint",
+		"standard.vscode-standard"
 	],
 	"forwardPorts": [6006],
 	"postCreateCommand": "npm install",
