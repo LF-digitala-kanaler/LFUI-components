@@ -59,7 +59,7 @@ $datepicker-cell-height-big: 75px;
 }
 
 .datepicker > div {
-  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 8%);
 }
 
 .datepicker table {
@@ -314,7 +314,7 @@ $datepicker-cell-height-big: 75px;
   padding: 0;
   width: 100%;
   border: none;
-  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 8%);
 
   &::before {
     display: none;

@@ -214,7 +214,7 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
 .input-group-append > .btn.active {
   background: $white !important;
   border-color: $white !important;
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 10%);
   padding-bottom: $border-width;
   border-bottom: 0;
   z-index: 3;
@@ -224,7 +224,7 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
  * White option
  */
 
- .input-group-white {
+.input-group-white {
   .input-group-append,
   .input-group-prepend {
     span,

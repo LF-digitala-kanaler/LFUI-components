@@ -1,5 +1,7 @@
 // Variables
 
+@use "sass:math";
+
 /**
  * This file is an edited "copy" of Bootstrap's _variables.scss, hence it includes every variable related to the core
  * Bootstrap framework. This file includes LFUI's changes to those variables. It also includes new variables related to
@@ -163,10 +165,10 @@ $enable-print-styles:       true;
 $spacer:   1rem !default;
 $spacers: (
   0: 0,
-  '025': ($spacer * 0.25),
-  '03': ($spacer * 0.3),
-  '05': ($spacer * 0.5),
-  '08': ($spacer * 0.8),
+  "025": ($spacer * 0.25),
+  "03": ($spacer * 0.3),
+  "05": ($spacer * 0.5),
+  "08": ($spacer * 0.8),
   1: $spacer,
   15: ($spacer * 1.5),
   2: ($spacer * 2),
@@ -223,7 +225,7 @@ $grid-breakpoints: (
   xl: 1200px
 ) !default;
 
-@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
 // Grid containers
@@ -238,7 +240,7 @@ $container-max-widths: (
   xxl: 1662px
 ) !default;
 
-@include _assert-ascending($container-max-widths, '$container-max-widths');
+@include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Grid columns
 //
@@ -253,7 +255,7 @@ $grid-gutter-tight: 1.25rem !default; // LFUI-specific
 //
 // Define common padding and border radius sizes and more.
 
-$line-height-lg:         (4 / 3) !default;
+$line-height-lg:         math.div(4, 3) !default;
 $line-height-sm:         1.5 !default;
 
 $border-width: 2px;
@@ -279,9 +281,9 @@ $transition-collapse:    height 0.35s ease !default;
 $font-family-sans-serif: "Intro Cond", Arial, "Helvetica Neue", sans-serif;
 $font-family-serif: "LF Rubrik", Georgia, "Times New Roman", Times, serif;
 $font-family-base: Arial, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
-$font-display: swap !default; 
+$font-display: swap !default;
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root-value: 16; // LFUI-specific
 
@@ -301,23 +303,23 @@ $font-weight-base: $font-weight-normal !default;
 
 $line-height-base: 1.45;
 
-$h1-font-size: #{40 / $font-size-root-value}rem;
-$h2-font-size: #{29 / $font-size-root-value}rem;
-$h3-font-size: #{23 / $font-size-root-value}rem;
-$h4-font-size: #{20 / $font-size-root-value}rem;
-$h5-font-size: #{18 / $font-size-root-value}rem;
-$h6-font-size: #{12 / $font-size-root-value}rem;
+$h1-font-size: #{math.div(40, $font-size-root-value)}rem;
+$h2-font-size: #{math.div(29, $font-size-root-value)}rem;
+$h3-font-size: #{math.div(23, $font-size-root-value)}rem;
+$h4-font-size: #{math.div(20, $font-size-root-value)}rem;
+$h5-font-size: #{math.div(18, $font-size-root-value)}rem;
+$h6-font-size: #{math.div(12, $font-size-root-value)}rem;
 
-$headings-margin-bottom: ($spacer / 2) !default;
+$headings-margin-bottom: math.div($spacer, 2) !default;
 $headings-font-family: $font-family-sans-serif;
 $headings-font-weight: bold;
 $headings-line-height:   1.1 !default;
 $headings-color: $navy;
 
-$display1-size: #{60 / $font-size-root-value}rem;
-$display2-size: #{50 / $font-size-root-value}rem;
-$display3-size: #{40 / $font-size-root-value}rem;
-$display4-size: #{36 / $font-size-root-value}rem;
+$display1-size: #{math.div(60, $font-size-root-value)}rem;
+$display2-size: #{math.div(50, $font-size-root-value)}rem;
+$display3-size: #{math.div(40, $font-size-root-value)}rem;
+$display4-size: #{math.div(36, $font-size-root-value)}rem;
 
 $display1-weight: normal;
 $display2-weight: normal;
@@ -325,7 +327,7 @@ $display3-weight: normal;
 $display4-weight: normal;
 $display-line-height: 1;
 
-$lead-font-size: #{22 / $font-size-root-value}rem;
+$lead-font-size: #{math.div(22, $font-size-root-value)}rem;
 $lead-font-weight: normal;
 
 $small-font-size: 80% !default;
@@ -342,7 +344,7 @@ $mark-padding: 0.2em !default;
 
 $dt-font-weight: bold !default;
 
-$kbd-box-shadow:         inset 0 -0.1rem 0 rgba(0, 0, 0, 0.25) !default;
+$kbd-box-shadow:         inset 0 -0.1rem 0 rgba(0, 0, 0, 25%) !default;
 $nested-kbd-font-weight: bold !default;
 
 $list-inline-padding: 5px !default;
@@ -399,7 +401,7 @@ $input-btn-focus-box-shadow:  none;
 
 $btn-font-weight: bold;
 $btn-box-shadow: none;
-$btn-focus-box-shadow:  0 0 0 rgba(0, 0, 0, 0.1);  // Focus state not working as it should with box-shadow set to none in Safari that's why we use such a strange value.
+$btn-focus-box-shadow:  0 0 0 rgba(0, 0, 0, 10%);  // Focus state not working as it should with box-shadow set to none in Safari that's why we use such a strange value.
 $btn-active-box-shadow: none;
 
 $btn-link-disabled-color: $gray-600 !default;
@@ -474,7 +476,7 @@ $input-border-radius-sm:         $border-radius-sm !default;
 
 $input-focus-bg: $input-bg;
 $input-focus-border-color: $blue;
-$input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 0.6) !default;
+$input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%) !default;
 $input-focus-color: $body-color;
 
 $input-placeholder-color:        #999 !default;
@@ -536,7 +538,7 @@ $custom-control-spacer-y: 0.625rem;
 $custom-control-indicator-size: 1.13rem;
 $custom-control-indicator-bg: $white;
 $custom-control-indicator-bg-size: 70% 70%;
-$custom-control-indicator-box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1) !default;
+$custom-control-indicator-box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 10%) !default;
 
 $custom-control-indicator-disabled-bg: $white;
 $custom-control-description-disabled-color: #767676;
@@ -553,11 +555,11 @@ $custom-control-indicator-active-bg: $white;
 $custom-control-indicator-active-box-shadow: none !default;
 
 $custom-checkbox-indicator-border-radius: $border-radius !default;
-$custom-checkbox-indicator-icon-checked: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==) !default;
+$custom-checkbox-indicator-icon-checked: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==") !default;
 
 $custom-checkbox-indeterminate-bg: transparent;
 $custom-checkbox-indeterminate-indicator-color: $blue !default;
-$custom-checkbox-indeterminate-icon: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDEwIDMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+TGluZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZyBpZD0iQ3VzdG9tLWZvcm1zIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj4gICAgICAgIDxnIGlkPSJDdXN0b20tZm9ybS9DaGVja2JveC9BZGQtY2hlY2tib3gvRGVmYXVsdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQuMDAwMDAwLCAtOC4wMDAwMDApIiBzdHJva2U9IiMwMDVBQTAiIHN0cm9rZS13aWR0aD0iMiI+ICAgICAgICAgICAgPHBhdGggZD0iTTUsOS41IEwxMyw5LjUiIGlkPSJMaW5lIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=) !default;
+$custom-checkbox-indeterminate-icon: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDEwIDMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+TGluZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZyBpZD0iQ3VzdG9tLWZvcm1zIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj4gICAgICAgIDxnIGlkPSJDdXN0b20tZm9ybS9DaGVja2JveC9BZGQtY2hlY2tib3gvRGVmYXVsdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQuMDAwMDAwLCAtOC4wMDAwMDApIiBzdHJva2U9IiMwMDVBQTAiIHN0cm9rZS13aWR0aD0iMiI+ICAgICAgICAgICAgPHBhdGggZD0iTTUsOS41IEwxMyw5LjUiIGlkPSJMaW5lIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=") !default;
 $custom-checkbox-indeterminate-box-shadow: none !default;
 
 $custom-radio-indicator-border-radius: 50% !default;
@@ -580,7 +582,7 @@ $custom-select-border-color:  $input-border-color !default;
 $custom-select-border-radius: $border-radius !default;
 
 $custom-select-focus-border-color: $input-focus-border-color;
-$custom-select-focus-box-shadow:   inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5) !default;
+$custom-select-focus-box-shadow:   inset 0 1px 2px rgba(0, 0, 0, 7.5%), 0 0 5px rgba(81, 167, 232, 50%) !default;
 
 $custom-select-font-size-sm:  75% !default;
 $custom-select-height-sm: $input-height-sm !default;
@@ -597,7 +599,7 @@ $custom-file-bg: $input-bg;
 $custom-file-border-width:  $border-width !default;
 $custom-file-border-color:  #ddd !default;
 $custom-file-border-radius: $border-radius !default;
-$custom-file-box-shadow:    inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05) !default;
+$custom-file-box-shadow:    inset 0 0.2rem 0.4rem rgba(0, 0, 0, 5%) !default;
 $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg: transparent;
 $custom-file-text: (
@@ -630,7 +632,7 @@ $dropdown-bg:                    $white !default;
 $dropdown-border-color: $blue;
 $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
-$dropdown-box-shadow:            0 0.5rem 1rem rgba(0, 0, 0, 0.175) !default;
+$dropdown-box-shadow:            0 0.5rem 1rem rgba(0, 0, 0, 17.5%) !default;
 
 $dropdown-link-color: $gray-900 !default;
 $dropdown-link-hover-color:      darken($gray-900, 5%) !default;
@@ -690,7 +692,7 @@ $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height:                   $navbar-brand-font-size * $line-height-base !default;
 $navbar-brand-height:               ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
-$navbar-brand-padding-y:            ($navbar-brand-height - $nav-link-height) / 2 !default;
+$navbar-brand-padding-y:            math.div(($navbar-brand-height - $nav-link-height), 2) !default;
 
 $navbar-height: 3.75rem; // LFUI-specific
 $navbar-stacked-height: 3.375rem; // LFUI-specific
@@ -711,19 +713,19 @@ $navbar-toggler-border-radius:       $btn-border-radius !default;
 $navbar-toggler-padding-x:           0.75rem !default;
 $navbar-toggler-padding-y:           0.5rem !default;
 
-$navbar-dark-color:                 rgba(255, 255, 255, 0.5) !default;
-$navbar-dark-hover-color:           rgba(255, 255, 255, 0.75) !default;
-$navbar-dark-active-color:          rgba(255, 255, 255, 1) !default;
-$navbar-dark-disabled-color:        rgba(255, 255, 255, 0.25) !default;
+$navbar-dark-color:                 rgba(255, 255, 255, 50%) !default;
+$navbar-dark-hover-color:           rgba(255, 255, 255, 75%) !default;
+$navbar-dark-active-color:          rgba(255, 255, 255, 100%) !default;
+$navbar-dark-disabled-color:        rgba(255, 255, 255, 25%) !default;
 $navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !default;
-$navbar-dark-toggler-border-color:        rgba(255, 255, 255, 0.1) !default;
+$navbar-dark-toggler-border-color:        rgba(255, 255, 255, 10%) !default;
 
 $navbar-light-color: $link-color;
 $navbar-light-hover-color: $link-hover-color;
-$navbar-light-active-color:         rgba(0, 0, 0, 0.9) !default;
-$navbar-light-disabled-color:       rgba(0, 0, 0, 0.3) !default;
+$navbar-light-active-color:         rgba(0, 0, 0, 90%) !default;
+$navbar-light-disabled-color:       rgba(0, 0, 0, 30%) !default;
 $navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !default;
-$navbar-light-toggler-border-color:       rgba(0, 0, 0, 0.1) !default;
+$navbar-light-toggler-border-color:       rgba(0, 0, 0, 10%) !default;
 
 // Pagination
 
@@ -778,7 +780,7 @@ $card-spacer-y: 1rem;
 $card-spacer-x:            1.25rem !default;
 $card-border-width: 0;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        rgba(0, 0, 0, 0.125) !default;
+$card-border-color:        rgba(0, 0, 0, 12.5%) !default;
 $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg: $white;
 $card-bg:                  $white !default;
@@ -788,7 +790,7 @@ $card-footer-padding: 1.25rem 1.25rem 1.5rem; // LFUI-specific
 
 $card-img-overlay-padding: 1.25rem !default;
 
-$card-group-margin:                 ($grid-gutter-width / 2) !default;
+$card-group-margin:        math.div($grid-gutter-width, 2) !default;
 $card-deck-margin:         0.625rem !default;
 
 $card-columns-count:        3 !default;
@@ -820,8 +822,8 @@ $popover-inner-padding:               1px !default;
 $popover-bg: $white;
 $popover-max-width: 300px;
 $popover-border-width: 0;
-$popover-border-color:                rgba(0, 0, 0, 0.2) !default;
-$popover-box-shadow:                  0 5px 10px rgba(0, 0, 0, 0.2) !default;
+$popover-border-color:                rgba(0, 0, 0, 20%) !default;
+$popover-box-shadow:                  0 5px 10px rgba(0, 0, 0, 20%) !default;
 
 $popover-title-color: $gray;
 
@@ -873,10 +875,10 @@ $modal-dialog-margin-y-sm-up: 30px !default;
 $modal-title-line-height: 1.3;
 
 $modal-content-bg: $white;
-$modal-content-border-color:     rgba(0, 0, 0, 0.2) !default;
+$modal-content-border-color:     rgba(0, 0, 0, 20%) !default;
 $modal-content-border-width:     $border-width !default;
-$modal-content-box-shadow-xs:    0 3px 9px rgba(0, 0, 0, 0.5) !default;
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba(0, 0, 0, 0.5) !default;
+$modal-content-box-shadow-xs:    0 3px 9px rgba(0, 0, 0, 50%) !default;
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba(0, 0, 0, 50%) !default;
 
 $modal-backdrop-bg: #000;
 $modal-backdrop-opacity: 0.5;
@@ -942,7 +944,7 @@ $progress-height: 0.625rem;
 $progress-font-size:            0.75rem !default;
 $progress-bg: #d9d9d9;
 $progress-border-radius:      $border-radius !default;
-$progress-box-shadow:         inset 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1) !default;
+$progress-box-shadow:         inset 0 0.1rem 0.1rem rgba(0, 0, 0, 10%) !default;
 $progress-bar-color: $login-logout-blue;
 $progress-bar-bg:               theme-color("primary") !default;
 $progress-bar-animation-timing: 1s linear infinite !default;
@@ -987,7 +989,7 @@ $thumbnail-bg:                $body-bg !default;
 $thumbnail-border-width:      $border-width !default;
 $thumbnail-border-color:      #ddd !default;
 $thumbnail-border-radius:     $border-radius !default;
-$thumbnail-box-shadow:        0 1px 2px rgba(0, 0, 0, 0.075) !default;
+$thumbnail-box-shadow:        0 1px 2px rgba(0, 0, 0, 7.5%) !default;
 $thumbnail-transition:        all 0.2s ease-in-out !default;
 
 // Figures

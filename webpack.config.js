@@ -35,17 +35,11 @@ module.exports = {
   },
   plugins: [
     // copy html files used in LFDS to show examples
-    new CleanWebpackPlugin(),
-    // new StylelintPlugin({
-    //   configFile: path.resolve(__dirname, 'stylelint.config.js'),
-    //   context: path.resolve(__dirname, 'src/scss/'),
-    //   files: '*.scss',
-    // }),
     new CopyPlugin([
       {
         from: 'src/docs/',
         to: 'docs/html/',
-        ignore: ['*.js'] // ignore stories 
+        ignore: ['*.js'] // ignore stories
       },
       {
         from: 'src/data/componentsStatus.json',

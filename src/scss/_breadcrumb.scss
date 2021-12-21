@@ -20,7 +20,7 @@
 }
 
 .breadcrumb-item::after {
-  content: '';
+  content: "";
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS4zNTQgMi42NDZMNi43MDcgOGwtNS4zNTMgNS4zNTQtLjcwOC0uNzA4TDUuMjkzIDggLjY0NiAzLjM1NHoiIGZpbGw9IiM3NDc1NzgiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==");
   background-repeat: no-repeat;
   position: relative;

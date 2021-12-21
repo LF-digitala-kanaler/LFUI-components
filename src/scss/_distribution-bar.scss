@@ -54,7 +54,7 @@ $tooltip-distance: 10px;
       border-bottom: $triangle-size solid $tooltip-background-color;
       border-left: $triangle-size solid transparent;
       border-right: $triangle-size solid transparent;
-      content: '';
+      content: "";
       height: 0;
       transform:
         translateX(-50%)
@@ -75,7 +75,7 @@ $tooltip-distance: 10px;
       transform: translate3d(-50%, 0, 0);
       white-space: nowrap;
       z-index: 1;
-      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 20%);
     }
 
     &:hover,
@@ -308,7 +308,7 @@ $tooltip-distance: 10px;
         border-left: $triangle-size solid transparent;
         border-right: $triangle-size solid transparent;
         z-index: 2;
-        content: '';
+        content: "";
         height: 0;
         width: 0;
         transform:
@@ -328,7 +328,7 @@ $tooltip-distance: 10px;
         transform: translate3d(-50%, 0, 0);
         white-space: nowrap;
         z-index: 1;
-        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 20%);
       }
     }
   }

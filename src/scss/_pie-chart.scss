@@ -1,4 +1,3 @@
-
 /**
  * Pie chart
  * Currently only supporing a single value
@@ -49,9 +48,7 @@
 .pie-line-axis {
   transition: $pie-chart-transition;
   transition-property: transform;
-  -ms-transform-origin: left center; /* IE 9 */
-  -moz-transform-origin: 50% 50% !important;
-  -webkit-transform-origin: center; /* Chrome, Safari, Opera */
+  transform-origin: center;
 }
 
 .pie-title {
