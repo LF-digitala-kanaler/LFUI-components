@@ -17,7 +17,7 @@
     left: 50%;
     position: absolute;
     pointer-events: none;
-    content: '';
+    content: "";
     z-index: -1;
     width: 40px;
     height: 40px;
@@ -42,13 +42,13 @@
 @keyframes ripple-in {
   0% {
     opacity: 0;
-    background-color: rgba(186, 218, 243, 0);
+    background-color: rgba(186, 218, 243, 0%);
     transform: scale(1) translate(-50%, -50%);
   }
 
   50% {
     opacity: 1;
-    background-color: rgba(186, 218, 243, 0.5);
+    background-color: rgba(186, 218, 243, 50%);
     transform: scale(1) translate(-50%, -50%);
   }
 
@@ -67,7 +67,7 @@
 @keyframes ripple-out {
   0% {
     opacity: 1;
-    background-color: rgba(186, 218, 243, 0.8);
+    background-color: rgba(186, 218, 243, 80%);
     transform: scale(1) translate(-50%, -50%);
   }
 

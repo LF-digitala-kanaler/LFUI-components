@@ -15,7 +15,7 @@
 
   &:focus + .upload-label,
   &.has-focus + .upload-label { // Firefox completely ignores the input[type="file"]:focus so we have to fix the focus state with js
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 10%);
   }
 }
 
@@ -90,7 +90,7 @@
   height: calc(100% - 2px);
 
   &::before {
-    content: '';
+    content: "";
     width: 3px;
     height: calc(100% + 3px);
     position: absolute;

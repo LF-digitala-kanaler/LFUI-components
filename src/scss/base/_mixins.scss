@@ -3,7 +3,8 @@
  */
 // data:image/svg+xml; charset=utf-8,
 @mixin glyph($width, $height, $color, $vector) {
-  // We need to remove the # in a color definition, to be able to correctly escape color definitions in inline svg:s
+  // We need to remove the # in a color definition, to be able to correctly
+  // escape color definitions in inline svg:s
   background-image: url('<svg fill="#{$color}" viewBox="0 0 #{$width} #{$height}" xmlns="http://www.w3.org/2000/svg">#{$vector}</svg>');
   background-repeat: no-repeat;
   width: $width + 0 + px;
@@ -42,8 +43,8 @@
   @include glyph(16, 16, $color, '<polygon id="Page-1" points="7.414 0.00012 4.414 3.00012 1.414 0.00012 0 1.41412 2.999 4.41412 0 7.41412 1.414 8.82812 4.414 5.82812 7.414 8.82812 8.828 7.41412 5.828 4.41412 8.828 1.41412"></polygon>');
 }
 
-// To ensure proper crispiness we need all a mixin for each arrow size and direction,
-// Cause here at LFUI, we value crispiness
+// To ensure proper crispiness we need all a mixin for each arrow size and
+// direction. Cause here at LFUI, we value crispiness
 
 @mixin btn-arrow-standard-right($color) {
   @include glyph(28, 16, $color, '<g id="Group-6" transform="translate(0.000000, 1.000000)" fill-rule="nonzero"><polygon id="Line-Copy" points="0 8 25 8 25 6 0 6"></polygon><polygon id="Line" points="18.9890629 12.3066139 20.4032764 13.7208275 27.1207909 7.00331307 20.4032764 0.285798645 18.9890629 1.70001221 24.2923637 7.00331307"></polygon></g>');
@@ -79,7 +80,7 @@
   text-decoration: none;
   border: 0;
   padding: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%) repeat-x 0 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentColor 50%) repeat-x 0 100%;
   background-size: 2px 2px;
 }
 
@@ -92,12 +93,12 @@
 @mixin link-hover() {
   color: $link-hover-color;
   text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentColor 50%);
 }
 
 @mixin link-active() {
   color: #02234a;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentColor 50%);
 }
 
 @mixin link() {
@@ -272,14 +273,15 @@
 // Slider
 
 @mixin lf-slider($background-color: $white, $track-color: #d9d9d9) {
-  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   margin: 10px 0;
   padding: 0;
-  background: -webkit-linear-gradient(left, #005aa0 0%, #005aa0 50%, $track-color 50%);
+  background: linear-gradient(to right, #005aa0 0%, #005aa0 50%, $track-color 50%);
 
-  // input[type="range"] is one of those fun html-elements that render completely differently in each browser,
-  // so we'll need completely separate rules for each browser.
+  // input[type="range"] is one of those fun html-elements that render
+  // completely differently in each browser, so we'll need completely separate
+  // rules for each browser.
   // Webkit
   // Track
   &::-webkit-slider-runnable-track {
@@ -475,7 +477,7 @@
     }
 
     &::before {
-      border-color: rgba(238, 0, 0, 0);
+      border-color: rgba(238, 0, 0, 0%);
       border-top-color: $border-color;
       border-width: 8px;
       border-top-width: 13px;
@@ -501,7 +503,7 @@
     }
 
     &::after {
-      border-color: rgba(251, 251, 251, 0);
+      border-color: rgba(251, 251, 251, 0%);
       border-bottom-color: $arrow-color;
       border-width: 7px;
       border-bottom-width: 12px;
@@ -509,7 +511,7 @@
     }
 
     &::before {
-      border-color: rgba(238, 238, 238, 0);
+      border-color: rgba(238, 238, 238, 0%);
       border-bottom-color: $border-color;
       border-width: 8px;
       border-bottom-width: 13px;

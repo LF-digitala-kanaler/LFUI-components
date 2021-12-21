@@ -5,12 +5,11 @@ $tag-background-info: $lf-info;
 $tag-background-danger: $lf-danger;
 
 .tag {
-
   @include font-smoothing;
   @include reset-button; // if button is used
   @include reset-link;
 
-  border-radius: $tag-radius; 
+  border-radius: $tag-radius;
   background-color: $tag-background;
   color: $tag-color;
   display: inline-block;
@@ -20,8 +19,9 @@ $tag-background-danger: $lf-danger;
   &:hover,
   &:focus {
     color: $tag-color;
+
     svg {
-      fill: darken($tag-color, 15%)
+      fill: darken($tag-color, 15%);
     }
   }
 
@@ -32,11 +32,13 @@ $tag-background-danger: $lf-danger;
     &:hover,
     &:focus {
       color: $blue;
+
       svg {
-        fill: darken($blue, 15%)
+        fill: darken($blue, 15%);
       }
     }
   }
+
   &.tag-bg-danger {
     background-color: $tag-background-danger;
     color: $wine;
@@ -44,27 +46,26 @@ $tag-background-danger: $lf-danger;
     &:hover,
     &:focus {
       color: $wine;
+
       svg {
-        fill: darken($wine, 15%)
+        fill: darken($wine, 15%);
       }
     }
   }
-  
 }
 
 .tag-dismissable {
   @include reset-button;
+
   margin-left: 0.375rem;
   position: absolute;
   top: 8px;
   right: $spacer;
   color: inherit;
-  
-  
+
+
   svg {
     fill: currentColor;
     transition: fill 100ms ease;
   }
-
-  
 }

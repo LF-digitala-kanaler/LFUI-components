@@ -99,7 +99,7 @@ h6,
 }
 
 // not documentet in lfds
-.payoff-alternative { 
+.payoff-alternative {
   color: $blue;
 }
 
@@ -155,7 +155,7 @@ ul:not(.list-unstyled):not(.list-inline):not(.breadcrumb):not(.reset-list).ul-ch
     padding-bottom: 3px;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: -33px;
       top: -3px;
@@ -231,7 +231,7 @@ ol:not(.list-unstyled):not(.list-inline):not(.breadcrumb):not(.reset-list) {
   & > li {
     &::before {
       counter-increment: li;
-      content: counter(li, decimal) '.';
+      content: counter(li, decimal) ".";
       position: absolute;
       left: 0;
       width: 1.4rem;
@@ -242,12 +242,12 @@ ol:not(.list-unstyled):not(.list-inline):not(.breadcrumb):not(.reset-list) {
 
     & li {
       &::before {
-        content: counter(li, upper-latin) '.';
+        content: counter(li, upper-latin) ".";
       }
 
       & li {
         &::before {
-          content: counter(li, lower-latin) '.';
+          content: counter(li, lower-latin) ".";
           color: $blue;
         }
 

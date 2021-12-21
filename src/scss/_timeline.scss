@@ -22,7 +22,7 @@ $timeline-icon-y-large: 27px;
   margin-bottom: 0;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 2px;
     height: calc(100% - (#{$timeline-icon-size} + #{$timeline-icon-size} * 2));
@@ -110,11 +110,11 @@ $timeline-icon-y-large: 27px;
   transition: background-color 40ms linear, margin 300ms linear;
 
   &.is-open {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 15%);
     margin: 16px 0;
 
     &::after {
-      content: '';
+      content: "";
       width: 100%;
     }
   }

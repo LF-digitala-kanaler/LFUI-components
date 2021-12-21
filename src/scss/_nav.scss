@@ -37,7 +37,7 @@
     background-image:
       linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0%) 50%,
         currentColor 50%
       );
   }
@@ -69,7 +69,7 @@
   &:focus,
   &:active {
     position: relative;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 3%);
     background-image: none;
     border: solid $nav-tabs-border-color;
     border-width: 0 0 $nav-tabs-border-width;
@@ -107,7 +107,7 @@
     &.active:hover,
     &.active:focus,
     &.active:active {
-      background: rgba(0, 0, 0, 0.03);
+      background: rgba(0, 0, 0, 3%);
       border-bottom: 2px solid transparent;
       color: $nav-link-disabled-color;
     }
@@ -180,10 +180,8 @@
 }
 
 .nav-two-col {
-  -moz-column-count: 2;
-  -moz-column-gap: 1rem;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 1rem;
+  column-count: 2;
+  column-gap: 1rem;
   column-count: 2;
   column-gap: 1rem;
 

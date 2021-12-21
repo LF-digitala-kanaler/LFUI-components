@@ -81,7 +81,7 @@
  * modifier to remove bluee line and add baackground color
  */
 
- .collapse-simple {
+.collapse-simple {
   &[aria-expanded="true"] {
     @include header-block-border($body-bg);
 

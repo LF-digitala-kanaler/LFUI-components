@@ -1,9 +1,27 @@
 {
   "extends": "stylelint-config-standard",
+  "customSyntax": "postcss-scss",
   "rules": {
     "at-rule-no-unknown": null,
     "no-descending-specificity": null,
-    value-keyword-case: null,
-    no-duplicate-selectors: null
+    "value-keyword-case": null,
+    "no-duplicate-selectors": null,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "transform",
+          "backface-visibility"
+        ]
+      }
+    ],
+    "color-function-notation": "legacy",
+    "max-line-length": [
+      80,
+      {
+        "ignore": ["comments"],
+        "ignorePattern": "/((^\\$|@mixin)|(glyph|url|gradient)\\()/"
+      }
+    ]
   }
 }

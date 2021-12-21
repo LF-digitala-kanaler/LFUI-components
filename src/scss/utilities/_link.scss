@@ -144,7 +144,7 @@
  * If you want a link with an icon
  */
 
- .icon-link-text-underline {
+.icon-link-text-underline {
   text-decoration: underline;
   text-underline-position: under;
 }
@@ -158,7 +158,7 @@
 .icon-link:hover,
 .icon-link:focus {
   > .icon-link-text {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, currentColor 50%) repeat-x 0 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentColor 50%) repeat-x 0 100%;
     background-size: 2px 2px;
   }
 }
