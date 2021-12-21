@@ -5,11 +5,6 @@
 @import "./base/mixins";
 
 /**
- * Only used for Docs, let us switch background in storybook
- */
-$body-bg:transparent;
-
-/**
  * Have Bootstrap fill in all the blanks
  */
 
@@ -22,6 +17,90 @@ $body-bg:transparent;
 
 @import "bootstrap/scss/_reboot.scss";
 
+// Reset and dependencies
+@import "print";
+
+// Core CSS
+@import "type";
+@import "images";
+@import "code";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+
+// Components
+@import "alert";
+@import "animations";
+@import "transitions";
+@import "avatar";
+@import "breadcrumb";
+@import "button-group";
+@import "card";
+@import "close";
+@import "custom-forms";
+@import "checkmark";
+@import "distribution-bar";
+@import "dropdown";
+@import "icon";
+@import "input-group";
+@import "media";
+@import "nav";
+@import "navbar";
+@import "pagination";
+@import "patterns";
+@import "pie-chart";
+@import "price-box";
+@import "progress";
+@import "shortcut";
+@import "spinner";
+@import "slider";
+@import "badge";
+@import "value-box";
+@import "footer";
+@import "header";
+@import "timeline";
+@import "chart";
+@import "tag";
+
+// Components w/ JavaScript
+@import "callout";
+@import "collapse";
+@import "focus";
+@import "modal";
+@import "popover";
+@import "popover-tooltip";
+@import "datepicker";
+@import "upload";
+
+// Utility classes
+
+@import "./utilities/background";
+@import "./utilities/border";
+@import "./utilities/cursor";
+@import "./utilities/flex";
+@import "./utilities/visibility";
+@import "./utilities/layout";
+@import "./utilities/legend";
+@import "./utilities/link";
+@import "./utilities/position";
+@import "./utilities/reset";
+@import "./utilities/selection";
+@import "./utilities/spacing";
+@import "./utilities/text";
+
+/**
+ * Bootstrap utilities
+ */
+
+@import "bootstrap/scss/_utilities.scss";
+
+/**
+ * Only used for Docs, let us switch background in storybook
+ */
+
+$body-bg:transparent;
+
 a {
   @include link;
 }
@@ -29,9 +108,9 @@ a {
 $link-decoration: none;
 
 /**
- * 1. Most waypoint (when-in-view) js libraries requires `body` to be relative.
- * 2. Force scrollbars to prevent page jumping when content height is altered.
- */
+* 1. Most waypoint (when-in-view) js libraries requires `body` to be relative.
+* 2. Force scrollbars to prevent page jumping when content height is altered.
+*/
 
 html {
   position: relative; /* 1 */
@@ -44,8 +123,8 @@ body {
 }
 
 /**
- * Remove the border-radius in Chrome 62+ on macOS.
- **/
+* Remove the border-radius in Chrome 62+ on macOS.
+**/
 
 button,
 [type="button"],
@@ -55,11 +134,11 @@ button,
 }
 
 /**
- * Link styles
- *
- * Inspired from:
- * medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
- */
+* Link styles
+*
+* Inspired from:
+* medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
+*/
 
 a {
   @include link;
@@ -70,8 +149,8 @@ a {
 }
 
 /**
- * Love-hate
- */
+* Love-hate
+*/
 
 img {
   max-width: 100%;
@@ -141,8 +220,12 @@ body[data-focus-source="key"] input[class*="lf-slider"]:focus {
   }
 }
 
+/**
+* 1. // Firefox completely ignores the input[type="file"]:focus so we have to fix the focus state with js
+*/
+
 body[data-focus-source="key"] .upload-input:focus + .upload-label,
-body[data-focus-source="key"] .upload-input.has-focus + .upload-label {  // Firefox completely ignores the input[type="file"]:focus so we have to fix the focus state with js
+body[data-focus-source="key"] .upload-input.has-focus + .upload-label /* 1 */ {
   outline: 4px solid $orange;
   color: #00325c;
   background-color: transparent;
@@ -157,80 +240,3 @@ select,
 textarea {
   font-family: inherit;
 }
-
-// Reset and dependencies
-@import "print";
-
-// Core CSS
-@import "type";
-@import "images";
-@import "code";
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
-
-// Components
-@import "alert";
-@import "animations";
-@import "transitions";
-@import "avatar";
-@import "breadcrumb";
-@import "button-group";
-@import "card";
-@import "close";
-@import "custom-forms";
-@import "checkmark";
-@import "distribution-bar";
-@import "dropdown";
-@import "icon";
-@import "input-group";
-@import "media";
-@import "nav";
-@import "navbar";
-@import "pagination";
-@import "patterns";
-@import "pie-chart";
-@import "price-box";
-@import "progress";
-@import "shortcut";
-@import "spinner";
-@import "slider";
-@import "badge";
-@import "value-box";
-@import "footer";
-@import "header";
-@import "timeline";
-@import "chart";
-@import "tag";
-// Components w/ JavaScript
-@import "callout";
-@import "collapse";
-@import "focus";
-@import "modal";
-@import "popover";
-@import "popover-tooltip";
-@import "datepicker";
-@import "upload";
-
-// Utility classes
-
-@import "./utilities/background";
-@import "./utilities/border";
-@import "./utilities/cursor";
-@import "./utilities/flex";
-@import "./utilities/visibility";
-@import "./utilities/layout";
-@import "./utilities/legend";
-@import "./utilities/link";
-@import "./utilities/position";
-@import "./utilities/reset";
-@import "./utilities/selection";
-@import "./utilities/spacing";
-@import "./utilities/text";
-
-/**
- * Bootstrap utilities
- */
-
-@import "bootstrap/scss/_utilities.scss";

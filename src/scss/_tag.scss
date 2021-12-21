@@ -13,7 +13,7 @@ $tag-background-danger: $lf-danger;
   background-color: $tag-background;
   color: $tag-color;
   display: inline-block;
-  padding: 0.53125rem 2.625rem 0.53125rem $spacer;
+  padding: 0.5313rem 2.625rem 0.5313rem $spacer;
   position: relative;
 
   &:hover,
@@ -62,7 +62,6 @@ $tag-background-danger: $lf-danger;
   top: 8px;
   right: $spacer;
   color: inherit;
-
 
   svg {
     fill: currentColor;

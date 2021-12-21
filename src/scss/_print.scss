@@ -66,9 +66,13 @@
       white-space: pre-wrap !important;
     }
 
+    /**
+     * 1. Bootstrap custom code; using `$border-width` instead of 1px
+     */
+
     pre,
     blockquote {
-      border: $border-width solid #999;   // Bootstrap custom code; using `$border-width` instead of 1px
+      border: $border-width solid #999; /* 1 */
       page-break-inside: avoid;
     }
 

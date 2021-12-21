@@ -64,8 +64,7 @@
     "test": "jest --no-cache",
     "test:update": "jest -u",
     "posttest": "npm run lint",
-    "lint": "npm run lint:scss",
-    "lint:scss": "stylelint src/scss/**/*.scss"
+    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss"
   },
   "main": "dist/lfui/lfui.js",
   "style": "dist/lfui/lfui.css",
