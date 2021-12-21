@@ -16,12 +16,7 @@
       }
     ],
     "color-function-notation": "legacy",
-    "max-line-length": [
-      80,
-      {
-        "ignore": ["comments"],
-        "ignorePattern": "/((^\\$|@mixin)|(glyph|url|gradient)\\()/"
-      }
-    ]
+    "max-line-length": null,
+    "keyframes-name-pattern": "[a-z]{1}[a-zA-Z]"
   }
 }

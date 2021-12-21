@@ -182,8 +182,6 @@
 .nav-two-col {
   column-count: 2;
   column-gap: 1rem;
-  column-count: 2;
-  column-gap: 1rem;
 
   li {
     -webkit-column-break-inside: avoid;
@@ -379,9 +377,13 @@
   }
 }
 
-// Fix for primary-links inside navs that loose their padding.
+/**
+ * Fix for primary-links inside navs that loose their padding.
+ * 1. Important here because the gigantic :not rule at the top is pretty reluctant to let anyone else through.
+ */
+
 .nav-link.primary-link {
-  padding-right: 3px !important; // Important here because the gigantic :not rule at the top is pretty reluctant to let anyone else through.
+  padding-right: 3px !important; /* 1 */
 }
 
 // Overflow scroll for reponsive supprt

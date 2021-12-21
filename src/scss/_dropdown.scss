@@ -115,11 +115,16 @@
 
   position: relative;
 
+  /**
+   * 1. This shows 10 options (á 44px) plus approx one half of an option
+   * 2. In OX-Lion and above the scrollbar is hidden, so we force it to show with some styling.
+   */
+
   + .custom-dropdown {
-    max-height: 462px; // This shows 10 options (á 44px) plus approx one half of an option
+    max-height: 462px; /* 1 */
     overflow-y: auto;
-    // In OX-Lion and above the scrollbar is hidden, so we force it to show with some styling.
-    &::-webkit-scrollbar {
+
+    &::-webkit-scrollbar /* 2 */ {
       appearance: none;
       width: 7px;
       background-color: transparent;

@@ -43,7 +43,6 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-outer-spin-button {
   appearance: none;
-  appearance: none;
   margin: 0;
 }
 
@@ -291,6 +290,7 @@ input[disabled] {
   display: none;
 }
 
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
 .form-control[type="date"]::input-placeholder {
   visibility: hidden !important;
 }

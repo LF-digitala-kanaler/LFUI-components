@@ -154,13 +154,13 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
   .custom-control-input:checked:not([disabled]) ~ .custom-control-label::after {
     // Uh. For some reason, the $custom-checkbox-checked-icon variable does not function in IE
     // so we copy-paste the variable string here, which solves it.
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
     background-color: none;
     box-shadow: none;
   }
 
   .custom-control-input:checked[disabled] ~ .custom-control-label::after {
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0NoZWNrZWQtYW5kLWRpc2FibGVkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNy4wMDAwMDAsIC02LjAwMDAwMCkiIGZpbGw9IiNCRkQ0RTUiPiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYWdlLTEiIHBvaW50cz0iMTcuOTA4OTYxOSA2IDExLjMyODEwMzYgMTIuOTE5MjYxNSA4LjQxMTMxNjYgOS44MDA2NzY5MiA3IDExLjI3MDUyMzEgMTEuMzE0MjI4MyAxNS44ODMwMTU0IDE5LjMwNTQxMjEgNy40ODM0NDYxNSI+PC9wb2x5Z29uPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0NoZWNrZWQtYW5kLWRpc2FibGVkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNy4wMDAwMDAsIC02LjAwMDAwMCkiIGZpbGw9IiNCRkQ0RTUiPiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYWdlLTEiIHBvaW50cz0iMTcuOTA4OTYxOSA2IDExLjMyODEwMzYgMTIuOTE5MjYxNSA4LjQxMTMxNjYgOS44MDA2NzY5MiA3IDExLjI3MDUyMzEgMTEuMzE0MjI4MyAxNS44ODMwMTU0IDE5LjMwNTQxMjEgNy40ODM0NDYxNSI+PC9wb2x5Z29uPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
     box-shadow: inset 0 0 0 2px #bfd4e5;
     background-color: $white;
   }
@@ -172,7 +172,7 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
 
   .custom-control-input:indeterminate ~ .custom-control-label::after {
     background-color: $custom-checkbox-indeterminate-bg;
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDEwIDMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+TGluZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZyBpZD0iQ3VzdG9tLWZvcm1zIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj4gICAgICAgIDxnIGlkPSJDdXN0b20tZm9ybS9DaGVja2JveC9BZGQtY2hlY2tib3gvRGVmYXVsdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQuMDAwMDAwLCAtOC4wMDAwMDApIiBzdHJva2U9IiMwMDVBQTAiIHN0cm9rZS13aWR0aD0iMiI+ICAgICAgICAgICAgPHBhdGggZD0iTTUsOS41IEwxMyw5LjUiIGlkPSJMaW5lIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=) !important;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDEwIDMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+TGluZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZyBpZD0iQ3VzdG9tLWZvcm1zIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIj4gICAgICAgIDxnIGlkPSJDdXN0b20tZm9ybS9DaGVja2JveC9BZGQtY2hlY2tib3gvRGVmYXVsdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQuMDAwMDAwLCAtOC4wMDAwMDApIiBzdHJva2U9IiMwMDVBQTAiIHN0cm9rZS13aWR0aD0iMiI+ICAgICAgICAgICAgPHBhdGggZD0iTTUsOS41IEwxMyw5LjUiIGlkPSJMaW5lIj48L3BhdGg+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=") !important;
     background-size: 49% 49%;
     box-shadow: none;
   }
@@ -392,9 +392,15 @@ form:not([novalidate]) .custom-file-input.has-file ~ .custom-file-label {
 
 /* Focus state */
 
-html body[data-focus-source="key"] .custom-file-input:focus + .custom-file-label,
-html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-label { // Nedded for focus state in Firefox
-  outline: 4px solid $orange;
+/**
+ * 1. Nedded for focus state in Firefox
+ */
+
+html body[data-focus-source="key"] {
+  .custom-file-input:focus + .custom-file-label,
+  .custom-file-input.has-focus + .custom-file-label /* 1 */ {
+    outline: 4px solid $orange;
+  }
 }
 
 /**
@@ -443,7 +449,6 @@ html body[data-focus-source="key"] .custom-file-input.has-focus + .custom-file-l
     top: 3px;
     width: 38px;
     height: 16px;
-    border-radius: 10px;
     border-radius: 10px;
     background: #d9d9d9;
     transition: background 150ms ease-in;
