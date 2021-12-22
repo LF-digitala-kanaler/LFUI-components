@@ -161,7 +161,7 @@ This will be visible in LFDS when you decide to update LFDS with a new
 LFUI-components version.
 
 ```
-npm run  build
+npm run build
 ```
 
 ### Linting
