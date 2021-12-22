@@ -1,6 +1,4 @@
 # Workspace settings
-.jest-test-results.json
-.jest
 .vscode
 .storybook
 storybook-static

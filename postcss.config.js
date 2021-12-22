@@ -4,6 +4,6 @@ module.exports = {
       pattern: /<svg.*<\/svg>/i,
       prepend: 'data:image/svg+xml;base64,'
     }),
-    require('postcss-flexbugs-fixes')({}),
+    require('autoprefixer')
   ]
-};
+}
