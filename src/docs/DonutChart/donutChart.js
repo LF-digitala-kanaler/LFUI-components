@@ -42,7 +42,6 @@ const donutChartExample = () => {
   window.highlight = (evt, elements, index) => {
     legendStyles = [];
     let dataset = donutChart.data.datasets[0];
-    console.log(dataset)
     if (elements.length) {
       index = elements[0]._index;
     } else if (typeof index === 'undefined') {
