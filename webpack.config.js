@@ -1,12 +1,13 @@
 
-const path = require('path');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
+
 // Avoid duplicate imports in our modules
-const increaseSpecificity = require('postcss-increase-specificity');
+const increaseSpecificity = require('postcss-increase-specificity')
+
 /* We import files through our node_modules, using @import 'bootstrap/x/_x.scss'.
  * by default, this does not work as our build won't recognize the file path.
  * In a beautiful world, we'd use webpacks tilde '~' import functionality to automatically find the relative path to
@@ -23,7 +24,7 @@ module.exports = {
     libraryTarget: 'umd',
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    publicPath: '/dist/'
   },
   externals: {
     jquery: {
@@ -49,27 +50,18 @@ module.exports = {
       {
         from: 'src/icons/',
         to: 'lfui/icons/'
-      },
+      }
     ]),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
     new OptimizeCssAssetsPlugin({
-
       cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }],
+        preset: ['default', { discardComments: { removeAll: true } }]
       },
       canPrint: true
     }),
-    // new webpack.LoaderOptionsPlugin({
-    //   options: {
-    //     sassConfig:
-    //     {
-    //       importer: importer
-    //     },
-    //   },
-    // }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -84,49 +76,44 @@ module.exports = {
       Modal: 'exports-loader?Dropdown!bootstrap/js/dist/modal',
       Util: 'exports-loader?Util!bootstrap/js/dist/util'
     }),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /sv/),
-
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /sv/)
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /DOCS\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
-            },
+              importLoaders: 1
+            }
           },
           'postcss-loader',
           {
-            loader: 'sass-loader',
-            // options: {
-            // implementation: require("sass"),
-            //   importer: moduleImporter()
-            // },
+            loader: 'sass-loader'
           }
-        ],
+        ]
       },
       {
         test: /DOCS\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
-            },
+              importLoaders: 1
+            }
           },
           {
             loader: 'postcss-loader',
@@ -136,23 +123,18 @@ module.exports = {
                   pattern: /<svg.*<\/svg>/i,
                   prepend: 'data:image/svg+xml;base64,'
                 }),
-                increaseSpecificity({ repeat: 1, stackableRoot: '.lfui-theme' }),
-
-              ],
+                increaseSpecificity({ repeat: 1, stackableRoot: '.lfui-theme' })
+              ]
             }
           },
           {
-            loader: 'sass-loader',
-            // options: {
-            //   importer: moduleImporter(),
-            // },
+            loader: 'sass-loader'
           }
-
-        ],
+        ]
       },
       {
         test: /\.(svg)$/,
-        loader: 'file-loader',
+        loader: 'file-loader'
       },
       {
         test: /\.(woff|woff2)$/,
@@ -168,8 +150,7 @@ module.exports = {
       {
         test: /\.csv$/,
         use: 'dsv-loader'
-      },
+      }
     ]
   }
-
 }
