@@ -1,21 +1,19 @@
-import Value from "./value.html";
-import Intervall from "./intervall.html";
-import {sliderExample} from "./slider"
-import { useEffect } from "@storybook/client-api";
+import Value from './value.html'
+import Intervall from './intervall.html'
+import { sliderExample } from './slider'
+import { useEffect } from '@storybook/client-api'
 
-export default { title: 'Slider' }; 
+export default { title: 'Slider' }
 
 export const value = () => {
   useEffect(() => {
-   sliderExample()
-  }, []);
+    sliderExample()
+  }, [])
   return Value
-  
-};
+}
 export const intervall = () => {
   useEffect(() => {
-   sliderExample()
-  }, []);
+    sliderExample()
+  }, [])
   return Intervall
-  
-};
+}

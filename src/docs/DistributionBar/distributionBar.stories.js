@@ -1,9 +1,7 @@
-import DistributionBar from "./default.html";
-import ProgressBar from "./progressBar.html";
+import DistributionBar from './default.html'
+import ProgressBar from './progressBar.html'
 
+export default { title: 'Distribution Bar' }
 
-export default { title: 'Distribution Bar' }; 
-
-export const distributionBar = () => `${DistributionBar}`;
-export const progressBar = () => `${ProgressBar}`;
-
+export const distributionBar = () => `${DistributionBar}`
+export const progressBar = () => `${ProgressBar}`

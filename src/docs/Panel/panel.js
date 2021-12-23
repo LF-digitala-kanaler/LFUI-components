@@ -1,5 +1,5 @@
 const panelExample = () => {
-  var html = `<table class="table mb-0">
+  const html = `<table class="table mb-0">
       <colgroup>
         <col class="table-cell-fit">
           <col class="table-cell-fill">
@@ -29,15 +29,15 @@ const panelExample = () => {
                 <td>-29,00</td>
               </tr>
             </tbody>
-          </table>`;
+          </table>`
 
-    var trigger = document.querySelector('.js-asyncCollapse');
-    $(trigger).on('click', trigger, function() {
-      setTimeout(function() {
-        $('#collapsible2').html(html);
-        trigger.dispatchEvent(new Event('done'));
-      }, 3000);
-    });
+  const trigger = document.querySelector('.js-asyncCollapse')
+  $(trigger).on('click', trigger, function () {
+    setTimeout(function () {
+      $('#collapsible2').html(html)
+      trigger.dispatchEvent(new window.Event('done'))
+    }, 3000)
+  })
 }
 
-export {panelExample}
+export { panelExample }

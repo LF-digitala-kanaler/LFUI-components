@@ -1,10 +1,5 @@
-import ProgressBar from "./progressBar.html";
+import ProgressBar from './progressBar.html'
 
-export default { title: 'Progress Bar' }; 
+export default { title: 'Progress Bar' }
 
-export const progressBar = () => `${ProgressBar}`;
-
-
-
-
-
+export const progressBar = () => `${ProgressBar}`
