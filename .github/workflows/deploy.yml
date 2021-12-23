@@ -21,7 +21,7 @@ jobs:
       - name: Install
         run: npm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 
       - name: Build
         run: npm run build
