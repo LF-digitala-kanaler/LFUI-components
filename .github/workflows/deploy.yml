@@ -17,10 +17,18 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
+      - name: Create .npmrc
+        uses: bikutadesu/create-npmrc@v1.0.0
+        with:
+          org_name: lf-digitala-kanaler
+          auth_token: ${{ secrets.GITHUB_TOKEN }}
+          always_auth: true
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
