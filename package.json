@@ -50,7 +50,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "npm run build-lfui && build-storybook -o ./public/$npm_package_version",
+    "build": "npm run build-lfui && build-storybook -o public",
     "build-lfui": "webpack --mode production",
     "release": "auto changelog && npm run version && auto release",
     "test": "npm run lint:scss && npm run lint:js",
