@@ -1,7 +1,5 @@
 # Workspace settings
 .vscode
-.storybook
-storybook-static
 
 # Project dependencies
 node_modules

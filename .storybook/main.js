@@ -1,10 +1,9 @@
-const path = require('path');
 module.exports = {
   logLevel: 'debug',
   stories: ['../src/**/*.stories.[tj]s'],
   staticDirs: [{
     from: '../node_modules/@lf-digitala-kanaler/lfui-icons/dist',
-    to: '/lf-icons'
+    to: 'lf-icons'
   }],
   addons: [
     '@storybook/addon-a11y',
@@ -14,6 +13,17 @@ module.exports = {
   ],
 
   webpackFinal: async (config, { configType }) => {
+    // Inject options into html-loader to disable attribute resolution
+    // This is required to not break realtive asset paths in html files
+    const loader = require.resolve('html-loader')
+    for (const rule of config.module.rules) {
+      if (rule.use === loader) {
+        delete rule.use
+        rule.loader = loader
+        rule.options = { ...rule.options, attributes: false}
+      }
+    }
+
     config.module.rules = config.module.rules.map(rule => {
       if (rule.test && rule.test.toString().includes('svg')) {
         const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
@@ -21,44 +31,32 @@ module.exports = {
       } else {
         return rule
       }
-    });
+    })
     config.module.rules.push(
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-
-            },
-          },
-        ],
-      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: "style-loader",
+            loader: 'style-loader'
           },
           {
             loader: 'css-loader',
             options: {
               importLoaders: 1
-            },
+            }
           },
           'postcss-loader',
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
-            },
-          },
-        ],
+              sourceMap: true
+            }
+          }
+        ]
       }
-    );
+    )
 
     // Return the altered config
-    return config;
+    return config
   }
-};
+}

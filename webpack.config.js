@@ -40,7 +40,7 @@ module.exports = {
       {
         from: 'src/docs/',
         to: 'docs/html/',
-        ignore: ['*.js'] // ignore stories
+        ignore: ['*.js'] // ignore stories,
       },
       {
         from: 'src/data/componentsStatus.json',
