@@ -13,19 +13,15 @@ jobs:
           persist-credentials: false
 
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: '16'
-
-      - name: Create .npmrc
-        uses: bikutadesu/create-npmrc@v1.0.0
-        with:
-          org_name: lf-digitala-kanaler
-          auth_token: ${{ secrets.GITHUB_TOKEN }}
-          always_auth: true
+          registry-url: 'https://npm.pkg.github.com'
 
       - name: Install
         run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: npm run build
