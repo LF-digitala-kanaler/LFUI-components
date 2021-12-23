@@ -1,9 +1,8 @@
-import Tag from "./tag.html";
+import Tag from './tag.html'
 
 export default {
-  title: 'Tag',
+  title: 'Tag'
 
-};
+}
 
-export const tag = () => `${Tag}`;
-
+export const tag = () => `${Tag}`

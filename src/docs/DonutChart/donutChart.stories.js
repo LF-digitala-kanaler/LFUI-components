@@ -1,16 +1,13 @@
 
+import DonutChart from './donutChart.html'
+import { donutChartExample } from './donutChart'
+import { useEffect } from '@storybook/client-api'
 
-import DonutChart from "./donutChart.html";
-import {donutChartExample} from "./donutChart"
-import { useEffect } from "@storybook/client-api";
-
-export default { title: 'Donut Chart' }; 
+export default { title: 'Donut Chart' }
 
 export const donutChart = () => {
   useEffect(() => {
-   donutChartExample()
-  }, []);
+    donutChartExample()
+  }, [])
   return DonutChart
-  
-};
-
+}

@@ -1,8 +1,5 @@
-import Breadcrumb from "./breadcrumb.html";
+import Breadcrumb from './breadcrumb.html'
 
-export default { title: 'Breadcrumb' }; 
+export default { title: 'Breadcrumb' }
 
-export const breadcrumb = () => `${Breadcrumb}`;
-
-
-
+export const breadcrumb = () => `${Breadcrumb}`

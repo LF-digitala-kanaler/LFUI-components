@@ -1,8 +1,10 @@
-import chartColors from '../../data/chartColors';
+/* global Chart */
+
+import chartColors from '../../data/chartColors'
 
 const xyPlotExample = () => {
-  if (document.getElementById('xyPlot') === null) return;
-  const ctx = document.getElementById('xyPlot').getContext('2d');
+  if (document.getElementById('xyPlot') === null) return
+  const ctx = document.getElementById('xyPlot').getContext('2d')
   const data = [{
     x: 5.5,
     y: 2
@@ -14,13 +16,14 @@ const xyPlotExample = () => {
   {
     x: 3,
     y: 6.5
-  },
+  }
   ]
-  const datasetColors = chartColors.getColorScale(data.length);
-  const yAxisText = 'Avkastning %';
-  const xAxisText = 'Risk (standardavvikelse %)';
+  const datasetColors = chartColors.getColorScale(data.length)
+  const yAxisText = 'Avkastning %'
+  const xAxisText = 'Risk (standardavvikelse %)'
 
-  var scatterChart = new Chart(ctx, {
+  /* eslint-disable-next-line no-new */
+  new Chart(ctx, {
     type: 'scatter',
     data: {
       datasets: [{
@@ -29,7 +32,7 @@ const xyPlotExample = () => {
         hoverBackgroundColor: datasetColors,
         radius: 10,
         hoverRadius: 10,
-        data: data,
+        data: data
 
       }]
     },
@@ -48,11 +51,10 @@ const xyPlotExample = () => {
         displayColors: false,
         callbacks: {
           title: function () {
-            return '';
+            return ''
           },
           label: function (tooltipItem) {
-
-            return (tooltipItem.value).replace('.', ',') + ' %';
+            return (tooltipItem.value).replace('.', ',') + ' %'
           }
 
         }
@@ -70,7 +72,7 @@ const xyPlotExample = () => {
           ticks: {
             padding: 8,
             maxTicksLimit: 6,
-            beginAtZero: true,
+            beginAtZero: true
           },
           gridLines: {
             color: chartColors.getGridColor(),
@@ -87,7 +89,7 @@ const xyPlotExample = () => {
           ticks: {
             padding: 8,
             maxTicksLimit: 6,
-            beginAtZero: true,
+            beginAtZero: true
 
           },
           gridLines: {
@@ -95,9 +97,9 @@ const xyPlotExample = () => {
             zeroLineColor: chartColors.getGridColor()
           }
         }]
-      },
+      }
     }
-  });
+  })
 }
 
 export { xyPlotExample }

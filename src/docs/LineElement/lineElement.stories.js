@@ -1,7 +1,5 @@
-import Default from "./default.html";
+import Default from './default.html'
 
+export default { title: 'Line Element' }
 
-export default { title: 'Line Element' }; 
-
-export const primary = () => `${Default}`;
-
+export const primary = () => `${Default}`

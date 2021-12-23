@@ -54,7 +54,7 @@
     "build-lfui": "webpack --mode production",
     "release": "auto changelog && npm run version && auto release",
     "test": "npm run lint:scss && npm run lint:js",
-    "lint:js": "standard src/js",
+    "lint:js": "standard",
     "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss"
   },
   "main": "dist/lfui/lfui.js",

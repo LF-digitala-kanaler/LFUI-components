@@ -1,9 +1,6 @@
 
-import Card from "./card.html";
+import Card from './card.html'
 
-export default { title: 'Card' }; 
+export default { title: 'Card' }
 
-export const card = () => `${Card}`;
-
-
-
+export const card = () => `${Card}`

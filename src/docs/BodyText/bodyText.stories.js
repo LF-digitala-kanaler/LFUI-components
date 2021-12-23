@@ -1,5 +1,5 @@
-import BodyText from "./bodyText.html";
+import BodyText from './bodyText.html'
 
-export default { title: 'Body Text' }; 
+export default { title: 'Body Text' }
 
-export const paragraph = () => `${BodyText}`;
+export const paragraph = () => `${BodyText}`
