@@ -173,20 +173,21 @@ npm test
 Finally update Shipping list with your changes.
 
 ### Deploy storybook site
-WHen you create a release  a Github action will build your changes to Github
+When you create a release a Github action will build your changes to Github
 pages and be available [here][lfui-components-webpage].
 
-### Create a Release
+### Create and publish a new release
 * Update `changedInVersion` in `componentsStatus.json` if you made changes to
 that component in this release. This information will be visible in LFDS later.
 * Bump the version number `npm version <major|minor|patch>`
 * Push the chages to GitHub
 * Head to GitHub, find the relase and update the release notes. This information
-will be visible in LFDS when we do a new deploy of it. * If there are any
-**breaking changes** make sure those are explained.
+will be visible in LFDS when we do a new deploy of it. If there are any
+**breaking changes** make sure those are explained. Creating a new release will
+automatically publish a new version of the package.
 
-    **Tag version:** (ex. 7.0.0)
-    **Release Title**: LFUI-components + number (ex. LFUI-components 7.0.0)
+- **Tag version:** (ex. 7.0.0)
+- **Release Title**: LFUI-components + number (ex. LFUI-components 7.0.0)
 
 * Open the LFDS repository and upgrade LFUI-components dependency in
 package.json to the release you just created.
@@ -194,6 +195,11 @@ package.json to the release you just created.
 * If you have added new components, now is the time to document those in LFDS if
 it's not done already. Visit [LFDS repository][lsdf-repository] for more
 information how to do that
+
+## Action secrets
+Since the package depends on private GitHub packages, a private access token is
+set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
+be updated when expired.
 
 ### Share the release
 * Add LFUI-componets to Nexus (see internal documentation)
