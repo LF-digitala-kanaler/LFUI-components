@@ -3,6 +3,7 @@
   "version": "8.0.0-0",
   "license": "MIT",
   "dependencies": {
+    "@lf-digitala-kanaler/lfui-icons": "^2.0.0-1",
     "bootstrap": "4.3.1",
     "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
     "jquery": "^3.4.1",
@@ -38,7 +39,6 @@
     "postcss-increase-specificity": "^0.6.0",
     "postcss-loader": "^4.3.0",
     "postcss-scss": "^4.0.2",
-    "rimraf": "^3.0.2",
     "sass": "^1.32.13",
     "sass-loader": "^10.2.0",
     "standard": "^16.0.4",
@@ -51,7 +51,7 @@
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "npm run build-lfui && build-storybook -o ./public/$npm_package_version",
-    "build-lfui": "webpack --mode production && rimraf dist/lfui/icons && cp -r src/icons dist/lfui/icons",
+    "build-lfui": "webpack --mode production",
     "release": "auto changelog && npm run version && auto release",
     "test": "npm run lint:scss && npm run lint:js",
     "lint:js": "standard src/js",

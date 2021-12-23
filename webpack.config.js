@@ -45,11 +45,6 @@ module.exports = {
       {
         from: 'src/data/componentsStatus.json',
         to: 'docs/data/'
-      },
-      // copy icons
-      {
-        from: 'src/icons/',
-        to: 'lfui/icons/'
       }
     ]),
     new MiniCssExtractPlugin({
