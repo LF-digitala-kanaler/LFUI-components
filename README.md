@@ -129,8 +129,6 @@ LFUI-components/
     │   │   └── *.stories.js ** Storybook file  **
     │   │   ....
     │   └── index.js ** Export all js/css to dist/docs that's needed for the example to work in LFDS **
-    ├── icons/
-    │   └── **icons from lfui-icons**
     ├── js/
     │   └── components /
     │       **js for components**

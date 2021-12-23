@@ -2,7 +2,10 @@ const path = require('path');
 module.exports = {
   logLevel: 'debug',
   stories: ['../src/**/*.stories.[tj]s'],
-  staticDirs: ['../src/icons'],
+  staticDirs: [{
+    from: '../node_modules/@lf-digitala-kanaler/lfui-icons/dist',
+    to: '/lf-icons'
+  }],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
@@ -52,7 +55,6 @@ module.exports = {
             },
           },
         ],
-
       }
     );
 
