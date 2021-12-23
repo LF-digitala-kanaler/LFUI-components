@@ -45,6 +45,10 @@ module.exports = {
       {
         from: 'src/data/componentsStatus.json',
         to: 'docs/data/'
+      },
+      {
+        from: './node_modules/@lf-digitala-kanaler/lfui-icons/dist',
+        to: 'docs/lf-icons/'
       }
     ]),
     new MiniCssExtractPlugin({
@@ -113,13 +117,15 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [
-                require('postcss-base64')({
-                  pattern: /<svg.*<\/svg>/i,
-                  prepend: 'data:image/svg+xml;base64,'
-                }),
-                increaseSpecificity({ repeat: 1, stackableRoot: '.lfui-theme' })
-              ]
+              postcssOptions: {
+                plugins: () => [
+                  require('postcss-base64')({
+                    pattern: /<svg.*<\/svg>/i,
+                    prepend: 'data:image/svg+xml;base64,'
+                  }),
+                  increaseSpecificity({ repeat: 1, stackableRoot: '.lfui-theme' })
+                ]
+              }
             }
           },
           {
