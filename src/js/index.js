@@ -1,7 +1,7 @@
 import jQuery from 'jquery'
 
 /**
- * This need to be done before importig any modules depending o jQuery
+ * This need to be done before importig any modules depending on jQuery
  */
 window.$ = window.jQuery = jQuery
 
