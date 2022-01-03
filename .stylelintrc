@@ -17,6 +17,7 @@
     ],
     "color-function-notation": "legacy",
     "max-line-length": null,
-    "keyframes-name-pattern": "[a-z]{1}[a-zA-Z]"
+    "keyframes-name-pattern": "[a-z]{1}[a-zA-Z]",
+    "no-invalid-position-at-import-rule": null
   }
 }
