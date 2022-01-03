@@ -137,12 +137,11 @@ LFUI-components/
     └── index.js ** Export for lfui.js and lfui.css**
 ```
 
-### Branches and releases
-The latest work is always in the branch `main`. New features and patches are
-added through pull requests.
-
-When a new version is ready to be released we creat a new release tag and
-publish it to GitHub Packages.
+### Working with branches and pull requests
+The latest (stable) work is always in the branch `main`. New features and
+patches are added through pull requests. When working on a new feature, create
+a new branch, keeping it up to date with the `main` branch while you work. When
+finshed, create a pull request and document any changes that have been made.
 
 #### Build and start the development server
 ```
@@ -152,11 +151,6 @@ npm start
 
 This will start a development server where you can see any changes you are
 making to the components.
-
-When you are done with your development make sure you update
-`componentsStatus.json` - changedInVersion for the component you have work on.
-This will be visible in LFDS when you decide to update LFDS with a new
-LFUI-components version.
 
 ```
 npm run build
@@ -169,25 +163,20 @@ The project uses [standard][standard] and [stylelint][stylelint] to verify code.
 npm test
 ```
 
-### Document your changes
-Finally update Shipping list with your changes.
-
-### Deploy storybook site
-When you create a release a Github action will build your changes to Github
-pages and be available [here][lfui-components-webpage].
-
 ### Create and publish a new release
-* Update `changedInVersion` in `componentsStatus.json` if you made changes to
-that component in this release. This information will be visible in LFDS later.
+* Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes
+that have been made to the respective components in this release. This
+information will be visible in LFDS later.
 * Bump the version number `npm version <major|minor|patch>`
 * Push the chages to GitHub
-* Head to GitHub, find the relase and update the release notes. This information
-will be visible in LFDS when we do a new deploy of it. If there are any
-**breaking changes** make sure those are explained. Creating a new release will
-automatically publish a new version of the package.
+* Head to GitHub, go to Releases -> Tags, create a release for the new tag and
+update the release notes. This information will be visible in LFDS when we do a
+new deploy of it. Take extra care to document any **breaking changes** that have
+been made. Creating a new release will automatically publish a new version of
+the package to GitHub Packages.
 
-- **Tag version:** (ex. 7.0.0)
-- **Release Title**: LFUI-components + number (ex. LFUI-components 7.0.0)
+  - **Tag version:** (ex. v7.0.0)
+  - **Release Title**: LFUI-components + version (ex. LFUI-components 7.0.0)
 
 * Open the LFDS repository and upgrade LFUI-components dependency in
 package.json to the release you just created.
@@ -196,7 +185,11 @@ package.json to the release you just created.
 it's not done already. Visit [LFDS repository][lsdf-repository] for more
 information how to do that
 
-## Action secrets
+#### Deploy storybook site
+When you create a release a Github action will build your changes to Github
+pages and be available [here][lfui-components-webpage].
+
+### Action secrets
 Since the package depends on private GitHub packages, a private access token is
 set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
 be updated when expired.
