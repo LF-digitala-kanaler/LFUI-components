@@ -103,7 +103,7 @@ module.exports = {
         ]
       },
       {
-        test: /DOCS\.(sa|sc|c)ss$/,
+        test: /DOCS\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -118,12 +118,16 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: () => [
+                plugins: [
                   require('postcss-base64')({
                     pattern: /<svg.*<\/svg>/i,
                     prepend: 'data:image/svg+xml;base64,'
                   }),
-                  increaseSpecificity({ repeat: 1, stackableRoot: '.lfui-theme' })
+                  require('autoprefixer'),
+                  increaseSpecificity({
+                    repeat: 1,
+                    stackableRoot: '.lfui-theme'
+                  })
                 ]
               }
             }
