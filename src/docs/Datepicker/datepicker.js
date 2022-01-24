@@ -44,7 +44,7 @@ const datepickerExample = () => {
 
 const timepickerExample = () => {
   const dateOk = /^([0-1][0-9]|[2][0-3]):([0-5][0-9])/
-  $('#timepicker').datetimepicker({
+  $('#timepicker-input').datetimepicker({
     format: 'LT',
     locale: 'sv',
     allowInputToggle: true,
@@ -53,15 +53,15 @@ const timepickerExample = () => {
       down: 'prev'
     }
   })
-  $('#timepicker').on('dp.show', function () {
+  $('#timepicker-input').on('dp.show', function () {
     $('#timepicker .bootstrap-datetimepicker-widget').attr('aria-hidden', 'true')
     $('#timepicker button').addClass('active')
   })
 
-  $('#timepicker').on('dp.hide', function () {
+  $('#timepicker-input').on('dp.hide', function () {
     $('#timepicker button').removeClass('active')
   })
-  $('#timepicker').on('dp.hide', function () {
+  $('#timepicker-input').on('dp.hide', function () {
     $('#timepicker button').removeClass('active')
     const value = $('#timepicker-input').val()
     if (dateOk.test(value)) {
