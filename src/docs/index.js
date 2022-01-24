@@ -2,7 +2,6 @@ import '../scss/DOCS.scss'
 
 import { datepickerExample, disabledDatesExample, timepickerExample } from './Datepicker/datepicker'
 import { lineChartExample, lineChartVerticalLine } from './LineChart/lineChart'
-
 import { barChartExample } from './BarChart/barChart'
 import { calloutExample } from './Callout/callout'
 import { donutChartExample } from './DonutChart/donutChart'
@@ -12,6 +11,7 @@ import { navbarExample } from './Navbar/navbar'
 import { panelExample } from './Panel/panel'
 import { popoverTooltipExample } from './PopoverTooltip/popovertooltip'
 import { priceBoxExample } from './PriceBox/pricebox'
+import { selectExample } from './Select/select'
 import { sliderExample } from './Slider/slider'
 import { tableExample } from './Tables/table'
 import { timelineExample } from './Timeline/timeline'
@@ -25,15 +25,11 @@ timepickerExample()
 datepickerExample()
 tableExample()
 dropdownExample()
-
 calloutExample()
-
 priceBoxExample()
-
+selectExample()
 sliderExample()
-
 panelExample()
-
 uploadExample()
 timelineExample()
 lineChartVerticalLine()
@@ -42,7 +38,6 @@ donutChartExample()
 xyPlotExample()
 barChartExample()
 mapChartExample()
-
 navbarExample()
 valueboxExample()
 popoverTooltipExample()

@@ -480,6 +480,24 @@
       }
     },
     {
+      "component": "Select",
+      "bootstrap": {
+        "new": false,
+        "deprecated": false,
+        "changedInVersion": [
+          "8.0.0"
+        ],
+        "examples": [
+          {
+            "name": "Select Single"
+          },
+          {
+            "name": "Select Multiple"
+          }
+        ]
+      }
+    },
+    {
       "component": "Shortcut",
       "bootstrap": {
         "new": false,
