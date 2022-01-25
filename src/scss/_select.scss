@@ -1,6 +1,8 @@
 @import "bootstrap/scss/_dropdown.scss";
 
 .select {
+  --dropdown-menu-open-animation-duration: 0ms;
+
   width: 100%;
   position: relative;
 }
@@ -68,8 +70,11 @@
   &[aria-expanded="true"] {
     background-color: $input-focus-bg;
     border-bottom-color: $input-focus-border-color;
-    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 8%);
     color: $input-focus-color;
+  }
+
+  &[aria-expanded="true"] {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 5%);
   }
 
   &:disabled {
