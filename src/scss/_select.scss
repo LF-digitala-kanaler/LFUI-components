@@ -1,3 +1,5 @@
+@import "bootstrap/scss/_dropdown.scss";
+
 .select {
   width: 100%;
   position: relative;
@@ -20,10 +22,14 @@
   }
 }
 
-/* Placeholder for uninitialized elements */
+/*
+ * Placeholder for uninitialized elements
+ * 1. Match default label bottom margin
+ */
 @media (pointer: fine), (pointer: none) {
   .select:not(.initialized, .inside) .select-label::after {
     content: "";
+    margin-top: 0.3em; /* 1 */
   }
 }
 
@@ -49,6 +55,11 @@
   background-size: 18px 12px;
   box-shadow: $input-box-shadow;
   appearance: none;
+
+  .select.disabled & {
+    background-color: $input-disabled-bg;
+    cursor: not-allowed;
+  }
 }
 
 .select-options,
@@ -89,10 +100,11 @@
 }
 
 .select-status {
-  display: flex;
-  align-items: baseline;
-  width: 100%;
-  padding-right: calc($input-padding-x * 2 + 18px + 1.5rem);
+  display: block;
+  width: calc(100% - 1.5rem);
+  height: 1.5rem;
+  padding-right: calc($input-padding-x + 1.5rem);
+  position: relative;
   white-space: pre;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -110,7 +122,7 @@
     height: 1.5rem;
     border-radius: 100%;
     position: absolute;
-    right: calc($input-padding-x * 2 + 18px);
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     color: $input-bg;
@@ -180,8 +192,16 @@
   width: 100%;
   padding: 0;
   border: 0;
+  margin: 0;
   background-color: #fbfbfb;
   box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 8%);
+
+  .select-list {
+    position: static;
+    box-shadow: none;
+    animation: none;
+    opacity: 1;
+  }
 }
 
 .select-legend {
@@ -200,10 +220,15 @@
   letter-spacing: 0.5px;
 }
 
+/**
+ * 1. Preserve whitespace in flex context, needed for small text
+ */
+
 .select-option {
   display: flex;
   align-items: baseline;
   width: 100%;
+  min-height: $input-height;
   padding: 10px;
   border: 1px solid #eee;
   border-top: 0;
@@ -214,7 +239,7 @@
   outline-offset: -4px;
   cursor: pointer;
   appearance: none;
-  white-space: pre;
+  white-space: pre-wrap; /* 1 */
   background-color: #fbfbfb;
 
   &:hover,
@@ -223,20 +248,46 @@
     color: $link_color;
   }
 
+  &.toggle {
+    @include glyph-chevron-down($blue);
+
+    width: 100%;
+    height: auto;
+    min-height: $input-height;
+    padding-right: calc($input-padding-x * 2 + 18px);
+    background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
+    background-size: 18px 12px;
+
+    &[aria-expanded="true"] {
+      @include glyph-chevron-up($blue);
+
+      width: 100%;
+      height: auto;
+      min-height: $input-height;
+    }
+  }
+
+  .select-list .select-list & {
+    padding-left: 25px;
+  }
+
   /* Faux checkbox */
-  .select-list.multiple & {
+  &.multiple {
     &::before {
       content: "";
+      flex: 0 0 auto;
       display: inline-block;
       align-self: center;
       margin-right: $input-padding-x;
       width: 1.13rem;
       height: 1.13rem;
       border: $border-width solid $silver;
+      background-color: #fff;
       transition: $input-transition;
     }
 
-    &.selected::before {
+    &.selected::before,
+    &.indeterminate::before {
       border-color: $link_color;
     }
 
@@ -249,15 +300,27 @@
       top: 50%;
       opacity: 0;
       transform: translateY(-50%);
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
-      background-size: 80%;
-      background-repeat: no-repeat;
-      background-position: center;
       transition: opacity ease-in-out 0.15s;
+    }
+
+    &.indeterminate::after {
+      height: $border-width;
+      width: 0.575rem;
+      left: 0.9rem;
+      background: $link_color;
+      opacity: 1;
+    }
+
+    .select-list .select-list &::after {
+      left: calc($input-padding-x + 15px);
     }
 
     &.selected::after {
       opacity: 1;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }
