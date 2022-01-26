@@ -66,6 +66,12 @@
     background-color: $input-disabled-bg;
     cursor: not-allowed;
   }
+
+  /* Handle disabled state for noscript multiple selects */
+  .select:has(select:disabled) & {
+    background-color: $input-disabled-bg;
+    cursor: not-allowed;
+  }
 }
 
 .select-toggle,
