@@ -12,14 +12,18 @@
   position: relative;
   z-index: 0;
 
-  /* Ignore inside option on touch devices */
+  /**
+   * Ignore inside option on touch devices
+   * 1. Override global focus style to keep text visible
+   */
   @media (pointer: fine), (pointer: none) {
     .select.initialized.inside & {
       position: absolute;
       left: $input-padding-x;
       top: $input-padding-y;
-      z-index: 1;
+      z-index: 1002; /* 1 */
       pointer-events: none;
+      user-select: none;
     }
   }
 }
@@ -64,9 +68,8 @@
   }
 }
 
-.select-options,
-.select-toggle {
-  &:focus,
+.select-toggle,
+.select-options {
   &[aria-expanded="true"] {
     background-color: $input-focus-bg;
     border-bottom-color: $input-focus-border-color;
@@ -75,22 +78,24 @@
 
   &[aria-expanded="true"] {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 5%);
+    position: relative;
+    z-index: 1001;
   }
 
   &:disabled {
     background-color: $input-disabled-bg;
     cursor: not-allowed;
   }
+
+  &:hover:not([disabled]) {
+    background-color: $input-hover;
+    transition: background 0.2s;
+  }
 }
 
 /* Camouflage toggle button to not interfere with inside label */
 .select.inside .select-toggle {
-  color: $input-bg;
-
-  &:focus,
-  &[aria-expanded="true"] {
-    color: $input-focus-bg;
-  }
+  color: transparent;
 }
 
 /* Ignore inside option on touch devices */
@@ -106,13 +111,15 @@
 
 .select-status {
   display: block;
-  width: calc(100% - 1.5rem);
+  width: calc(100% - 1.7rem);
   height: 1.5rem;
-  padding-right: calc($input-padding-x + 1.5rem);
+  padding-right: calc($input-padding-x + 0.75rem);
   position: relative;
   white-space: pre;
   overflow: hidden;
   text-overflow: ellipsis;
+  user-select: none;
+  top: -1px;
 }
 
 /* Multiple select counter */
@@ -123,16 +130,16 @@
     align-items: center;
     flex: 0 0 auto;
     justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 20px;
+    height: 20px;
     border-radius: 100%;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
     color: $input-bg;
-    font-weight: bold;
-    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    font-size: 14px;
     background-color: $link_color;
   }
 }
@@ -199,7 +206,7 @@
   border: 0;
   margin: 0;
   background-color: #fbfbfb;
-  box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 8%);
+  box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 8%);
 
   .select-list {
     position: static;
@@ -212,7 +219,7 @@
 .select-legend {
   display: block;
   width: 100%;
-  padding: 6px 10px 5px;
+  padding: 6px $input-padding-x 5px;
   border: solid 1px #eee;
   border-top: none;
   margin: 0;
@@ -225,7 +232,7 @@
   letter-spacing: 0.5px;
 }
 
-/**
+/*
  * 1. Preserve whitespace in flex context, needed for small text
  */
 
@@ -234,46 +241,55 @@
   align-items: baseline;
   width: 100%;
   min-height: $input-height;
-  padding: 10px;
+  padding: $input-padding-y $input-padding-x;
   border: 1px solid #eee;
   border-top: 0;
   position: relative;
   user-select: none;
   font-weight: normal;
   color: #000;
-  outline-offset: -4px;
+  outline-offset: -4px !important;
   cursor: pointer;
   appearance: none;
   white-space: pre-wrap; /* 1 */
   background-color: #fbfbfb;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: #fff;
     color: $link_color;
   }
 
   &.toggle {
-    @include glyph-chevron-down($blue);
+    @include glyph-chevron-down($silver);
 
     width: 100%;
     height: auto;
     min-height: $input-height;
     padding-right: calc($input-padding-x * 2 + 18px);
-    background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
+    background-position: calc(100% - $input-padding-x + 1px) calc($input-height / 2 - 6px + $input-btn-border-width / 2 + 1px);
     background-size: 18px 12px;
 
+    .text-muted {
+      flex: 1;
+      text-align: right;
+    }
+
     &[aria-expanded="true"] {
-      @include glyph-chevron-up($blue);
+      @include glyph-chevron-up($silver);
 
       width: 100%;
       height: auto;
       min-height: $input-height;
+      background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
     }
   }
 
   .select-list .select-list & {
-    padding-left: 25px;
+    padding-left: 43px;
+  }
+
+  .select-list .select-list &:not(.multiple) {
+    padding-left: 26px;
   }
 
   /* Faux checkbox */
@@ -301,7 +317,7 @@
       width: calc(1.13rem - $border-width * 2);
       height: calc(1.13rem - $border-width * 2);
       position: absolute;
-      left: $input-padding-x;
+      left: 14px;
       top: 50%;
       opacity: 0;
       transform: translateY(-50%);
@@ -310,14 +326,14 @@
 
     &.indeterminate::after {
       height: $border-width;
-      width: 0.575rem;
-      left: 0.9rem;
+      width: 10px;
+      left: 16px;
       background: $link_color;
       opacity: 1;
     }
 
     .select-list .select-list &::after {
-      left: calc($input-padding-x + 15px);
+      left: calc($input-padding-x + 33px);
     }
 
     &.selected::after {
