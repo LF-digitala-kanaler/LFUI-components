@@ -16,10 +16,12 @@
   </div>
   <div class="col-md-6">
     <p class="text-sm mt-15 mb-05 text-muted">Hidden label</p>
-    <label>&nbsp;</label>
+    <label class="mb-0">&nbsp;</label>
     <form class="form-group">
       <div class="select">
-        <label class="select-label sr-only" for="select-hidden-label">City</label>
+        <label class="select-label" for="select-hidden-label">
+          <span class="sr-only">City</span>
+        </label>
         <select class="select-options" name="timezone" id="select-hidden-label">
           <option value="" disabled selected hidden>Select City</option>
           <option>Stockholm</option>

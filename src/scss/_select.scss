@@ -21,9 +21,13 @@
       position: absolute;
       left: $input-padding-x;
       top: $input-padding-y;
-      z-index: 1002; /* 1 */
+      z-index: 1001; /* 1 */
       pointer-events: none;
       user-select: none;
+    }
+
+    .select.initialized.inside.show & {
+      z-index: 1004;
     }
   }
 }
@@ -85,7 +89,7 @@
   &[aria-expanded="true"] {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 5%);
     position: relative;
-    z-index: 1001;
+    z-index: 1003;
   }
 
   &:disabled {
@@ -104,7 +108,7 @@
   color: transparent;
 }
 
-/* Ignore inside option on touch devices */
+/* Ignore inside option on noscript touch devices */
 @media (pointer: coarse) {
   .select.inside:not(.initialized) .select-label {
     height: auto;
@@ -136,8 +140,8 @@
     align-items: center;
     flex: 0 0 auto;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     border-radius: 100%;
     position: absolute;
     right: 0;
@@ -145,7 +149,7 @@
     transform: translateY(-50%);
     color: $input-bg;
     font-weight: $font-weight-bold;
-    font-size: 14px;
+    font-size: 0.875rem;
     background-color: $link_color;
   }
 }
@@ -211,6 +215,7 @@
   padding: 0;
   border: 0;
   margin: 0;
+  z-index: 1002;
   background-color: #fbfbfb;
   box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 8%);
 
@@ -225,7 +230,7 @@
 .select-legend {
   display: block;
   width: 100%;
-  padding: 6px $input-padding-x 5px;
+  padding: 0.375rem $input-padding-x 0.3125rem;
   border: solid 1px #eee;
   border-top: none;
   margin: 0;
@@ -291,11 +296,11 @@
   }
 
   .select-list .select-list & {
-    padding-left: 43px;
+    padding-left: 2.6875rem;
   }
 
   .select-list .select-list &:not(.multiple) {
-    padding-left: 26px;
+    padding-left: 1.625rem;
   }
 
   /* Faux checkbox */
@@ -323,7 +328,7 @@
       width: calc(1.13rem - $border-width * 2);
       height: calc(1.13rem - $border-width * 2);
       position: absolute;
-      left: 14px;
+      left: 0.875rem;
       top: 50%;
       opacity: 0;
       transform: translateY(-50%);
@@ -332,14 +337,14 @@
 
     &.indeterminate::after {
       height: $border-width;
-      width: 10px;
-      left: 16px;
+      width: 0.625rem;
+      left: 1rem;
       background: $link_color;
       opacity: 1;
     }
 
     .select-list .select-list &::after {
-      left: calc($input-padding-x + 33px);
+      left: calc($input-padding-x + 2.0625rem);
     }
 
     &.selected::after {
