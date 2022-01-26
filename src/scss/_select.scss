@@ -1,6 +1,7 @@
 @import "bootstrap/scss/_dropdown.scss";
 
 .select {
+  /* Disable dropdown list animation */
   --dropdown-menu-open-animation-duration: 0ms;
 
   width: 100%;
@@ -13,7 +14,7 @@
   z-index: 0;
 
   /**
-   * Ignore inside option on touch devices
+   * Enable "inside" option only for non-touch devices
    * 1. Override global focus style to keep text visible
    */
   @media (pointer: fine), (pointer: none) {
@@ -32,6 +33,17 @@
   }
 }
 
+/* Ignore "inside" option on noscript touch devices */
+@media (pointer: coarse) {
+  .select.inside:not(.initialized) .select-label {
+    height: auto;
+    padding: 0;
+    border: 0;
+    user-select: auto;
+    background: none;
+  }
+}
+
 /*
  * Placeholder for uninitialized elements
  * 1. Match default label bottom margin
@@ -43,6 +55,10 @@
   }
 }
 
+/**
+ * Our different elements that all look like select
+ * elements and used in various cases.
+ */
 .select-toggle,
 .select-options,
 .select.inside:not(.initialized) .select-label,
@@ -78,6 +94,9 @@
   }
 }
 
+/*
+ * Broken out of above selector due to nesting limits in Sass
+ */
 .select-toggle,
 .select-options {
   &[aria-expanded="true"] {
@@ -103,22 +122,14 @@
   }
 }
 
-/* Camouflage toggle button to not interfere with inside label */
+/* Camouflage toggle button to not interfere with "inside" label */
 .select.inside .select-toggle {
   color: transparent;
 }
 
-/* Ignore inside option on noscript touch devices */
-@media (pointer: coarse) {
-  .select.inside:not(.initialized) .select-label {
-    height: auto;
-    padding: 0;
-    border: 0;
-    user-select: auto;
-    background: none;
-  }
-}
-
+/*
+ * Showing the selected options
+ */
 .select-status {
   display: block;
   width: calc(100% - 1.7rem);
@@ -160,7 +171,7 @@
     display: none;
   }
 
-  /* Manage toggling select when JavaScript is not available */
+  /* Manage toggling select during noscript */
   @media (pointer: fine), (pointer: none) {
     /* Position on top of placeholder */
     .select:not(.initialized) &:not([multiple]) {
@@ -188,11 +199,14 @@
     }
   }
 
+  /* Valid state */
   &:required:valid,
   &:required:valid ~ .select-toggle {
     background-color: $cloud;
     border-bottom-color: $input-focus-border-color;
   }
+
+  /* To-do: Error state */
 }
 
 /* Fallback to native select elements on touch devices */
@@ -209,6 +223,11 @@
     display: block;
   }
 }
+
+/**
+ * The custom select list that is popping up/down
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
 
 .select-list {
   width: 100%;
@@ -246,7 +265,6 @@
 /*
  * 1. Preserve whitespace in flex context, needed for small text
  */
-
 .select-option {
   display: flex;
   align-items: baseline;
