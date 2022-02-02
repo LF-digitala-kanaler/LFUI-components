@@ -618,7 +618,6 @@ html body[data-focus-source="key"] {
     color: $navy;
     margin: 0 0 0.375rem;
     align-self: baseline;
-    max-width: 100%; // Needed for IE11 to line break long labels
     hyphens: auto;
 
     @include font-smoothing;
