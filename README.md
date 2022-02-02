@@ -49,7 +49,7 @@ This will give you access to the full LFUI suit including its variables and
 mixins.
 
 ### Fonts
-LFUI-components includes fonts for self-hosting. While you can import them
+LFUI-components [includes fonts](lf-fonts) for self-hosting. While you can import them
 directly from `node_modules`, it's probably easier to copy the files to your
 project.
 
@@ -77,15 +77,8 @@ $asset-path: "./";
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
 ```
 
-LFUI-comonents provides a way to control the font loading technique using CSS
-[font-display][font-display]. This allows you to adjust the load performance of
-your app:
-
-```
-// Change the font loading technique in your app, swap is default
-// auto, block, swap, fallback, optional
-$font-display: auto;
-```
+Please see the [lf-fonts documentation](lf-fonts) on loading and preloading 
+techniques for optimal performance and accessibility.
 
 ## Migrating from lfui 6.x.x
 There hasen't been so many changes to the core components in this version but
@@ -201,7 +194,7 @@ be updated when expired.
 [lfui-components-webpage]: https://lf-digitala-kanaler.github.io/LFUI-components
 [github-packages]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages
 [personal-access-token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-[font-display]: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
+[font-fonts]: https://github.com/LF-digitala-kanaler/lf-fonts
 [lfui-icons]: https://github.com/LF-digitala-kanaler/LFUI-icons
 [standard]: https://standardjs.com
 [stylelint]: https://stylelint.io
