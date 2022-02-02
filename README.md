@@ -49,7 +49,7 @@ This will give you access to the full LFUI suit including its variables and
 mixins.
 
 ### Fonts
-LFUI-components includes [our fonts](fonts) for self-hosting. You can import them
+LFUI-components includes [Länsförsäkringar Fonts][fonts] for self-hosting. You can import them
 directly from `node_modules`, but it's probably easier to copy the files to your
 project.
 
@@ -77,7 +77,7 @@ $asset-path: "./";
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
 ```
 
-See the [fonts documentation](fonts) on loading and preloading techniques 
+See the [fonts documentation][fonts] on loading and preloading techniques 
 for optimal performance and accessibility.
 
 ## Migrating from lfui 6.x.x
