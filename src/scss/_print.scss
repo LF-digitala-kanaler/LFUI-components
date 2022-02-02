@@ -1,5 +1,4 @@
 // stylelint-disable declaration-no-important, selector-no-qualifying-type
-// scss-lint:disable QualifyingElement
 
 @media print {
   *,
@@ -18,6 +17,7 @@
   pre {
     white-space: pre-wrap !important;
   }
+
   pre,
   blockquote {
     page-break-inside: avoid;
@@ -57,9 +57,11 @@
   @page {
     size: $print-page-size;
   }
+
   body {
     min-width: $print-body-min-width !important;
   }
+
   .container {
     min-width: $print-body-min-width !important;
   }
@@ -67,6 +69,7 @@
   .navbar {
     display: none;
   }
+
   .badge {
     border: $border-width solid $black;
   }
