@@ -31,6 +31,16 @@
 // Variable format should follow the `$component-modifier-state-property` order.
 
 $asset-path: "./base" !default;
+$variable-prefix: "" !default;
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29"),
+) !default;
 
 // Table of Contents
 //
@@ -1029,13 +1039,6 @@ $carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8
 $carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 $carousel-transition:           transform 0.6s ease !default;
-
-// Close
-
-$close-font-size:             $font-size-base * 1.5 !default;
-$close-font-weight:           bold !default;
-$close-color: currentColor;
-$close-text-shadow: none;
 
 // Code
 
