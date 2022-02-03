@@ -14,22 +14,19 @@
   z-index: 0;
 
   /**
-   * Enable "inside" option only for non-touch devices
    * 1. Override global focus style to keep text visible
    */
-  @media (pointer: fine), (pointer: none) {
-    .select.initialized.inside & {
-      position: absolute;
-      left: $input-padding-x;
-      top: $input-padding-y;
-      z-index: 1001; /* 1 */
-      pointer-events: none;
-      user-select: none;
-    }
+  .select.initialized.inside & {
+    position: absolute;
+    left: $input-padding-x;
+    top: $input-padding-y;
+    z-index: 1001; /* 1 */
+    pointer-events: none;
+    user-select: none;
+  }
 
-    .select.initialized.inside.show & {
-      z-index: 1004;
-    }
+  .select.initialized.inside.show & {
+    z-index: 1004;
   }
 }
 
@@ -122,9 +119,16 @@
   }
 }
 
-/* Camouflage toggle button to not interfere with "inside" label */
-.select.inside .select-toggle {
-  color: transparent;
+.select-toggle {
+  /* Camouflage toggle button to not interfere with "inside" label */
+  .select.inside & {
+    color: transparent;
+  }
+
+  /* Fallback to native select elements on touch devices */
+  @media (pointer: coarse) {
+    pointer-events: none;
+  }
 }
 
 /*
@@ -171,6 +175,15 @@
     display: none;
   }
 
+  @media (pointer: coarse) {
+    /* Make interactive but invisible on touch devices  */
+    .select.initialized & {
+      display: block;
+      opacity: 0;
+      position: absolute;
+    }
+  }
+
   /* Manage toggling select during noscript */
   @media (pointer: fine), (pointer: none) {
     /* Position on top of placeholder */
@@ -207,21 +220,6 @@
   }
 
   /* To-do: Error state */
-}
-
-/* Fallback to native select elements on touch devices */
-@media (pointer: coarse) {
-  .select-toggle {
-    display: none;
-  }
-
-  .select-options[multiple] {
-    height: auto;
-  }
-
-  .select.initialized .select-options {
-    display: block;
-  }
 }
 
 /**
