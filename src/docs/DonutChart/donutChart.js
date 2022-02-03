@@ -102,7 +102,7 @@ const donutChartExample = () => {
         legend(index)
         const text = []
         for (let i = 0; i < donutChart.data.datasets[0].data.length; i++) {
-          text.push('<li data-index="index-' + i + '" class="chart-legend-item chart-legend-item-clickable" onclick="highlightArcWithIndex(' + i + ')"><div class="chart-legend-box"  style="background-color:' + legendStyles[i].backgroundColor + '"></div>' + 'Länsförsäkringar Dummy fond ' + (i + 1) + '</li>')
+          text.push('<li data-index="index-' + i + '" class="chart-legend-item chart-legend-item-clickable" onclick="highlightArcWithIndex(' + i + ')"><div class="chart-legend-box"  style="background-color:' + legendStyles[i].backgroundColor + '"></div>' + 'Example fund ' + (i + 1) + '</li>')
         }
         return text.join('')
       },
