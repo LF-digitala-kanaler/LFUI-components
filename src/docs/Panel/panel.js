@@ -34,9 +34,9 @@ const panelExample = () => {
   const trigger = document.querySelector('.js-asyncCollapse')
   $(trigger).on('click', trigger, function () {
     setTimeout(function () {
-      $('#collapsible2').html(html)
+      $('#collapsible3').html(html)
       trigger.dispatchEvent(new window.Event('done'))
-    }, 3000)
+    }, 2500)
   })
 }
 
