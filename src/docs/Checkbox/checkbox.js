@@ -13,4 +13,9 @@ const checkboxCardExample = () => {
     }
   }
 }
-export { checkboxCardExample }
+
+const intermediateCheckboxExample = () => {
+  document.getElementById('checkbox-intermediate').indeterminate = true
+}
+
+export { checkboxCardExample, intermediateCheckboxExample }
