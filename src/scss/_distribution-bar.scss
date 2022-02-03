@@ -118,14 +118,14 @@ $tooltip-distance: 10px;
 .distribution-value:nth-child(4n+3),
 .distribution-title.distribution-sky:nth-child(1n),
 .distribution-title:nth-of-type(4n+3) {
-  @include distribution-color-value-striped($stripes-alert-info, $alert-info-bg, $alert-info-border, $alert-info-text);
+  @include distribution-color-value-bordered($sky, $blue, $blue);
 }
 
 .distribution-value.distribution-baby:nth-child(1n),
 .distribution-value:nth-child(4n+4),
 .distribution-title.distribution-baby:nth-child(1n),
 .distribution-title:nth-of-type(4n+4) {
-  @include distribution-color-value($baby, $alert-info-text);
+  @include distribution-color-value($baby, $lf-info-dark);
 }
 
 .distribution-value.distribution-red:nth-child(1n),
@@ -228,17 +228,17 @@ $tooltip-distance: 10px;
 
 .distribution-title.distribution-green-stripes,
 .distribution-value.distribution-green-stripes {
-  @include distribution-color-value-striped($stripes-alert-success, $alert-success-bg, $alert-success-border, $alert-success-text);
+  @include distribution-color-value-bordered($lf-success, $lf-success-dark, $lf-success-dark);
 }
 
 .distribution-title.distribution-yellow-stripes,
 .distribution-value.distribution-yellow-stripes {
-  @include distribution-color-value-striped($stripes-alert-warning, $alert-warning-bg, $alert-warning-border, $alert-warning-text);
+  @include distribution-color-value-bordered($lf-warning, $lf-warning-dark, $lf-warning-dark);
 }
 
 .distribution-title.distribution-red-stripes,
 .distribution-value.distribution-red-stripes {
-  @include distribution-color-value-striped($stripes-alert-danger, $alert-danger-bg, $alert-danger-border, $alert-danger-text);
+  @include distribution-color-value-bordered($lf-danger, $lf-danger-dark, $lf-danger-dark);
 }
 
 /**

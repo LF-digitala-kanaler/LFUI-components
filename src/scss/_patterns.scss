@@ -31,8 +31,4 @@
   background-color: $pattern-diagonal-stripes-gray-bg;
   color: $pattern-diagonal-stripes-gray-font-color;
   border: 2px solid $pattern-diagonal-stripes-gray-border;
-
-  a {
-    @include alert-link($pattern-diagonal-stripes-gray-font-color);
-  }
 }

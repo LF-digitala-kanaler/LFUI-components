@@ -242,9 +242,7 @@
   }
 }
 
-@mixin distribution-color-value-striped($stripes, $background-color, $border-color, $color) {
-  @include pattern-diagonal-stripes($stripes);
-
+@mixin distribution-color-value-bordered($background-color, $border-color, $color) {
   background-color: $background-color;
   border: 2px solid $border-color;
   color: $color;

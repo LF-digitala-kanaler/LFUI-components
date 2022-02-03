@@ -75,9 +75,13 @@ $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
 $lf-info: #e5eff7;
-$lf-danger: #fbd5d6;
-$lf-success: #d8ebae;
-$lf-warning: #faf4d4;
+$lf-info-dark: $blue;
+$lf-success: #e5fff0;
+$lf-success-dark: #1B5E20;
+$lf-warning: #ffffd6;
+$lf-warning-dark: #996006;
+$lf-danger: #ffdfe0;
+$lf-danger-dark: $wine;
 
 /* Risk colors */
 
@@ -131,13 +135,21 @@ $colors: (
 $theme-colors: (
   primary: $blue,
   secondary: $red,
-  success: $green,
-  info: $baby,
-  warning: $orange,
-  danger: $red,
+  info: $lf-info,
+  success: $lf-success,
+  warning: $lf-warning,
+  danger: $lf-danger,
   light: $gray-100,
   dark: $gray-800
 ) !default;
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:   4.5 !default;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:      $black !default;
+$color-contrast-light:     $white !default;
 
 // Set a specific jump point for requesting color jumps
 $theme-color-interval: 8% !default;
@@ -202,6 +214,8 @@ $link-color: $blue;
 $link-decoration: none;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline !default;
+$stretched-link-pseudo-element:           after !default;
+$stretched-link-z-index:                  1 !default;
 
 $link-color-dark: $navy;
 $link-hover-color-dark: #00325c;
@@ -429,26 +443,26 @@ $btn-secondary-border-hover: #00325c;
 $btn-secondary-bg-pressed: #f2f7fb;
 
 $btn-info-color: $navy;
-$btn-info-bg: #e5eff7;
+$btn-info-bg: $lf-info;
 $btn-info-border: $navy;
 $btn-info-border-hover: #00325c;
 $btn-info-bg-pressed: #d7e7f3;
 
 $btn-success-color: #305704;
-$btn-success-bg: #d8ebae;
+$btn-success-bg: #e5fff0;
 $btn-success-border: #305704;
 $btn-success-border-hover: #233f03;
 $btn-success-bg-pressed: #cde29f;
 
 $btn-warning-color: #996006;
 $btn-warning-border: #996006;
-$btn-warning-bg: #faf4d4;
+$btn-warning-bg: #ffffd6;
 $btn-warning-border-hover: #784b05;
 $btn-warning-bg-pressed: #f1eac3;
 
 $btn-danger-color: $wine;
 $btn-danger-border: $wine;
-$btn-danger-bg: #fbd5d6;
+$btn-danger-bg: #ffdfe0;
 $btn-danger-border-hover: #910d12;
 $btn-danger-bg-pressed: #f6cbcc;
 
@@ -893,34 +907,18 @@ $modal-transition:            transform 0.3s ease-out !default;
 //
 // Define alert colors, border radius, and padding.
 
-$alert-padding-y:             0.75rem !default;
-$alert-padding-x:             1.25rem !default;
-$alert-margin-bottom:         1rem !default;
-$alert-border-radius:         $border-radius !default;
-$alert-link-font-weight:      bold !default;
-$alert-border-width: 2px;
+$alert-padding-y:               0.875rem !default;
+$alert-padding-x:               1.5rem !default;
+$alert-margin-bottom:           1rem !default;
+$alert-border-radius:           $border-radius !default;
+$alert-link-font-weight:        $font-weight-bold !default;
+$alert-border-width:            0 !default;
+$alert-bg-scale:                -80% !default;
+$alert-border-scale:            -70% !default;
+$alert-color-scale:             40% !default;
+$alert-dismissible-padding-r:   $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
 
-$alert-success-bg: $lf-success;
-$alert-success-text: #305704;
-$alert-success-border: #d1e595;
-$stripes-alert-success: $alert-success-border;
 
-$alert-info-bg: $lf-info;
-// $alert-info-color is not used in LFUI, but an old variable that still has dependencies in oher apps. Shouldn't be removed
-$alert-info-color: $lf-info;
-$alert-info-text: $blue;
-$alert-info-border: #d7e9f7;
-$stripes-alert-info: $alert-info-border;
-
-$alert-warning-bg: $lf-warning;
-$alert-warning-text: #996006;
-$alert-warning-border: #f5e9d0;
-$stripes-alert-warning: #f7ecd2;
-
-$alert-danger-bg: $lf-danger;
-$alert-danger-text: #ad1015;
-$alert-danger-border: #fbcbd2;
-$stripes-alert-danger: $alert-danger-border;
 
 // Avatar
 

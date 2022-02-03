@@ -54,7 +54,7 @@
   }
 }
 
-.shortcut-important.shortcut-icon {
+.shortcut-alert.shortcut-icon {
   padding-left: 51px;
 
   svg {
@@ -85,84 +85,71 @@
  * Have it stand out a bit more
  */
 
-.shortcut-important {
+.shortcut-alert {
   font-size: 1rem;
   padding: 0.8rem 3.7rem 0.8rem 1.25rem;
   background: lighten($baby, 9%);
 }
 
-.shortcut-important.shortcut-info-ice {
+.shortcut-alert,
+.shortcut-alert.shortcut-info {
   text-align: left;
-  background-color: $alert-info-bg;
-  color: $alert-info-text;
+  background-color: $lf-info;
+  color: $lf-info-dark;
 
   &::after {
-    @include btn-arrow-standard-right($alert-info-text);
+    @include btn-arrow-standard-right($lf-info-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $alert-info-text;
+    box-shadow: inset 0 -2px 0 $lf-info-dark;
   }
 }
 
-.shortcut-important.shortcut-ice-ice-baby {
+.shortcut-alert.shortcut-success {
   text-align: left;
-  background-color: $white;
-  color: $blue;
+  background-color: $lf-success;
+  color: $lf-success-dark;
 
   &::after {
-    @include btn-arrow-standard-right($blue);
+    @include btn-arrow-standard-right($lf-success-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $blue;
+    box-shadow: inset 0 -2px 0 $lf-success-dark;
   }
 }
 
-.shortcut-important.shortcut-success-ice {
+.shortcut-alert.shortcut-warning {
   text-align: left;
-  background-color: $alert-success-bg;
-  color: $alert-success-text;
+  background-color: $lf-warning;
+  color: $lf-warning-dark;
 
   &::after {
-    @include btn-arrow-standard-right($alert-success-text);
+    @include btn-arrow-standard-right($lf-warning-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $alert-success-text;
+    box-shadow: inset 0 -2px 0 $lf-warning-dark;
   }
 }
 
-.shortcut-important.shortcut-warning-ice {
+.shortcut-alert.shortcut-danger {
   text-align: left;
-  background-color: $alert-warning-bg;
-  color: $alert-warning-text;
+  background-color: $lf-danger;
+  color: $lf-danger-dark;
 
   &::after {
-    @include btn-arrow-standard-right($alert-warning-text);
+    @include btn-arrow-standard-right($lf-danger-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $alert-warning-text;
+    box-shadow: inset 0 -2px 0 $lf-danger-dark;
   }
 }
 
-.shortcut-important.shortcut-danger-ice {
-  text-align: left;
-  background-color: $alert-danger-bg;
-  color: $alert-danger-text;
-
-  &::after {
-    @include btn-arrow-standard-right($alert-danger-text);
-  }
-
-  &:hover {
-    box-shadow: inset 0 -2px 0 $alert-danger-text;
-  }
-}
-
-.shortcut-important.disabled,
-button.shortcut-important:disabled {
+.shortcut-alert.disabled,
+button.shortcut-alert:disabled {
   text-align: left;
   background-color: $smoke;
   color: $gray;
