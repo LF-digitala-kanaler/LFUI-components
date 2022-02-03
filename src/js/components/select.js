@@ -31,7 +31,9 @@ export function select (el, opts = el.dataset) {
   let preventClose = false
   const initiallySelected = [...select.selectedOptions]
   const placeholder = initiallySelected.find(isPlaceholder)
-  const initiallyValid = initiallySelected.filter((child) => !child.disabled)
+  const initiallyValid = initiallySelected.filter(
+    (child) => !isPlaceholder(child)
+  )
 
   // Set up internal lookup mechanisms
   const buttons = new WeakMap()
@@ -216,9 +218,8 @@ export function select (el, opts = el.dataset) {
       button.current.classList.toggle('indeterminate', state === 'indeterminate')
     }
 
-    const selected = [
-      ...select.selectedOptions
-    ].filter((option) => !option.disabled)
+    const selected = [...select.selectedOptions]
+      .filter((option) => !isPlaceholder(option))
     const { current: statusNode } = status
 
     // Update status counter
