@@ -1,10 +1,6 @@
-// Core variables, mixins, functions, fonts and helpers.
 @import "reboot";
 
-// Reset and dependencies
-@import "print";
-
-// Core CSS
+/* Core */
 @import "type";
 @import "images";
 @import "code";
@@ -13,7 +9,7 @@
 @import "forms";
 @import "buttons";
 
-// Components
+/* Components */
 @import "alert";
 @import "animations";
 @import "transitions";
@@ -46,7 +42,8 @@
 @import "timeline";
 @import "chart";
 @import "tag";
-// Components w/ JavaScript
+
+/* JS dependent components */
 @import "callout";
 @import "collapse";
 @import "focus";
@@ -55,5 +52,9 @@
 @import "popover-tooltip";
 @import "datepicker";
 @import "upload";
-// Utility classes
+
+/* Utilities */
 @import "utilities";
+
+/* Other */
+@import "print";
