@@ -1,15 +1,16 @@
 import Checkbox from './styledCheckbox.html'
 import CheckboxCards from './checkboxCards.html'
 import { useEffect } from '@storybook/client-api'
-import { checkboxCardExample } from './checkbox'
+import { checkboxCardExample, intermediateCheckboxExample } from './checkbox'
 
 export default { title: 'Checkbox' }
 
-export const checkbox = () => `${Checkbox}`
+export const checkbox = () => {
+  useEffect(intermediateCheckboxExample, [])
+  return Checkbox
+}
 
 export const checkboxCard = () => {
-  useEffect(() => {
-    checkboxCardExample()
-  }, [])
+  useEffect(checkboxCardExample, [])
   return CheckboxCards
 }
