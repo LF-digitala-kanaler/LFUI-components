@@ -113,6 +113,14 @@
 }
 
 /**
+ * Fair enough
+ */
+
+.cursor-pointer:not([disabled]) {
+  cursor: pointer !important;
+}
+
+/**
  * Reset link but keep active state.
  */
 
