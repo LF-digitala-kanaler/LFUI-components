@@ -517,7 +517,7 @@ th[aria-sort="descending"] .table-sort {
 .table-comparative-collapse {
   background-color: inherit !important;
   width: 100%;
-  border-top: 2px solid #f3f3f3;
+  border-top: 2px solid $tint;
 
   @include media-breakpoint-down(sm) {
     border-top: none;

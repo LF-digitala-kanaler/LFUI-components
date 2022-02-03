@@ -27,7 +27,7 @@
 .modal-header {
   background-color: $white;
   padding: 1.35rem $modal-inner-padding 1.35rem;
-  border-bottom: 2px solid #f3f3f3;
+  border-bottom: 2px solid $tint;
 
   display: flex;
   flex-shrink: 0;

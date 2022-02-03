@@ -15,10 +15,13 @@ $btn-close-focus-opacity: 1;
   --#{$variable-prefix}btn-close-active-opacity: 0.6;
   --#{$variable-prefix}btn-close-width: #{$btn-close-width};
   --#{$variable-prefix}btn-close-path-width: 0.125rem;
+
+  transition: opacity 200ms ease-out;
 }
 
 .btn-close:active {
   opacity: var(--#{$variable-prefix}btn-close-active-opacity);
+  transition: none;
 }
 
 /**

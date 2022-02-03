@@ -71,6 +71,7 @@ $gray: #747578;
 $silver: #b1b3b6;
 $smoke: #d9d9d9;
 $shadow: #e5e5e5;
+$tint: #f3f3f3;
 $white: #fff;
 $alabaster: #fafafa;
 $login-logout-blue: #007db0;
@@ -213,7 +214,7 @@ $legible-width: 36em; // LFUI-specific
 //
 // Settings for the `<body>` element.
 
-$body-bg: #f3f3f3;
+$body-bg: $tint;
 $body-color: $black;
 
 // Links
