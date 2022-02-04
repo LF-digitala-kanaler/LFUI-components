@@ -1,8 +1,8 @@
 @import "bootstrap/scss/_badge.scss";
 
 .badge {
-  border-radius: 0;
   font-family: $font-family-sans-serif;
+  border-radius: 0;
 }
 
 // Colors
@@ -23,20 +23,20 @@
 
 .badge-success {
   @include badge-variant($badge-success-bg);
-  @include warning;
+  @include warning();
 }
 
 .badge-info {
   @include badge-variant($badge-info-bg);
-  @include warning;
+  @include warning();
 }
 
 .badge-warning {
   @include badge-variant($badge-warning-bg);
-  @include warning;
+  @include warning();
 }
 
 .badge-danger {
   @include badge-variant($badge-danger-bg);
-  @include warning;
+  @include warning();
 }

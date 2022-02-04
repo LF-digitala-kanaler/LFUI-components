@@ -1,23 +1,23 @@
 {
-  "extends": "stylelint-config-standard",
-  "customSyntax": "postcss-scss",
+  "extends": [
+    "stylelint-config-twbs-bootstrap"
+  ],
   "rules": {
-    "at-rule-no-unknown": null,
-    "no-descending-specificity": null,
-    "value-keyword-case": null,
-    "no-duplicate-selectors": null,
-    "property-no-vendor-prefix": [
-      true,
-      {
-        "ignoreProperties": [
-          "transform",
-          "backface-visibility"
-        ]
-      }
-    ],
-    "color-function-notation": "legacy",
-    "max-line-length": null,
-    "keyframes-name-pattern": "[a-z]{1}[a-zA-Z]",
-    "no-invalid-position-at-import-rule": null
+    "declaration-no-important": null,
+    "declaration-property-value-disallowed-list": {
+      "border": "none",
+      "outline": "none"
+    },
+    "scss/selector-no-union-class-name": true,
+    "scss/at-import-no-partial-leading-underscore": null,
+    "scss/at-import-partial-extension": null,
+    "scss/dollar-variable-pattern": null,
+    "selector-max-class": null,
+    "selector-max-type": null,
+    "selector-max-compound-selectors": null,
+    "selector-no-qualifying-type": null,
+    "selector-max-combinators": null,
+    "value-list-comma-space-after": null,
+    "value-list-comma-newline-after": null
   }
 }

@@ -15,7 +15,7 @@
 }
 
 .font-smooth {
-  @include font-smoothing;
+  @include font-smoothing();
 }
 
 /**
