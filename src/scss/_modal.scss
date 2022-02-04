@@ -25,7 +25,6 @@
 }
 
 .modal-header {
-
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -46,23 +45,6 @@
   order: 1;
   margin-right: calc($btn-close-padding-x * -1);
   color: $navy;
-  // position: absolute;
-  // padding: 0;
-  // top: 25px;
-  // right: 27px;
-  // opacity: 0.3;
-  // color: $navy;
-  // margin: 0;
-
-  // &:hover {
-  //   color: $navy;
-  // }
-
-  // &.close-large {
-  //   margin: 0;
-  //   top: 25px;
-  //   right: 27px;
-  // }
 }
 
 .modal-tight {
