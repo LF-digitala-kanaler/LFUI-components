@@ -7,11 +7,11 @@
 .label,
 label,
 legend {
-  margin-bottom: 0.3rem;
-  font-weight: bold;
+  margin-bottom: .3rem;
   font-family: $font-family-sans-serif;
+  font-weight: 700;
 
-  @include font-smoothing;
+  @include font-smoothing();
 }
 
 legend {
@@ -68,21 +68,19 @@ input[disabled] {
  */
 
 .form-control {
-  font-weight: normal;
+  min-height: $input-height;
+  padding: $input-padding;
+  font-weight: 400;
   line-height: $input-line-height;
+  background-clip: inherit; /* 1 */
   border-width: 0 0 $input-btn-border-width 0;
   transition: border-color 60ms linear;
-  background-clip: inherit; /* 1 */
-  padding: $input-padding;
-  min-height: $input-height;
-}
 
-.form-control {
   &:disabled + .input-group-append,
   &[readonly] + .input-group-append {
+    cursor: not-allowed;
     background-color: $input-disabled-bg;
     opacity: 1;
-    cursor: not-allowed;
 
     span,
     div {
@@ -104,19 +102,12 @@ input[disabled] {
 
 .form-control:hover:not([disabled]) {
   background: $input-hover;
-  transition: background 0.2s;
+  transition: background .2s;
 
   + .input-group-append,
   + .input-group-append > .input-group-text {
     background: $input-hover;
-    transition: background 0.2s;
-  }
-}
-
-.form-control-white:hover:not([disabled]) {
-  + .input-group-append,
-  + .input-group-append > .input-group-text {
-    background: $input-white-bg-hover;
+    transition: background .2s;
   }
 }
 
@@ -134,6 +125,11 @@ input[disabled] {
 
   &:hover:not([disabled]) {
     background-color: $input-white-bg-hover !important;
+
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      background: $input-white-bg-hover;
+    }
   }
 }
 
@@ -149,26 +145,26 @@ input[disabled] {
 }
 
 .form-control-feedback {
-  font-weight: bold;
-  transition: color 60ms linear;
   font-family: $font-family-sans-serif;
+  font-weight: 700;
+  transition: color 60ms linear;
 
-  @include font-smoothing;
+  @include font-smoothing();
 }
 
 // Overwrite Bootstrap's non-vertically-centered shit.
 .col-form-label {
+  height: $input-height;
   padding-top: $input-padding-y;
   padding-bottom: $input-padding-y;
   margin-bottom: 0; // Override the `<label>` default
   line-height: $line-height-base;
-  height: $input-height;
 }
 
 .form-control-plaintext {
   padding: $input-padding-y 0;
-  border-width: 1px 0;
   line-height: 1.25;
+  border-width: 1px 0;
 }
 
 /**
@@ -208,7 +204,7 @@ input[disabled] {
 
     &:hover {
       background: $input-valid-hover;
-      transition: background 0.2s;
+      transition: background .2s;
 
       + .input-group-append,
       + .input-group-append > .input-group-text {
@@ -297,7 +293,7 @@ input[disabled] {
 
 .form-check {
   padding-left: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
 
 /**

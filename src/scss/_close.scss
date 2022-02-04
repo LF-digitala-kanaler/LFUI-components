@@ -1,100 +1,49 @@
-@import "bootstrap/scss/_close.scss";
+/* Configure Bootstrap */
+$btn-close-width: .875rem;
+$btn-close-height: $btn-close-width;
+$btn-close-padding-x: .25em;
+$btn-close-padding-y: $btn-close-padding-x;
+$btn-close-color: currentColor;
+$btn-close-bg: "";
+$btn-close-opacity: 1;
+$btn-close-hover-opacity: 1;
+$btn-close-focus-opacity: 1;
+
+@import "_close-bs5.scss";
 
 /**
- * The Bootstrap .close is terrible. Let's override it
- *
- * Todo: redesign?
+ * Replace the Bootstrap svg background approach with elements that
+ * can inherit color properly
  */
 
-.close.close {
-  //position: absolute;
-  width: 20px;
-  height: 20px;
-  transform: rotate(45deg);
-  transition: opacity 100ms ease;
-  z-index: 1;
-  font-size: 0;
-  opacity: 1;
-  margin-right: -3px;
+.btn-close {
+  --#{$variable-prefix}btn-close-active-opacity: .6;
+  --#{$variable-prefix}btn-close-width: #{$btn-close-width};
+  --#{$variable-prefix}btn-close-path-width: .125rem;
+
+  position: relative;
+  background: transparent;
+  transition: opacity 200ms ease-out;
 }
 
-.close.close,
-.close.close:hover,
-.close.close:focus,
-.close.close:active {
-  opacity: 0.7;
-  color: $close-color;
-}
-
-.close.close:hover {
-  opacity: 1;
-}
-
-.close.close:active {
-  opacity: 0.6;
-  transition: none;
-}
-
-.close.close::before,
-.close.close::after {
-  content: "";
-  width: 18px;
-  height: 2px;
+.btn-close::before,
+.btn-close::after {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -1px 0 0 -9px;
+  width: var(--#{$variable-prefix}btn-close-width);
+  height: var(--#{$variable-prefix}btn-close-path-width);
+  margin: calc(var(--#{$variable-prefix}btn-close-path-width) / 2 * -1) 0 0 calc(var(--#{$variable-prefix}btn-close-width) / 2 * -1);
+  content: "";
   background: currentColor;
+  transform: rotate(45deg);
 }
 
-.close.close::after {
-  width: 2px;
-  height: 18px;
-  margin: -9px 0 0 -1px;
+.btn-close::after {
+  transform: rotate(135deg);
 }
 
-/**
-* Large button
-*/
-
-.close.close-large,
-.close.close-large:hover,
-.close.close-large:focus,
-.close.close-large:active {
-  width: 26px;
-  height: 26px;
-  margin-right: -4px;
-  opacity: 0.3;
-}
-
-.close.close-large:hover {
-  opacity: 0.8;
-}
-
-.close.close-large:active {
-  opacity: 0.4;
+.btn-close:active {
+  opacity: var(--#{$variable-prefix}btn-close-active-opacity);
   transition: none;
-}
-
-.close.close-large::before,
-.close.close-large::after {
-  width: 26px;
-  height: 2px;
-  margin: -1px 0 0 -13px;
-}
-
-.close.close-large::after {
-  width: 2px;
-  height: 26px;
-  margin: -13px 0 0 -1px;
-}
-
-/**
-* Position helper
-*/
-
-.close.close-absolute {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
 }

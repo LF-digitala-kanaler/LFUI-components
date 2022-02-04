@@ -25,36 +25,34 @@ $datepicker-cell-height-big: 75px;
   .month::first-letter {
     text-transform: uppercase;
   }
-}
 
-.datepicker {
   .input-group-append {
     z-index: 6;
 
     > .btn {
       z-index: 1;
-      height: 100%;
       width: 100%;
-      padding-left: 0.625rem !important;
-      padding-right: 0.625rem !important;
+      height: 100%;
+      padding-right: .625rem !important;
+      padding-left: .625rem !important;
 
       svg {
         position: absolute;
-        transform: translateY(-50%);
         top: 50%;
+        transform: translateY(-50%);
       }
     }
   }
 
   .btn.active {
-    border-bottom: 2px $navy solid !important;
     padding-bottom: 0;
+    border-bottom: 2px $navy solid !important;
   }
 
   // IE and Safari fix. Urgh.
   .form-control {
-    min-height: 2.5rem;
     height: auto !important;
+    min-height: 2.5rem;
   }
 }
 
@@ -80,60 +78,60 @@ $datepicker-cell-height-big: 75px;
 }
 
 .datepicker td {
-  border: solid 1px $datepicker-color-border;
   padding: 0;
   background-color: $white;
+  border: solid 1px $datepicker-color-border;
 
-  @include font-smoothing;
+  @include font-smoothing();
 }
 
 .datepicker table td.day:hover,
 .datepicker table td.hour:hover,
 .datepicker table td.minute:hover {
   background-color: $input-hover;
-  box-shadow: inset 0 -2px 0 0 $blue;
   border-bottom: none;
+  box-shadow: inset 0 -2px 0 0 $blue;
 }
 
 .datepicker td.day.disabled {
-  background-color: #f4f4f4;
-  color: #515151;
+  color: $datepicker-color-th;
+  background-color: $datepicker-color-grey;
 
   &:hover {
+    color: $datepicker-color-th;
     box-shadow: none;
-    color: #515151;
   }
 }
 
 .datepicker td.new,
 .datepicker td.old {
-  background-color: $datepicker-color-newold-date;
   color: #8b8b8b;
+  background-color: $datepicker-color-newold-date;
 }
 
 .datepicker td.active.active,
 .datepicker td.active.active:hover {
+  font-weight: 700;
+  color: $blue;
   text-shadow: none;
   background-color: $cloud;
   box-shadow: inset 0 -2px 0 0 $blue;
-  color: $blue;
-  font-weight: bold;
 }
 
 .datepicker td.day.active.today {
-  background-color: #eee;
+  background-color: $datepicker-color-border;
 }
 
 //if a date is active/selected but disabled
 .datepicker td.day.active.disabled {
-  border: none;
-  background-color: $input-hover;
-  box-shadow: none;
   color: $black;
+  background-color: $input-hover;
+  border: 0;
+  box-shadow: none;
 
   &:hover {
+    background-color: $datepicker-color-border;
     box-shadow: none;
-    background-color: #eee;
   }
 }
 
@@ -141,8 +139,8 @@ $datepicker-cell-height-big: 75px;
 .datepicker td.active:hover.disabled,
 .datepicker td.active[disabled],
 .datepicker td.active:hover[disabled] {
-  border: none;
   background-color: $cloud;
+  border: 0;
   box-shadow: inset 0 -2px 0 0 $blue;
 }
 
@@ -169,28 +167,28 @@ $datepicker-cell-height-big: 75px;
 }
 
 .datepicker td.active.active {
-  border: none;
   background-color: $cloud;
+  border: 0;
 }
 
 .datepicker td span:not(.timepicker-picker span):hover {
-  color: #222;
-  border: none;
+  color: $black;
   background-color: $datepicker-color-grey;
+  border: 0;
   box-shadow: inset 0 -2px 0 0 $blue;
 }
 
 .datepicker td span.active {
-  border: none;
   background-color: $cloud;
+  border: 0;
   box-shadow: inset 0 -2px 0 0 $blue;
 }
 
 .datepicker td span.active.active,
 .datepicker td span.active.disabled,
 .datepicker td span.active[disabled] {
-  border: none;
   background-color: $cloud;
+  border: 0;
   box-shadow: inset 0 -2px 0 0 $blue;
 }
 
@@ -204,18 +202,18 @@ $datepicker-cell-height-big: 75px;
 .datepicker .datepicker-months th.next,
 .datepicker .datepicker-years th.next {
   @include btn-arrow-small-right($blue);
+  width: $datepicker-button-prev-next-width;
+  background-position: center;
 
   background-size: 21px 12px;
-  background-position: center;
-  width: $datepicker-button-prev-next-width;
 
   &:hover {
     @include btn-arrow-small-right($blue);
+    width: $datepicker-button-prev-next-width;
 
     background-color: #dcddde;
-    background-size: 21px 12px;
     background-position: center;
-    width: $datepicker-button-prev-next-width;
+    background-size: 21px 12px;
   }
 }
 
@@ -224,20 +222,20 @@ $datepicker-cell-height-big: 75px;
 .datepicker .datepicker-months th.prev,
 .datepicker .datepicker-years th.prev {
   @include btn-arrow-small-left($blue);
+  width: $datepicker-button-prev-next-width;
+  background-position: center;
 
   // transform: rotate(180deg);
   background-size: 21px 12px;
-  background-position: center;
-  width: $datepicker-button-prev-next-width;
 
   &:hover {
     @include btn-arrow-small-left($blue);
+    width: $datepicker-button-prev-next-width;
 
     // transform: rotate(180deg);
     background-color: #dcddde;
-    background-size: 21px 12px;
     background-position: center;
-    width: $datepicker-button-prev-next-width;
+    background-size: 21px 12px;
   }
 }
 
@@ -245,8 +243,8 @@ $datepicker-cell-height-big: 75px;
   @include glyph-chevron-up($blue);
 
   &:hover {
-    border: 0;
     background-color: transparent;
+    border: 0;
 
     @include glyph-chevron-up($blue);
   }
@@ -256,8 +254,8 @@ $datepicker-cell-height-big: 75px;
   @include glyph-chevron-down($blue);
 
   &:hover {
-    border: 0;
     background-color: transparent;
+    border: 0;
 
     @include glyph-chevron-down($blue);
   }
@@ -283,37 +281,37 @@ $datepicker-cell-height-big: 75px;
 
   tr:first-child {
     height: 45px;
-    cursor: pointer;
+    font-weight: 700;
     color: $blue;
-    font-weight: bold;
+    cursor: pointer;
   }
 
   tr:nth-child(2) {
     height: 35px;
 
     th {
-      color: #515151;
       font-size: $font-size-xs;
+      color: $datepicker-color-th;
     }
   }
 }
 
 .datepicker.dropdown-menu {
   padding: 0;
-  border: 0;
   margin: 0;
+  border: 0;
 }
 
 .bootstrap-datetimepicker-widget.dropdown-menu {
   // The eonasdan-bootstrap-datetimepicker does not add the bootstrap "open" class to the parent, so we need to include the open state style into the dropdown-menu class for the datepicker.
   // It will not appear as open all the time, as the datepicker is added/removed from the DOM when toggled.
   @include dropdown-menu-open();
+  width: 100%;
 
   min-width: 336px;
-  margin: 0;
   padding: 0;
-  width: 100%;
-  border: none;
+  margin: 0;
+  border: 0;
   box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 8%);
 
   &::before {
@@ -334,7 +332,7 @@ $datepicker-cell-height-big: 75px;
 .datepicker-years td[colspan="7"] {
   padding: 35px 0 0;
   background-color: $datepicker-color-grey;
-  border: none;
+  border: 0;
 
   span {
     display: none;
@@ -343,17 +341,17 @@ $datepicker-cell-height-big: 75px;
   .decade,
   .month,
   .year {
+    display: block;
+    float: left;
     width: 25%;
     height: $datepicker-cell-height-big;
     margin: 0;
-    border: solid 1px $datepicker-color-border;
-    display: block;
     line-height: $datepicker-cell-height-big;
-    float: left;
     cursor: pointer;
     background-color: $white;
+    border: solid 1px $datepicker-color-border;
 
-    @include font-smoothing;
+    @include font-smoothing();
 
     &:hover {
       background-color: $datepicker-color-grey;
@@ -364,19 +362,19 @@ $datepicker-cell-height-big: 75px;
   .decade.active,
   .month.active,
   .year.active {
-    border: 1px solid #eee;
+    font-weight: 700;
     color: $blue;
-    font-weight: bold;
-    background-color: #eff4f9;
-    box-shadow: inset 0 -2px 0 0 $blue;
     text-shadow: none;
+    background-color: $cloud;
+    border: 1px solid $datepicker-color-border;
+    box-shadow: inset 0 -2px 0 0 $blue;
   }
 }
 
 // Disable the decade picker
 .bootstrap-datetimepicker-widget .datepicker-years thead .picker-switch {
-  cursor: default;
   pointer-events: none;
+  cursor: default;
 }
 // test small datepicker
 .datepicker-small .bootstrap-datetimepicker-widget {
@@ -390,5 +388,5 @@ $datepicker-cell-height-big: 75px;
 .datepicker-small th {
   width: 40px;
   height: 40px;
-  font-size: 0.875rem;
+  font-size: .875rem;
 }

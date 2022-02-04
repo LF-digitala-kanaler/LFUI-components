@@ -3,18 +3,18 @@
 // We add a custom, proper keyboard focus appearance.
 html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
   &::-webkit-slider-thumb {
+    outline: 0;
     box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-    outline: none;
   }
 
   &::-moz-range-thumb {
+    outline: 0;
     box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-    outline: none;
   }
 
   &::-ms-thumb {
+    outline: 0;
     box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-    outline: none;
   }
 }
 
@@ -43,12 +43,12 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
   text-align: right;
 
   &.distribution-label {
-    width: 8px;
-    padding: 1em 0 0.8rem;
-    bottom: 30px;
     top: auto !important;
-    transform: none;
+    bottom: 30px;
+    width: 8px;
+    padding: 1em 0 .8rem;
     text-align: left;
+    transform: none;
 
     &::before {
       right: 100%;
@@ -66,12 +66,12 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
   white-space: nowrap;
 
   &.distribution-label {
-    width: 8px;
-    bottom: 30px;
     top: auto !important;
-    transform: none;
+    bottom: 30px;
+    width: 8px;
     text-align: center;
     text-align: right;
+    transform: none;
 
     &::before {
       left: 100%;
@@ -85,10 +85,10 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
 
 .slider-label-left,
 .slider-label-right {
-  font-weight: bold;
-  font-family: $font-family-sans-serif;
   position: absolute;
   top: 5px;
   width: 50px;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
   white-space: nowrap;
 }

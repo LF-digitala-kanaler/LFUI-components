@@ -42,7 +42,7 @@ button,
  */
 
 a {
-  @include link;
+  @include link();
 }
 
 [role="link"] {

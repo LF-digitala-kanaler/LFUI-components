@@ -42,8 +42,8 @@
     "sass-loader": "^10.2.0",
     "standard": "^16.0.4",
     "style-loader": "^2.0.0",
-    "stylelint": "^14.2.0",
-    "stylelint-config-standard": "^24.0.0",
+    "stylelint": "14.2.0",
+    "stylelint-config-twbs-bootstrap": "^3.0.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
@@ -54,7 +54,7 @@
     "release": "auto changelog && npm run version && auto release",
     "test": "npm run lint:scss && npm run lint:js",
     "lint:js": "standard",
-    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss"
+    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss --cache --cache-location .cache/.stylelintcache --rd"
   },
   "main": "dist/lfui/lfui.js",
   "style": "dist/lfui/lfui.css",

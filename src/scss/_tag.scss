@@ -1,70 +1,50 @@
-$tag-radius: 1.25rem; // 20px
-$tag-color: $white;
-$tag-background: $blue;
-$tag-background-info: $lf-info;
-$tag-background-danger: $lf-danger;
-
 .tag {
-  @include font-smoothing;
-  @include reset-button; // if button is used
-  @include reset-link;
+  --#{$variable-prefix}tag-bg: #{$tint};
+  --#{$variable-prefix}tag-color: #{$gray};
+  --#{$variable-prefix}tag-font-size: #{$font-size-sm};
 
-  border-radius: $tag-radius;
-  background-color: $tag-background;
-  color: $tag-color;
-  display: inline-block;
-  padding: 0.5313rem 2.625rem 0.5313rem $spacer;
-  position: relative;
-
-  &:hover,
-  &:focus {
-    color: $tag-color;
-
-    svg {
-      fill: darken($tag-color, 15%);
-    }
-  }
-
-  &.tag-bg-info {
-    background-color: $tag-background-info;
-    color: $blue;
-
-    &:hover,
-    &:focus {
-      color: $blue;
-
-      svg {
-        fill: darken($blue, 15%);
-      }
-    }
-  }
-
-  &.tag-bg-danger {
-    background-color: $tag-background-danger;
-    color: $wine;
-
-    &:hover,
-    &:focus {
-      color: $wine;
-
-      svg {
-        fill: darken($wine, 15%);
-      }
-    }
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80vw;
+  height: 2rem;
+  padding: 0 1rem;
+  overflow: hidden;
+  font-size: var(--#{$variable-prefix}tag-font-size);
+  color: var(--#{$variable-prefix}tag-color);
+  white-space: nowrap;
+  cursor: default;
+  background: var(--#{$variable-prefix}tag-bg);
+  border-radius: 10rem;
+  @include font-smoothing();
 }
 
-.tag-dismissable {
-  @include reset-button;
+.tag .btn-close {
+  margin-right: -.25rem;
+  margin-left: .5rem;
+}
 
-  margin-left: 0.375rem;
-  position: absolute;
-  top: 8px;
-  right: $spacer;
-  color: inherit;
+.tag-lg {
+  --#{$variable-prefix}tag-font-size: #{$font-size-md};
+  height: 2.5rem;
+}
 
-  svg {
-    fill: currentColor;
-    transition: fill 100ms ease;
-  }
+.tag-info {
+  --#{$variable-prefix}tag-bg: #{$lf-info};
+  --#{$variable-prefix}tag-color: #{$lf-info-dark};
+}
+
+.tag-success {
+  --#{$variable-prefix}tag-bg: #{$lf-success};
+  --#{$variable-prefix}tag-color: #{$lf-success-dark};
+}
+
+.tag-warning {
+  --#{$variable-prefix}tag-bg: #{$lf-warning};
+  --#{$variable-prefix}tag-color: #{$lf-warning-dark};
+}
+
+.tag-danger {
+  --#{$variable-prefix}tag-bg: #{$lf-danger};
+  --#{$variable-prefix}tag-color: #{$lf-danger-dark};
 }
