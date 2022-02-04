@@ -12,9 +12,9 @@
 
 .nav:not(.navbar-nav):not(.nav-tabs):not(.nav-pills):not(.nav-tight):not(.nav-stacked):not(.nav-two-col):not(.nav-sub):not(.nav-sub-gray) {
   .nav-link {
-    line-height: 1.2;
-    padding: 0;
     display: inline-block;
+    padding: 0;
+    line-height: 1.2;
 
     // Don't want to break these, though
     &.primary-link,
@@ -69,13 +69,13 @@
   &:focus,
   &:active {
     position: relative;
+    font-size: $font-size-lg;
+    color: inherit;
     background: rgba(0, 0, 0, 3%);
     background-image: none;
     border: solid $nav-tabs-border-color;
     border-width: 0 0 $nav-tabs-border-width;
     opacity: 1;
-    color: inherit;
-    font-size: $font-size-lg;
     transition: 75ms linear;
     transition-property: border-color, background, color;
   }
@@ -84,10 +84,10 @@
   &.active:hover,
   &.active:focus,
   &.active:active {
+    font-weight: 700;
+    color: $blue;
     background-color: $white;
     border-bottom-color: $white;
-    color: $blue;
-    font-weight: bold;
   }
 
   &:hover,
@@ -107,9 +107,9 @@
     &.active:hover,
     &.active:focus,
     &.active:active {
+      color: $nav-link-disabled-color;
       background: rgba(0, 0, 0, 3%);
       border-bottom: 2px solid transparent;
-      color: $nav-link-disabled-color;
     }
   }
 }
@@ -124,17 +124,15 @@
 }
 
 .nav-pills .nav-link {
-  & {
-    border-bottom-color: $smoke;
-    color: $gray;
-  }
+  color: $gray;
+  border-bottom-color: $smoke;
 
   &.active,
   &.active:hover,
   &.active:focus,
   &.active:active {
+    font-weight: 700;
     border-bottom-color: $blue;
-    font-weight: bold;
   }
 
   &,
@@ -149,7 +147,7 @@
   }
 
   &:active {
-    color: rgba($link-hover-color, 0.6);
+    color: rgba($link-hover-color, .6);
     transition: none;
   }
 
@@ -160,9 +158,9 @@
     &.active:hover,
     &.active:focus,
     &.active:active {
+      color: $nav-link-disabled-color;
       background: transparent;
       border-bottom: 2px solid $smoke;
-      color: $nav-link-disabled-color;
     }
   }
 }
@@ -172,7 +170,7 @@
 }
 
 .nav-small .nav-link {
-  padding: 0.75rem 1.125rem calc(0.75rem - #{$border-width});
+  padding: .75rem 1.125rem calc(.75rem - #{$border-width});
 }
 // Classes for JS-responsitivity
 .nav-stacked {
@@ -203,8 +201,8 @@
     &.active:hover,
     &.active:focus,
     &.active:active {
+      font-weight: 700;
       background: $body-bg;
-      font-weight: bold;
       border-color: $body-bg;
     }
 
@@ -231,18 +229,20 @@
 
 .nav-sub {
   @extend .nav-inline;
+  display: flex;
+  flex-basis: inherit;
+  flex-wrap: wrap;
+  padding: .5rem 1rem .25rem;
 
   background: $white;
-  padding: 0.5rem 1rem 0.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: inherit;
 
   .nav-link {
     padding: 0;
-    margin-left: 0 !important;
     margin-right: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
+    margin-left: 0 !important;
+    color: $gray;
+    border-bottom-color: $smoke;
 
     &,
     &:hover,
@@ -250,18 +250,13 @@
     &.active,
     &:active {
       position: relative;
+      color: inherit;
       background-image: none;
       border: solid $nav-tabs-border-color;
       border-width: 0 0 $nav-tabs-border-width;
       opacity: 1;
-      color: inherit;
       transition: 75ms linear;
       transition-property: border-color, background, color;
-    }
-
-    & {
-      border-bottom-color: $smoke;
-      color: $gray;
     }
 
     &.active,
@@ -269,12 +264,12 @@
     &.active:hover,
     &.active:focus,
     &.active:active {
-      border-bottom-color: $blue;
       color: $blue;
+      border-bottom-color: $blue;
     }
 
     &:active {
-      color: rgba($link-hover-color, 0.6);
+      color: rgba($link-hover-color, .6);
       transition: none;
     }
 
@@ -283,16 +278,16 @@
     }
 
     &.disabled:not(.primary-link):not(.btn-link-lg):not(.btn-link-lg-left) {
-      border-bottom: $smoke;
       color: $nav-link-disabled-color;
+      border-bottom: $smoke;
 
       &.active,
       &:hover,
       &.active:hover,
       &.active:focus,
       &.active:active {
-        border-bottom-color: $smoke;
         color: $nav-link-disabled-color;
+        border-bottom-color: $smoke;
       }
     }
   }
@@ -313,13 +308,13 @@
     margin-left: 1.5rem;
 
     &::before {
-      content: " ";
-      pointer-events: none;
-      width: 1px;
-      height: calc(#{$font-size-lg} + 0.5rem);
-      margin-right: 0.75rem;
-      right: 100%;
       position: absolute;
+      right: 100%;
+      width: 1px;
+      height: calc(#{$font-size-lg} + .5rem);
+      margin-right: .75rem;
+      pointer-events: none;
+      content: " ";
       background-color: $silver;
     }
   }
@@ -331,27 +326,27 @@
   border-bottom: 2px solid $border-color;
 
   .nav-item {
+    margin-right: 4px;
     margin-left: 0 !important;
     border: 2px solid $border-color;
-    margin-right: 4px;
   }
 
   .nav-link,
   .nav-link.active,
   .nav-link:hover,
   .nav-link:focus {
-    font-size: 1.125rem;
+    padding: .656rem 1.375rem;
     margin-right: 0;
-    padding: 0.656rem 1.375rem;
+    font-size: 1.125rem;
     cursor: pointer;
-    border: 0;
     background-color: $body-bg;
-    -webkit-font-smoothing: antialiased;
+    border: 0;
+    @include font-smoothing();
 
     &.active {
-      box-shadow: 0 2px $white;
-      border-bottom: 0;
       background-color: $white;
+      border-bottom: 0;
+      box-shadow: 0 2px $white;
 
       &:hover {
         box-shadow: 0 2px $white;
@@ -397,9 +392,9 @@
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
+    display: none;
     width: 0 !important;
     height: 0;
-    display: none;
   }
 
   @include media-breakpoint-down(md) {
@@ -410,8 +405,8 @@
   .nav-tabs {
     display: flex;
     flex-wrap: nowrap;
-    white-space: nowrap;
     align-items: flex-end;
+    white-space: nowrap;
 
     // needed to hide the scrollbar spacing in safari and chrome on Ios
 

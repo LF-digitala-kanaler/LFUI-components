@@ -1,23 +1,23 @@
 $chart-legend-box-size: 1rem;
 
 .chart-legends {
-  list-style-image: none;
-  list-style-type: none;
   padding-left: 0;
+  list-style-type: none;
+  list-style-image: none;
 }
 
 .chart-legend-item {
   display: flex;
   align-items: center;
   margin-bottom: 4px;
+}
 
-  &-clickable {
-    cursor: pointer;
-  }
+.chart-legend-item-clickable {
+  cursor: pointer;
 }
 
 .chart-legend-box {
-  height: $chart-legend-box-size;
   width: $chart-legend-box-size;
+  height: $chart-legend-box-size;
   margin-right: 8px;
 }

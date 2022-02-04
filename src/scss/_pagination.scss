@@ -8,47 +8,45 @@
 .page-link:hover,
 .page-link:focus,
 .page-link:active {
-  background-image: none;
-  font-weight: bold;
   margin-left: 2px;
+  font-weight: 700;
   background-color: $pagination-bg;
+  background-image: none;
 
-  @include font-smoothing;
+  @include font-smoothing();
 }
 
 .pagination:not(.pagination-flex) .page-item:not(.active) {
   .page-link:hover,
   .page-link:focus {
+    color: $pagination-hover-color;
+    cursor: pointer;
     background-color: $pagination-hover-bg;
     border-color: $pagination-hover-border-color;
-    cursor: pointer;
-    color: $pagination-hover-color;
 
     &::after {
-      content: "";
       position: absolute;
-      left: 11px;
-      bottom: 7px;
       right: 11px;
-      margin: auto;
-      background: $pagination-hover-color;
+      bottom: 7px;
+      left: 11px;
       height: 2px;
+      margin: auto;
+      content: "";
+      background: $pagination-hover-color;
     }
   }
 }
 
-.pagination {
-  .page-item.active ~ .page-item {
-    .page-link {
-      &,
-      &:focus {
-        color: $smoke !important;
-        font-weight: bold;
-        pointer-events: none;
+.pagination .page-item.active ~ .page-item {
+  .page-link {
+    &,
+    &:focus {
+      font-weight: 700;
+      color: $smoke !important;
+      pointer-events: none;
 
-        &::after {
-          content: none !important;
-        }
+      &::after {
+        content: none !important;
       }
     }
   }
@@ -74,15 +72,15 @@
 
     &:last-of-type {
       .page-link {
-        margin-right: 0;
         width: 100%;
+        margin-right: 0;
       }
     }
 
     &:not(.active) {
       .page-link:hover {
-        background-color: $white;
         color: $blue;
+        background-color: $white;
       }
     }
 
@@ -96,15 +94,15 @@
     a.page-link:hover,
     a.page-link:focus {
       &::after {
-        content: "";
         position: absolute;
-        left: 11px;
-        bottom: 7px;
         right: 11px;
-        margin: auto;
-        background: $blue;
-        height: 2px;
+        bottom: 7px;
+        left: 11px;
         width: 12px;
+        height: 2px;
+        margin: auto;
+        content: "";
+        background: $blue;
       }
     }
   }
@@ -122,15 +120,15 @@
 
       &:last-of-type {
         .page-link {
-          margin-right: 0;
           width: 100%;
+          margin-right: 0;
         }
       }
 
       &:not(.active) {
         .page-link:hover {
-          background-color: $white;
           color: $blue;
+          background-color: $white;
         }
       }
 
@@ -144,15 +142,15 @@
       a.page-link:hover,
       a.page-link:focus {
         &::after {
-          content: "";
           position: absolute;
-          left: 11px;
-          bottom: 7px;
           right: 11px;
-          margin: auto;
-          background: $blue;
-          height: 2px;
+          bottom: 7px;
+          left: 11px;
           width: 12px;
+          height: 2px;
+          margin: auto;
+          content: "";
+          background: $blue;
         }
       }
     }

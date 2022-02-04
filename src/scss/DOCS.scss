@@ -7,7 +7,7 @@
 /**
  * Only used for Docs, let us switch background in storybook
  */
-$body-bg:transparent;
+$body-bg: transparent;
 
 /**
  * Have Bootstrap fill in all the blanks
@@ -21,10 +21,6 @@ $body-bg:transparent;
  */
 
 @import "bootstrap/scss/_reboot.scss";
-
-a {
-  @include link;
-}
 
 $link-decoration: none;
 
@@ -62,100 +58,74 @@ button,
  */
 
 a {
-  @include link;
+  @include link();
 }
 
 [role="link"] {
   cursor: pointer;
 }
 
-/**
- * Love-hate
- */
-
 img {
   max-width: 100%;
 }
 
-// Override font-family: sans-serif in normalize 5.0
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-}
-
-a {
-  @include link;
-}
-
-// Override font-family: sans-serif in normalize 5.0
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-}
-
 body :focus,
 body .focus {
-  outline: none !important;
+  outline: 0 !important;
+}
+
+// Override font-family: sans-serif in normalize 5.0
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
 }
 
 body[data-focus-source="key"] :focus,
 body[data-focus-source="key"] .focus {
+  z-index: 10;
   outline: 4px solid $orange !important;
   outline-offset: 0;
-  z-index: 10;
 }
 
 body[data-focus-source="key"] [tabindex="-1"]:focus,
 body[data-focus-source="key"] input:focus,
 body[data-focus-source="key"] select:focus,
 body[data-focus-source="key"] textarea:focus {
-  outline: none !important;
+  outline: 0 !important;
 }
 
 body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control-label::before {
+  color: $body-color;
   background: $orange !important;
   outline: 4px solid $orange;
-  color: $body-color;
 }
 
 body[data-focus-source="key"] input[class*="lf-slider"]:focus {
   &::-webkit-slider-thumb {
+    outline: 0;
     box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-    outline: none;
   }
 
   &::-moz-range-thumb {
+    outline: 0;
     box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-    outline: none;
   }
 
   &::-ms-thumb {
+    outline: 0;
     box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-    outline: none;
   }
 }
 
 body[data-focus-source="key"] .upload-input:focus + .upload-label,
 body[data-focus-source="key"] .upload-input.has-focus + .upload-label {  // Firefox completely ignores the input[type="file"]:focus so we have to fix the focus state with js
-  outline: 4px solid $orange;
   color: #00325c;
   background-color: transparent;
   border-color: #00325c;
-}
-
-// Override font-family: sans-serif in normalize 5.0
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
+  outline: 4px solid $orange;
 }
 
 // Reset and dependencies

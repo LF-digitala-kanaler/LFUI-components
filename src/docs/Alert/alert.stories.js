@@ -1,14 +1,5 @@
-import Info from './info.html'
-import Success from './success.html'
-import Danger from './danger.html'
-import Warning from './warning.html'
+import Alert from './alert.html'
 
-export default {
-  title: 'Alert'
+export default { title: 'Alert' }
 
-} // Component title
-
-export const info = () => `${Info}`
-export const success = () => `${Success}`
-export const danger = () => `${Danger}`
-export const warning = () => `${Warning}`
+export const alert = () => `${Alert}`

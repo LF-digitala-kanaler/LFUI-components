@@ -5,8 +5,8 @@
 /* Looks like link */
 
 .link {
-  @include reset-button;
-  @include link;
+  @include reset-button();
+  @include link();
 }
 
 /**
@@ -20,8 +20,8 @@
 .link-complex:active,
 .link-complex:hover,
 .link-complex:visited {
-  @include reset-button;
-  @include reset-link;
+  @include reset-button();
+  @include reset-link();
 }
 
 .link-complex {
@@ -46,7 +46,7 @@
   }
 
   .link-complex-target {
-    @include link-still;
+    @include link-still();
   }
 
   /* link-complex-adaptive-target is like link-complex (& link-complex-target),
@@ -56,38 +56,38 @@
    */
 
   .link-complex-adaptive-target {
-    @include link-still;
-    @include reset-link;
+    @include link-still();
+    @include reset-link();
   }
 
   &:hover .link-complex-target,
   &:focus .link-complex-target {
-    @include link-hover-focus;
+    @include link-hover-focus();
   }
 
   &:hover .link-complex-adaptive-target,
   &:focus .link-complex-adaptive-target {
-    @include link-hover-focus;
+    @include link-hover-focus();
 
     color: inherit;
   }
 
   &:hover .link-complex-target {
-    @include link-hover;
+    @include link-hover();
   }
 
   &:hover .link-complex-adaptive-target {
-    @include link-hover;
+    @include link-hover();
 
     color: inherit;
   }
 
   &:active .link-complex-target {
-    @include link-active;
+    @include link-active();
   }
 
   &:active .link-complex-adaptive-target {
-    @include link-active;
+    @include link-active();
 
     color: inherit;
   }
