@@ -90,7 +90,7 @@ const lineChartExample = () => {
       legendCallback: function (chart) {
         const text = []
         for (let i = 0; i < chart.data.datasets.length; i++) {
-          text.push('<li data-index="index-' + i + '" class="chart-legend-item chart-legend-item-clickable" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '"></div>' + 'Länsförsäkringar Dummy fond ' + (i + 1) + '</li>')
+          text.push('<li data-index="index-' + i + '" class="chart-legend-item chart-legend-item-clickable" onclick="updateDataset(event, ' + '\'' + i + '\'' + ')"><div class="chart-legend-box"  style="background-color:' + legendColor[i] + '"></div>' + 'Example fund ' + (i + 1) + '</li>')
         }
         return text.join('')
       },
@@ -112,7 +112,7 @@ const lineChartExample = () => {
           },
           label: function (tooltipItem) {
             let label = ''
-            label += 'Länsförsäkringar Dummy fond ' + (tooltipItem.datasetIndex + 1)
+            label += 'Example fund ' + (tooltipItem.datasetIndex + 1)
             label += ': '
             label += chartUtils.format(tooltipItem.yLabel)
             return label
