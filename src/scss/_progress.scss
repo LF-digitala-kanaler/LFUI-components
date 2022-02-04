@@ -4,12 +4,12 @@
 .progress-text {
   font-family: $font-family-sans-serif;
   font-size: $font-size-sm;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 // Filled-in portion of the bar
 .progress-bar {
-  box-shadow: 4px 0 0 0 #fff;
+  box-shadow: 4px 0 0 0 $white;
 }
 
 .progress-container {
@@ -17,19 +17,19 @@
   padding: 0 4rem;
 
   .progress-divider-text {
-    top: -5px;
     position: absolute;
-    font-family: $font-family-sans-serif;
-    left: 0;
+    top: -5px;
     right: 0;
+    left: 0;
+    font-family: $font-family-sans-serif;
     text-align: center;
   }
 
   .progress-circle-container {
     display: flex;
     flex-direction: column;
-    align-self: start;
     align-items: center;
+    align-self: start;
     width: $progress-bar-circle-default-size;
   }
 
@@ -38,38 +38,38 @@
     align-items: center;
     justify-content: center;
     width: $progress-bar-circle-default-size;
-    height: $progress-bar-circle-default-size;
     min-width: $progress-bar-circle-default-size;
+    height: $progress-bar-circle-default-size;
     min-height: $progress-bar-circle-default-size;
-    border-radius: 50%;
-    border: 2px solid $blue;
     color: $blue;
-    background: white;
+    background: $white;
+    border: 2px solid $blue;
+    border-radius: 50%;
   }
 
   .progress-circle.success {
-    border: 3px solid $blue;
     background: $cloud;
+    border: 3px solid $blue;
   }
 
   .progress-circle-text {
     width: 160px;
-    font-size: 15px;
     padding-top: 10px;
-    color: $blue;
-    font-weight: bold;
-    text-align: center;
     font-family: $font-family-sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: $blue;
+    text-align: center;
   }
 
   .progress-divider {
-    flex-grow: 1;
-    display: flex;
     position: relative;
+    display: flex;
+    flex-grow: 1;
+    align-self: start;
+    justify-content: center;
     height: $progress-bar-circle-default-size;
     color: $blue;
-    justify-content: center;
-    align-self: start;
   }
 
   .progress-divider-line {
@@ -81,8 +81,8 @@
   &.progress-container-vertical {
     display: inline-flex;
     flex-direction: column;
-    padding: 0;
     width: 100%;
+    padding: 0;
 
     .progress-circle-container {
       flex-direction: row;
@@ -95,9 +95,9 @@
     }
 
     .progress-circle-text {
-      text-align: left;
-      padding: 0;
       width: auto;
+      padding: 0;
+      text-align: left;
     }
 
     .progress-divider {
@@ -106,10 +106,10 @@
     }
 
     .progress-divider-line {
-      height: 100%;
       width: auto;
-      margin-left: calc(#{$progress-bar-circle-default-size} / 2);
+      height: 100%;
       margin-right: 10px;
+      margin-left: calc(#{$progress-bar-circle-default-size} / 2);
     }
 
     .progress-divider-text {

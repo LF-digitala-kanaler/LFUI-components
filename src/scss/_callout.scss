@@ -3,23 +3,23 @@
  */
 
 .callout {
-  @include clearfix;
+  @include clearfix();
+  position: relative;
 
   display: block;
   padding: 1.25rem 1rem 1.625rem 1.5rem;
-  border: $callout-border-width solid $blue;
   margin-bottom: 1rem;
-  position: relative;
-  background: $white;
   color: $body-color;
+  background: $white;
+  border: $callout-border-width solid $blue;
 }
 
 .callout-figure {
-  width: $callout-figure-size;
-  height: $callout-figure-size;
   position: absolute;
   top: 4px;
   left: 4px;
+  width: $callout-figure-size;
+  height: $callout-figure-size;
   pointer-events: none;
 }
 
@@ -31,8 +31,8 @@
   @extend .h3;
 
   display: block;
-  font-weight: bold;
-  margin: 0 0 0.5rem;
+  margin: 0 0 .5rem;
+  font-weight: 700;
   color: $navy;
 }
 

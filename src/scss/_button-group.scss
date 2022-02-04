@@ -2,28 +2,25 @@
 
 .btn-group .btn {
   padding: $input-padding;
-  padding-left: calc(#{$input-padding-left} + 0.5rem);
-  padding-right: calc(#{$input-padding-right} + 0.5rem);
-  border: 0;
-  border-bottom: 2px solid $gray-200;
+  padding-right: calc($input-padding-right + .5rem);
+  padding-left: calc($input-padding-left + .5rem);
   margin-bottom: 0;
-
-  @include font-smoothing(auto);
-
-  color: inherit;
-  background-color: $body-bg;
   font-family: $font-family-base;
   font-size: $font-size-md;
-  font-weight: normal;
+  font-weight: 400;
   line-height: $input-line-height;
+  color: inherit;
+  background-color: $body-bg;
+  border: 0;
+  border-bottom: 2px solid $gray-200;
   transition: 100ms 40ms linear;
   transition-property: border, color;
+  @include font-smoothing(auto);
 
   &:hover,
   &:active {
     background-color: $input-hover;
     border-color: $blue;
-
     @include font-smoothing(auto);
   }
 
@@ -32,13 +29,11 @@
   }
 
   &.active {
-    //font-weight: bold;
-    text-shadow: 1px 0 0 currentColor;
-    border-color: $blue;
-    background-color: $cloud;
     color: $blue;
-
-    @include font-smoothing;
+    text-shadow: 1px 0 0 currentColor;
+    background-color: $cloud;
+    border-color: $blue;
+    @include font-smoothing();
 
     &:hover {
       background-color: $input-valid-hover;
@@ -46,8 +41,8 @@
   }
 
   &.disabled {
-    background-color: $input-disabled-bg;
     pointer-events: none;
+    background-color: $input-disabled-bg;
 
     &:hover {
       background-color: $input-disabled-bg;
@@ -77,8 +72,8 @@
 }
 
 .btn-group-stretch > .btn {
-  flex-grow: 1;
   flex-basis: 0;
+  flex-grow: 1;
   min-height: 40px;
 }
 

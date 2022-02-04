@@ -12,68 +12,68 @@
   display: inline-block;
 
   &::after {
-    opacity: 0;
+    position: absolute;
     top: 50%;
     left: 50%;
-    position: absolute;
-    pointer-events: none;
-    content: "";
     z-index: -1;
     width: 40px;
     height: 40px;
+    pointer-events: none;
+    content: "";
     border-radius: 50%;
+    opacity: 0;
     transform: scale(0) translate(-50%, -50%);
     transform-origin: top left;
   }
 
   &.animate-in {
     &::after {
-      animation: ripple-in 0.4s cubic-bezier(0.35, 0, 0.25, 1) forwards;
+      animation: ripple-in .4s cubic-bezier(.35, 0, .25, 1) forwards;
     }
   }
 
   &.animate-out {
     &::after {
-      animation: ripple-out 0.8s cubic-bezier(0.35, 0, 0.25, 1) forwards;
+      animation: ripple-out .8s cubic-bezier(.35, 0, .25, 1) forwards;
     }
   }
 }
 
 @keyframes ripple-in {
   0% {
-    opacity: 0;
     background-color: rgba(186, 218, 243, 0%);
+    opacity: 0;
     transform: scale(1) translate(-50%, -50%);
   }
 
   50% {
-    opacity: 1;
     background-color: rgba(186, 218, 243, 50%);
+    opacity: 1;
     transform: scale(1) translate(-50%, -50%);
   }
 
   75% {
-    opacity: 0.7;
+    opacity: .7;
     transform: translate(-50%, -50%);
   }
 
   100% {
-    opacity: 0;
     background-color: transparent;
+    opacity: 0;
     transform: translate(-50%, -50%);
   }
 }
 
 @keyframes ripple-out {
   0% {
-    opacity: 1;
     background-color: rgba(186, 218, 243, 80%);
+    opacity: 1;
     transform: scale(1) translate(-50%, -50%);
   }
 
   100% {
-    opacity: 0;
     background-color: transparent;
+    opacity: 0;
     transform: scale(0) translate(-50%, -50%);
   }
 }

@@ -1,13 +1,13 @@
 @import "bootstrap/scss/_breadcrumb.scss";
 
 .breadcrumb {
-  cursor: default;
   font-family: $font-family-sans-serif;
   font-size: $font-size-sm;
+  cursor: default;
 }
 
 .breadcrumb-item {
-  padding-bottom: 0.275rem;
+  padding-bottom: .275rem;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -20,17 +20,17 @@
 }
 
 .breadcrumb-item::after {
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  width: .667rem;
+  height: 1.0625rem;
+  padding: 0 .2rem;
+  margin: 0 .3rem 0 .6rem;
+  vertical-align: middle;
   content: "";
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS4zNTQgMi42NDZMNi43MDcgOGwtNS4zNTMgNS4zNTQtLjcwOC0uNzA4TDUuMjkzIDggLjY0NiAzLjM1NHoiIGZpbGw9IiM3NDc1NzgiIGZpbGwtcnVsZT0ibm9uemVybyIvPjwvc3ZnPg==");
   background-repeat: no-repeat;
-  position: relative;
-  width: 0.667rem;
-  height: 1.0625rem;
-  vertical-align: middle;
-  margin: 0 0.3rem 0 0.6rem;
-  padding: 0 0.2rem;
-  bottom: 0;
-  display: inline-block;
 }
 
 .breadcrumb-item.active::after {
@@ -38,6 +38,6 @@
 }
 
 .breadcrumb-transparent {
-  background: none;
   padding: 0;
+  background: none;
 }
