@@ -61,8 +61,8 @@
     transform: translateX(0) translateY(-50%);
   }
 
-  &:hover:not([disabled]),
-  &:focus:not([disabled]) {
+  &:hover,
+  &:focus {
     &::after {
       @if $size == small {
         @include btn-arrow-small-right($color-hover);
@@ -76,7 +76,7 @@
     }
   }
 
-  &:active:not([disabled]) {
+  &:active {
     &::after {
       @if $size == small {
         @include btn-arrow-small-right($color-active);
@@ -126,8 +126,8 @@
     backface-visibility: hidden;
   }
 
-  &:hover:not([disabled]),
-  &:focus:not([disabled]) {
+  &:hover,
+  &:focus {
     &::after {
       @if $size == small {
         @include btn-arrow-small-left($color-hover);
@@ -141,8 +141,8 @@
     }
   }
 
-  &:focus:hover:active:not([disabled]),
-  &:active:not([disabled]) {
+  &:focus:hover:active,
+  &:active {
     &::after {
       @if $size == small {
         @include btn-arrow-small-left($color-active);
@@ -190,8 +190,8 @@
     border-color: $bg-pressed;
   }
 
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled).active,
+  &:active,
+  &.active,
   .show > &.dropdown-toggle {
     &,
     &:hover,
@@ -200,20 +200,6 @@
       background-color: $bg-pressed;
       border-color: $bg-pressed;
       box-shadow: none;
-    }
-  }
-
-  &.disabled,
-  &:disabled {
-    &,
-    &:focus,
-    &.focus,
-    &:hover,
-    &.hover {
-      pointer-events: none;
-      background-color: $bg;
-      border-color: $bg;
-      opacity: .65;
     }
   }
 
@@ -286,15 +272,15 @@
       transform: translateY(-50%);
     }
 
-    &:hover:not([disabled]),
-    &:focus:not([disabled]) {
+    &:hover,
+    &:focus {
       &::after {
         transition: transform 100ms linear;
         transform: translateX(0) translateY(-50%);
       }
     }
 
-    &:active:not([disabled]) {
+    &:active {
       &::after {
         transition: transform 100ms linear;
         transform: translateX(3px) translateY(-50%);
@@ -308,9 +294,9 @@
       transform: translateX(0) translateY(-50%);
     }
 
-    &:hover:not([disabled]),
-    &:focus:not([disabled]),
-    &:focus:hover:not([disabled]) {
+    &:hover,
+    &:focus,
+    &:focus:hover {
       &::after {
         margin-left: 0;
         transition: transform 100ms linear;
@@ -318,8 +304,8 @@
       }
     }
 
-    &:active:not([disabled]),
-    &:focus:hover:active:not([disabled]) {
+    &:active,
+    &:focus:hover:active {
       &::after {
         transition: transform 100ms linear;
         transform: translateX(-3px) translateY(-50%);
@@ -349,8 +335,8 @@
       inset 0 0 0 1px $border-hover;
   }
 
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled).active {
+  &:active,
+  &.active {
     &,
     &:hover,
     &:focus:hover,
@@ -363,22 +349,6 @@
         inset 0 0 0 1px $border-hover,
         inset 0 0 0 1px $border-hover,
         inset 0 0 0 1px $border-hover;
-    }
-  }
-
-  &.disabled,
-  &:disabled {
-    &,
-    &:focus,
-    &.focus,
-    &:hover,
-    &.hover {
-      color: $border;
-      pointer-events: none;
-      background-color: inherit;
-      border-color: $border;
-      box-shadow: none;
-      opacity: .65;
     }
   }
 }
@@ -395,7 +365,7 @@
   &.focus,
   &:hover,
   &:hover:focus,
-  &:not(:disabled):not(.disabled):active:focus {
+  &:active:focus {
     color: $border-hover;
     background-color: $bg;
     border-color: $border-hover;
@@ -421,8 +391,8 @@
       inset 0 0 0 1px $border-hover;
   }
 
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled).active,
+  &:active,
+  &.active,
   .show > &.dropdown-toggle {
     &,
     &:hover,
@@ -436,22 +406,6 @@
         inset 0 0 0 1px $border-hover,
         inset 0 0 0 1px $border-hover,
         inset 0 0 0 1px $border-hover;
-    }
-  }
-
-  &.disabled,
-  &:disabled {
-    &,
-    &:focus,
-    &.focus,
-    &:hover,
-    &.hover {
-      color: $border;
-      pointer-events: none;
-      background-color: inherit;
-      border-color: $border;
-      box-shadow: none;
-      opacity: .65;
     }
   }
 
@@ -527,15 +481,15 @@
       transform: translateY(-50%);
     }
 
-    &:hover:not([disabled]),
-    &:focus:not([disabled]) {
+    &:hover,
+    &:focus {
       &::after {
         transition: transform 100ms linear;
         transform: translateX(0) translateY(-50%);
       }
     }
 
-    &:active:not([disabled]) {
+    &:active {
       &::after {
         transition: transform 100ms linear;
         transform: translateX(3px) translateY(-50%);
@@ -549,9 +503,9 @@
       transform: translateX(0) translateY(-50%);
     }
 
-    &:hover:not([disabled]),
-    &:focus:not([disabled]),
-    &:focus:hover:not([disabled]) {
+    &:hover,
+    &:focus,
+    &:focus:hover {
       &::after {
         margin-left: 0;
         transition: transform 100ms linear;
@@ -559,8 +513,8 @@
       }
     }
 
-    &:active:not([disabled]),
-    &:focus:hover:active:not([disabled]) {
+    &:active,
+    &:focus:hover:active {
       &::after {
         transition: transform 100ms linear;
         transform: translateX(-3px) translateY(-50%);
@@ -579,7 +533,6 @@
 
 /* Outlined */
 
-.btn-outline-secondary,
 .btn-secondary {
   @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
 }
@@ -734,9 +687,9 @@ a.btn:active {
   }
 
   //states
-  &:hover:not([disabled]),
-  &:focus:not([disabled]),
-  &:focus:hover:not([disabled]) {
+  &:hover,
+  &:focus,
+  &:focus:hover {
     color: $color-hover;
     text-decoration: none;
     background: transparent;
@@ -757,9 +710,9 @@ a.btn:active {
     }
   }
 
-  &:active:not([disabled]):not(.disabled),
-  &:hover:active:not([disabled]):not(.disabled),
-  &:focus:active:hover:not([disabled]):not(.disabled) {
+  &:active,
+  &:hover:active,
+  &:focus:active:hover {
     color: $color-pressed;
     opacity: 1;
 
@@ -825,9 +778,9 @@ a.btn:active {
         bottom: 0;
       }
 
-      &:active:not([disabled]):not(.disabled),
-      &:hover:active:not([disabled]):not(.disabled),
-      &:focus:active:hover:not([disabled]):not(.disabled) {
+      &:active,
+      &:hover:active,
+      &:focus:active:hover {
         &::after {
           @include btn-arrow-small-right($color-pressed);
         }
@@ -848,9 +801,9 @@ a.btn:active {
         bottom: 0;
       }
 
-      &:active:not([disabled]):not(.disabled),
-      &:hover:active:not([disabled]):not(.disabled),
-      &:focus:active:hover:not([disabled]):not(.disabled) {
+      &:active,
+      &:hover:active,
+      &:focus:active:hover {
         &::before {
           @include btn-arrow-small-left($color-pressed);
         }
@@ -877,9 +830,9 @@ a.btn:active {
         bottom: -3px;
       }
 
-      &:active:not([disabled]):not(.disabled),
-      &:hover:active:not([disabled]):not(.disabled),
-      &:focus:active:hover:not([disabled]):not(.disabled) {
+      &:active,
+      &:hover:active,
+      &:focus:active:hover {
         &::after {
           @include btn-arrow-large-right($color-pressed);
         }
@@ -901,9 +854,9 @@ a.btn:active {
         bottom: -3px;
       }
 
-      &:active:not([disabled]):not(.disabled),
-      &:hover:active:not([disabled]):not(.disabled),
-      &:focus:active:hover:not([disabled]):not(.disabled) {
+      &:active,
+      &:hover:active,
+      &:focus:active:hover {
         &::before {
           @include btn-arrow-large-left($color-pressed);
         }
@@ -1060,4 +1013,15 @@ a.btn:active {
       margin-top: $btn-block-spacing-y;
     }
   }
+}
+
+/**
+ * We've defined, in UX guidelines, not to use disabled buttons,
+ * but let's keep this simple thing here, just in case.
+ */
+
+.btn:disabled,
+.btn.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
