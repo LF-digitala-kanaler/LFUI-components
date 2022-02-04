@@ -27,8 +27,8 @@
 
 .bg-diagonal-stripes-gray {
   @include pattern-diagonal-stripes($pattern-diagonal-stripes-gray-stripes);
+  color: $pattern-diagonal-stripes-gray-font-color;
 
   background-color: $pattern-diagonal-stripes-gray-bg;
-  color: $pattern-diagonal-stripes-gray-font-color;
   border: 2px solid $pattern-diagonal-stripes-gray-border;
 }

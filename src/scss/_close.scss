@@ -1,7 +1,7 @@
 /* Configure Bootstrap */
-$btn-close-width: 0.875rem;
+$btn-close-width: .875rem;
 $btn-close-height: $btn-close-width;
-$btn-close-padding-x: 0.25em;
+$btn-close-padding-x: .25em;
 $btn-close-padding-y: $btn-close-padding-x;
 $btn-close-color: currentColor;
 $btn-close-bg: "";
@@ -11,42 +11,39 @@ $btn-close-focus-opacity: 1;
 
 @import "_close-bs5.scss";
 
-.btn-close {
-  --#{$variable-prefix}btn-close-active-opacity: 0.6;
-  --#{$variable-prefix}btn-close-width: #{$btn-close-width};
-  --#{$variable-prefix}btn-close-path-width: 0.125rem;
-
-  transition: opacity 200ms ease-out;
-}
-
-.btn-close:active {
-  opacity: var(--#{$variable-prefix}btn-close-active-opacity);
-  transition: none;
-}
-
 /**
- * Replace the Bootstrap svg background approach with elements that can inherit
- * color properly
+ * Replace the Bootstrap svg background approach with elements that
+ * can inherit color properly
  */
 
 .btn-close {
+  --#{$variable-prefix}btn-close-active-opacity: .6;
+  --#{$variable-prefix}btn-close-width: #{$btn-close-width};
+  --#{$variable-prefix}btn-close-path-width: .125rem;
+
   position: relative;
   background: transparent;
+  transition: opacity 200ms ease-out;
 }
 
 .btn-close::before,
 .btn-close::after {
-  content: "";
-  width: var(--#{$variable-prefix}btn-close-width);
-  height: var(--#{$variable-prefix}btn-close-path-width);
   position: absolute;
   top: 50%;
   left: 50%;
+  width: var(--#{$variable-prefix}btn-close-width);
+  height: var(--#{$variable-prefix}btn-close-path-width);
   margin: calc(var(--#{$variable-prefix}btn-close-path-width) / 2 * -1) 0 0 calc(var(--#{$variable-prefix}btn-close-width) / 2 * -1);
+  content: "";
   background: currentColor;
   transform: rotate(45deg);
 }
 
 .btn-close::after {
   transform: rotate(135deg);
+}
+
+.btn-close:active {
+  opacity: var(--#{$variable-prefix}btn-close-active-opacity);
+  transition: none;
 }

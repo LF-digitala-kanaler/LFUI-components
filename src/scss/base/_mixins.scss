@@ -1,14 +1,17 @@
+// stylelint-disable scss/operator-no-unspaced
+
 /**
  * Glyphs
  */
+
 // data:image/svg+xml; charset=utf-8,
 @mixin glyph($width, $height, $color, $vector) {
+  width: $width + 0 + px;
+  height: $height + 0 + px;
   // We need to remove the # in a color definition, to be able to correctly
   // escape color definitions in inline svg:s
   background-image: url('<svg fill="#{$color}" viewBox="0 0 #{$width} #{$height}" xmlns="http://www.w3.org/2000/svg">#{$vector}</svg>');
   background-repeat: no-repeat;
-  width: $width + 0 + px;
-  height: $height + 0 + px;
 }
 
 @mixin glyph-arrow-right($color) {
@@ -76,18 +79,18 @@
  */
 
 @mixin link-still() {
+  padding: 0;
   color: $link-color;
   text-decoration: none;
-  border: 0;
-  padding: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentColor 50%) repeat-x 0 100%;
   background-size: 2px 2px;
+  border: 0;
 }
 
 @mixin link-hover-focus() {
-  outline: 0;
-  text-decoration: none;
   color: $link-color;
+  text-decoration: none;
+  outline: 0;
 }
 
 @mixin link-hover() {
@@ -102,12 +105,12 @@
 }
 
 @mixin link() {
-  @include link-still;
+  @include link-still();
 
   &:hover,
-  &:focus { @include link-hover-focus; }
-  &:hover { @include link-hover; }
-  &:active { @include link-active; }
+  &:focus { @include link-hover-focus(); }
+  &:hover { @include link-hover(); }
+  &:active { @include link-active(); }
 }
 
 /**
@@ -115,24 +118,24 @@
  */
 
 @mixin reset-list() {
-  list-style-image: none;
-  list-style-type: none;
   padding-left: 0;
+  list-style-type: none;
+  list-style-image: none;
 }
 
 @mixin reset-button() {
-  border: 0;
   padding: 0;
   background: transparent;
-  outline: none;
+  border: 0;
+  outline: 0;
   -webkit-appearence: none;
 }
 
 @mixin reset-link() {
-  background-image: none;
-  outline: none;
   color: inherit;
   text-decoration: inherit;
+  background-image: none;
+  outline: 0;
 
   &:hover,
   &:focus {
@@ -158,16 +161,10 @@
   $color: $black;
 
   @if ($interactive) {
-    @include reset-link;
-    @include reset-button;
+    @include reset-link();
+    @include reset-button();
     $color: $link-color;
   }
-
-  font-family: $font-family-sans-serif;
-
-  @include font-smoothing;
-
-  border: 0;
   position: relative;
   display: block;
   width: 100%;
@@ -175,27 +172,32 @@
   /* padding: 0.8rem 1.25rem calc(0.8rem + #{$border-width});
      https://github.com/css/csso/issues/297 */
   padding: 1.1rem 1.25rem (($font-size-root-value * 1.1) + $border-width);
+  overflow: hidden;
+
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-xl;
+  font-weight: 700;
+  line-height: 1.25;
+
+  color: $color;
+  text-align: left;
+  text-decoration: none;
+  background: $white;
+
+  border: 0;
+
+  @include font-smoothing();
 
   @include header-block-border($navy);
 
-  color: $color;
-  background: $white;
-  font-size: $font-size-xl;
-  line-height: 1.25;
-  font-weight: bold;
-  text-align: left;
-  text-decoration: none;
-  overflow: hidden;
-
   @if ($interactive) {
-    @include header-block-border(rgba(0, 0, 0, 0.1));
-
+    @include header-block-border(rgba(0, 0, 0, .1));
+    color: $link-color;
     user-select: none;
     transition: 100ms 40ms linear;
     transition-property: box-shadow;
-    color: $link-color;
 
-    @include hover {
+    @include hover () {
       color: $link-color;
 
       @include header-block-border($link-color);
@@ -215,16 +217,16 @@
 
 @mixin pattern-diagonal-stripes($color) {
   background: url('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><style>.cls-1{fill:transparent;}.cls-2{fill:#{$color};}</style></defs><title>lines_thicker</title><polygon class="cls-1" points="0 385.86 214.14 600 285.86 600 0 314.14 0 385.86"/><polygon class="cls-1" points="0 485.86 114.14 600 185.86 600 0 414.14 0 485.86"/><polygon class="cls-1" points="0 285.86 314.14 600 385.86 600 0 214.14 0 285.86"/><polygon class="cls-1" points="600 14.14 585.86 0 514.14 0 600 85.86 600 14.14"/><polygon class="cls-1" points="600 414.14 185.86 0 114.14 0 600 485.86 600 414.14"/><polygon class="cls-1" points="85.86 0 14.14 0 600 585.86 600 514.14 85.86 0"/><polygon class="cls-1" points="600 314.14 285.86 0 214.14 0 600 385.86 600 314.14"/><polygon class="cls-1" points="600 114.14 485.86 0 414.14 0 600 185.86 600 114.14"/><polygon class="cls-1" points="0 85.86 514.14 600 585.86 600 0 14.14 0 85.86"/><polygon class="cls-1" points="600 214.14 385.86 0 314.14 0 600 285.86 600 214.14"/><polygon class="cls-1" points="0 185.86 414.14 600 485.86 600 0 114.14 0 185.86"/><polygon class="cls-1" points="0 585.86 14.14 600 85.86 600 0 514.14 0 585.86"/><polygon class="cls-2" points="0 600 14.14 600 0 585.86 0 600"/><polygon class="cls-2" points="0 514.14 85.86 600 114.14 600 0 485.86 0 514.14"/><polygon class="cls-2" points="0 414.14 185.86 600 214.14 600 0 385.86 0 414.14"/><polygon class="cls-2" points="0 314.14 285.86 600 314.14 600 0 285.86 0 314.14"/><polygon class="cls-2" points="0 214.14 385.86 600 414.14 600 0 185.86 0 214.14"/><polygon class="cls-2" points="0 114.14 485.86 600 514.14 600 0 85.86 0 114.14"/><polygon class="cls-2" points="0 0 0 14.14 585.86 600 600 600 600 585.86 14.14 0 0 0"/><polygon class="cls-2" points="600 485.86 114.14 0 85.86 0 600 514.14 600 485.86"/><polygon class="cls-2" points="600 385.86 214.14 0 185.86 0 600 414.14 600 385.86"/><polygon class="cls-2" points="600 285.86 314.14 0 285.86 0 600 314.14 600 285.86"/><polygon class="cls-2" points="600 185.86 414.14 0 385.86 0 600 214.14 600 185.86"/><polygon class="cls-2" points="600 85.86 514.14 0 485.86 0 600 114.14 600 85.86"/><polygon class="cls-2" points="600 0 585.86 0 600 14.14 600 0"/></svg>');
-  background-size: 50px 50px;
   background-repeat: repeat;
+  background-size: 50px 50px;
 }
 
 @mixin pattern-wave-horizontal($color: $smoke) {
+  width: 100%;
+  height: 10px;
   background: url("<svg xmlns='http://www.w3.org/2000/svg' fill='#{$color}' viewBox='0 0 137 6.61'><defs></defs><title>wave-pattern</title><g><g><path d='M125.77,6.61a10.8,10.8,0,0,1-6.52-2,8.47,8.47,0,0,0-9.83,0,10.8,10.8,0,0,1-6.52,2,10.8,10.8,0,0,1-6.52-2,8.46,8.46,0,0,0-9.83,0,10.8,10.8,0,0,1-6.52,2,10.8,10.8,0,0,1-6.52-2,8.46,8.46,0,0,0-9.83,0,10.79,10.79,0,0,1-6.52,2,10.79,10.79,0,0,1-6.52-2,8.46,8.46,0,0,0-9.83,0,10.8,10.8,0,0,1-6.52,2,10.8,10.8,0,0,1-6.52-2A7.94,7.94,0,0,0,22.87,3,7.94,7.94,0,0,0,18,4.57a10.79,10.79,0,0,1-6.52,2,10.8,10.8,0,0,1-6.52-2A7.93,7.93,0,0,0,0,3V0A10.8,10.8,0,0,1,6.52,2a7.93,7.93,0,0,0,4.92,1.57A7.93,7.93,0,0,0,16.35,2a10.79,10.79,0,0,1,6.52-2,10.8,10.8,0,0,1,6.52,2A7.93,7.93,0,0,0,34.3,3.61,7.93,7.93,0,0,0,39.21,2a11.44,11.44,0,0,1,13,0,7.93,7.93,0,0,0,4.92,1.57A7.93,7.93,0,0,0,62.08,2a11.44,11.44,0,0,1,13,0A7.94,7.94,0,0,0,80,3.61,7.94,7.94,0,0,0,84.95,2,11.45,11.45,0,0,1,98,2a7.94,7.94,0,0,0,4.92,1.57A7.94,7.94,0,0,0,107.82,2a11.45,11.45,0,0,1,13,0,7.94,7.94,0,0,0,4.92,1.57A7.94,7.94,0,0,0,130.69,2a10.8,10.8,0,0,1,6.52-2V3a7.94,7.94,0,0,0-4.92,1.57A10.8,10.8,0,0,1,125.77,6.61Z'/></g></g></svg>");
   background-repeat: repeat-x;
-  height: 10px;
   background-size: 200px 10px;
-  width: 100%;
 }
 
 /**
@@ -232,10 +234,10 @@
  */
 
 @mixin distribution-color-value($background-color, $color) {
+  color: $color;
   background: none;
   background-color: $background-color;
-  border: none;
-  color: $color;
+  border: 0;
 
   &.distribution-value-with-pointer::after {
     border-left-color: $background-color;
@@ -243,9 +245,9 @@
 }
 
 @mixin distribution-color-value-bordered($background-color, $border-color, $color) {
+  color: $color;
   background-color: $background-color;
   border: 2px solid $border-color;
-  color: $color;
 
   &.distribution-value-with-pointer::after {
     border-left-color: $background-color;
@@ -260,9 +262,7 @@
   @if $value == antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  @else {
+  } @else {
     -webkit-font-smoothing: $value;
     -moz-osx-font-smoothing: $value;
   }
@@ -270,12 +270,12 @@
 
 // Slider
 
-@mixin lf-slider($background-color: $white, $track-color: #d9d9d9) {
-  appearance: none;
+@mixin lf-slider($background-color: $white, $track-color: $smoke) {
   width: 100%;
-  margin: 10px 0;
   padding: 0;
-  background: linear-gradient(to right, #005aa0 0%, #005aa0 calc(1% * var(--progress, 0)), $track-color calc(1% * var(--progress, 0)));
+  margin: 10px 0;
+  background: linear-gradient(to right, $blue 0%, $blue calc(1% * var(--progress, 0)), $track-color calc(1% * var(--progress, 0)));
+  appearance: none;
 
   // input[type="range"] is one of those fun html-elements that render
   // completely differently in each browser, so we'll need completely separate
@@ -284,24 +284,24 @@
   // Track
   &::-webkit-slider-runnable-track {
     height: $range-slider-height;
-    border-radius: 0;
-    outline: none;
     padding: 0;
     cursor: pointer;
+    border-radius: 0;
+    outline: 0;
   }
 
   // Range Handle
   &::-webkit-slider-thumb {
-    appearance: none;
     width: $range-slider-thumb-size;
     height: $range-slider-thumb-size;
+    margin-top: -7px;
+    cursor: grab;
     background: $range-slider-thumb-bg;
     border-radius: 50%;
-    cursor: grab;
-    box-shadow: inset 0 0 0 2px $blue;
     outline: 2px solid $background-color;
-    margin-top: -7px;
+    box-shadow: inset 0 0 0 2px $blue;
     transition: 200ms ease-in-out;
+    appearance: none;
 
     &:hover {
       box-shadow: inset 0 0 0 5px $blue;
@@ -310,8 +310,8 @@
   }
 
   &:active::-webkit-slider-thumb {
-    box-shadow: inset 0 0 0 5px $blue;
     cursor: grabbing;
+    box-shadow: inset 0 0 0 5px $blue;
   }
 
   &[disabled] {
@@ -331,24 +331,24 @@
   // Track
   &::-moz-range-track {
     height: $range-slider-height;
-    border-radius: 0;
-    outline: none;
     padding: 0;
-    border: 9px solid $background-color;
-    background: transparent;
     cursor: pointer;
+    background: transparent;
+    border: 9px solid $background-color;
+    border-radius: 0;
+    outline: 0;
   }
 
   // Range Handle
   &::-moz-range-thumb {
     width: $range-slider-thumb-size;
     height: $range-slider-thumb-size;
+    cursor: grab;
+    background: $range-slider-thumb-bg;
     border: 0;
     border-radius: 50%;
-    background: $range-slider-thumb-bg;
-    box-shadow: inset 0 0 0 2px $blue;
-    cursor: grab;
     outline: 2px solid $background-color;
+    box-shadow: inset 0 0 0 2px $blue;
     transition: 200ms ease-in-out;
 
     &:hover {
@@ -358,8 +358,8 @@
   }
 
   &:active::-moz-range-thumb {
-    box-shadow: inset 0 0 0 5px $blue;
     cursor: grabbing;
+    box-shadow: inset 0 0 0 5px $blue;
   }
 
   &::-moz-focus-inner,
@@ -372,23 +372,23 @@
   &::-ms-track {
     width: 100%;
     height: 4px;
+    color: transparent;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
     border-width: 10px 0;
-    color: transparent;
   }
 
   // Range Handle
   &::-ms-thumb {
-    height: $range-slider-thumb-size;
     width: $range-slider-thumb-size;
-    border-radius: 50%;
-    background: $range-slider-thumb-bg;
-    box-shadow: inset 0 0 0 2px $blue;
+    height: $range-slider-thumb-size;
     cursor: grab;
-    transition: 200ms ease-in-out;
+    background: $range-slider-thumb-bg;
+    border-radius: 50%;
     outline: 0;
+    box-shadow: inset 0 0 0 2px $blue;
+    transition: 200ms ease-in-out;
 
     &:hover {
       box-shadow: inset 0 0 0 5px $blue;
@@ -397,8 +397,8 @@
   }
 
   &:active::-ms-thumb {
-    box-shadow: inset 0 0 0 5px $blue;
     cursor: grabbing;
+    box-shadow: inset 0 0 0 5px $blue;
   }
 
   &::-ms-fill-lower {
@@ -410,8 +410,8 @@
   }
   // fix for edge background size bug
   @supports (-ms-ime-align: auto) {
-    background-size: 0 !important;
     margin-top: 0;
+    background-size: 0 !important;
 
     &::-ms-thumb {
       margin-top: 2px;
@@ -428,25 +428,17 @@
 
   @if $arrow-position == right or $arrow-position == bottom {
     $arrow-position: 25%;
-  }
-
-  @else if $arrow-position == left or $arrow-position == top {
+  } @else if $arrow-position == left or $arrow-position == top {
     $arrow-position: 75%;
-  }
-
-  @else {
+  } @else {
     $arrow-position: 50%;
   }
 
   @if $dropdown-menu-position == right or $dropdown-menu-position == bottom {
     $dropdown-menu-position: 50%;
-  }
-
-  @else if $dropdown-menu-position == left or $dropdown-menu-position == top {
+  } @else if $dropdown-menu-position == left or $dropdown-menu-position == top {
     $dropdown-menu-position: 75%;
-  }
-
-  @else {
+  } @else {
     $dropdown-menu-position: null;
   }
 
@@ -457,29 +449,29 @@
 
     &::after,
     &::before {
+      position: absolute;
       top: 100%;
       right: $arrow-position;
-      border: solid transparent;
-      content: " ";
-      height: 0;
       width: 0;
-      position: absolute;
+      height: 0;
       pointer-events: none;
+      content: " ";
+      border: solid transparent;
     }
 
     &::after {
-      border-top-color: $arrow-color;
-      border-width: 7px;
-      border-top-width: 12px;
       margin-left: -7px;
+      border-width: 7px;
+      border-top-color: $arrow-color;
+      border-top-width: 12px;
     }
 
     &::before {
-      border-color: rgba(238, 0, 0, 0%);
-      border-top-color: $border-color;
-      border-width: 8px;
-      border-top-width: 13px;
       margin-left: -8px;
+      border-color: rgba(238, 0, 0, 0%);
+      border-width: 8px;
+      border-top-color: $border-color;
+      border-top-width: 13px;
     }
   }
 
@@ -490,30 +482,30 @@
 
     &::after,
     &::before {
+      position: absolute;
       bottom: 100%;
       left: $arrow-position;
-      border: solid transparent;
-      content: " ";
-      height: 0;
       width: 0;
-      position: absolute;
+      height: 0;
       pointer-events: none;
+      content: " ";
+      border: solid transparent;
     }
 
     &::after {
-      border-color: rgba(251, 251, 251, 0%);
-      border-bottom-color: $arrow-color;
-      border-width: 7px;
-      border-bottom-width: 12px;
       margin-left: -7px;
+      border-color: rgba(251, 251, 251, 0%);
+      border-width: 7px;
+      border-bottom-color: $arrow-color;
+      border-bottom-width: 12px;
     }
 
     &::before {
-      border-color: rgba(238, 238, 238, 0%);
-      border-bottom-color: $border-color;
-      border-width: 8px;
-      border-bottom-width: 13px;
       margin-left: -8px;
+      border-color: rgba(238, 238, 238, 0%);
+      border-width: 8px;
+      border-bottom-color: $border-color;
+      border-bottom-width: 13px;
     }
   }
 }
@@ -527,16 +519,16 @@
   outline: $red $border-width solid !important;
 
   &::after {
-    content: $str !important;
-    padding: $border-width 0 $border-width !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
     width: auto !important;
     height: auto !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
+    padding: $border-width 0 $border-width !important;
     font-family: sans-serif !important;
     font-size: 1rem !important;
     color: $white !important;
+    content: $str !important;
     background: $red !important;
   }
 }
@@ -568,7 +560,7 @@
   .input-group-append,
   .input-group-prepend {
     color: $color;
-    border-color: $color;
     background-color: lighten($color, 40%);
+    border-color: $color;
   }
 }

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   background-color: $white;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid $smoke;
 
   .navbar-brand {
     background: none;
@@ -14,9 +14,9 @@
   .nav-item.active {
     a,
     .nav-link {
-      color: #222;
-      font-size: 14px;
       font-family: $font-family-base;
+      font-size: 14px;
+      color: $black;
       box-shadow: none;
 
       &:hover,
@@ -25,31 +25,31 @@
       &:active,
       &:hover:active,
       &:hover:active:focus {
-        color: #222 !important;
-        font-size: 14px;
         font-family: $font-family-base;
+        font-size: 14px;
+        color: $black !important;
       }
     }
   }
 
   ul.navbar-nav {
     display: flex;
-    justify-content: center;
     flex-basis: 1;
+    justify-content: center;
 
     li {
-      padding: 0 0.5rem;
       display: flex;
       align-items: center;
+      padding: 0 .5rem;
     }
   }
 
   a.link-adaptive,
   a.link-complex,
   a > .link-complex-target {
-    color: #222 !important;
-    font-size: 14px;
     font-family: $font-family-base;
+    font-size: 14px;
+    color: $black !important;
     box-shadow: none;
   }
 }

@@ -5,19 +5,18 @@
 }
 
 .btn {
-  @include font-smoothing;
-
-  border-width: $input-btn-border-width;
-  font-size: $font-size-lg;
-  font-family: $font-family-sans-serif;
+  position: relative;
   overflow: hidden;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-lg;
+  white-space: normal;
+  cursor: pointer;
   background-image: none;
+  border-width: $input-btn-border-width;
+  border-radius: $border-radius;
   transition: 200ms linear;
   transition-property: all;
-  white-space: normal;
-  position: relative;
-  cursor: pointer;
-  border-radius: $border-radius;
+  @include font-smoothing();
 }
 
 .btn:hover {
@@ -32,13 +31,9 @@
 
   @if $size == small {
     padding-right: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width} + 29px) !important;
-  }
-
-  @else if $size == large {
+  } @else if $size == large {
     padding-right: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width} + 36px) !important;
-  }
-
-  @else {
+  } @else {
     padding-right: calc(#{$input-btn-padding-x} - #{$input-btn-border-width} + 36px) !important;
   }
 
@@ -47,27 +42,23 @@
       @include btn-arrow-small-right($color);
 
       right: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width} * 2);
-    }
-
-    @else if $size == large {
+    } @else if $size == large {
       @include btn-arrow-large-right($color);
 
       right: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width} * 2);
-    }
-
-    @else {
+    } @else {
       @include btn-arrow-standard-right($color);
 
       right: calc(#{$input-btn-padding-x} - #{$input-btn-border-width} * 2);
     }
+    position: absolute;
 
     top: 50%;
-    position: absolute;
-    content: "";
     display: inline-block;
-    margin-left: 0.625rem;
-    transform: translateX(0) translateY(-50%);
+    margin-left: .625rem;
+    content: "";
     transition: transform 100ms linear;
+    transform: translateX(0) translateY(-50%);
   }
 
   &:hover:not([disabled]),
@@ -75,18 +66,13 @@
     &::after {
       @if $size == small {
         @include btn-arrow-small-right($color-hover);
-      }
-
-      @else if $size == large {
+      } @else if $size == large {
         @include btn-arrow-large-right($color-hover);
-      }
-
-      @else {
+      } @else {
         @include btn-arrow-standard-right($color-hover);
       }
-
-      transform: translateX(0) translateY(-50%);
       transition: transform 100ms linear;
+      transform: translateX(0) translateY(-50%);
     }
   }
 
@@ -94,18 +80,13 @@
     &::after {
       @if $size == small {
         @include btn-arrow-small-right($color-active);
-      }
-
-      @else if $size == large {
+      } @else if $size == large {
         @include btn-arrow-large-right($color-active);
-      }
-
-      @else {
+      } @else {
         @include btn-arrow-standard-right($color-active);
       }
-
-      transform: translateX(3px) translateY(-50%);
       transition: transform 100ms linear;
+      transform: translateX(3px) translateY(-50%);
     }
   }
 }
@@ -116,13 +97,9 @@
 
   @if $size == small {
     padding-left: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width} + 29px) !important;
-  }
-
-  @else if $size == large {
+  } @else if $size == large {
     padding-left: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width} + 36px) !important;
-  }
-
-  @else {
+  } @else {
     padding-left: calc(#{$input-btn-padding-x} - #{$input-btn-border-width} + 36px) !important;
   }
 
@@ -131,27 +108,22 @@
       @include btn-arrow-small-left($color);
 
       left: calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
-    }
-
-    @else if $size == large {
+    } @else if $size == large {
       @include btn-arrow-large-left($color);
 
       left: calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width});
-    }
-
-    @else {
+    } @else {
       @include btn-arrow-standard-left($color);
 
       left: calc(#{$input-btn-padding-x} - #{$input-btn-border-width});
     }
 
     position: absolute;
-    content: "";
     top: 50%;
     display: inline-block;
-    -webkit-backface-visibility: hidden;
+    content: "";
     transform: translateX(0) translateY(-50%);
-    -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+    backface-visibility: hidden;
   }
 
   &:hover:not([disabled]),
@@ -159,19 +131,13 @@
     &::after {
       @if $size == small {
         @include btn-arrow-small-left($color-hover);
-      }
-
-      @else if $size == large {
+      } @else if $size == large {
         @include btn-arrow-large-left($color-hover);
-      }
-
-      @else {
+      } @else {
         @include btn-arrow-standard-left($color-hover);
       }
-
-      transform: translateX(0) translateY(-50%);
       transition: transform 100ms linear;
-      -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
+      transform: translateX(0) translateY(-50%);
     }
   }
 
@@ -180,19 +146,13 @@
     &::after {
       @if $size == small {
         @include btn-arrow-small-left($color-active);
-      }
-
-      @else if $size == large {
+      } @else if $size == large {
         @include btn-arrow-large-left($color-active);
-      }
-
-      @else {
+      } @else {
         @include btn-arrow-standard-left($color-active);
       }
-
-      transform: translateX(-3px) translateY(-50%);
       transition: transform 100ms linear;
-      -webkit-transform: translateZ(-1000px) translateX(-3px) translateY(-50%);
+      transform: translateX(-3px) translateY(-50%);
     }
   }
 }
@@ -211,24 +171,23 @@
   &:focus,
   &.focus {
     color: $white;
-    border-color: $border;
     background-color: $bg;
+    border-color: $border;
     box-shadow: 0 0 0 rgba(0, 0, 0, 10%); /* 1 */
   }
 
   &:hover,
   &:hover:focus {
-    border-color: $bg-hover;
     background-color: $bg-hover;
+    border-color: $bg-hover;
   }
 
   &:active,
   &.active,
-  &:active:hover,
   &:active:focus,
   &:active:hover {
-    border-color: $bg-pressed;
     background-color: $bg-pressed;
+    border-color: $bg-pressed;
   }
 
   &:not([disabled]):not(.disabled):active,
@@ -238,8 +197,8 @@
     &:hover,
     &:focus,
     &.focus {
-      border-color: $bg-pressed;
       background-color: $bg-pressed;
+      border-color: $bg-pressed;
       box-shadow: none;
     }
   }
@@ -253,8 +212,8 @@
     &.hover {
       pointer-events: none;
       background-color: $bg;
-      opacity: 0.65;
       border-color: $bg;
+      opacity: .65;
     }
   }
 
@@ -262,13 +221,13 @@
   ** SIZES
   */
   &.btn-sm {
-    font-size: $font-size-md;
     padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
+    font-size: $font-size-md;
   }
 
   &.btn-lg {
-    font-size: $font-size-xl;
     padding: calc(#{$input-btn-padding-y-lg} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width});
+    font-size: $font-size-xl;
     line-height: $input-btn-line-height-lg;
   }
 
@@ -296,9 +255,9 @@
 
   &.btn-lg.btn-arrow {
     @include button-arrow-right($white, $white, $white, large);
+    padding-right: 12px;
 
     line-height: $input-btn-line-height-lg;
-    padding-right: 12px;
   }
 
   &.btn-sm.btn-arrow-left {
@@ -320,25 +279,25 @@
     padding-right: 45px;
 
     &::after {
-      content: "";
-      right: 0.6rem;
       position: absolute;
       top: 50%;
+      right: .6rem;
+      content: "";
       transform: translateY(-50%);
     }
 
     &:hover:not([disabled]),
     &:focus:not([disabled]) {
       &::after {
-        transform: translateX(0) translateY(-50%);
         transition: transform 100ms linear;
+        transform: translateX(0) translateY(-50%);
       }
     }
 
     &:active:not([disabled]) {
       &::after {
-        transform: translateX(3px) translateY(-50%);
         transition: transform 100ms linear;
+        transform: translateX(3px) translateY(-50%);
       }
     }
   }
@@ -347,7 +306,6 @@
     &::after {
       top: 50%;
       transform: translateX(0) translateY(-50%);
-      -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
     }
 
     &:hover:not([disabled]),
@@ -355,21 +313,16 @@
     &:focus:hover:not([disabled]) {
       &::after {
         margin-left: 0;
-        transform: translateX(0) translateY(-50%);
-        -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
         transition: transform 100ms linear;
+        transform: translateX(0) translateY(-50%);
       }
     }
 
     &:active:not([disabled]),
     &:focus:hover:active:not([disabled]) {
       &::after {
-        transform: translateX(-3px) translateY(-50%);
         transition: transform 100ms linear;
-        -webkit-transform:
-          translateZ(-1000px)
-          translateX(-3px)
-          translateY(-50%);
+        transform: translateX(-3px) translateY(-50%);
       }
     }
   }
@@ -377,11 +330,11 @@
 
 // alert buttons
 @mixin button-custom-outline-alert-variant($color, $border, $bg, $border-hover, $bg-pressed) {
+  padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
+  font-size: $font-size-md;
   color: $color;
   background-color: $bg;
   border-color: $border;
-  font-size: $font-size-md;
-  padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
 
   &:hover,
   &:focus,
@@ -405,8 +358,6 @@
       color: $border-hover;
       background: $bg-pressed;
       border-color: $border-hover;
-
-      /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
       box-shadow:
         inset 0 0 0 1px $border-hover,
         inset 0 0 0 1px $border-hover,
@@ -422,25 +373,23 @@
     &.focus,
     &:hover,
     &.hover {
+      color: $border;
       pointer-events: none;
       background-color: inherit;
       border-color: $border;
-      color: $border;
-      opacity: 0.65;
       box-shadow: none;
+      opacity: .65;
     }
   }
 }
 
 // Secondary buttons
 @mixin button-custom-outline-variant($color, $border, $bg, $border-hover, $bg-pressed) {
-  & {
-    padding: calc(#{$input-btn-padding-y} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x} - #{$input-btn-border-width});
-    color: $border;
-    background-color: $bg;
-    border-color: $border;
-    border-radius: $btn-border-radius;
-  }
+  padding: calc(#{$input-btn-padding-y} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x} - #{$input-btn-border-width});
+  color: $border;
+  background-color: $bg;
+  border-color: $border;
+  border-radius: $btn-border-radius;
 
   &:focus,
   &.focus,
@@ -450,8 +399,6 @@
     color: $border-hover;
     background-color: $bg;
     border-color: $border-hover;
-
-    /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
     box-shadow:
       inset 0 0 0 1px $border-hover,
       inset 0 0 0 1px $border-hover,
@@ -463,13 +410,10 @@
   &.active,
   &:active:hover,
   &:active:focus,
-  &:active:hover,
   &.focus {
     color: $border-hover;
-    border-color: $border-hover;
     background-color: $bg-pressed;
-
-    /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
+    border-color: $border-hover;
     box-shadow:
       inset 0 0 0 1px $border-hover,
       inset 0 0 0 1px $border-hover,
@@ -487,8 +431,6 @@
       color: $border-hover;
       background: $bg-pressed;
       border-color: $border-hover;
-
-      /* IE11 REQUIRES this type of formatting. Do NOT, for the love of god, reformat */
       box-shadow:
         inset 0 0 0 1px $border-hover,
         inset 0 0 0 1px $border-hover,
@@ -504,12 +446,12 @@
     &.focus,
     &:hover,
     &.hover {
+      color: $border;
       pointer-events: none;
       background-color: inherit;
       border-color: $border;
-      color: $border;
-      opacity: 0.65;
       box-shadow: none;
+      opacity: .65;
     }
   }
 
@@ -517,14 +459,14 @@
   ** SIZES
   */
   &.btn-sm {
-    font-size: $font-size-md;
     padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
+    font-size: $font-size-md;
   }
 
   &.btn-lg {
-    line-height: $input-btn-line-height-lg;
-    font-size: $font-size-xl;
     padding: calc(#{$input-btn-padding-y-lg} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-lg} - #{$input-btn-border-width});
+    font-size: $font-size-xl;
+    line-height: $input-btn-line-height-lg;
   }
 
   /*
@@ -578,25 +520,25 @@
     padding-right: 45px;
 
     &::after {
-      content: "";
-      right: 0.6rem;
       position: absolute;
       top: 50% !important;
+      right: .6rem;
+      content: "";
       transform: translateY(-50%);
     }
 
     &:hover:not([disabled]),
     &:focus:not([disabled]) {
       &::after {
-        transform: translateX(0) translateY(-50%);
         transition: transform 100ms linear;
+        transform: translateX(0) translateY(-50%);
       }
     }
 
     &:active:not([disabled]) {
       &::after {
-        transform: translateX(3px) translateY(-50%);
         transition: transform 100ms linear;
+        transform: translateX(3px) translateY(-50%);
       }
     }
   }
@@ -605,7 +547,6 @@
     &::after {
       top: 50% !important;
       transform: translateX(0) translateY(-50%);
-      -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
     }
 
     &:hover:not([disabled]),
@@ -613,21 +554,16 @@
     &:focus:hover:not([disabled]) {
       &::after {
         margin-left: 0;
-        transform: translateX(0) translateY(-50%);
-        -webkit-transform: translateZ(-1000px) translateX(0) translateY(-50%);
         transition: transform 100ms linear;
+        transform: translateX(0) translateY(-50%);
       }
     }
 
     &:active:not([disabled]),
     &:focus:hover:active:not([disabled]) {
       &::after {
-        transform: translateX(-3px) translateY(-50%);
         transition: transform 100ms linear;
-        -webkit-transform:
-          translateZ(-1000px)
-          translateX(-3px)
-          translateY(-50%);
+        transform: translateX(-3px) translateY(-50%);
       }
     }
   }
@@ -649,8 +585,8 @@
 }
 
 .btn-default {
-  font-size: $font-size-md;
   padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+  font-size: $font-size-md;
 
   @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
 }
@@ -680,18 +616,18 @@ a.btn:active {
 }
 
 .btn-link {
-  transition: none;
-
-  @include link;
+  position: relative;
+  margin: 0;
 
   font-family: inherit;
   font-size: $font-size-md;
-  margin: 0;
-  position: relative;
-  border: 0;
+  line-height: 1.46;
   vertical-align: baseline !important;
   background-position-y: 1.15rem;
-  line-height: 1.46;
+  border: 0;
+  transition: none;
+
+  @include link();
 
   @include font-smoothing(auto);
 
@@ -704,14 +640,14 @@ a.btn:active {
   }
 
   &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    box-sizing: content-box;
-    padding: $input-btn-padding-y $input-btn-padding-x;
     position: absolute;
     top: 0;
     left: 0;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    content: "";
   }
 }
 
@@ -720,13 +656,13 @@ a.btn:active {
  */
 
 .btn-link.btn-block {
-  @include link;
+  @include link();
+  display: block;
 
   width: 100%;
-  background-image: none;
-  display: block;
-  text-align: center;
   line-height: 1.1;
+  text-align: center;
+  background-image: none;
 
   &:hover,
   &:active {
@@ -743,21 +679,21 @@ a.btn:active {
  * Large link button
  */
 @mixin btn-link-variant($color, $color-hover, $color-pressed, $arrow-position: right) {
-  -webkit-font-smoothing: antialiased;
-  font-size: $font-size-lg;
+  position: relative;
+  padding: 0 3px 0 0;
   font-family: $font-family-sans-serif;
+  font-size: $font-size-lg;
+  font-weight: 700;
+  color: $color;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
   transition: 200ms linear;
   transition-property: all;
-  white-space: normal;
-  position: relative;
-  cursor: pointer;
-  color: $color;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: left;
-  padding: 0 3px 0 0;
-  background: transparent;
-  border: none;
+  -webkit-font-smoothing: antialiased;
 
   @if $arrow-position == left {
     padding: 0 0 0 43px;
@@ -766,37 +702,34 @@ a.btn:active {
   // arrow
   @if $arrow-position == right {
     &::after {
-      content: "";
+      position: relative;
+
+      bottom: -3px;
       display: inline-block;
+      height: 18px;
+      margin-left: .625rem;
+      content: "";
       border: 0;
-      margin-left: 0.625rem;
+      transition: transform 100ms linear;
 
       @include btn-arrow-standard-right($color);
+    }
+  } @else {
+    &::before {
+      position: relative;
 
       bottom: -3px;
-      position: relative;
-      height: 18px;
-      transition: transform 100ms linear;
-    }
-  }
-
-  @else {
-    &::before {
-      content: "";
       display: inline-block;
+      height: 18px;
+      margin-right: .625rem;
+      margin-left: -40px;
+      content: "";
       border: 0;
+      transition: transform 100ms linear;
+      transform: translateX(0) translateY(0);
+      backface-visibility: hidden;
 
       @include btn-arrow-standard-left($color);
-
-      bottom: -3px;
-      height: 18px;
-      position: relative;
-      transition: transform 100ms linear;
-      -webkit-backface-visibility: hidden;
-      transform: translateX(0) translateY(0);
-      -webkit-transform: translateZ(-1000px) translateX(0) translateY(0%);
-      margin-left: -40px;
-      margin-right: 0.625rem;
     }
   }
 
@@ -804,9 +737,9 @@ a.btn:active {
   &:hover:not([disabled]),
   &:focus:not([disabled]),
   &:focus:hover:not([disabled]) {
-    background: transparent;
-    text-decoration: none;
     color: $color-hover;
+    text-decoration: none;
+    background: transparent;
 
     @if $arrow-position == right {
       &::after {
@@ -815,14 +748,11 @@ a.btn:active {
         height: 18px;
         transform: translateX(0);
       }
-    }
-
-    @else {
+    } @else {
       &::before {
         @include btn-arrow-standard-left($color-hover);
-
         height: 18px;
-        -webkit-transform: translateZ(-1000px) translateX(0) translateY(0%);
+        transform: translateZ(-1000px) translateX(0) translateY(0%);
       }
     }
   }
@@ -838,18 +768,14 @@ a.btn:active {
         @include btn-arrow-standard-right($color-pressed);
 
         height: 18px;
-        transform: translateX(3px);
         transition: transform 100ms linear;
+        transform: translateX(3px);
       }
-    }
-
-    @else {
+    } @else {
       &::before {
         @include btn-arrow-standard-left($color-pressed);
-
         height: 18px;
         transform: translateX(-3px);
-        -webkit-transform: translateZ(-1000px) translateX(-3px) translateY(0%);
       }
     }
   }
@@ -886,9 +812,9 @@ a.btn:active {
     @if $arrow-position == right {
       &::after {
         @include btn-arrow-small-right($color);
-
-        margin-left: 0.625rem;
         bottom: 0;
+
+        margin-left: .625rem;
       }
 
       &:hover::after,
@@ -906,14 +832,12 @@ a.btn:active {
           @include btn-arrow-small-right($color-pressed);
         }
       }
-    }
-
-    @else {
+    } @else {
       &::before {
         @include btn-arrow-small-left($color);
+        bottom: 0;
 
         margin-left: -38px;
-        bottom: 0;
       }
 
       &:hover::before,
@@ -960,9 +884,7 @@ a.btn:active {
           @include btn-arrow-large-right($color-pressed);
         }
       }
-    }
-
-    @else {
+    } @else {
       padding-left: 43px;
 
       &::before {
@@ -1009,8 +931,8 @@ a.btn:active {
   @include btn-link-variant($blue, $btn-secondary-border, $btn-secondary-border-hover);
 
   &::after {
-    margin-left: 0.625rem;
     bottom: -3px;
+    margin-left: .625rem;
   }
 }
 
@@ -1018,8 +940,8 @@ a.btn:active {
   @include btn-link-variant($blue, $btn-secondary-border, $btn-secondary-border-hover, left);
 
   &::before {
-    margin-right: 0.625rem;
     bottom: -3px;
+    margin-right: .625rem;
   }
 }
 
@@ -1028,24 +950,24 @@ a.btn:active {
  */
 
 .btn-login-logout {
-  background-color: $btn-login-logout-bg;
+  padding: $input-btn-padding-y $input-btn-padding-x;
   font-size: 15px;
   line-height: 1.3;
   color: $white;
-  padding: $input-btn-padding-y $input-btn-padding-x;
+  background-color: $btn-login-logout-bg;
   border-radius: $btn-border-radius;
 
   &:focus,
   &:hover,
   &:hover:focus {
-    background-color: $btn-login-logout-bg-hover;
     color: $white;
+    background-color: $btn-login-logout-bg-hover;
   }
 
   &:active:focus,
   &:hover:active {
-    background-color: $btn-login-logout-bg-pressed;
     color: $white;
+    background-color: $btn-login-logout-bg-pressed;
   }
 }
 
@@ -1058,18 +980,18 @@ a.btn:active {
 */
 
 .btn-more {
-  font-size: $font-size-md;
-  font-weight: bold;
+  padding: 0;
   font-family: $font-family-sans-serif;
+  font-size: $font-size-md;
+  font-weight: 700;
   line-height: 1.5rem;
   color: $blue;
   background-color: transparent;
-  padding: 0;
   border-width: 0;
 
   &.btn-lg {
-    line-height: $input-btn-line-height-lg;
     font-size: $font-size-lg;
+    line-height: $input-btn-line-height-lg;
   }
 
   &.btn-sm {
@@ -1086,40 +1008,40 @@ a.btn:active {
     color: $btn-secondary-bg-hover;
 
     &::after {
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
       width: 12px;
       height: 10px;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
     }
   }
 
   &:active,
   &:hover:active,
   &:hover:active:focus {
-    opacity: 0.6;
     color: $btn-secondary-border-hover;
+    opacity: .6;
 
     &::after {
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
       width: 12px;
       height: 10px;
-      opacity: 0.6;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
+      opacity: .6;
     }
   }
 
   &::after {
-    content: "";
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
-    background-repeat: no-repeat;
+    position: relative;
+    top: -1px;
     display: inline-block;
     width: 12px;
     height: 10px;
+    margin-left: .3125rem;
     vertical-align: middle;
-    margin-left: 0.3125rem;
-    position: relative;
-    top: -1px;
     cursor: pointer;
-    background-size: 12px;
+    content: "";
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxMnB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDEyIDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgICAgICA8dGl0bGU+SWNvbnMvc3BlY2lhbC9SZWFkbW9yZTwvdGl0bGU+ICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPiAgICA8ZGVmcz4gICAgICAgIDxwb2x5Z29uIGlkPSJwYXRoLTEiIHBvaW50cz0iNiAzLjQxNDIxMzU2IDEuNzA3MTA2NzggNy43MDcxMDY3OCAwLjI5Mjg5MzIxOSA2LjI5Mjg5MzIyIDYgMC41ODU3ODY0MzggMTEuNzA3MTA2OCA2LjI5Mjg5MzIyIDEwLjI5Mjg5MzIgNy43MDcxMDY3OCI+PC9wb2x5Z29uPiAgICA8L2RlZnM+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9Ikljb25zL3NwZWNpYWwvUmVhZG1vcmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCAzLjAwMDAwMCkgc2NhbGUoMSwgLTEpIHJvdGF0ZSgtMTgwLjAwMDAwMCkgdHJhbnNsYXRlKC02LjAwMDAwMCwgLTMuMDAwMDAwKSB0cmFuc2xhdGUoMC4wMDAwMDAsIC0yLjAwMDAwMCkiPiAgICAgICAgICAgIDxnIGlkPSJvdXRsaW5lcyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuMDAwMDAwLCA2LjAwMDAwMCkgc2NhbGUoMSwgLTEpIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC02LjAwMDAwMCkgdHJhbnNsYXRlKDAuMDAwMDAwLCAyLjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8bWFzayBpZD0ibWFzay0yIiBmaWxsPSJ3aGl0ZSI+ICAgICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPiAgICAgICAgICAgICAgICA8L21hc2s+ICAgICAgICAgICAgICAgIDx1c2UgaWQ9IlBhdGgtMyIgZmlsbD0iIzAwNUFBMCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+ICAgICAgICAgICAgPC9nPiAgICAgICAgICAgIDxyZWN0IGlkPSJpbnZpc2libGUtMjAiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMCI+PC9yZWN0PiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
+    background-repeat: no-repeat;
     background-position: center;
+    background-size: 12px;
   }
 
   &[aria-expanded="true"] {

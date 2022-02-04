@@ -71,8 +71,8 @@ $b-width-2: $border-width;
 .bl-bg { border-left-color: $b-bg !important; }
 
 .bx-bg {
-  border-left-color: $b-bg !important;
   border-right-color: $b-bg !important;
+  border-left-color: $b-bg !important;
 }
 
 .by-bg {
@@ -87,8 +87,8 @@ $b-width-2: $border-width;
 .bl-bg-n { border-left-color: $b-bg-n !important; }
 
 .bx-bg-n {
-  border-left-color: $b-bg-n !important;
   border-right-color: $b-bg-n !important;
+  border-left-color: $b-bg-n !important;
 }
 
 .by-bg-n {

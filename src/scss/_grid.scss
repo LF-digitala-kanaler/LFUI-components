@@ -5,13 +5,13 @@
  */
 
 .row-tight {
-  margin-left: ($grid-gutter-tight / -2);
   margin-right: ($grid-gutter-tight / -2);
+  margin-left: ($grid-gutter-tight / -2);
 }
 
 .row-tight [class*="col-"] {
-  padding-left: ($grid-gutter-tight / 2);
   padding-right: ($grid-gutter-tight / 2);
+  padding-left: ($grid-gutter-tight / 2);
 }
 
 /**
@@ -19,13 +19,13 @@
  */
 
 .row-no-gutter {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 .row-no-gutter [class*="col-"] {
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
 }
 
 /**

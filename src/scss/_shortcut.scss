@@ -16,25 +16,23 @@
 }
 
 .shortcut::after {
-  content: "";
-
-  @include btn-arrow-large-right($link-color);
 
   position: absolute;
-  right: 1.1rem;
   top: 50%;
-  transform: translateY(-50%);
+  right: 1.1rem;
+  content: "";
   transition: right 100ms linear;
+  transform: translateY(-50%);
+
+  @include btn-arrow-large-right($link-color);
 }
 
-.shortcut {
-  &:active,
-  &:active:focus,
-  &:active:focus:hover {
-    &::after {
-      right: 0.8rem;
-      transition: right 100ms linear;
-    }
+.shortcut:active,
+.shortcut:active:focus,
+.shortcut:active:focus:hover {
+  &::after {
+    right: .8rem;
+    transition: right 100ms linear;
   }
 }
 
@@ -47,10 +45,10 @@
 
   svg {
     position: absolute;
+    top: 22%;
+    left: 16px;
     width: 32px;
     height: 32px;
-    left: 16px;
-    top: 22%;
   }
 }
 
@@ -73,7 +71,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem 0.5rem;
+  padding: 1.25rem .5rem;
   text-align: center;
 }
 
@@ -86,16 +84,16 @@
  */
 
 .shortcut-alert {
+  padding: .8rem 3.7rem .8rem 1.25rem;
   font-size: 1rem;
-  padding: 0.8rem 3.7rem 0.8rem 1.25rem;
   background: lighten($baby, 9%);
 }
 
 .shortcut-alert,
 .shortcut-alert.shortcut-info {
+  color: $lf-info-dark;
   text-align: left;
   background-color: $lf-info;
-  color: $lf-info-dark;
 
   &::after {
     @include btn-arrow-standard-right($lf-info-dark);
@@ -107,9 +105,9 @@
 }
 
 .shortcut-alert.shortcut-success {
+  color: $lf-success-dark;
   text-align: left;
   background-color: $lf-success;
-  color: $lf-success-dark;
 
   &::after {
     @include btn-arrow-standard-right($lf-success-dark);
@@ -121,9 +119,9 @@
 }
 
 .shortcut-alert.shortcut-warning {
+  color: $lf-warning-dark;
   text-align: left;
   background-color: $lf-warning;
-  color: $lf-warning-dark;
 
   &::after {
     @include btn-arrow-standard-right($lf-warning-dark);
@@ -135,9 +133,9 @@
 }
 
 .shortcut-alert.shortcut-danger {
+  color: $lf-danger-dark;
   text-align: left;
   background-color: $lf-danger;
-  color: $lf-danger-dark;
 
   &::after {
     @include btn-arrow-standard-right($lf-danger-dark);
@@ -150,11 +148,11 @@
 
 .shortcut-alert.disabled,
 button.shortcut-alert:disabled {
-  text-align: left;
-  background-color: $smoke;
   color: $gray;
-  box-shadow: none;
+  text-align: left;
   cursor: $cursor-disabled !important;
+  background-color: $smoke;
+  box-shadow: none;
 
   &::after {
     background-image: none;
@@ -193,16 +191,16 @@ button.shortcut-alert:disabled {
     margin-right: 1rem;
 
     @include media-breakpoint-up(md) {
-      margin-right: 1.5rem;
       min-width: 40px;
+      margin-right: 1.5rem;
     }
   }
 }
 
 .shortcut-title {
-  color: $blue;
-  font-size: 1rem;
   margin-bottom: 0;
+  font-size: 1rem;
+  color: $blue;
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-xl;
@@ -210,14 +208,14 @@ button.shortcut-alert:disabled {
 }
 
 .shortcut-landing-page {
-  padding: 0.5rem 3.7rem 0.75rem 1rem;
-  text-align: left;
+  padding: .5rem 3.7rem .75rem 1rem;
   font-size: 1rem;
+  text-align: left;
   border-radius: $border-radius-lg $border-radius-lg 0 0;
 
   @include media-breakpoint-up(md) {
+    padding: 1.3rem .5rem 1rem;
     text-align: center;
-    padding: 1.3rem 0.5rem 1rem;
 
     &::after {
       content: none;
@@ -225,9 +223,9 @@ button.shortcut-alert:disabled {
   }
 
   @include media-breakpoint-down(sm) {
-    align-items: center;
     display: flex;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    margin-bottom: .5rem;
 
     .icon {
       margin-right: 1rem;
