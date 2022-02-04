@@ -28,7 +28,7 @@ $alert-dismissible-padding-r:   $alert-padding-x * 3 !default; // 3x covers widt
   color: var(--#{$variable-prefix}alert-color);
   background-color: var(--#{$variable-prefix}alert-bg);
   border: var(--#{$variable-prefix}alert-border);
-  border-radius: var(--#{$variable-prefix}alert-border-radius, 0); // stylelint-disable-line property-disallowed-list
+  border-radius: var(--#{$variable-prefix}alert-border-radius, 0);
 }
 
 // Headings for larger alerts
