@@ -341,7 +341,7 @@
     cursor: pointer;
     background-color: $body-bg;
     border: 0;
-    -webkit-font-smoothing: antialiased;
+    @include font-smoothing();
 
     &.active {
       background-color: $white;

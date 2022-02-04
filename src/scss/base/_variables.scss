@@ -456,25 +456,25 @@ $btn-info-color: $lf-info-dark;
 $btn-info-bg: $lf-info;
 $btn-info-border: $lf-info-dark;
 $btn-info-border-hover: $lf-info-dark;
-$btn-info-bg-pressed: darken($lf-info, 5%);
+$btn-info-bg-pressed: mix($lf-info-dark, $lf-info, 15%);
 
 $btn-success-color: $lf-success-dark;
 $btn-success-bg: $lf-success;
 $btn-success-border: $lf-success-dark;
 $btn-success-border-hover: $lf-success-dark;
-$btn-success-bg-pressed: darken($lf-success, 5%);
+$btn-success-bg-pressed: mix($lf-success-dark, $lf-success, 15%);
 
 $btn-warning-color: $lf-warning-dark;
 $btn-warning-bg: $lf-warning;
 $btn-warning-border: $lf-warning-dark;
 $btn-warning-border-hover: $lf-warning-dark;
-$btn-warning-bg-pressed: darken($lf-warning, 5%);
+$btn-warning-bg-pressed: mix($lf-warning-dark, $lf-warning, 15%);
 
 $btn-danger-color: $lf-danger-dark;
 $btn-danger-bg: $lf-danger;
 $btn-danger-border: $lf-danger-dark;
 $btn-danger-border-hover: $lf-danger-dark;
-$btn-danger-bg-pressed: darken($lf-danger, 5%);
+$btn-danger-bg-pressed: mix($lf-danger-dark, $lf-danger, 15%);
 
 $btn-login-logout-bg: $login-logout-blue;
 $btn-login-logout-bg-hover: darken($login-logout-blue, 6%);

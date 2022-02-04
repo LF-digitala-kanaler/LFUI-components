@@ -693,7 +693,7 @@ a.btn:active {
   border: 0;
   transition: 200ms linear;
   transition-property: all;
-  -webkit-font-smoothing: antialiased;
+  @include font-smoothing();
 
   @if $arrow-position == left {
     padding: 0 0 0 43px;
