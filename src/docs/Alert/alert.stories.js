@@ -1,5 +1,7 @@
-import Alert from './alert.html'
+import Default from './default.html'
+import Banner from './banner.html'
 
 export default { title: 'Alert' }
 
-export const alert = () => `${Alert}`
+export const defaults = () => `${Default}`
+export const banner = () => `${Banner}`
