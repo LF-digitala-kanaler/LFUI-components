@@ -12,6 +12,12 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   align-items: baseline;
   justify-content: space-between;
   font-family: $font-family-base;
+  box-shadow:
+    0px 0.2px 0.2px rgba(0, 0, 0, 0.019),
+    0px 0.4px 0.6px rgba(0, 0, 0, 0.027),
+    0px 0.9px 1.2px rgba(0, 0, 0, 0.033),
+    0px 1.8px 2.6px rgba(0, 0, 0, 0.041),
+    0px 5px 7px rgba(0, 0, 0, 0.06);
 
   /* Reset, might be needed, who knows */
   font-weight: 400;
@@ -38,6 +44,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 }
 
 .alert p {
+  flex: 1;
   margin: 0;
 }
 
@@ -58,6 +65,12 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   white-space: nowrap;
 }
 
+/* Icon alignment */
+.alert .icon {
+  margin: -1rem 0.5rem -1rem 0;
+  top: 0.23rem;
+}
+
 .alert-success {
   @include alert-variant($color-success, transparent, $color-success-text);
 }
@@ -68,4 +81,48 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 .alert-danger {
   @include alert-variant($color-danger, transparent, $color-danger-text);
+}
+
+/**
+ * Banner alternative
+ * Make sure to wrap the alert content in a container.
+ * Use in combination with the `.pos-absolute` if needed.
+ */
+
+.alert-banner {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Remove 'close' padding from root, and apply it on the container below */
+.alert-banner.alert-dismissible {
+  padding-right: 0;
+}
+
+/* Supporting wrapping the alert content in a container */
+.alert-banner .container {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  /* Using border instead of padding to not respect the container padding */
+  border-right: $alert-dismissible-padding-r solid transparent;
+}
+
+/* Minor alignment tweak in this case as well */
+.alert-banner .btn-close {
+  top: calc($alert-padding-y * -1);
+  right: calc(($alert-dismissible-padding-r + .125rem) * -1)
+}
+
+/* Without shadow */
+
+.alert-flat {
+  box-shadow: none;
 }
