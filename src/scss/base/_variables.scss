@@ -67,7 +67,7 @@ $sky: #76bbe7;
 $baby: #badaf3;
 $cloud: #eff4f9;
 $black: #222;
-$gray: #6B7070;
+$gray: #6b7070;
 $silver: #b1b3b6;
 $smoke: #d9d9d9;
 $shadow: #e5e5e5;
@@ -123,7 +123,6 @@ $gray-900: $black;
   --#{$variable-prefix}-color-warning-text: #{$color-warning-text};
   --#{$variable-prefix}-color-danger: #{$color-danger};
   --#{$variable-prefix}-color-danger-text: #{$color-danger-text};
-
   --#{$variable-prefix}-color-risk-default: #{$color-risk-default};
   --#{$variable-prefix}-color-risk-1: #{$color-risk-1};
   --#{$variable-prefix}-color-risk-2: #{$color-risk-2};
