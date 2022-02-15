@@ -24,7 +24,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   cursor: default;
 
   /* Default to "info" */
-  @include alert-variant($lf-info, transparent, $lf-info-dark);
+  @include alert-variant($color-info, transparent, $color-info-text);
 }
 
 .alert a,
@@ -48,7 +48,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 /* Minor alignment tweak */
 .alert-dismissible .btn-close {
-  padding: calc($alert-padding-y * 1.3) calc($alert-padding-y + .125rem);
+  padding: calc($alert-padding-y * 1.35) calc($alert-padding-y + .125rem);
 }
 
 /* Action button alignment */
@@ -59,13 +59,13 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 }
 
 .alert-success {
-  @include alert-variant($lf-success, transparent, $lf-success-dark);
+  @include alert-variant($color-success, transparent, $color-success-text);
 }
 
 .alert-warning {
-  @include alert-variant($lf-warning, transparent, $lf-warning-dark);
+  @include alert-variant($color-warning, transparent, $color-warning-text);
 }
 
 .alert-danger {
-  @include alert-variant($lf-danger, transparent, $lf-danger-dark);
+  @include alert-variant($color-danger, transparent, $color-danger-text);
 }
