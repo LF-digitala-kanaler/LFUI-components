@@ -30,21 +30,21 @@
 }
 
 .tag-info {
-  --#{$variable-prefix}tag-bg: #{$lf-info};
-  --#{$variable-prefix}tag-color: #{$lf-info-dark};
+  --#{$variable-prefix}tag-bg: #{$color-info};
+  --#{$variable-prefix}tag-color: #{$color-info-text};
 }
 
 .tag-success {
-  --#{$variable-prefix}tag-bg: #{$lf-success};
-  --#{$variable-prefix}tag-color: #{$lf-success-dark};
+  --#{$variable-prefix}tag-bg: #{$color-success};
+  --#{$variable-prefix}tag-color: #{$color-success-text};
 }
 
 .tag-warning {
-  --#{$variable-prefix}tag-bg: #{$lf-warning};
-  --#{$variable-prefix}tag-color: #{$lf-warning-dark};
+  --#{$variable-prefix}tag-bg: #{$color-warning};
+  --#{$variable-prefix}tag-color: #{$color-warning-text};
 }
 
 .tag-danger {
-  --#{$variable-prefix}tag-bg: #{$lf-danger};
-  --#{$variable-prefix}tag-color: #{$lf-danger-dark};
+  --#{$variable-prefix}tag-bg: #{$color-danger};
+  --#{$variable-prefix}tag-color: #{$color-danger-text};
 }

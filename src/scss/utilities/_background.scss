@@ -27,24 +27,24 @@
 .bg-purple { background-color: $purple !important; }
 .bg-turquoise { background-color: $turquoise !important; }
 
-.bg-lf-info { background-color: $lf-info !important; }
-.bg-lf-success { background-color: $lf-success !important; }
-.bg-lf-warning { background-color: $lf-warning !important; }
-.bg-lf-danger { background-color: $lf-danger !important; }
+.bg-lf-info { background-color: $color-info !important; }
+.bg-lf-success { background-color: $color-success !important; }
+.bg-lf-warning { background-color: $color-warning !important; }
+.bg-lf-danger { background-color: $color-danger !important; }
 
 /* Risk colors */
 
-.bg-risk-default { background-color: $risk-color-default !important; }
-.bg-risk-1 { background-color: $risk-color-1 !important; }
-.bg-risk-2 { background-color: $risk-color-2 !important; }
-.bg-risk-3 { background-color: $risk-color-3 !important; }
-.bg-risk-4 { background-color: $risk-color-4 !important; }
-.bg-risk-5 { background-color: $risk-color-5 !important; }
-.bg-risk-6 { background-color: $risk-color-6 !important; }
-.bg-risk-7 { background-color: $risk-color-7 !important; }
+.bg-risk-default { background-color: $color-risk-default !important; }
+.bg-risk-1 { background-color: $color-risk-1 !important; }
+.bg-risk-2 { background-color: $color-risk-2 !important; }
+.bg-risk-3 { background-color: $color-risk-3 !important; }
+.bg-risk-4 { background-color: $color-risk-4 !important; }
+.bg-risk-5 { background-color: $color-risk-5 !important; }
+.bg-risk-6 { background-color: $color-risk-6 !important; }
+.bg-risk-7 { background-color: $color-risk-7 !important; }
 
 /* Change background on hover */
 
-.bg-lf-info-hover:hover { background-color: $lf-info !important; }
+.bg-lf-info-hover:hover { background-color: $color-info !important; }
 
 .bg-active { background: $table-hover-bg !important; }

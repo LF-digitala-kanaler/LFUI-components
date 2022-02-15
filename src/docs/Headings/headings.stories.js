@@ -3,5 +3,5 @@ import Display from './display.html'
 
 export default { title: 'Headings' }
 
-export const defaultt = () => `${Default}`
+export const defaults = () => `${Default}`
 export const display = () => `${Display}`

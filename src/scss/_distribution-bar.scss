@@ -123,7 +123,7 @@ $tooltip-distance: 10px;
 .distribution-value:nth-child(4n+4),
 .distribution-title.distribution-baby:nth-child(1n),
 .distribution-title:nth-of-type(4n+4) {
-  @include distribution-color-value($baby, $lf-info-dark);
+  @include distribution-color-value($baby, $color-info-text);
 }
 
 .distribution-value.distribution-red:nth-child(1n),
@@ -226,17 +226,17 @@ $tooltip-distance: 10px;
 
 .distribution-title.distribution-green-stripes,
 .distribution-value.distribution-green-stripes {
-  @include distribution-color-value-bordered($lf-success, $lf-success-dark, $lf-success-dark);
+  @include distribution-color-value-bordered($color-success, $color-success-text, $color-success-text);
 }
 
 .distribution-title.distribution-yellow-stripes,
 .distribution-value.distribution-yellow-stripes {
-  @include distribution-color-value-bordered($lf-warning, $lf-warning-dark, $lf-warning-dark);
+  @include distribution-color-value-bordered($color-warning, $color-warning-text, $color-warning-text);
 }
 
 .distribution-title.distribution-red-stripes,
 .distribution-value.distribution-red-stripes {
-  @include distribution-color-value-bordered($lf-danger, $lf-danger-dark, $lf-danger-dark);
+  @include distribution-color-value-bordered($color-danger, $color-danger-text, $color-danger-text);
 }
 
 /**
@@ -256,17 +256,17 @@ $tooltip-distance: 10px;
 
   .distribution-value:nth-child(1) {
     text-align: left;
-    background-color: $risk-color-3;
+    background-color: $color-risk-3;
   }
 
   .distribution-value:nth-child(2) {
     text-align: center;
-    background-color: $risk-color-5;
+    background-color: $color-risk-5;
   }
 
   .distribution-value:nth-child(3) {
     text-align: right;
-    background-color: $risk-color-7;
+    background-color: $color-risk-7;
   }
 
   .distribution-label {
