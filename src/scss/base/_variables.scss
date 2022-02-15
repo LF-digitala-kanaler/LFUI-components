@@ -95,7 +95,7 @@ $color-danger-text: $wine;
 
 /* Risk colors */
 
-$color-risk-default: #515151;
+$color-risk-0: #515151;
 $color-risk-1: #2a7fd4;
 $color-risk-2: #389fb9;
 $color-risk-3: #8dba84;
@@ -123,7 +123,7 @@ $gray-900: $black;
   --#{$variable-prefix}-color-warning-text: #{$color-warning-text};
   --#{$variable-prefix}-color-danger: #{$color-danger};
   --#{$variable-prefix}-color-danger-text: #{$color-danger-text};
-  --#{$variable-prefix}-color-risk-default: #{$color-risk-default};
+  --#{$variable-prefix}-color-risk-0: #{$color-risk-0};
   --#{$variable-prefix}-color-risk-1: #{$color-risk-1};
   --#{$variable-prefix}-color-risk-2: #{$color-risk-2};
   --#{$variable-prefix}-color-risk-3: #{$color-risk-3};
