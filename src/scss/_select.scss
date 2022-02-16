@@ -4,22 +4,22 @@
   /* Disable dropdown list animation */
   --dropdown-menu-open-animation-duration: 0ms;
 
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .select-label {
-  display: block;
   position: relative;
   z-index: 0;
+  display: block;
 
   /**
    * 1. Override global focus style to keep text visible
    */
   .select.initialized.inside & {
     position: absolute;
-    left: $input-padding-x;
     top: $input-padding-y;
+    left: $input-padding-x;
     z-index: 1001; /* 1 */
     pointer-events: none;
     user-select: none;
@@ -35,9 +35,9 @@
   .select.inside:not(.initialized) .select-label {
     height: auto;
     padding: 0;
-    border: 0;
     user-select: auto;
     background: none;
+    border: 0;
   }
 }
 
@@ -47,8 +47,8 @@
  */
 @media (pointer: fine), (pointer: none) {
   .select:not(.initialized, .inside) .select-label::after {
+    margin-top: .3em; /* 1 */
     content: "";
-    margin-top: 0.3em; /* 1 */
   }
 }
 
@@ -62,32 +62,32 @@
 .select-label::after {
   @include glyph-chevron-down($blue);
 
+  position: relative;
   display: block;
   width: 100%;
   height: $input-height;
   padding: $input-padding-y $input-padding-x calc($input-padding-y - $input-btn-border-width);
-  border-bottom: solid $input-border-color;
-  border-width: 0 0 $input-btn-border-width;
-  position: relative;
-  user-select: none;
-  text-align: left;
   color: $input-color;
-  border-radius: 0;
+  text-align: left;
+  user-select: none;
   background-color: $input-bg;
   background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
   background-size: 18px 12px;
+  border-width: 0 0 $input-btn-border-width;
+  border-bottom: solid $input-border-color;
+  border-radius: 0;
   box-shadow: $input-box-shadow;
   appearance: none;
 
   .select.disabled & {
-    background-color: $input-disabled-bg;
     cursor: not-allowed;
+    background-color: $input-disabled-bg;
   }
 
   /* Handle disabled state for noscript multiple selects */
   .select:has(select:disabled) & {
-    background-color: $input-disabled-bg;
     cursor: not-allowed;
+    background-color: $input-disabled-bg;
   }
 }
 
@@ -97,25 +97,22 @@
 .select-toggle,
 .select-options {
   &[aria-expanded="true"] {
-    background-color: $input-focus-bg;
-    border-bottom-color: $input-focus-border-color;
-    color: $input-focus-color;
-  }
-
-  &[aria-expanded="true"] {
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 5%);
     position: relative;
     z-index: 1003;
+    color: $input-focus-color;
+    background-color: $input-focus-bg;
+    border-bottom-color: $input-focus-border-color;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 5%);
   }
 
   &:disabled {
-    background-color: $input-disabled-bg;
     cursor: not-allowed;
+    background-color: $input-disabled-bg;
   }
 
   &:hover:not([disabled]) {
     background-color: $input-hover;
-    transition: background 0.2s;
+    transition: background .2s;
   }
 }
 
@@ -135,37 +132,37 @@
  * Showing the selected options
  */
 .select-status {
+  position: relative;
+  top: -1px;
   display: block;
   width: calc(100% - 1.7rem);
   height: 1.5rem;
-  padding-right: calc($input-padding-x + 0.75rem);
-  position: relative;
-  white-space: pre;
+  padding-right: calc($input-padding-x + .75rem);
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: pre;
   user-select: none;
-  top: -1px;
 }
 
 /* Multiple select counter */
 .select-options[multiple] ~ .select-toggle .select-status:not([data-count=""]) {
   &::after {
-    content: attr(data-count);
+    position: absolute;
+    top: 50%;
+    right: 0;
     display: flex;
-    align-items: center;
     flex: 0 0 auto;
+    align-items: center;
     justify-content: center;
     width: 1.25rem;
     height: 1.25rem;
-    border-radius: 100%;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: $input-bg;
+    font-size: .875rem;
     font-weight: $font-weight-bold;
-    font-size: 0.875rem;
+    color: $input-bg;
+    content: attr(data-count);
     background-color: $link_color;
+    border-radius: 100%;
+    transform: translateY(-50%);
   }
 }
 
@@ -178,9 +175,9 @@
   @media (pointer: coarse) {
     /* Make interactive but invisible on touch devices  */
     .select.initialized & {
+      position: absolute;
       display: block;
       opacity: 0;
-      position: absolute;
     }
   }
 
@@ -194,21 +191,21 @@
 
     /* Align multiple selects with top of placeholder */
     .select:not(.initialized) &[multiple] {
-      height: auto;
       position: absolute;
       bottom: 0;
       z-index: 1;
+      height: auto;
       transform: translateY(calc(100% - $input-height));
     }
 
     /* Visually hidden but keyboard accessible */
     .select:not(.initialized) &[multiple]:not(:focus) {
-      border: 0;
-      clip: rect(1px, 1px, 1px, 1px);
-      height: 1px;
-      overflow: hidden;
-      padding: 0;
       width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      border: 0;
     }
   }
 
@@ -228,62 +225,62 @@
  */
 
 .select-list {
+  z-index: 1002;
   width: 100%;
   padding: 0;
-  border: 0;
   margin: 0;
-  z-index: 1002;
   background-color: #fbfbfb;
+  border: 0;
   box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 8%);
 
   .select-list {
     position: static;
     box-shadow: none;
-    animation: none;
     opacity: 1;
+    animation: none;
   }
 }
 
 .select-legend {
   display: block;
   width: 100%;
-  padding: 0.375rem $input-padding-x 0.3125rem;
-  border: solid 1px #eee;
-  border-top: none;
+  padding: .375rem $input-padding-x .3125rem;
   margin: 0;
-  user-select: none;
-  font-size: 0.75rem;
-  background-color: #f4f4f4;
+  font-size: .75rem;
+  line-height: $line-height-base;
   color: $gray;
   text-transform: uppercase;
-  line-height: $line-height-base;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
+  user-select: none;
+  background-color: #f4f4f4;
+  border: solid 1px #eee;
+  border-top: none;
 }
 
 /*
  * 1. Preserve whitespace in flex context, needed for small text
  */
 .select-option {
+  position: relative;
   display: flex;
   align-items: baseline;
   width: 100%;
   min-height: $input-height;
   padding: $input-padding-y $input-padding-x;
+  font-weight: 400;
+  color: #000;
+  white-space: pre-wrap; /* 1 */
+  cursor: pointer;
+  user-select: none;
+  background-color: #fbfbfb;
   border: 1px solid #eee;
   border-top: 0;
-  position: relative;
-  user-select: none;
-  font-weight: normal;
-  color: #000;
   outline-offset: -4px !important;
-  cursor: pointer;
   appearance: none;
-  white-space: pre-wrap; /* 1 */
-  background-color: #fbfbfb;
 
   &:hover {
-    background-color: #fff;
     color: $link_color;
+    background-color: #fff;
   }
 
   &.toggle {
@@ -322,15 +319,15 @@
   /* Faux checkbox */
   &.multiple {
     &::before {
-      content: "";
-      flex: 0 0 auto;
       display: inline-block;
+      flex: 0 0 auto;
       align-self: center;
-      margin-right: $input-padding-x;
       width: 1.13rem;
       height: 1.13rem;
-      border: $border-width solid $silver;
+      margin-right: $input-padding-x;
+      content: "";
       background-color: #fff;
+      border: $border-width solid $silver;
       transition: $input-transition;
     }
 
@@ -340,21 +337,21 @@
     }
 
     &::after {
-      content: "";
+      position: absolute;
+      top: 50%;
+      left: .875rem;
       width: calc(1.13rem - $border-width * 2);
       height: calc(1.13rem - $border-width * 2);
-      position: absolute;
-      left: 0.875rem;
-      top: 50%;
+      content: "";
       opacity: 0;
+      transition: opacity ease-in-out .15s;
       transform: translateY(-50%);
-      transition: opacity ease-in-out 0.15s;
     }
 
     &.indeterminate::after {
-      height: $border-width;
-      width: 0.625rem;
       left: 1rem;
+      width: .625rem;
+      height: $border-width;
       background: $link_color;
       opacity: 1;
     }
@@ -364,11 +361,11 @@
     }
 
     &.selected::after {
-      opacity: 1;
       background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
-      background-size: 80%;
       background-repeat: no-repeat;
       background-position: center;
+      background-size: 80%;
+      opacity: 1;
     }
 
     &[disabled]::before {
