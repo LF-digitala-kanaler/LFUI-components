@@ -6,7 +6,7 @@
 @mixin dropdown-menu-open() {
   display: block;
   animation-name: dropdown-appear;
-  animation-duration: 200ms;
+  animation-duration: var(--dropdown-menu-open-animation-duration, 200ms);
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
