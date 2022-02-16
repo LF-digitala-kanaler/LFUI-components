@@ -164,12 +164,16 @@ be updated when expired.
 # Migration
 
 ## From lfui 7.x.x
+* **Deprecating `.dropdown` in favour of a new `.select` component**
+  - New markdown requered. See component documentation
 * **Changes to `.alert` component.**
   - Please see the [html examples][lfui-components-webpage], the markup has changed in various ways
 * **Changes to `.close` component**
   - Class change `.close` → `.btn-close`
   - Removed modifier class: `.close-large` (the modal now fixes this automatically)
   - The class `.close-absolute` has was removed
+* **Changes to `.slider` component**
+  - Switch to a CSS custom variable (`--progress`) for setting value, instead of inline styles
 * **Search and replace**
   - Deprecated color variable `$alabaster` – if you use it, add it to your codebase: `#fafafa`
   - Class change `.bg-risk-default` → `.bg-risk-0`
