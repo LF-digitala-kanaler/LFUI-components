@@ -20,3 +20,5 @@ import './components/modal'
 import './components/nav'
 import './components/tables'
 /* eslint-enable import/first */
+
+export { select } from './components/select'
