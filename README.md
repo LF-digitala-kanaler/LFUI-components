@@ -15,16 +15,22 @@
 # Getting started
 To install Components in your project, you will need to configure your environment for GitHub Packages.
 
-First, you'll need to authenticate with [GitHub Packages][github-packages]. The easiest way is by logging in with npm. To do that, [generate a personal access token][personal-access-token] which you use as your password.
+First, you'll need to authenticate with [GitHub Packages][github-packages]. The easiest way is by logging in with npm. To do that, [generate a personal access token][personal-access-token] which you use as your password. Make sure to give it access rights to the `repo` and `read:packages` scopes.
 
 ```
 npm login --scope=@lf-digitala-kanaler --registry=https://npm.pkg.github.com
 ```
 
-Add a `.npmrc` file to your project root folder.
+Add a `.npmrc` file in your project root folder.
 
 ```
 @lf-digitala-kanaler:registry=https://npm.pkg.github.com
+```
+
+Add an `.env` file in your project root folder.
+
+```
+GITHUB_TOKEN=<INSERT_PERSONAL_ACCESS_TOKEN>
 ```
 
 Install the package as you normally would with npm.
