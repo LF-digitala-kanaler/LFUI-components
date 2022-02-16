@@ -7,12 +7,14 @@
 - [Getting started](#getting-started)
 - [Usage](#usage)
 - [Documentation](#documentation)
+- [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Making a release](#making-a-release)
 - [Migration](#migration)
 
 
 # Getting started
+
 To install Components in your project, you will need to configure your environment for GitHub Packages.
 
 First, you'll need to authenticate with [GitHub Packages][github-packages]. The easiest way is by logging in with npm. To do that, [generate a personal access token][personal-access-token] which you use as your password. Make sure to give it access rights to the `repo` and `read:packages` scopes.
@@ -40,9 +42,11 @@ npm install @lf-digitala-kanaler/lfui-components
 ```
 
 # Usage
+
 You have two alternatives for getting started with the code; either by importing the source files into a [SCSS][scss] build, or by adding the compiled files to your HTML document.
 
 ## Source route
+
 This gives you access to the full LFUI suit including its variables and mixins – increasing your flexibility when extending with your styles and layouts.
 
 Import `LFUI.scss` at the very beginning of your main SCSS file:
@@ -52,9 +56,11 @@ Import `LFUI.scss` at the very beginning of your main SCSS file:
 ```
 
 ## Compiled route
+
 In the `/dist` folder provided, you will find: `lf.css`, `lf.js` and a `fonts` directory. These files can be used as-is. Simply add `jQuery` along with `lf.js` and `lf.css` to your HTML document.
 
 ## Fonts
+
 Components includes [Länsförsäkringar Fonts][fonts] for self-hosting. You can import them directly from `node_modules`, but it's probably easier to copy the files to your project.
 
 In this example, we are using `copyfiles` to do this.
@@ -81,14 +87,21 @@ $asset-path: "./";
 See the [fonts documentation][fonts] on loading and preloading techniques for optimal performance and accessibility.
 
 ## Favicon
+
 See the designated [Länsförsäkringar Favicon][favicon] repo for all the assets and documentation you might need.
 
 # Documentation
+
 Each component is documented, with examples, on the [LFDS](lfds) website. This is our go-to.
 
 However, because our code is based on Bootstrap, the documentation from Bootstrap version [four][bs4] and [five][bs5] does provide a good overview of how components are structured and it also lists all available [utility classes](https://getbootstrap.com/docs/5.0/utilities/api/).
 
+# Bugs and feature requests
+
+If you have a bug or a feature request, feel free to [open an issue](https://github.com/LF-digitala-kanaler/LFUI-components/issues/).
+
 # Contributing
+
 We rely on [Storybook](https://storybook.js.org/) for serving, development, and testing.
 
 Installing and starting the server
@@ -128,6 +141,7 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
 ```
 
 ## Working with branches and pull requests
+
 The latest and stable version is always in the `main` branch. New features and patches are always added through dedicated branches and pull requests. 
 
 When working on a new feature, begin by creating a new branch `main`. When finished with your work, squash merge `main` into your branch and then create a pull request.
@@ -142,6 +156,7 @@ npm test
 ```
 
 # Making a release
+
 * Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes
 that have been made to the respective components in this release. This information is publicly visible on [LFDS][lfds] once that website has been rebuilt.
 * Bump the version number `npm version <major|minor|patch>`
@@ -164,6 +179,7 @@ be updated when expired.
 # Migration
 
 ## From lfui 7.x.x
+
 * **Deprecating `.dropdown` in favour of a new `.select` component**
   - New markdown requered. See component documentation
 * **Changes to `.alert` component.**
@@ -203,6 +219,7 @@ be updated when expired.
     - `$risk-color-7` → `$color-risk-7`
 
 ## From lfui 6.x.x or earlier
+
 * Remove the old `lfui` package and replace it with `@lf-digitala-kanaler/lfui-components` in your `package.json` and install it.
 * Depending on your build setup update lf.js and lf.css with the new one in `@lf-digitala-kanaler/lfui-components`.
 * Update the font files (they have been regenerated). See above documentation on how to set that up.
