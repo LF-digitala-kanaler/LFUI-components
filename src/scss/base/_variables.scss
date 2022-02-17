@@ -115,6 +115,22 @@ $gray-800: $gray;
 $gray-900: $black;
 
 :root {
+  --#{$variable-prefix}-wine: #{$wine};
+  --#{$variable-prefix}-red: #{$red};
+  --#{$variable-prefix}-pink: #{$pink};
+  --#{$variable-prefix}-navy: #{$navy};
+  --#{$variable-prefix}-blue: #{$blue};
+  --#{$variable-prefix}-sky: #{$sky};
+  --#{$variable-prefix}-baby: #{$baby};
+  --#{$variable-prefix}-cloud: #{$cloud};
+  --#{$variable-prefix}-black: #{$black};
+  --#{$variable-prefix}-gray: #{$gray};
+  --#{$variable-prefix}-silver: #{$silver};
+  --#{$variable-prefix}-smoke: #{$smoke};
+  --#{$variable-prefix}-shadow: #{$shadow};
+  --#{$variable-prefix}-tint: #{$tint};
+  --#{$variable-prefix}-white: #{$white};
+  --#{$variable-prefix}-login-logout-blue: #{$login-logout-blue};
   --#{$variable-prefix}-color-info: #{$color-info};
   --#{$variable-prefix}-color-info-text: #{$color-info-text};
   --#{$variable-prefix}-color-success: #{$color-success};
