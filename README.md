@@ -1,8 +1,10 @@
 # <img src="https://github.com/LF-digitala-kanaler/favicon/blob/master/icon.svg" width="24"> Länsförsäkringar Components
 
-[LFDS][lfds] · [Storybook website][lfui-components-webpage]
+Accessible and feature rich front-end framework for Länsförsäkringar web development.
 
-**Components, or LFUI, is an HTML-, CSS- and JS framework used for Länsförsäkringar's various applications and websites. Built on top of Bootstrap, it brings plenty of features and tools – resulting in an accessible and rich user interface.**
+[Design system →][lfds] &nbsp;&nbsp;&nbsp;&nbsp; [Storybook website →][lfui-components-webpage]
+
+# Table of contents
 
 - [Getting started](#getting-started)
 - [Usage](#usage)
