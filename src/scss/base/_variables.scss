@@ -343,10 +343,6 @@ $font-family-base: arial, "Helvetica Neue", helvetica, sans-serif;
 $font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace !default;
 
 $font-display: swap !default;
-// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
-$font-size-root-value: 16; // LFUI-specific
-
-$font-size-root: $font-size-root-value * 1px; // LFUI-specific
 $font-size-base: 1rem;
 
 $font-size-xl: 1.25rem;  /* 20px */
@@ -359,15 +355,20 @@ $font-weight-light: 300 !default;
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 $font-weight-base: $font-weight-normal !default;
+$font-size-xl: 1.25rem;
+$font-size-lg: 1.125rem;
+$font-size-md: 1rem;
+$font-size-sm: .875rem;
+$font-size-xs: .75rem;
 
 $line-height-base: 1.45;
 
-$h1-font-size: #{math.div(40, $font-size-root-value)}rem;
-$h2-font-size: #{math.div(29, $font-size-root-value)}rem;
-$h3-font-size: #{math.div(23, $font-size-root-value)}rem;
-$h4-font-size: #{math.div(20, $font-size-root-value)}rem;
-$h5-font-size: #{math.div(18, $font-size-root-value)}rem;
-$h6-font-size: #{math.div(12, $font-size-root-value)}rem;
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.8125rem;
+$h3-font-size: 1.4375rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 0.75rem;
 
 $headings-margin-bottom: math.div($spacer, 2) !default;
 $headings-font-family: $font-family-sans-serif;
@@ -375,10 +376,10 @@ $headings-font-weight: 700;
 $headings-line-height: 1.1 !default;
 $headings-color: $navy;
 
-$display1-size: #{math.div(60, $font-size-root-value)}rem;
-$display2-size: #{math.div(50, $font-size-root-value)}rem;
-$display3-size: #{math.div(40, $font-size-root-value)}rem;
-$display4-size: #{math.div(36, $font-size-root-value)}rem;
+$display1-size: 3.75rem;
+$display2-size: 3.125rem;
+$display3-size: 2.5rem;
+$display4-size: 2.25rem;
 
 $display1-weight: normal;
 $display2-weight: normal;
@@ -386,7 +387,7 @@ $display3-weight: normal;
 $display4-weight: normal;
 $display-line-height: 1;
 
-$lead-font-size: #{math.div(22, $font-size-root-value)}rem;
+$lead-font-size: 1.375rem;
 $lead-font-weight: 400;
 
 $small-font-size: 80% !default;

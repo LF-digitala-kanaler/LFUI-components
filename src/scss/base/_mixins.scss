@@ -168,10 +168,7 @@
   position: relative;
   display: block;
   width: 100%;
-
-  /* padding: 0.8rem 1.25rem calc(0.8rem + #{$border-width});
-     https://github.com/css/csso/issues/297 */
-  padding: 1.1rem 1.25rem (($font-size-root-value * 1.1) + $border-width);
+  padding: 1.1rem 1.25rem 1.125rem;
   overflow: hidden;
 
   font-family: $font-family-sans-serif;
