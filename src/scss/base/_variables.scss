@@ -1,15 +1,17 @@
+/* stylelint-disable no-duplicate-selectors */
+
 /**
  * Readme
  *
- * - As of now, this file includes pretty much all Bootstrap variables. Hence,
- *   plenty will look strange or out of place.
+ * - This file includes variables configuring Bootstrap global and component
+ *   settings.
  * - After this file, we import the default Bootstrap variable file that fills
  *   in the blanks. Bootstrap tend to define their variable definitions with
  *   the !default flag: if anything is defined here, that will be used instead.
  * - We are working on moving component related variables into their specific
  *   component scss file instead of grouping it all in this file.
- * - Once above is done, this should contain only very generic variables such
- *   as non-semantic color variables and options for configuring Bootstrap.
+ * - Once that is done, this file should contain only globally generic
+ *   variables such as non-semantic colors, font settings and spacings.
  * - Moving forward, components that wish to access variables defined in
  *   another component will have to import those requirements internally. The
  *   build step will make sure we don't get any duplicate scss.
@@ -282,7 +284,7 @@ $h2-font-size: 1.8125rem;
 $h3-font-size: 1.4375rem;
 $h4-font-size: 1.25rem;
 $h5-font-size: 1.125rem;
-$h6-font-size: 0.75rem;
+$h6-font-size: .75rem;
 
 $headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 700;
