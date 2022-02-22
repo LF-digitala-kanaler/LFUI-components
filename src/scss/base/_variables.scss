@@ -263,6 +263,20 @@ $font-size-xs: .75rem;
 
 $line-height-base: 1.45;
 
+/* Expose as CSS custom properties */
+:root {
+  --#{$variable-prefix}-font-family-sans-serif: #{$font-family-sans-serif};
+  --#{$variable-prefix}-font-family-serif: #{$font-family-serif};
+  --#{$variable-prefix}-font-family-base: #{$font-family-base};
+  --#{$variable-prefix}-font-family-monospace: #{$font-family-monospace};
+  --#{$variable-prefix}-font-size-xl: #{$font-size-xl};
+  --#{$variable-prefix}-font-size-lg: #{$font-size-lg};
+  --#{$variable-prefix}-font-size-md: #{$font-size-md};
+  --#{$variable-prefix}-font-size-sm: #{$font-size-sm};
+  --#{$variable-prefix}-font-size-xs: #{$font-size-xs};
+  --#{$variable-prefix}-font-line-height: #{$line-height-base};
+}
+
 $h1-font-size: 2.5rem;
 $h2-font-size: 1.8125rem;
 $h3-font-size: 1.4375rem;
