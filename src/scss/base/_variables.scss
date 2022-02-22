@@ -19,7 +19,7 @@
  */
 
 /**
- * Initial config, that consumers may with to change
+ * Initial config, that consumers may want to change
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
@@ -56,10 +56,10 @@ $orange: #f9b233;
 $green: #95c11f;
 $purple: #bf71bb;
 $turquoise: #02bcb2;
-$indigo: #6610f2 !default;
-$yellow: #ffc107 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+$indigo: #6610f2;
+$yellow: #ffc107;
+$teal: #20c997;
+$cyan: #17a2b8;
 
 /* Used only by Bootstrap */
 $gray-100: $smoke;
@@ -253,7 +253,7 @@ $container-max-widths: (
 $font-family-sans-serif: "Intro Cond", arial, "Helvetica Neue", sans-serif;
 $font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
 $font-family-base: arial, "Helvetica Neue", helvetica, sans-serif;
-$font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
 
 $font-size-xl: 1.25rem;
 $font-size-lg: 1.125rem;
@@ -294,7 +294,7 @@ $text-muted: $gray;
 $blockquote-small-color: $gray;
 
 $hr-border-color: $gray-200;
-$hr-border-width: $border-width !default;
+$hr-border-width: $border-width;
 
 $list-inline-padding: 5px;
 
@@ -316,17 +316,17 @@ $table-border-color: $body-bg;
 $table-footer-color: $table-accent-bg;
 $table-head-bg: $white;
 $table-head-color: $black;
-$table-dark-bg: $gray-900 !default;
-$table-dark-accent-bg: rgba($white, .05) !default;
-$table-dark-hover-bg: rgba($white, .075) !default;
-$table-dark-border-color: lighten($gray-900, 7.5%) !default;
-$table-dark-color: $body-bg !default;
+$table-dark-bg: $gray-900;
+$table-dark-accent-bg: rgba($white, .05);
+$table-dark-hover-bg: rgba($white, .075);
+$table-dark-border-color: lighten($gray-900, 7.5%);
+$table-dark-color: $body-bg;
 
 $btn-font-weight: 700;
 $btn-box-shadow: none;
 $btn-focus-box-shadow: 0 0 0 rgba(0, 0, 0, 10%);
 $btn-active-box-shadow: none;
-$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 $btn-primary-color: $white;
 $btn-primary-bg: $wine;
 $btn-primary-border: $wine;
@@ -432,7 +432,7 @@ $custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0
 $custom-control-indicator-active-color: $white;
 $custom-control-indicator-active-bg: $white;
 
-$custom-checkbox-indicator-icon-checked: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==") !default;
+$custom-checkbox-indicator-icon-checked: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==");
 
 $custom-radio-indicator-icon-checked: none;
 
