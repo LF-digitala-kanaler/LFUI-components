@@ -12,8 +12,6 @@ Accessible and feature rich front-end framework for Länsförsäkringar web deve
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Making a release](#making-a-release)
-- [Migration](#migration)
-
 
 # Getting started
 
@@ -176,64 +174,6 @@ When creating a release, a Github Action will automatically deploy the changes t
 ## Github actions secrets
 Since the package depends on private GitHub packages, a private access token is set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
 be updated when expired.
-
-# Migration
-
-## From lfui 7.x.x
-
-* **Deprecating `.dropdown` in favour of a new `.select` component**
-  - New markdown requered. See component documentation
-* **Changes to `.alert` component.**
-  - Please see the [html examples][lfui-components-webpage], the markup has changed in various ways
-* **Changes to `.close` component**
-  - Class change `.close` → `.btn-close`
-  - Removed modifier class: `.close-large` (the modal now fixes this automatically)
-  - The class `.close-absolute` has was removed
-* **Changes to `.slider` component**
-  - Switch to a CSS custom variable (`--progress`) for setting value, instead of inline styles
-* **Search and replace**
-  - Deprecated color variable `$alabaster` – if you use it, add it to your codebase: `#fafafa`
-  - Class change `.bg-risk-default` → `.bg-risk-0`
-  - Class change `.text-risk-default` → `.text-risk-0`
-  - Class chagnes for the `.shortcut` component:
-    - `shortcut-important` → `shortcut-alert`
-    - `shortcut-shortcut-info-ice` → `shortcut-info`
-    - `shortcut-shortcut-success-ice` → `shortcut-success`
-    - `shortcut-shortcut-warning-ice` → `shortcut-warning`
-    - `shortcut-shortcut-danger-ice` → `shortcut-danger`
-  - Updated color variables. Search and replace in your codebase:
-    - `$alert-info-color` → `$color-info`
-    - `$alert-info-bg` → `$color-info`
-    - `$alert-warning-bg` → `$color-warning`
-    - `$alert-danger-bg` → `$color-danger`
-    - `$lf-info` → `$color-info`
-    - `$lf-success` → `$color-success`
-    - `$lf-danger` → `$color-danger`
-    - `$lf-warning` → `$color-warning`
-    - `$risk-color-default` → `$color-risk-0`
-    - `$risk-color-1` → `$color-risk-1`
-    - `$risk-color-2` → `$color-risk-2`
-    - `$risk-color-3` → `$color-risk-3`
-    - `$risk-color-4` → `$color-risk-4`
-    - `$risk-color-5` → `$color-risk-5`
-    - `$risk-color-6` → `$color-risk-6`
-    - `$risk-color-7` → `$color-risk-7`
-
-## From lfui 6.x.x or earlier
-
-* Remove the old `lfui` package and replace it with `@lf-digitala-kanaler/lfui-components` in your `package.json` and install it.
-* Depending on your build setup update lf.js and lf.css with the new one in `@lf-digitala-kanaler/lfui-components`.
-* Update the font files (they have been regenerated). See above documentation on how to set that up.
-* Now it's time for the time-consuming part. We have a new icon system, and all icons in your project need to be updated. Head [to the Länsförsäkringar Icons][lfui-icons] repo and follow the guide.
-
-* Remove the old `lfui` package and replace it with
-`@lf-digitala-kanaler/lfui-components` in your `package.json` and install it.
-* Depending on your build setup update lf.js and lf.css with the new one in
-`@lf-digitala-kanaler/lfui-components`.
-* If you want the updated fonts to follow the steps above to copy them over.
-* Now it's time for the time-consuming part. We have a new icon system and all
-icons in your project need to be updated. Head [to the Länsförsäkringar Icons][lfui-icons] repo and follow
-the guide.
 
 [bs4]: https://getbootstrap.com/docs/4.0/getting-started/introduction/
 [bs5]: https://getbootstrap.com/docs/5.0/getting-started/introduction/
