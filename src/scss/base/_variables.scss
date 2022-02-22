@@ -1,62 +1,41 @@
-// Variables
-
-@use "sass:math";
+/* stylelint-disable no-duplicate-selectors */
 
 /**
- * This file is an edited "copy" of Bootstrap's _variables.scss, hence it includes every variable related to the core
- * Bootstrap framework. This file includes LFUI's changes to those variables. It also includes new variables related to
- * our custom components and LFUI in general.
+ * Readme
  *
- * LFUI imports this file, but _also_ imports _variables.scss from the Bootstrap dependency afterwards. This is for security
- * reasons, as new Bootstrap versions will include many changes and additions to the _variables.scss file. In order to always
- * "fill in the blanks" in the case of an update we include both (as the original Bootstrap _variables file prefixes each
- * variable with !default, we are able to overwrite them even though we import it after we import this file).
+ * - This file includes variables configuring Bootstrap global and component
+ *   settings.
+ * - After this file, we import the default Bootstrap variable file that fills
+ *   in the blanks. Bootstrap tend to define their variable definitions with
+ *   the !default flag: if anything is defined here, that will be used instead.
+ * - We are working on moving component related variables into their specific
+ *   component scss file instead of grouping it all in this file.
+ * - Once that is done, this file should contain only globally generic
+ *   variables such as non-semantic colors, font settings and spacings.
+ * - Moving forward, components that wish to access variables defined in
+ *   another component will have to import those requirements internally. The
+ *   build step will make sure we don't get any duplicate scss.
  *
- * Do note that LFUI functions (as of writing this) without also doing the import from Bootstrap.
- *
- * Upon the event that LFUI updates its dependency of Bootstrap, this file will have to be revisited and updated accordingly.
- *
- * Also of note is that not all of the Bootstrap variables featured herein are in use, or have been altered by LFUI. Hence
- * this file contains many variables that might look strange or out of place. For reference, always check the LFUI component
- * scss files (located directly under /scss) for what is ultimatley being used. As the components are based upon their Bootstrap
- * equivalents, they are usually composed of (in order): original Bootstrap variables, overwritten Bootstrap variables, original
- * Bootstrap component scss, and then, ultimatley, LFUI component scss.
- * Unfortunatley, many LFUI components' rules/properties have no assigned variables, and in some cases a specific
- * property that has an original Bootstrap variable in place in this file that is intended for that rule in fact has not been
- * replaced/altered. This is not intended, and is caused due to development being made without consulting this file. Try to avoid this.
-**/
+ * SCSS variable naming convention: $component-modifier-state-property
+ * CSS custom property naming convention: --component-modifier-state-property
+ */
 
-// General variable structure
-//
-// Variable format should follow the `$component-modifier-state-property` order.
+/**
+ * Initial config, that consumers may want to change
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
 
+/* Used for setting up fonts */
 $asset-path: "./base" !default;
+$font-display: swap !default;
+
+/* SCSS custom properties scooping */
 $variable-prefix: "" !default;
 
-// Characters which are escaped by the escape-svg function
-$escaped-characters: (
-  ("<", "%3c"),
-  (">", "%3e"),
-  ("#", "%23"),
-  ("(", "%28"),
-  (")", "%29"),
-) !default;
-
-// Table of Contents
-//
-// Colors
-// Options
-// Spacing
-// Body
-// Links
-// Grid breakpoints
-// Grid containers
-// Grid columns
-// Fonts
-// Components
-
-// Colors
-// LF Color variables
+/**
+ * Non-semantic colors
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
 
 $wine: #ad1015;
 $red: #e30613;
@@ -73,16 +52,80 @@ $smoke: #d9d9d9;
 $shadow: #e5e5e5;
 $tint: #f3f3f3;
 $white: #fff;
-$login-logout-blue: #007db0;
 
+/* To-do: remove */
 $orange: #f9b233;
 $green: #95c11f;
 $purple: #bf71bb;
 $turquoise: #02bcb2;
-$indigo: #6610f2 !default;
-$yellow: #ffc107 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+$indigo: #6610f2;
+$yellow: #ffc107;
+$teal: #20c997;
+$cyan: #17a2b8;
+
+/* Used only by Bootstrap */
+$gray-100: $smoke;
+$gray-200: $smoke;
+$gray-300: $smoke;
+$gray-400: $smoke;
+$gray-500: $silver;
+$gray-600: $silver;
+$gray-700: $gray;
+$gray-800: $gray;
+$gray-900: $black;
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+);
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800
+);
+
+/* Expose as CSS custom properties */
+:root {
+  --#{$variable-prefix}-wine: #{$wine};
+  --#{$variable-prefix}-red: #{$red};
+  --#{$variable-prefix}-pink: #{$pink};
+  --#{$variable-prefix}-navy: #{$navy};
+  --#{$variable-prefix}-blue: #{$blue};
+  --#{$variable-prefix}-sky: #{$sky};
+  --#{$variable-prefix}-baby: #{$baby};
+  --#{$variable-prefix}-cloud: #{$cloud};
+  --#{$variable-prefix}-black: #{$black};
+  --#{$variable-prefix}-gray: #{$gray};
+  --#{$variable-prefix}-silver: #{$silver};
+  --#{$variable-prefix}-smoke: #{$smoke};
+  --#{$variable-prefix}-shadow: #{$shadow};
+  --#{$variable-prefix}-tint: #{$tint};
+  --#{$variable-prefix}-white: #{$white};
+}
+
+/**
+ * Semantic colors
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
+
+$body-bg: $tint;
+$body-color: $black;
 
 $color-info: #e5eff7;
 $color-info-text: $blue;
@@ -93,8 +136,6 @@ $color-warning-text: #996006;
 $color-danger: #ffdfe0;
 $color-danger-text: $wine;
 
-/* Risk colors */
-
 $color-risk-0: #515151;
 $color-risk-1: #2a7fd4;
 $color-risk-2: #389fb9;
@@ -104,16 +145,22 @@ $color-risk-5: #fdb514;
 $color-risk-6: #ed7721;
 $color-risk-7: #ce161d;
 
-$gray-100: $smoke;
-$gray-200: $smoke;
-$gray-300: $smoke;
-$gray-400: $smoke;
-$gray-500: $silver;
-$gray-600: $silver;
-$gray-700: $gray;
-$gray-800: $gray;
-$gray-900: $black;
+/* To-do: rename */
+$login-logout-blue: #007db0;
 
+/* Used only by Bootstrap */
+$theme-colors: (
+  primary: $blue,
+  secondary: $red,
+  info: $color-info,
+  success: $color-success,
+  warning: $color-warning,
+  danger: $color-danger,
+  light: $gray-100,
+  dark: $gray-800
+);
+
+/* Expose as CSS custom properties */
 :root {
   --#{$variable-prefix}-color-info: #{$color-info};
   --#{$variable-prefix}-color-info-text: #{$color-info-text};
@@ -131,79 +178,24 @@ $gray-900: $black;
   --#{$variable-prefix}-color-risk-5: #{$color-risk-5};
   --#{$variable-prefix}-color-risk-6: #{$color-risk-6};
   --#{$variable-prefix}-color-risk-7: #{$color-risk-7};
+  --#{$variable-prefix}-login-logout-blue: #{$login-logout-blue};
 }
 
-$grays: (
-  100: $gray-100,
-  200: $gray-200,
-  300: $gray-300,
-  400: $gray-400,
-  500: $gray-500,
-  600: $gray-600,
-  700: $gray-700,
-  800: $gray-800,
-  900: $gray-900
-) !default;
-
-$colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  green: $green,
-  teal: $teal,
-  cyan: $cyan,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800
-) !default;
-
-$theme-colors: (
-  primary: $blue,
-  secondary: $red,
-  info: $color-info,
-  success: $color-success,
-  warning: $color-warning,
-  danger: $color-danger,
-  light: $gray-100,
-  dark: $gray-800
-) !default;
-
-// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
-// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio: 4.5 !default;
-
-// Customize the light and dark text colors for use in our color contrast function.
-$color-contrast-dark: $black !default;
-$color-contrast-light: $white !default;
-
-// Set a specific jump point for requesting color jumps
-$theme-color-interval: 8% !default;
-
-// Options
-//
-// Quickly modify global styling by enabling or disabling optional features.
+/**
+ * Bootstrap configuration
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
 
 $enable-validation-icons: false;
 $enable-caret: false;
 $enable-rounded: false;
-$enable-shadows: false !default;
-$enable-gradients: false !default;
-$enable-transitions: false !default;
-$enable-hover-media-query: false !default;
-$enable-grid-classes: true !default;
-$enable-print-styles: true;
+$enable-transitions: false;
 
-// Spacing
-//
-// Control the default styling of most Bootstrap elements by modifying these
-// variables. Mostly focused on spacing.
-// You can add more entries to the $spacers map, should you need more variation.
+$min-contrast-ratio: 4.5;
+$color-contrast-dark: $black;
+$color-contrast-light: $white;
 
-$spacer: 1rem !default;
+$spacer: 1rem;
 $spacers: (
   0: 0,
   "025": ($spacer * .25),
@@ -215,154 +207,94 @@ $spacers: (
   2: ($spacer * 2),
   23: ($spacer * 2.3),
   3: ($spacer * 3),
-) !default;
+);
 
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: (
-  25: 25%,
-  50: 50%,
-  75: 75%,
-  100: 100%
-) !default;
-
-// A variable to restrain the max width of a container
-$legible-width: 36em; // LFUI-specific
-
-// Body
-//
-// Settings for the `<body>` element.
-
-$body-bg: $tint;
-$body-color: $black;
-
-// Links
-//
-// Style anchor elements.
+$paragraph-margin-bottom: 1rem;
 
 $link-color: $blue;
 $link-decoration: none;
 $link-hover-color: darken($link-color, 15%);
-$link-hover-decoration: underline !default;
-$stretched-link-pseudo-element: after !default;
-$stretched-link-z-index: 1 !default;
+$link-hover-decoration: underline;
 
-$link-color-dark: $navy;
-$link-hover-color-dark: #00325c;
+$line-height-lg: 1.3333333333;
 
-// Paragraphs
-//
-// Style p element.
+$border-width: 2px;
+$border-color: $gray-200;
 
-$paragraph-margin-bottom: 1rem;
+$border-radius: .25rem;
+$border-radius-lg: .375rem;
+$border-radius-sm: .2rem;
 
-// Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
+$component-active-color: $white;
+$component-active-bg: $blue;
 
+/* Change something with grids? */
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px
-) !default;
-
+);
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
+/* Adding xxl */
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1140px,
   xxl: 1662px
-) !default;
+);
 
-@include _assert-ascending($container-max-widths, "$container-max-widths");
-
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-
-$grid-columns: 12;
-$grid-gutter-width: 30px !default;
-$grid-gutter: 1.875rem !default; // LFUI-specific
-$grid-gutter-tight: 1.25rem !default; // LFUI-specific
-
-// Components
-//
-// Define common padding and border radius sizes and more.
-
-$line-height-lg: math.div(4, 3) !default;
-$line-height-sm: 1.5 !default;
-
-$border-width: 2px;
-$border-color: $gray-200 !default;
-
-$border-radius: .25rem !default;
-$border-radius-lg: .375rem !default;
-$border-radius-sm: .2rem !default;
-
-$component-active-color: $white !default;
-$component-active-bg: $blue;
-
-$caret-width: .3em !default;
-
-$transition-base: all .2s ease-in-out !default;
-$transition-fade: opacity .15s linear !default;
-$transition-collapse: height .35s ease !default;
-
-// Typography
-//
-// Font, line-height, and color for body text, headings, and more.
+/**
+ * Typography
+ */
 
 $font-family-sans-serif: "Intro Cond", arial, "Helvetica Neue", sans-serif;
 $font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
 $font-family-base: arial, "Helvetica Neue", helvetica, sans-serif;
-$font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
 
-$font-display: swap !default;
-// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
-$font-size-root-value: 16; // LFUI-specific
-
-$font-size-root: $font-size-root-value * 1px; // LFUI-specific
-$font-size-base: 1rem;
-
-$font-size-xl: 1.25rem;  /* 20px */
-$font-size-lg: 1.125rem; /* 18px */
-$font-size-md: 1rem;     /* 16px */
-$font-size-sm: .875rem; /* 14px */
-$font-size-xs: .75rem;  /* 12px */
-
-$font-weight-light: 300 !default;
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
-$font-weight-base: $font-weight-normal !default;
+$font-size-xl: 1.25rem;
+$font-size-lg: 1.125rem;
+$font-size-md: 1rem;
+$font-size-sm: .875rem;
+$font-size-xs: .75rem;
 
 $line-height-base: 1.45;
 
-$h1-font-size: #{math.div(40, $font-size-root-value)}rem;
-$h2-font-size: #{math.div(29, $font-size-root-value)}rem;
-$h3-font-size: #{math.div(23, $font-size-root-value)}rem;
-$h4-font-size: #{math.div(20, $font-size-root-value)}rem;
-$h5-font-size: #{math.div(18, $font-size-root-value)}rem;
-$h6-font-size: #{math.div(12, $font-size-root-value)}rem;
+/* Expose as CSS custom properties */
+:root {
+  --#{$variable-prefix}-font-family-sans-serif: #{$font-family-sans-serif};
+  --#{$variable-prefix}-font-family-serif: #{$font-family-serif};
+  --#{$variable-prefix}-font-family-base: #{$font-family-base};
+  --#{$variable-prefix}-font-family-monospace: #{$font-family-monospace};
+  --#{$variable-prefix}-font-size-xl: #{$font-size-xl};
+  --#{$variable-prefix}-font-size-lg: #{$font-size-lg};
+  --#{$variable-prefix}-font-size-md: #{$font-size-md};
+  --#{$variable-prefix}-font-size-sm: #{$font-size-sm};
+  --#{$variable-prefix}-font-size-xs: #{$font-size-xs};
+  --#{$variable-prefix}-font-line-height: #{$line-height-base};
+}
 
-$headings-margin-bottom: math.div($spacer, 2) !default;
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.8125rem;
+$h3-font-size: 1.4375rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: .75rem;
+
 $headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 700;
-$headings-line-height: 1.1 !default;
+$headings-line-height: 1.1;
 $headings-color: $navy;
 
-$display1-size: #{math.div(60, $font-size-root-value)}rem;
-$display2-size: #{math.div(50, $font-size-root-value)}rem;
-$display3-size: #{math.div(40, $font-size-root-value)}rem;
-$display4-size: #{math.div(36, $font-size-root-value)}rem;
+$display1-size: 3.75rem;
+$display2-size: 3.125rem;
+$display3-size: 2.5rem;
+$display4-size: 2.25rem;
 
 $display1-weight: normal;
 $display2-weight: normal;
@@ -370,402 +302,262 @@ $display3-weight: normal;
 $display4-weight: normal;
 $display-line-height: 1;
 
-$lead-font-size: #{math.div(22, $font-size-root-value)}rem;
+$lead-font-size: 1.375rem;
 $lead-font-weight: 400;
-
-$small-font-size: 80% !default;
 
 $text-muted: $gray;
 
 $blockquote-small-color: $gray;
-$blockquote-font-size: ($font-size-base * 1.25) !default;
 
 $hr-border-color: $gray-200;
-$hr-border-width: $border-width !default;
+$hr-border-width: $border-width;
 
-$mark-padding: .2em !default;
+$list-inline-padding: 5px;
 
-$dt-font-weight: bold !default;
+$mark-bg: $orange;
 
-$kbd-box-shadow: inset 0 -.1rem 0 rgba(0, 0, 0, 25%) !default;
-$nested-kbd-font-weight: bold !default;
-
-$list-inline-padding: 5px !default;
-
-$mark-bg: $orange !default;
-
-// Tables
-//
-// Customizes the `.table` component with basic values, each used across all table variations.
+/**
+ * Components
+ * To-do: To be moved to each component SCSS file
+ */
 
 $table-cell-padding-y: .75rem;
 $table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem calc(#{$table-cell-padding-y} - 1px);
 $table-cell-padding-sm: .5625rem 1.25rem;
-
 $table-bg: $white;
 $table-accent-bg: #fafafa;
 $table-hover-bg: mix($cloud, $white, 40%);
 $table-active-bg: $cloud;
-
-$table-border-width: $border-width;
 $table-border-color: $body-bg;
-
-$table-footer-color: $table-accent-bg; // LFUI-specific
-
+$table-footer-color: $table-accent-bg;
 $table-head-bg: $white;
 $table-head-color: $black;
-
-$table-dark-bg: $gray-900 !default;
-$table-dark-accent-bg: rgba($white, .05) !default;
-$table-dark-hover-bg: rgba($white, .075) !default;
-$table-dark-border-color: lighten($gray-900, 7.5%) !default;
-$table-dark-color: $body-bg !default;
-
-// Buttons
-//
-// For each of Bootstrap's buttons, define text, background and border color.
-
-$input-btn-padding-x: 1rem;
-$input-btn-padding-y: .5rem;
-$input-btn-line-height: 1.34;
-
-$input-btn-padding-x-sm: .75rem;
-$input-btn-padding-y-sm: .25rem;
-$input-btn-line-height-sm: 1.5;
-
-$input-btn-padding-x-lg: 1.25rem;
-$input-btn-padding-y-lg: .625rem;
-
-$input-btn-line-height-lg: 1.2;
-
-$input-btn-focus-width: .2rem !default;
-$input-btn-focus-color: rgba($blue, .25) !default;
-$input-btn-focus-box-shadow: none;
+$table-dark-bg: $gray-900;
+$table-dark-accent-bg: rgba($white, .05);
+$table-dark-hover-bg: rgba($white, .075);
+$table-dark-border-color: lighten($gray-900, 7.5%);
+$table-dark-color: $body-bg;
 
 $btn-font-weight: 700;
 $btn-box-shadow: none;
-$btn-focus-box-shadow: 0 0 0 rgba(0, 0, 0, 10%);  // Focus state not working as it should with box-shadow set to none in Safari that's why we use such a strange value.
+$btn-focus-box-shadow: 0 0 0 rgba(0, 0, 0, 10%);
 $btn-active-box-shadow: none;
-
-$btn-link-disabled-color: $gray-600 !default;
-
-$btn-block-spacing-y: .5rem !default;
-
-// Allows for customizing button radius independently from global border radius
-$btn-border-radius: $border-radius !default;
-$btn-border-radius-lg: $border-radius-lg !default;
-$btn-border-radius-sm: $border-radius-sm !default;
-
-$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-
+$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 $btn-primary-color: $white;
 $btn-primary-bg: $wine;
 $btn-primary-border: $wine;
 $btn-primary-bg-hover: #910c19;
 $btn-primary-bg-pressed: #7a0b16;
-
 $btn-secondary-color: $white;
-$btn-secondary-bg: $blue; //not in use
 $btn-secondary-border: $navy;
 $btn-secondary-bg-hover: $navy;
 $btn-secondary-border-hover: #00325c;
 $btn-secondary-bg-pressed: #f2f7fb;
-
 $btn-info-color: $color-info-text;
 $btn-info-bg: $color-info;
 $btn-info-border: $color-info-text;
 $btn-info-border-hover: $color-info-text;
 $btn-info-bg-pressed: mix($color-info-text, $color-info, 15%);
-
 $btn-success-color: $color-success-text;
 $btn-success-bg: $color-success;
 $btn-success-border: $color-success-text;
 $btn-success-border-hover: $color-success-text;
 $btn-success-bg-pressed: mix($color-success-text, $color-success, 15%);
-
 $btn-warning-color: $color-warning-text;
 $btn-warning-bg: $color-warning;
 $btn-warning-border: $color-warning-text;
 $btn-warning-border-hover: $color-warning-text;
 $btn-warning-bg-pressed: mix($color-warning-text, $color-warning, 15%);
-
 $btn-danger-color: $color-danger-text;
 $btn-danger-bg: $color-danger;
 $btn-danger-border: $color-danger-text;
 $btn-danger-border-hover: $color-danger-text;
 $btn-danger-bg-pressed: mix($color-danger-text, $color-danger, 15%);
-
 $btn-login-logout-bg: $login-logout-blue;
 $btn-login-logout-bg-hover: darken($login-logout-blue, 6%);
 $btn-login-logout-bg-pressed: darken($login-logout-blue, 11%);
 
-$btn-toolbar-margin: .5rem !default;
-
-// Forms
+$input-btn-padding-x: 1rem;
+$input-btn-padding-y: .5rem;
+$input-btn-line-height: 1.34;
+$input-btn-padding-x-sm: .75rem;
+$input-btn-padding-y-sm: .25rem;
+$input-btn-line-height-sm: 1.5;
+$input-btn-padding-x-lg: 1.25rem;
+$input-btn-padding-y-lg: .625rem;
+$input-btn-line-height-lg: 1.2;
+$input-btn-focus-width: .2rem;
+$input-btn-focus-color: rgba($blue, .25);
+$input-btn-focus-box-shadow: none;
 
 $input-bg: $body-bg;
 $input-white-bg: $white;
 $input-white-bg-hover: #fbfbfb;
 $input-disabled-bg: $smoke;
-
 $input-color: $body-color;
 $input-border-color: $gray-200;
-$input-btn-border-width: $border-width; // For form controls and buttons
 $input-box-shadow: none;
-
-$input-border-radius: $border-radius !default;
-$input-border-radius-lg: $border-radius-lg !default;
-$input-border-radius-sm: $border-radius-sm !default;
-
-$input-focus-bg: $input-bg;
 $input-focus-border-color: $blue;
-$input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%) !default;
+$input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%);
 $input-focus-color: $body-color;
+$input-placeholder-color: #999;
 
-$input-placeholder-color: #999 !default;
+$input-padding-x: .75rem;
+$input-padding-y: .563rem;
+$input-padding-top: .663rem;
+$input-padding-right: .75rem;
+$input-padding-bottom: .463rem;
+$input-padding-left: .75rem;
+$input-padding: $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left;
 
-// Bootstrap 4 uses the same variables and calcs for button sizes and input sizes. We can't, as our inputs and btns are very
-// different in paddings, etc. So we're keeping these oldies for now.
-$input-padding-x: .75rem; // LFUI-specific
-$input-padding-y: .563rem; // LFUI-specific
-
-$input-padding-top: .663rem; // LFUI-specific
-$input-padding-right: .75rem; // LFUI-specific
-$input-padding-bottom: .463rem; // LFUI-specific
-$input-padding-left: .75rem; // LFUI-specific
-
-$input-padding: $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left; // LFUI-specific
-
-$input-height-border: $input-btn-border-width * 2 !default;
-
-$input-height-inner: ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2) !default; // not in use
+$input-border-width: $border-width;
+$input-btn-border-width: $border-width;
+$input-height-border: $input-border-width * 2;
 $input-height: 40px;
+$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2);
+$input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border});
+$input-height-inner-lg: ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
+$input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border});
 
-$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2) !default;
-$input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border}) !default;
+$input-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+$form-check-input-margin-y: .25rem;
+$input-line-height: 1.25;
+$input-hover: #ececec;
+$input-valid-hover: #e5ecf5;
 
-$input-height-inner-lg: ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2) !default;
-$input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border}) !default;
-
-$input-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !default;
-
-$form-text-margin-top: .25rem !default;
-
-$form-check-margin-bottom: .5rem !default;
-$form-check-input-gutter: 1.25rem !default;
-$form-check-input-margin-y: .25rem !default;
-$form-check-input-margin-x: .25rem !default;
-
-$form-check-inline-margin-x: .75rem !default;
-
-$form-group-margin-bottom: 1rem !default;
-
-$input-line-height: 1.25; // LFUI-specific
-
-$input-hover: #ececec; // LFUI-specific
-$input-valid-hover: #e5ecf5; // LFUI-specific
-
-$input-group-addon-color: $input-color !default;
 $input-group-addon-bg: $input-bg;
 $input-group-addon-border-color: $gray-200;
 
-$input-group-addon-focus-border-color: $blue; // LFUI-specific
-$input-group-addon-min-width: 2.9rem; // LFUI-specific
-
-$cursor-disabled: not-allowed; // LFUI-specific
+$input-group-addon-focus-border-color: $blue;
+$input-group-addon-min-width: 2.9rem;
+$cursor-disabled: not-allowed;
 
 $custom-control-gutter: 1.75rem;
 $custom-control-spacer-x: 1.25rem;
 $custom-control-spacer-y: .625rem;
-
 $custom-control-indicator-size: 1.13rem;
 $custom-control-indicator-bg: $white;
 $custom-control-indicator-bg-size: 70% 70%;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba(0, 0, 0, 10%) !default;
-
+$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba(0, 0, 0, 10%);
 $custom-control-indicator-disabled-bg: $white;
 $custom-control-description-disabled-color: #767676;
-
 $custom-control-indicator-checked-color: $blue;
 $custom-control-indicator-checked-bg: $white;
 $custom-control-indicator-checked-disabled-bg: none;
-$custom-control-indicator-checked-box-shadow: none !default;
-
-$custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9 !default;
-
-$custom-control-indicator-active-color: $white !default;
+$custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9;
+$custom-control-indicator-active-color: $white;
 $custom-control-indicator-active-bg: $white;
-$custom-control-indicator-active-box-shadow: none !default;
 
-$custom-checkbox-indicator-border-radius: $border-radius !default;
-$custom-checkbox-indicator-icon-checked: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==") !default;
+$custom-checkbox-indicator-icon-checked: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==");
 
-$custom-radio-indicator-border-radius: 50% !default;
 $custom-radio-indicator-icon-checked: none;
 
-$custom-select-padding-y: .375rem !default;
-$custom-select-padding-x: .75rem !default;
-$custom-select-height: $input-height;
-$custom-select-indicator-padding: 1rem !default; // Extra padding to account for the presence of the background-image based indicator
+$custom-select-padding-y: .375rem;
+$custom-select-padding-x: .75rem;
+$custom-select-indicator-padding: 1rem;
 $custom-select-line-height: $input-line-height;
 $custom-select-color: $input-color;
-$custom-select-disabled-color: $gray-600 !default;
+$custom-select-disabled-color: $gray-600;
 $custom-select-bg: $input-bg;
-$custom-select-disabled-bg: $gray-200 !default;
+$custom-select-disabled-bg: $gray-200;
 $custom-select-bg-size: 17px 11px;
-$custom-select-indicator-color: #333 !default;
-$custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") !default;
-$custom-select-border-width: $input-btn-border-width !default;
-$custom-select-border-color: $input-border-color !default;
-$custom-select-border-radius: $border-radius !default;
+$custom-select-indicator-color: #333;
+$custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+$custom-select-border-width: $input-btn-border-width;
+$custom-select-border-color: $input-border-color;
+$custom-select-border-radius: $border-radius;
 
 $custom-select-focus-border-color: $input-focus-border-color;
-$custom-select-focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 7.5%), 0 0 5px rgba(81, 167, 232, 50%) !default;
+$custom-select-focus-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 7.5%), 0 0 5px rgba(81, 167, 232, 50%);
 
-$custom-select-font-size-sm: 75% !default;
-$custom-select-height-sm: $input-height-sm !default;
+$custom-select-font-size-sm: 75%;
+$custom-select-height-sm: $input-height-sm;
 
 $custom-file-height: $input-height;
-$custom-file-width: 14rem !default;
-$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9 !default;
+$custom-file-width: 14rem;
+$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9;
 
-$custom-file-padding-y: 1rem !default;
+$custom-file-padding-y: 1rem;
 $custom-file-padding-x: $input-padding-right;
 $custom-file-line-height: $input-line-height;
 $custom-file-color: $input-color;
 $custom-file-bg: $input-bg;
-$custom-file-border-width: $border-width !default;
-$custom-file-border-color: #ddd !default;
-$custom-file-border-radius: $border-radius !default;
-$custom-file-box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, 5%) !default;
-$custom-file-button-color: $custom-file-color !default;
+$custom-file-border-width: $border-width;
+$custom-file-border-color: #ddd;
+$custom-file-border-radius: $border-radius;
+$custom-file-box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, 5%);
+$custom-file-button-color: $custom-file-color;
 $custom-file-button-bg: transparent;
 $custom-file-text: (
   sv: "Välj fil…",
   en: "Choose file…"
-) !default;
-
+);
 $custom-file-text-multiple: (
   sv: "filer",
   en: "files"
-) !default;
+);
 
-// Form validation
-$form-feedback-valid-color: theme-color("success") !default;
-$form-feedback-invalid-color: theme-color("danger") !default;
+$distribution-duration: 1000ms;
 
-// Distribution-bar
 
-$distribution-duration: 1000ms !default;
-
-// Dropdowns
-//
-// Dropdown menu container and contents.
-
-$dropdown-min-width: 10rem !default;
-$dropdown-padding-y: .5rem !default;
-$dropdown-spacer: .125rem !default;
-$dropdown-margin-top: 0; // LFUI-specific
-$dropdown-bg: $white !default;
+$dropdown-margin-top: 0;
+$dropdown-bg: $white;
 $dropdown-border-color: $blue;
-$dropdown-border-width: $border-width !default;
-$dropdown-divider-bg: $shadow !default;
-$dropdown-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 17.5%) !default;
+$dropdown-border-width: $border-width;
+$dropdown-divider-bg: $shadow;
+$dropdown-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 17.5%);
+$dropdown-link-color: $gray-900;
+$dropdown-link-hover-color: darken($gray-900, 5%);
+$dropdown-link-hover-bg: #f5f5f5;
+$dropdown-link-disabled-color: $gray-600;
+$dropdown-item-padding-y: .25rem;
+$dropdown-item-padding-x: 1.5rem;
+$dropdown-header-color: $gray-600;
 
-$dropdown-link-color: $gray-900 !default;
-$dropdown-link-hover-color: darken($gray-900, 5%) !default;
-$dropdown-link-hover-bg: #f5f5f5 !default;
-
-$dropdown-link-active-color: $component-active-color !default;
-$dropdown-link-active-bg: $component-active-bg !default;
-
-$dropdown-link-disabled-color: $gray-600 !default;
-
-$dropdown-item-padding-y: .25rem !default;
-$dropdown-item-padding-x: 1.5rem !default;
-
-$dropdown-header-color: $gray-600 !default;
-
-// Z-index master list
-//
-// Warning: Avoid customizing these values. They're used for a bird's eye view
-// of components dependent on the z-axis and are designed to all work together.
-
-$zindex-dropdown: 1000 !default;
-$zindex-sticky: 1020 !default;
-$zindex-fixed: 1030 !default;
-$zindex-modal-backdrop: 1040 !default;
-$zindex-modal: 1050 !default;
-$zindex-popover: 1060 !default;
-$zindex-tooltip: 1070 !default;
-
-// Navs
-
-$nav-item-margin: 2px; // LFUI-specific
+$nav-item-margin: 2px;
 $nav-link-padding-y: 1rem;
 $nav-link-padding-x: 2rem;
 $nav-link-disabled-color: $gray;
-
 $nav-tabs-border-color: transparent;
 $nav-tabs-border-width: $border-width;
-$nav-tabs-border-radius: $border-radius !default;
-$nav-tabs-link-hover-border-color: $gray-200 !default;
-
-$nav-tabs-link-active-color: $gray-700 !default;
-$nav-tabs-link-active-bg: $body-bg !default;
-$nav-tabs-link-active-border-color: #ddd !default;
-
-$nav-tabs-grey-bg-color: darken($body-bg, 4%); // LFUI-specific
-
-$nav-pills-border-radius: $border-radius !default;
-$nav-pills-link-active-color: $component-active-color !default;
-$nav-pills-link-active-bg: $component-active-bg !default;
-
-// Navbar
+$nav-tabs-border-radius: $border-radius;
+$nav-tabs-link-hover-border-color: $gray-200;
+$nav-tabs-link-active-color: $gray-700;
+$nav-tabs-link-active-bg: $body-bg;
+$nav-tabs-link-active-border-color: #ddd;
+$nav-tabs-grey-bg-color: darken($body-bg, 4%);
+$nav-pills-border-radius: $border-radius;
+$nav-pills-link-active-color: $component-active-color;
+$nav-pills-link-active-bg: $component-active-bg;
 
 $navbar-padding-y: 0;
-$navbar-padding-x: $spacer !default;
+$navbar-padding-x: $spacer;
 
-$navbar-brand-font-size: $font-size-lg !default;
-// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
-$nav-link-height: $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-height: ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
-$navbar-brand-padding-y: math.div(($navbar-brand-height - $nav-link-height), 2) !default;
+$navbar-dark-color: rgba($white, .5);
+$navbar-brand-font-size: $font-size-lg;
+$navbar-brand-height: (16 * $line-height-base + $nav-link-padding-y * 2);
+$navbar-height: 3.75rem;
+$navbar-stacked-height: 3.375rem;
+$navbar-height-sm: 2.75rem;
+$navbar-height-xs: 2.5rem;
+$navbar-action-padding: 0 .75rem;
+$navbar-border-radius: $border-radius;
+$navbar-brand-padding-y: .25rem;
+$navbar-divider-padding-y: .425rem;
+$navbar-toggler-padding-x: .75rem;
+$navbar-toggler-font-size: $font-size-lg;
+$navbar-toggler-border-radius: $border-radius;
+$navbar-toggler-padding-x: .75rem;
+$navbar-toggler-padding-y: .5rem;
 
-$navbar-height: 3.75rem; // LFUI-specific
-$navbar-stacked-height: 3.375rem; // LFUI-specific
-$navbar-height-sm: 2.75rem; // LFUI-specific
-$navbar-height-xs: 2.5rem; // LFUI-specific
-$navbar-action-padding: 0 .75rem; // LFUI-specific
-
-$navbar-border-radius: $border-radius !default;
-
-$navbar-brand-padding-y: .25rem !default;
-
-$navbar-divider-padding-y: .425rem !default;
-
-$navbar-toggler-padding-x: .75rem !default;
-$navbar-toggler-padding-y: .5rem !default;
-$navbar-toggler-font-size: $font-size-lg !default;
-$navbar-toggler-border-radius: $btn-border-radius !default;
-$navbar-toggler-padding-x: .75rem !default;
-$navbar-toggler-padding-y: .5rem !default;
-
-$navbar-dark-color: rgba(255, 255, 255, 50%) !default;
-$navbar-dark-hover-color: rgba(255, 255, 255, 75%) !default;
-$navbar-dark-active-color: rgba(255, 255, 255, 100%) !default;
-$navbar-dark-disabled-color: rgba(255, 255, 255, 25%) !default;
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !default;
-$navbar-dark-toggler-border-color: rgba(255, 255, 255, 10%) !default;
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 
 $navbar-light-color: $link-color;
 $navbar-light-hover-color: $link-hover-color;
-$navbar-light-active-color: rgba(0, 0, 0, 90%) !default;
-$navbar-light-disabled-color: rgba(0, 0, 0, 30%) !default;
-$navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !default;
-$navbar-light-toggler-border-color: rgba(0, 0, 0, 10%) !default;
-
-// Pagination
+$navbar-light-active-color: rgba(0, 0, 0, 90%);
+$navbar-light-disabled-color: rgba(0, 0, 0, 30%);
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+$navbar-light-toggler-border-color: rgba(0, 0, 0, 10%);
 
 $pagination-padding-y: .3rem;
 $pagination-padding-x: .9rem;
@@ -774,115 +566,53 @@ $pagination-padding-x-sm: $pagination-padding-x;
 $pagination-padding-y-lg: $pagination-padding-y;
 $pagination-padding-x-lg: $pagination-padding-x;
 $pagination-line-height: 1.45;
-
-$pagination-color: $link-color !default;
+$pagination-color: $link-color;
 $pagination-bg: $white;
 $pagination-border-width: 0;
 $pagination-border-color: currentColor;
-
-$pagination-hover-color: $link-hover-color !default;
+$pagination-hover-color: $link-hover-color;
 $pagination-hover-bg: $white;
 $pagination-hover-border-color: currentColor;
-
 $pagination-active-color: $white;
 $pagination-active-bg: $blue;
 $pagination-active-border-color: $white;
-
-$pagination-disabled-color: $gray-600 !default;
-$pagination-disabled-bg: $white !default;
+$pagination-disabled-color: $gray-600;
+$pagination-disabled-bg: $white;
 $pagination-disabled-border-color: currentColor;
-
-// Patterns
 
 $pattern-diagonal-stripes-gray-stripes: $shadow;
 $pattern-diagonal-stripes-gray-bg: #ececec;
 $pattern-diagonal-stripes-gray-border: $shadow;
 $pattern-diagonal-stripes-gray-font-color: $black;
 
-// Pie Charts
-
-$pie-chart-transition: 1500ms 275ms cubic-bezier(.6, .75, .3, 1);
-
-// Jumbotron
-
-$jumbotron-padding: 2rem !default;
-$jumbotron-bg: $gray-200 !default;
-
-// Callout
-
-$callout-border-width: $border-width * 2;
-$callout-figure-size: 27px;
-
-// Cards
 $card-spacer-y: 1rem;
-$card-spacer-x: 1.25rem !default;
+$card-spacer-x: 1.25rem;
 $card-border-width: 0;
-$card-border-radius: $border-radius !default;
-$card-border-color: rgba(0, 0, 0, 12.5%) !default;
-$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width}) !default;
 $card-cap-bg: $white;
-$card-bg: $white !default;
+$card-block-padding: 1rem 1.25rem 1.5rem;
+$card-footer-padding: 1.25rem 1.25rem 1.5rem;
+$card-deck-margin: .625rem;
 
-$card-block-padding: 1rem 1.25rem 1.5rem; // LFUI-specific
-$card-footer-padding: 1.25rem 1.25rem 1.5rem; // LFUI-specific
+$tooltip-padding-y: 3px;
+$tooltip-padding-x: 8px;
+$tooltip-margin: 3px;
+$tooltip-arrow-width: 5px;
+$tooltip-arrow-height: 5px;
 
-$card-img-overlay-padding: 1.25rem !default;
-
-$card-group-margin: math.div($grid-gutter-width, 2) !default;
-$card-deck-margin: .625rem !default;
-
-$card-columns-count: 3 !default;
-$card-columns-gap: 1.25rem !default;
-$card-columns-margin: $card-spacer-y !default;
-
-// Collapse
-
-$collapse-timing-function: ease;
-$collapse-duration: 350ms;
-
-// Tooltips
-
-$tooltip-max-width: 200px !default;
-$tooltip-color: $white !default;
-$tooltip-bg: $black;
-$tooltip-opacity: .9 !default;
-$tooltip-padding-y: 3px !default;
-$tooltip-padding-x: 8px !default;
-$tooltip-margin: 3px !default;
-
-$tooltip-arrow-width: 5px !default;
-$tooltip-arrow-height: 5px !default;
-$tooltip-arrow-color: $tooltip-bg !default;
-
-// Popovers
-
-$popover-inner-padding: 1px !default;
-$popover-bg: $white;
 $popover-max-width: 300px;
 $popover-border-width: 0;
-$popover-border-color: rgba(0, 0, 0, 20%) !default;
-$popover-box-shadow: 0 5px 10px rgba(0, 0, 0, 20%) !default;
-
+$popover-box-shadow: 0 5px 10px rgba(0, 0, 0, 20%);
 $popover-title-color: $gray;
-
-$popover-header-bg: darken($popover-bg, 3%) !default;
-$popover-header-color: $headings-color !default;
-$popover-header-padding-y: 8px !default;
-$popover-header-padding-x: 14px !default;
-
-$popover-body-color: $body-color !default;
-$popover-body-padding-y: 9px !default;
-$popover-body-padding-x: 14px !default;
-
+$popover-header-padding-y: 8px;
+$popover-header-padding-x: 14px;
+$popover-body-padding-y: 9px;
+$popover-body-padding-x: 14px;
 $popover-arrow-width: 0;
-$popover-arrow-height: 5px !default;
-$popover-arrow-color: $popover-bg !default;
-
-$popover-arrow-outer-width: ($popover-arrow-width + 1px) !default;
-$popover-arrow-outer-color: fade-in($popover-border-color, .05) !default;
+$popover-arrow-height: 5px;
 
 // Badges
 
+$badge-color: $white;
 $badge-default-bg: $orange;
 $badge-primary-bg: #dcddde;
 $badge-success-bg: $color-success;
@@ -890,202 +620,93 @@ $badge-info-bg: $color-info;
 $badge-warning-bg: $color-warning;
 $badge-danger-bg: $color-danger;
 
-$badge-color: $white !default;
-$badge-font-size: 75% !default;
-$badge-font-weight: bold !default;
-$badge-padding-y: .25em !default;
-$badge-padding-x: .4em !default;
-$badge-border-radius: $border-radius !default;
-
-$badge-pill-padding-x: .6em !default;
-// Use a higher than normal value to ensure completely rounded edges when
-// customizing padding or font-size on labels.
-$badge-pill-border-radius: 10rem !default;
-
-// Modals
-
-// Padding applied to the modal body
-$modal-inner-padding: 1.9rem;
-
-$modal-dialog-margin: 10px !default;
-$modal-dialog-margin-y-sm-up: 30px !default;
-
-$modal-title-line-height: 1.3;
-
-$modal-content-bg: $white;
-$modal-content-border-color: rgba(0, 0, 0, 20%) !default;
-$modal-content-border-width: $border-width !default;
-$modal-content-box-shadow-xs: 0 3px 9px rgba(0, 0, 0, 50%) !default;
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba(0, 0, 0, 50%) !default;
-
-$modal-backdrop-bg: #000;
-$modal-backdrop-opacity: .5;
-$modal-header-border-color: $shadow !default;
-$modal-footer-border-color: $modal-header-border-color !default;
-$modal-header-border-width: 0;
-$modal-footer-border-width: $modal-header-border-width !default;
-$modal-header-padding: 1.5rem $modal-inner-padding;
-
-$modal-lg: 900px !default;
-$modal-md: 523px;
-$modal-sm: 300px !default;
-
-$modal-transition: transform .3s ease-out !default;
-
-// Alerts
-//
-// Define alert colors, border radius, and padding.
-
-$alert-padding-y: .875rem !default;
-$alert-padding-x: 1.5rem !default;
-$alert-margin-bottom: 1rem !default;
-$alert-border-radius: $border-radius !default;
-$alert-link-font-weight: $font-weight-bold !default;
-$alert-border-width: 0 !default;
-$alert-bg-scale: -80% !default;
-$alert-border-scale: -70% !default;
-$alert-color-scale: 40% !default;
-$alert-dismissible-padding-r: $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
-
-
-// Avatar
-
 $avatar-theme-red: $red;
 $avatar-theme-blue: $blue;
 $avatar-theme-black: $black;
 $avatar-theme-gray: $smoke;
 $avatar-theme-white: $white;
-
 $avatar-border-width: $border-width;
 $avatar-border-width-light: 1px;
-
-// Progress bars
-
-$progress-height: .625rem;
-$progress-font-size: .75rem !default;
-$progress-bg: $smoke;
-$progress-border-radius: $border-radius !default;
-$progress-box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, 10%) !default;
-$progress-bar-color: $login-logout-blue;
-$progress-bar-bg: theme-color("primary") !default;
-$progress-bar-animation-timing: 1s linear infinite !default;
-$progress-bar-transition: width .6s ease !default;
-
-$progress-bar-bg: $login-logout-blue;
-$progress-bar-success-bg: $color-success;
-$progress-bar-warning-bg: $color-warning;
-$progress-bar-danger-bg: $color-danger;
-$progress-bar-info-bg: $color-info;
-
-$progress-bar-circle-default-size: 50px;
-
-// List group
-
-$list-group-bg: $white !default;
-$list-group-border-color: #ddd !default;
-$list-group-border-width: $border-width !default;
-$list-group-border-radius: $border-radius !default;
-
-$list-group-item-padding-y: .75rem !default;
-$list-group-item-padding-x: 1.25rem !default;
-
-$list-group-hover-bg: #f5f5f5 !default;
-$list-group-active-color: $component-active-color !default;
-$list-group-active-bg: $component-active-bg !default;
-$list-group-active-border-color: $list-group-active-bg !default;
-
-$list-group-disabled-color: $gray-600 !default;
-$list-group-disabled-bg: $gray-200 !default;
-
-$list-group-action-color: $gray-700 !default;
-$list-group-action-hover-color: $list-group-action-color !default;
-
-$list-group-action-active-color: $body-color !default;
-$list-group-action-active-bg: $gray-200 !default;
-
-// Image thumbnails
-
-$thumbnail-padding: .25rem !default;
-$thumbnail-bg: $body-bg !default;
-$thumbnail-border-width: $border-width !default;
-$thumbnail-border-color: #ddd !default;
-$thumbnail-border-radius: $border-radius !default;
-$thumbnail-box-shadow: 0 1px 2px rgba(0, 0, 0, 7.5%) !default;
-$thumbnail-transition: all .2s ease-in-out !default;
-
-// Figures
-
-$figure-caption-font-size: 90% !default;
-$figure-caption-color: $gray-600 !default;
-
-// Breadcrumbs
-
-$breadcrumb-padding-y: .75rem !default;
-$breadcrumb-padding-x: 1rem !default;
-$breadcrumb-item-padding: .5rem !default;
-
-$breadcrumb-margin-bottom: 1rem !default;
-
-$breadcrumb-bg: $white;
-$breadcrumb-divider-color: #6d6e71;
-$breadcrumb-active-color: #6d6e71;
-$breadcrumb-divider: "";
-
-// Media objects
-
-$media-margin-top: 15px !default;
-$media-heading-margin-bottom: 5px !default;
-$media-alignment-padding-x: 1rem;
-
-// Carousel
-
-$carousel-control-color: $white !default;
-$carousel-control-width: 15% !default;
-$carousel-control-opacity: .5 !default;
-
-$carousel-indicator-width: 30px !default;
-$carousel-indicator-height: 3px !default;
-$carousel-indicator-spacer: 3px !default;
-$carousel-indicator-active-bg: $white !default;
-
-$carousel-caption-width: 70% !default;
-$carousel-caption-color: $white !default;
-
-$carousel-control-icon-width: 20px !default;
-
-$carousel-control-prev-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"), "#", "%23") !default;
-$carousel-control-next-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$carousel-control-color}' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"), "#", "%23") !default;
-
-$carousel-transition: transform .6s ease !default;
-
-// Code
-
-$code-font-size: 90% !default;
-$code-padding-y: .2rem !default;
-$code-padding-x: .4rem !default;
-$code-color: $navy;
-$code-bg: $cloud;
-
-$kbd-color: $white !default;
-$kbd-bg: #333 !default;
-
-$pre-color: $gray-900 !default;
-$pre-scrollable-max-height: 340px !default;
-
-// Icon
-
-$icon-stroke-width: 1px;
-
-// Slider
 
 $range-slider-bg: $smoke;
 $range-slider-height: 4px;
 $range-slider-thumb-size: 1.13rem;
 $range-slider-thumb-bg: $white;
 
-// Spinner
+$spinner-animation-curve: cubic-bezier(.53, 0, .49, 1);
+$spinner-size: 60px;
+$spinner-animation-time: 1.9s;
 
-$animation-curve: cubic-bezier(.53, 0, .49, 1);
-$spinner-draw-dash: spinner-draw-dash;
-$spinnerSize: 60px;
-$animation-time: 1.9s;
+$modal-inner-padding: 1.9rem;
+$modal-dialog-margin: 10px;
+$modal-dialog-margin-y-sm-up: 30px;
+$modal-title-line-height: 1.3;
+$modal-content-box-shadow-xs: 0 3px 9px rgba(0, 0, 0, 50%);
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba(0, 0, 0, 50%);
+$modal-backdrop-bg: #000;
+$modal-header-border-color: $shadow;
+$modal-header-border-width: 0;
+$modal-header-padding: 1.5rem $modal-inner-padding;
+$modal-lg: 900px;
+$modal-md: 523px;
+
+$progress-height: .625rem;
+$progress-font-size: .75rem;
+$progress-bg: $smoke;
+$progress-border-radius: $border-radius;
+$progress-box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, 10%);
+$progress-bar-color: $login-logout-blue;
+$progress-bar-bg: theme-color("primary");
+$progress-bar-animation-timing: 1s linear infinite;
+$progress-bar-transition: width .6s ease;
+$progress-bar-bg: $login-logout-blue;
+$progress-bar-success-bg: $color-success;
+$progress-bar-warning-bg: $color-warning;
+$progress-bar-danger-bg: $color-danger;
+$progress-bar-info-bg: $color-info;
+$progress-bar-circle-default-size: 50px;
+
+$list-group-border-color: #ddd;
+$list-group-hover-bg: #f5f5f5;
+$list-group-disabled-bg: $gray-200;
+
+$breadcrumb-bg: $white;
+$breadcrumb-divider-color: #6d6e71;
+$breadcrumb-active-color: #6d6e71;
+$breadcrumb-divider: "";
+
+$code-padding-y: .2rem;
+$code-padding-x: .4rem;
+$code-color: $navy;
+$code-bg: $cloud;
+
+$kbd-bg: #333;
+
+/**
+ * Our own global helper variables
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
+
+/* Restrain max line width of text */
+$legible-width: 36em;
+
+/* Not sure, something with links */
+$stretched-link-pseudo-element: after;
+$stretched-link-z-index: 1;
+
+/* Added link version */
+$link-color-dark: $navy;
+$link-hover-color-dark: #00325c;
+
+/* Adding new grid gutters */
+$grid-gutter: 1.875rem;
+$grid-gutter-tight: 1.25rem;
+
+/* Characters which are escaped escape-svg func. Remove when moving to BS5 */
+$escaped-characters: (
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29"),
+);
