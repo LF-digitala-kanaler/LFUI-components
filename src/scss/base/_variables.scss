@@ -25,10 +25,6 @@
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
-/* Used for setting up fonts */
-$asset-path: "./base" !default;
-$font-display: swap !default;
-
 /* SCSS custom properties scooping */
 $variable-prefix: "" !default;
 
@@ -252,8 +248,8 @@ $container-max-widths: (
  * Typography
  */
 
-$font-family-sans-serif: "Intro Cond", arial, "Helvetica Neue", sans-serif;
-$font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
+$font-family-sans-serif: var(--lf-font-family-sans-serif);
+$font-family-serif: var(--lf-font-family-serif);
 $font-family-base: arial, "Helvetica Neue", helvetica, sans-serif;
 $font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
 
