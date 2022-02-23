@@ -51,7 +51,7 @@ Importing the source code gives you access to the full SCSS suit including our v
 
 Import `LFUI.scss` at the very beginning of your main SCSS file:
 
-```
+```scss
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
 ```
 
@@ -71,7 +71,7 @@ npm install copyfiles --save-dev
 
 Once installed you can add a copy script to your `package.json`.
 
-```
+```json
 "scripts": {
   "copy:fonts": "copyfiles --flat node_modules/@lf-digitala-kanaler/lfui-components/dist/lfui/fonts/* fonts/YOUR_PATH"
 }
@@ -79,7 +79,7 @@ Once installed you can add a copy script to your `package.json`.
 
 Depending on where in your project that you place the font files, configure the SCSS variable `$asset-path` before importing the framework.
 
-```
+```scss
 $asset-path: "./";
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
 ```
