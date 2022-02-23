@@ -1,25 +1,38 @@
-# LFUI-components
-LFUI-components is a HTML-, CSS- and JS framework built on top of Bootstrap 4 to
-be used in Länsförsäkringar's different applications and websites. LFUI has
-restyled many of Bootstrap's native components as well as included new ones
-specific for Länsförsäkringar, along with other custom features and utilities.
+# <img src="https://github.com/LF-digitala-kanaler/favicon/blob/master/icon.svg" width="24"> Länsförsäkringar Components
 
-## Getting started
-To install lfui-components in your project, you will need to configure your
-environment for GitHub Packages.
+Accessible and feature rich front-end framework for Länsförsäkringar web development.
 
-First you'll need to authenticate with [GitHub Packages][github-packages]. The
-easiest way is by logging in with npm. You'll need to [generate a personal
-access token][personal-access-token] which you use as your password.
+[Design system →][lfds] &nbsp;&nbsp;&nbsp;&nbsp; [Storybook website →][lfui-components-webpage]
+
+# Table of contents
+
+- [Getting started](#getting-started)
+- [Usage](#usage)
+- [Documentation](#documentation)
+- [Bugs and feature requests](#bugs-and-feature-requests)
+- [Contributing](#contributing)
+- [Making a release](#making-a-release)
+
+# Getting started
+
+To install Components in your project, you will need to configure your environment for [GitHub Packages][github-packages].
+
+First, authenticate npm with GitHub Packages. To do that, generate a [personal access token][personal-access-token] which you use as your password. Make sure to give the token access rights to both `repo` and `read:packages` scopes.
 
 ```
 npm login --scope=@lf-digitala-kanaler --registry=https://npm.pkg.github.com
 ```
 
-Add an `.npmrc` file to your project root folder.
+Add a `.npmrc` file in your project root folder.
 
 ```
 @lf-digitala-kanaler:registry=https://npm.pkg.github.com
+```
+
+Add an `.env` file in your project root folder.
+
+```
+GITHUB_TOKEN=<PERSONAL_ACCESS_TOKEN>
 ```
 
 Install the package as you normally would.
@@ -28,39 +41,35 @@ Install the package as you normally would.
 npm install @lf-digitala-kanaler/lfui-components
 ```
 
-### Usage
-In the /dist folder you will find:
+# Usage
 
-* lf.css
-* lf.js
-* Fonts
+You have two alternatives for getting started with the framework; either by importing the source files into a [SCSS][scss] build, or by adding the precompiled files to your HTML document.
 
-These files are built/compiled from the project's source files and assets. They
-can be used as is. Simply add `jQuery`, `lf.js` and `lf.css` to your document.
+## Source alternative
 
-## In your build
-Import LFUI.scss in the very beginning of your main SCSS file:
+Importing the source code gives you access to the full SCSS suit including our variables and mixins – increasing your flexibility when extending the framework with your own styles and layouts.
+
+Import `LFUI.scss` at the very beginning of your main SCSS file:
 
 ```
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
 ```
 
-This will give you access to the full LFUI suit including its variables and
-mixins.
+## Compiled alternative
 
-### Fonts
-LFUI-components includes [Länsförsäkringar Fonts][fonts] for self-hosting. You can import them
-directly from `node_modules`, but it's probably easier to copy the files to your
-project.
+In the `/dist` folder provided, you will find: `lf.css`, `lf.js` and a `fonts` directory. These files can be used as-is. Simply add jQuery along with `lf.js` and `lf.css` to your HTML document.
 
-In this example we are using `copyfiles` to do this.
+## Fonts
+
+Components includes [Länsförsäkringar Fonts][fonts] for self-hosting. You can import them directly from `node_modules`, but it's probably easier to copy the files to your project.
+
+In this example, we are using `copyfiles` to do this.
 
 ```
 npm install copyfiles --save-dev
 ```
 
-Once installed you can add a script to your `package.json` to copy the files
-into your project.
+Once installed you can add a copy script to your `package.json`.
 
 ```
 "scripts": {
@@ -68,133 +77,114 @@ into your project.
 }
 ```
 
-Depending on where in your project you place the font files, update the provided
-variable `$asset-path` too match your setup. Place it before your `lfui.scss`
-import.
+Depending on where in your project that you place the font files, configure the SCSS variable `$asset-path` before importing the framework.
 
 ```
 $asset-path: "./";
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
 ```
 
-See the [fonts documentation][fonts] on loading and preloading techniques 
-for optimal performance and accessibility.
+See the [fonts documentation][fonts] on loading and preloading techniques for optimal performance and accessibility.
 
-## Migrating from lfui 6.x.x
-There hasen't been so many changes to the core components in this version but
-there is a couple of steps you have to take to get it to work.
+## Favicon
 
-* Remove the old `lfui` package and replace it with
-`@lf-digitala-kanaler/lfui-components` in your `package.json` and install it.
-* Depending on your build setup update lf.js and lf.css with the new one in
-`@lf-digitala-kanaler/lfui-components`.
-* If you want the updated fonts follow the steps above to copy them over.
-* Now it's time for the time consuming part. We have a new icon system and all
-icons in your project needs to be updated. Head [here][lfui-icons] and follow
-the guide.
+See the designated [Länsförsäkringar Favicon][favicon] repo for all the assets and documentation you might need.
 
-# Development
-LFUI-components uses [Storybook](https://storybook.js.org/) for UI development
-and testing. Documentation for each componet will be done in
-[LFDS](https://lf-digitala-kanaler.github.io/)
+# Documentation
 
-The project is structured as such:
+Each component is documented, with examples, on the [LFDS](lfds) website. This is our go-to for documentation.
 
-```
-LFUI-components/
-├── .storybook/
-│    **Configuration for storybook**
-├── dist/
-│  ├── docs/
-│  │   └── **component examples that will be used in LFDS**
-│  └── lfui/
-│      ├── lfui.css
-│      ├── lfui.js
-│      └── fonts/
-├── public/
-│   └── **generated storybook site that will be pubished on Github Pages**
-└── src/
-    ├── data/
-    ├── docs/
-    │   ├── Alert/
-    │   │   ├── *.html ** html for component  **
-    │   │   │── *.js ** custom js for example will not be included in lfui.js  **
-    │   │   └── *.stories.js ** Storybook file  **
-    │   │   ....
-    │   └── index.js ** Export all js/css to dist/docs that's needed for the example to work in LFDS **
-    ├── js/
-    │   └── components /
-    │       **js for components**
-    ├── scss/
-    │   └── ** styles for components **
-    └── index.js ** Export for lfui.js and lfui.css**
-```
+Along with that, because our code is based on Bootstrap, the documentation from Bootstrap version [four][bs4] and [five][bs5] does provide a good overview of how components are structured, along with listing all the available [utility classes](https://getbootstrap.com/docs/5.0/utilities/api/).
 
-### Working with branches and pull requests
-The latest (stable) work is always in the branch `main`. New features and
-patches are added through pull requests. When working on a new feature, create
-a new branch, keeping it up to date with the `main` branch while you work. When
-finshed, create a pull request and document any changes that have been made.
+# Bugs and feature requests
 
-#### Build and start the development server
+If you with to report a bug or submit a feature request, feel free to [open an issue](https://github.com/LF-digitala-kanaler/LFUI-components/issues/). The more information that you provide, the better.
+
+# Contributing
+
+We rely on [Storybook](https://storybook.js.org/) for serving and testing during development.
+
+After cloning this repo, install the dependencies and start the server.
+
 ```
 npm install
 npm start
 ```
 
-This will start a development server where you can see any changes you are
-making to the components.
+Along with starting Storybook, `npm start` will also rebuild and refresh the page as you work, allowing for quick changes and previews.
+
+## Project structure
 
 ```
-npm run build
+.
+├── .storybook                # Storybook config
+├── dist
+│  ├── docs                   # Component examples used in LFDS
+│  └── lfui                   # Compiled files
+│      ├── lfui.css
+│      ├── lfui.js
+│      └── fonts              # The font files
+├── public                    # Generated Storybook site for Github Pages
+└── src
+    ├── data
+    ├── docs
+    │   ├── Alert
+    │   │   ├── *.html        # HTML example
+    │   │   │── *.js          # JS used only for the example markup
+    │   │   └── *.stories.js  # Storybook config
+    │   │   ...
+    │   └── index.js          # Exporting JS/CSS that's needed for examples in LFDS
+    ├── js
+    │   └── components        # JS for components
+    ├── scss                  # CSS for components
+    └── index.js              # Export for lfui.js and lfui.css
 ```
 
-### Linting
-The project uses [standard][standard] and [stylelint][stylelint] to verify code.
+## Working with branches and pull requests
+
+The latest and stable version is always in the `main` branch. New features and patches are then added through dedicated branches and pull requests. 
+
+When working on a new feature, begin by creating a new branch from `main`. After finishing your work, squash merge `main` into your branch and then create a pull request.
+
+Please document the changes that you make in the pull request, along with potential changes to existing classes or variables that should be added to a migration guide later on.
+
+## Linting
+The project uses [standard][standard] and [stylelint][stylelint]. There are no automated tests beyond that.
 
 ```
 npm test
 ```
 
-### Create and publish a new release
-* Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes
-that have been made to the respective components in this release. This
-information will be visible in LFDS later.
+# Making a release
+
+* Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes that have been made to the respective components in this release. This information will be visible on [LFDS][lfds] later on.
 * Bump the version number `npm version <major|minor|patch>`
-* Push the chages to GitHub
-* Head to GitHub, go to Releases -> Tags, create a release for the new tag and
-update the release notes. This information will be visible in LFDS when we do a
-new deploy of it. Take extra care to document any **breaking changes** that have
-been made. Creating a new release will automatically publish a new version of
-the package to GitHub Packages.
+* Push the changes to GitHub
+* Create a new release from the [tag list](https://github.com/LF-digitala-kanaler/LFUI-components/tags) on Github and add your release notes. Note that this will also be visible to the public. Take extra care to document any breaking changes.
+  - Tag version example: v5.0.0
+  - Release Title example: Components 5.0.0
+* Creating a new release will automatically publish a new package version to GitHub Packages.
+* Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo](lsdf-repository).
+* If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lsdf-repository] readme.
+* Deploy the new version of LSDF.
 
-  - **Tag version:** (ex. v7.0.0)
-  - **Release Title**: LFUI-components + version (ex. LFUI-components 7.0.0)
+## Deploying the Storybook website
+When creating a release, a Github Action will automatically deploy the changes to our [Storybook Github page][lfui-components-webpage].
 
-* Open the LFDS repository and upgrade LFUI-components dependency in
-package.json to the release you just created.
-* Deploy the new version of LSDF
-* If you have added new components, now is the time to document those in LFDS if
-it's not done already. Visit [LFDS repository][lsdf-repository] for more
-information how to do that
-
-#### Deploy storybook site
-When you create a release a Github action will build your changes to Github
-pages and be available [here][lfui-components-webpage].
-
-### Action secrets
-Since the package depends on private GitHub packages, a private access token is
-set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
+## Github actions secrets
+Since the package depends on private GitHub packages, a private access token is set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
 be updated when expired.
 
-### Share the release
-* Add LFUI-componets to Nexus (see internal documentation)
-
-[lsdf-repository]: https://github.com/LF-digitala-kanaler/LFDS
-[lfui-components-webpage]: https://lf-digitala-kanaler.github.io/LFUI-components
-[github-packages]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages
-[personal-access-token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+[bs4]: https://getbootstrap.com/docs/4.0/getting-started/introduction/
+[bs5]: https://getbootstrap.com/docs/5.0/getting-started/introduction/
+[favicon]: https://github.com/LF-digitala-kanaler/favicon
 [fonts]: https://github.com/LF-digitala-kanaler/fonts
+[github-packages]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages
+[lfds]: https://lf-digitala-kanaler.github.io/
+[lfui-components-webpage]: https://lf-digitala-kanaler.github.io/LFUI-components
 [lfui-icons]: https://github.com/LF-digitala-kanaler/LFUI-icons
+[lsdf-repository]: https://github.com/LF-digitala-kanaler/LFDS
+[personal-access-token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+[scss]: https://sass-lang.com
 [standard]: https://standardjs.com
 [stylelint]: https://stylelint.io
