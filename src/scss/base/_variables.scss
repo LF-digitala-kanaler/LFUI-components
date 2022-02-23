@@ -25,10 +25,6 @@
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
-/* Used for setting up fonts */
-$asset-path: "./base" !default;
-$font-display: swap !default;
-
 /* SCSS custom properties scooping */
 $variable-prefix: "" !default;
 
@@ -102,21 +98,21 @@ $colors: (
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$variable-prefix}-wine: #{$wine};
-  --#{$variable-prefix}-red: #{$red};
-  --#{$variable-prefix}-pink: #{$pink};
-  --#{$variable-prefix}-navy: #{$navy};
-  --#{$variable-prefix}-blue: #{$blue};
-  --#{$variable-prefix}-sky: #{$sky};
-  --#{$variable-prefix}-baby: #{$baby};
-  --#{$variable-prefix}-cloud: #{$cloud};
-  --#{$variable-prefix}-black: #{$black};
-  --#{$variable-prefix}-gray: #{$gray};
-  --#{$variable-prefix}-silver: #{$silver};
-  --#{$variable-prefix}-smoke: #{$smoke};
-  --#{$variable-prefix}-shadow: #{$shadow};
-  --#{$variable-prefix}-tint: #{$tint};
-  --#{$variable-prefix}-white: #{$white};
+  --#{$variable-prefix}wine: #{$wine};
+  --#{$variable-prefix}red: #{$red};
+  --#{$variable-prefix}pink: #{$pink};
+  --#{$variable-prefix}navy: #{$navy};
+  --#{$variable-prefix}blue: #{$blue};
+  --#{$variable-prefix}sky: #{$sky};
+  --#{$variable-prefix}baby: #{$baby};
+  --#{$variable-prefix}cloud: #{$cloud};
+  --#{$variable-prefix}black: #{$black};
+  --#{$variable-prefix}gray: #{$gray};
+  --#{$variable-prefix}silver: #{$silver};
+  --#{$variable-prefix}smoke: #{$smoke};
+  --#{$variable-prefix}shadow: #{$shadow};
+  --#{$variable-prefix}tint: #{$tint};
+  --#{$variable-prefix}white: #{$white};
 }
 
 /**
@@ -162,23 +158,23 @@ $theme-colors: (
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$variable-prefix}-color-info: #{$color-info};
-  --#{$variable-prefix}-color-info-text: #{$color-info-text};
-  --#{$variable-prefix}-color-success: #{$color-success};
-  --#{$variable-prefix}-color-success-text: #{$color-success-text};
-  --#{$variable-prefix}-color-warning: #{$color-warning};
-  --#{$variable-prefix}-color-warning-text: #{$color-warning-text};
-  --#{$variable-prefix}-color-danger: #{$color-danger};
-  --#{$variable-prefix}-color-danger-text: #{$color-danger-text};
-  --#{$variable-prefix}-color-risk-0: #{$color-risk-0};
-  --#{$variable-prefix}-color-risk-1: #{$color-risk-1};
-  --#{$variable-prefix}-color-risk-2: #{$color-risk-2};
-  --#{$variable-prefix}-color-risk-3: #{$color-risk-3};
-  --#{$variable-prefix}-color-risk-4: #{$color-risk-4};
-  --#{$variable-prefix}-color-risk-5: #{$color-risk-5};
-  --#{$variable-prefix}-color-risk-6: #{$color-risk-6};
-  --#{$variable-prefix}-color-risk-7: #{$color-risk-7};
-  --#{$variable-prefix}-login-logout-blue: #{$login-logout-blue};
+  --#{$variable-prefix}color-info: #{$color-info};
+  --#{$variable-prefix}color-info-text: #{$color-info-text};
+  --#{$variable-prefix}color-success: #{$color-success};
+  --#{$variable-prefix}color-success-text: #{$color-success-text};
+  --#{$variable-prefix}color-warning: #{$color-warning};
+  --#{$variable-prefix}color-warning-text: #{$color-warning-text};
+  --#{$variable-prefix}color-danger: #{$color-danger};
+  --#{$variable-prefix}color-danger-text: #{$color-danger-text};
+  --#{$variable-prefix}color-risk-0: #{$color-risk-0};
+  --#{$variable-prefix}color-risk-1: #{$color-risk-1};
+  --#{$variable-prefix}color-risk-2: #{$color-risk-2};
+  --#{$variable-prefix}color-risk-3: #{$color-risk-3};
+  --#{$variable-prefix}color-risk-4: #{$color-risk-4};
+  --#{$variable-prefix}color-risk-5: #{$color-risk-5};
+  --#{$variable-prefix}color-risk-6: #{$color-risk-6};
+  --#{$variable-prefix}color-risk-7: #{$color-risk-7};
+  --#{$variable-prefix}login-logout-blue: #{$login-logout-blue};
 }
 
 /**
@@ -252,8 +248,8 @@ $container-max-widths: (
  * Typography
  */
 
-$font-family-sans-serif: "Intro Cond", arial, "Helvetica Neue", sans-serif;
-$font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
+$font-family-sans-serif: var(--lf-font-family-sans-serif);
+$font-family-serif: var(--lf-font-family-serif);
 $font-family-base: arial, "Helvetica Neue", helvetica, sans-serif;
 $font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
 
@@ -267,16 +263,16 @@ $line-height-base: 1.45;
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$variable-prefix}-font-family-sans-serif: #{$font-family-sans-serif};
-  --#{$variable-prefix}-font-family-serif: #{$font-family-serif};
-  --#{$variable-prefix}-font-family-base: #{$font-family-base};
-  --#{$variable-prefix}-font-family-monospace: #{$font-family-monospace};
-  --#{$variable-prefix}-font-size-xl: #{$font-size-xl};
-  --#{$variable-prefix}-font-size-lg: #{$font-size-lg};
-  --#{$variable-prefix}-font-size-md: #{$font-size-md};
-  --#{$variable-prefix}-font-size-sm: #{$font-size-sm};
-  --#{$variable-prefix}-font-size-xs: #{$font-size-xs};
-  --#{$variable-prefix}-font-line-height: #{$line-height-base};
+  --#{$variable-prefix}font-family-sans-serif: #{$font-family-sans-serif};
+  --#{$variable-prefix}font-family-serif: #{$font-family-serif};
+  --#{$variable-prefix}font-family-base: #{$font-family-base};
+  --#{$variable-prefix}font-family-monospace: #{$font-family-monospace};
+  --#{$variable-prefix}font-size-xl: #{$font-size-xl};
+  --#{$variable-prefix}font-size-lg: #{$font-size-lg};
+  --#{$variable-prefix}font-size-md: #{$font-size-md};
+  --#{$variable-prefix}font-size-sm: #{$font-size-sm};
+  --#{$variable-prefix}font-size-xs: #{$font-size-xs};
+  --#{$variable-prefix}font-line-height: #{$line-height-base};
 }
 
 $h1-font-size: 2.5rem;
