@@ -61,28 +61,9 @@ In the `/dist` folder provided, you will find: `lf.css`, `lf.js` and a `fonts` d
 
 ## Fonts
 
-Components includes [Länsförsäkringar Fonts][fonts] for self-hosting. You can import them directly from `node_modules`, but it's probably easier to copy the files to your project.
-
-In this example, we are using `copyfiles` to do this.
-
-```
-npm install copyfiles --save-dev
-```
-
-Once installed you can add a copy script to your `package.json`.
-
-```json
-"scripts": {
-  "copy:fonts": "copyfiles --flat node_modules/@lf-digitala-kanaler/lfui-components/dist/lfui/fonts/* fonts/YOUR_PATH"
-}
-```
-
-Depending on where in your project that you place the font files, configure the SCSS variable `$asset-path` before importing the framework.
-
-```scss
-$asset-path: "./";
-@import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
-```
+Web fonts are included as an external dependency, so the font urls will need to
+be rebased and the source files copied to the build directory. A tool such as
+`postcss-url` or the Webpack `file-loader` can help you with that.
 
 See the [fonts documentation][fonts] on loading and preloading techniques for optimal performance and accessibility.
 
@@ -142,7 +123,7 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
 
 ## Working with branches and pull requests
 
-The latest and stable version is always in the `main` branch. New features and patches are then added through dedicated branches and pull requests. 
+The latest and stable version is always in the `main` branch. New features and patches are then added through dedicated branches and pull requests.
 
 When working on a new feature, begin by creating a new branch from `main`. After finishing your work, squash merge `main` into your branch and then create a pull request.
 
