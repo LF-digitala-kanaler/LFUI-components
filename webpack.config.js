@@ -142,12 +142,15 @@ module.exports = {
         loader: 'file-loader'
       },
       {
-        test: /\.(woff|woff2)$/,
+        test: /\.(woff2?)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'lfui/fonts/[name].[ext]'
+              name: '[name].[contenthash].[ext]',
+              outputPath: 'lfui/fonts',
+              publicPath: 'fonts',
+              esModule: false // Needed to make path rebase work
             }
           }
         ]

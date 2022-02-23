@@ -15,16 +15,22 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     // Inject options into html-loader to disable attribute resolution
     // This is required to not break relative asset (icons) paths in html files
-    const loader = require.resolve('html-loader')
+    const htmlLoader = require.resolve('html-loader')
     for (const rule of config.module.rules) {
-      if (rule.use === loader) {
+      if (rule.use === htmlLoader) {
         delete rule.use
-        rule.loader = loader
+        rule.loader = htmlLoader
         rule.options = { ...rule.options, attributes: false}
       }
-      if (rule.test && rule.test.toString().includes('svg')) {
-        const test = rule.test.toString().replace('svg|', '').replace(/\//g, '')
-        rule.test = new RegExp(test)
+
+      if (rule.test) {
+        const regex = rule.test.toString().replace(/\//g, '')
+        if (regex.includes('svg')) {
+          rule.test = new RegExp(regex.replace(/svg\|?/, ''))
+        }
+        if (/woff2?/.test(regex)) {
+          rule.test = new RegExp(regex.replace(/woff2?\|?/g, ''))
+        }
       }
     }
 
@@ -46,6 +52,19 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff2?)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[contenthash].[ext]',
+              outputPath: 'fonts',
+              esModule: false // Needed to make path rebase work
             }
           }
         ]
