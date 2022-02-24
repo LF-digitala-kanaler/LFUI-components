@@ -41,9 +41,7 @@ const uploadExample = () => {
 
           }
           <span class="upload-name">${data.name}</span>
-            <button type="button" class="close ml-auto upload-remove">
-            Close
-          </button>
+          <button type="button" class="btn-close ml-auto upload-remove" aria-label="Remove"></button>
         </div>
 
           ${
