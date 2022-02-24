@@ -1,6 +1,6 @@
 {
   "name": "@lf-digitala-kanaler/lfui-components",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "license": "MIT",
   "dependencies": {
     "@lf-digitala-kanaler/fonts": "^1.0.3",
