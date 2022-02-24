@@ -4,7 +4,7 @@
   "license": "MIT",
   "dependencies": {
     "@lf-digitala-kanaler/fonts": "^1.0.3",
-    "@lf-digitala-kanaler/lfui-icons": "^2.0.0-1",
+    "@lf-digitala-kanaler/lfui-icons": "^2.0.0",
     "bootstrap": "4.3.1",
     "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
     "jquery": "^3.4.1",
