@@ -3,7 +3,7 @@
   "version": "8.0.0-8",
   "license": "MIT",
   "dependencies": {
-    "@lf-digitala-kanaler/fonts": "^1.0.2",
+    "@lf-digitala-kanaler/fonts": "^1.0.3",
     "@lf-digitala-kanaler/lfui-icons": "^2.0.0-1",
     "bootstrap": "4.3.1",
     "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
@@ -52,7 +52,6 @@
     "start": "start-storybook -p 6006",
     "build": "npm run build-lfui && build-storybook -o public",
     "build-lfui": "webpack --mode production",
-    "release": "auto changelog && npm run version && auto release",
     "test": "npm run lint:scss && npm run lint:js",
     "lint:js": "standard",
     "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss --cache --cache-location .cache/.stylelintcache --rd"
