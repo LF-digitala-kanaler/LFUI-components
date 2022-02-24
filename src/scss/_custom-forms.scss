@@ -228,6 +228,7 @@ select {
 
 .custom-select,
 .custom-select[multiple] {
+  @include glyph-chevron-down($blue);
 
   width: 100%;
   height: $input-height;
@@ -235,8 +236,6 @@ select {
   background-position-y: 16px;
   border-width: 0 0 $custom-file-border-width;
   border-radius: none;
-
-  @include glyph-chevron-down($blue);
 
   &:hover {
     background-color: $input-hover;
