@@ -29,12 +29,6 @@ Add a `.npmrc` file in your project root folder.
 @lf-digitala-kanaler:registry=https://npm.pkg.github.com
 ```
 
-Add an `.env` file in your project root folder.
-
-```
-GITHUB_TOKEN=<PERSONAL_ACCESS_TOKEN>
-```
-
 Install the package as you normally would.
 
 ```
