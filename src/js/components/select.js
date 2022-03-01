@@ -36,6 +36,8 @@ export function select (el, opts = el.dataset) {
     (child) => !isPlaceholder(child)
   )
 
+  setValidState(select, initiallyValid.length)
+
   // Set up internal lookup mechanisms
   const buttons = new WeakMap()
   const groups = new WeakMap()
@@ -223,6 +225,8 @@ export function select (el, opts = el.dataset) {
       .filter((option) => !isPlaceholder(option))
     const { current: statusNode } = status
 
+    setValidState(select, selected.length)
+
     // Update status counter
     statusNode.dataset.count = selected.length || ''
 
@@ -261,6 +265,20 @@ function getConfig (options) {
   }
 
   return { smallPattern, allLabel, groupToggle }
+}
+
+/**
+ * @param {Element} element
+ * @param {Boolean} status
+ * @returns null|string
+ */
+
+function setValidState (element, status) {
+  if (status) {
+    element.parentNode.parentNode.classList.add('has-valid')
+  } else {
+    element.parentNode.parentNode.classList.remove('has-valid')
+  }
 }
 
 /**
