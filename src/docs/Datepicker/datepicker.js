@@ -27,9 +27,6 @@ const datepickerExample = () => {
   $('#datepicker').on('dp.hide', function () {
     $('#datepicker button').removeClass('active')
   })
-  $('#datepicker').on('click', function () {
-    console.log(this)
-  })
   $('#datepicker').on('dp.hide', function () {
     $('#datepicker button').removeClass('active')
     const value = $('#datepicker-input').val()

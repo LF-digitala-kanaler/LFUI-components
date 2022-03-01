@@ -9,14 +9,13 @@ import moment from 'moment'
 moment.locale('sv')
 
 const lineChartVerticalLine = () => {
-  console.log(window.lineChart, 'ww')
   if (window.lineChart === null) return
   Chart.defaults.LineWithLine = Chart.defaults.line
 
   Chart.controllers.LineWithLine = Chart.controllers.line.extend({
     draw: function (ease) {
       Chart.controllers.line.prototype.draw.call(this, ease)
-      console.log('draw')
+
       if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
         const activePoint = this.chart.tooltip._active[0]
         const ctx = this.chart.ctx
@@ -260,7 +259,7 @@ const lineChartExample = () => {
     // remove graident from first
 
     config.data.datasets[0].fill = false
-    console.log(config.data.datasets.length)
+
     if (config.data.datasets.length === 1) {
       config.data.datasets[0].fill = true
       const gradientFill = window.lineChart.ctx.createLinearGradient(0, 800, 0, 0)
