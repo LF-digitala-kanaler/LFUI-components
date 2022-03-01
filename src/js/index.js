@@ -1,10 +1,3 @@
-import jQuery from 'jquery'
-
-/**
- * This need to be done before importig any modules depending on jQuery
- */
-window.$ = window.jQuery = jQuery
-
 /* eslint-disable import/first */
 import './components/utilities'
 import './components/alert'

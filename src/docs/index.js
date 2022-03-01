@@ -1,3 +1,5 @@
+import '../js/index.js'
+
 import '../scss/DOCS.scss'
 
 import { datepickerExample, disabledDatesExample, timepickerExample } from './Datepicker/datepicker'
@@ -20,24 +22,26 @@ import { valueboxExample } from './ValueBox/valuebox'
 import { xyPlotExample } from './xyPlot/xyPlot'
 
 // run your functions
-disabledDatesExample()
-timepickerExample()
-datepickerExample()
-tableExample()
-dropdownExample()
-calloutExample()
-priceBoxExample()
-selectExample()
-sliderExample()
-panelExample()
-uploadExample()
-timelineExample()
-lineChartVerticalLine()
-lineChartExample()
-donutChartExample()
-xyPlotExample()
-barChartExample()
-mapChartExample()
-navbarExample()
-valueboxExample()
-popoverTooltipExample()
+export function initialize () {
+  disabledDatesExample()
+  timepickerExample()
+  datepickerExample()
+  tableExample()
+  dropdownExample()
+  calloutExample()
+  priceBoxExample()
+  selectExample()
+  sliderExample()
+  panelExample()
+  uploadExample()
+  timelineExample()
+  lineChartVerticalLine()
+  lineChartExample()
+  donutChartExample()
+  xyPlotExample()
+  barChartExample()
+  mapChartExample()
+  navbarExample()
+  valueboxExample()
+  popoverTooltipExample()
+}
