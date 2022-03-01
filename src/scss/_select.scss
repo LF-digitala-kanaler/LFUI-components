@@ -232,12 +232,33 @@
   background-color: #fbfbfb;
   border: 0;
   box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 8%);
+  max-height: 25.25rem;
+  overflow-y: auto;
 
   .select-list {
     position: static;
     box-shadow: none;
     opacity: 1;
     animation: none;
+  }
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    width: 0.5rem;
+    background-color: $white;
+    border-left: 1px solid #eee;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    width: calc(100% - 0.25rem);
+    margin-left: 0.125rem;
+  }
+}
+
+@media (max-height: 29rem) {
+  .select-list {
+    max-height: 90vh;
   }
 }
 
