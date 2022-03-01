@@ -32,7 +32,6 @@ const tableExample = () => {
     while (--i >= 0) {
       (function (i) {
         let dir = 1
-        console.log(this)
         th[i].addEventListener('click', function () { sortTable(table, i, (dir = 1 - dir)) })
       }(i))
     }
