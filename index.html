@@ -18,6 +18,8 @@
     // eslint-disable-next-line no-console
     console.warn('unable to connect to top frame for connecting dev tools');
   }
+    
+  console.log('testing')
 
   window.onerror = function onerror(message, source, line, column, err) {
     if (window.CONFIG_TYPE !== 'DEVELOPMENT') return;
