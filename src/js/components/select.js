@@ -3,6 +3,7 @@ import 'bootstrap/js/src/dropdown'
 
 const EVENT_PREFIX = /^on/
 const refs = new WeakMap()
+const initialized = new WeakSet()
 
 /**
  * @typedef {object} SelectOptions
@@ -23,7 +24,7 @@ export function select (el, opts = el.dataset) {
   const id = Math.random().toString(36).substr(2, 9)
 
   // Don't bother with disabled or missing elements
-  if (!label || !select || select.disabled) {
+  if (!label || !select || select.disabled || initialized.has(el)) {
     if (select?.disabled) el.classList.add('disabled')
     return
   }
@@ -239,6 +240,9 @@ export function select (el, opts = el.dataset) {
   el.classList.add('initialized')
   label.id = `label-${id}`
   select.after(toggle, list)
+
+  // Cache element to prevent double initialization
+  initialized.add(el)
 }
 
 /**
