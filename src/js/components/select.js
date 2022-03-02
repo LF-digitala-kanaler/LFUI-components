@@ -269,13 +269,14 @@ function getConfig (options) {
 
 /**
  * @param {Element} element
- * @param {Boolean} valid
- * @returns null|string
+ * @param {boolean} valid
+ * @returns
  */
-
 function setValidState (element, valid) {
   const group = element.closest('.form-group')
-  group.classList[valid ? 'add' : 'remove']('has-valid')
+  if (group) {
+    group.classList.toggle('has-valid', valid)
+  }
 }
 
 /**
