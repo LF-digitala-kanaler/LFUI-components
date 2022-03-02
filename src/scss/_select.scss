@@ -73,13 +73,16 @@
   background-color: $input-bg;
   background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
   background-size: 18px 12px;
+  border: $input-border-color solid;
   border-width: 0 0 $input-btn-border-width;
-  border-bottom: solid $input-border-color;
   border-radius: 0;
   box-shadow: $input-box-shadow;
   appearance: none;
 
   .select.disabled & {
+    @include glyph-chevron-down($gray);
+    width: 100%;
+    height: $input-height;
     cursor: not-allowed;
     background-color: $input-disabled-bg;
   }
@@ -98,11 +101,13 @@
 .select-options {
   &[aria-expanded="true"] {
     position: relative;
-    z-index: 1003;
     color: $input-focus-color;
     background-color: $input-focus-bg;
     border-bottom-color: $input-focus-border-color;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 5%);
+    box-shadow:
+      0 .2px .2px rgba(0, 0, 0, .019),
+      0 .4px .6px rgba(0, 0, 0, .027),
+      0 .9px 1.2px rgba(0, 0, 0, .033);
   }
 
   &:disabled {
@@ -210,13 +215,15 @@
   }
 
   /* Valid state */
-  &:required:valid,
-  &:required:valid ~ .select-toggle {
+  .has-valid & ~ .select-toggle {
     background-color: $cloud;
     border-bottom-color: $input-focus-border-color;
-  }
 
-  /* To-do: Error state */
+    &:hover,
+    &:focus {
+      background-color: $input-valid-hover;
+    }
+  }
 }
 
 /**
@@ -227,17 +234,43 @@
 .select-list {
   z-index: 1004;
   width: 100%;
+  max-height: 25.25rem;
   padding: 0;
   margin: 0;
+  overflow-y: auto;
   background-color: #fbfbfb;
   border: 0;
-  box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 8%);
+  box-shadow:
+    0 .2px .2px rgba(0, 0, 0, .019),
+    0 .4px .6px rgba(0, 0, 0, .027),
+    0 .9px 1.2px rgba(0, 0, 0, .033),
+    0 1.8px 2.6px rgba(0, 0, 0, .041),
+    0 5px 7px rgba(0, 0, 0, .06);
 
   .select-list {
     position: static;
     box-shadow: none;
     opacity: 1;
     animation: none;
+  }
+
+  &::-webkit-scrollbar {
+    appearance: none;
+    width: .5rem;
+    background-color: $white;
+    border-left: 1px solid #eee;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: calc(100% - .25rem);
+    margin-left: .125rem;
+    background-color: $blue;
+  }
+}
+
+@media (max-height: 29rem) {
+  .select-list {
+    max-height: 90vh;
   }
 }
 
@@ -253,13 +286,17 @@
   letter-spacing: .5px;
   user-select: none;
   background-color: #f4f4f4;
-  border: solid 1px #eee;
-  border-top: none;
+  border-bottom: 1px solid #eee;
+
+  .select-group:first-child & {
+    border-top: 0;
+  }
 }
 
-/*
+/**
  * 1. Preserve whitespace in flex context, needed for small text
  */
+
 .select-option {
   position: relative;
   display: flex;
@@ -273,14 +310,13 @@
   cursor: pointer;
   user-select: none;
   background-color: #fbfbfb;
-  border: 1px solid #eee;
-  border-top: 0;
+  border-bottom: 1px solid #eee;
   outline-offset: -4px !important;
   appearance: none;
 
   &:hover {
     color: $link_color;
-    background-color: #fff;
+    background-color: $white;
   }
 
   &.toggle {
