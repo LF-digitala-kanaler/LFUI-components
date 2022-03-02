@@ -1,12 +1,8 @@
-
-const path = require('path')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
-
-// Avoid duplicate imports in our modules
-const increaseSpecificity = require('postcss-increase-specificity')
+const path = require('path')
 
 /* We import files through our node_modules, using @import 'bootstrap/x/_x.scss'.
  * by default, this does not work as our build won't recognize the file path.
@@ -16,59 +12,61 @@ const increaseSpecificity = require('postcss-increase-specificity')
  */
 module.exports = {
   entry: {
-    '/lfui/lfui': './src/index.js',
-    '/docs/docs': './src/docs/index.js'
+    lfui: {
+      import: './src/index.js',
+      filename: 'lfui.js',
+      library: {
+        name: 'LFUI',
+        type: 'umd'
+      }
+    },
+    'docs/docs': {
+      import: './src/docs/index.js',
+      filename: 'docs/docs.js',
+      library: {
+        name: ['LFUI', 'DOCS'],
+        type: 'umd'
+      }
+    }
   },
-  performance: { hints: false },
+  performance: {
+    hints: false
+  },
   output: {
-    libraryTarget: 'umd',
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/'
+    path: path.resolve(__dirname, 'dist')
   },
   externals: {
-    jquery: {
-      amd: 'jquery',
-      root: '$',
-      commonjs: 'jquery',
-      commonjs2: 'jquery'
-    }
+    jquery: 'jQuery'
+  },
+  optimization: {
+    minimizer: [
+      '...',
+      new CssMinimizerPlugin()
+    ]
   },
   plugins: [
     // copy html files used in LFDS to show examples
-    new CopyPlugin([
-      {
-        from: 'src/docs/',
-        to: 'docs/html/',
-        ignore: ['*.js'] // ignore stories,
-      },
-      {
-        from: 'src/data/componentsStatus.json',
-        to: 'docs/data/'
-      },
-      {
-        from: './node_modules/@lf-digitala-kanaler/lfui-icons/dist',
-        to: 'docs/lf-icons/'
-      }
-    ]),
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/docs/',
+          to: 'docs/html/',
+          globOptions: {
+            ignore: ['*.js'] // ignore stories,
+          }
+        },
+        {
+          from: 'src/data/componentsStatus.json',
+          to: 'docs/data/'
+        },
+        {
+          from: './node_modules/@lf-digitala-kanaler/lfui-icons/dist',
+          to: 'docs/lf-icons/'
+        }
+      ]
     }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }]
-      },
-      canPrint: true
-    }),
+    new MiniCssExtractPlugin(),
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      tether: 'tether',
-      Tether: 'tether',
-      'window.Tether': 'tether',
-      Popper: ['popper.js', 'default'],
       Alert: 'exports-loader?Util!bootstrap/js/dist/alert',
       Button: 'exports-loader?Util!bootstrap/js/dist/button',
       Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
@@ -85,11 +83,8 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        exclude: /DOCS\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -98,42 +93,13 @@ module.exports = {
           },
           'postcss-loader',
           {
-            loader: 'sass-loader'
-          }
-        ]
-      },
-      {
-        test: /DOCS\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: 'css-loader',
+            loader: 'sass-loader',
             options: {
-              importLoaders: 1
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                  require('postcss-base64')({
-                    pattern: /<svg.*<\/svg>/i,
-                    prepend: 'data:image/svg+xml;base64,'
-                  }),
-                  require('autoprefixer'),
-                  increaseSpecificity({
-                    repeat: 1,
-                    stackableRoot: '.lfui-theme'
-                  })
-                ]
+              warnRuleAsWarning: true,
+              sassOptions: {
+                quietDeps: true
               }
             }
-          },
-          {
-            loader: 'sass-loader'
           }
         ]
       },
@@ -143,17 +109,10 @@ module.exports = {
       },
       {
         test: /\.(woff2?)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[contenthash].[ext]',
-              outputPath: 'lfui/fonts',
-              publicPath: 'fonts',
-              esModule: false // Needed to make path rebase work
-            }
-          }
-        ]
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash].[name][ext][query]'
+        }
       },
       {
         test: /\.csv$/,

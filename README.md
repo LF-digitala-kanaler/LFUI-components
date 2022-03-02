@@ -45,13 +45,29 @@ Importing the source code gives you access to the full SCSS suit including our v
 
 Import `LFUI.scss` at the very beginning of your main SCSS file:
 
-```scss
+```css
 @import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
+```
+
+The JavaScript bundle can be imported as a whole.
+
+```js
+import '@lf-digitala-kanaler/lfui-components'
+```
+
+Some components are also exported, both as part of the bundle as well as individual modules.
+
+```js
+// Extract from bundle
+import { select } from '@lf-digitala-kanaler/lfui-components'
+
+// Import only the specific component
+import select from '@lf-digitala-kanaler/lfui-components/select'
 ```
 
 ## Compiled alternative
 
-In the `/dist` folder provided, you will find: `lf.css`, `lf.js` and a `fonts` directory. These files can be used as-is. Simply add jQuery along with `lf.js` and `lf.css` to your HTML document.
+In the `/dist` folder provided, you will find: `lfui.css`, `lfui.js` and a `fonts` directory. These files can be used as-is. Simply add jQuery along with `lfui.js` and `lfui.css` to your HTML document.
 
 ## Fonts
 
