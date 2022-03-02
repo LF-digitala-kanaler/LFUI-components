@@ -118,7 +118,6 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
 │  ├── lfui.css               # CSS bundle
 │  ├── lfui.js                # JS bundle
 │  └── fonts                  # Font files (referenced in CSS bundle)
-├── public                    # Generated Storybook site for Github Pages
 └── src
     ├── data
     ├── docs
