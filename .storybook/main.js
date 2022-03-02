@@ -11,8 +11,11 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-docs'
   ],
-
-  webpackFinal: async (config, { configType }) => {
+  framework: '@storybook/html',
+  core: {
+    builder: 'webpack5'
+  },
+  async webpackFinal (config, { configType, presets }) {
     // Inject options into html-loader to disable attribute resolution
     // This is required to not break relative asset (icons) paths in html files
     const htmlLoader = require.resolve('html-loader')
@@ -20,16 +23,13 @@ module.exports = {
       if (rule.use === htmlLoader) {
         delete rule.use
         rule.loader = htmlLoader
-        rule.options = { ...rule.options, attributes: false}
+        rule.options = { ...rule.options, attributes: false }
       }
 
       if (rule.test) {
         const regex = rule.test.toString().replace(/\//g, '')
         if (regex.includes('svg')) {
           rule.test = new RegExp(regex.replace(/svg\|?/, ''))
-        }
-        if (/woff2?/.test(regex)) {
-          rule.test = new RegExp(regex.replace(/woff2?\|?/g, ''))
         }
       }
     }
@@ -52,19 +52,6 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(woff2?)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[contenthash].[ext]',
-              outputPath: 'fonts',
-              esModule: false // Needed to make path rebase work
             }
           }
         ]
