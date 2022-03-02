@@ -159,9 +159,9 @@ npm test
   - Tag version example: v5.0.0
   - Release Title example: Components 5.0.0
 * Creating a new release will automatically publish a new package version to GitHub Packages.
-* Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo](lsdf-repository).
-* If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lsdf-repository] readme.
-* Deploy the new version of LSDF.
+* Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo](lfds-repository).
+* If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lfds-repository] readme.
+* Deploy the new version of LFDS.
 
 ## Deploying the Storybook website
 When creating a release, a Github Action will automatically deploy the changes to our [Storybook Github page][lfui-components-webpage].
@@ -178,7 +178,7 @@ be updated when expired.
 [lfds]: https://lf-digitala-kanaler.github.io/
 [lfui-components-webpage]: https://lf-digitala-kanaler.github.io/LFUI-components
 [lfui-icons]: https://github.com/LF-digitala-kanaler/LFUI-icons
-[lsdf-repository]: https://github.com/LF-digitala-kanaler/LFDS
+[lfds-repository]: https://github.com/LF-digitala-kanaler/LFDS
 [personal-access-token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 [scss]: https://sass-lang.com
 [standard]: https://standardjs.com
