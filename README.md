@@ -77,6 +77,10 @@ be rebased and the source files copied to the build directory. A tool such as
 
 See the [fonts documentation][fonts] on loading and preloading techniques for optimal performance and accessibility.
 
+## Icons
+
+Icons are not part of this package. Please see the [Länsförsäkringar Icons][lfui-icons] for documentation on how to install and use.
+
 ## Favicon
 
 See the designated [Länsförsäkringar Favicon][favicon] repo for all the assets and documentation you might need.
