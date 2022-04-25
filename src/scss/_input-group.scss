@@ -68,7 +68,7 @@
 // Padding control for the input field.
 .input-group {
   // If the input field is before the addon
-  input.form-control:first-child:not([type=date]) {
+  input.form-control:first-child:not([type="date"]) {
     padding-right: 0;
   }
   // or in the middle between two addons
@@ -133,7 +133,7 @@
 /**
  * 1. Bare date input has built-in addon
  */
-.form-control[type=date] + .input-group-append {
+.form-control[type="date"] + .input-group-append {
   display: none;
 }
 
@@ -159,9 +159,9 @@
   font-size: $font-size-md;
   color: $blue;
   background: $input-bg;
-  border-radius: 0;
   border-width: 0 0 $input-btn-border-width;
   border-bottom: $border-width solid $input-border-color;
+  border-radius: 0;
   transition: border-color 60ms linear;
 }
 
@@ -171,10 +171,10 @@
 }
 
 .input-group-append > .btn[disabled] {
-  opacity: 1;
-  cursor: not-allowed;
   color: $input-placeholder-color;
+  cursor: not-allowed;
   background: $input-disabled-bg;
+  opacity: 1;
 }
 
 .input-group-append > .btn:active {
@@ -228,8 +228,8 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
  */
 
 .input-group-append > .btn.active {
-  border-color: $blue;
   background: $input-hover;
+  border-color: $blue;
 }
 
 /**

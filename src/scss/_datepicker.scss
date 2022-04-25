@@ -7,13 +7,11 @@
   --duet-color-placeholder: #666;
   --duet-color-button: $black;
   --duet-color-surface: $white;
-  --duet-color-overlay: rgba(0, 0, 0, 0.8);
+  --duet-color-overlay: rgba(0, 0, 0, .8);
   --duet-color-border: #eee;
-
   --duet-font: inherit;
   --duet-font-normal: normal;
   --duet-font-bold: bold;
-
   --duet-radius: 0;
   --duet-z-index: 4;
 }
@@ -27,14 +25,15 @@
 }
 
 .duet-date {
+  /* stylelint-disable selector-class-pattern */
   .duet-date__input {
     @extend .form-control;
   }
 
   .duet-date__toggle {
     top: 0;
-    height: 100%;
     z-index: 1;
+    height: 100%;
     background: none;
     border: $input-border-width solid $input-border-color;
     border-width: 0 0 $input-border-width;
@@ -42,7 +41,7 @@
     &:hover,
     &:focus {
       background-color: $input-hover;
-      box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+      box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
     }
   }
 
@@ -56,32 +55,34 @@
 
   .duet-date__dialog-content {
     max-width: 100%;
+    min-height: auto;
     padding: 0;
+    background: $white;
   }
 
   .duet-date__mobile {
     margin: 0;
 
     @media (max-width: 35rem) {
-      background: #f4f4f4;
       width: 100%;
+      background: #f4f4f4;
     }
   }
 
   .duet-date__close {
-    background: $white;
     z-index: 1;
     color: $blue;
+    background: $white;
     border: $input-border-width solid $input-border-color;
 
     @media (min-width: 36rem) {
-      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .1);
     }
   }
 
   .duet-date__header {
-    height: 45px;
     position: relative;
+    height: 45px;
     background: #f4f4f4;
   }
 
@@ -100,7 +101,7 @@
 
   .duet-date__select-label {
     height: 45px;
-    padding: 0 0.5rem 0 1rem;
+    padding: 0 .5rem 0 1rem;
     font-size: 1rem;
   }
 
@@ -149,8 +150,8 @@
   .duet-date__day {
     width: 45px;
     height: 45px;
-    box-shadow: none;
     border-radius: 0;
+    box-shadow: none;
 
     &.is-today {
       box-shadow: none;
@@ -178,11 +179,7 @@
       content: none;
     }
   }
-
-  .duet-date__dialog-content {
-    min-height: auto;
-    background: $white;
-  }
+  /* stylelint-enable selector-class-pattern */
 }
 
 // We need the old - removed - BS variables. Redeclaring them here.
