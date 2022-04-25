@@ -1,5 +1,5 @@
 import '../../js/components/timepicker.js'
-import { datepicker } from '../../js/components/datepicker.js'
+import { DEFAULTS, datepicker } from '../../js/components/datepicker.js'
 
 const datepickerExample = () => {
   const standard = document.getElementById('date-standard')
@@ -18,8 +18,41 @@ const datepickerExample = () => {
     return date.getDay() % 6 === 0
   }
 
+  const minmax = document.getElementById('date-minmax')
+  datepicker(minmax)
+
   const disabled = document.getElementById('date-disabled')
   datepicker(disabled)
+
+  const finnish = document.getElementById('date-finnish')
+  datepicker(finnish, {
+    ...DEFAULTS,
+    localization: {
+      buttonLabel: 'Valitse päivämäärä',
+      placeholder: 'pp.kk.vvvv',
+      selectedDateMessage: 'Valittu päivämäärä on',
+      prevMonthLabel: 'Edellinen kuukausi',
+      nextMonthLabel: 'Seuraava kuukausi',
+      monthSelectLabel: 'Kuukausi',
+      yearSelectLabel: 'Vuosi',
+      closeLabel: 'Sulje ikkuna',
+      calendarHeading: 'Valitse päivämäärä',
+      dayNames: [
+        'Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko',
+        'Torstai', 'Perjantai', 'Lauantai'
+      ],
+      monthNames: [
+        'Tammikuu', 'Helmikuu', 'Maaliskuu', 'Huhtikuu',
+        'Toukokuu', 'Kesäkuu', 'Heinäkuu', 'Elokuu',
+        'Syyskuu', 'Lokakuu', 'Marraskuu', 'Joulukuu'
+      ],
+      monthNamesShort: [
+        'Tammi', 'Helmi', 'Maalis', 'Huhti', 'Touko', 'Kesä',
+        'Heinä', 'Elo', 'Syys', 'Loka', 'Marras', 'Joulu'
+      ],
+      locale: 'fi-FI'
+    }
+  })
 }
 
 const timepickerExample = () => {
