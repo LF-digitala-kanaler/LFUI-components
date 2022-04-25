@@ -1,5 +1,191 @@
 @import "bootstrap/scss/utilities/_screenreaders.scss";
 
+:root {
+  --duet-color-primary: $blue;
+  --duet-color-text: inherit;
+  --duet-color-text-active: $black;
+  --duet-color-placeholder: #666;
+  --duet-color-button: $black;
+  --duet-color-surface: $white;
+  --duet-color-overlay: rgba(0, 0, 0, 0.8);
+  --duet-color-border: #eee;
+
+  --duet-font: inherit;
+  --duet-font-normal: normal;
+  --duet-font-bold: bold;
+
+  --duet-radius: 0;
+  --duet-z-index: 4;
+}
+
+/**
+ * 1. Mimic form-control behavior inside of input-group
+ */
+.input-group > duet-date-picker {
+  flex: 1 1 auto; /* 1 */
+  width: 1%; /* 1 */
+}
+
+.duet-date {
+  .duet-date__input {
+    @extend .form-control;
+  }
+
+  .duet-date__toggle {
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    background: none;
+    border: $input-border-width solid $input-border-color;
+    border-width: 0 0 $input-border-width;
+
+    &:hover,
+    &:focus {
+      background-color: $input-hover;
+      box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .input-group & .duet-date__toggle {
+    display: none;
+  }
+
+  .duet-date__dialog {
+    width: auto;
+  }
+
+  .duet-date__dialog-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .duet-date__mobile {
+    margin: 0;
+
+    @media (max-width: 35rem) {
+      background: #f4f4f4;
+      width: 100%;
+    }
+  }
+
+  .duet-date__close {
+    background: $white;
+    z-index: 1;
+    color: $blue;
+    border: $input-border-width solid $input-border-color;
+
+    @media (min-width: 36rem) {
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .duet-date__header {
+    height: 45px;
+    position: relative;
+    background: #f4f4f4;
+  }
+
+  .duet-date__select {
+    margin: 0;
+    color: $blue;
+
+    &:hover {
+      background-color: $input-hover;
+    }
+
+    html body[data-focus-source="key"] &:focus-within {
+      outline: 4px solid $orange;
+    }
+  }
+
+  .duet-date__select-label {
+    height: 45px;
+    padding: 0 0.5rem 0 1rem;
+    font-size: 1rem;
+  }
+
+  .duet-date__nav {
+    color: $blue;
+  }
+
+  .duet-date__prev,
+  .duet-date__next {
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    border-radius: 0;
+    transition: none;
+
+    &:hover {
+      background-color: $input-hover;
+    }
+  }
+
+  .duet-date__table-header {
+    color: #515151;
+    text-transform: capitalize;
+  }
+
+  .duet-date__cell {
+    @include font-smoothing();
+
+    padding: 0;
+    background-color: $white;
+    border: solid 1px var(--duet-color-border);
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .duet-date__row:last-child .duet-date__cell {
+    border-bottom: none;
+  }
+
+  .duet-date__day {
+    width: 45px;
+    height: 45px;
+    box-shadow: none;
+    border-radius: 0;
+
+    &.is-today {
+      box-shadow: none;
+    }
+
+    &[aria-pressed="true"] {
+      font-weight: 700;
+      color: $blue;
+      background-color: $cloud;
+      box-shadow: inset 0 -2px 0 0 $blue;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $input-hover;
+      box-shadow: inset 0 -2px 0 0 $blue;
+    }
+
+    &.is-disabled {
+      box-shadow: none;
+    }
+
+    &:hover::before,
+    &.is-today::before {
+      content: none;
+    }
+  }
+
+  .duet-date__dialog-content {
+    min-height: auto;
+    background: $white;
+  }
+}
+
+
 // We need the old - removed - BS variables. Redeclaring them here.
 $gray-light: $gray-600;
 $gray-lighter: $gray-200;

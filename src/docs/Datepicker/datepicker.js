@@ -1,42 +1,25 @@
+import '../../js/components/timepicker.js'
+import { datepicker } from '../../js/components/datepicker.js'
 
 const datepickerExample = () => {
-  const dateOk = /[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])/
+  const standard = document.getElementById('date-standard')
+  datepicker(standard)
 
-  if (/Mobi/.test(navigator.userAgent)) {
-    $('#datepicker-input, #datetimepicker-disabled-input').prop('type', 'date')
-    $('#timepicker-input').prop('type', 'time')
+  const validated = document.getElementById('date-validated')
+  const validatedGroup = validated.closest('.form-group')
+  const validatedDuetEl = datepicker(validated)
+  validatedDuetEl.addEventListener('duetChange', function ({ details }) {
+    validatedGroup.classList.add('has-valid')
+  })
+
+  const weekdays = document.getElementById('date-weekdays')
+  const weekdaysDuetEl = datepicker(weekdays)
+  weekdaysDuetEl.isDateDisabled = function (date) {
+    return date.getDay() % 6 === 0
   }
 
-  // Hide the datepicker dropdown, called on 'dp.show' event.
-  $('.datepicker').on('dp.show', function () {
-    if (/Mobi/.test(navigator.userAgent)) {
-      $('.datepicker .bootstrap-datetimepicker-widget').css('display', 'none')
-    }
-  })
-
-  $('#datepicker').datetimepicker({
-    locale: 'sv',
-    format: 'YYYY-MM-DD',
-    allowInputToggle: true
-  })
-  $('#datepicker').on('dp.show', function () {
-    $('#datepicker .bootstrap-datetimepicker-widget').attr('aria-hidden', 'true')
-    $('#datepicker button').addClass('active')
-  })
-
-  $('#datepicker').on('dp.hide', function () {
-    $('#datepicker button').removeClass('active')
-  })
-  $('#datepicker').on('dp.hide', function () {
-    $('#datepicker button').removeClass('active')
-    const value = $('#datepicker-input').val()
-    if (dateOk.test(value)) {
-      $(this).find('input').addClass('form-control-valid')
-      $(this).parent().addClass('has-valid')
-    } else {
-      $(this).parent().addClass('has-danger')
-    }
-  })
+  const disabled = document.getElementById('date-disabled')
+  datepicker(disabled)
 }
 
 const timepickerExample = () => {
@@ -70,39 +53,4 @@ const timepickerExample = () => {
   })
 }
 
-const disabledDatesExample = () => {
-  const dateOk = /[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])/
-  $('#datetimepicker-disabled').datetimepicker({
-    format: 'YYYY-MM-DD',
-    locale: 'sv',
-    allowInputToggle: true,
-    defaultDate: '2020/06/02',
-    disabledDates: [
-      '2020/06/04',
-      '2020/06/05',
-      '2020/06/06'
-    ]
-  })
-  $('#datetimepicker-disabled').on('dp.hide', function () {
-    $('#datetimepicker-disabled button').removeClass('active')
-    const value = $('#datetimepicker-disabled-input').val()
-    if (dateOk.test(value)) {
-      $(this).find('input').addClass('form-control-valid')
-      $(this).parent().addClass('has-valid')
-    } else {
-      $(this).parent().addClass('has-danger')
-    }
-  })
-  $('#datetimepicker-disabled').on('dp.show', function () {
-    $('#datetimepicker-disabled .bootstrap-datetimepicker-widget').attr('aria-hidden', 'true')
-    $('#datetimepicker-disabled button').addClass('active')
-  })
-
-  $('#datetimepicker-disabled').on('dp.hide', function () {
-    $('#datetimepicker-disabled button').removeClass('active')
-  })
-
-  // use native on mobile
-}
-
-export { disabledDatesExample, timepickerExample, datepickerExample }
+export { timepickerExample, datepickerExample }

@@ -68,7 +68,7 @@
 // Padding control for the input field.
 .input-group {
   // If the input field is before the addon
-  input.form-control:first-child {
+  input.form-control:first-child:not([type=date]) {
     padding-right: 0;
   }
   // or in the middle between two addons
@@ -130,6 +130,13 @@
  * To-do: support it being before the input, not just after
  */
 
+/**
+ * 1. Bare date input has built-in addon
+ */
+.form-control[type=date] + .input-group-append {
+  display: none;
+}
+
 .input-group-append [class*="btn-"] {
   @include warning("Supports regular 'btn' only");
 }
@@ -152,13 +159,22 @@
   font-size: $font-size-md;
   color: $blue;
   background: $input-bg;
+  border-radius: 0;
   border-width: 0 0 $input-btn-border-width;
   border-bottom: $border-width solid $input-border-color;
   transition: border-color 60ms linear;
 }
 
-.input-group-append:hover > .btn {
+.input-group-append:hover > .btn,
+.input-group-append > .btn:focus {
   background: $input-hover;
+}
+
+.input-group-append > .btn[disabled] {
+  opacity: 1;
+  cursor: not-allowed;
+  color: $input-placeholder-color;
+  background: $input-disabled-bg;
 }
 
 .input-group-append > .btn:active {
@@ -212,12 +228,8 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
  */
 
 .input-group-append > .btn.active {
-  z-index: 3;
-  padding-bottom: $border-width;
-  background: $white !important;
-  border-color: $white !important;
-  border-bottom: 0;
-  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 10%);
+  border-color: $blue;
+  background: $input-hover;
 }
 
 /**

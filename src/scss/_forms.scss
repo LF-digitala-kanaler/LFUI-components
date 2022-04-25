@@ -76,6 +76,10 @@ input[disabled] {
   border-width: 0 0 $input-btn-border-width 0;
   transition: border-color 60ms linear;
 
+  &:disabled {
+    color: $input-placeholder-color;
+  }
+
   &:disabled + .input-group-append,
   &[readonly] + .input-group-append {
     cursor: not-allowed;
@@ -276,19 +280,6 @@ input[disabled] {
     background-color: $input-bg;
     border-color: $green;
   }
-}
-
-/**
- * Date input (hide Webkits default calendar junk)
- */
-
-.form-control[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
-.form-control[type="date"]::input-placeholder {
-  visibility: hidden !important;
 }
 
 .form-check {
