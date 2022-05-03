@@ -54,8 +54,7 @@ export function datepicker (input, opts = input.dataset) {
     })
 
     trigger.addEventListener('click', function () {
-      if (isOpen) customEl.hide(false).then(() => trigger.focus())
-      else customEl.show()
+      if (!isOpen) customEl.show()
     })
   }
 

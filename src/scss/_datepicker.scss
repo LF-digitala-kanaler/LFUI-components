@@ -7,7 +7,7 @@
   --duet-color-placeholder: #666;
   --duet-color-button: $black;
   --duet-color-surface: $white;
-  --duet-color-overlay: rgba(0, 0, 0, .8);
+  --duet-color-overlay: rgba(0, 0, 0, .7);
   --duet-color-border: #eee;
   --duet-font: inherit;
   --duet-font-normal: normal;
@@ -49,15 +49,29 @@
     display: none;
   }
 
-  .duet-date__dialog {
-    width: auto;
+  @media (min-width: 36rem) {
+    .duet-date__dialog {
+      width: calc(100% + 2.9rem);
+      transition: none;
+      will-change: none;
+    }
   }
 
   .duet-date__dialog-content {
     max-width: 100%;
     min-height: auto;
     padding: 0;
+    margin-top: 0;
+    cursor: default;
+    user-select: none;
     background: $white;
+    border: 0;
+    box-shadow:
+      0 .2px .2px rgba(0, 0, 0, .019),
+      0 .4px .6px rgba(0, 0, 0, .027),
+      0 .9px 1.2px rgba(0, 0, 0, .033),
+      0 1.8px 2.6px rgba(0, 0, 0, .041),
+      0 5px 7px rgba(0, 0, 0, .06);
   }
 
   .duet-date__mobile {
@@ -90,6 +104,10 @@
     margin: 0;
     color: $blue;
 
+    span {
+      margin-right: 2px;
+    }
+
     &:hover {
       background-color: $input-hover;
     }
@@ -111,7 +129,7 @@
 
   .duet-date__prev,
   .duet-date__next {
-    width: 45px;
+    width: 49px;
     height: 45px;
     margin: 0;
     border-radius: 0;
@@ -148,8 +166,10 @@
   }
 
   .duet-date__day {
-    width: 45px;
+    width: 100%;
+    min-width: 45px;
     height: 45px;
+    font-size: 1rem;
     border-radius: 0;
     box-shadow: none;
 
@@ -181,6 +201,7 @@
   }
   /* stylelint-enable selector-class-pattern */
 }
+
 
 // We need the old - removed - BS variables. Redeclaring them here.
 $gray-light: $gray-600;
