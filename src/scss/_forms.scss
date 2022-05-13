@@ -212,7 +212,7 @@ input[disabled] {
 
       + .input-group-append,
       + .input-group-append > .input-group-text {
-        background: $input-valid-hover;
+        background: $input-valid-hover !important;
       }
     }
   }

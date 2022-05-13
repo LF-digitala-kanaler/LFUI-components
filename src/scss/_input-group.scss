@@ -198,13 +198,17 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
   background: $cloud;
 
   &:hover {
-    background: $input-valid-hover;
+    background: $input-valid-hover !important;
   }
 }
 
 .has-valid .input-group-append .btn {
   background-color: $cloud !important;
   border-color: $input-group-addon-focus-border-color;
+
+  &:hover {
+    background: $input-valid-hover !important;
+  }
 }
 
 .has-valid .input-group-white .input-group-append .btn {

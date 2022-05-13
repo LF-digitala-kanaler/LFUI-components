@@ -28,6 +28,7 @@
   /* stylelint-disable selector-class-pattern */
   .duet-date__input {
     @extend .form-control;
+    cursor: text;
   }
 
   .duet-date__toggle {
@@ -75,37 +76,79 @@
   }
 
   .duet-date__mobile {
+    padding: .63rem 1.25rem;
     margin: 0;
 
     @media (max-width: 35rem) {
       width: 100%;
-      background: #f4f4f4;
+      background: $offwhite;
     }
   }
 
   .duet-date__close {
+    --btn-close-width: 1.15rem;
+
+    @extend .btn-close;
+    position: absolute;
+    right: 0;
     z-index: 1;
-    color: $blue;
-    background: $white;
-    border: $input-border-width solid $input-border-color;
+    width: calc(100% / 7);
+    padding: 0;
+    margin: -1rem 0;
+
+    svg {
+      display: none;
+    }
 
     @media (min-width: 36rem) {
-      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .1);
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: -.35rem -.35rem 0 0;
+      color: $blue;
+      background: $white;
+      border: 1px solid $input-border-color;
+      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .1);
+      opacity: 0;
+
+      --btn-close-width: 1rem;
+
+      &:focus-within {
+        outline: 0 !important;
+      }
     }
   }
 
   .duet-date__header {
     position: relative;
     height: 45px;
-    background: #f4f4f4;
+    margin-bottom: .5rem;
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+    background: $offwhite;
+  }
+
+  .duet-date__header > div:first-child {
+    min-width: calc((100% / 7) * 2);
+
+    @media (min-width: 36rem) {
+      min-width: auto;
+    }
   }
 
   .duet-date__select {
+    width: 50%;
+    min-width: 4.5rem;
     margin: 0;
     color: $blue;
+    text-align: center;
 
     span {
-      margin-right: 2px;
+      margin-right: 1px;
+    }
+
+    select {
+      font-size: 1rem;
+      border: 0;
     }
 
     &:hover {
@@ -115,34 +158,85 @@
     html body[data-focus-source="key"] &:focus-within {
       outline: 4px solid $orange;
     }
+
+    @media (min-width: 36rem) {
+      width: auto;
+    }
   }
 
   .duet-date__select-label {
     height: 45px;
-    padding: 0 .5rem 0 1rem;
-    font-size: 1rem;
+    padding: 0 .4rem 0 1.25rem;
+    font-size: 1.125rem;
+
+    @media (min-width: 36rem) {
+      padding: 0 .4rem 0 .85rem;
+    }
+
+    svg {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg fill='none' height='21' viewBox='0 0 20 21' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m15.5999 8.47992-1.414-1.414-3.999 3.99998-4.00105-3.99998-1.414 1.414 4 4.00098 1.41505 1.413 1.413-1.413z' fill='%23005aa0' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.25rem;
+    }
   }
 
   .duet-date__nav {
+    display: flex;
+    justify-content: flex-end;
+    width: calc((100% / 7) * 3);
     color: $blue;
   }
 
   .duet-date__prev,
   .duet-date__next {
-    width: 49px;
+    width: calc((100% / 3) - 1px);
+    min-width: 45px;
     height: 45px;
     margin: 0;
     border-radius: 0;
     transition: none;
 
+
     &:hover {
       background-color: $input-hover;
     }
+
+    &::after {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.532 7 20 8.3954 12 16 4 8.3954 5.468 7 12 13.2084 18.532 7Z' fill='%23005AA0'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.5rem;
+      transform: rotate(90deg);
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  .duet-date__next::after {
+    transform: rotate(-90deg);
   }
 
   .duet-date__table-header {
-    color: #515151;
+    padding: 0 0 .5rem;
+    font-size: .875rem;
+    font-weight: 400;
     text-transform: capitalize;
+    letter-spacing: 0;
   }
 
   .duet-date__cell {
@@ -167,14 +261,20 @@
 
   .duet-date__day {
     width: 100%;
-    min-width: 45px;
-    height: 45px;
+    min-width: 44px;
+    height: 44px;
     font-size: 1rem;
     border-radius: 0;
     box-shadow: none;
 
     &.is-today {
       box-shadow: none;
+    }
+
+    &:not(.is-month),
+    &[aria-disabled="true"] {
+      color: $silver;
+      opacity: 1;
     }
 
     &[aria-pressed="true"] {
@@ -187,7 +287,6 @@
     &:hover,
     &:focus {
       background-color: $input-hover;
-      box-shadow: inset 0 -2px 0 0 $blue;
     }
 
     &.is-disabled {
