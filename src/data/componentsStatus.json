@@ -5,13 +5,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "8.0.0",
-          "6.5.0",
-          "5.2.0",
-          "4.2.0",
-          "3.4.0"
-        ]
+        "changedInVersion": ["8.0.0", "6.5.0", "5.2.0", "4.2.0", "3.4.0"]
       }
     },
     {
@@ -19,10 +13,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "8.0.0",
-          "4.2.0"
-        ]
+        "changedInVersion": ["8.0.0", "4.2.0"]
       }
     },
     {
@@ -30,11 +21,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.6.0",
-          "4.2.0",
-          "3.4.0"
-        ]
+        "changedInVersion": ["6.6.0", "4.2.0", "3.4.0"]
       }
     },
     {
@@ -72,11 +59,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.0.0",
-          "5.2.0",
-          "4.1.0"
-        ]
+        "changedInVersion": ["6.0.0", "5.2.0", "4.1.0"]
       }
     },
     {
@@ -84,11 +67,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "5.3.0",
-          "5.2.0",
-          "3.0.0"
-        ]
+        "changedInVersion": ["5.3.0", "5.2.0", "3.0.0"]
       }
     },
     {
@@ -121,9 +100,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "5.2.0"
-        ],
+        "changedInVersion": ["5.2.0"],
         "examples": [
           {
             "name": "White"
@@ -140,6 +117,7 @@
         "new": false,
         "deprecated": false,
         "changedInVersion": [
+          "9.0.0",
           "6.5.0",
           "6.1.0",
           "5.4.0",
@@ -165,9 +143,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.5.0"
-        ],
+        "changedInVersion": ["6.5.0"],
         "examples": [
           {
             "name": "Default"
@@ -340,12 +316,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "5.3.0",
-          "4.2.0",
-          "4.1.0",
-          "3.1.0"
-        ],
+        "changedInVersion": ["5.3.0", "4.2.0", "4.1.0", "3.1.0"],
         "examples": [
           {
             "name": "Blue"
@@ -361,13 +332,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "5.3.0",
-          "5.2.0",
-          "5.1.0",
-          "4.2.0",
-          "4.1.0"
-        ]
+        "changedInVersion": ["5.3.0", "5.2.0", "5.1.0", "4.2.0", "4.1.0"]
       }
     },
     {
@@ -375,11 +340,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "5.3.0",
-          "5.2.0",
-          "3.0.0"
-        ],
+        "changedInVersion": ["5.3.0", "5.2.0", "3.0.0"],
         "examples": [
           {
             "name": "Always Open"
@@ -402,11 +363,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "5.2.0",
-          "5.1.0",
-          "4.2.0"
-        ]
+        "changedInVersion": ["5.2.0", "5.1.0", "4.2.0"]
       }
     },
     {
@@ -414,13 +371,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.5.0",
-          "5.4.0",
-          "5.3.0",
-          "5.2.0",
-          "4.2.0"
-        ],
+        "changedInVersion": ["6.5.0", "5.4.0", "5.3.0", "5.2.0", "4.2.0"],
         "examples": [
           {
             "name": "Desktop"
@@ -436,9 +387,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "3.1.0"
-        ]
+        "changedInVersion": ["3.1.0"]
       }
     },
     {
@@ -475,9 +424,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "8.0.0"
-        ],
+        "changedInVersion": ["8.0.0"],
         "examples": [
           {
             "name": "Select Single"
@@ -493,12 +440,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "8.0.0",
-          "6.7.0",
-          "6.5.0",
-          "3.3.0"
-        ],
+        "changedInVersion": ["8.0.0", "6.7.0", "6.5.0", "3.3.0"],
         "examples": [
           {
             "name": "Alerting"
@@ -517,11 +459,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "8.0.0",
-          "6.4.0",
-          "5.3.0"
-        ],
+        "changedInVersion": ["8.0.0", "6.4.0", "5.3.0"],
         "examples": [
           {
             "name": "Value"
@@ -610,10 +548,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "8.0.0",
-          "7.0.0"
-        ],
+        "changedInVersion": ["8.0.0", "7.0.0"],
         "examples": [
           {
             "name": "Default"
@@ -626,11 +561,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.5.0",
-          "6.4.0",
-          "6.3.0"
-        ]
+        "changedInVersion": ["6.5.0", "6.4.0", "6.3.0"]
       }
     },
     {
@@ -638,10 +569,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.5.0",
-          "6.2.0"
-        ]
+        "changedInVersion": ["6.5.0", "6.2.0"]
       }
     },
     {
@@ -649,10 +577,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": [
-          "6.5.0",
-          "3.0.0"
-        ]
+        "changedInVersion": ["6.5.0", "3.0.0"]
       }
     }
   ]

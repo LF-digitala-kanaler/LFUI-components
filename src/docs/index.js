@@ -2,7 +2,7 @@ import '../js/index.js'
 
 import '../scss/DOCS.scss'
 
-import { datepickerExample, disabledDatesExample, timepickerExample } from './Datepicker/datepicker'
+import { datepickerExample, timepickerExample } from './Datepicker/datepicker'
 import { lineChartExample, lineChartVerticalLine } from './LineChart/lineChart'
 import { barChartExample } from './BarChart/barChart'
 import { calloutExample } from './Callout/callout'
@@ -23,7 +23,6 @@ import { xyPlotExample } from './xyPlot/xyPlot'
 
 // run your functions
 export function initialize () {
-  disabledDatesExample()
   timepickerExample()
   datepickerExample()
   tableExample()

@@ -1,6 +1,10 @@
 @import "bootstrap/scss/_button-group.scss";
 
 .btn-group .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
   padding: $input-padding;
   padding-right: calc($input-padding-right + .5rem);
   padding-left: calc($input-padding-left + .5rem);
@@ -13,30 +17,53 @@
   background-color: $body-bg;
   border: 0;
   border-bottom: 2px solid $gray-200;
-  transition: 100ms 40ms linear;
-  transition-property: border, color;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: 100ms 40ms ease-out;
+  transition-property: border-color, background;
   @include font-smoothing(auto);
 
   &:hover,
   &:active {
     background-color: $input-hover;
     border-color: $blue;
-    @include font-smoothing(auto);
   }
 
   + .btn {
     margin-left: 2px;
   }
 
+  &:not(:last-child) {
+    border-top-right-radius: 0;
+  }
+
+  &:not(:first-child) {
+    border-top-left-radius: 0;
+  }
+
+  /**
+   * Rely on an absolute positioned psudo element for the bolded active text,
+   * to prevent the width of the button to change with the bolded text.
+   */
+
   &.active {
-    color: $blue;
-    text-shadow: 1px 0 0 currentColor;
+    color: transparent;
     background-color: $cloud;
     border-color: $blue;
     @include font-smoothing();
 
     &:hover {
       background-color: $input-valid-hover;
+    }
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      font-weight: 700;
+      color: $blue;
+      text-shadow: none;
+      content: attr(data-text);
+      transform: translateX(-50%);
     }
   }
 
@@ -75,6 +102,19 @@
   flex-basis: 0;
   flex-grow: 1;
   min-height: 40px;
+
+  /* No need for the psudo element fix for stretched buttons */
+
+  &.active {
+    font-weight: 700;
+    color: $blue;
+    text-shadow: none;
+    letter-spacing: -.01em;
+
+    ::after {
+      content: none;
+    }
+  }
 }
 
 /**

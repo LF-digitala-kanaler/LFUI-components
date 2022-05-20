@@ -1,23 +1,18 @@
 import { useEffect } from '@storybook/client-api'
 import Datepicker from './datepicker.html'
 import Timepicker from './timepicker.html'
-import { datepickerExample, timepickerExample, disabledDatesExample } from './datepicker'
+import { datepickerExample, timepickerExample } from './datepicker'
 
 export default {
   title: 'Datepicker'
 }
 
 export const datepicker = () => {
-  useEffect(() => {
-    datepickerExample()
-    disabledDatesExample()
-  }, [])
+  useEffect(datepickerExample, [])
   return Datepicker
 }
 
 export const timepicker = () => {
-  useEffect(() => {
-    timepickerExample()
-  }, [])
+  useEffect(timepickerExample, [])
   return Timepicker
 }

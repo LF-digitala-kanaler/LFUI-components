@@ -3,6 +3,7 @@
   "version": "8.1.0",
   "license": "MIT",
   "dependencies": {
+    "@duetds/date-picker": "^1.4.0",
     "@lf-digitala-kanaler/fonts": "^1.0.3",
     "@lf-digitala-kanaler/lfui-icons": "^2.0.0",
     "bootstrap": "4.3.1",
@@ -63,7 +64,8 @@
   "exports": {
     "./dist/*": "./dist/*",
     ".": "./src/js/index.js",
-    "./select": "./src/js/components/select.js"
+    "./select": "./src/js/components/select.js",
+    "./datepicker": "./src/js/components/datepicker.js"
   },
   "files": [
     "dist",

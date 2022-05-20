@@ -34,6 +34,9 @@ module.exports = {
       }
     }
 
+    const { externals } = config
+    config.externals = { ...externals, jquery: 'jQuery' }
+
     config.module.rules.push(
       {
         test: /\.(sa|sc|c)ss$/,

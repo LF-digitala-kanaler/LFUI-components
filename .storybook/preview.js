@@ -1,5 +1,4 @@
 import '../src/scss/LFUI.scss'
-import 'eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4'
 import '../src/js/index.js'
 
 export const parameters = {

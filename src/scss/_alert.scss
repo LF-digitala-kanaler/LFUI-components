@@ -9,8 +9,11 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 .alert {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+  min-height: 3.2rem;
+  padding-top: 0;
+  padding-bottom: 0;
   font-family: $font-family-base;
   font-weight: 400;
   text-align: left;
@@ -38,7 +41,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 .alert p {
   flex: 1;
-  margin: 0;
+  margin: $alert-padding-y 0;
 }
 
 .alert-header {
@@ -54,14 +57,15 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 /* Action button alignment */
 .alert .btn {
   flex-shrink: 0;
-  margin: -1rem calc(($alert-padding-x - .875rem) * -1) -1rem .5rem;
+  margin: 0 calc(($alert-padding-x - .875rem) * -1) 0 .5rem;
   white-space: nowrap;
 }
 
 /* Icon alignment */
 .alert .icon {
-  top: .23rem;
-  margin: -1rem .5rem -1rem 0;
+  align-self: baseline;
+  min-height: 3.2rem;
+  margin-right: .5rem;
 }
 
 .alert-success {
