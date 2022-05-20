@@ -33,16 +33,14 @@ module.exports = {
     hints: false
   },
   output: {
+    asyncChunks: false,
     path: path.resolve(__dirname, 'dist')
   },
   externals: {
     jquery: 'jQuery'
   },
   optimization: {
-    minimizer: [
-      '...',
-      new CssMinimizerPlugin()
-    ]
+    minimizer: ['...', new CssMinimizerPlugin()]
   },
   plugins: [
     // copy html files used in LFDS to show examples
