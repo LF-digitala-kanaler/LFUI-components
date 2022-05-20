@@ -22,7 +22,7 @@ import { valueboxExample } from './ValueBox/valuebox'
 import { xyPlotExample } from './xyPlot/xyPlot'
 
 // run your functions
-export function initialize() {
+export function initialize () {
   timepickerExample()
   datepickerExample()
   tableExample()
