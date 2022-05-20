@@ -3,56 +3,86 @@ import { DEFAULTS, datepicker } from '../../js/components/datepicker.js'
 
 const datepickerExample = () => {
   const standard = document.getElementById('date-standard')
-  datepicker(standard)
+  if (standard) datepicker(standard)
 
   const validated = document.getElementById('date-validated')
-  const validatedGroup = validated.closest('.form-group')
-  const validatedDuetEl = datepicker(validated)
-  validatedDuetEl.addEventListener('duetChange', function ({ details }) {
-    validatedGroup.classList.add('has-valid')
-  })
+  if (validated) {
+    const validatedGroup = validated.closest('.form-group')
+    const validatedDuetEl = datepicker(validated)
+    validatedDuetEl.addEventListener('duetChange', function ({ details }) {
+      validatedGroup.classList.add('has-valid')
+    })
+  }
 
   const weekdays = document.getElementById('date-weekdays')
-  const weekdaysDuetEl = datepicker(weekdays)
-  weekdaysDuetEl.isDateDisabled = function (date) {
-    return date.getDay() % 6 === 0
+  if (weekdays) {
+    const weekdaysDuetEl = datepicker(weekdays)
+    weekdaysDuetEl.isDateDisabled = function (date) {
+      return date.getDay() % 6 === 0
+    }
   }
 
   const minmax = document.getElementById('date-minmax')
-  datepicker(minmax)
+  if (minmax) datepicker(minmax)
 
   const disabled = document.getElementById('date-disabled')
-  datepicker(disabled)
+  if (disabled) datepicker(disabled)
 
   const finnish = document.getElementById('date-finnish')
-  datepicker(finnish, {
-    ...DEFAULTS,
-    localization: {
-      buttonLabel: 'Valitse päivämäärä',
-      placeholder: 'pp.kk.vvvv',
-      selectedDateMessage: 'Valittu päivämäärä on',
-      prevMonthLabel: 'Edellinen kuukausi',
-      nextMonthLabel: 'Seuraava kuukausi',
-      monthSelectLabel: 'Kuukausi',
-      yearSelectLabel: 'Vuosi',
-      closeLabel: 'Sulje ikkuna',
-      calendarHeading: 'Valitse päivämäärä',
-      dayNames: [
-        'Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko',
-        'Torstai', 'Perjantai', 'Lauantai'
-      ],
-      monthNames: [
-        'Tammikuu', 'Helmikuu', 'Maaliskuu', 'Huhtikuu',
-        'Toukokuu', 'Kesäkuu', 'Heinäkuu', 'Elokuu',
-        'Syyskuu', 'Lokakuu', 'Marraskuu', 'Joulukuu'
-      ],
-      monthNamesShort: [
-        'Tammi', 'Helmi', 'Maalis', 'Huhti', 'Touko', 'Kesä',
-        'Heinä', 'Elo', 'Syys', 'Loka', 'Marras', 'Joulu'
-      ],
-      locale: 'fi-FI'
-    }
-  })
+  if (finnish) {
+    datepicker(finnish, {
+      ...DEFAULTS,
+      localization: {
+        buttonLabel: 'Valitse päivämäärä',
+        placeholder: 'pp.kk.vvvv',
+        selectedDateMessage: 'Valittu päivämäärä on',
+        prevMonthLabel: 'Edellinen kuukausi',
+        nextMonthLabel: 'Seuraava kuukausi',
+        monthSelectLabel: 'Kuukausi',
+        yearSelectLabel: 'Vuosi',
+        closeLabel: 'Sulje ikkuna',
+        calendarHeading: 'Valitse päivämäärä',
+        dayNames: [
+          'Sunnuntai',
+          'Maanantai',
+          'Tiistai',
+          'Keskiviikko',
+          'Torstai',
+          'Perjantai',
+          'Lauantai'
+        ],
+        monthNames: [
+          'Tammikuu',
+          'Helmikuu',
+          'Maaliskuu',
+          'Huhtikuu',
+          'Toukokuu',
+          'Kesäkuu',
+          'Heinäkuu',
+          'Elokuu',
+          'Syyskuu',
+          'Lokakuu',
+          'Marraskuu',
+          'Joulukuu'
+        ],
+        monthNamesShort: [
+          'Tammi',
+          'Helmi',
+          'Maalis',
+          'Huhti',
+          'Touko',
+          'Kesä',
+          'Heinä',
+          'Elo',
+          'Syys',
+          'Loka',
+          'Marras',
+          'Joulu'
+        ],
+        locale: 'fi-FI'
+      }
+    })
+  }
 }
 
 const timepickerExample = () => {
@@ -67,7 +97,10 @@ const timepickerExample = () => {
     }
   })
   $('#timepicker-input').on('dp.show', function () {
-    $('#timepicker .bootstrap-datetimepicker-widget').attr('aria-hidden', 'true')
+    $('#timepicker .bootstrap-datetimepicker-widget').attr(
+      'aria-hidden',
+      'true'
+    )
     $('#timepicker button').addClass('active')
   })
 
