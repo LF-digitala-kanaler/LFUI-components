@@ -57,7 +57,8 @@
     "build-lfui": "webpack --mode production",
     "test": "npm run lint:scss && npm run lint:js",
     "lint:js": "standard",
-    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss --cache --cache-location .cache/.stylelintcache --rd"
+    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss --cache --cache-location .cache/.stylelintcache --rd",
+    "format": "standard --fix && stylelint src/scss/*.scss src/scss/**/*.scss --fix"
   },
   "main": "dist/lfui.js",
   "style": "dist/lfui.css",
