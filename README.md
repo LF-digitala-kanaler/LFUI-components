@@ -159,7 +159,7 @@ npm test
   - Tag version example: v5.0.0
   - Release Title example: Components 5.0.0
 * Creating a new release will automatically publish a new package version to GitHub Packages.
-* Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo](lfds-repository).
+* Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo][lfds-repository].
 * If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lfds-repository] readme.
 * Deploy the new version of LFDS.
 
