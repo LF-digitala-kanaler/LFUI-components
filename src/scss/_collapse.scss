@@ -28,7 +28,7 @@ $collapse-duration: 350ms;
     cursor: pointer;
     content: "";
     background-position: center;
-    // background-color: currentColor;
+    // background-color: currentcolor;
     background-size: 11px;
 
     @include glyph-chevron-down($blue);
