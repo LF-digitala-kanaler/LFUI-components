@@ -11,10 +11,10 @@
   overflow: hidden;
   font-size: 1em;
   line-height: 1;
-  color: currentColor;
+  color: currentcolor;
   text-align: center;
   text-indent: -100vw;
-  border: $avatar-border-width solid currentColor;
+  border: $avatar-border-width solid currentcolor;
   border-radius: 50%;
 }
 
@@ -24,7 +24,7 @@
   left: 50%;
   font-size: .85em;
   font-weight: 700;
-  color: currentColor;
+  color: currentcolor;
   text-indent: .05em;
   text-transform: uppercase;
   letter-spacing: .05em;

@@ -3,7 +3,7 @@ $btn-close-width: .875rem;
 $btn-close-height: $btn-close-width;
 $btn-close-padding-x: .25em;
 $btn-close-padding-y: $btn-close-padding-x;
-$btn-close-color: currentColor;
+$btn-close-color: currentcolor;
 $btn-close-bg: "";
 $btn-close-opacity: 1;
 $btn-close-hover-opacity: 1;
@@ -35,7 +35,7 @@ $btn-close-focus-opacity: 1;
   height: var(--#{$variable-prefix}btn-close-path-width);
   margin: calc(var(--#{$variable-prefix}btn-close-path-width) / 2 * -1) 0 0 calc(var(--#{$variable-prefix}btn-close-width) / 2 * -1);
   content: "";
-  background: currentColor;
+  background: currentcolor;
   transform: rotate(45deg);
 }
 

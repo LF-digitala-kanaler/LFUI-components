@@ -36,7 +36,7 @@ $pie-chart-transition: 1500ms 275ms cubic-bezier(.6, .75, .3, 1);
 
 .pie-figure {
   fill: transparent;
-  stroke: currentColor;
+  stroke: currentcolor;
   transition: $pie-chart-transition;
   transition-property: stroke-dashoffset;
   transform-origin: 50% 50%;
