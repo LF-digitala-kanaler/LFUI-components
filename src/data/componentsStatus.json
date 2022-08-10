@@ -396,6 +396,7 @@
         "new": false,
         "deprecated": false,
         "changedInVersion": [
+          "9.0.0",
           "6.5.0",
           "6.1.0",
           "5.4.0",
@@ -424,7 +425,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": ["8.0.0"],
+        "changedInVersion": ["9.0.0"],
         "examples": [
           {
             "name": "Select Single"
