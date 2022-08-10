@@ -28,6 +28,11 @@
   .select.initialized.inside.show & {
     z-index: 1004;
   }
+
+  /* For single select, with inside label */
+  .has-valid .select:not([multiple]).initialized.inside & {
+    opacity: 0;
+  }
 }
 
 /* Ignore "inside" option on noscript touch devices */
@@ -125,6 +130,11 @@
   /* Camouflage toggle button to not interfere with "inside" label */
   .select.inside & {
     color: transparent;
+  }
+
+  /* For single select, show the resulte when valid */
+  .form-group.has-valid .select:not([multiple]).inside & {
+    color: inherit;
   }
 
   /* Fallback to native select elements on touch devices */
