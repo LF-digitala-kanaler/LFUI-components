@@ -5,13 +5,13 @@
  */
 
 .row-tight {
-  margin-right: calc($grid-gutter-tight / -2);
-  margin-left: calc($grid-gutter-tight / -2);
+  margin-right: calc(#{$grid-gutter-tight} / -2);
+  margin-left: calc(#{$grid-gutter-tight} / -2);
 }
 
 .row-tight [class*="col-"] {
-  padding-right: calc($grid-gutter-tight / 2);
-  padding-left: calc($grid-gutter-tight / 2);
+  padding-right: calc(#{$grid-gutter-tight} / 2);
+  padding-left: calc(#{$grid-gutter-tight} / 2);
 }
 
 /**

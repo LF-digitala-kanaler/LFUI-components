@@ -71,12 +71,12 @@
   display: block;
   width: 100%;
   height: $input-height;
-  padding: $input-padding-y $input-padding-x calc($input-padding-y - $input-btn-border-width);
+  padding: $input-padding-y $input-padding-x calc(#{$input-padding-y} - #{$input-btn-border-width});
   color: $input-color;
   text-align: left;
   user-select: none;
   background-color: $input-bg;
-  background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
+  background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
   background-size: 18px 12px;
   border: $input-border-color solid;
   border-width: 0 0 $input-btn-border-width;
@@ -152,7 +152,7 @@
   display: block;
   width: calc(100% - 1.7rem);
   height: 1.5rem;
-  padding-right: calc($input-padding-x + .75rem);
+  padding-right: calc(#{$input-padding-x} + .75rem);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: pre;
@@ -210,7 +210,7 @@
       bottom: 0;
       z-index: 1;
       height: auto;
-      transform: translateY(calc(100% - $input-height));
+      transform: translateY(calc(100% - #{$input-height}));
     }
 
     /* Visually hidden but keyboard accessible */
@@ -335,8 +335,8 @@
     width: 100%;
     height: auto;
     min-height: $input-height;
-    padding-right: calc($input-padding-x * 2 + 18px);
-    background-position: calc(100% - $input-padding-x + 1px) calc($input-height / 2 - 6px + $input-btn-border-width / 2 + 1px);
+    padding-right: calc(#{$input-padding-x} * 2 + 18px);
+    background-position: calc(100% - #{$input-padding-x} + 1px) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2 + 1px);
     background-size: 18px 12px;
 
     .text-muted {
@@ -350,7 +350,7 @@
       width: 100%;
       height: auto;
       min-height: $input-height;
-      background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
+      background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
     }
   }
 
@@ -386,8 +386,8 @@
       position: absolute;
       top: 50%;
       left: .875rem;
-      width: calc(1.13rem - $border-width * 2);
-      height: calc(1.13rem - $border-width * 2);
+      width: calc(1.13rem - #{$border-width} * 2);
+      height: calc(1.13rem - #{$border-width} * 2);
       content: "";
       opacity: 0;
       transition: opacity ease-in-out .15s;
@@ -403,7 +403,7 @@
     }
 
     .select-list .select-list &::after {
-      left: calc($input-padding-x + 2.0625rem);
+      left: calc(#{$input-padding-x} + 2.0625rem);
     }
 
     &.selected::after {

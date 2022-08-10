@@ -6,8 +6,8 @@
   justify-content: center;
   min-width: 4rem;
   padding: $input-padding;
-  padding-right: calc($input-padding-right + .5rem);
-  padding-left: calc($input-padding-left + .5rem);
+  padding-right: calc(#{$input-padding-right} + .5rem);
+  padding-left: calc(#{$input-padding-left} + .5rem);
   margin-bottom: 0;
   font-family: $font-family-base;
   font-size: $font-size-md;

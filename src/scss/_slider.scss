@@ -4,7 +4,7 @@
   width: 100%;
   padding: 0;
   margin: 10px 0;
-  background: linear-gradient(to right, $blue 0%, $blue calc(1% * var(--progress, 0)), $track-color calc(1% * var(--progress, 0)));
+  background: linear-gradient(to right, $blue 0%, $blue calc(1% * var(--progress, 0)), #{$track-color} calc(1% * var(--progress, 0)));
   appearance: none;
 
   // input[type="range"] is one of those fun html-elements that render

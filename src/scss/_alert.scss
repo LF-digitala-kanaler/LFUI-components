@@ -45,13 +45,13 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 /* Minor alignment tweak */
 .alert-dismissible .btn-close {
-  padding: calc($alert-padding-y * 1.35) calc($alert-padding-y + .125rem);
+  padding: calc(#{$alert-padding-y} * 1.35) calc(#{$alert-padding-y} + .125rem);
 }
 
 /* Action button alignment */
 .alert .btn {
   flex-shrink: 0;
-  margin: 0 calc(($alert-padding-x - .875rem) * -1) 0 .5rem;
+  margin: 0 calc((#{$alert-padding-x} - .875rem) * -1) 0 .5rem;
   white-space: nowrap;
 }
 
@@ -108,8 +108,8 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 /* Minor alignment tweak in this case as well */
 .alert-banner .btn-close {
-  top: calc($alert-padding-y - .9rem);
-  right: calc(($alert-dismissible-padding-r + .125rem) * -1);
+  top: calc(#{$alert-padding-y} - .9rem);
+  right: calc((#{$alert-dismissible-padding-r} + .125rem) * -1);
 }
 
 /* With shadow */
