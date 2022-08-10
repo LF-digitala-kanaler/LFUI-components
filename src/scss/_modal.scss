@@ -43,7 +43,7 @@
   --btn-close-width: 1.25rem;
 
   order: 1;
-  margin-right: calc($btn-close-padding-x * -1);
+  margin-right: calc(#{$btn-close-padding-x} * -1);
   color: $navy;
 }
 
