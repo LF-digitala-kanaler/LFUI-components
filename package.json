@@ -2,6 +2,15 @@
   "name": "@lf-digitala-kanaler/lfui-components",
   "version": "9.0.0",
   "license": "MIT",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "npm run build-lfui && build-storybook -o public",
+    "build-lfui": "webpack --mode production",
+    "test": "npm run lint:scss && npm run lint:js",
+    "lint:js": "standard",
+    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss --cache --cache-location .cache/.stylelintcache --rd",
+    "format": "standard --fix && stylelint src/scss/*.scss src/scss/**/*.scss --fix"
+  },
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
     "@lf-digitala-kanaler/fonts": "^1.0.3",
@@ -50,15 +59,6 @@
     "stylelint-config-twbs-bootstrap": "^3.0.1",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
-  },
-  "scripts": {
-    "start": "start-storybook -p 6006",
-    "build": "npm run build-lfui && build-storybook -o public",
-    "build-lfui": "webpack --mode production",
-    "test": "npm run lint:scss && npm run lint:js",
-    "lint:js": "standard",
-    "lint:scss": "stylelint src/scss/*.scss src/scss/**/*.scss --cache --cache-location .cache/.stylelintcache --rd",
-    "format": "standard --fix && stylelint src/scss/*.scss src/scss/**/*.scss --fix"
   },
   "main": "dist/lfui.js",
   "style": "dist/lfui.css",
