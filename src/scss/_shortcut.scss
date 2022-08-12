@@ -91,58 +91,58 @@
 
 .shortcut-alert,
 .shortcut-alert.shortcut-info {
-  color: $color-info-text;
+  color: $color-info-dark;
   text-align: left;
   background-color: $color-info;
 
   &::after {
-    @include btn-arrow-standard-right($color-info-text);
+    @include btn-arrow-standard-right($color-info-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $color-info-text;
+    box-shadow: inset 0 -2px 0 $color-info-dark;
   }
 }
 
 .shortcut-alert.shortcut-success {
-  color: $color-success-text;
+  color: $color-success-dark;
   text-align: left;
   background-color: $color-success;
 
   &::after {
-    @include btn-arrow-standard-right($color-success-text);
+    @include btn-arrow-standard-right($color-success-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $color-success-text;
+    box-shadow: inset 0 -2px 0 $color-success-dark;
   }
 }
 
 .shortcut-alert.shortcut-warning {
-  color: $color-warning-text;
+  color: $color-warning-dark;
   text-align: left;
   background-color: $color-warning;
 
   &::after {
-    @include btn-arrow-standard-right($color-warning-text);
+    @include btn-arrow-standard-right($color-warning-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $color-warning-text;
+    box-shadow: inset 0 -2px 0 $color-warning-dark;
   }
 }
 
 .shortcut-alert.shortcut-danger {
-  color: $color-danger-text;
+  color: $color-danger-dark;
   text-align: left;
   background-color: $color-danger;
 
   &::after {
-    @include btn-arrow-standard-right($color-danger-text);
+    @include btn-arrow-standard-right($color-danger-dark);
   }
 
   &:hover {
-    box-shadow: inset 0 -2px 0 $color-danger-text;
+    box-shadow: inset 0 -2px 0 $color-danger-dark;
   }
 }
 

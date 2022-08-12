@@ -31,20 +31,20 @@
 
 .tag-info {
   --#{$prefix}tag-bg: #{$color-info};
-  --#{$prefix}tag-color: #{$color-info-text};
+  --#{$prefix}tag-color: #{$color-info-dark};
 }
 
 .tag-success {
   --#{$prefix}tag-bg: #{$color-success};
-  --#{$prefix}tag-color: #{$color-success-text};
+  --#{$prefix}tag-color: #{$color-success-dark};
 }
 
 .tag-warning {
   --#{$prefix}tag-bg: #{$color-warning};
-  --#{$prefix}tag-color: #{$color-warning-text};
+  --#{$prefix}tag-color: #{$color-warning-dark};
 }
 
 .tag-danger {
   --#{$prefix}tag-bg: #{$color-danger};
-  --#{$prefix}tag-color: #{$color-danger-text};
+  --#{$prefix}tag-color: #{$color-danger-dark};
 }
