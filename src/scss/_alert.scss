@@ -33,7 +33,8 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   opacity: .6;
 }
 
-.alert p {
+.alert p,
+.alert-content {
   flex: 1;
   margin: $alert-padding-y 0;
 }
