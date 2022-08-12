@@ -27,24 +27,6 @@
 .link-complex {
   cursor: pointer;
 
-  // If a heading is a complex target, don't underline it.
-  h1,
-  .h1,
-  h2,
-  .h2,
-  h3,
-  .h3,
-  h4,
-  .h4,
-  h5,
-  .h5,
-  h6,
-  .h6 {
-    .link-complex-target {
-      background-image: none;
-    }
-  }
-
   .link-complex-target {
     @include link-still();
   }
@@ -102,7 +84,7 @@
 .link-adaptive {
   @extend .link;
 
-  background-image: none;
+  text-decoration: none;
 }
 
 .link-adaptive,
@@ -128,7 +110,7 @@
 .link-no-underline:hover,
 .link-no-underline:focus,
 .link-no-underline:active {
-  background-image: none !important;
+  text-decoration: none !important;
 }
 
 .link-dark {
@@ -160,13 +142,12 @@
 .icon-link,
 .icon-link:hover,
 .icon-link:focus {
-  background-image: none;
+  text-decoration: none;
 }
 
 .icon-link:hover,
 .icon-link:focus {
   > .icon-link-text {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentcolor 50%) repeat-x 0 100%;
-    background-size: 2px 2px;
+    text-decoration: underline;
   }
 }
