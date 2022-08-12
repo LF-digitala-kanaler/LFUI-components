@@ -123,7 +123,7 @@ $tooltip-distance: 10px;
 .distribution-value:nth-child(4n+4),
 .distribution-title.distribution-baby:nth-child(1n),
 .distribution-title:nth-of-type(4n+4) {
-  @include distribution-color-value($baby, $color-info-text);
+  @include distribution-color-value($baby, $color-info-dark);
 }
 
 .distribution-value.distribution-red:nth-child(1n),
@@ -226,17 +226,17 @@ $tooltip-distance: 10px;
 
 .distribution-title.distribution-green-stripes,
 .distribution-value.distribution-green-stripes {
-  @include distribution-color-value-bordered($color-success, $color-success-text, $color-success-text);
+  @include distribution-color-value-bordered($color-success, $color-success-dark, $color-success-dark);
 }
 
 .distribution-title.distribution-yellow-stripes,
 .distribution-value.distribution-yellow-stripes {
-  @include distribution-color-value-bordered($color-warning, $color-warning-text, $color-warning-text);
+  @include distribution-color-value-bordered($color-warning, $color-warning-dark, $color-warning-dark);
 }
 
 .distribution-title.distribution-red-stripes,
 .distribution-value.distribution-red-stripes {
-  @include distribution-color-value-bordered($color-danger, $color-danger-text, $color-danger-text);
+  @include distribution-color-value-bordered($color-danger, $color-danger-dark, $color-danger-dark);
 }
 
 /**
