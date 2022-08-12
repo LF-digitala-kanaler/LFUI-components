@@ -1,7 +1,7 @@
 .tag {
-  --#{$variable-prefix}tag-bg: #{$tint};
-  --#{$variable-prefix}tag-color: #{$gray};
-  --#{$variable-prefix}tag-font-size: #{$font-size-sm};
+  --#{$prefix}tag-bg: #{$tint};
+  --#{$prefix}tag-color: #{$gray};
+  --#{$prefix}tag-font-size: #{$font-size-sm};
 
   display: inline-flex;
   align-items: center;
@@ -10,11 +10,11 @@
   height: 2rem;
   padding: 0 1rem;
   overflow: hidden;
-  font-size: var(--#{$variable-prefix}tag-font-size);
-  color: var(--#{$variable-prefix}tag-color);
+  font-size: var(--#{$prefix}tag-font-size);
+  color: var(--#{$prefix}tag-color);
   white-space: nowrap;
   cursor: default;
-  background: var(--#{$variable-prefix}tag-bg);
+  background: var(--#{$prefix}tag-bg);
   border-radius: 10rem;
   @include font-smoothing();
 }
@@ -25,26 +25,26 @@
 }
 
 .tag-lg {
-  --#{$variable-prefix}tag-font-size: #{$font-size-md};
+  --#{$prefix}tag-font-size: #{$font-size-md};
   height: 2.5rem;
 }
 
 .tag-info {
-  --#{$variable-prefix}tag-bg: #{$color-info};
-  --#{$variable-prefix}tag-color: #{$color-info-text};
+  --#{$prefix}tag-bg: #{$color-info};
+  --#{$prefix}tag-color: #{$color-info-text};
 }
 
 .tag-success {
-  --#{$variable-prefix}tag-bg: #{$color-success};
-  --#{$variable-prefix}tag-color: #{$color-success-text};
+  --#{$prefix}tag-bg: #{$color-success};
+  --#{$prefix}tag-color: #{$color-success-text};
 }
 
 .tag-warning {
-  --#{$variable-prefix}tag-bg: #{$color-warning};
-  --#{$variable-prefix}tag-color: #{$color-warning-text};
+  --#{$prefix}tag-bg: #{$color-warning};
+  --#{$prefix}tag-color: #{$color-warning-text};
 }
 
 .tag-danger {
-  --#{$variable-prefix}tag-bg: #{$color-danger};
-  --#{$variable-prefix}tag-color: #{$color-danger-text};
+  --#{$prefix}tag-bg: #{$color-danger};
+  --#{$prefix}tag-color: #{$color-danger-text};
 }
