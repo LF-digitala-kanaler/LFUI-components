@@ -1,15 +1,19 @@
-/* Configure Bootstrap */
-$btn-close-width: .875rem;
-$btn-close-height: $btn-close-width;
-$btn-close-padding-x: .25em;
-$btn-close-padding-y: $btn-close-padding-x;
-$btn-close-color: currentcolor;
-$btn-close-bg: "";
-$btn-close-opacity: 1;
-$btn-close-hover-opacity: 1;
-$btn-close-focus-opacity: 1;
+// scss-docs-start close-variables
+$btn-close-width:            .875rem;
+$btn-close-height:           $btn-close-width;
+$btn-close-padding-x:        .25em;
+$btn-close-padding-y:        $btn-close-padding-x;
+$btn-close-color:            currentcolor;
+$btn-close-bg:               "";
+$btn-close-focus-shadow:     none;
+$btn-close-opacity:          1;
+$btn-close-hover-opacity:    1;
+$btn-close-focus-opacity:    1;
+$btn-close-disabled-opacity: 1;
+$btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%);
+// scss-docs-end close-variables
 
-@import "_close-bs5.scss";
+@import "bootstrap5/scss/_close.scss";
 
 /**
  * Replace the Bootstrap svg background approach with elements that

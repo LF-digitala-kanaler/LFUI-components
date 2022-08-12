@@ -16,6 +16,7 @@
     "@lf-digitala-kanaler/fonts": "^1.0.3",
     "@lf-digitala-kanaler/lfui-icons": "^2.0.0",
     "bootstrap": "4.3.1",
+    "bootstrap5": "npm:bootstrap@^5.2.0",
     "eonasdan-custom-bootstrap-datetimepicker-with-bootstrap-4": "^1.0.0",
     "jquery": "^3.4.1",
     "vivus": "0.4.6"
