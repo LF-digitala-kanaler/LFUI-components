@@ -12,7 +12,7 @@ $alert-color-scale: 40% !default;
 $alert-dismissible-padding-r: $alert-padding-x * 2;
 // scss-docs-end alert-variables
 
-@import "_alert-bs5.scss";
+@import "bootstrap5/scss/_alert.scss";
 
 .alert {
   display: flex;
@@ -55,15 +55,16 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   font-weight: 700;
 }
 
-/* Minor alignment tweak */
+/* Minor alignment tweak to close button */
 .alert-dismissible .btn-close {
-  padding: calc(#{$alert-padding-y} * 1.35) calc(#{$alert-padding-y} + .125rem);
+  padding: 1.15rem calc(0.9375rem + .125rem);
   color: $white;
 }
 
 /* Action button alignment */
 .alert .btn {
   flex-shrink: 0;
+  align-self: center;
   margin: 0 calc((#{$alert-padding-x} - .875rem) * -1) 0 .5rem;
   color: $white;
   white-space: nowrap;
