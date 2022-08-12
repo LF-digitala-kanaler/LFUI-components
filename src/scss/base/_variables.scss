@@ -209,7 +209,7 @@ $spacers: (
 $paragraph-margin-bottom: 1rem;
 
 $link-color: $blue;
-$link-decoration: none;
+$link-decoration: underline;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
 

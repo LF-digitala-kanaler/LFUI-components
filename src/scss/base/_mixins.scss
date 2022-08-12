@@ -81,27 +81,20 @@
 @mixin link-still() {
   padding: 0;
   color: $link-color;
-  text-decoration: none;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentcolor 50%) repeat-x 0 100%;
-  background-size: 2px 2px;
-  border: 0;
+  text-decoration: underline;
 }
 
 @mixin link-hover-focus() {
   color: $link-color;
-  text-decoration: none;
   outline: 0;
 }
 
 @mixin link-hover() {
   color: $link-hover-color;
-  text-decoration: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentcolor 50%);
 }
 
 @mixin link-active() {
   color: #02234a;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0%) 50%, currentcolor 50%);
 }
 
 @mixin link() {
@@ -125,7 +118,7 @@
 
 @mixin reset-button() {
   padding: 0;
-  background: transparent;
+  background: none;
   border: 0;
   outline: 0;
   -webkit-appearence: none;
@@ -134,14 +127,11 @@
 @mixin reset-link() {
   color: inherit;
   text-decoration: inherit;
-  background-image: none;
   outline: 0;
 
   &:hover,
   &:focus {
     color: inherit;
-    text-decoration: inherit;
-    background-image: none;
   }
 
   &:active {

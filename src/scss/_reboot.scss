@@ -6,8 +6,6 @@
 
 @import "bootstrap/scss/_reboot.scss";
 
-$link-decoration: none;
-
 /**
  * 1. Most waypoint (when-in-view) js libraries requires `body` to be relative.
  * 2. Force scrollbars to prevent page jumping when content height is altered.
@@ -35,14 +33,13 @@ button,
 }
 
 /**
- * Link styles
- *
- * Inspired from:
- * medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
+ * 1. Sorry, but `text-decoration` override `text-decoration-thickness`
+ * 2. Force scrollbars to prevent page jumping when content height is altered.
  */
 
-a {
-  @include link();
+* {
+  text-decoration-thickness: 1px !important; /* 1 */
+  text-underline-offset: .1em;
 }
 
 [role="link"] {
