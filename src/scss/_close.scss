@@ -17,9 +17,9 @@ $btn-close-focus-opacity: 1;
  */
 
 .btn-close {
-  --#{$variable-prefix}btn-close-active-opacity: .6;
-  --#{$variable-prefix}btn-close-width: #{$btn-close-width};
-  --#{$variable-prefix}btn-close-path-width: .125rem;
+  --#{$prefix}btn-close-active-opacity: .6;
+  --#{$prefix}btn-close-width: #{$btn-close-width};
+  --#{$prefix}btn-close-path-width: .125rem;
 
   position: relative;
   background: transparent;
@@ -31,9 +31,9 @@ $btn-close-focus-opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: var(--#{$variable-prefix}btn-close-width);
-  height: var(--#{$variable-prefix}btn-close-path-width);
-  margin: calc(var(--#{$variable-prefix}btn-close-path-width) / 2 * -1) 0 0 calc(var(--#{$variable-prefix}btn-close-width) / 2 * -1);
+  width: var(--#{$prefix}btn-close-width);
+  height: var(--#{$prefix}btn-close-path-width);
+  margin: calc(var(--#{$prefix}btn-close-path-width) / 2 * -1) 0 0 calc(var(--#{$prefix}btn-close-width) / 2 * -1);
   content: "";
   background: currentcolor;
   transform: rotate(45deg);
@@ -44,6 +44,6 @@ $btn-close-focus-opacity: 1;
 }
 
 .btn-close:active {
-  opacity: var(--#{$variable-prefix}btn-close-active-opacity);
+  opacity: var(--#{$prefix}btn-close-active-opacity);
   transition: none;
 }
