@@ -57,7 +57,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 /* Minor alignment tweak to close button */
 .alert-dismissible .btn-close {
-  padding: 1.15rem calc(0.9375rem + .125rem);
+  padding: 1.15rem calc(.9375rem + .125rem);
   color: $white;
 }
 

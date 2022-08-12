@@ -16,6 +16,11 @@
   color: $blue;
 
   @include font-smoothing();
+
+  em {
+    font-style: normal;
+    color: var(--#{$prefix}red);
+  }
 }
 
 .display-1 {
@@ -45,10 +50,6 @@ h6,
 
   &:first-child {
     margin-top: 0;
-  }
-
-  a {
-    background-image: none;
   }
 }
 
@@ -96,11 +97,6 @@ h6,
   font-family: $font-family-sans-serif;
   font-size: 18px;
   color: $black;
-}
-
-// not documentet in lfds
-.payoff-alternative {
-  color: $blue;
 }
 
 /**
