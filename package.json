@@ -2,6 +2,10 @@
   "name": "@lf-digitala-kanaler/lfui-components",
   "version": "9.0.0",
   "license": "MIT",
+  "engines" : {
+    "npm" : "8",
+    "node" : "16"
+  },
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "npm run build-lfui && build-storybook -o public",
