@@ -8,6 +8,7 @@
 
 .nav-link {
   padding-bottom: calc(#{$nav-link-padding-y} - 2px);
+  text-decoration: none;
 }
 
 .nav:not(.navbar-nav):not(.nav-tabs):not(.nav-pills):not(.nav-tight):not(.nav-stacked):not(.nav-two-col):not(.nav-sub):not(.nav-sub-gray) {

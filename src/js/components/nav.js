@@ -1,4 +1,4 @@
-import 'bootstrap/js/src/tab'
+import 'bootstrap5/js/src/tab'
 
 $(document).on('click', '[data-tabs="overflow"] > .nav a', onClick)
 

@@ -1,1 +1,1 @@
-import 'bootstrap/js/src/button'
+import 'bootstrap5/js/src/button'

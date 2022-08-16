@@ -1,13 +1,13 @@
-import 'bootstrap/js/src/util'
-import 'bootstrap/js/src/collapse'
+import 'bootstrap5/js/src/util'
+import 'bootstrap5/js/src/collapse'
 
 const timelineExample = () => {
   const EXPANDED_ATTR = 'aria-expanded'
-  $(document).on('click', '[data-toggle="collapse:timeline"]', onClick)
+  $(document).on('click', '[data-bs-toggle="collapse:timeline"]', onClick)
 
   function onClick (event) {
     const $trigger = $(event.currentTarget)
-    const $target = $($trigger.data('target'))
+    const $target = $($trigger.data('bs-target'))
     const $container = $trigger.closest('.timeline-container')
 
     $target.on('hide.bs.collapse', () => {

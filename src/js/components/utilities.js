@@ -1,1 +1,1 @@
-import 'bootstrap/js/src/util'
+import 'bootstrap5/js/src/util'

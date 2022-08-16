@@ -1,15 +1,15 @@
-import 'bootstrap/js/src/collapse'
+import 'bootstrap5/js/src/collapse'
 
 const LOADING_CLASS = 'loading'
 const EXPANDED_ATTR = 'aria-expanded'
 
 const done = []
 
-$(document).on('click', '[data-toggle="collapse:async"]', onClick)
+$(document).on('click', '[data-bs-toggle="collapse:async"]', onClick)
 
 function onClick (event) {
   const $trigger = $(event.currentTarget)
-  const $target = $($trigger.data('target'))
+  const $target = $($trigger.data('bs-target'))
 
   if (!$target.length) {
     return

@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import 'bootstrap/js/src/dropdown'
+import 'bootstrap5/js/src/dropdown'
 
 const EVENT_PREFIX = /^on/
 const refs = new WeakMap()
@@ -49,7 +49,7 @@ export function select (el, opts = el.dataset) {
     type: 'button',
     title: label.textContent,
     class: 'select-toggle dropdown-toggle',
-    'data-toggle': 'dropdown',
+    'data-bs-toggle': 'dropdown',
     'aria-expanded': 'false',
     'aria-controls': `list-${id}`
   }, [
@@ -103,7 +103,7 @@ export function select (el, opts = el.dataset) {
         // Wrap children in a dropdown menu
         if (config.groupToggle) {
           const group = h('fieldset', {
-            'data-target': `#list-${id}`,
+            'data-bs-target': `#list-${id}`,
             id: `group-${index}-list-${id}`,
             class: 'select-list dropdown-menu',
             'aria-labelledby': `group-${index}-trigger-${id}`

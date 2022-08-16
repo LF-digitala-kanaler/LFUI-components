@@ -1,1 +1,1 @@
-import 'bootstrap/js/src/modal'
+import 'bootstrap5/js/src/modal'

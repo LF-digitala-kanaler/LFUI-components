@@ -65,11 +65,11 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new webpack.ProvidePlugin({
-      Alert: 'exports-loader?Util!bootstrap/js/dist/alert',
-      Button: 'exports-loader?Util!bootstrap/js/dist/button',
-      Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-      Modal: 'exports-loader?Dropdown!bootstrap/js/dist/modal',
-      Util: 'exports-loader?Util!bootstrap/js/dist/util'
+      Alert: 'exports-loader?Util!bootstrap5/js/dist/alert',
+      Button: 'exports-loader?Util!bootstrap5/js/dist/button',
+      Dropdown: 'exports-loader?Dropdown!bootstrap5/js/dist/dropdown',
+      Modal: 'exports-loader?Dropdown!bootstrap5/js/dist/modal',
+      Util: 'exports-loader?Util!bootstrap5/js/dist/util'
     })
   ],
   module: {
