@@ -187,6 +187,7 @@ $enable-validation-icons: false;
 $enable-caret: false;
 $enable-rounded: false;
 $enable-transitions: false;
+$enable-cssgrid: false;
 
 $min-contrast-ratio: 4.5;
 $color-contrast-dark: $black;
@@ -244,6 +245,12 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1662px
 );
+
+/* From BS5 */
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.875rem;
+$grid-row-columns:            6 !default;
+$container-padding-x: $grid-gutter-width !default;
 
 /**
  * Typography
@@ -606,6 +613,11 @@ $popover-body-padding-y: 9px;
 $popover-body-padding-x: 14px;
 $popover-arrow-width: 0;
 $popover-arrow-height: 5px;
+
+$transition-base:             all .2s ease-in-out !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;
+$transition-collapse-width:   width .35s ease !default;
 
 // Badges
 

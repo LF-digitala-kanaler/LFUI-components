@@ -2,8 +2,7 @@
 
 /* Core */
 @import "type";
-@import "images";
-@import "code";
+@import "images"; /* BS5 ready */
 @import "grid";
 @import "tables";
 @import "forms";
@@ -14,44 +13,43 @@
 @import "animations"; /* BS5 ready */
 @import "transitions"; /* BS5 ready */
 @import "avatar"; /* BS5 ready */
-@import "breadcrumb";
+@import "breadcrumb"; /* BS5 ready */
 @import "button-group";
 @import "card";
 @import "close"; /* BS5 ready */
 @import "custom-forms";
 @import "checkmark";
 @import "dropdown";
-@import "icon";
+@import "icon"; /* BS5 ready */
 @import "input-group";
-@import "media";
 @import "nav";
 @import "navbar";
 @import "pagination";
-@import "price-box";
+@import "price-box"; /* BS5 ready */
 @import "progress";
-@import "shortcut";
+@import "shortcut"; /* BS5 ready */
 @import "select";
-@import "spinner";
-@import "slider";
+@import "spinner"; /* BS5 ready */
+@import "slider"; /* BS5 ready */
 @import "badge";
-@import "value-box";
-@import "footer";
-@import "header";
-@import "timeline";
+@import "value-box"; /* BS5 ready */
+@import "footer"; /* BS5 ready */
+@import "header"; /* BS5 ready */
+@import "timeline"; /* BS5 ready */
 @import "tag"; /* BS5 ready */
 
 /* JS dependent components */
 @import "callout";
 @import "collapse";
-@import "focus";
+@import "focus"; /* BS5 ready */
 @import "modal";
 @import "popover";
 @import "popover-tooltip";
-@import "datepicker";
+@import "datepicker"; /* BS5 ready */
 @import "upload";
 
 /* Utilities */
 @import "utilities";
 
 /* Other */
-@import "print";
+@import "print"; /* BS5 ready */

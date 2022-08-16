@@ -1,8 +1,8 @@
-/**
- * Set sizes using the `width` and `height` attributes
- */
-
 $icon-stroke-width: 1px;
+
+/**
+ * Sizes are set using the `width` and `height` attributes
+ */
 
 .icon {
   position: relative;
@@ -22,65 +22,24 @@ $icon-stroke-width: 1px;
  * Helpers for vertical alignment
  */
 
-.icon-nudge,
-.icon-nudge-up {
-  top: -.06em;
-}
+.icon-nudge { top: -.06em; }
+.icon-nudge-up { top: -.06em; }
+.icon-nudge-up-01 { top: -.1em; }
+.icon-nudge-up-015 { top: -.15em; }
+.icon-nudge-up-02 { top: -.2em; }
+.icon-nudge-up-025 { top: -.25em; }
+.icon-nudge-up-030 { top: -.3em; }
+.icon-nudge-down { top: .06em; }
+.icon-nudge-down-01 { top: .1em; }
+.icon-nudge-down-015 { top: .15em; }
+.icon-nudge-down-02 { top: .2em; }
+.icon-nudge-down-025 { top: .25em; }
+.icon-nudge-down-030 { top: .3em; }
 
-.icon-nudge-up-01 {
-  top: -.1em;
-}
+/**
+ * Horizontal spacing
+ */
 
-.icon-nudge-up-015 {
-  top: -.15em;
-}
-
-.icon-nudge-up-02 {
-  top: -.2em;
-}
-
-.icon-nudge-up-025 {
-  top: -.25em;
-}
-
-.icon-nudge-up-030 {
-  top: -.3em;
-}
-
-.icon-nudge-down {
-  top: .06em;
-}
-
-.icon-nudge-down-01 {
-  top: .1em;
-}
-
-.icon-nudge-down-015 {
-  top: .15em;
-}
-
-.icon-nudge-down-02 {
-  top: .2em;
-}
-
-.icon-nudge-down-025 {
-  top: .25em;
-}
-
-.icon-nudge-down-030 {
-  top: .3em;
-}
-
-// Helpers for horizontal spacing
-
-.icon-left {
-  margin-right: 10px;
-}
-
-.icon-right {
-  margin-left: 10px;
-}
-
-.icon-green {
-  color: $green;
-}
+.icon-left { margin-right: 10px; }
+.icon-right { margin-left: 10px; }
+.icon-green { color: $green; }

@@ -72,3 +72,18 @@ select,
 textarea {
   font-family: inherit;
 }
+
+/**
+ * Code (BS5 Ready)
+ */
+
+code {
+  padding: .2rem .4rem;
+  background-color: $code-bg;
+}
+
+pre code {
+  display: block;
+  padding: 1.25rem;
+  overflow-x: auto;
+}

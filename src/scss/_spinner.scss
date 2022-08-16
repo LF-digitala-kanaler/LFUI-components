@@ -9,10 +9,6 @@
   border: 5px solid $surface-color;
   border-radius: 50%;
   transform: rotate(263deg);
-  // IE11 and below can't process svg animations relating to most things, but stroke-dasharray is one of them.
-  // Unfortunatley this completely breaks our ability to have identical animations in older IE browsers.
-  // The fallback is this, a simple rotation animation on the wrapper element. At least it's something.
-  animation: ie-fallback $spinner-animation-time infinite linear;
 
   svg {
     display: block;
@@ -61,7 +57,7 @@
 }
 
 /**
- * Spinner variants!
+ * Variants
  */
 
 .lf-spinner {
@@ -88,7 +84,10 @@
   @include lf-spinner(transparent, $red, transparent, 25, spinner-draw-dash);
 }
 
-// Spinner inside buttons
+/**
+ * Inside buttons
+ */
+
 .lf-spinner-btn-primary {
   @include lf-spinner(transparent, $white, transparent, 20, spinner-draw-dash);
 }
@@ -101,7 +100,6 @@
   vertical-align: text-bottom;
   border: 0;
   transform: rotate(263deg);
-  animation: ie-fallback-btn $spinner-animation-time infinite linear;
 
   .lf-spinner-dash {
     stroke-width: 10px;
@@ -133,36 +131,9 @@
   }
 }
 
-// .btn-block.loading:not([class*="arrow"]):not([class*="link"]) {
-//   padding-right: 2.2rem;
-
-//   > [class*="lf-spinner"] {
-//     margin-left: 10px;
-//   }
-
-//   &.btn-sm {
-//     padding-right: 2.3rem;
-//   }
-
-//   &.btn-lg {
-//     padding-right: 2.6rem;
-//   }
-// }
-
-// .btn:not(.btn-block):not(.loading):not([class*="arrow"]):not([class*="more"]):not([class*="link"]) {
-//   padding-right: 1.632rem;
-//   padding-left: 1.632rem;
-
-//   &.btn-sm {
-//     padding-right: 1.39rem;
-//     padding-left: 1.39rem;
-//   }
-
-//   &.btn-lg {
-//     padding-right: 1.95rem;
-//     padding-left: 1.95rem;
-//   }
-// }
+/**
+ * TO-DO: move?
+ */
 
 .btn-group .btn {
   padding-right: 1.25rem !important;
@@ -208,7 +179,6 @@
  * Animations
  */
 
-// Animate the dash
 @keyframes spinner-draw-dash {
   0% {
     stroke-dasharray: 36, 257;
@@ -229,7 +199,6 @@
   }
 }
 
-// And the lines
 @keyframes forward-line-rotate {
   0% {
     transform: rotate(52deg);
@@ -259,25 +228,5 @@
 
   100% {
     transform: rotate(366deg);
-  }
-}
-
-@keyframes ie-fallback {
-  0% {
-    transform: rotate(233deg);
-  }
-
-  100% {
-    transform: rotate(593deg);
-  }
-}
-
-@keyframes ie-fallback-btn {
-  0% {
-    transform: translateY(-10%) rotate(233deg);
-  }
-
-  100% {
-    transform: translateY(-10%) rotate(593deg);
   }
 }
