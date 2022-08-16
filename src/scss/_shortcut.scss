@@ -16,7 +16,6 @@
 }
 
 .shortcut::after {
-
   position: absolute;
   top: 50%;
   right: 1.1rem;
@@ -86,63 +85,64 @@
 .shortcut-alert {
   padding: .8rem 3.7rem .8rem 1.25rem;
   font-size: 1rem;
+  color: $white;
+  text-align: left;
+  cursor: pointer;
   background: lighten($baby, 9%);
+  background-color: $black;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
 }
 
 .shortcut-alert,
 .shortcut-alert.shortcut-info {
-  color: $color-info-dark;
-  text-align: left;
-  background-color: $color-info;
+  box-shadow: inset 2px 0 0 $color-info-dark;
+
+  .icon {
+    color: $color-info-dark;
+  }
 
   &::after {
     @include btn-arrow-standard-right($color-info-dark);
   }
-
-  &:hover {
-    box-shadow: inset 0 -2px 0 $color-info-dark;
-  }
 }
 
 .shortcut-alert.shortcut-success {
-  color: $color-success-dark;
-  text-align: left;
-  background-color: $color-success;
+  box-shadow: inset 2px 0 0 $color-success-dark;
+
+  .icon {
+    color: $color-success-dark;
+  }
 
   &::after {
     @include btn-arrow-standard-right($color-success-dark);
   }
-
-  &:hover {
-    box-shadow: inset 0 -2px 0 $color-success-dark;
-  }
 }
 
 .shortcut-alert.shortcut-warning {
-  color: $color-warning-dark;
-  text-align: left;
-  background-color: $color-warning;
+  box-shadow: inset 2px 0 0 $color-warning-dark;
+
+  .icon {
+    color: $color-warning-dark;
+  }
 
   &::after {
     @include btn-arrow-standard-right($color-warning-dark);
   }
-
-  &:hover {
-    box-shadow: inset 0 -2px 0 $color-warning-dark;
-  }
 }
 
 .shortcut-alert.shortcut-danger {
-  color: $color-danger-dark;
-  text-align: left;
-  background-color: $color-danger;
+  box-shadow: inset 2px 0 0 $color-danger-dark;
+
+  .icon {
+    color: $color-danger-dark;
+  }
 
   &::after {
     @include btn-arrow-standard-right($color-danger-dark);
-  }
-
-  &:hover {
-    box-shadow: inset 0 -2px 0 $color-danger-dark;
   }
 }
 
@@ -156,10 +156,6 @@ button.shortcut-alert:disabled {
 
   &::after {
     background-image: none;
-  }
-
-  &:hover {
-    box-shadow: none;
   }
 }
 
