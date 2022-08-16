@@ -429,7 +429,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": ["8.0.0", "6.7.0", "6.5.0", "3.3.0"],
+        "changedInVersion": ["10.0.0", "8.0.0", "6.7.0", "6.5.0", "3.3.0"],
         "examples": [
           {
             "name": "Alerting"
