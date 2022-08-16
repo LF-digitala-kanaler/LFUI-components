@@ -70,8 +70,7 @@ module.exports = {
       Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
       Modal: 'exports-loader?Dropdown!bootstrap/js/dist/modal',
       Util: 'exports-loader?Util!bootstrap/js/dist/util'
-    }),
-    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /sv/)
+    })
   ],
   module: {
     rules: [
