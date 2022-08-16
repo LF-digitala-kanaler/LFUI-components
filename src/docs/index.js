@@ -4,7 +4,6 @@ import '../scss/DOCS.scss'
 
 import { datepickerExample, timepickerExample } from './Datepicker/datepicker'
 import { calloutExample } from './Callout/callout'
-import { dropdownExample } from './Dropdown/dropdown'
 import { navbarExample } from './Navbar/navbar'
 import { panelExample } from './Panel/panel'
 import { popoverTooltipExample } from './PopoverTooltip/popovertooltip'
@@ -21,7 +20,6 @@ export function initialize () {
   timepickerExample()
   datepickerExample()
   tableExample()
-  dropdownExample()
   calloutExample()
   priceBoxExample()
   selectExample()

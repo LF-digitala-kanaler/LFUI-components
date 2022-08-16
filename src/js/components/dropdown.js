@@ -1,1 +1,1 @@
-import 'bootstrap/js/src/dropdown'
+import 'bootstrap5/js/src/dropdown'
