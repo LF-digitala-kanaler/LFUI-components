@@ -48,3 +48,21 @@
 .bg-lf-info-hover:hover { background-color: $color-info !important; }
 
 .bg-active { background: #f9fbfd !important; }
+
+/* Patterns */
+
+.wave-pattern {
+  @include pattern-wave-horizontal();
+}
+
+.wave-pattern-sm {
+  @include pattern-wave-horizontal();
+  background-size: 150px 10px;
+}
+
+.stripe-pattern {
+  @include pattern-diagonal-stripes($pattern-diagonal-stripes-gray-stripes);
+  color: $pattern-diagonal-stripes-gray-font-color;
+  background-color: $pattern-diagonal-stripes-gray-bg;
+  border: 2px solid $pattern-diagonal-stripes-gray-border;
+}

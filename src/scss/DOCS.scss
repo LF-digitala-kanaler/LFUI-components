@@ -145,7 +145,6 @@ body[data-focus-source="key"] .upload-input.has-focus + .upload-label {  // Fire
 @import "nav";
 @import "navbar";
 @import "pagination";
-@import "patterns";
 @import "price-box";
 @import "progress";
 @import "shortcut";
@@ -158,7 +157,8 @@ body[data-focus-source="key"] .upload-input.has-focus + .upload-label {  // Fire
 @import "header";
 @import "timeline";
 @import "tag";
-// Components w/ JavaScript
+
+// Components with JavaScript
 @import "callout";
 @import "collapse";
 @import "focus";

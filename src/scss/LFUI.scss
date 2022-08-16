@@ -10,14 +10,14 @@
 @import "buttons";
 
 /* Components */
-@import "alert";
-@import "animations";
-@import "transitions";
-@import "avatar";
+@import "alert"; /* BS5 ready */
+@import "animations"; /* BS5 ready */
+@import "transitions"; /* BS5 ready */
+@import "avatar"; /* BS5 ready */
 @import "breadcrumb";
 @import "button-group";
 @import "card";
-@import "close";
+@import "close"; /* BS5 ready */
 @import "custom-forms";
 @import "checkmark";
 @import "dropdown";
@@ -27,7 +27,6 @@
 @import "nav";
 @import "navbar";
 @import "pagination";
-@import "patterns";
 @import "price-box";
 @import "progress";
 @import "shortcut";
@@ -39,7 +38,7 @@
 @import "footer";
 @import "header";
 @import "timeline";
-@import "tag";
+@import "tag"; /* BS5 ready */
 
 /* JS dependent components */
 @import "callout";
