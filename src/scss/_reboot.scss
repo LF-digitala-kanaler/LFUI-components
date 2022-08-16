@@ -33,6 +33,16 @@ button,
 }
 
 /**
+ * Hide native time picker icon in Chrome
+ */
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/**
  * 1. Sorry, but `text-decoration` override `text-decoration-thickness`
  * 2. Force scrollbars to prevent page jumping when content height is altered.
  */
