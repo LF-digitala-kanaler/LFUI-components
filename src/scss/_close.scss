@@ -26,9 +26,9 @@ $btn-close-white-filter:     invert(1) grayscale(100%) brightness(200%);
   --#{$prefix}btn-close-path-width: .125rem;
 
   position: relative;
+  z-index: 1;
   background: transparent;
   transition: opacity 200ms ease-out;
-  z-index: 1;
 }
 
 .btn-close::before,
