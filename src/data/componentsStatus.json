@@ -139,22 +139,6 @@
       }
     },
     {
-      "component": "distribution-bar",
-      "bootstrap": {
-        "new": false,
-        "deprecated": false,
-        "changedInVersion": ["6.5.0"],
-        "examples": [
-          {
-            "name": "Default"
-          },
-          {
-            "name": "Progress Bar"
-          }
-        ]
-      }
-    },
-    {
       "component": "Dropdown",
       "bootstrap": {
         "new": false,
