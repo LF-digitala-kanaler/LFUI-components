@@ -29,39 +29,50 @@ const matcher = (function () {
   }
 
   return false
-}())
+})()
 
-function focusTriggersKeyboardModality (el) {
+function focusTriggersKeyboardModality(el) {
   let triggers = false
 
   if (matcher) {
-    triggers = matcher.call(
-      el,
-      keyboardModalityWhitelist) && matcher.call(el, ':not([readonly])'
-    )
+    triggers =
+      matcher.call(el, keyboardModalityWhitelist) &&
+      matcher.call(el, ':not([readonly])')
   }
 
   return triggers
 }
 
-document.body.addEventListener('keydown', () => {
-  hadKeyboardEvent = true
+document.body.addEventListener(
+  'keydown',
+  () => {
+    hadKeyboardEvent = true
 
-  if (isHandlingKeyboardThrottle) {
-    clearTimeout(isHandlingKeyboardThrottle)
-  }
+    if (isHandlingKeyboardThrottle) {
+      clearTimeout(isHandlingKeyboardThrottle)
+    }
 
-  isHandlingKeyboardThrottle = setTimeout(() => {
-    hadKeyboardEvent = false
-  }, 100)
-}, true)
+    isHandlingKeyboardThrottle = setTimeout(() => {
+      hadKeyboardEvent = false
+    }, 100)
+  },
+  true
+)
 
-document.body.addEventListener('focus', e => {
-  if (hadKeyboardEvent || focusTriggersKeyboardModality(e.target)) {
-    document.body.setAttribute('data-focus-source', 'key')
-  }
-}, true)
+document.body.addEventListener(
+  'focus',
+  (e) => {
+    if (hadKeyboardEvent || focusTriggersKeyboardModality(e.target)) {
+      document.body.setAttribute('data-focus-source', 'key')
+    }
+  },
+  true
+)
 
-document.body.addEventListener('blur', () => {
-  document.body.removeAttribute('data-focus-source')
-}, true)
+document.body.addEventListener(
+  'blur',
+  () => {
+    document.body.removeAttribute('data-focus-source')
+  },
+  true
+)

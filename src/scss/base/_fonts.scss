@@ -3,9 +3,10 @@
  */
 
 :root {
-  --lf-font-family-sans-serif: 'Intro Cond', Arial, 'Helvetica Neue', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --lf-font-family-serif: 'LF Rubrik', Georgia, 'Times New Roman', Times, serif;
+  --lf-font-family-sans-serif:
+    "Intro Cond", arial, "Helvetica Neue", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --lf-font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
 }
 
 /**
@@ -13,42 +14,42 @@
  */
 
 @font-face {
-  font-family: 'LF Rubrik';
-  src: url('./fonts/lf-rubrik.woff2') format('woff2');
-  font-display: swap;
+  font-family: "LF Rubrik";
+  font-style: normal;
+  font-weight: normal;
   font-kerning: normal;
-  font-style: normal;
-  font-weight: normal;
+  src: url("./fonts/lf-rubrik.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Intro Cond';
-  src: url('./fonts/intro-cond-regular.woff2') format('woff2');
-  font-display: swap;
+  font-family: "Intro Cond";
   font-style: normal;
   font-weight: normal;
+  src: url("./fonts/intro-cond-regular.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Intro Cond';
-  src: url('./fonts/intro-cond-regular-italic.woff2') format('woff2');
-  font-display: swap;
+  font-family: "Intro Cond";
   font-style: italic;
   font-weight: normal;
+  src: url("./fonts/intro-cond-regular-italic.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Intro Cond';
-  src: url('./fonts/intro-cond-bold.woff2') format('woff2');
-  font-display: swap;
+  font-family: "Intro Cond";
   font-style: normal;
   font-weight: bold;
+  src: url("./fonts/intro-cond-bold.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Intro Cond';
-  src: url('./fonts/intro-cond-bold-italic.woff2') format('woff2');
-  font-display: swap;
+  font-family: "Intro Cond";
   font-style: italic;
   font-weight: bold;
+  src: url("./fonts/intro-cond-bold-italic.woff2") format("woff2");
+  font-display: swap;
 }

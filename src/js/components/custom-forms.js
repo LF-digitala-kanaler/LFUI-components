@@ -1,3 +1,3 @@
 /* eslint-disable */
 
-import 'corejs-typeahead/dist/typeahead.jquery.js';
+import 'corejs-typeahead/dist/typeahead.jquery.js'

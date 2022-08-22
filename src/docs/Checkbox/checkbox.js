@@ -1,4 +1,3 @@
-
 const checkboxCardExample = () => {
   const checkboxCards = document.getElementsByClassName('checkbox-card')
   if (checkboxCards.length) {

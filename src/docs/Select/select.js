@@ -1,6 +1,6 @@
 import { select } from '../../js/components/select.js'
 
-export function selectExample () {
+export function selectExample() {
   for (const el of document.querySelectorAll('.select')) {
     select(el)
   }

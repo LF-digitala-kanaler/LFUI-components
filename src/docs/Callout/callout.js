@@ -1,19 +1,23 @@
 import Vivus from 'vivus'
+import $ from 'jquery'
 
 const calloutExample = () => {
-  function draw (el, options = {}, callback) {
-    const opts = $.extend({
-      animTimingFunction: Vivus.EASE_OUT,
-      duration: 100
-    }, options)
+  function draw(el, options = {}, callback) {
+    const opts = $.extend(
+      {
+        animTimingFunction: Vivus.EASE_OUT,
+        duration: 100
+      },
+      options
+    )
 
     return new Vivus(el, opts, callback)
   }
 
-  function getDataOptions (data) {
+  function getDataOptions(data) {
     const options = {}
 
-    Object.keys(data).forEach(key => {
+    Object.keys(data).forEach((key) => {
       const match = key.match(/^draw([\w]+)/)
 
       if (match) {

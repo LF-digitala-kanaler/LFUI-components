@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 const priceBoxExample = () => {
   $('.price-box-bottom').click(function () {
     $(this).toggleClass('active')

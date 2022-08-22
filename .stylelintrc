@@ -3,6 +3,7 @@
     "stylelint-config-twbs-bootstrap"
   ],
   "rules": {
+    "font-weight-notation": null,
     "declaration-no-important": null,
     "declaration-property-value-disallowed-list": {
       "border": "none",

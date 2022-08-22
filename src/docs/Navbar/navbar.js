@@ -1,7 +1,12 @@
+import $ from 'jquery'
+
 const navbarExample = () => {
   $('.navbar-toggle').on('click', function (e) {
     $(this)
-      .attr('aria-expanded', $(this).parent().hasClass('open') ? 'false' : 'true')
+      .attr(
+        'aria-expanded',
+        $(this).parent().hasClass('open') ? 'false' : 'true'
+      )
       .parent()
       .toggleClass('open')
   })

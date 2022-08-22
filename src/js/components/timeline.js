@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import 'bootstrap5/js/src/util'
 import 'bootstrap5/js/src/collapse'
 
@@ -5,7 +6,7 @@ const EXPANDED_ATTR = 'aria-expanded'
 
 $(document).on('click', '[data-bs-toggle="collapse:timeline"]', onClick)
 
-function onClick (event) {
+function onClick(event) {
   const $trigger = $(event.currentTarget)
   const $target = $($trigger.data('bs-target'))
   const isExpanded = $trigger.attr(EXPANDED_ATTR) === 'true'

@@ -1,10 +1,6 @@
-// import { defineCustomElements } from '@duetds/date-picker/dist/loader'
-
-// defineCustomElements(window)
-
 import { DuetDatePicker } from '@duetds/date-picker/custom-element'
 
-customElements.define('duet-date-picker', DuetDatePicker)
+window.customElements.define('duet-date-picker', DuetDatePicker)
 
 export const DEFAULTS = {
   firstDayOfWeek: 1,

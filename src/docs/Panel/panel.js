@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 const panelExample = () => {
   const html = `<table class="table mb-0">
       <colgroup>

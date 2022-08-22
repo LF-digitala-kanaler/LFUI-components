@@ -1,4 +1,3 @@
-
 const radioButtonsExample = () => {
   const radioCards = document.getElementsByClassName('radio-card')
   for (let i = 0; i < radioCards.length; i++) {
