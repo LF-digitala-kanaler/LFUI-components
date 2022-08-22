@@ -1,9 +1,9 @@
-import Primary from './primary.html'
-import Secondary from './secondary.html'
-import Login from './login.html'
+import Primary from './primary.html?raw'
+import Secondary from './secondary.html?raw'
+import Login from './login.html?raw'
 
 export default { title: 'Button' }
 
-export const primary = () => `${Primary}`
-export const secondary = () => `${Secondary}`
-export const login = () => `${Login}`
+export const primary = () => Primary
+export const secondary = () => Secondary
+export const login = () => Login

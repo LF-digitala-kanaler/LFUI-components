@@ -1,13 +1,15 @@
 import 'bootstrap5/js/src/util'
 import 'bootstrap5/js/src/collapse'
+import $ from 'jquery'
 
 const NO_EXPAND = 'data-no-expand'
 const EXPANDED_ATTR = 'aria-expanded'
-const VALID_ELEMENTS_SELECTOR = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]'
+const VALID_ELEMENTS_SELECTOR =
+  'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]'
 
 $(document).on('click', '[data-bs-toggle="collapse:table-row"]', onClick)
 
-function onClick (event) {
+function onClick(event) {
   const $trigger = $(event.currentTarget)
   const $target = $($trigger.data('bs-target'))
   const isExpanded = $trigger.attr(EXPANDED_ATTR) === 'true'
@@ -19,15 +21,11 @@ function onClick (event) {
 
   if (isExpanded) {
     $target.one('hidden.bs.collapse', () => {
-      $trigger
-        .removeClass('table-active')
-        .attr(EXPANDED_ATTR, 'false')
+      $trigger.removeClass('table-active').attr(EXPANDED_ATTR, 'false')
     })
   } else {
     $target.one('show.bs.collapse', () => {
-      $trigger
-        .addClass('table-active')
-        .attr(EXPANDED_ATTR, 'true')
+      $trigger.addClass('table-active').attr(EXPANDED_ATTR, 'true')
     })
   }
 

@@ -1,5 +1,4 @@
-
-import Upload from './upload.html'
+import Upload from './upload.html?raw'
 import { uploadExample } from './upload'
 import { useEffect } from '@storybook/client-api'
 

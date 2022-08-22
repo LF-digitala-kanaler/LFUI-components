@@ -1,5 +1,5 @@
-import Multiple from './multiple.html'
-import Single from './single.html'
+import Multiple from './multiple.html?raw'
+import Single from './single.html?raw'
 import { selectExample } from './select'
 import { useEffect } from '@storybook/client-api'
 

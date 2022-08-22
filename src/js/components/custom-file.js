@@ -1,24 +1,36 @@
+import $ from 'jquery'
+
 const CustomFile = (function ($) {
   class CustomFile {
-    constructor (element) {
+    constructor(element) {
       this.element = $(element)
 
       this._addEventListeners()
     }
 
-    _addEventListeners () {
+    _addEventListeners() {
       const _this = this
       // needed for focus state in firefox
 
-      _this.element.on('focus', function () { _this.element.addClass('has-focus') })
-      _this.element.on('blur', function () { _this.element.removeClass('has-focus') })
+      _this.element.on('focus', function () {
+        _this.element.addClass('has-focus')
+      })
+      _this.element.on('blur', function () {
+        _this.element.removeClass('has-focus')
+      })
 
       // Since firefox does not trigger change when you close down the file window we have to use click
       _this.element.on('click', function () {
-        if (_this.element.hasClass('has-file') || _this.element.hasClass('has-multiple')) {
+        if (
+          _this.element.hasClass('has-file') ||
+          _this.element.hasClass('has-multiple')
+        ) {
           setTimeout(function () {
             _this.element.removeClass('has-file')
-            _this.element.next('.custom-file-label').find('.custom-file-option').remove()
+            _this.element
+              .next('.custom-file-label')
+              .find('.custom-file-option')
+              .remove()
             _this.element.removeClass('has-focus')
           }, 350)
         }
@@ -44,10 +56,15 @@ const CustomFile = (function ($) {
             $(this).next('.custom-file-label').removeClass('has-multiple')
           }
 
-          $(this).next('.custom-file-label').html('<div class="custom-file-option">' + label + '</div>')
+          $(this)
+            .next('.custom-file-label')
+            .html('<div class="custom-file-option">' + label + '</div>')
         } else {
           _this.element.removeClass('has-file')
-          $(this).next('.custom-file-label').find('.custom-file-option').remove()
+          $(this)
+            .next('.custom-file-label')
+            .find('.custom-file-option')
+            .remove()
         }
       })
     }
@@ -67,6 +84,6 @@ const CustomFile = (function ($) {
   $.fn.customfile.Constructor = CustomFile
 
   return CustomFile
-}(jQuery))
+})($)
 
 export default CustomFile

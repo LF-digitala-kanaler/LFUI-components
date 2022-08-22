@@ -1,8 +1,7 @@
 import '../js/index.js'
-
 import '../scss/DOCS.scss'
 
-import { datepickerExample, timepickerExample } from './Datepicker/datepicker'
+import { datepickerExample } from './Datepicker/datepicker'
 import { calloutExample } from './Callout/callout'
 import { navbarExample } from './Navbar/navbar'
 import { panelExample } from './Panel/panel'
@@ -16,8 +15,7 @@ import { uploadExample } from './Upload/upload'
 import { valueboxExample } from './ValueBox/valuebox'
 
 // run your functions
-export function initialize () {
-  timepickerExample()
+export function initialize() {
   datepickerExample()
   tableExample()
   calloutExample()

@@ -1,4 +1,4 @@
-import PopoverTooltip from './popoverTooltip.html'
+import PopoverTooltip from './popoverTooltip.html?raw'
 import { popoverTooltipExample } from './popovertooltip'
 import { useEffect } from '@storybook/client-api'
 

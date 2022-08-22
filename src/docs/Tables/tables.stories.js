@@ -1,5 +1,5 @@
-import Present from './present.html'
-import Compare from './comparative.html'
+import Present from './present.html?raw'
+import Compare from './comparative.html?raw'
 import { useEffect } from '@storybook/client-api'
 import { tableExample } from './table'
 
@@ -13,8 +13,6 @@ export const present = () => {
 }
 
 export const compare = () => {
-  useEffect(() => {
-
-  }, [])
+  useEffect(() => {}, [])
   return Compare
 }

@@ -1,6 +1,6 @@
 .tag {
   --#{$prefix}tag-bg: #{$tint};
-  --#{$prefix}tag-color: #{$gray};
+  --#{$prefix}tag-color: #{$black};
   --#{$prefix}tag-font-size: #{$font-size-sm};
 
   display: inline-flex;
@@ -20,8 +20,8 @@
 }
 
 .tag .btn-close {
-  margin-right: -.25rem;
-  margin-left: .5rem;
+  margin-right: -0.25rem;
+  margin-left: 0.5rem;
 }
 
 .tag-lg {
@@ -31,20 +31,16 @@
 
 .tag-info {
   --#{$prefix}tag-bg: #{$color-info};
-  --#{$prefix}tag-color: #{$color-info-dark};
 }
 
 .tag-success {
   --#{$prefix}tag-bg: #{$color-success};
-  --#{$prefix}tag-color: #{$color-success-dark};
 }
 
 .tag-warning {
   --#{$prefix}tag-bg: #{$color-warning};
-  --#{$prefix}tag-color: #{$color-warning-dark};
 }
 
 .tag-danger {
   --#{$prefix}tag-bg: #{$color-danger};
-  --#{$prefix}tag-color: #{$color-danger-dark};
 }

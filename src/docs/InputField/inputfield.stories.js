@@ -1,5 +1,5 @@
-import OneLined from './oneLined.html'
-import SeveralLines from './severalLines.html'
+import OneLined from './oneLined.html?raw'
+import SeveralLines from './severalLines.html?raw'
 
 import { inputFieldExample } from './inputField'
 import { useEffect } from '@storybook/client-api'

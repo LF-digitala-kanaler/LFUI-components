@@ -1,5 +1,5 @@
-import Checkbox from './styledCheckbox.html'
-import CheckboxCards from './checkboxCards.html'
+import Checkbox from './styledCheckbox.html?raw'
+import CheckboxCards from './checkboxCards.html?raw'
 import { useEffect } from '@storybook/client-api'
 import { checkboxCardExample, intermediateCheckboxExample } from './checkbox'
 

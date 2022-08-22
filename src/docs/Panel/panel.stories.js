@@ -1,11 +1,11 @@
-import AlwaysOpen from './alwaysOpen.html'
-import CollapseExpand from './collapseExpand.html'
+import AlwaysOpen from './alwaysOpen.html?raw'
+import CollapseExpand from './collapseExpand.html?raw'
 import { panelExample } from './panel'
 import { useEffect } from '@storybook/client-api'
 
 export default { title: 'Panel' }
 
-export const alwaysOpen = () => `${AlwaysOpen}`
+export const alwaysOpen = () => AlwaysOpen
 
 export const collapseExpand = () => {
   useEffect(() => {

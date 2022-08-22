@@ -1,5 +1,5 @@
 import { paginationExample } from './pagination'
-import Pagination from './pagination.html'
+import Pagination from './pagination.html?raw'
 import { useEffect } from '@storybook/client-api'
 
 export default { title: 'Pagination' }

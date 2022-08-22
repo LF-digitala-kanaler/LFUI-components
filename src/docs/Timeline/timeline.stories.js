@@ -1,5 +1,4 @@
-
-import Timeline from './timeline.html'
+import Timeline from './timeline.html?raw'
 import { timelineExample } from './timeline'
 import { useEffect } from '@storybook/client-api'
 export default { title: 'Timeline' }

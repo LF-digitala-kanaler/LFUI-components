@@ -1,6 +1,5 @@
-
-import Avatar from './avatar.html'
+import Avatar from './avatar.html?raw'
 
 export default { title: 'Avatar' }
 
-export const avatar = () => `${Avatar}`
+export const avatar = () => Avatar

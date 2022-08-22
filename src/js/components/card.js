@@ -1,4 +1,5 @@
 import 'bootstrap5/js/src/collapse'
+import $ from 'jquery'
 
 const LOADING_CLASS = 'loading'
 const EXPANDED_ATTR = 'aria-expanded'
@@ -7,7 +8,7 @@ const done = []
 
 $(document).on('click', '[data-bs-toggle="collapse:async"]', onClick)
 
-function onClick (event) {
+function onClick(event) {
   const $trigger = $(event.currentTarget)
   const $target = $($trigger.data('bs-target'))
 
@@ -20,22 +21,20 @@ function onClick (event) {
     const eventName = isExpanded ? 'hide.bs.collapse' : 'show.bs.collapse'
 
     $target
-      .one(eventName, () => $trigger.attr(
-        EXPANDED_ATTR,
-        isExpanded ? 'false' : 'true'
-      ))
+      .one(eventName, () =>
+        $trigger.attr(EXPANDED_ATTR, isExpanded ? 'false' : 'true')
+      )
       .collapse('toggle')
   } else {
     $trigger
-      .addClass(LOADING_CLASS).prop('disabled', true)
+      .addClass(LOADING_CLASS)
+      .prop('disabled', true)
       .one('done', () => {
         done.push($trigger.get(0))
 
-        $target
-          .collapse('show')
-          .one('shown.bs.collapse', () => {
-            $trigger.removeClass(LOADING_CLASS).prop('disabled', false)
-          })
+        $target.collapse('show').one('shown.bs.collapse', () => {
+          $trigger.removeClass(LOADING_CLASS).prop('disabled', false)
+        })
 
         $trigger.attr(
           EXPANDED_ATTR,

@@ -1,6 +1,6 @@
 import { useEffect } from '@storybook/client-api'
-import Datepicker from './datepicker.html'
-import Timepicker from './timepicker.html'
+import Datepicker from './datepicker.html?raw'
+import Timepicker from './timepicker.html?raw'
 import { datepickerExample } from './datepicker'
 
 export default {
@@ -12,4 +12,4 @@ export const datepicker = () => {
   return Datepicker
 }
 
-export const timepicker = () => `${Timepicker}`
+export const timepicker = () => Timepicker

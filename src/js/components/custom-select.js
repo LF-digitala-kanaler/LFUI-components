@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 const CustomSelect = (function ($) {
   const KeyCode = {
     SPACE_KEYCODE: 32,
@@ -22,7 +24,7 @@ const CustomSelect = (function ($) {
   }
 
   class CustomSelect {
-    constructor (element, config) {
+    constructor(element, config) {
       this.element = $(element)
       this.placeholder = this.element.find('span:first')
       this.dropdownElement = this.element.find('.custom-select-dd')
@@ -35,21 +37,23 @@ const CustomSelect = (function ($) {
       this._init()
     }
 
-    _init () {
+    _init() {
       const _this = this
       this.val = _this.isMultiSelect ? [] : ''
       this.index = -1
       this.searchString = ''
 
       if (_this.isMultiSelect) {
-        _this.element.find('.custom-dropdown > .dropdown-item').each(function (index, option) {
-          _this._updateValueList($(option))
-          _this._setSelectedValues($(option))
-        })
+        _this.element
+          .find('.custom-dropdown > .dropdown-item')
+          .each(function (index, option) {
+            _this._updateValueList($(option))
+            _this._setSelectedValues($(option))
+          })
       }
     }
 
-    _getConfig (config) {
+    _getConfig(config) {
       const returnConfig = $.extend({}, DefaultOption)
 
       if (config) {
@@ -57,7 +61,10 @@ const CustomSelect = (function ($) {
           returnConfig.onSelect = config.onSelect
         }
 
-        if (config.defaultPlaceholder && typeof config.defaultPlaceholder === 'string') {
+        if (
+          config.defaultPlaceholder &&
+          typeof config.defaultPlaceholder === 'string'
+        ) {
           returnConfig.defaultPlaceholder = config.defaultPlaceholder
         }
       }
@@ -65,7 +72,7 @@ const CustomSelect = (function ($) {
       return returnConfig
     }
 
-    _addEventListeners () {
+    _addEventListeners() {
       const _this = this
 
       if (_this.isMultiSelect) {
@@ -74,124 +81,213 @@ const CustomSelect = (function ($) {
         _this._addCustomSelectListeners()
       }
 
-      _this.element.on('keypress', function (e) {
-        const code = (e.keyCode ? e.keyCode : e.which)
-        if (code === KeyCode.SPACE_KEYCODE || code === KeyCode.ENTER_KEYCODE) {
-          if (code === KeyCode.SPACE_KEYCODE) {
-            // prevent space from scrolling page
-            e.preventDefault()
-          }
-
-          if (_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
-            _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index])
-          }
-        }
-      }).on('keydown', function (e) {
-        const code = (e.keyCode ? e.keyCode : e.which)
-
-        if (!_this._isDropdownOpen()) {
-          switch (code) {
-            case KeyCode.ARROW_UP_KEYCODE:
+      _this.element
+        .on('keypress', function (e) {
+          const code = e.keyCode ? e.keyCode : e.which
+          if (
+            code === KeyCode.SPACE_KEYCODE ||
+            code === KeyCode.ENTER_KEYCODE
+          ) {
+            if (code === KeyCode.SPACE_KEYCODE) {
+              // prevent space from scrolling page
               e.preventDefault()
-              _this.dropdownElement.dropdown('toggle')
-              if (_this.index === -1) {
-                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length - 1].focus()
-                _this.index = (_this.element.find('.custom-dropdown > .dropdown-item').length - 1)
-              }
-              if (_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
-                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index])
-              }
-              break
-            case KeyCode.ARROW_DOWN_KEYCODE:
-              e.preventDefault()
-              _this.dropdownElement.dropdown('toggle')
-              if (_this.index !== -1 && !(_this.index >= _this.element.find('.custom-dropdown > .dropdown-item').length)) {
-                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index])
-              }
-              break
-            default:
-              break
-          }
-        } else {
-          switch (code) {
-            case KeyCode.ARROW_UP_KEYCODE:
-              if (_this.index === -1) {
-                _this.element.find('.custom-dropdown > .dropdown-item')[_this.element.find('.custom-dropdown > .dropdown-item').length - 1].focus()
-                _this.index = _this.element.find('.custom-dropdown > .dropdown-item').length
-              }
-              if (_this.index > 0) {
-                _this.index--
-              }
-              e.preventDefault()
-              if (_this.index >= 0) {
-                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index])
-              }
-              break
-            case KeyCode.ARROW_DOWN_KEYCODE:
-              if (_this.index < (_this.element.find('.custom-dropdown > .dropdown-item').length - 1)) {
-                _this.index++
-              }
-              e.preventDefault()
+            }
 
-              if (_this.index <= (_this.element.find('.custom-dropdown > .dropdown-item').length - 1)) {
-                _this._focusOption(_this.isMultiSelect, _this.element.find('.custom-dropdown > .dropdown-item')[_this.index])
-              }
-              break
-            case KeyCode.TAB_KEYCODE:
-              e.preventDefault()
-              break
-            case KeyCode.ESCAPE:
-              _this.dropdownElement.dropdown('toggle')
-              break
-            default: {
-              const keys = /^([a-z]|[åäö]|[0-9])$/
-              if (keys.test(e.key.toString().toLowerCase())) {
-                e.preventDefault()
-                _this.searchString += e.key
-
-                const match = _this._getMatchingOption()
-
-                if (match) {
-                  if (_this.isMultiSelect) {
-                    match.find('[type=checkbox]').focus()
-                  } else {
-                    _this._setSelectedOption(match)
-                  }
-
-                  setTimeout(function () {
-                    _this.searchString = ''
-                  }, 1000)
-                } else {
-                  _this.searchString = ''
-                }
-              }
-              break
+            if (
+              _this.index !== -1 &&
+              !(
+                _this.index >=
+                _this.element.find('.custom-dropdown > .dropdown-item').length
+              )
+            ) {
+              _this._focusOption(
+                _this.isMultiSelect,
+                _this.element.find('.custom-dropdown > .dropdown-item')[
+                  _this.index
+                ]
+              )
             }
           }
-        }
-      })
+        })
+        .on('keydown', function (e) {
+          const code = e.keyCode ? e.keyCode : e.which
+
+          if (!_this._isDropdownOpen()) {
+            switch (code) {
+              case KeyCode.ARROW_UP_KEYCODE:
+                e.preventDefault()
+                _this.dropdownElement.dropdown('toggle')
+                if (_this.index === -1) {
+                  _this.element
+                    .find('.custom-dropdown > .dropdown-item')
+                    [
+                      _this.element.find('.custom-dropdown > .dropdown-item')
+                        .length - 1
+                    ].focus()
+                  _this.index =
+                    _this.element.find('.custom-dropdown > .dropdown-item')
+                      .length - 1
+                }
+                if (
+                  _this.index !== -1 &&
+                  !(
+                    _this.index >=
+                    _this.element.find('.custom-dropdown > .dropdown-item')
+                      .length
+                  )
+                ) {
+                  _this._focusOption(
+                    _this.isMultiSelect,
+                    _this.element.find('.custom-dropdown > .dropdown-item')[
+                      _this.index
+                    ]
+                  )
+                }
+                break
+              case KeyCode.ARROW_DOWN_KEYCODE:
+                e.preventDefault()
+                _this.dropdownElement.dropdown('toggle')
+                if (
+                  _this.index !== -1 &&
+                  !(
+                    _this.index >=
+                    _this.element.find('.custom-dropdown > .dropdown-item')
+                      .length
+                  )
+                ) {
+                  _this._focusOption(
+                    _this.isMultiSelect,
+                    _this.element.find('.custom-dropdown > .dropdown-item')[
+                      _this.index
+                    ]
+                  )
+                }
+                break
+              default:
+                break
+            }
+          } else {
+            switch (code) {
+              case KeyCode.ARROW_UP_KEYCODE:
+                if (_this.index === -1) {
+                  _this.element
+                    .find('.custom-dropdown > .dropdown-item')
+                    [
+                      _this.element.find('.custom-dropdown > .dropdown-item')
+                        .length - 1
+                    ].focus()
+                  _this.index = _this.element.find(
+                    '.custom-dropdown > .dropdown-item'
+                  ).length
+                }
+                if (_this.index > 0) {
+                  _this.index--
+                }
+                e.preventDefault()
+                if (_this.index >= 0) {
+                  _this._focusOption(
+                    _this.isMultiSelect,
+                    _this.element.find('.custom-dropdown > .dropdown-item')[
+                      _this.index
+                    ]
+                  )
+                }
+                break
+              case KeyCode.ARROW_DOWN_KEYCODE:
+                if (
+                  _this.index <
+                  _this.element.find('.custom-dropdown > .dropdown-item')
+                    .length -
+                    1
+                ) {
+                  _this.index++
+                }
+                e.preventDefault()
+
+                if (
+                  _this.index <=
+                  _this.element.find('.custom-dropdown > .dropdown-item')
+                    .length -
+                    1
+                ) {
+                  _this._focusOption(
+                    _this.isMultiSelect,
+                    _this.element.find('.custom-dropdown > .dropdown-item')[
+                      _this.index
+                    ]
+                  )
+                }
+                break
+              case KeyCode.TAB_KEYCODE:
+                e.preventDefault()
+                break
+              case KeyCode.ESCAPE:
+                _this.dropdownElement.dropdown('toggle')
+                break
+              default: {
+                const keys = /^([a-z]|[åäö]|[0-9])$/
+                if (keys.test(e.key.toString().toLowerCase())) {
+                  e.preventDefault()
+                  _this.searchString += e.key
+
+                  const match = _this._getMatchingOption()
+
+                  if (match) {
+                    if (_this.isMultiSelect) {
+                      match.find('[type=checkbox]').focus()
+                    } else {
+                      _this._setSelectedOption(match)
+                    }
+
+                    setTimeout(function () {
+                      _this.searchString = ''
+                    }, 1000)
+                  } else {
+                    _this.searchString = ''
+                  }
+                }
+                break
+              }
+            }
+          }
+        })
     }
 
-    _addCustomMultiSelectEventListeners () {
+    _addCustomMultiSelectEventListeners() {
       const _this = this
 
       _this.options.on('change click keydown', function (e) {
-        const code = (e.keyCode ? e.keyCode : e.which)
+        const code = e.keyCode ? e.keyCode : e.which
 
-        if (e.target.tagName !== 'INPUT' || (e.target.tagName === 'INPUT' && code === KeyCode.SPACE_KEYCODE)) {
-          if ((code === KeyCode.SPACE_KEYCODE ||
-            code === KeyCode.ENTER_KEYCODE || e.type === 'click')) {
+        if (
+          e.target.tagName !== 'INPUT' ||
+          (e.target.tagName === 'INPUT' && code === KeyCode.SPACE_KEYCODE)
+        ) {
+          if (
+            code === KeyCode.SPACE_KEYCODE ||
+            code === KeyCode.ENTER_KEYCODE ||
+            e.type === 'click'
+          ) {
             if (e.type === 'click' || e.type === 'keydown') {
               e.stopPropagation()
             }
             if (e.target.tagName === 'DIV') {
               $(this).find('input').trigger('change')
             }
-            const shouldTriggerCheckbox = e.target.tagName === 'DIV' || (!e.target.hasAttribute('for') && code !== KeyCode.SPACE_KEYCODE)
+            const shouldTriggerCheckbox =
+              e.target.tagName === 'DIV' ||
+              (!e.target.hasAttribute('for') && code !== KeyCode.SPACE_KEYCODE)
             const selectAll = $(this).data(DataName.SELECT_ALL)
             if (selectAll) {
-              const isIndeterminate = $(this).find('[type=checkbox]').is(':indeterminate')
-              _this._toggleSelectAll($(this), !$(this).find('[type=checkbox]').is(':checked'), isIndeterminate, shouldTriggerCheckbox)
+              const isIndeterminate = $(this)
+                .find('[type=checkbox]')
+                .is(':indeterminate')
+              _this._toggleSelectAll(
+                $(this),
+                !$(this).find('[type=checkbox]').is(':checked'),
+                isIndeterminate,
+                shouldTriggerCheckbox
+              )
             } else {
               _this._updateValueList($(this), e.type, shouldTriggerCheckbox)
             }
@@ -210,7 +306,7 @@ const CustomSelect = (function ($) {
       })
     }
 
-    _focusOption (isMultiSelect, option) {
+    _focusOption(isMultiSelect, option) {
       if (isMultiSelect) {
         $(option).find('[type=checkbox]').focus()
       } else {
@@ -218,46 +314,54 @@ const CustomSelect = (function ($) {
       }
     }
 
-    _addCustomSelectListeners () {
+    _addCustomSelectListeners() {
       const _this = this
 
-      _this.element.find($('.custom-dropdown:not(.custom-multi-select)')).on('click touchstart keypress', _this.element.find('.custom-dropdown > .dropdown-item'), function (e) {
-        let target = $(e.target)
+      _this.element
+        .find($('.custom-dropdown:not(.custom-multi-select)'))
+        .on(
+          'click touchstart keypress',
+          _this.element.find('.custom-dropdown > .dropdown-item'),
+          function (e) {
+            let target = $(e.target)
 
-        if (!(target.is('.dropdown-item'))) {
-          target = target.closest('.dropdown-item')
-        }
+            if (!target.is('.dropdown-item')) {
+              target = target.closest('.dropdown-item')
+            }
 
-        _this._setSelectedOption(target)
-        e.preventDefault()
-        _this.dropdownElement.dropdown('toggle')
+            _this._setSelectedOption(target)
+            e.preventDefault()
+            _this.dropdownElement.dropdown('toggle')
 
-        if (_this.config.onSelect) {
-          _this.config.onSelect(e)
-        }
-      })
+            if (_this.config.onSelect) {
+              _this.config.onSelect(e)
+            }
+          }
+        )
     }
 
-    _getMatchingOption () {
+    _getMatchingOption() {
       const regExp = new RegExp('^' + this.searchString, 'i')
       const _this = this
 
       let matchingOption
-      _this.element.find('.custom-dropdown > .dropdown-item').each(function (index, option) {
-        let text = option.text
-        if (_this.isMultiSelect) {
-          text = $(option).find('.custom-control-label').text()
-        }
+      _this.element
+        .find('.custom-dropdown > .dropdown-item')
+        .each(function (index, option) {
+          let text = option.text
+          if (_this.isMultiSelect) {
+            text = $(option).find('.custom-control-label').text()
+          }
 
-        if (regExp.test(text)) {
-          matchingOption = $(option)
-        }
-      })
+          if (regExp.test(text)) {
+            matchingOption = $(option)
+          }
+        })
 
       return matchingOption
     }
 
-    _setSelectedOption (option) {
+    _setSelectedOption(option) {
       option.focus()
       this.val = option.html()
       this.index = option.index()
@@ -265,15 +369,19 @@ const CustomSelect = (function ($) {
       this.parent.addClass('has-valid')
     }
 
-    _setSelectedValues (option) {
+    _setSelectedValues(option) {
       if (option.find('[type=checkbox]').is(':checked')) {
         this.val.push(option.find('.custom-control-label').text())
         this.placeholder.text(this._getPlaceholderText())
       }
     }
 
-    _updateValueList (option, eventType, shouldTriggerCheckbox) {
-      if (eventType && option.hasClass('dropdown-item') && !option.find('[type=checkbox]').is(':checked')) {
+    _updateValueList(option, eventType, shouldTriggerCheckbox) {
+      if (
+        eventType &&
+        option.hasClass('dropdown-item') &&
+        !option.find('[type=checkbox]').is(':checked')
+      ) {
         if (shouldTriggerCheckbox && eventType === 'click') {
           option.find('[type=checkbox]').prop('checked', true)
         }
@@ -282,7 +390,9 @@ const CustomSelect = (function ($) {
         if (shouldTriggerCheckbox && eventType === 'click') {
           option.find('[type=checkbox]').prop('checked', false)
         }
-        const index = this.val.indexOf(option.find('.custom-control-label').text())
+        const index = this.val.indexOf(
+          option.find('.custom-control-label').text()
+        )
         if (index > -1) {
           this.val.splice(index, 1)
         }
@@ -295,7 +405,7 @@ const CustomSelect = (function ($) {
       this.placeholder.text(this._getPlaceholderText())
     }
 
-    _updateValidState () {
+    _updateValidState() {
       if (this.val.length > 0) {
         this.parent.addClass('has-valid')
       } else {
@@ -303,8 +413,9 @@ const CustomSelect = (function ($) {
       }
     }
 
-    _updateSelectAllCheckbox (triggeredByClick) {
-      const selectAllCheckbox = this.selectAllOptionElement.find('[type=checkbox]')
+    _updateSelectAllCheckbox(triggeredByClick) {
+      const selectAllCheckbox =
+        this.selectAllOptionElement.find('[type=checkbox]')
       const isAllOptionIndeterminate = selectAllCheckbox.is(':indeterminate')
       const isAllOptionChecked = selectAllCheckbox.is(':checked')
 
@@ -313,7 +424,10 @@ const CustomSelect = (function ($) {
         if (!triggeredByClick) {
           selectAllCheckbox.prop('checked', false)
         }
-      } else if (isAllOptionIndeterminate && this.val.length === this.options.length - 1) {
+      } else if (
+        isAllOptionIndeterminate &&
+        this.val.length === this.options.length - 1
+      ) {
         selectAllCheckbox.prop('indeterminate', false)
 
         if (!triggeredByClick) {
@@ -324,7 +438,12 @@ const CustomSelect = (function ($) {
       }
     }
 
-    _toggleSelectAll (selectAllOptionElement, toggleOn, isIndeterminate, shouldTriggerCheckbox) {
+    _toggleSelectAll(
+      selectAllOptionElement,
+      toggleOn,
+      isIndeterminate,
+      shouldTriggerCheckbox
+    ) {
       const _this = this
       _this.selectAllOptionElement = selectAllOptionElement
 
@@ -342,13 +461,19 @@ const CustomSelect = (function ($) {
       })
 
       if (toggleOn && shouldTriggerCheckbox) {
-        this.selectAllOptionElement.find('[type=checkbox]').prop('checked', true)
+        this.selectAllOptionElement
+          .find('[type=checkbox]')
+          .prop('checked', true)
       } else if (!toggleOn && shouldTriggerCheckbox) {
-        this.selectAllOptionElement.find('[type=checkbox]').prop('checked', false)
+        this.selectAllOptionElement
+          .find('[type=checkbox]')
+          .prop('checked', false)
       }
 
       if (_this.val.length === 0) {
-        this.selectAllOptionElement.find('[type=checkbox]').prop('indeterminate', false)
+        this.selectAllOptionElement
+          .find('[type=checkbox]')
+          .prop('indeterminate', false)
       }
 
       if (!toggleOn || isIndeterminate) {
@@ -358,22 +483,22 @@ const CustomSelect = (function ($) {
       _this.placeholder.text(_this._getPlaceholderText())
     }
 
-    _isDropdownOpen () {
+    _isDropdownOpen() {
       return this.element.hasClass(ClassName.SHOW)
     }
 
-    _getPlaceholderText () {
+    _getPlaceholderText() {
       if (this.val.length > 0) {
         return '(' + this.val.length + ') ' + this.val.join(', ')
       }
       return this.config.defaultPlaceholder
     }
 
-    getValue () {
+    getValue() {
       return this.val
     }
 
-    getIndex () {
+    getIndex() {
       return this.index
     }
   }
@@ -402,6 +527,6 @@ const CustomSelect = (function ($) {
   $.fn.customselect.Constructor = CustomSelect
 
   return CustomSelect
-}(jQuery))
+})($)
 
 export default CustomSelect

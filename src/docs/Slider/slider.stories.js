@@ -1,5 +1,5 @@
-import Value from './value.html'
-import Intervall from './intervall.html'
+import Value from './value.html?raw'
+import Intervall from './intervall.html?raw'
 import { sliderExample } from './slider'
 import { useEffect } from '@storybook/client-api'
 

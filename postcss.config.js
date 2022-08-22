@@ -1,26 +1,23 @@
-const base64 = require('postcss-base64')
-const autoprefixer = require('autoprefixer')
-const increaseSpecificity = require('postcss-increase-specificity')
+import url from 'postcss-url'
+import base64 from 'postcss-base64'
+import autoprefixer from 'autoprefixer'
 
-module.exports = config
-
-function config (props) {
+export default function config(props) {
   const plugins = [
     base64({
       pattern: /<svg.*<\/svg>/i,
       prepend: 'data:image/svg+xml;base64,'
     }),
+    // Vite in lib mode will render `base` in place of relative assets.
+    // Related issue:  https://github.com/vitejs/vite/issues/4454
+    url({
+      filter: '**/*.woff2',
+      url({ url }) {
+        return url.replace(/^base\//, './')
+      }
+    }),
     autoprefixer
   ]
-
-  if (/DOCS\.scss$/.test(props.file)) {
-    plugins.push(
-      increaseSpecificity({
-        repeat: 1,
-        stackableRoot: '.lfui-theme'
-      })
-    )
-  }
 
   return { plugins }
 }

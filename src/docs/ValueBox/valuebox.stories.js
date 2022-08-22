@@ -1,5 +1,4 @@
-
-import Valuebox from './valuebox.html'
+import Valuebox from './valuebox.html?raw'
 import { valueboxExample } from './valuebox'
 import { useEffect } from '@storybook/client-api'
 

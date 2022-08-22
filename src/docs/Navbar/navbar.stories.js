@@ -1,5 +1,5 @@
-import White from './white.html'
-import Blue from './blue.html'
+import White from './white.html?raw'
+import Blue from './blue.html?raw'
 import { navbarExample } from './navbar'
 import { useEffect } from '@storybook/client-api'
 
