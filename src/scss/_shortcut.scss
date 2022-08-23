@@ -86,7 +86,7 @@
   cursor: pointer;
   background: lighten($baby, 9%);
   background-color: $black;
-  box-shadow: inset 2px 0 0 $color-info-dark;
+  box-shadow: inset 2px 0 0 $color-info;
   @include font-smoothing();
 
   &:hover,
@@ -95,65 +95,65 @@
   }
 
   .icon {
-    color: $color-info-dark;
+    color: $color-info;
   }
 
   &::after {
-    @include btn-arrow-standard-right($color-info-dark);
+    @include btn-arrow-standard-right($color-info);
   }
 
   &.shortcut-light {
-    background: $color-info;
+    background: $color-info-light;
     color: $black;
     @include font-smoothing(auto);
   }
 }
 
 .shortcut-alert.shortcut-success {
-  box-shadow: inset 2px 0 0 $color-success-dark;
+  box-shadow: inset 2px 0 0 $color-success;
 
   .icon {
-    color: $color-success-dark;
+    color: $color-success;
   }
 
   &::after {
-    @include btn-arrow-standard-right($color-success-dark);
+    @include btn-arrow-standard-right($color-success);
   }
 
   &.shortcut-light {
-    background: $color-success;
+    background: $color-success-light;
   }
 }
 
 .shortcut-alert.shortcut-warning {
-  box-shadow: inset 2px 0 0 $color-warning-dark;
+  box-shadow: inset 2px 0 0 $color-warning;
 
   .icon {
-    color: $color-warning-dark;
+    color: $color-warning;
   }
 
   &::after {
-    @include btn-arrow-standard-right($color-warning-dark);
+    @include btn-arrow-standard-right($color-warning);
   }
 
   &.shortcut-light {
-    background: $color-warning;
+    background: $color-warning-light;
   }
 }
 
 .shortcut-alert.shortcut-danger {
-  box-shadow: inset 2px 0 0 $color-danger-dark;
+  box-shadow: inset 2px 0 0 $color-danger;
 
   .icon {
-    color: $color-danger-dark;
+    color: $color-danger;
   }
 
   &::after {
-    @include btn-arrow-standard-right($color-danger-dark);
+    @include btn-arrow-standard-right($color-danger);
   }
 
   &.shortcut-light {
-    background: $color-danger;
+    background: $color-danger-light;
   }
 }
 

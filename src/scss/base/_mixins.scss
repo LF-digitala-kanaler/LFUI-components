@@ -1,5 +1,9 @@
 // stylelint-disable scss/operator-no-unspaced
 
+/* Get some of the new onces from BS5 */
+@import "bootstrap5/scss/mixins/_visually-hidden.scss";
+@import "bootstrap5/scss/mixins/_text-truncate.scss";
+
 /**
  * Glyphs
  */

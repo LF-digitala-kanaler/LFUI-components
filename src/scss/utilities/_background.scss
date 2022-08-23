@@ -27,10 +27,15 @@
 .bg-purple { background-color: $purple !important; }
 .bg-turquoise { background-color: $turquoise !important; }
 
-.bg-lf-info { background-color: $color-info !important; }
-.bg-lf-success { background-color: $color-success !important; }
-.bg-lf-warning { background-color: $color-warning !important; }
-.bg-lf-danger { background-color: $color-danger !important; }
+.bg-info-light { background-color: $color-info-light !important; }
+.bg-success-light { background-color: $color-success-light !important; }
+.bg-warning-light { background-color: $color-warning-light !important; }
+.bg-danger-light { background-color: $color-danger-light !important; }
+
+.bg-lf-info { @extend .bg-info; }
+.bg-lf-success { @extend .bg-success; }
+.bg-lf-warning { @extend .bg-warning; }
+.bg-lf-danger { @extend .bg-danger; }
 
 /* Risk colors */
 

@@ -26,10 +26,10 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   @include font-smoothing();
 
   /* Default to "info" */
-  @include alert-variant($black, $color-info-dark, $color-info-dark);
+  @include alert-variant($black, $color-info, $color-info);
 
   &.alert-light {
-    @include alert-variant($color-info, $color-info-dark, $color-info-dark);
+    @include alert-variant($color-info-light, $color-info, $color-info);
     @include font-smoothing(auto);
   }
 }
@@ -88,26 +88,26 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 }
 
 .alert-success {
-  @include alert-variant($black, $color-success-dark, $color-success-dark);
+  @include alert-variant($black, $color-success, $color-success);
 
   &.alert-light {
-    @include alert-variant($color-success, $color-success-dark, $color-success-dark);
+    @include alert-variant($color-success-light, $color-success, $color-success);
   }
 }
 
 .alert-warning {
-  @include alert-variant($black, $color-warning-dark, $color-warning-dark);
+  @include alert-variant($black, $color-warning, $color-warning);
 
   &.alert-light {
-    @include alert-variant($color-warning, $color-warning-dark, $color-warning-dark);
+    @include alert-variant($color-warning-light, $color-warning, $color-warning);
   }
 }
 
 .alert-danger {
-  @include alert-variant($black, $color-danger-dark, $color-danger-dark);
+  @include alert-variant($black, $color-danger, $color-danger);
 
   &.alert-light {
-    @include alert-variant($color-danger, $color-danger-dark, $color-danger-dark);
+    @include alert-variant($color-danger-light, $color-danger, $color-danger);
   }
 }
 

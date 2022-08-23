@@ -124,14 +124,14 @@ $colors: (
 $body-bg: $tint;
 $body-color: $black;
 
-$color-info: #e5eff7;
-$color-info-dark: $sky;
-$color-success: #e5fff0;
-$color-success-dark: #24902c;
-$color-warning: #ffffd6;
-$color-warning-dark: #f3d047;
-$color-danger: #ffdfe0;
-$color-danger-dark: $red;
+$color-info: $sky;
+$color-info-light: #e5eff7;
+$color-success: #24902c;
+$color-success-light: #e5fff0;
+$color-warning: #f3d047;
+$color-warning-light: #ffffd6;
+$color-danger: $red;
+$color-danger-light: #ffdfe0;
 
 $color-risk-0: #515151;
 $color-risk-1: #2a7fd4;
@@ -160,13 +160,13 @@ $theme-colors: (
 /* Expose as CSS custom properties */
 :root {
   --#{$prefix}color-info: #{$color-info};
-  --#{$prefix}color-info-dark: #{$color-info-dark};
+  --#{$prefix}color-info-light: #{$color-info-light};
   --#{$prefix}color-success: #{$color-success};
-  --#{$prefix}color-success-dark: #{$color-success-dark};
+  --#{$prefix}color-success-light: #{$color-success-light};
   --#{$prefix}color-warning: #{$color-warning};
-  --#{$prefix}color-warning-dark: #{$color-warning-dark};
+  --#{$prefix}color-warning-light: #{$color-warning-light};
   --#{$prefix}color-danger: #{$color-danger};
-  --#{$prefix}color-danger-dark: #{$color-danger-dark};
+  --#{$prefix}color-danger-light: #{$color-danger-light};
   --#{$prefix}color-risk-0: #{$color-risk-0};
   --#{$prefix}color-risk-1: #{$color-risk-1};
   --#{$prefix}color-risk-2: #{$color-risk-2};
@@ -189,6 +189,7 @@ $enable-rounded: false;
 $enable-transitions: false;
 $enable-cssgrid: false;
 $enable-negative-margins: true;
+$enable-important-utilities: true;
 
 $min-contrast-ratio: 4.5;
 $color-contrast-dark: $black;
@@ -214,12 +215,21 @@ $position-values: (
   100: 100%
 ) !default;
 
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%)
+) !default;
+
+
 $paragraph-margin-bottom: 1rem;
 
 $link-color: $blue;
 $link-decoration: underline;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: underline;
+$link-shade-percentage: 20%;
 
 $line-height-lg: 1.3333333333;
 
@@ -339,6 +349,7 @@ $blockquote-small-color: $gray;
 
 $hr-border-color: $gray-200;
 $hr-border-width: $border-width;
+$hr-opacity: 0.18;
 
 $list-inline-padding: 5px;
 
@@ -381,26 +392,26 @@ $btn-secondary-border: $navy;
 $btn-secondary-bg-hover: $navy;
 $btn-secondary-border-hover: #00325c;
 $btn-secondary-bg-pressed: #f2f7fb;
-$btn-info-color: $color-info-dark;
-$btn-info-bg: $color-info;
-$btn-info-border: $color-info-dark;
-$btn-info-border-hover: $color-info-dark;
-$btn-info-bg-pressed: mix($color-info-dark, $color-info, 15%);
-$btn-success-color: $color-success-dark;
-$btn-success-bg: $color-success;
-$btn-success-border: $color-success-dark;
-$btn-success-border-hover: $color-success-dark;
-$btn-success-bg-pressed: mix($color-success-dark, $color-success, 15%);
-$btn-warning-color: $color-warning-dark;
-$btn-warning-bg: $color-warning;
-$btn-warning-border: $color-warning-dark;
-$btn-warning-border-hover: $color-warning-dark;
-$btn-warning-bg-pressed: mix($color-warning-dark, $color-warning, 15%);
-$btn-danger-color: $color-danger-dark;
-$btn-danger-bg: $color-danger;
-$btn-danger-border: $color-danger-dark;
-$btn-danger-border-hover: $color-danger-dark;
-$btn-danger-bg-pressed: mix($color-danger-dark, $color-danger, 15%);
+$btn-info-color: $color-info;
+$btn-info-bg: $color-info-light;
+$btn-info-border: $color-info;
+$btn-info-border-hover: $color-info;
+$btn-info-bg-pressed: mix($color-info, $color-info-light, 15%);
+$btn-success-color: $color-success;
+$btn-success-bg: $color-success-light;
+$btn-success-border: $color-success;
+$btn-success-border-hover: $color-success;
+$btn-success-bg-pressed: mix($color-success, $color-success-light, 15%);
+$btn-warning-color: $color-warning;
+$btn-warning-bg: $color-warning-light;
+$btn-warning-border: $color-warning;
+$btn-warning-border-hover: $color-warning;
+$btn-warning-bg-pressed: mix($color-warning, $color-warning-light, 15%);
+$btn-danger-color: $color-danger;
+$btn-danger-bg: $color-danger-light;
+$btn-danger-border: $color-danger;
+$btn-danger-border-hover: $color-danger;
+$btn-danger-bg-pressed: mix($color-danger, $color-danger-light, 15%);
 $btn-login-logout-bg: $login-logout-blue;
 $btn-login-logout-bg-hover: darken($login-logout-blue, 6%);
 $btn-login-logout-bg-pressed: darken($login-logout-blue, 11%);
@@ -648,10 +659,10 @@ $transition-collapse-width:   width .35s ease !default;
 $badge-color: $white;
 $badge-default-bg: $orange;
 $badge-primary-bg: #dcddde;
-$badge-success-bg: $color-success;
-$badge-info-bg: $color-info;
-$badge-warning-bg: $color-warning;
-$badge-danger-bg: $color-danger;
+$badge-success-bg: $color-success-light;
+$badge-info-bg: $color-info-light;
+$badge-warning-bg: $color-warning-light;
+$badge-danger-bg: $color-danger-light;
 
 $range-slider-bg: $smoke;
 $range-slider-height: 4px;
@@ -685,9 +696,9 @@ $progress-bar-bg: theme-color("primary");
 $progress-bar-animation-timing: 1s linear infinite;
 $progress-bar-transition: width .6s ease;
 $progress-bar-bg: $login-logout-blue;
-$progress-bar-success-bg: $color-success;
-$progress-bar-warning-bg: $color-warning;
-$progress-bar-danger-bg: $color-danger;
+$progress-bar-success-bg: $color-success-light;
+$progress-bar-warning-bg: $color-warning-light;
+$progress-bar-danger-bg: $color-danger-light;
 $progress-bar-info-bg: $color-info;
 $progress-bar-circle-default-size: 50px;
 
