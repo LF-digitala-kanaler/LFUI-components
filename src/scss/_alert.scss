@@ -27,6 +27,11 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
   /* Default to "info" */
   @include alert-variant($black, $color-info-dark, $color-info-dark);
+
+  &.alert-light {
+    @include alert-variant($color-info, $color-info-dark, $color-info-dark);
+    @include font-smoothing(auto);
+  }
 }
 
 .alert a,
@@ -45,6 +50,10 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   margin: $alert-padding-y 0;
   line-height: 1.3;
   color: $white;
+
+  .alert-light & {
+    color: $black;
+  }
 }
 
 .alert-header {
@@ -67,6 +76,10 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   white-space: nowrap;
 }
 
+.alert-light .btn {
+  color: $black;
+}
+
 /* Icon alignment */
 .alert .icon {
   min-height: 3.2rem;
@@ -76,14 +89,26 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 .alert-success {
   @include alert-variant($black, $color-success-dark, $color-success-dark);
+
+  &.alert-light {
+    @include alert-variant($color-success, $color-success-dark, $color-success-dark);
+  }
 }
 
 .alert-warning {
   @include alert-variant($black, $color-warning-dark, $color-warning-dark);
+
+  &.alert-light {
+    @include alert-variant($color-warning, $color-warning-dark, $color-warning-dark);
+  }
 }
 
 .alert-danger {
   @include alert-variant($black, $color-danger-dark, $color-danger-dark);
+
+  &.alert-light {
+    @include alert-variant($color-danger, $color-danger-dark, $color-danger-dark);
+  }
 }
 
 /**
@@ -129,4 +154,8 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   top: calc(#{$alert-padding-y} - .9rem);
   right: calc((#{$alert-dismissible-padding-r} + .125rem) * -1);
   color: $white;
+}
+
+.alert-light .btn-close {
+  color: $black;
 }

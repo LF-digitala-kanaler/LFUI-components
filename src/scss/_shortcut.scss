@@ -78,7 +78,7 @@
  * Have it stand out a bit more
  */
 
-.shortcut-alert {
+.shortcut.shortcut-alert {
   padding: .8rem 3.7rem .8rem 1.25rem;
   font-size: 1rem;
   color: $white;
@@ -86,16 +86,13 @@
   cursor: pointer;
   background: lighten($baby, 9%);
   background-color: $black;
+  box-shadow: inset 2px 0 0 $color-info-dark;
+  @include font-smoothing();
 
   &:hover,
   &:focus {
     color: $white;
   }
-}
-
-.shortcut-alert,
-.shortcut-alert.shortcut-info {
-  box-shadow: inset 2px 0 0 $color-info-dark;
 
   .icon {
     color: $color-info-dark;
@@ -103,6 +100,12 @@
 
   &::after {
     @include btn-arrow-standard-right($color-info-dark);
+  }
+
+  &.shortcut-light {
+    background: $color-info;
+    color: $black;
+    @include font-smoothing(auto);
   }
 }
 
@@ -116,6 +119,10 @@
   &::after {
     @include btn-arrow-standard-right($color-success-dark);
   }
+
+  &.shortcut-light {
+    background: $color-success;
+  }
 }
 
 .shortcut-alert.shortcut-warning {
@@ -128,6 +135,10 @@
   &::after {
     @include btn-arrow-standard-right($color-warning-dark);
   }
+
+  &.shortcut-light {
+    background: $color-warning;
+  }
 }
 
 .shortcut-alert.shortcut-danger {
@@ -139,6 +150,20 @@
 
   &::after {
     @include btn-arrow-standard-right($color-danger-dark);
+  }
+
+  &.shortcut-light {
+    background: $color-danger;
+  }
+}
+
+.shortcut-alert.shortcut-icon {
+  padding-left: 51px;
+
+  svg {
+    top: 12px;
+    width: 20px;
+    height: 20px;
   }
 }
 
