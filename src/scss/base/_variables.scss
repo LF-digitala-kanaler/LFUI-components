@@ -188,6 +188,7 @@ $enable-caret: false;
 $enable-rounded: false;
 $enable-transitions: false;
 $enable-cssgrid: false;
+$enable-negative-margins: true;
 
 $min-contrast-ratio: 4.5;
 $color-contrast-dark: $black;
@@ -207,6 +208,12 @@ $spacers: (
   3: ($spacer * 3),
 );
 
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;
+
 $paragraph-margin-bottom: 1rem;
 
 $link-color: $blue;
@@ -218,6 +225,13 @@ $line-height-lg: 1.3333333333;
 
 $border-width: 2px;
 $border-color: $gray-200;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+) !default;
 
 $border-radius: .25rem;
 $border-radius-lg: .375rem;
@@ -290,8 +304,18 @@ $h4-font-size: 1.25rem;
 $h5-font-size: 1.125rem;
 $h6-font-size: .75rem;
 
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+) !default;
+
 $headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 700;
+$font-weight-semibold: 500;
 $headings-line-height: 1.1;
 $headings-color: $navy;
 

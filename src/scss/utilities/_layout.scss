@@ -32,31 +32,27 @@
 }
 
 .layout-flex {
-  display: flex !important;
+  @extend .d-flex;
 }
 
 .layout-column {
-  flex-direction: column !important;
+  @extend .flex-column;
 }
 
 .layout-row {
-  flex-direction: row !important;
+  @extend .flex-row;
 }
 
 .layout-grow {
-  flex-grow: 1 !important;
+  @extend .flex-grow-1;
 }
 
 .layout-shrink {
-  flex-shrink: 1 !important;
+  @extend .flex-shrink-1;
 }
 
 .layout-no-flex {
   flex: 0 0 auto !important;
-}
-
-.layout-space-between {
-  justify-content: space-between !important;
 }
 
 /* <3 */
