@@ -1,169 +1,31 @@
-.price-box,
-.price-box-bottom {
-  background-color: $white;
+.pricebox {
+  background: $white;
 }
 
-.price-box {
-  .price-box-header {
-    padding: 1rem;
-  }
-
-  .your-price {
-    font-family: $font-family-sans-serif;
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: $blue;
-
-    @include font-smoothing();
-  }
-
-  .price-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-
-  .price {
-    display: block;
-    float: left;
-    margin: 0 1rem 0 0;
-    font-family: $font-family-sans-serif;
-    font-size: 3.3rem;
-    font-weight: 700;
-    line-height: .9;
-    color: $blue;
-    white-space: nowrap;
-
-    @include font-smoothing();
-  }
-
-  .price-secondary {
-    display: inline-block;
-    margin: 0;
-    white-space: nowrap;
-
-    > .year {
-      @extend .text-muted;
-
-      margin: 0;
-      font-family: $font-family-base;
-      font-size: $font-size-md;
-      font-weight: 400;
-      line-height: 1.05;
-    }
-
-    > .month {
-      margin-bottom: 0;
-      font-family: $font-family-sans-serif;
-      font-size: 1.4375rem;
-      font-weight: 700;
-      line-height: 1;
-      color: $blue;
-
-      @include font-smoothing();
-    }
-  }
-}
-
-.price-box-content {
-  padding-bottom: 1rem;
-
-  label {
-    margin-bottom: 0;
-  }
-
-  p.price-box-content-text,
-  span.price-box-content-text {
-    margin: 0;
-    font-family: $font-family-base;
-    font-size: $font-size-md;
-  }
+.pricebox-fixed {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  cursor: pointer;
+  background: $white;
+  border-top: $navy solid 2px;
+  box-shadow: 0 0 1rem 0.25rem $smoke;
 }
 
 /**
- * Price-box-bottom
+ * Collapse Chevron
  */
 
-.price-box-bottom {
-  position: fixed;
-  bottom: 0;
-  z-index: 40;
-  display: block;
-  cursor: pointer;
-  border-top: $navy solid 2px;
-  box-shadow: 0 0 15px 4px $smoke;
-  transition: bottom 360ms ease-in-out;
-
-  .price-box-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .your-price {
-      margin-top: auto !important;
-      font-family: $font-family-sans-serif;
-      font-size: 1.125rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: $blue;
-
-      @include font-smoothing();
-    }
-
-    .price-container {
-      margin-bottom: 0;
-    }
-
-    .price {
-      font-size: 36px;
-    }
-
-    .price-secondary {
-      .year {
-        display: none;
-      }
-    }
-  }
-
-  .price-box-chevron {
-    @include glyph-chevron-up($blue);
-
-    position: relative;
-    top: 0;
-    left: 0;
-    align-self: center;
-    width: 32px;
-    height: 32px;
-
-    color: $blue;
-    background-position: center center;
-    background-size: 18px 12px;
-
-    svg {
-      position: absolute;
-    }
-  }
-
-  .price-box-content {
-    padding-top: 1rem;
-  }
+.pricebox-chevron {
+  @include glyph-chevron-down($blue);
+  width: 2rem;
+  height: 2rem;
+  background-size: 1.125rem 0.75rem;
+  background-position: center center;
 }
 
-.price-box-bottom.active {
-  transition: bottom 360ms ease-in-out;
-
-  .price-box-chevron {
-    @include glyph-chevron-down($blue);
-
-    // align-self: center;
-    width: 32px;
-    height: 32px;
-    background-size: 18px 12px;
-    // background-position: center center;
-
-    svg {
-      transform: rotate(180deg);
-    }
-  }
+[aria-expanded="true"] .pricebox-chevron {
+  transform: scaleY(-1);
 }

@@ -60,6 +60,14 @@
   font-size: $font-size-xl;
 }
 
+.text-price {
+  font-size: 3.3rem;
+  line-height: 1;
+  color: $blue;
+  white-space: nowrap;
+  margin: 0;
+}
+
 /**
  * Restrain text to a legible line width
  */

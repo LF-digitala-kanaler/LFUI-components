@@ -1,83 +1,52 @@
-<style>
-  .price-box-bottom {
-    box-shadow: 0 0 8px 2px rgba(0, 14, 26, 0.15);
-    width: 100%;
-    bottom: -162px;
-    left: 0;
-  }
-  .price-box-bottom.active {
-    bottom: 0;
-  }
-</style>
-<aside class="price-box price-box-bottom">
-  <div class="price-box-header">
-    <span class="your-price"> Ditt pris </span>
-    <div class="price-container">
-      <p class="price">1&nbsp;245</p>
-      <div class="price-secondary">
-        <p class="month">kr/mån<span class="d-none d-md-inline">ad</span></p>
-        <p class="year">18&nbsp;274&nbsp;kr/år</p>
+<aside class="pricebox-fixed" data-bs-toggle="collapse" href="#price-box-content" aria-expanded="false" aria-controls="price-box-content">
+  <div class="p-05">
+    <div class="layout-flex layout-space-between px-05">
+      <p class="h4 m-0 text-blue"> Ditt pris </p>
+      <div class="layout-flex">
+        <p class="h1 text-price">1 245</p>
+        <div class="pl-1">
+          <p class="h4 text-blue m-0">kr/mån</p>
+          <p class="text-muted text-nowrap m-0">18 274 kr/år</p>
+        </div>
       </div>
+      <div class="pricebox-chevron"></div>
     </div>
-    <div class="price-box-chevron"></div>
   </div>
-  <div class="wave-pattern"></div>
-  <div class="price-box-content container">
-    <div class="row">
-      <div class="col-6">
-        <p class="price-box-content-text">Personskydd</p>
-      </div>
-      <div class="col-6">
-        <p class="price-box-content-text float-right">220&nbsp;kr/mån</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <p class="price-box-content-text">Tilläggsskydd</p>
-      </div>
-      <div class="col-6">
-        <p class="price-box-content-text float-right">310&nbsp;kr/mån</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="alert alert-info mt-1 pl-05 mb-0">
-          <div class="d-flex align-items-top">
-            <svg class="checkmark" viewBox="0 0 40 40">
-              <g fill="none" fill-rule="evenodd">
-                <path
-                  class="checkmark-circle"
-                  d="M20 1.5C9.783 1.5 1.5 9.783 1.5 20S10.75 38.5 20 38.5 38.5 30.217 38.5 20 30.217 1.5 20 1.5z"
-                ></path>
-                <path
-                  class="checkmark-check"
-                  d="M30.27 14.054L18.108 26.216l-7.297-7.297"
-                ></path>
-              </g>
-            </svg>
-            <div class="row w-100">
-              <div class="col-12 ml-05 mt-05">
-                <h4 class="mb-0">Avdragen rabatt</h4>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="price-box-content-text">Internetrabatt</p>
-                  </div>
-                  <div class="col-6 text-right">
-                    <p class="text-secondary price-box-content-text">
-                      - 2 135 kr
-                    </p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="price-box-content-text">Guldmedlem</p>
-                  </div>
-                  <div class="col-6 text-right">
-                    <p class="text-secondary price-box-content-text">- 11 kr</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div id="price-box-content" class="collapse">
+    <div class="wave-pattern"></div>
+    <div class="container p-1">
+      <p class="row row-no-gutter m-0">
+        <span class="col-6">Personskydd</span>
+        <span class="col-6 text-right text-nowrap">220 kr/mån</span>
+      </p>
+      <p class="row row-no-gutter m-0">
+        <span class="col-6">Tilläggsskydd</span>
+        <span class="col-6 text-right text-nowrap">310 kr/mån</span>
+      </p>
+      <div class="alert alert-info alert-light m-0 pl-05 pr-1 mt-1">
+        <svg class="icon checkmark" viewBox="0 0 40 40">
+          <g fill="none" fill-rule="evenodd">
+            <path
+              class="checkmark-circle"
+              d="M20 1.5C9.783 1.5 1.5 9.783 1.5 20S10.75 38.5 20 38.5 38.5 30.217 38.5 20 30.217 1.5 20 1.5z"
+            ></path>
+            <path
+              class="checkmark-check"
+              d="M30.27 14.054L18.108 26.216l-7.297-7.297"
+            ></path>
+          </g>
+        </svg>
+        <div class="alert-content row w-100">
+          <div class="col-12 p-0">
+            <strong class="text-navy">Avdragen rabatt</strong>
+            <p class="row row-no-gutter m-0">
+              <span class="col-6 text-blue">Internetrabatt</span>
+              <span class="col-6 text-right text-red font-weight-bold text-nowrap">- 2 135 kr</span>
+            </p>
+            <p class="row row-no-gutter m-0">
+              <span class="col-6 text-blue">Guldmedlem</span>
+              <span class="col-6 text-right text-red font-weight-bold text-nowrap">- 11 kr</span>
+            </p>
           </div>
         </div>
       </div>

@@ -55,6 +55,10 @@
   flex: 0 0 auto !important;
 }
 
+.layout-space-between {
+  justify-content: space-between !important;
+}
+
 /* <3 */
 
 .hidden {
@@ -145,7 +149,8 @@
  * Todo: replace or extend the new .visually-hidden from BS5
  */
 
-.sr-only {
+.sr-only,
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
