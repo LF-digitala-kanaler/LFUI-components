@@ -1,15 +1,20 @@
 import AlwaysOpen from './alwaysOpen.html?raw'
 import CollapseExpand from './collapseExpand.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
 import { panelExample } from './panel'
-import { useEffect } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Panel' }
 
 export const alwaysOpen = () => AlwaysOpen
 
 export const collapseExpand = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    panelExample()
+    panelExample(document.getElementById(id))
   }, [])
-  return CollapseExpand
+  return html`
+    <div id="${id}">${CollapseExpand}</div>
+  `
 }

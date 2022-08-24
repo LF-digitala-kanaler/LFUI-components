@@ -17,8 +17,7 @@ module.exports = {
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
-    '@storybook/addon-viewport',
-    '@storybook/addon-docs'
+    '@storybook/addon-viewport'
   ],
   core: {
     builder: '@storybook/builder-vite'

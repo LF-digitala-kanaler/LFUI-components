@@ -7,5 +7,5 @@ module.exports = {
     'yield-star-spacing': 'off',
     'no-unexpected-multiline': 'off'
   },
-  ignorePatterns: ['dist/**', 'static/**', 'node_modules/**']
+  ignorePatterns: ['dist', 'static', 'node_modules']
 }

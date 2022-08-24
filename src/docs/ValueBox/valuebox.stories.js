@@ -1,12 +1,17 @@
 import Valuebox from './valuebox.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
 import { valueboxExample } from './valuebox'
-import { useEffect } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Value box' }
 
 export const valueBox = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    valueboxExample()
+    valueboxExample(document.getElementById(id))
   }, [])
-  return Valuebox
+  return html`
+    <div id="${id}">${Valuebox}</div>
+  `
 }

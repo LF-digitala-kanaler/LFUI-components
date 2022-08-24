@@ -1,16 +1,24 @@
 import Multiple from './multiple.html?raw'
 import Single from './single.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
 import { selectExample } from './select'
-import { useEffect } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Select' }
 
 export const single = () => {
-  useEffect(selectExample, [])
-  return Single
+  const [id] = useState(uid)
+  useEffect(() => selectExample(document.getElementById(id)), [])
+  return html`
+    <div id="${id}">${Single}</div>
+  `
 }
 
 export const multiple = () => {
-  useEffect(selectExample, [])
-  return Multiple
+  const [id] = useState(uid)
+  useEffect(() => selectExample(document.getElementById(id)), [])
+  return html`
+    <div id="${id}">${Multiple}</div>
+  `
 }

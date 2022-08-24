@@ -1,19 +1,27 @@
 import Value from './value.html?raw'
 import Intervall from './intervall.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 import { sliderExample } from './slider'
-import { useEffect } from '@storybook/client-api'
 
 export default { title: 'Slider' }
 
 export const value = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    sliderExample()
+    sliderExample(document.getElementById(id))
   }, [])
-  return Value
+  return html`
+    <div id="${id}">${Value}</div>
+  `
 }
 export const intervall = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    sliderExample()
+    sliderExample(document.getElementById(id))
   }, [])
-  return Intervall
+  return html`
+    <div id="${id}">${Intervall}</div>
+  `
 }

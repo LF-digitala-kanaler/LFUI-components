@@ -1,15 +1,33 @@
-import $ from 'jquery'
+import { each } from '../../js/utils'
 
-const popoverTooltipExample = () => {
-  $('.popover-tooltip-trigger').on('focus blur', function () {
-    $('#' + $(this).attr('aria-controls'))
-      .parent()
-      .toggleClass('open')
-  })
+const popoverTooltipExample = (context) => {
+  each(
+    '.popover-tooltip-trigger',
+    (el) => {
+      el.addEventListener('focus', onchange)
+      el.addEventListener('blur', onchange)
 
-  $('label.popover-tooltip-trigger').on('click touch', function (e) {
+      function onchange() {
+        document
+          .getElementById(this.getAttribute('aria-controls'))
+          .parentElement.classList.toggle('open')
+      }
+    },
+    context
+  )
+
+  each(
+    'label.popover-tooltip-trigger',
+    (el) => {
+      el.addEventListener('click', preventDefault)
+      el.addEventListener('touch', preventDefault)
+    },
+    context
+  )
+
+  function preventDefault(e) {
     e.preventDefault()
-  })
+  }
 }
 
 export { popoverTooltipExample }

@@ -1,53 +1,48 @@
-import $ from 'jquery'
+import { delegate } from '../utils'
 
 const PRESSED_ATTR = 'aria-pressed'
 const isTouch = 'ontouchstart' in window
 const eventIn = isTouch ? 'touchstart' : 'mousedown'
 const eventOut = isTouch ? 'touchend' : 'mouseup mouseout dragstart'
 
-$(document).on(eventIn, '[data-effect]', (event) => {
-  let tilted = false
-  let up = false
-  const $target = $(event.currentTarget)
-  const effect = $target.data('effect')
+document.addEventListener(
+  eventIn,
+  delegate('[data-effect]', (event) => {
+    let up = false
+    let tilted = false
+    const effect = this.dataset.effect
 
-  function cleanup() {
-    $target
-      .removeClass(`${effect}-in ${effect}-out`)
-      .off('animationend', onIn)
-      .off(eventOut, onOut)
-  }
-
-  function onIn() {
-    tilted = true
-    if (up) {
-      $target
-        .attr(PRESSED_ATTR, 'false')
-        .addClass(`${effect}-out`)
-        .removeClass(`${effect}-in`)
-        .one('animationend', cleanup)
+    function cleanup() {
+      this.classList.remove(`${effect}-in ${effect}-out`)
+      this.removeEventListener('animationend', onIn)
+      this.removeEventListener(eventOut, onOut)
     }
-  }
 
-  function onOut() {
-    up = true
-    if (tilted) {
-      $target
-        .attr(PRESSED_ATTR, 'false')
-        .addClass(`${effect}-out`)
-        .removeClass(`${effect}-in`)
-        .one('animationend', cleanup)
+    function release() {
+      this.classList.add(`${effect}-out`)
+      this.classList.remove(`${effect}-in`)
+      this.setAttribute(PRESSED_ATTR, 'false')
+      this.addEventListener('animationend', cleanup, { once: true })
     }
-  }
 
-  if ($target.prop('disabled')) {
-    return
-  }
+    function onIn() {
+      tilted = true
+      if (up) release()
+    }
 
-  $target
-    .attr(PRESSED_ATTR, 'true')
-    .removeClass(`${effect}-out`)
-    .addClass(`${effect}-in`)
-    .one('animationend', onIn)
-    .one(eventOut, onOut)
-})
+    function onOut() {
+      up = true
+      if (tilted) release()
+    }
+
+    if (this.disabled) {
+      return
+    }
+
+    this.classList.add(`${effect}-in`)
+    this.classList.remove(`${effect}-out`)
+    this.setAttribute(PRESSED_ATTR, 'true')
+    this.addEventListener(eventOut, onOut, { once: true })
+    this.addEventListener('animationend', onIn, { once: true })
+  })
+)

@@ -1,14 +1,14 @@
-import $ from 'jquery'
+import { each } from '../../js/utils'
 
-const valueboxExample = () => {
-  $(document).ready(function () {
-    $('.value-box-text').each(function () {
-      const width =
-        $(this)[0].getBBox().width || $(this).getComputedTextLength()
-      const height = 18
-      $(this)[0].setAttribute('viewBox', `0 0 ${width} ${height}`)
-    })
-  })
+const valueboxExample = (context) => {
+  each(
+    '.value-box-text',
+    function (el) {
+      const width = el.getBBox().width || el.getComputedTextLength()
+      el.setAttribute('viewBox', `0 0 ${width} 18`)
+    },
+    context
+  )
 }
 
 export { valueboxExample }

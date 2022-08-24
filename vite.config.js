@@ -30,14 +30,6 @@ export default defineConfig({
       },
       formats: ['umd', 'es']
     },
-    outDir: 'dist/lfui',
-    rollupOptions: {
-      external: ['jquery'],
-      output: {
-        globals: {
-          jquery: '$'
-        }
-      }
-    }
+    outDir: 'dist/lfui'
   }
 })

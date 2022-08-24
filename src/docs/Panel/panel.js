@@ -1,11 +1,19 @@
-import $ from 'jquery'
+import { html } from '../../js/utils'
 
-const panelExample = () => {
-  const html = `<table class="table mb-0">
-      <colgroup>
-        <col class="table-cell-fit">
-          <col class="table-cell-fill">
-            <col class="table-cell-fit">
+const panelExample = (context) => {
+  const trigger = context.querySelector('.js-asyncCollapse')
+  const target = context.querySelector(trigger.dataset.bsTarget)
+
+  trigger.addEventListener(
+    'click',
+    function () {
+      setTimeout(function () {
+        target.append(html`
+          <table class="table mb-0">
+            <colgroup>
+              <col class="table-cell-fit" />
+              <col class="table-cell-fill" />
+              <col class="table-cell-fit" />
             </colgroup>
             <thead>
               <tr>
@@ -31,15 +39,13 @@ const panelExample = () => {
                 <td>-29,00</td>
               </tr>
             </tbody>
-          </table>`
-
-  const trigger = document.querySelector('.js-asyncCollapse')
-  $(trigger).on('click', trigger, function () {
-    setTimeout(function () {
-      $('#collapsible3').html(html)
-      trigger.dispatchEvent(new window.Event('done'))
-    }, 2500)
-  })
+          </table>
+        `)
+        trigger.dispatchEvent(new window.Event('done'))
+      }, 2500)
+    },
+    { once: true }
+  )
 }
 
 export { panelExample }

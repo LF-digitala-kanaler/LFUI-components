@@ -1,12 +1,17 @@
-import { paginationExample } from './pagination'
 import Pagination from './pagination.html?raw'
-import { useEffect } from '@storybook/client-api'
+
+import { useEffect, useState } from '@storybook/client-api'
+import { paginationExample } from './pagination'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Pagination' }
 
 export const pagination = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    paginationExample()
+    paginationExample(document.getElementById(id))
   }, [])
-  return Pagination
+  return html`
+    <div id="${id}">${Pagination}</div>
+  `
 }

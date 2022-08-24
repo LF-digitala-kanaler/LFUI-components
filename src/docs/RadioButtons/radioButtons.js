@@ -1,16 +1,21 @@
-const radioButtonsExample = () => {
-  const radioCards = document.getElementsByClassName('radio-card')
-  for (let i = 0; i < radioCards.length; i++) {
-    radioCards[i].addEventListener('change', function () {
-      for (let i = 0; i < radioCards.length; i++) {
-        radioCards[i].classList.remove('active')
-      }
+import { each } from '../../js/utils'
 
-      if (!this.classList.contains('active')) {
-        this.classList.add('active')
-      }
-    })
-  }
+const radioButtonsExample = (context, selector) => {
+  each(
+    selector,
+    function (el, index, list) {
+      el.addEventListener('change', function (event) {
+        for (const item of list) {
+          const input = item.matches('input')
+            ? item
+            : item.querySelector('input')
+          if (input.name !== event.target.name) continue
+          item.classList.toggle('active', item === el)
+        }
+      })
+    },
+    context
+  )
 }
 
 export { radioButtonsExample }
