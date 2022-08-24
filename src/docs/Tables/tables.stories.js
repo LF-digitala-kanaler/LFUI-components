@@ -5,7 +5,10 @@ import { useEffect, useState } from '@storybook/client-api'
 import { tableExample } from './table'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Tables' }
+export default {
+  title: 'Tables',
+  parameters: { backgrounds: { default: 'gray' } }
+}
 
 export const present = () => {
   const [id] = useState(uid)

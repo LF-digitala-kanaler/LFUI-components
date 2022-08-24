@@ -5,7 +5,10 @@ import { useEffect, useState } from '@storybook/client-api'
 import { panelExample } from './panel'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Panel' }
+export default {
+  title: 'Panel',
+  parameters: { backgrounds: { default: 'gray' } }
+}
 
 export const alwaysOpen = () => AlwaysOpen
 

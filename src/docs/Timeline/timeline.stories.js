@@ -4,7 +4,10 @@ import { useEffect, useState } from '@storybook/client-api'
 import { timelineExample } from './timeline'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Timeline' }
+export default {
+  title: 'Timeline',
+  parameters: { backgrounds: { default: 'gray' } }
+}
 
 export const timeline = () => {
   const [id] = useState(uid)

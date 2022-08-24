@@ -5,7 +5,10 @@ import { useEffect, useState } from '@storybook/client-api'
 import { html, uid } from '../../js/utils'
 import { navbarExample } from './navbar'
 
-export default { title: 'Navbar' }
+export default {
+  title: 'Navbar',
+  parameters: { backgrounds: { default: 'gray' } }
+}
 
 export const white = () => {
   const [id] = useState(uid)

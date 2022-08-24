@@ -3,7 +3,8 @@ import LandingPage from './landingPage.html?raw'
 import Navigational from './navigational.html?raw'
 
 export default {
-  title: 'Shortcut'
+  title: 'Shortcut',
+  parameters: { backgrounds: { default: 'gray' } }
 }
 
 export const landingPage = () => LandingPage

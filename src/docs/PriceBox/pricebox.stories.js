@@ -5,7 +5,10 @@ import { useEffect, useState } from '@storybook/client-api'
 import { priceBoxExample } from './pricebox'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Price box' }
+export default {
+  title: 'Price box',
+  parameters: { backgrounds: { default: 'gray' } }
+}
 
 export const desktop = () => Desktop
 
