@@ -1,5 +1,5 @@
 import '../js/index.js'
-import '../scss/DOCS.scss'
+import '../scss/docs.scss'
 
 import { datepickerExample } from './Datepicker/datepicker'
 import { calloutExample } from './Callout/callout'

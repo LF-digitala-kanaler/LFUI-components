@@ -43,10 +43,10 @@ You have two alternatives for getting started with the framework; either by impo
 
 Importing the source code gives you access to the full SCSS suit including our variables and mixins – increasing your flexibility when extending the framework with your own styles and layouts.
 
-Import `LFUI.scss` at the very beginning of your main SCSS file:
+Import `index.scss` at the very beginning of your main SCSS file:
 
 ```css
-@import "@lf-digitala-kanaler/lfui-components/src/scss/LFUI.scss";
+@import '@lf-digitala-kanaler/lfui-components/src/scss/index.scss';
 ```
 
 The JavaScript bundle can be imported as a whole.
@@ -67,13 +67,20 @@ import select from '@lf-digitala-kanaler/lfui-components/select'
 
 ## Compiled alternative
 
-In the `/dist` folder provided, you will find: `lfui.css`, `lfui.js` and a `fonts` directory. These files can be used as-is. Simply add jQuery along with `lfui.js` and `lfui.css` to your HTML document.
+In the `/dist` folder provided, you will find: the `lfui` directory which includes compiled CSS and Javascript packages in ESM and UMD formats. There is also the `fonts` directory containing all font faces. They are referenced by relative paths in the compiled CSS. All these files can be used as-is.
+
+```html
+<script type="module" src="/public/lfui/main.es.js"></script>
+<style rel="stylesheet" href="/public/lfui/style.css">
+```
+
+## Dependencies
+
+When importing and compiling the source code, all dependencies are resolved automatically by your build tool. However, please be adviced that when including the compiled files, if you are using the ranged Slider interval variant, you will have to ensure that jQuery is loaded and available in the global scope.
 
 ## Fonts
 
-Web fonts are included as an external dependency, so the font urls will need to
-be rebased and the source files copied to the build directory. A tool such as
-`postcss-url` or the Webpack `file-loader` can help you with that.
+Web fonts are included as an external dependency, so if you are not copying the `dist/lfui` directory as-is, the font urls will need to be rebased and the source files copied to the build directory. A tool like `postcss-url` can help you with that.
 
 See the [fonts documentation][fonts] on loading and preloading techniques for optimal performance and accessibility.
 
@@ -115,8 +122,9 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
 ├── .storybook                # Storybook config
 ├── dist
 │  ├── docs                   # Component examples used in LFDS
-│  ├── lfui.css               # CSS bundle
-│  ├── lfui.js                # JS bundle
+│  ├── lfui/style.css         # CSS bundle
+│  ├── lfui/main.es.js        # ESM bundle
+│  ├── lfui/main.umd.js       # UMD bundle
 │  └── fonts                  # Font files (referenced in CSS bundle)
 └── src
     ├── data
@@ -131,7 +139,7 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
     │   │── index.js          # Entry point for JS (sans CSS)
     │   └── components        # Component JS
     ├── scss                  # CSS for components
-    │   └── LFUI.scss         # Entry point for CSS
+    │   └── index.scss        # Entry point for SCSS
     └── index.js              # Entry point for JS/CSS bundles
 ```
 
@@ -144,6 +152,7 @@ When working on a new feature, begin by creating a new branch from `main`. After
 Please document the changes that you make in the pull request, along with potential changes to existing classes or variables that should be added to a migration guide later on.
 
 ## Linting
+
 The project uses [standard][standard] and [stylelint][stylelint]. There are no automated tests beyond that.
 
 ```
@@ -152,21 +161,23 @@ npm test
 
 # Making a release
 
-* Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes that have been made to the respective components in this release. This information will be visible on [LFDS][lfds] later on.
-* Bump the version number `npm version <major|minor|patch>`
-* Push the changes to GitHub
-* Create a new release from the [tag list](https://github.com/LF-digitala-kanaler/LFUI-components/tags) on Github and add your release notes. Note that this will also be visible to the public. Take extra care to document any breaking changes.
+- Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes that have been made to the respective components in this release. This information will be visible on [LFDS][lfds] later on.
+- Bump the version number `npm version <major|minor|patch>`
+- Push the changes to GitHub
+- Create a new release from the [tag list](https://github.com/LF-digitala-kanaler/LFUI-components/tags) on Github and add your release notes. Note that this will also be visible to the public. Take extra care to document any breaking changes.
   - Tag version example: v5.0.0
   - Release Title example: Components 5.0.0
-* Creating a new release will automatically publish a new package version to GitHub Packages.
-* Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo][lfds-repository].
-* If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lfds-repository] readme.
-* Deploy the new version of LFDS.
+- Creating a new release will automatically publish a new package version to GitHub Packages.
+- Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo][lfds-repository].
+- If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lfds-repository] readme.
+- Deploy the new version of LFDS.
 
 ## Deploying the Storybook website
+
 When creating a release, a Github Action will automatically deploy the changes to our [Storybook Github page][lfui-components-webpage].
 
 ## Github actions secrets
+
 Since the package depends on private GitHub packages, a private access token is set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
 be updated when expired.
 

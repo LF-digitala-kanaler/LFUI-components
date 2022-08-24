@@ -1,4 +1,4 @@
-import '../src/scss/LFUI.scss'
+import '../src/scss/index.scss'
 import '../src/js/index.js'
 
 export const parameters = {
