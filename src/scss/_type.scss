@@ -91,12 +91,10 @@ h6,
   font-family: $font-family-sans-serif;
 }
 
-// To be used underneath LF-rubik together with sale-statements.
-// "Som silverkund får du 5% rabatt"
 .payoff {
   font-family: $font-family-sans-serif;
-  font-size: 18px;
-  color: $black;
+  font-size: $font-size-lg;
+  color: $body-color;
 }
 
 /**

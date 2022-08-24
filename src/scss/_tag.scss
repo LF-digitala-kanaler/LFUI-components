@@ -30,17 +30,17 @@
 }
 
 .tag-info {
-  --#{$prefix}tag-bg: #{$color-info};
+  --#{$prefix}tag-bg: #{$color-info-light};
 }
 
 .tag-success {
-  --#{$prefix}tag-bg: #{$color-success};
+  --#{$prefix}tag-bg: #{$color-success-light};
 }
 
 .tag-warning {
-  --#{$prefix}tag-bg: #{$color-warning};
+  --#{$prefix}tag-bg: #{$color-warning-light};
 }
 
 .tag-danger {
-  --#{$prefix}tag-bg: #{$color-danger};
+  --#{$prefix}tag-bg: #{$color-danger-light};
 }
