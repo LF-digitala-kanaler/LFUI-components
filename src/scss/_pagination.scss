@@ -42,7 +42,6 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
   font-weight: 700;
   text-decoration: none;
   background-color: $pagination-bg;
-  background-image: none;
 
   @include font-smoothing();
 }

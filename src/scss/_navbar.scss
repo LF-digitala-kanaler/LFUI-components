@@ -7,6 +7,7 @@
 .navbar {
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: nowrap;
   height: $navbar-height;
   font-family: $font-family-sans-serif;
 
@@ -22,6 +23,7 @@
 
 .navbar-nav {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   height: $navbar-height;
 }

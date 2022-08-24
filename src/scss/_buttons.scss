@@ -11,7 +11,7 @@
   font-size: $font-size-lg;
   white-space: normal;
   cursor: pointer;
-  background-image: none;
+  text-decoration: none;
   border-width: $input-btn-border-width;
   border-radius: $border-radius;
   transition: 200ms linear;
@@ -20,7 +20,7 @@
 }
 
 .btn:hover {
-  background-image: none;
+  text-decoration: none;
   transition: 200ms linear;
   transition-property: all;
 }
@@ -662,11 +662,11 @@ a.btn:active {
   width: 100%;
   line-height: 1.1;
   text-align: center;
-  background-image: none;
+  text-decoration: none;
 
   &:hover,
   &:active {
-    background-image: none;
+    text-decoration: none;
   }
 
   &::after {

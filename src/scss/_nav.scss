@@ -4,7 +4,7 @@
  * This fix is intended to correct the spacing between the nav links' underline (background-image) and text.
  * Line height allows us to manipulate this, but also causes some bad side-effects in the many different
  * variations that nav-links come in. Hence, we only want to target those that are not special enough.
-**/
+ */
 
 .nav-link {
   padding-bottom: calc(#{$nav-link-padding-y} - 2px);
@@ -73,7 +73,7 @@
     font-size: $font-size-lg;
     color: inherit;
     background: rgba(0, 0, 0, 3%);
-    background-image: none;
+    text-decoration: none;
     border: solid $nav-tabs-border-color;
     border-width: 0 0 $nav-tabs-border-width;
     opacity: 1;
@@ -252,7 +252,7 @@
     &:active {
       position: relative;
       color: inherit;
-      background-image: none;
+      text-decoration: none;
       border: solid $nav-tabs-border-color;
       border-width: 0 0 $nav-tabs-border-width;
       opacity: 1;
