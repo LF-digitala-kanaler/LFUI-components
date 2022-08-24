@@ -65,8 +65,8 @@
     "./dist/*": "./dist/*",
     ".": {
       "development": "./src/js/index.js",
-      "import": "./dist/lfui.js",
-      "default": "./dist/lfui-umd.js"
+      "import": "./dist/lfui/main.es.js",
+      "default": "./dist/lfui/main.umd.js"
     },
     "./select": "./src/js/components/select.js",
     "./datepicker": "./src/js/components/datepicker.js"
