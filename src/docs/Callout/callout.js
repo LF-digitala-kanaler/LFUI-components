@@ -1,9 +1,9 @@
 import Vivus from 'vivus'
-import $ from 'jquery'
+import { each } from '../../js/utils'
 
-const calloutExample = () => {
+const calloutExample = (context) => {
   function draw(el, options = {}, callback) {
-    const opts = $.extend(
+    const opts = Object.assign(
       {
         animTimingFunction: Vivus.EASE_OUT,
         duration: 100
@@ -14,33 +14,31 @@ const calloutExample = () => {
     return new Vivus(el, opts, callback)
   }
 
-  function getDataOptions(data) {
-    const options = {}
+  each(
+    '[data-draw]',
+    (el) => {
+      const options = Object.entries(el.dataset).reduce(function (
+        acc,
+        [key, value]
+      ) {
+        if (key.match(/^draw([\w]+)/)) {
+          acc[key.replace(/^draw/, '')] = value
+        }
 
-    Object.keys(data).forEach((key) => {
-      const match = key.match(/^draw([\w]+)/)
+        return acc
+      },
+      {})
 
-      if (match) {
-        const prop = match[1][0].toLowerCase() + match[1].substr(1)
-        options[prop] = data[key]
+      if (Object.hasOwnProperty.call(options, 'on')) {
+        delete options.on
+        options.start = 'autostart'
+        el.addEventListener(options.on, () => draw(el, options))
+      } else {
+        draw(el, options)
       }
-    })
-
-    return options
-  }
-
-  $('[data-draw]').each((index, el) => {
-    const $el = $(el)
-    const options = getDataOptions($el.data())
-
-    if (Object.hasOwnProperty.call(options, 'on')) {
-      delete options.on
-      options.start = 'autostart'
-      $el.on(options.on, () => draw(el, options))
-    } else {
-      draw(el, options)
-    }
-  })
+    },
+    context
+  )
 }
 
 export { calloutExample }

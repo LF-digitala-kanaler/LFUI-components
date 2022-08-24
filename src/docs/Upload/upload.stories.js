@@ -1,12 +1,17 @@
 import Upload from './upload.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
 import { uploadExample } from './upload'
-import { useEffect } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Upload' }
 
 export const upload = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    uploadExample()
+    uploadExample(document.getElementById(id))
   }, [])
-  return Upload
+  return html`
+    <div id="${id}">${Upload}</div>
+  `
 }

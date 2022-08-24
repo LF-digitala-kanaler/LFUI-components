@@ -1,18 +1,20 @@
 import Present from './present.html?raw'
 import Compare from './comparative.html?raw'
-import { useEffect } from '@storybook/client-api'
+
+import { useEffect, useState } from '@storybook/client-api'
 import { tableExample } from './table'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Tables' }
 
 export const present = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    tableExample()
+    tableExample(document.getElementById(id))
   }, [])
-  return Present
+  return html`
+    <div id="${id}">${Present}</div>
+  `
 }
 
-export const compare = () => {
-  useEffect(() => {}, [])
-  return Compare
-}
+export const compare = () => Compare

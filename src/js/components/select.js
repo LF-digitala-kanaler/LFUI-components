@@ -1,8 +1,6 @@
-import $ from 'jquery'
-import 'bootstrap5/js/src/dropdown'
+import Dropdown from 'bootstrap5/js/src/dropdown'
+import { h, Ref } from '../utils'
 
-const EVENT_PREFIX = /^on/
-const refs = new WeakMap()
 const initialized = new WeakSet()
 
 /**
@@ -175,7 +173,7 @@ export function select(el, opts = el.dataset) {
                         }
 
                         // Update dropdown position
-                        $(toggle).dropdown('update')
+                        dropdown.update()
                       }
                     },
                     label
@@ -190,6 +188,7 @@ export function select(el, opts = el.dataset) {
         // E.g. <option value="" disabled selected>Choose something</option>
         if (isPlaceholder(child, index)) return null
 
+        const dropdown = new Dropdown(toggle)
         const { label, disabled, selected } = child
 
         // Add to internal element reverse lookup table
@@ -362,54 +361,4 @@ function resolveLabel(label, regexp, className = 'text-muted') {
     label.replace(regexp, ''),
     h('small', { class: className }, match[1] || match[0])
   ]
-}
-
-/**
- * Render node
- * @param {string} type Node type
- * @param {object} attrs Node attributes
- * @param {(str | Node)[]} children Node children
- * @returns {Node}
- */
-function h(type, attrs = {}, children = []) {
-  const el = document.createElement(type)
-
-  for (const [key, value] of Object.entries(attrs)) {
-    if (key === 'ref') {
-      if (typeof value === 'function') value(el)
-      else refs.set(value, el)
-    } else if (EVENT_PREFIX.test(key)) {
-      el.addEventListener(key.replace(EVENT_PREFIX, ''), value)
-    } else if (key in el) {
-      el[key] = value
-    } else {
-      el.setAttribute(key, value)
-    }
-  }
-
-  if (!Array.isArray(children)) children = [children]
-  if (children.length) {
-    el.append(
-      ...children.filter(Boolean).map(function (child) {
-        return child instanceof window.Node
-          ? child
-          : document.createTextNode(child)
-      })
-    )
-  }
-
-  return el
-}
-
-/**
- * Create a node reference
- */
-class Ref {
-  /**
-   * Currently referenced node
-   * @type {Node}
-   */
-  get current() {
-    return refs.get(this)
-  }
 }

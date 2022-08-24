@@ -1,12 +1,17 @@
 import PopoverTooltip from './popoverTooltip.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
 import { popoverTooltipExample } from './popovertooltip'
-import { useEffect } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 
 export default { title: 'Popover Tooltip' }
 
 export const popoverTooltip = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    popoverTooltipExample()
+    popoverTooltipExample(document.getElementById(id))
   }, [])
-  return PopoverTooltip
+  return html`
+    <div id="${id}">${PopoverTooltip}</div>
+  `
 }

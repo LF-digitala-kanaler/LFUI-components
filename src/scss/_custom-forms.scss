@@ -213,52 +213,15 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
 /* -------------------------------------------------------------------------- */
 
 /**
- * Custom select
+ * Select
  */
 
 select {
   border-radius: 0;
 }
 
-.custom-select,
-.custom-select[multiple] {
-  @include glyph-chevron-down($blue);
-
-  width: 100%;
-  height: $input-height;
-  line-height: $custom-select-line-height;
-  background-position-y: 16px;
-  border-width: 0 0 $custom-file-border-width;
-  border-radius: none;
-
-  &:hover {
-    background-color: $input-hover;
-  }
-}
-
 select.form-control:not([size]):not([multiple]) {
   height: $input-height;
-}
-
-/**
- * Add a has-valid state
- */
-
-.form-group.has-valid .custom-select {
-  background-color: $cloud;
-  border-color: $blue;
-
-  &:hover {
-    background-color: $input-valid-hover;
-  }
-}
-
-/**
- * Add a has-danger state
- */
-
-.form-group.has-danger .custom-select {
-  border-color: $red;
 }
 
 .form-group.has-warning .custom-control,
@@ -518,34 +481,6 @@ html body[data-focus-source="key"] {
     background-position-y: 9px !important;
     background-size: 40px 28px !important;
   }
-}
-
-// Twitter-typeahead restyle
-.tt-input,
-.tt-hint {
-  @extend .custom-search;
-}
-
-.twitter-typeahead {
-  width: 100%;
-}
-
-.tt-menu.tt-open {
-  @extend .custom-dropdown;
-  top: -2px;
-
-  width: 100%;
-
-  .tt-suggestion.tt-selectable.tt-cursor {
-    color: $link_color !important;
-    background-color: $white;
-  }
-}
-
-.tt-suggestion {
-  @extend .dropdown-item;
-
-  width: 100%;
 }
 
 /**

@@ -1,15 +1,19 @@
-import $ from 'jquery'
+import { each } from '../../js/utils'
 
-const paginationExample = () => {
-  $('.pagination a')
-    .not('.pagination-static a')
-    .click(function (event) {
-      event.preventDefault()
-      $('.pagination .page-item')
-        .not('.pagination-static .page-item')
-        .removeClass('active')
-      $(this).parent().addClass('active')
-    })
+const paginationExample = (context) => {
+  each(
+    '.pagination:not(.pagination-static) a',
+    (el) => {
+      el.addEventListener('click', function (event) {
+        each('.pagination:not(.pagination-static) .page-item', (item) =>
+          item.classList.remove('active')
+        )
+        this.parentElement.classList.add('active')
+        event.preventDefault()
+      })
+    },
+    context
+  )
 }
 
 export { paginationExample }

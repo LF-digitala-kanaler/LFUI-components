@@ -1,7 +1,7 @@
 import $ from 'jquery'
 import 'jquery-ui-bundle'
 
-const sliderExample = () => {
+const sliderExample = (context) => {
   $('#year-slider-range').slider({
     range: true,
     min: 18,

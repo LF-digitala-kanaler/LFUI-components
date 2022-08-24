@@ -1,20 +1,23 @@
-const checkboxCardExample = () => {
-  const checkboxCards = document.getElementsByClassName('checkbox-card')
-  if (checkboxCards.length) {
-    for (let i = 0; i < checkboxCards.length; i++) {
-      checkboxCards[i].addEventListener('change', function () {
+import { each } from '../../js/utils'
+
+const checkboxCardExample = (context) => {
+  each(
+    '.checkbox-card',
+    function (el) {
+      el.addEventListener('change', function () {
         if (!this.classList.contains('active')) {
           this.classList.add('active')
         } else {
           this.classList.remove('active')
         }
       })
-    }
-  }
+    },
+    context
+  )
 }
 
-const intermediateCheckboxExample = () => {
-  document.getElementById('checkbox-intermediate').indeterminate = true
+const intermediateCheckboxExample = (context) => {
+  context.querySelector('#checkbox-intermediate').indeterminate = true
 }
 
 export { checkboxCardExample, intermediateCheckboxExample }

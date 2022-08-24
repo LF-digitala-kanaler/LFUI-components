@@ -1,27 +1,42 @@
-import $ from 'jquery'
-import 'bootstrap5/js/src/util'
-import 'bootstrap5/js/src/collapse'
+import Collapse from 'bootstrap5/js/src/collapse'
+import { delegate } from '../utils'
 
 const EXPANDED_ATTR = 'aria-expanded'
 
-$(document).on('click', '[data-bs-toggle="collapse:timeline"]', onClick)
+const collapsibles = new WeakMap()
 
-function onClick(event) {
-  const $trigger = $(event.currentTarget)
-  const $target = $($trigger.data('bs-target'))
-  const isExpanded = $trigger.attr(EXPANDED_ATTR) === 'true'
+document.addEventListener(
+  'click',
+  delegate('[data-bs-toggle="collapse:timeline"]', function onClick(event) {
+    const target = document.querySelector(this.dataset.bsTarget)
+    const isExpanded = this.getAttribute(EXPANDED_ATTR) === 'true'
 
-  if (isExpanded) {
-    $target.one('hidden.bs.collapse', () => {
-      $trigger.parent().removeClass('is-open')
-      $trigger.attr(EXPANDED_ATTR, 'false')
-    })
-  } else {
-    $target.one('show.bs.collapse', () => {
-      $trigger.parent().addClass('is-open')
-      $trigger.attr(EXPANDED_ATTR, 'true')
-    })
-  }
+    let collapsible = collapsibles.get(target)
+    if (!collapsible) {
+      collapsible = new Collapse(target, { toggle: false })
+      collapsibles.set(target, collapsible)
+    }
 
-  $target.collapse('toggle')
-}
+    if (isExpanded) {
+      target.addEventListener(
+        'hidden.bs.collapse',
+        () => {
+          this.parentElement.classList.remove('is-open')
+          this.setAttribute(EXPANDED_ATTR, 'false')
+        },
+        { once: true }
+      )
+    } else {
+      target.addEventListener(
+        'show.bs.collapse',
+        () => {
+          this.parentElement.classList.add('is-open')
+          this.setAttribute(EXPANDED_ATTR, 'true')
+        },
+        { once: true }
+      )
+    }
+
+    collapsible.toggle()
+  })
+)

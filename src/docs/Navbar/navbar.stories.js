@@ -1,20 +1,28 @@
 import White from './white.html?raw'
 import Blue from './blue.html?raw'
+
+import { useEffect, useState } from '@storybook/client-api'
+import { html, uid } from '../../js/utils'
 import { navbarExample } from './navbar'
-import { useEffect } from '@storybook/client-api'
 
 export default { title: 'Navbar' }
 
 export const white = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    navbarExample()
+    navbarExample(document.getElementById(id))
   }, [])
-  return White
+  return html`
+    <div id="${id}">${White}</div>
+  `
 }
 
 export const blue = () => {
+  const [id] = useState(uid)
   useEffect(() => {
-    navbarExample()
+    navbarExample(document.getElementById(id))
   }, [])
-  return Blue
+  return html`
+    <div id="${id}">${Blue}</div>
+  `
 }

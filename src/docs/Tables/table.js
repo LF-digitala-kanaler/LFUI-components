@@ -1,4 +1,4 @@
-const tableExample = () => {
+const tableExample = (context) => {
   function sortTable(table, col, reverse) {
     const tb = table.tBodies[0] // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
     let tr = Array.prototype.slice.call(tb.rows, 0) // put rows into array
@@ -44,8 +44,7 @@ const tableExample = () => {
   }
 
   function makeAllSortable(parent) {
-    parent = parent || document.body
-    const t = parent.getElementsByTagName('table')
+    const t = context.getElementsByTagName('table')
     let i = t.length
     while (--i >= 0) makeSortable(t[i])
   }

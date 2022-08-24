@@ -1,33 +1,43 @@
-import 'bootstrap5/js/src/util'
-import 'bootstrap5/js/src/collapse'
-import $ from 'jquery'
+import Collapse from 'bootstrap5/js/src/collapse'
+import { delegate } from '../utils'
 
 const NO_EXPAND = 'data-no-expand'
 const EXPANDED_ATTR = 'aria-expanded'
 const VALID_ELEMENTS_SELECTOR =
   'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]'
 
-$(document).on('click', '[data-bs-toggle="collapse:table-row"]', onClick)
+document.addEventListener(
+  'click',
+  delegate('[data-bs-toggle="collapse:table-row"]', function (event) {
+    const target = this.dataset.bsTarget
+    const eventTarget = this.closest(VALID_ELEMENTS_SELECTOR)
+    const collapsible = new Collapse(target, { toggle: false })
+    const isExpanded = this.getAttribute(EXPANDED_ATTR) === 'true'
 
-function onClick(event) {
-  const $trigger = $(event.currentTarget)
-  const $target = $($trigger.data('bs-target'))
-  const isExpanded = $trigger.attr(EXPANDED_ATTR) === 'true'
-  const $eventTarget = $(event.target).closest(VALID_ELEMENTS_SELECTOR)
+    if (eventTarget && eventTarget.hasAttribute(NO_EXPAND)) {
+      return
+    }
 
-  if ($eventTarget.length && $eventTarget.get(0).hasAttribute(NO_EXPAND)) {
-    return
-  }
+    if (isExpanded) {
+      target.addEventListener(
+        'hidden.bs.collapse',
+        () => {
+          this.classList.remove('table-active')
+          this.setAttribute(EXPANDED_ATTR, 'false')
+        },
+        { once: true }
+      )
+    } else {
+      target.addEventListener(
+        'show.bs.collapse',
+        () => {
+          this.classList.add('table-active')
+          this.setAttribute(EXPANDED_ATTR, 'true')
+        },
+        { once: true }
+      )
+    }
 
-  if (isExpanded) {
-    $target.one('hidden.bs.collapse', () => {
-      $trigger.removeClass('table-active').attr(EXPANDED_ATTR, 'false')
-    })
-  } else {
-    $target.one('show.bs.collapse', () => {
-      $trigger.addClass('table-active').attr(EXPANDED_ATTR, 'true')
-    })
-  }
-
-  $target.collapse('toggle')
-}
+    collapsible.toggle()
+  })
+)
