@@ -4,14 +4,14 @@
 
 .pricebox-fixed {
   position: fixed;
-  width: 100%;
   bottom: 0;
   left: 0;
   z-index: 40;
+  width: 100%;
   cursor: pointer;
   background: $white;
   border-top: $navy solid 2px;
-  box-shadow: 0 0 1rem 0.25rem $smoke;
+  box-shadow: 0 0 1rem .25rem $smoke;
 }
 
 /**
@@ -22,8 +22,8 @@
   @include glyph-chevron-down($blue);
   width: 2rem;
   height: 2rem;
-  background-size: 1.125rem 0.75rem;
   background-position: center center;
+  background-size: 1.125rem .75rem;
 }
 
 [aria-expanded="true"] .pricebox-chevron {

@@ -103,8 +103,8 @@
   }
 
   &.shortcut-light {
-    background: $color-info-light;
     color: $black;
+    background: $color-info-light;
     @include font-smoothing(auto);
   }
 }
