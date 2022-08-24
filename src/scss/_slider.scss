@@ -1,6 +1,7 @@
-@import "ui-slider";
-
 @mixin lf-slider($background-color: $white, $track-color: $smoke) {
+  --range-color: #{$blue} !important;
+  --track-background: linear-gradient(to right, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 45% / 100% !important;
+
   width: 100%;
   padding: 0;
   margin: 10px 0;
@@ -183,6 +184,62 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
 .lf-slider,
 .lf-slider-gray {
   position: relative;
+}
+
+// Interval
+
+.lf-slider.interval {
+  vertical-align: top;
+}
+
+.lf-slider.interval::-moz-range-thumb {
+  transform: scale(1); /* FF doesn't apply position it seems */
+}
+
+.lf-slider.interval.original {
+  position: absolute;
+}
+
+.lf-slider.interval.original::-webkit-slider-thumb {
+  position: relative;
+  z-index: 2;
+}
+
+.lf-slider.interval.original::-moz-range-thumb {
+  z-index: 2;
+}
+
+.lf-slider.interval::-moz-range-track {
+  border-color: transparent; /* needed to switch FF to "styleable" control */
+}
+
+.lf-slider.interval.ghost {
+  position: relative;
+  background: var(--track-background);
+  --track-background:
+    linear-gradient(
+      to right,
+      transparent var(--low),
+      var(--range-color) 0,
+      var(--range-color) var(--high),
+      transparent 0
+    ) no-repeat 0 45% / 100% 40%;
+  --range-color: hsl(190deg, 80%, 40%);
+}
+
+.lf-slider.interval.ghost::-webkit-slider-runnable-track {
+  background: var(--track-background);
+}
+
+.lf-slider.interval.ghost::-moz-range-track {
+  background: var(--track-background);
+}
+.lf-slider.interval.ghost::-webkit-slider-thumb {
+  position: relative;
+  z-index: 2;
+}
+.lf-slider.interval.ghost::-moz-range-thumb {
+  z-index: 2;
 }
 
 // Labels

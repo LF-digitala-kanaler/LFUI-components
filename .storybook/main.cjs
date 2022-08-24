@@ -1,6 +1,3 @@
-const inject = require('@rollup/plugin-inject')
-const { mergeConfig } = require('vite')
-
 module.exports = {
   logLevel: 'debug',
   stories: ['../src/docs/**/*.stories.js'],
@@ -21,16 +18,5 @@ module.exports = {
   ],
   core: {
     builder: '@storybook/builder-vite'
-  },
-  async viteFinal(config, { configType }) {
-    return mergeConfig(config, {
-      plugins: [
-        inject({
-          $: 'jquery',
-          jQuery: 'jquery',
-          exclude: '**/*.scss'
-        })
-      ]
-    })
   }
 }
