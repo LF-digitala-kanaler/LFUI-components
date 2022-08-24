@@ -23,14 +23,13 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   text-align: left;
   cursor: default;
   border-width: 0 0 0 $alert-border-width;
-  @include font-smoothing();
 
   /* Default to "info" */
-  @include alert-variant($black, $color-info, $color-info);
+  @include alert-variant($color-info-light, $color-info, $color-info);
 
-  &.alert-light {
-    @include alert-variant($color-info-light, $color-info, $color-info);
-    @include font-smoothing(auto);
+  &.alert-dark {
+    @include alert-variant($black, $color-info, $color-info);
+    @include font-smoothing();
   }
 }
 
@@ -49,10 +48,11 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   flex: 1;
   margin: $alert-padding-y 0;
   line-height: 1.3;
-  color: $white;
 
-  .alert-light & {
-    color: $black;
+  color: $black;
+
+  .alert-dark & {
+    color: $white;
   }
 }
 
@@ -72,12 +72,12 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   flex-shrink: 0;
   align-self: center;
   margin: 0 calc((#{$alert-padding-x} - .875rem) * -1) 0 .5rem;
-  color: $white;
+  color: $black;
   white-space: nowrap;
 }
 
-.alert-light .btn {
-  color: $black;
+.alert-dark .btn {
+  color: $white;
 }
 
 /* Icon alignment */
@@ -88,26 +88,26 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 }
 
 .alert-success {
-  @include alert-variant($black, $color-success, $color-success);
+  @include alert-variant($color-success-light, $color-success, $color-success);
 
-  &.alert-light {
-    @include alert-variant($color-success-light, $color-success, $color-success);
+  &.alert-dark {
+    @include alert-variant($black, $color-success, $color-success);
   }
 }
 
 .alert-warning {
-  @include alert-variant($black, $color-warning, $color-warning);
+  @include alert-variant($color-warning-light, $color-warning, $color-warning);
 
-  &.alert-light {
-    @include alert-variant($color-warning-light, $color-warning, $color-warning);
+  &.alert-dark {
+    @include alert-variant($black, $color-warning, $color-warning);
   }
 }
 
 .alert-danger {
-  @include alert-variant($black, $color-danger, $color-danger);
+  @include alert-variant($color-danger-light, $color-danger, $color-danger);
 
-  &.alert-light {
-    @include alert-variant($color-danger-light, $color-danger, $color-danger);
+  &.alert-dark {
+    @include alert-variant($black, $color-danger, $color-danger);
   }
 }
 
@@ -153,9 +153,9 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 .alert-banner .btn-close {
   top: calc(#{$alert-padding-y} - .9rem);
   right: calc((#{$alert-dismissible-padding-r} + .125rem) * -1);
-  color: $white;
+  color: $black;
 }
 
-.alert-light .btn-close {
-  color: $black;
+.alert-dark .btn-close {
+  color: $white;
 }

@@ -78,86 +78,87 @@
  * Have it stand out a bit more
  */
 
-.shortcut.shortcut-alert {
+.shortcut-alert {
   padding: .8rem 3.7rem .8rem 1.25rem;
+  border-radius: 0.375rem 0.375rem 0 0;
   font-size: 1rem;
-  color: $white;
+  color: $black;
   text-align: left;
   cursor: pointer;
   background: lighten($baby, 9%);
-  background-color: $black;
-  box-shadow: inset 2px 0 0 $color-info;
-  @include font-smoothing();
-
-  &:hover,
-  &:focus {
-    color: $white;
-  }
+  background: $color-info-light;
+  box-shadow: inset 0 -2px 0 $color-info;
 
   .icon {
     color: $color-info;
   }
 
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -2px 0 $color-info;
+    color: $black;
+  }
+
   &::after {
     @include btn-arrow-standard-right($color-info);
   }
-
-  &.shortcut-light {
-    color: $black;
-    background: $color-info-light;
-    @include font-smoothing(auto);
-  }
 }
 
-.shortcut-alert.shortcut-success {
-  box-shadow: inset 2px 0 0 $color-success;
+.shortcut-success {
+  background: $color-success-light;
+  box-shadow: inset 0 -2px 0 $color-success;
 
   .icon {
     color: $color-success;
   }
 
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -2px 0 $color-success;
+  }
+
   &::after {
     @include btn-arrow-standard-right($color-success);
   }
-
-  &.shortcut-light {
-    background: $color-success-light;
-  }
 }
 
-.shortcut-alert.shortcut-warning {
-  box-shadow: inset 2px 0 0 $color-warning;
+.shortcut-warning {
+  background: $color-warning-light;
+  box-shadow: inset 0 -2px 0 $color-warning;
 
   .icon {
     color: $color-warning;
   }
 
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -2px 0 $color-warning;
+  }
+
   &::after {
     @include btn-arrow-standard-right($color-warning);
   }
-
-  &.shortcut-light {
-    background: $color-warning-light;
-  }
 }
 
-.shortcut-alert.shortcut-danger {
-  box-shadow: inset 2px 0 0 $color-danger;
+.shortcut-danger {
+  background: $color-danger-light;
+  box-shadow: inset 0 -2px 0 $color-danger;
 
   .icon {
     color: $color-danger;
   }
 
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -2px 0 $color-danger;
+  }
+
   &::after {
     @include btn-arrow-standard-right($color-danger);
   }
-
-  &.shortcut-light {
-    background: $color-danger-light;
-  }
 }
 
-.shortcut-alert.disabled,
+.disabled,
 button.shortcut-alert:disabled {
   color: $gray;
   text-align: left;
@@ -170,7 +171,7 @@ button.shortcut-alert:disabled {
   }
 }
 
-.shortcut.shortcut-two-lines {
+.shortcut-two-lines {
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -185,7 +186,7 @@ button.shortcut-alert:disabled {
   }
 }
 
-.shortcut.shortcut-multi-lines {
+.shortcut-multi-lines {
   display: flex;
   font-size: 1rem;
 
