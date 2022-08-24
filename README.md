@@ -122,10 +122,11 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
 ├── .storybook                # Storybook config
 ├── dist
 │  ├── docs                   # Component examples used in LFDS
-│  ├── lfui/style.css         # CSS bundle
-│  ├── lfui/main.es.js        # ESM bundle
-│  ├── lfui/main.umd.js       # UMD bundle
-│  └── fonts                  # Font files (referenced in CSS bundle)
+│  └── lfui                   # Component examples used in LFDS
+│    ├── style.css            # CSS bundle
+│    ├── main.es.js           # ESM bundle
+│    ├── main.umd.js          # UMD bundle
+│    └── fonts                # Font files (referenced in CSS bundle)
 └── src
     ├── data
     ├── docs
