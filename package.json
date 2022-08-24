@@ -8,9 +8,10 @@
   },
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "npm run build:lfui && npm run build:docs && build-storybook -o static",
+    "build": "npm run build:lfui && npm run build:types && npm run build:docs && build-storybook -o static",
     "build:lfui": "vite build",
     "build:docs": "vite build -c docs.vite.config.js",
+    "build:types": "tsc src/js/index.js --declaration --allowJs --emitDeclarationOnly --outFile dist/lfui/index.d.ts",
     "test": "npm run lint:scss && npm run lint:js",
     "lint:js": "prettier --check '**/*.(js|css)' && eslint '**/*.js'",
     "lint:scss": "stylelint src/**/*.scss",
@@ -52,12 +53,14 @@
     "sass": "^1.54.4",
     "stylelint": "^14.11.0",
     "stylelint-config-twbs-bootstrap": "^5.0.0",
+    "typescript": "^4.7.4",
     "vite": "^3.0.5"
   },
   "type": "module",
-  "main": "dist/lfui-umd.js",
-  "module": "dist/lfui.js",
-  "style": "dist/lfui.css",
+  "main": "dist/lfui/main.umd.js",
+  "module": "dist/lfui/main.es.js",
+  "style": "dist/lfui/style.css",
+  "types": "dist/lfui/index.d.ts",
   "exports": {
     "./dist/*": "./dist/*",
     ".": {
