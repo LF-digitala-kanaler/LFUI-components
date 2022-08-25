@@ -1,7 +1,7 @@
 import url from 'postcss-url'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import copy from 'rollup-plugin-copy'
-import { resolve, dirname } from 'path'
 import autoprefixer from 'autoprefixer'
 import replace from '@rollup/plugin-replace'
 
