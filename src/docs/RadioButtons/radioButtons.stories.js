@@ -13,7 +13,7 @@ export const styledRadioButtons = () => StyledRadioButtons
 export const buttonGroup = () => {
   const [id] = useState(uid)
   useEffect(() => {
-    radioButtonsExample(document.getElementById(id), '.btn')
+    radioButtonsExample(document.getElementById(id))
   }, [])
   return html`
     <div id="${id}">${ButtonGroup}</div>
@@ -23,7 +23,7 @@ export const buttonGroup = () => {
 export const radioCards = () => {
   const [id] = useState(uid)
   useEffect(() => {
-    radioButtonsExample(document.getElementById(id), '.radio-card')
+    radioButtonsExample(document.getElementById(id))
   }, [])
   return html`
     <div id="${id}">${RadioCards}</div>

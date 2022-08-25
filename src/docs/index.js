@@ -1,12 +1,13 @@
 import '../js/index.js'
 import '../scss/docs.scss'
 
-import { datepickerExample } from './Datepicker/datepicker'
 import { calloutExample } from './Callout/callout'
+import { datepickerExample } from './Datepicker/datepicker'
 import { navbarExample } from './Navbar/navbar'
 import { panelExample } from './Panel/panel'
 import { popoverTooltipExample } from './PopoverTooltip/popovertooltip'
 import { priceBoxExample } from './PriceBox/pricebox'
+import { radioButtonsExample } from './RadioButtons/radioButtons'
 import { selectExample } from './Select/select'
 import { sliderExample } from './Slider/slider'
 import { tableExample } from './Tables/table'
@@ -16,16 +17,17 @@ import { valueboxExample } from './ValueBox/valuebox'
 
 // run your functions
 export function initialize(context) {
-  datepickerExample(context)
-  tableExample(context)
   calloutExample(context)
+  datepickerExample(context)
+  navbarExample(context)
+  panelExample(context)
+  popoverTooltipExample(context)
   priceBoxExample(context)
+  radioButtonsExample(context)
   selectExample(context)
   sliderExample(context)
-  panelExample(context)
-  uploadExample(context)
+  tableExample(context)
   timelineExample(context)
-  navbarExample(context)
+  uploadExample(context)
   valueboxExample(context)
-  popoverTooltipExample(context)
 }

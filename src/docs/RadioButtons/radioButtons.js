@@ -2,7 +2,7 @@ import { each } from '../../js/utils'
 
 const radioButtonsExample = (context, selector) => {
   each(
-    selector,
+    '.radio-card, .btn-group .btn',
     function (el, index, list) {
       el.addEventListener('change', function (event) {
         for (const item of list) {
