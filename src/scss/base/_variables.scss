@@ -487,7 +487,7 @@ $custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0
 $custom-control-indicator-active-color: $white;
 $custom-control-indicator-active-bg: $white;
 
-$custom-checkbox-indicator-icon-checked: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4gICAgICAgICAgICA8cG9seWdvbiBpZD0iUGFnZS0xIiBwb2ludHM9IjE3LjkwODk2MTkgNiAxMS4zMjgxMDM2IDEyLjkxOTI2MTUgOC40MTEzMTY2IDkuODAwNjc2OTIgNyAxMS4yNzA1MjMxIDExLjMxNDIyODMgMTUuODgzMDE1NCAxOS4zMDU0MTIxIDcuNDgzNDQ2MTUiPjwvcG9seWdvbj4gICAgICAgIDwvZz4gICAgPC9nPjwvc3ZnPg==");
+$custom-checkbox-indicator-icon-checked: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
 
 $custom-radio-indicator-icon-checked: none;
 
@@ -568,13 +568,13 @@ $navbar-toggler-border-radius: $border-radius;
 $navbar-toggler-padding-x: .75rem;
 $navbar-toggler-padding-y: .5rem;
 
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{encodeHEX($navbar-dark-color)}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 
 $navbar-light-color: $link-color;
 $navbar-light-hover-color: $link-hover-color;
 $navbar-light-active-color: rgba(0, 0, 0, 90%);
 $navbar-light-disabled-color: rgba(0, 0, 0, 30%);
-$navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{encodeHEX($navbar-light-color)}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 $navbar-light-toggler-border-color: rgba(0, 0, 0, 10%);
 
 $pagination-padding-y: .3rem;
