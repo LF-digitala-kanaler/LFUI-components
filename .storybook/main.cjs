@@ -1,4 +1,7 @@
+const url = require('postcss-url')
 const { mergeConfig } = require('vite')
+const autoprefixer = require('autoprefixer')
+const { dirname, resolve } = require('path')
 
 module.exports = {
   logLevel: 'debug',
@@ -28,11 +31,44 @@ module.exports = {
     return config
   },
   async viteFinal(config, { configType }) {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'development') {
       return mergeConfig(config, {
-        base: '/LFUI-components/'
+        css: {
+          postcss: {
+            plugins: [
+              // Vite in lib mode will render `base` in place of relative assets
+              // so we have to rewrite it to relative to the static dirs
+              // Related issue:  https://github.com/vitejs/vite/issues/4454
+              url({
+                filter: '**/*.woff2',
+                url({ url }) {
+                  return url.replace(/^base\//, './')
+                }
+              })
+            ]
+          }
+        }
       })
     }
-    return config
+
+    return mergeConfig(config, {
+      base: '/LFUI-components/',
+      css: {
+        postcss: {
+          plugins: [
+            // Vite in lib mode will render `base` in place of relative assets
+            // so we have to rewrite it to relative to the static dirs
+            // Related issue:  https://github.com/vitejs/vite/issues/4454
+            url({
+              filter: '**/*.woff2',
+              url({ url }) {
+                return url.replace(/^base/, '/LFUI-components')
+              }
+            }),
+            autoprefixer
+          ]
+        }
+      }
+    })
   }
 }
