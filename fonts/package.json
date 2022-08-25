@@ -1,0 +1,16 @@
+{
+  "name": "@lf-digitala-kanaler/fonts",
+  "version": "1.0.3",
+  "description": "Länsförsäkringar web font files",
+  "style": "index.css",
+  "main": "index.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LF-digitala-kanaler/fonts.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/LF-digitala-kanaler/fonts/issues"
+  },
+  "homepage": "https://github.com/LF-digitala-kanaler/fonts#readme"
+}
