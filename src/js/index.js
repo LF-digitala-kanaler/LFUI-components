@@ -10,4 +10,5 @@ import './components/tabs'
 import './components/tables'
 
 export { select } from './components/select'
+export { interval } from './components/interval'
 export { datepicker } from './components/datepicker'
