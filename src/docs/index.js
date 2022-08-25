@@ -4,6 +4,7 @@ import '../scss/docs.scss'
 import { calloutExample } from './Callout/callout'
 import { datepickerExample } from './Datepicker/datepicker'
 import { navbarExample } from './Navbar/navbar'
+import { paginationExample } from './Pagination/pagination'
 import { panelExample } from './Panel/panel'
 import { popoverTooltipExample } from './PopoverTooltip/popovertooltip'
 import { priceBoxExample } from './PriceBox/pricebox'
@@ -20,6 +21,7 @@ export function initialize(context) {
   calloutExample(context)
   datepickerExample(context)
   navbarExample(context)
+  paginationExample(context)
   panelExample(context)
   popoverTooltipExample(context)
   priceBoxExample(context)
