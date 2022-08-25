@@ -15,17 +15,17 @@ import { uploadExample } from './Upload/upload'
 import { valueboxExample } from './ValueBox/valuebox'
 
 // run your functions
-export function initialize() {
-  datepickerExample()
-  tableExample()
-  calloutExample()
-  priceBoxExample()
-  selectExample()
-  sliderExample()
-  panelExample()
-  uploadExample()
-  timelineExample()
-  navbarExample()
-  valueboxExample()
-  popoverTooltipExample()
+export function initialize(context) {
+  datepickerExample(context)
+  tableExample(context)
+  calloutExample(context)
+  priceBoxExample(context)
+  selectExample(context)
+  sliderExample(context)
+  panelExample(context)
+  uploadExample(context)
+  timelineExample(context)
+  navbarExample(context)
+  valueboxExample(context)
+  popoverTooltipExample(context)
 }
