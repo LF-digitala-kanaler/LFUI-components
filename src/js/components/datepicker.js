@@ -59,7 +59,7 @@ export const DEFAULTS = {
  * Initialize datepicker element
  * @param {HTMLInputElement} input The date input element
  * @param {object} [opts] Duet datepicker options
- * @returns {Element}
+ * @returns {HTMLElement}
  */
 export function datepicker(input, opts = input.dataset) {
   const customEl = document.createElement('duet-date-picker')

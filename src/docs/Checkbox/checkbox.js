@@ -17,7 +17,8 @@ const checkboxCardExample = (context) => {
 }
 
 const intermediateCheckboxExample = (context) => {
-  context.querySelector('#checkbox-intermediate').indeterminate = true
+  const input = context.querySelector('#checkbox-intermediate')
+  if (input) input.indeterminate = true
 }
 
 export { checkboxCardExample, intermediateCheckboxExample }

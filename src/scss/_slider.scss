@@ -246,9 +246,16 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
 
 .slider-label-right,
 .slider-label-left {
-  left: 0;
-  text-align: right;
   @include font-smoothing();
+
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 50px;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
 
   &.distribution-label {
     position: absolute;
@@ -261,9 +268,9 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
     font-family: $font-family-sans-serif;
     font-size: $font-size-xs;
     text-align: left;
-    word-spacing: -0.15em;
     text-transform: uppercase;
     pointer-events: none;
+    word-spacing: -.15em;
     transition:
       transform 200ms cubic-bezier(.29, .86, .58, 1.35),
       opacity 150ms linear;
@@ -273,14 +280,14 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
       @include glyph-arrow-right($gray);
       position: absolute;
       right: 100%;
-      bottom: -0.25rem;
-      left: -0.3rem;
+      bottom: -.25rem;
+      left: -.3rem;
       display: block;
       width: 18px;
       height: 10px;
-      opacity: 0.5;
       content: "";
       border: 0;
+      opacity: .5;
       transform: rotate(90deg);
     }
 
@@ -309,14 +316,4 @@ html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
       bottom: 40px;
     }
   }
-}
-
-.slider-label-left,
-.slider-label-right {
-  position: absolute;
-  top: 3px;
-  width: 50px;
-  font-family: $font-family-sans-serif;
-  font-weight: 700;
-  white-space: nowrap;
 }

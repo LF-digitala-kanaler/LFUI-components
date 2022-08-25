@@ -2,13 +2,16 @@ import { each } from '../../js/utils'
 
 const paginationExample = (context) => {
   each(
-    '.pagination:not(.pagination-static) a',
-    (el) => {
+    '.pagination a',
+    (el, index, list) => {
       el.addEventListener('click', function (event) {
-        each('.pagination:not(.pagination-static) .page-item', (item) =>
-          item.classList.remove('active')
-        )
-        this.parentElement.classList.add('active')
+        for (const link of list) {
+          if (link === el) continue
+          link.setAttribute('aria-current', 'false')
+          link.parentElement.classList.remove('active')
+        }
+        el.setAttribute('aria-current', 'true')
+        el.parentElement.classList.add('active')
         event.preventDefault()
       })
     },

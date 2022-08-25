@@ -1,3 +1,5 @@
+const { mergeConfig } = require('vite')
+
 module.exports = {
   logLevel: 'debug',
   stories: ['../src/docs/**/*.stories.js'],
@@ -18,5 +20,19 @@ module.exports = {
   ],
   core: {
     builder: '@storybook/builder-vite'
+  },
+  managerWebpack: async (config, options) => {
+    if (process.env.NODE_ENV === 'production') {
+      config.output.publicPath = '/LFUI-components/'
+    }
+    return config
+  },
+  async viteFinal(config, { configType }) {
+    if (process.env.NODE_ENV === 'production') {
+      return mergeConfig(config, {
+        base: '/LFUI-components/'
+      })
+    }
+    return config
   }
 }

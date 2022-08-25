@@ -2,6 +2,8 @@ import { html } from '../../js/utils'
 
 const panelExample = (context) => {
   const trigger = context.querySelector('.js-asyncCollapse')
+  if (!trigger) return
+
   const target = context.querySelector(trigger.dataset.bsTarget)
 
   trigger.addEventListener(

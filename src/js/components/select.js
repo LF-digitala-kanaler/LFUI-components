@@ -23,7 +23,6 @@ export function select(el, opts = el.dataset) {
 
   // Don't bother with disabled or missing elements
   if (!label || !select || select.disabled || initialized.has(el)) {
-    if (select?.disabled) el.classList.add('disabled')
     return
   }
 

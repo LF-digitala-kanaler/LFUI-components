@@ -1,9 +1,16 @@
 /**
  * Custom adaption of https://github.com/LeaVerou/multirange
+ * @typedef {Object} HTMLIntervalElement
+ * @extends {HTMLInputElement}
+ * @property {number} valueLow The low value of the interval
+ * @property {number} valueHigh The high value of the interval
+ * @property {string} value The value of the interval, comma separated
  */
 
 /**
+ * Initialize the interval component
  * @param {HTMLInputElement} element
+ * @returns {HTMLIntervalElement}
  */
 export function interval(input) {
   const descriptor = Object.getOwnPropertyDescriptor(
@@ -114,4 +121,6 @@ export function interval(input) {
   })
 
   update()
+
+  return input
 }

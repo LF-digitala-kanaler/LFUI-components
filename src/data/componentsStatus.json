@@ -455,7 +455,7 @@
       "bootstrap": {
         "new": false,
         "deprecated": false,
-        "changedInVersion": ["8.0.0", "6.4.0", "5.3.0"],
+        "changedInVersion": ["10.0.0", "8.0.0", "6.4.0", "5.3.0"],
         "examples": [
           {
             "name": "Value"

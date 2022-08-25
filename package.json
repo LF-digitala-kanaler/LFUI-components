@@ -1,6 +1,6 @@
 {
   "name": "@lf-digitala-kanaler/lfui-components",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "license": "MIT",
   "engines": {
     "npm": "8",
@@ -12,6 +12,7 @@
     "build:lfui": "vite build",
     "build:docs": "vite build -c docs.vite.config.js",
     "build:types": "tsc src/js/index.js --declaration --allowJs --emitDeclarationOnly --outFile dist/lfui/index.d.ts",
+    "deploy": "npm run build && gh-pages -d static",
     "test": "npm run lint:scss && npm run lint:js",
     "lint:js": "prettier --check '**/*.(js|css)' && eslint '**/*.js'",
     "lint:scss": "stylelint src/**/*.scss",
@@ -38,8 +39,8 @@
     "autoprefixer": "^10.4.0",
     "eslint": "^8.22.0",
     "eslint-config-standard": "^17.0.0",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.16",
-    "postcss-base64": "^0.7.1",
     "postcss-increase-specificity": "^0.6.0",
     "postcss-url": "^10.1.3",
     "prettier": "^2.7.1",
@@ -68,6 +69,7 @@
     "./select": "./src/js/components/select.js",
     "./datepicker": "./src/js/components/datepicker.js"
   },
+  "homepage": "https://lf-digitala-kanaler.github.io/LFUI-components",
   "files": [
     "dist",
     "src"

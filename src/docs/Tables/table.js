@@ -43,12 +43,9 @@ const tableExample = (context) => {
     }
   }
 
-  function makeAllSortable(parent) {
-    const t = context.getElementsByTagName('table')
-    let i = t.length
-    while (--i >= 0) makeSortable(t[i])
+  for (const table of context.querySelectorAll('table')) {
+    makeSortable(table)
   }
-  makeAllSortable()
 }
 
 export { tableExample }
