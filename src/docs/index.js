@@ -7,7 +7,6 @@ import { navbarExample } from './Navbar/navbar'
 import { paginationExample } from './Pagination/pagination'
 import { panelExample } from './Panel/panel'
 import { popoverTooltipExample } from './PopoverTooltip/popovertooltip'
-import { priceBoxExample } from './PriceBox/pricebox'
 import { radioButtonsExample } from './RadioButtons/radioButtons'
 import { selectExample } from './Select/select'
 import { sliderExample } from './Slider/slider'
@@ -24,7 +23,6 @@ export function initialize(context) {
   paginationExample(context)
   panelExample(context)
   popoverTooltipExample(context)
-  priceBoxExample(context)
   radioButtonsExample(context)
   selectExample(context)
   sliderExample(context)
