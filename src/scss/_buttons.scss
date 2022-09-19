@@ -13,7 +13,7 @@
   white-space: normal;
   cursor: pointer;
   border-width: $input-btn-border-width;
-  border-radius: $border-radius;
+  border-radius: $btn-border-radius;
   transition: 200ms linear;
   transition-property: all;
   @include font-smoothing();
