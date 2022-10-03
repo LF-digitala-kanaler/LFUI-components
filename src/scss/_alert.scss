@@ -26,11 +26,6 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
   /* Default to "info" */
   @include alert-variant($color-info-light, $color-info, $color-info);
-
-  &.alert-dark {
-    @include alert-variant($black, $color-info, $color-info);
-    @include font-smoothing();
-  }
 }
 
 .alert a,
@@ -50,10 +45,6 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   line-height: 1.3;
 
   color: $black;
-
-  .alert-dark & {
-    color: $white;
-  }
 }
 
 .alert-header {
@@ -64,7 +55,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 /* Minor alignment tweak to close button */
 .alert-dismissible .btn-close {
   padding: 1.15rem calc(.9375rem + .125rem);
-  color: $white;
+  color: $black;
 }
 
 /* Action button alignment */
@@ -76,10 +67,6 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   white-space: nowrap;
 }
 
-.alert-dark .btn {
-  color: $white;
-}
-
 /* Icon alignment */
 .alert .icon {
   min-height: 3.2rem;
@@ -89,26 +76,18 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 
 .alert-success {
   @include alert-variant($color-success-light, $color-success, $color-success);
-
-  &.alert-dark {
-    @include alert-variant($black, $color-success, $color-success);
-  }
 }
 
 .alert-warning {
   @include alert-variant($color-warning-light, $color-warning, $color-warning);
 
-  &.alert-dark {
-    @include alert-variant($black, $color-warning, $color-warning);
+  .icon {
+    color: $black;
   }
 }
 
 .alert-danger {
   @include alert-variant($color-danger-light, $color-danger, $color-danger);
-
-  &.alert-dark {
-    @include alert-variant($black, $color-danger, $color-danger);
-  }
 }
 
 /**
@@ -126,12 +105,6 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   margin-bottom: 0;
   border: 0;
   border-radius: 0;
-  box-shadow:
-    0 .2px .2px rgba(0, 0, 0, .018),
-    0 .4px .6px rgba(0, 0, 0, .026),
-    0 .9px 1.2px rgba(0, 0, 0, .032),
-    0 1.8px 2.6px rgba(0, 0, 0, .04),
-    0 5px 7px rgba(0, 0, 0, .05);
 }
 
 /* Remove 'close' padding from root, and apply it on the container below */
@@ -157,6 +130,14 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   color: $black;
 }
 
-.alert-dark .btn-close {
-  color: $white;
+/* Shadow alternative. Default for banners */
+
+.alert-shadow,
+.alert-banner {
+  box-shadow:
+    0 .2px .2px rgba(0, 0, 0, .018),
+    0 .4px .6px rgba(0, 0, 0, .026),
+    0 .9px 1.2px rgba(0, 0, 0, .032),
+    0 1.8px 2.6px rgba(0, 0, 0, .04),
+    0 5px 7px rgba(0, 0, 0, .05);
 }
