@@ -185,13 +185,13 @@
     @include header-block-border(rgba(0, 0, 0, .1));
     color: $link-color;
     user-select: none;
-    transition: 100ms 40ms linear;
-    transition-property: box-shadow;
+    transition: box-shadow 100ms var(--ease-out);
 
     @include hover () {
       color: $link-color;
 
       @include header-block-border($link-color);
+      transition-duration: 150ms;
 
       text-decoration: none;
     }

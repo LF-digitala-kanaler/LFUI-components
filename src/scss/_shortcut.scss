@@ -4,11 +4,8 @@
 
 .shortcut {
   @include header-block(true);
-
   padding: 1.1rem 3.7rem 1.1rem 19.5px;
-  font-size: 20px;
-  transition: 100ms 40ms linear;
-  transition-property: box-shadow;
+  font-size: 1.25rem;
 }
 
 .shortcut::after {
@@ -26,8 +23,8 @@
 .shortcut:active:focus,
 .shortcut:active:focus:hover {
   &::after {
-    right: .8rem;
-    transition: right 100ms linear;
+    transition: transform 100ms var(--ease-out);
+    transform: translate(.25rem, -50%);
   }
 }
 
@@ -222,11 +219,23 @@ button.shortcut-alert:disabled {
   border-radius: $border-radius-lg $border-radius-lg 0 0;
 
   @include media-breakpoint-up(md) {
-    padding: 1.3rem .5rem 1rem;
+    padding: 1.15rem .5rem 1.3rem;
     text-align: center;
 
     &::after {
       content: none;
+    }
+
+    .icon {
+      transition: transform var(--ease-in) 100ms;
+      will-change: transform;
+    }
+
+    &:hover {
+      .icon {
+        transition-duration: 150ms;
+        transform: translateY(-2px);
+      }
     }
   }
 
