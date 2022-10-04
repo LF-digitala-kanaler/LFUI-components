@@ -144,10 +144,10 @@ $timeline-icon-y-large: 27px;
     padding: $timeline-header-padding-large;
 
     &:hover {
-      background-color: #f9fbfd;
+      background-color: $mint;
 
       .timeline-spacing {
-        background-color: #f9fbfd;
+        background-color: $mint;
       }
     }
   }

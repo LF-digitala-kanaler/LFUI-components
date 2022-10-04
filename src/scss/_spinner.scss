@@ -131,24 +131,6 @@
   }
 }
 
-/**
- * TO-DO: move?
- */
-
-.btn-group .btn {
-  padding-right: 1.25rem !important;
-  padding-left: 1.25rem !important;
-}
-
-.radio-card .btn {
-  padding: .125rem .625rem !important;
-}
-
-.input-group-btn .btn {
-  padding-right: .75rem !important;
-  padding-left: .75rem !important;
-}
-
 // btn-arrow with spinner problem
 // since btn-arrow causes content to align to the left/right depending on the arrow, we can't
 // simply remove the btn-arrow class when we want the spinner. Instead we have to hide the arrow,

@@ -138,22 +138,22 @@ ol.ol {
  */
 
 ul:not(.list-unstyled):not(.list-inline):not(.breadcrumb):not(.reset-list).ul-checks {
-  padding-left: 35px;
-  line-height: 1.45rem;
+  padding-left: 2.25rem;
+  line-height: 1.35;
   list-style-type: none;
   list-style-image: none;
 
   > li {
     position: relative;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
 
     &::before {
       position: absolute;
-      top: -3px;
-      left: -33px;
-      width: 25px;
-      height: 23px;
+      top: -.2rem;
+      left: -2rem;
+      width: 2rem;
+      height: 2rem;
       content: "";
       background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="32" height="32" viewBox="120 45 32 32" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M144.3 54.6 133.9 65l-5.3-5.3-1.5 1.4 6.8 6.7L145.7 56z" fill="#{encodeHEX($black)}" fill-rule="evenodd"/%3E%3C/svg%3E');
       background-repeat: no-repeat;

@@ -41,6 +41,7 @@ $blue: #005aa0;
 $sky: #76bbe7;
 $baby: #badaf3;
 $cloud: #eff4f9;
+$mint: #f9fbfd;
 $black: #222;
 $gray: #6b7070;
 $silver: #b1b3b6;
@@ -107,6 +108,7 @@ $colors: (
   --#{$prefix}sky: #{$sky};
   --#{$prefix}baby: #{$baby};
   --#{$prefix}cloud: #{$cloud};
+  --#{$prefix}mint: #{$mint};
   --#{$prefix}black: #{$black};
   --#{$prefix}gray: #{$gray};
   --#{$prefix}silver: #{$silver};
@@ -179,6 +181,17 @@ $theme-colors: (
 }
 
 /**
+ * Custom easing curves
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
+
+:root {
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/**
  * Bootstrap configuration
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
@@ -190,6 +203,7 @@ $enable-transitions: false;
 $enable-cssgrid: false;
 $enable-negative-margins: true;
 $enable-important-utilities: true;
+$enable-rfs: false;
 
 $min-contrast-ratio: 4.5;
 $color-contrast-dark: $black;
@@ -364,8 +378,8 @@ $table-cell-padding-y: .75rem;
 $table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem calc(#{$table-cell-padding-y} - 1px);
 $table-cell-padding-sm: .5625rem 1.25rem;
 $table-bg: $white;
-$table-accent-bg: #fafafa;
-$table-hover-bg: mix($cloud, $white, 40%);
+$table-accent-bg: $offwhite;
+$table-hover-bg: $mint;
 $table-active-bg: $cloud;
 $table-border-color: $body-bg;
 $table-footer-color: $table-accent-bg;

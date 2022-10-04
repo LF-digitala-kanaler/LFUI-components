@@ -1,298 +1,177 @@
-<style>
-  @media (max-width: 1199px) {
-    .radio-card .radio-card-footer .price-container {
-      font-size: 1.25rem;
-    }
-  }
-
-  @media (min-width: 1px) and (max-width: 992px) {
-    .radio-card {
-      transform: none;
-      border-left: none !important;
-      margin-bottom: 2px;
-    }
-
-    .radio-card:not(.radio-card-stacked)::before {
-      border-bottom: none;
-    }
-
-    .radio-card-footer {
-      border-top: none;
-    }
-
-    .radio-card-footer .price-container {
-      margin: 0 0 0 auto;
-    }
-
-    .radio-card.activeRadio::before,
-    .radio-card.active::before {
-      transform: none;
-    }
-
-    .radio-card.activeRadio:hover::before,
-    .radio-card.active:not(.radio-card-sm.active):hover::before {
-      border-bottom: 2px solid $navy;
-    }
-  }
-
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .radio-card-footer .price-container {
-      margin: 0 auto 0.5rem;
-      display: block;
-      float: none;
-      text-align: center;
-    }
-
-    .radio-card .custom-control-description {
-      font-size: 1.125rem !important;
-    }
-  }
-</style>
-
 <p class="text-sm mb-05 text-muted">Radio cards</p>
 <div class="row row-tight form-group">
   <div class="col-6 col-md-3 mb-1">
-    <div class="radio-card radio-card-sm">
+    <div class="radio-card">
       <label class="custom-control custom-radio">
         <input
           name="radio12"
           type="radio"
           id="radioCardSm3"
-          class="custom-control-input"
-        />
+          class="custom-control-input" />
         <span class="custom-control-label">
           <svg
             role="presentation"
             class="icon d-block mx-auto mb-05"
             width="40"
-            height="40"
-          >
+            height="40">
             <use xlink:href="lf-icons/sprite/40/icons.svg#thumbup-40"></use>
           </svg>
-          Rekommenderade
+          Recommended
         </span>
       </label>
     </div>
   </div>
   <div class="col-6 col-md-3 mb-1">
-    <div class="radio-card radio-card-sm">
+    <div class="radio-card">
       <label class="custom-control custom-radio">
         <input
           name="radio12"
           type="radio"
           id="radioCardSm2"
-          class="custom-control-input"
-        />
+          class="custom-control-input" />
         <span class="custom-control-label">
           <svg
             role="presentation"
             class="icon d-block mx-auto mb-05"
             width="40"
-            height="40"
-          >
+            height="40">
             <use
-              xlink:href="lf-icons/sprite/40/icons.svg#sustainability-40"
-            ></use>
+              xlink:href="lf-icons/sprite/40/icons.svg#sustainability-40"></use>
           </svg>
-          Hållbarhet
+          Sustainability
         </span>
       </label>
     </div>
   </div>
   <div class="col-6 col-md-3 mb-1">
-    <div class="radio-card radio-card-sm">
+    <div class="radio-card">
       <label class="custom-control custom-radio">
         <input
           name="radio12"
           type="radio"
           id="radioCardSm"
-          class="custom-control-input"
-        />
+          class="custom-control-input" />
         <span class="custom-control-label">
           <svg
             role="presentation"
             class="icon d-block mx-auto mb-05"
             width="40"
-            height="40"
-          >
+            height="40">
             <use xlink:href="lf-icons/sprite/40/icons.svg#coins-40"></use>
           </svg>
-          Lägsta avgifter
+          Lowest fees
         </span>
       </label>
     </div>
   </div>
 </div>
 
-<p class="text-sm mt-15 mb-05 text-muted">Pricing cards</p>
-<div class="row">
-  <div class="radio-card col-12 col-md-4">
-    <label class="custom-control custom-radio" for="radioCard1">
-      <input
-        name="radio"
-        type="radio"
-        id="radioCard1"
-        class="custom-control-input"
-      />
-      <span class="custom-control-label">Försäkring Stor</span>
-      <p>Vår bästa försäkring som passar dig som har både familj och hus.</p>
-      <ul class="ul-checks green">
-        <li>Fullvärde bostadsbyggnad</li>
-        <li>Allrisk lösegendom</li>
-        <li>Allrisk byggnad</li>
-        <li>Utökat reseskydd</li>
-      </ul>
-      <div class="radio-card-footer">
-        <div class="d-none d-xl-inline-block">
+<p class="text-sm mt-15 mb-05 text-muted">Radio cards with pricing details</p>
+<div class="row row-no-gutter">
+  <div class="col-12 col-md-4 d-flex">
+    <div class="radio-card radio-content-card">
+      <label class="custom-control custom-radio" for="radioCard1">
+        <input
+          name="radio"
+          type="radio"
+          id="radioCard1"
+          class="custom-control-input" />
+        <span class="custom-control-label">Insurance — Large</span>
+        <p>
+          Our very best insurance, for you that have both family and a house.
+        </p>
+        <ul class="ul-checks green">
+          <li>Feature list item</li>
+          <li>Something special</li>
+          <li>Contains this thing</li>
+        </ul>
+        <div class="radio-content-card-footer">
           <button
             class="btn btn-sm btn-secondary"
             data-bs-toggle="modal"
-            data-bs-target="#myModal"
-          >
+            data-bs-target="#myModal">
             Läs mer
           </button>
+          <div class="h4 m-0">
+            <span class="h2 m-0">1&nbsp;420</span>
+            &nbsp;kr/mån
+          </div>
         </div>
-        <div class="d-lg-none d-inline-block">
-          <button
-            class="btn btn-sm btn-secondary"
-            data-bs-toggle="modal"
-            data-bs-target="#myModal"
-          >
-            Läs mer
-          </button>
-        </div>
-        <div class="price-container">
-          <span class="price">1&nbsp;420</span>
-          &nbsp;kr/mån
-        </div>
-        <button
-          class="
-            btn btn-sm btn-block btn-secondary
-            d-none d-lg-inline-block d-xl-none
-          "
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-        >
-          Läs mer
-        </button>
-      </div>
-    </label>
+      </label>
+    </div>
   </div>
-  <div class="radio-card active col-12 col-md-4">
-    <label class="custom-control custom-radio" for="radioCard2">
-      <input
-        name="radio"
-        type="radio"
-        checked
-        id="radioCard2"
-        class="custom-control-input"
-      />
-      <span class="custom-control-label">Försäkring Medium</span>
-      <p>
-        Mycket bra försäkring. Förutom grundskyddet så ingår även vår
-        otursförsäkring för alla familjemedlemmar.
-      </p>
-      <ul class="ul-checks green">
-        <li>Fullvärde bostadsbyggnad</li>
-        <li>Allrisk lösegendom</li>
-        <li>Allrisk byggnad</li>
-      </ul>
-      <div class="radio-card-footer">
-        <div class="d-none d-xl-inline-block">
+  <div class="col-12 col-md-4 d-flex">
+    <div class="radio-card radio-content-card active">
+      <label class="custom-control custom-radio" for="radioCard2">
+        <input
+          name="radio"
+          type="radio"
+          checked
+          id="radioCard2"
+          class="custom-control-input" />
+        <span class="custom-control-label">Insurance – Medium</span>
+        <p>
+          In addition to the basic protection, Medium adds insurance for all
+          family members.
+        </p>
+        <ul class="ul-checks green">
+          <li>Feature list item</li>
+          <li>Contains this thing</li>
+          <li>Something special</li>
+        </ul>
+        <div class="radio-content-card-footer">
           <button
             class="btn btn-sm btn-secondary"
             data-bs-toggle="modal"
-            data-bs-target="#myModal"
-          >
+            data-bs-target="#myModal">
             Läs mer
           </button>
+          <div class="h4 m-0">
+            <span class="h2 m-0">825</span>
+            &nbsp;kr/mån
+          </div>
         </div>
-        <div class="d-lg-none d-inline-block">
-          <button
-            class="btn btn-sm btn-secondary"
-            data-bs-toggle="modal"
-            data-bs-target="#myModal"
-          >
-            Läs mer
-          </button>
-        </div>
-        <div class="price-container">
-          <span class="price">825</span>
-          &nbsp;kr/mån
-        </div>
-        <button
-          class="
-            btn btn-sm btn-block btn-secondary
-            d-none d-lg-inline-block d-xl-none
-          "
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-        >
-          Läs mer
-        </button>
-      </div>
-    </label>
+      </label>
+    </div>
   </div>
-  <div class="radio-card col-12 col-md-4">
-    <label class="custom-control custom-radio">
-      <input
-        name="radio"
-        type="radio"
-        id="radioCard3"
-        class="custom-control-input"
-      />
-      <span class="custom-control-label">Försäkring Liten</span>
-      <p>
-        Bra försäkring som innehåller grundskydd för både dig och ditt skydd.
-      </p>
-      <ul class="ul-checks green">
-        <li>Fullvärde bostadsbyggnad</li>
-      </ul>
-      <div class="radio-card-footer">
-        <div class="d-none d-xl-inline-block">
+  <div class="col-12 col-md-4 d-flex">
+    <div class="radio-card radio-content-card">
+      <label class="custom-control custom-radio">
+        <input
+          name="radio"
+          type="radio"
+          id="radioCard3"
+          class="custom-control-input" />
+        <span class="custom-control-label">Insurance Small</span>
+        <p>Our basic insurance with a solid protection for&nbsp;you.</p>
+        <ul class="ul-checks green">
+          <li>Feature list item</li>
+          <li>Contains this thing</li>
+        </ul>
+        <div class="radio-content-card-footer">
           <button
             class="btn btn-sm btn-secondary"
             data-bs-toggle="modal"
-            data-bs-target="#myModal"
-          >
+            data-bs-target="#myModal">
             Läs mer
           </button>
+          <div class="h4 m-0">
+            <span class="h2 m-0">250</span>
+            &nbsp;kr/mån
+          </div>
         </div>
-        <div class="d-lg-none d-inline-block">
-          <button
-            class="btn btn-sm btn-secondary"
-            data-bs-toggle="modal"
-            data-bs-target="#myModal"
-          >
-            Läs mer
-          </button>
-        </div>
-        <div class="price-container">
-          <span class="price">250</span>
-          &nbsp;kr/mån
-        </div>
-        <button
-          class="
-            btn btn-sm btn-block btn-secondary
-            d-none d-lg-inline-block d-xl-none
-          "
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-        >
-          Läs mer
-        </button>
-      </div>
-    </label>
+      </label>
+    </div>
   </div>
 </div>
+
 <div
   class="modal fade"
   id="myModal"
   tabindex="-1"
   role="dialog"
   aria-labelledby="myModalLabel"
-  aria-hidden="true"
->
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     what so ever
     <div class="modal-content">
@@ -301,8 +180,7 @@
           type="button"
           class="btn-close"
           data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+          aria-label="Close"></button>
         <h4 class="modal-title">So long farewell</h4>
       </div>
       <div class="modal-body">
@@ -326,7 +204,7 @@
           Dismiss
         </button>
         <button type="button" class="btn btn-primary btn-arrow">
-          Take me there
+          Continue
         </button>
       </div>
     </div>
