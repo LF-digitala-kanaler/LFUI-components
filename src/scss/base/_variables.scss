@@ -562,35 +562,6 @@ $nav-pills-border-radius: $border-radius;
 $nav-pills-link-active-color: $component-active-color;
 $nav-pills-link-active-bg: $component-active-bg;
 
-$navbar-padding-y: 0;
-$navbar-padding-x: $spacer;
-
-$navbar-dark-color: rgba($white, .5);
-$navbar-brand-font-size: $font-size-lg;
-$navbar-brand-height: (16 * $line-height-base + $nav-link-padding-y * 2);
-$navbar-height: 3.75rem;
-$navbar-stacked-height: 3.375rem;
-$navbar-height-sm: 2.75rem;
-$navbar-height-xs: 2.5rem;
-$navbar-action-padding: 0 .75rem;
-$navbar-border-radius: $border-radius;
-$navbar-brand-padding-y: .25rem;
-$navbar-divider-padding-y: .425rem;
-$navbar-toggler-padding-x: .75rem;
-$navbar-toggler-font-size: $font-size-lg;
-$navbar-toggler-border-radius: $border-radius;
-$navbar-toggler-padding-x: .75rem;
-$navbar-toggler-padding-y: .5rem;
-
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{encodeHEX($navbar-dark-color)}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-
-$navbar-light-color: $link-color;
-$navbar-light-hover-color: $link-hover-color;
-$navbar-light-active-color: rgba(0, 0, 0, 90%);
-$navbar-light-disabled-color: rgba(0, 0, 0, 30%);
-$navbar-light-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{encodeHEX($navbar-light-color)}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-$navbar-light-toggler-border-color: rgba(0, 0, 0, 10%);
-
 $pagination-padding-y: .3rem;
 $pagination-padding-x: .9rem;
 $pagination-padding-y-sm: $pagination-padding-y;

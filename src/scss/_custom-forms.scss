@@ -194,10 +194,6 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
   transition-delay: 4ms; /* 1 */
 }
 
-.custom-control-input:checked ~ .custom-control-label::before {
-  transition-duration: 100ms !important;
-}
-
 /* -------------------------------------------------------------------------- */
 
 /**
