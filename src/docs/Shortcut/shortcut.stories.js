@@ -1,4 +1,4 @@
-import Shortcut from './Shortcut.html?raw'
+import Shortcut from './shortcut.html?raw'
 
 export default {
   title: 'Shortcut',
