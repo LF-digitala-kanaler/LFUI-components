@@ -187,7 +187,7 @@ be updated when expired.
 [favicon]: https://github.com/LF-digitala-kanaler/favicon
 [fonts]: https://github.com/LF-digitala-kanaler/fonts
 [github-packages]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages
-[lfds]: https://lf-digitala-kanaler.github.io/
+[lfds]: https://lfds.netlify.app/
 [lfui-components-webpage]: https://lf-digitala-kanaler.github.io/LFUI-components
 [lfui-icons]: https://github.com/LF-digitala-kanaler/LFUI-icons
 [lfds-repository]: https://github.com/LF-digitala-kanaler/LFDS
