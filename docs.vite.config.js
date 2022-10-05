@@ -19,11 +19,11 @@ export default defineConfig({
         { src: ['src/docs/**/*', '!**/*.js'], dest: 'dist/docs/html/' },
         { src: 'src/data/componentsStatus.json', dest: 'dist/docs/data/' },
         {
-          src: './node_modules/@lf-digitala-kanaler/lfui-icons/dist/**/*',
+          src: './node_modules/@lansforsakringar/icons/dist/**/*',
           dest: 'dist/docs/lf-icons/'
         },
         {
-          src: './node_modules/@lf-digitala-kanaler/fonts/*.woff2',
+          src: './node_modules/@lansforsakringar/fonts/*.woff2',
           dest: 'dist/docs/fonts'
         }
       ]

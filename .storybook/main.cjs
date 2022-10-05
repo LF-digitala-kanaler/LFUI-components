@@ -8,11 +8,11 @@ module.exports = {
   stories: ['../src/docs/**/*.stories.js'],
   staticDirs: [
     {
-      from: '../node_modules/@lf-digitala-kanaler/lfui-icons/dist',
+      from: '../node_modules/@lansforsakringar/icons/dist',
       to: 'lf-icons'
     },
     {
-      from: '../node_modules/@lf-digitala-kanaler/fonts',
+      from: '../node_modules/@lansforsakringar/fonts',
       to: 'fonts'
     }
   ],

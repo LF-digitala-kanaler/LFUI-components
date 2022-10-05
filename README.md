@@ -15,24 +15,8 @@ Accessible and feature rich front-end framework for Länsförsäkringar web deve
 
 # Getting started
 
-To install Components in your project, you will need to configure your environment for [GitHub Packages][github-packages].
-
-First, authenticate npm with GitHub Packages. To do that, generate a [personal access token][personal-access-token] which you use as your password. Make sure to give the token access rights to both `repo` and `read:packages` scopes.
-
 ```
-npm login --scope=@lf-digitala-kanaler --registry=https://npm.pkg.github.com
-```
-
-Add a `.npmrc` file in your project root folder.
-
-```
-@lf-digitala-kanaler:registry=https://npm.pkg.github.com
-```
-
-Install the package as you normally would.
-
-```
-npm install @lf-digitala-kanaler/lfui-components
+npm install @lansforsakringar/components
 ```
 
 # Usage
@@ -46,23 +30,23 @@ Importing the source code gives you access to the full SCSS suit including our v
 Import `index.scss` at the very beginning of your main SCSS file:
 
 ```css
-@import '@lf-digitala-kanaler/lfui-components/src/scss/index.scss';
+@import '@lansforsakringar/components/src/scss/index.scss';
 ```
 
 The JavaScript bundle can be imported as a whole.
 
 ```js
-import '@lf-digitala-kanaler/lfui-components'
+import '@lansforsakringar/components'
 ```
 
 Some components are also exported, both as part of the bundle as well as individual modules.
 
 ```js
 // Extract from bundle
-import { select } from '@lf-digitala-kanaler/lfui-components'
+import { select } from '@lansforsakringar/components'
 
 // Import only the specific component
-import select from '@lf-digitala-kanaler/lfui-components/select'
+import select from '@lansforsakringar/components/select'
 ```
 
 ## Compiled alternative
@@ -100,7 +84,7 @@ Along with that, because our code is based on Bootstrap, the documentation from 
 
 # Bugs and feature requests
 
-If you with to report a bug or submit a feature request, feel free to [open an issue](https://github.com/LF-digitala-kanaler/LFUI-components/issues/). The more information that you provide, the better.
+If you with to report a bug or submit a feature request, feel free to [open an issue](https://github.com/lansforsakringar/components/issues/). The more information that you provide, the better.
 
 # Contributing
 
@@ -165,7 +149,7 @@ npm test
 - Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes that have been made to the respective components in this release. This information will be visible on [LFDS][lfds] later on.
 - Bump the version number `npm version <major|minor|patch>`
 - Push the changes to GitHub
-- Create a new release from the [tag list](https://github.com/LF-digitala-kanaler/LFUI-components/tags) on Github and add your release notes. Note that this will also be visible to the public. Take extra care to document any breaking changes.
+- Create a new release from the [tag list](https://github.com/lansforsakringar/components/tags) on Github and add your release notes. Note that this will also be visible to the public. Take extra care to document any breaking changes.
   - Tag version example: v5.0.0
   - Release Title example: Components 5.0.0
 - Creating a new release will automatically publish a new package version to GitHub Packages.

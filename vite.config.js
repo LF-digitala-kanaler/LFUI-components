@@ -17,7 +17,7 @@ export default defineConfig({
       hook: 'writeBundle',
       targets: [
         {
-          src: './node_modules/@lf-digitala-kanaler/fonts/*.woff2',
+          src: './node_modules/@lansforsakringar/fonts/*.woff2',
           dest: 'dist/lfui/fonts'
         }
       ]
