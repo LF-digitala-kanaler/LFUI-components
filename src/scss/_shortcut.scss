@@ -3,135 +3,146 @@
  */
 
 .shortcut {
-  @include header-block(true);
-  padding: 1.1rem 3.7rem 1.1rem 19.5px;
-  font-size: 1.25rem;
-}
+  --#{$prefix}shortcut-text-color: var(--#{$prefix}color-body);
+  --#{$prefix}shortcut-border-color: var(--#{$prefix}smoke);
+  --#{$prefix}shortcut-border-accent-color: var(--#{$prefix}blue);
 
-.shortcut::after {
-  position: absolute;
-  top: 50%;
-  right: 1.1rem;
-  content: "";
-  transition: right 100ms linear;
-  transform: translateY(-50%);
+  position: relative;
 
-  @include btn-arrow-large-right($link-color);
-}
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: .75rem 3.25rem .75rem 1.125rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
 
-.shortcut:active,
-.shortcut:active:focus,
-.shortcut:active:focus:hover {
+  font-size: 1rem;
+  color: var(--#{$prefix}shortcut-text-color);
+  text-align: left;
+  text-decoration: none;
+  user-select: none;
+
+  background: $white;
+  border: 0;
+  border-bottom: 2px solid var(--#{$prefix}shortcut-border-color);
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+  transition: border-color 100ms var(--ease-out);
+
+  &:not(.disabled):hover {
+    color: var(--#{$prefix}shortcut-text-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--#{$prefix}shortcut-border-accent-color);
+    transition-duration: 150ms;
+  }
+
   &::after {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    content: "";
+    transition: right 100ms linear;
+    transform: translateY(-50%);
+    @include btn-arrow-small-right($link-color);
+  }
+
+  &:active::after,
+  &:active:focus::after,
+  &:active:focus:hover::after {
     transition: transform 100ms var(--ease-out);
     transform: translate(.25rem, -50%);
   }
-}
-
-/**
- * With icon
- */
-
-.shortcut-icon {
-  padding-left: 56px;
-
-  svg {
-    position: absolute;
-    top: 22%;
-    left: 16px;
-    width: 32px;
-    height: 32px;
-  }
-}
-
-/**
- * Square block shortcut
- */
-
-.shortcut-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem .5rem;
-  text-align: center;
-}
-
-.shortcut-block::after {
-  background: none;
-}
-
-.disabled {
-  color: $gray;
-  text-align: left;
-  cursor: $cursor-disabled !important;
-  background-color: $smoke;
-  box-shadow: none;
-
-  &::after {
-    background-image: none;
-  }
-}
-
-.shortcut-two-lines {
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-
-  > div div:not(:first-child) {
-    margin-top: 2px;
-  }
-
-  svg {
-    position: static;
-    margin-right: 1rem;
-  }
-}
-
-.shortcut-multi-lines {
-  display: flex;
-  font-size: 1rem;
-
-  @include media-breakpoint-down(sm) {
-    align-items: center;
-  }
 
   .icon {
-    min-width: 24px;
-    margin-right: 1rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: -.125rem .75rem -.125rem 0;
+    color: var(--#{$prefix}shortcut-border-accent-color);
+  }
 
-    @include media-breakpoint-up(md) {
-      min-width: 40px;
-      margin-right: 1.5rem;
+  > :last-child,
+  > div > :last-child {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: 3.5rem;
+    padding: 1rem 3.75rem 1rem 1.125rem;
+
+    &::after {
+      @include btn-arrow-large-right($link-color);
+    }
+
+    .icon {
+      margin: -.25rem .75rem -.25rem 0;
     }
   }
 }
 
 .shortcut-title {
-  margin-bottom: 0;
+  font-family: var(--lf-font-family-sans-serif);
   font-size: 1rem;
-  color: $blue;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--#{$prefix}shortcut-border-accent-color);
+  @include font-smoothing();
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-xl;
   }
+
+  + * {
+    margin-top: .25rem;
+  }
 }
 
-.shortcut-landing-page {
-  padding: .5rem 3.7rem .75rem 1rem;
+/**
+ * Disabled
+ */
+
+.disabled {
+  cursor: $cursor-disabled !important;
+  background: $smoke;
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .icon,
+  .shortcut-title {
+    color: var(--gray);
+  }
+}
+
+/**
+ * Box version
+ */
+
+.shortcut-box,
+.shortcut-md-box {
   font-size: 1rem;
   text-align: left;
   border-radius: $border-radius-lg $border-radius-lg 0 0;
 
+  .shortcut-title {
+    font-size: 1rem;
+  }
+
   @include media-breakpoint-up(md) {
+    flex-direction: column;
+    align-items: center;
     padding: 1.15rem .5rem 1.3rem;
-    text-align: center;
 
     &::after {
       content: none;
     }
 
     .icon {
+      margin: 0 auto .5rem;
       transition: transform var(--ease-in) 100ms;
       will-change: transform;
     }
@@ -143,14 +154,27 @@
       }
     }
   }
+}
 
-  @include media-breakpoint-down(sm) {
-    display: flex;
-    align-items: center;
-    margin-bottom: .5rem;
+.shortcut-box {
+  flex-direction: column;
+  align-items: center;
+  padding: 1.15rem .5rem 1.3rem;
 
+  &::after {
+    content: none;
+  }
+
+  .icon {
+    margin: 0 auto .5rem;
+    transition: transform var(--ease-in) 100ms;
+    will-change: transform;
+  }
+
+  &:hover {
     .icon {
-      margin-right: 1rem;
+      transition-duration: 150ms;
+      transform: translateY(-2px);
     }
   }
 }

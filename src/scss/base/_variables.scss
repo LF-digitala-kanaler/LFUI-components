@@ -161,6 +161,8 @@ $theme-colors: (
 
 /* Expose as CSS custom properties */
 :root {
+  --#{$prefix}color-body: #{$body-color};
+
   --#{$prefix}color-info: #{$color-info};
   --#{$prefix}color-info-light: #{$color-info-light};
   --#{$prefix}color-success: #{$color-success};

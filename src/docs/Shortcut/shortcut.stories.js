@@ -1,10 +1,8 @@
-import LandingPage from './landingPage.html?raw'
-import Navigational from './navigational.html?raw'
+import Shortcut from './Shortcut.html?raw'
 
 export default {
   title: 'Shortcut',
   parameters: { backgrounds: { default: 'gray' } }
 }
 
-export const landingPage = () => LandingPage
-export const navigational = () => Navigational
+export const shortcut = () => Shortcut
