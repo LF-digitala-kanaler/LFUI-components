@@ -744,7 +744,6 @@ a.btn:active {
     @if $arrow-position == right {
       &::after {
         @include btn-arrow-standard-right($color-hover);
-
         height: 18px;
         transform: translateX(0);
       }
@@ -766,7 +765,6 @@ a.btn:active {
     @if $arrow-position == right {
       &::after {
         @include btn-arrow-standard-right($color-pressed);
-
         height: 18px;
         transition: transform 100ms linear;
         transform: translateX(3px);
@@ -919,6 +917,11 @@ a.btn:active {
   span {
     margin-right: -4px;
   }
+}
+
+.primary-link::after,
+.primary-link::before {
+  height: 17px !important;
 }
 
 .btn-link-lg-left,
