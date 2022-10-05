@@ -1,7 +1,5 @@
-import Primary from './primary.html?raw'
-import Regular from './regular.html?raw'
+import Links from './links.html?raw'
 
 export default { title: 'Links' }
 
-export const primary = () => Primary
-export const regular = () => Regular
+export const links = () => Links
