@@ -142,7 +142,7 @@ const uploadExample = (context) => {
       const upload = context.querySelector('#upload2')
       const progress = upload.querySelector('.upload-progress-bar')
 
-      upload.addClass('loading')
+      upload.classList.add('loading')
       progress.removeAttribute('style')
       upload.parentElement.parentElement.classList.remove('has-valid')
 

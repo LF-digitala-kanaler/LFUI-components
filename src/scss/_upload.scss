@@ -84,7 +84,7 @@
 .upload-progress-bar {
   width: 100%;
   height: calc(100% - 2px);
-  background-color: $color-info;
+  background-color: $color-info-light;
   transition: width 1000ms cubic-bezier(.02, .96, .37, .81);
   transform: translateX(-100%);
   transform-origin: left;
