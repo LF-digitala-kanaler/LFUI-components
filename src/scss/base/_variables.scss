@@ -35,13 +35,18 @@ $prefix: "" !default;
 
 $wine: #ad1015;
 $red: #e30613;
-$pink: #fcd2d3;
+$pink: #ffdfe0;
+$green: #1B5E20;
+$mint: #e5fff0;
+$orange: #fdd835;
+$yellow: #ffffd6;
 $navy: #00427a;
 $blue: #005aa0;
 $sky: #76bbe7;
 $baby: #badaf3;
+$water: #e5eff7;
 $cloud: #eff4f9;
-$mint: #f9fbfd;
+$mist: #f9fbfd;
 $black: #222;
 $gray: #6b7070;
 $silver: #b1b3b6;
@@ -51,11 +56,7 @@ $tint: #f3f3f3;
 $white: #fff;
 $offwhite: #fafafa;
 
-/* To-do: remove */
-$orange: #f9b233;
-$green: #95c11f;
-$purple: #bf71bb;
-$turquoise: #02bcb2;
+/* Not in use */
 $indigo: #6610f2;
 $yellow: #ffc107;
 $teal: #20c997;
@@ -82,33 +83,23 @@ $grays: (
   800: $gray-800,
   900: $gray-900
 );
-$colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  green: $green,
-  teal: $teal,
-  cyan: $cyan,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800
-);
 
 /* Expose as CSS custom properties */
 :root {
   --#{$prefix}wine: #{$wine};
   --#{$prefix}red: #{$red};
   --#{$prefix}pink: #{$pink};
+  --#{$prefix}green: #{$green};
+  --#{$prefix}mint: #{$mint};
+  --#{$prefix}orange: #{$orange};
+  --#{$prefix}yellow: #{$yellow};
   --#{$prefix}navy: #{$navy};
   --#{$prefix}blue: #{$blue};
   --#{$prefix}sky: #{$sky};
   --#{$prefix}baby: #{$baby};
+  --#{$prefix}mist: #{$mist};
   --#{$prefix}cloud: #{$cloud};
-  --#{$prefix}mint: #{$mint};
+  --#{$prefix}mist: #{$mist};
   --#{$prefix}black: #{$black};
   --#{$prefix}gray: #{$gray};
   --#{$prefix}silver: #{$silver};
@@ -127,13 +118,13 @@ $body-bg: $tint;
 $body-color: $black;
 
 $color-info: $blue;
-$color-info-light: #e5eff7;
-$color-success: #1B5E20;
-$color-success-light: #e5fff0;
-$color-warning: #fdd835;
-$color-warning-light: #ffffd6;
+$color-info-light: $mist;
+$color-success: $green;
+$color-success-light: $mint;
+$color-warning: $orange;
+$color-warning-light: $yellow;
 $color-danger: $wine;
-$color-danger-light: #ffdfe0;
+$color-danger-light: $pink;
 
 $color-risk-0: #515151;
 $color-risk-1: #2a7fd4;
@@ -381,7 +372,7 @@ $table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem calc(#{$table-
 $table-cell-padding-sm: .5625rem 1.25rem;
 $table-bg: $white;
 $table-accent-bg: $offwhite;
-$table-hover-bg: $mint;
+$table-hover-bg: $mist;
 $table-active-bg: $cloud;
 $table-border-color: $body-bg;
 $table-footer-color: $table-accent-bg;
