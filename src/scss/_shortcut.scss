@@ -29,7 +29,7 @@
   border-radius: $border-radius-lg $border-radius-lg 0 0;
   transition: border-color 100ms var(--ease-out);
 
-  &:not(.disabled):hover {
+  &:hover {
     color: var(--#{$prefix}shortcut-text-color);
     text-decoration: none;
     border-bottom: 2px solid var(--#{$prefix}shortcut-border-accent-color);
@@ -93,28 +93,6 @@
 
   + * {
     margin-top: .25rem;
-  }
-}
-
-/**
- * Disabled
- */
-
-.disabled {
-  cursor: $cursor-disabled !important;
-  background: $smoke;
-
-  &::after {
-    content: none;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  .icon,
-  .shortcut-title {
-    color: var(--gray);
   }
 }
 
