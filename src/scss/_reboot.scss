@@ -22,17 +22,6 @@ body {
 }
 
 /**
- * Remove the border-radius in Chrome 62+ on macOS.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  border-radius: 0;
-}
-
-/**
  * Hide native time picker icon in Chrome
  */
 
