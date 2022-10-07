@@ -15,17 +15,6 @@ body {
   -ms-overflow-style: scrollbar; /* 2 */
 }
 
-/**
- * Remove the border-radius in Chrome 62+ on macOS.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  border-radius: 0;
-}
-
 [role="link"] {
   cursor: pointer;
 }
