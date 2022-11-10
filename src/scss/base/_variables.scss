@@ -283,8 +283,8 @@ $container-padding-x: $grid-gutter-width !default;
 
 $font-family-sans-serif: var(--lf-font-family-sans-serif);
 $font-family-serif: var(--lf-font-family-serif);
-$font-family-base: arial, "Helvetica Neue", helvetica, sans-serif;
-$font-family-monospace: menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 $font-size-xl: 1.25rem;
 $font-size-lg: 1.125rem;
