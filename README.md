@@ -125,6 +125,9 @@ Along with starting Storybook, `npm start` will also rebuild and refresh the pag
     │   └── components        # Component JS
     ├── scss                  # CSS for components
     │   └── index.scss        # Entry point for SCSS
+    │   └── components        # Component SCSS
+    │   └── base              # Base SCSS
+    │   └── Utilities         # Utilities SCSS
     └── index.js              # Entry point for JS/CSS bundles
 ```
 

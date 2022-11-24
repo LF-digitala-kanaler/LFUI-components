@@ -2,54 +2,54 @@
 @import "./base/index";
 
 /* Layout & components */
-@import "type";
-@import "images"; /* BS5 ready */
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
-@import "alert"; /* BS5 ready */
-@import "animations"; /* BS5 ready */
-@import "transitions"; /* BS5 ready */
-@import "avatar"; /* BS5 ready */
-@import "breadcrumb"; /* BS5 ready */
-@import "button-group";
-@import "card";
-@import "close"; /* BS5 ready */
-@import "custom-forms";
-@import "checkmark";
-@import "dropdown";
-@import "icon"; /* BS5 ready */
-@import "input-group";
-@import "nav";
-@import "pagination";
-@import "price-box"; /* BS5 ready */
-@import "progress";
-@import "shortcut"; /* BS5 ready */
-@import "select";
-@import "spinner"; /* BS5 ready */
-@import "slider"; /* BS5 ready */
-@import "badge";
-@import "value-box"; /* BS5 ready */
-@import "footer"; /* BS5 ready */
-@import "timeline"; /* BS5 ready */
-@import "tag"; /* BS5 ready */
+@import "./components/type";
+@import "./components/images"; /* BS5 ready */
+@import "./components/grid";
+@import "./components/tables";
+@import "./components/forms";
+@import "./components/buttons";
+@import "./components/alert"; /* BS5 ready */
+@import "./components/animations"; /* BS5 ready */
+@import "./components/transitions"; /* BS5 ready */
+@import "./components/avatar"; /* BS5 ready */
+@import "./components/breadcrumb"; /* BS5 ready */
+@import "./components/button-group";
+@import "./components/card";
+@import "./components/close"; /* BS5 ready */
+@import "./components/custom-forms";
+@import "./components/checkmark";
+@import "./components/dropdown";
+@import "./components/icon"; /* BS5 ready */
+@import "./components/input-group";
+@import "./components/nav";
+@import "./components/pagination";
+@import "./components/price-box"; /* BS5 ready */
+@import "./components/progress";
+@import "./components/shortcut"; /* BS5 ready */
+@import "./components/select";
+@import "./components/spinner"; /* BS5 ready */
+@import "./components/slider"; /* BS5 ready */
+@import "./components/badge";
+@import "./components/value-box"; /* BS5 ready */
+@import "./components/footer"; /* BS5 ready */
+@import "./components/timeline"; /* BS5 ready */
+@import "./components/tag"; /* BS5 ready */
 
 /* JS dependent components */
-@import "callout";
-@import "collapse";
-@import "focus"; /* BS5 ready */
-@import "modal";
-@import "popover";
-@import "popover-tooltip";
-@import "datepicker"; /* BS5 ready */
-@import "upload";
+@import "./components/callout";
+@import "./components/collapse";
+@import "./components/focus"; /* BS5 ready */
+@import "./components/modal";
+@import "./components/popover";
+@import "./components/popover-tooltip";
+@import "./components/datepicker"; /* BS5 ready */
+@import "./components/upload";
 
-/* Helpers & utilities */
+/* Helpers & utilities (key parts of this included by Base) */
 @import "bootstrap/scss/_helpers";
 @import "bootstrap/scss/utilities/api";
 
 /* Print */
-@import "print";
+@import "./components/print";
 
 // scss-docs-end import-stack
