@@ -1,4 +1,4 @@
-import Collapse from 'bootstrap5/js/src/collapse'
+import Collapse from 'bootstrap/js/src/collapse'
 import { delegate } from '../utils'
 
 const LOADING_CLASS = 'loading'

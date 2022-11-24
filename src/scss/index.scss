@@ -1,14 +1,13 @@
-@import "reboot";
+// scss-docs-start import-stack
+@import "./base/index";
 
-/* Core */
+/* Layout & components */
 @import "type";
 @import "images"; /* BS5 ready */
 @import "grid";
 @import "tables";
 @import "forms";
 @import "buttons";
-
-/* Components */
 @import "alert"; /* BS5 ready */
 @import "animations"; /* BS5 ready */
 @import "transitions"; /* BS5 ready */
@@ -46,8 +45,11 @@
 @import "datepicker"; /* BS5 ready */
 @import "upload";
 
-/* Utilities */
-@import "utilities";
+/* Helpers & utilities */
+@import "bootstrap/scss/_helpers";
+@import "bootstrap/scss/utilities/api";
 
-/* Other */
-@import "print"; /* BS5 ready */
+/* Print */
+@import "print";
+
+// scss-docs-end import-stack

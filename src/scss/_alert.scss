@@ -9,7 +9,7 @@ $alert-border-scale: -70% !default;
 $alert-color-scale: 40% !default;
 $alert-dismissible-padding-r: $alert-padding-x * 2;
 
-@import "bootstrap5/scss/_alert.scss";
+@import "bootstrap/scss/_alert.scss";
 
 .alert {
   display: flex;

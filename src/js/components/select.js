@@ -1,4 +1,4 @@
-import Dropdown from 'bootstrap5/js/src/dropdown'
+import Dropdown from 'bootstrap/js/src/dropdown'
 import { h, Ref } from '../utils'
 
 const initialized = new WeakSet()

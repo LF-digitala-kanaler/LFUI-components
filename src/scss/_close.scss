@@ -11,7 +11,7 @@ $btn-close-focus-opacity: 1;
 $btn-close-disabled-opacity: 1;
 $btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
 
-@import "bootstrap5/scss/_close.scss";
+@import "bootstrap/scss/_close.scss";
 
 /**
  * Replace the Bootstrap svg background approach with elements that
@@ -19,9 +19,9 @@ $btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
  */
 
 .btn-close {
-  --#{$prefix}btn-close-active-opacity: .6;
-  --#{$prefix}btn-close-width: #{$btn-close-width};
-  --#{$prefix}btn-close-path-width: .125rem;
+  --btn-close-active-opacity: .6;
+  --btn-close-width: #{$btn-close-width};
+  --btn-close-path-width: .125rem;
 
   position: relative;
   z-index: 1;
@@ -34,9 +34,9 @@ $btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: var(--#{$prefix}btn-close-width);
-  height: var(--#{$prefix}btn-close-path-width);
-  margin: calc(var(--#{$prefix}btn-close-path-width) / 2 * -1) 0 0 calc(var(--#{$prefix}btn-close-width) / 2 * -1);
+  width: var(--btn-close-width);
+  height: var(--btn-close-path-width);
+  margin: calc(var(--btn-close-path-width) / 2 * -1) 0 0 calc(var(--btn-close-width) / 2 * -1);
   content: "";
   background: currentcolor;
   transform: rotate(45deg);
@@ -47,6 +47,6 @@ $btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
 }
 
 .btn-close:active {
-  opacity: var(--#{$prefix}btn-close-active-opacity);
+  opacity: var(--btn-close-active-opacity);
   transition: none;
 }

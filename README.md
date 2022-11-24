@@ -80,7 +80,7 @@ See the designated [Länsförsäkringar Favicon][favicon] repo for all the asset
 
 Each component is documented, with examples, on the [LFDS](lfds) website. This is our go-to for documentation.
 
-Along with that, because our code is based on Bootstrap, the documentation from Bootstrap version [four][bs4] and [five][bs5] does provide a good overview of how components are structured, along with listing all the available [utility classes](https://getbootstrap.com/docs/5.0/utilities/api/).
+Along with that, because our code is based on Bootstrap, the documentation from [Bootstrap 5.2][bs5] provide a good overview of how components are structured, along with listing all the available [utility classes](https://getbootstrap.com/docs/5.0/utilities/api/).
 
 # Bugs and feature requests
 
@@ -166,8 +166,7 @@ When creating a release, a Github Action will automatically deploy the changes t
 Since the package depends on private GitHub packages, a private access token is set up to authenticate the GitHub actions. The `PACKAGE_TOKEN` secret needs to
 be updated when expired.
 
-[bs4]: https://getbootstrap.com/docs/4.0/getting-started/introduction/
-[bs5]: https://getbootstrap.com/docs/5.0/getting-started/introduction/
+[bs5]: https://getbootstrap.com/docs/5.2/getting-started/introduction/
 [favicon]: https://github.com/LF-digitala-kanaler/favicon
 [fonts]: https://github.com/LF-digitala-kanaler/fonts
 [github-packages]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages

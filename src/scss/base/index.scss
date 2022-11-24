@@ -1,8 +1,7 @@
 /**
- * Load in out custom variables and assets
+ * Our custom variables and assets
  */
 
-@import "./functions";
 @import "./variables";
 @import "./mixins";
 @import "./fonts/";
@@ -11,5 +10,60 @@
  * Have Bootstrap fill in all the blanks
  */
 
-@import "bootstrap/scss/_mixins.scss";
-@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/_functions";
+@import "bootstrap/scss/_variables";
+@import "bootstrap/scss/_maps";
+@import "bootstrap/scss/_mixins";
+@import "bootstrap/scss/_utilities";
+@import "bootstrap/scss/_root.scss";
+@import "bootstrap/scss/_reboot.scss";
+
+/**
+ * Our custom utilities
+ *
+ * To-do: convert to the BS5 utility mapping logic
+ */
+
+@import "../utilities/index";
+
+/**
+ * Our custom global styles, applied ontop of Bootstrap Reboot
+ *
+ * 1. Most waypoint (when-in-view) js libraries requires `body` to be relative.
+ * 2. Force scrollbars to prevent page jumping when content height is altered.
+ * 3. `text-decoration` overrides `text-decoration-thickness`, so let's make it stick.
+ */
+
+html {
+  position: relative; /* 1 */
+}
+
+body {
+  position: relative; /* 1 */
+  overflow-y: scroll; /* 2 */
+  -ms-overflow-style: scrollbar; /* 2 */
+}
+
+* {
+  text-decoration-thickness: 1px !important; /* 3 */
+  text-underline-offset: .1em;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+code {
+  padding: .2rem .4rem;
+  background-color: $code-bg;
+}
+
+pre code {
+  display: block;
+  padding: 1.25rem;
+  overflow-x: auto;
+}

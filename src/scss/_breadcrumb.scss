@@ -10,7 +10,7 @@ $breadcrumb-divider:                quote("/") !default;
 $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
 $breadcrumb-border-radius:          null !default;
 
-@import "bootstrap5/scss/_breadcrumb.scss";
+@import "bootstrap/scss/_breadcrumb.scss";
 
 .breadcrumb {
   font-family: $font-family-sans-serif;

@@ -1,4 +1,4 @@
-import 'bootstrap5/js/src/tab'
+import 'bootstrap/js/src/tab'
 import { delegate } from '../utils'
 
 document.addEventListener(

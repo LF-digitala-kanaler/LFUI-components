@@ -3,9 +3,9 @@
  */
 
 .shortcut {
-  --#{$prefix}shortcut-text-color: var(--#{$prefix}color-body);
-  --#{$prefix}shortcut-border-color: var(--#{$prefix}smoke);
-  --#{$prefix}shortcut-border-accent-color: var(--#{$prefix}blue);
+  --shortcut-text-color: var(--color-body);
+  --shortcut-border-color: var(--smoke);
+  --shortcut-border-accent-color: var(--blue);
 
   position: relative;
 
@@ -18,21 +18,21 @@
   overflow: hidden;
 
   font-size: 1rem;
-  color: var(--#{$prefix}shortcut-text-color);
+  color: var(--shortcut-text-color);
   text-align: left;
   text-decoration: none;
   user-select: none;
 
   background: $white;
   border: 0;
-  border-bottom: 2px solid var(--#{$prefix}shortcut-border-color);
+  border-bottom: 2px solid var(--shortcut-border-color);
   border-radius: $border-radius-lg $border-radius-lg 0 0;
   transition: border-color 100ms var(--ease-out);
 
   &:hover {
-    color: var(--#{$prefix}shortcut-text-color);
+    color: var(--shortcut-text-color);
     text-decoration: none;
-    border-bottom: 2px solid var(--#{$prefix}shortcut-border-accent-color);
+    border-bottom: 2px solid var(--shortcut-border-accent-color);
     transition-duration: 150ms;
   }
 
@@ -57,7 +57,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     margin: -.125rem .75rem -.125rem 0;
-    color: var(--#{$prefix}shortcut-border-accent-color);
+    color: var(--shortcut-border-accent-color);
   }
 
   > :last-child,
@@ -85,7 +85,7 @@
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25;
-  color: var(--#{$prefix}shortcut-border-accent-color);
+  color: var(--shortcut-border-accent-color);
   @include font-smoothing();
 
   @include media-breakpoint-up(md) {

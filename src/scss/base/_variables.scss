@@ -25,47 +25,46 @@
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
-/* SCSS custom properties scooping */
-$prefix: "" !default;
+$prefix: "";
 
 /**
  * Non-semantic colors
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
-$wine: #ad1015;
-$red: #e30613;
-$pink: #FCD2D3;
-$green: #1B5E20;
-$mint: #e5fff0;
-$orange: #fdd835;
-$yellow: #ffffd6;
-$navy: #00427a;
-$blue: #005aa0;
-$sky: #76bbe7;
-$baby: #badaf3;
-$water: #e5eff7;
-$cloud: #eff4f9;
-$mist: #f9fbfd;
-$black: #222;
-$gray: #6b7070;
-$silver: #b1b3b6;
-$smoke: #d9d9d9;
-$shadow: #e5e5e5;
-$tint: #f3f3f3;
-$white: #fff;
-$offwhite: #fafafa;
+$wine: #ad1015 !default;
+$red: #e30613 !default;
+$pink: #FCD2D3 !default;
+$green: #1B5E20 !default;
+$mint: #e5fff0 !default;
+$orange: #fdd835 !default;
+$yellow: #ffffd6 !default;
+$navy: #00427a !default;
+$blue: #005aa0 !default;
+$sky: #76bbe7 !default;
+$baby: #badaf3 !default;
+$water: #e5eff7 !default;
+$cloud: #eff4f9 !default;
+$mist: #f9fbfd !default;
+$black: #222 !default;
+$gray: #6b7070 !default;
+$silver: #b1b3b6 !default;
+$smoke: #d9d9d9 !default;
+$shadow: #e5e5e5 !default;
+$tint: #f3f3f3 !default;
+$white: #fff !default;
+$offwhite: #fafafa !default;
 
 /* Used only by Bootstrap */
-$gray-100: $smoke;
-$gray-200: $smoke;
-$gray-300: $smoke;
-$gray-400: $smoke;
-$gray-500: $silver;
-$gray-600: $silver;
-$gray-700: $gray;
-$gray-800: $gray;
-$gray-900: $black;
+$gray-100: $smoke !default;
+$gray-200: $smoke !default;
+$gray-300: $smoke !default;
+$gray-400: $smoke !default;
+$gray-500: $silver !default;
+$gray-600: $silver !default;
+$gray-700: $gray !default;
+$gray-800: $gray !default;
+$gray-900: $black !default;
 $grays: (
   100: $gray-100,
   200: $gray-200,
@@ -76,31 +75,31 @@ $grays: (
   700: $gray-700,
   800: $gray-800,
   900: $gray-900
-);
+) !default;
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$prefix}wine: #{$wine};
-  --#{$prefix}red: #{$red};
-  --#{$prefix}pink: #{$pink};
-  --#{$prefix}green: #{$green};
-  --#{$prefix}mint: #{$mint};
-  --#{$prefix}orange: #{$orange};
-  --#{$prefix}yellow: #{$yellow};
-  --#{$prefix}navy: #{$navy};
-  --#{$prefix}blue: #{$blue};
-  --#{$prefix}sky: #{$sky};
-  --#{$prefix}baby: #{$baby};
-  --#{$prefix}mist: #{$mist};
-  --#{$prefix}cloud: #{$cloud};
-  --#{$prefix}mist: #{$mist};
-  --#{$prefix}black: #{$black};
-  --#{$prefix}gray: #{$gray};
-  --#{$prefix}silver: #{$silver};
-  --#{$prefix}smoke: #{$smoke};
-  --#{$prefix}shadow: #{$shadow};
-  --#{$prefix}tint: #{$tint};
-  --#{$prefix}white: #{$white};
+  --wine: #{$wine};
+  --red: #{$red};
+  --pink: #{$pink};
+  --green: #{$green};
+  --mint: #{$mint};
+  --orange: #{$orange};
+  --yellow: #{$yellow};
+  --navy: #{$navy};
+  --blue: #{$blue};
+  --sky: #{$sky};
+  --baby: #{$baby};
+  --mist: #{$mist};
+  --cloud: #{$cloud};
+  --mist: #{$mist};
+  --black: #{$black};
+  --gray: #{$gray};
+  --silver: #{$silver};
+  --smoke: #{$smoke};
+  --shadow: #{$shadow};
+  --tint: #{$tint};
+  --white: #{$white};
 }
 
 /**
@@ -108,29 +107,29 @@ $grays: (
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
-$body-bg: $tint;
-$body-color: $black;
+$body-bg: $tint !default;
+$body-color: $black !default;
 
-$color-info: $blue;
-$color-info-light: $water;
-$color-success: $green;
-$color-success-light: $mint;
-$color-warning: $orange;
-$color-warning-light: $yellow;
-$color-danger: $wine;
-$color-danger-light: $pink;
+$color-info: $blue !default;
+$color-info-light: $water !default;
+$color-success: $green !default;
+$color-success-light: $mint !default;
+$color-warning: $orange !default;
+$color-warning-light: $yellow !default;
+$color-danger: $wine !default;
+$color-danger-light: $pink !default;
 
-$color-risk-0: #515151;
-$color-risk-1: #2a7fd4;
-$color-risk-2: #389fb9;
-$color-risk-3: #8dba84;
-$color-risk-4: #b8be34;
-$color-risk-5: #fdb514;
-$color-risk-6: #ed7721;
-$color-risk-7: #ce161d;
+$color-risk-0: #515151 !default;
+$color-risk-1: #2a7fd4 !default;
+$color-risk-2: #389fb9 !default;
+$color-risk-3: #8dba84 !default;
+$color-risk-4: #b8be34 !default;
+$color-risk-5: #fdb514 !default;
+$color-risk-6: #ed7721 !default;
+$color-risk-7: #ce161d !default;
 
 /* To-do: rename */
-$login-logout-blue: #007db0;
+$login-logout-blue: #007db0 !default;
 
 /* Used only by Bootstrap */
 $theme-colors: (
@@ -142,29 +141,29 @@ $theme-colors: (
   danger: $color-danger,
   light: $gray-100,
   dark: $gray-800
-);
+) !default;
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$prefix}color-body: #{$body-color};
+  --color-body: #{$body-color};
 
-  --#{$prefix}color-info: #{$color-info};
-  --#{$prefix}color-info-light: #{$color-info-light};
-  --#{$prefix}color-success: #{$color-success};
-  --#{$prefix}color-success-light: #{$color-success-light};
-  --#{$prefix}color-warning: #{$color-warning};
-  --#{$prefix}color-warning-light: #{$color-warning-light};
-  --#{$prefix}color-danger: #{$color-danger};
-  --#{$prefix}color-danger-light: #{$color-danger-light};
-  --#{$prefix}color-risk-0: #{$color-risk-0};
-  --#{$prefix}color-risk-1: #{$color-risk-1};
-  --#{$prefix}color-risk-2: #{$color-risk-2};
-  --#{$prefix}color-risk-3: #{$color-risk-3};
-  --#{$prefix}color-risk-4: #{$color-risk-4};
-  --#{$prefix}color-risk-5: #{$color-risk-5};
-  --#{$prefix}color-risk-6: #{$color-risk-6};
-  --#{$prefix}color-risk-7: #{$color-risk-7};
-  --#{$prefix}login-logout-blue: #{$login-logout-blue};
+  --color-info: #{$color-info};
+  --color-info-light: #{$color-info-light};
+  --color-success: #{$color-success};
+  --color-success-light: #{$color-success-light};
+  --color-warning: #{$color-warning};
+  --color-warning-light: #{$color-warning-light};
+  --color-danger: #{$color-danger};
+  --color-danger-light: #{$color-danger-light};
+  --color-risk-0: #{$color-risk-0};
+  --color-risk-1: #{$color-risk-1};
+  --color-risk-2: #{$color-risk-2};
+  --color-risk-3: #{$color-risk-3};
+  --color-risk-4: #{$color-risk-4};
+  --color-risk-5: #{$color-risk-5};
+  --color-risk-6: #{$color-risk-6};
+  --color-risk-7: #{$color-risk-7};
+  --login-logout-blue: #{$login-logout-blue};
 }
 
 /**
@@ -183,20 +182,20 @@ $theme-colors: (
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
 
-$enable-validation-icons: false;
-$enable-caret: false;
-$enable-rounded: false;
-$enable-transitions: false;
-$enable-cssgrid: false;
-$enable-negative-margins: true;
-$enable-important-utilities: true;
-$enable-rfs: false;
+$enable-validation-icons: false !default;
+$enable-caret: false !default;
+$enable-rounded: false !default;
+$enable-transitions: false !default;
+$enable-cssgrid: false !default;
+$enable-negative-margins: true !default;
+$enable-important-utilities: true !default;
+$enable-rfs: false !default;
 
-$min-contrast-ratio: 4.5;
-$color-contrast-dark: $black;
-$color-contrast-light: $white;
+$min-contrast-ratio: 4.5 !default;
+$color-contrast-dark: $black !default;
+$color-contrast-light: $white !default;
 
-$spacer: 1rem;
+$spacer: 1rem !default;
 $spacers: (
   0: 0,
   "025": ($spacer * .25),
@@ -208,7 +207,7 @@ $spacers: (
   2: ($spacer * 2),
   23: ($spacer * 2.3),
   3: ($spacer * 3),
-);
+) !default;
 
 $position-values: (
   0: 0,
@@ -224,18 +223,18 @@ $aspect-ratios: (
 ) !default;
 
 
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: 1rem !default;
 
-$link-color: $blue;
-$link-decoration: underline;
-$link-hover-color: darken($link-color, 15%);
-$link-hover-decoration: underline;
-$link-shade-percentage: 20%;
+$link-color: $blue !default;
+$link-decoration: underline !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+$link-shade-percentage: 20% !default;
 
-$line-height-lg: 1.3333333333;
+$line-height-lg: 1.3333333333 !default;
 
-$border-width: 2px;
-$border-color: $gray-200;
+$border-width: 2px !default;
+$border-color: $gray-200 !default;
 $border-widths: (
   1: 1px,
   2: 2px,
@@ -244,12 +243,12 @@ $border-widths: (
   5: 5px
 ) !default;
 
-$border-radius: .25rem;
-$border-radius-lg: .375rem;
-$border-radius-sm: .2rem;
+$border-radius: .25rem !default;
+$border-radius-lg: .375rem !default;
+$border-radius-sm: .2rem !default;
 
-$component-active-color: $white;
-$component-active-bg: $blue;
+$component-active-color: $white !default;
+$component-active-bg: $blue !default;
 
 /* Change something with grids? */
 $grid-breakpoints: (
@@ -258,9 +257,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px
-);
-@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
-@include _assert-starts-at-zero($grid-breakpoints);
+) !default;
 
 /* Adding xxl */
 $container-max-widths: (
@@ -269,51 +266,46 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px,
   xxl: 1662px
-);
+) !default;
 
-/* From BS5 */
-$grid-columns:                12 !default;
-$grid-gutter-width:           1.875rem;
-$grid-row-columns:            6 !default;
-$container-padding-x: $grid-gutter-width !default;
 
 /**
  * Typography
  */
 
-$font-family-sans-serif: var(--lf-font-family-sans-serif);
-$font-family-serif: var(--lf-font-family-serif);
-$font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-sans-serif: var(--lf-font-family-sans-serif) !default;
+$font-family-serif: var(--lf-font-family-serif) !default;
+$font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 
-$font-size-xl: 1.25rem;
-$font-size-lg: 1.125rem;
-$font-size-md: 1rem;
-$font-size-sm: .875rem;
-$font-size-xs: .75rem;
+$font-size-xl: 1.25rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-md: 1rem !default;
+$font-size-sm: .875rem !default;
+$font-size-xs: .75rem !default;
 
-$line-height-base: 1.45;
+$line-height-base: 1.45 !default;
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$prefix}font-family-sans-serif: #{$font-family-sans-serif};
-  --#{$prefix}font-family-serif: #{$font-family-serif};
-  --#{$prefix}font-family-base: #{$font-family-base};
-  --#{$prefix}font-family-monospace: #{$font-family-monospace};
-  --#{$prefix}font-size-xl: #{$font-size-xl};
-  --#{$prefix}font-size-lg: #{$font-size-lg};
-  --#{$prefix}font-size-md: #{$font-size-md};
-  --#{$prefix}font-size-sm: #{$font-size-sm};
-  --#{$prefix}font-size-xs: #{$font-size-xs};
-  --#{$prefix}font-line-height: #{$line-height-base};
+  --font-family-sans-serif: #{$font-family-sans-serif};
+  --font-family-serif: #{$font-family-serif};
+  --font-family-base: #{$font-family-base};
+  --font-family-monospace: #{$font-family-monospace};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-md: #{$font-size-md};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-xs: #{$font-size-xs};
+  --font-line-height: #{$line-height-base};
 }
 
-$h1-font-size: 2.5rem;
-$h2-font-size: 1.8125rem;
-$h3-font-size: 1.4375rem;
-$h4-font-size: 1.25rem;
-$h5-font-size: 1.125rem;
-$h6-font-size: .75rem;
+$h1-font-size: 2.5rem !default;
+$h2-font-size: 1.8125rem !default;
+$h3-font-size: 1.4375rem !default;
+$h4-font-size: 1.25rem !default;
+$h5-font-size: 1.125rem !default;
+$h6-font-size: .75rem !default;
 
 $font-sizes: (
   1: $h1-font-size,
@@ -324,281 +316,281 @@ $font-sizes: (
   6: $h6-font-size
 ) !default;
 
-$headings-font-family: $font-family-sans-serif;
-$headings-font-weight: 700;
-$font-weight-semibold: 500;
-$headings-line-height: 1.1;
-$headings-color: $navy;
+$headings-font-family: $font-family-sans-serif !default;
+$headings-font-weight: 700 !default;
+$font-weight-semibold: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: $navy !default;
 
-$display1-size: 3.75rem;
-$display2-size: 3.125rem;
-$display3-size: 2.5rem;
-$display4-size: 2.25rem;
+$display1-size: 3.75rem !default;
+$display2-size: 3.125rem !default;
+$display3-size: 2.5rem !default;
+$display4-size: 2.25rem !default;
 
-$display1-weight: normal;
-$display2-weight: normal;
-$display3-weight: normal;
-$display4-weight: normal;
-$display-line-height: 1;
+$display1-weight: normal !default;
+$display2-weight: normal !default;
+$display3-weight: normal !default;
+$display4-weight: normal !default;
+$display-line-height: 1 !default;
 
-$lead-font-size: 1.375rem;
-$lead-font-weight: 400;
+$lead-font-size: 1.375rem !default;
+$lead-font-weight: 400 !default;
 
-$text-muted: $gray;
+$text-muted: $gray !default;
 
-$blockquote-small-color: $gray;
+$blockquote-small-color: $gray !default;
 
-$hr-border-color: $gray-200;
-$hr-border-width: $border-width;
-$hr-opacity: .18;
+$hr-border-color: $gray-200 !default;
+$hr-border-width: $border-width !default;
+$hr-opacity: .18 !default;
 
-$list-inline-padding: 5px;
+$list-inline-padding: 5px !default;
 
-$mark-bg: $orange;
+$mark-bg: $orange !default;
 
 /**
  * Components
  * To-do: To be moved to each component SCSS file
  */
 
-$table-cell-padding-y: .75rem;
-$table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem calc(#{$table-cell-padding-y} - 1px);
-$table-cell-padding-sm: .5625rem 1.25rem;
-$table-bg: $white;
-$table-accent-bg: $offwhite;
-$table-hover-bg: $mist;
-$table-active-bg: $cloud;
-$table-border-color: $body-bg;
-$table-footer-color: $table-accent-bg;
-$table-head-bg: $white;
-$table-head-color: $black;
-$table-dark-bg: $gray-900;
-$table-dark-accent-bg: rgba($white, .05);
-$table-dark-hover-bg: rgba($white, .075);
-$table-dark-border-color: lighten($gray-900, 7.5%);
-$table-dark-color: $body-bg;
+$table-cell-padding-y: .75rem !default;
+$table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem calc(#{$table-cell-padding-y} - 1px) !default;
+$table-cell-padding-sm: .5625rem 1.25rem !default;
+$table-bg: $white !default;
+$table-accent-bg: $offwhite !default;
+$table-hover-bg: $mist !default;
+$table-active-bg: $cloud !default;
+$table-border-color: $body-bg !default;
+$table-footer-color: $table-accent-bg !default;
+$table-head-bg: $white !default;
+$table-head-color: $black !default;
+$table-dark-bg: $gray-900 !default;
+$table-dark-accent-bg: rgba($white, .05) !default;
+$table-dark-hover-bg: rgba($white, .075) !default;
+$table-dark-border-color: lighten($gray-900, 7.5%) !default;
+$table-dark-color: $body-bg !default;
 
-$btn-font-weight: 700;
-$btn-box-shadow: none;
-$btn-focus-box-shadow: 0 0 0 rgba(0, 0, 0, 10%);
-$btn-active-box-shadow: none;
-$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-$btn-primary-color: $white;
-$btn-primary-bg: $wine;
-$btn-primary-border: $wine;
-$btn-primary-bg-hover: #910c19;
-$btn-primary-bg-pressed: #7a0b16;
-$btn-secondary-color: $white;
-$btn-secondary-border: $navy;
-$btn-secondary-bg-hover: $navy;
-$btn-secondary-border-hover: #00325c;
-$btn-secondary-bg-pressed: #f2f7fb;
-$btn-info-color: $color-info;
-$btn-info-bg: $color-info-light;
-$btn-info-border: $color-info;
-$btn-info-border-hover: $color-info;
-$btn-info-bg-pressed: mix($color-info, $color-info-light, 15%);
-$btn-success-color: $color-success;
-$btn-success-bg: $color-success-light;
-$btn-success-border: $color-success;
-$btn-success-border-hover: $color-success;
-$btn-success-bg-pressed: mix($color-success, $color-success-light, 15%);
-$btn-warning-color: $color-warning;
-$btn-warning-bg: $color-warning-light;
-$btn-warning-border: $color-warning;
-$btn-warning-border-hover: $color-warning;
-$btn-warning-bg-pressed: mix($color-warning, $color-warning-light, 15%);
-$btn-danger-color: $color-danger;
-$btn-danger-bg: $color-danger-light;
-$btn-danger-border: $color-danger;
-$btn-danger-border-hover: $color-danger;
-$btn-danger-bg-pressed: mix($color-danger, $color-danger-light, 15%);
-$btn-login-logout-bg: $login-logout-blue;
-$btn-login-logout-bg-hover: darken($login-logout-blue, 6%);
-$btn-login-logout-bg-pressed: darken($login-logout-blue, 11%);
+$btn-font-weight: 700 !default;
+$btn-box-shadow: none !default;
+$btn-focus-box-shadow: 0 0 0 rgba(0, 0, 0, 10%) !default;
+$btn-active-box-shadow: none !default;
+$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$btn-primary-color: $white !default;
+$btn-primary-bg: $wine !default;
+$btn-primary-border: $wine !default;
+$btn-primary-bg-hover: #910c19 !default;
+$btn-primary-bg-pressed: #7a0b16 !default;
+$btn-secondary-color: $white !default;
+$btn-secondary-border: $navy !default;
+$btn-secondary-bg-hover: $navy !default;
+$btn-secondary-border-hover: #00325c !default;
+$btn-secondary-bg-pressed: #f2f7fb !default;
+$btn-info-color: $color-info !default;
+$btn-info-bg: $color-info-light !default;
+$btn-info-border: $color-info !default;
+$btn-info-border-hover: $color-info !default;
+$btn-info-bg-pressed: mix($color-info, $color-info-light, 15%) !default;
+$btn-success-color: $color-success !default;
+$btn-success-bg: $color-success-light !default;
+$btn-success-border: $color-success !default;
+$btn-success-border-hover: $color-success !default;
+$btn-success-bg-pressed: mix($color-success, $color-success-light, 15%) !default;
+$btn-warning-color: $color-warning !default;
+$btn-warning-bg: $color-warning-light !default;
+$btn-warning-border: $color-warning !default;
+$btn-warning-border-hover: $color-warning !default;
+$btn-warning-bg-pressed: mix($color-warning, $color-warning-light, 15%) !default;
+$btn-danger-color: $color-danger !default;
+$btn-danger-bg: $color-danger-light !default;
+$btn-danger-border: $color-danger !default;
+$btn-danger-border-hover: $color-danger !default;
+$btn-danger-bg-pressed: mix($color-danger, $color-danger-light, 15%) !default;
+$btn-login-logout-bg: $login-logout-blue !default;
+$btn-login-logout-bg-hover: darken($login-logout-blue, 6%) !default;
+$btn-login-logout-bg-pressed: darken($login-logout-blue, 11%) !default;
 
-$input-btn-padding-x: 1rem;
-$input-btn-padding-y: .5rem;
-$input-btn-line-height: 1.34;
-$input-btn-padding-x-sm: .75rem;
-$input-btn-padding-y-sm: .25rem;
-$input-btn-line-height-sm: 1.5;
-$input-btn-padding-x-lg: 1.25rem;
-$input-btn-padding-y-lg: .625rem;
-$input-btn-line-height-lg: 1.2;
-$input-btn-focus-width: .2rem;
-$input-btn-focus-color: rgba($blue, .25);
-$input-btn-focus-box-shadow: none;
+$input-btn-padding-x: 1rem !default;
+$input-btn-padding-y: .5rem !default;
+$input-btn-line-height: 1.34 !default;
+$input-btn-padding-x-sm: .75rem !default;
+$input-btn-padding-y-sm: .25rem !default;
+$input-btn-line-height-sm: 1.5 !default;
+$input-btn-padding-x-lg: 1.25rem !default;
+$input-btn-padding-y-lg: .625rem !default;
+$input-btn-line-height-lg: 1.2 !default;
+$input-btn-focus-width: .2rem !default;
+$input-btn-focus-color: rgba($blue, .25) !default;
+$input-btn-focus-box-shadow: none !default;
 
-$input-bg: $body-bg;
-$input-white-bg: $white;
-$input-white-bg-hover: #fbfbfb;
-$input-disabled-bg: $smoke;
-$input-color: $body-color;
-$input-border-color: $gray-200;
-$input-box-shadow: none;
-$input-focus-border-color: $blue;
-$input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%);
-$input-focus-color: $body-color;
-$input-placeholder-color: #999;
+$input-bg: $body-bg !default;
+$input-white-bg: $white !default;
+$input-white-bg-hover: #fbfbfb !default;
+$input-disabled-bg: $smoke !default;
+$input-color: $body-color !default;
+$input-border-color: $gray-200 !default;
+$input-box-shadow: none !default;
+$input-focus-border-color: $blue !default;
+$input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%) !default;
+$input-focus-color: $body-color !default;
+$input-placeholder-color: #999 !default;
 
-$input-padding-x: .75rem;
-$input-padding-y: .563rem;
-$input-padding-top: .663rem;
-$input-padding-right: .75rem;
-$input-padding-bottom: .463rem;
-$input-padding-left: .75rem;
-$input-padding: $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left;
+$input-padding-x: .75rem !default;
+$input-padding-y: .563rem !default;
+$input-padding-top: .663rem !default;
+$input-padding-right: .75rem !default;
+$input-padding-bottom: .463rem !default;
+$input-padding-left: .75rem !default;
+$input-padding: $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left !default;
 
-$input-border-width: $border-width;
-$input-btn-border-width: $border-width;
-$input-height-border: $input-border-width * 2;
-$input-height: 40px;
-$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2);
-$input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border});
-$input-height-inner-lg: ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
-$input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border});
+$input-border-width: $border-width !default;
+$input-btn-border-width: $border-width !default;
+$input-height-border: $input-border-width * 2 !default;
+$input-height: 40px !default;
+$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2) !default;
+$input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border}) !default;
+$input-height-inner-lg: ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2) !default;
+$input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border}) !default;
 
-$input-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-$form-check-input-margin-y: .25rem;
-$input-line-height: 1.25;
-$input-hover: #ececec;
-$input-valid-hover: #e5ecf5;
+$input-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !default;
+$form-check-input-margin-y: .25rem !default;
+$input-line-height: 1.25 !default;
+$input-hover: #ececec !default;
+$input-valid-hover: #e5ecf5 !default;
 
-$input-group-addon-bg: $input-bg;
-$input-group-addon-border-color: $gray-200;
+$input-group-addon-bg: $input-bg !default;
+$input-group-addon-border-color: $gray-200 !default;
 
-$input-group-addon-focus-border-color: $blue;
-$input-group-addon-min-width: 2.9rem;
-$cursor-disabled: not-allowed;
+$input-group-addon-focus-border-color: $blue !default;
+$input-group-addon-min-width: 2.9rem !default;
+$cursor-disabled: not-allowed !default;
 
-$custom-control-gutter: 1.75rem;
-$custom-control-spacer-x: 1.25rem;
-$custom-control-spacer-y: .625rem;
-$custom-control-indicator-size: 1.13rem;
-$custom-control-indicator-bg: $white;
-$custom-control-indicator-bg-size: 70% 70%;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba(0, 0, 0, 10%);
-$custom-control-indicator-disabled-bg: $white;
-$custom-control-description-disabled-color: #767676;
-$custom-control-indicator-checked-color: $blue;
-$custom-control-indicator-checked-bg: $white;
-$custom-control-indicator-checked-disabled-bg: none;
-$custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9;
-$custom-control-indicator-active-color: $white;
-$custom-control-indicator-active-bg: $white;
+$custom-control-gutter: 1.75rem !default;
+$custom-control-spacer-x: 1.25rem !default;
+$custom-control-spacer-y: .625rem !default;
+$custom-control-indicator-size: 1.13rem !default;
+$custom-control-indicator-bg: $white !default;
+$custom-control-indicator-bg-size: 70% 70% !default;
+$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba(0, 0, 0, 10%) !default;
+$custom-control-indicator-disabled-bg: $white !default;
+$custom-control-description-disabled-color: #767676 !default;
+$custom-control-indicator-checked-color: $blue !default;
+$custom-control-indicator-checked-bg: $white !default;
+$custom-control-indicator-checked-disabled-bg: none !default;
+$custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9 !default;
+$custom-control-indicator-active-color: $white !default;
+$custom-control-indicator-active-bg: $white !default;
 
-$custom-checkbox-indicator-icon-checked: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
+$custom-checkbox-indicator-icon-checked: url('data:image/svg+xml !default;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E') !default;
 
-$custom-radio-indicator-icon-checked: none;
+$custom-radio-indicator-icon-checked: none !default;
 
-$custom-file-height: $input-height;
-$custom-file-width: 14rem;
-$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9;
+$custom-file-height: $input-height !default;
+$custom-file-width: 14rem !default;
+$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9 !default;
 
-$custom-file-padding-y: 1rem;
-$custom-file-padding-x: $input-padding-right;
-$custom-file-line-height: $input-line-height;
-$custom-file-color: $input-color;
-$custom-file-bg: $input-bg;
-$custom-file-border-width: $border-width;
-$custom-file-border-color: #ddd;
-$custom-file-border-radius: $border-radius;
-$custom-file-box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, 5%);
-$custom-file-button-color: $custom-file-color;
-$custom-file-button-bg: transparent;
+$custom-file-padding-y: 1rem !default;
+$custom-file-padding-x: $input-padding-right !default;
+$custom-file-line-height: $input-line-height !default;
+$custom-file-color: $input-color !default;
+$custom-file-bg: $input-bg !default;
+$custom-file-border-width: $border-width !default;
+$custom-file-border-color: #ddd !default;
+$custom-file-border-radius: $border-radius !default;
+$custom-file-box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, 5%) !default;
+$custom-file-button-color: $custom-file-color !default;
+$custom-file-button-bg: transparent !default;
 $custom-file-text: (
   sv: "Välj fil…",
   en: "Choose file…"
-);
+) !default;
 $custom-file-text-multiple: (
   sv: "filer",
   en: "files"
-);
+) !default;
 
-$distribution-duration: 1000ms;
+$distribution-duration: 1000ms !default;
 
 
-$dropdown-margin-top: 0;
-$dropdown-bg: $white;
-$dropdown-border-color: $blue;
-$dropdown-border-width: $border-width;
-$dropdown-divider-bg: $shadow;
-$dropdown-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 17.5%);
-$dropdown-link-color: $gray-900;
-$dropdown-link-hover-color: darken($gray-900, 5%);
-$dropdown-link-hover-bg: #f5f5f5;
-$dropdown-link-disabled-color: $gray-600;
-$dropdown-item-padding-y: .25rem;
-$dropdown-item-padding-x: 1.5rem;
-$dropdown-header-color: $gray-600;
+$dropdown-margin-top: 0 !default;
+$dropdown-bg: $white !default;
+$dropdown-border-color: $blue !default;
+$dropdown-border-width: $border-width !default;
+$dropdown-divider-bg: $shadow !default;
+$dropdown-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 17.5%) !default;
+$dropdown-link-color: $gray-900 !default;
+$dropdown-link-hover-color: darken($gray-900, 5%) !default;
+$dropdown-link-hover-bg: #f5f5f5 !default;
+$dropdown-link-disabled-color: $gray-600 !default;
+$dropdown-item-padding-y: .25rem !default;
+$dropdown-item-padding-x: 1.5rem !default;
+$dropdown-header-color: $gray-600 !default;
 
-$nav-item-margin: 2px;
-$nav-link-padding-y: 1rem;
-$nav-link-padding-x: 2rem;
-$nav-link-disabled-color: $gray;
-$nav-tabs-border-color: transparent;
-$nav-tabs-border-width: $border-width;
-$nav-tabs-border-radius: $border-radius;
-$nav-tabs-link-hover-border-color: $gray-200;
-$nav-tabs-link-active-color: $gray-700;
-$nav-tabs-link-active-bg: $body-bg;
-$nav-tabs-link-active-border-color: #ddd;
-$nav-tabs-grey-bg-color: darken($body-bg, 4%);
-$nav-pills-border-radius: $border-radius;
-$nav-pills-link-active-color: $component-active-color;
-$nav-pills-link-active-bg: $component-active-bg;
+$nav-item-margin: 2px !default;
+$nav-link-padding-y: 1rem !default;
+$nav-link-padding-x: 2rem !default;
+$nav-link-disabled-color: $gray !default;
+$nav-tabs-border-color: transparent !default;
+$nav-tabs-border-width: $border-width !default;
+$nav-tabs-border-radius: $border-radius !default;
+$nav-tabs-link-hover-border-color: $gray-200 !default;
+$nav-tabs-link-active-color: $gray-700 !default;
+$nav-tabs-link-active-bg: $body-bg !default;
+$nav-tabs-link-active-border-color: #ddd !default;
+$nav-tabs-grey-bg-color: darken($body-bg, 4%) !default;
+$nav-pills-border-radius: $border-radius !default;
+$nav-pills-link-active-color: $component-active-color !default;
+$nav-pills-link-active-bg: $component-active-bg !default;
 
-$pagination-padding-y: .3rem;
-$pagination-padding-x: .9rem;
-$pagination-padding-y-sm: $pagination-padding-y;
-$pagination-padding-x-sm: $pagination-padding-x;
-$pagination-padding-y-lg: $pagination-padding-y;
-$pagination-padding-x-lg: $pagination-padding-x;
-$pagination-line-height: 1.45;
-$pagination-color: $link-color;
-$pagination-bg: $white;
-$pagination-border-width: 0;
-$pagination-border-color: currentcolor;
-$pagination-hover-color: $link-hover-color;
-$pagination-hover-bg: $white;
-$pagination-hover-border-color: currentcolor;
-$pagination-active-color: $white;
-$pagination-active-bg: $blue;
-$pagination-active-border-color: $white;
-$pagination-disabled-color: $gray-600;
-$pagination-disabled-bg: $white;
-$pagination-disabled-border-color: currentcolor;
+$pagination-padding-y: .3rem !default;
+$pagination-padding-x: .9rem !default;
+$pagination-padding-y-sm: $pagination-padding-y !default;
+$pagination-padding-x-sm: $pagination-padding-x !default;
+$pagination-padding-y-lg: $pagination-padding-y !default;
+$pagination-padding-x-lg: $pagination-padding-x !default;
+$pagination-line-height: 1.45 !default;
+$pagination-color: $link-color !default;
+$pagination-bg: $white !default;
+$pagination-border-width: 0 !default;
+$pagination-border-color: currentcolor !default;
+$pagination-hover-color: $link-hover-color !default;
+$pagination-hover-bg: $white !default;
+$pagination-hover-border-color: currentcolor !default;
+$pagination-active-color: $white !default;
+$pagination-active-bg: $blue !default;
+$pagination-active-border-color: $white !default;
+$pagination-disabled-color: $gray-600 !default;
+$pagination-disabled-bg: $white !default;
+$pagination-disabled-border-color: currentcolor !default;
 
-$pattern-diagonal-stripes-gray-stripes: $shadow;
-$pattern-diagonal-stripes-gray-bg: #ececec;
-$pattern-diagonal-stripes-gray-border: $shadow;
-$pattern-diagonal-stripes-gray-font-color: $black;
+$pattern-diagonal-stripes-gray-stripes: $shadow !default;
+$pattern-diagonal-stripes-gray-bg: #ececec !default;
+$pattern-diagonal-stripes-gray-border: $shadow !default;
+$pattern-diagonal-stripes-gray-font-color: $black !default;
 
-$card-spacer-y: 1rem;
-$card-spacer-x: 1.25rem;
-$card-border-width: 0;
-$card-cap-bg: $white;
-$card-block-padding: 1rem 1.25rem 1.5rem;
-$card-footer-padding: 1.25rem 1.25rem 1.5rem;
-$card-deck-margin: .625rem;
+$card-spacer-y: 1rem !default;
+$card-spacer-x: 1.25rem !default;
+$card-border-width: 0 !default;
+$card-cap-bg: $white !default;
+$card-block-padding: 1rem 1.25rem 1.5rem !default;
+$card-footer-padding: 1.25rem 1.25rem 1.5rem !default;
+$card-deck-margin: .625rem !default;
 
-$tooltip-padding-y: 3px;
-$tooltip-padding-x: 8px;
-$tooltip-margin: 3px;
-$tooltip-arrow-width: 5px;
-$tooltip-arrow-height: 5px;
+$tooltip-padding-y: 3px !default;
+$tooltip-padding-x: 8px !default;
+$tooltip-margin: 3px !default;
+$tooltip-arrow-width: 5px !default;
+$tooltip-arrow-height: 5px !default;
 
-$popover-max-width: 300px;
-$popover-border-width: 0;
-$popover-box-shadow: 0 5px 10px rgba(0, 0, 0, 20%);
-$popover-title-color: $gray;
-$popover-header-padding-y: 8px;
-$popover-header-padding-x: 14px;
-$popover-body-padding-y: 9px;
-$popover-body-padding-x: 14px;
-$popover-arrow-width: 0;
-$popover-arrow-height: 5px;
+$popover-max-width: 300px !default;
+$popover-border-width: 0 !default;
+$popover-box-shadow: 0 5px 10px rgba(0, 0, 0, 20%) !default;
+$popover-title-color: $gray !default;
+$popover-header-padding-y: 8px !default;
+$popover-header-padding-x: 14px !default;
+$popover-body-padding-y: 9px !default;
+$popover-body-padding-x: 14px !default;
+$popover-arrow-width: 0 !default;
+$popover-arrow-height: 5px !default;
 
 $transition-base:             all .2s ease-in-out !default;
 $transition-fade:             opacity .15s linear !default;
@@ -607,67 +599,67 @@ $transition-collapse-width:   width .35s ease !default;
 
 // Badges
 
-$badge-color: $white;
-$badge-default-bg: $orange;
-$badge-primary-bg: #dcddde;
-$badge-success-bg: $color-success-light;
-$badge-info-bg: $color-info-light;
-$badge-warning-bg: $color-warning-light;
-$badge-danger-bg: $color-danger-light;
+$badge-color: $white !default;
+$badge-default-bg: $orange !default;
+$badge-primary-bg: #dcddde !default;
+$badge-success-bg: $color-success-light !default;
+$badge-info-bg: $color-info-light !default;
+$badge-warning-bg: $color-warning-light !default;
+$badge-danger-bg: $color-danger-light !default;
 
-$range-slider-bg: $smoke;
-$range-slider-height: 4px;
-$range-slider-thumb-size: 1.13rem;
-$range-slider-thumb-bg: $white;
+$range-slider-bg: $smoke !default;
+$range-slider-height: 4px !default;
+$range-slider-thumb-size: 1.13rem !default;
+$range-slider-thumb-bg: $white !default;
 
-$spinner-animation-curve: cubic-bezier(.53, 0, .49, 1);
-$spinner-size: 60px;
-$spinner-animation-time: 1.9s;
+$spinner-animation-curve: cubic-bezier(.53, 0, .49, 1) !default;
+$spinner-size: 60px !default;
+$spinner-animation-time: 1.9s !default;
 
-$modal-inner-padding: 1.9rem;
-$modal-dialog-margin: 10px;
-$modal-dialog-margin-y-sm-up: 30px;
-$modal-title-line-height: 1.3;
-$modal-content-box-shadow-xs: 0 3px 9px rgba(0, 0, 0, 50%);
-$modal-content-box-shadow-sm-up: 0 5px 15px rgba(0, 0, 0, 50%);
-$modal-backdrop-bg: #000;
-$modal-header-border-color: $shadow;
-$modal-header-border-width: 0;
-$modal-header-padding: 1.5rem $modal-inner-padding;
-$modal-lg: 900px;
-$modal-md: 523px;
+$modal-inner-padding: 1.9rem !default;
+$modal-dialog-margin: 10px !default;
+$modal-dialog-margin-y-sm-up: 30px !default;
+$modal-title-line-height: 1.3 !default;
+$modal-content-box-shadow-xs: 0 3px 9px rgba(0, 0, 0, 50%) !default;
+$modal-content-box-shadow-sm-up: 0 5px 15px rgba(0, 0, 0, 50%) !default;
+$modal-backdrop-bg: #000 !default;
+$modal-header-border-color: $shadow !default;
+$modal-header-border-width: 0 !default;
+$modal-header-padding: 1.5rem $modal-inner-padding !default;
+$modal-lg: 900px !default;
+$modal-md: 523px !default;
 
-$progress-height: .625rem;
-$progress-font-size: .75rem;
-$progress-bg: $smoke;
-$progress-border-radius: $border-radius;
-$progress-box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, 10%);
-$progress-bar-color: $login-logout-blue;
-$progress-bar-bg: theme-color("primary");
-$progress-bar-animation-timing: 1s linear infinite;
-$progress-bar-transition: width .6s ease;
-$progress-bar-bg: $login-logout-blue;
-$progress-bar-success-bg: $color-success-light;
-$progress-bar-warning-bg: $color-warning-light;
-$progress-bar-danger-bg: $color-danger-light;
-$progress-bar-info-bg: $color-info;
-$progress-bar-circle-default-size: 50px;
+$progress-height: .625rem !default;
+$progress-font-size: .75rem !default;
+$progress-bg: $smoke !default;
+$progress-border-radius: $border-radius !default;
+$progress-box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, 10%) !default;
+$progress-bar-color: $login-logout-blue !default;
+$progress-bar-bg: theme-color("primary") !default;
+$progress-bar-animation-timing: 1s linear infinite !default;
+$progress-bar-transition: width .6s ease !default;
+$progress-bar-bg: $login-logout-blue !default;
+$progress-bar-success-bg: $color-success-light !default;
+$progress-bar-warning-bg: $color-warning-light !default;
+$progress-bar-danger-bg: $color-danger-light !default;
+$progress-bar-info-bg: $color-info !default;
+$progress-bar-circle-default-size: 50px !default;
 
-$list-group-border-color: #ddd;
-$list-group-hover-bg: #f5f5f5;
-$list-group-disabled-bg: $gray-200;
+$list-group-border-color: #ddd !default;
+$list-group-hover-bg: #f5f5f5 !default;
+$list-group-disabled-bg: $gray-200 !default;
 
-$breadcrumb-bg: $white;
-$breadcrumb-divider-color: #6d6e71;
-$breadcrumb-active-color: #6d6e71;
-$breadcrumb-divider: "";
+$breadcrumb-bg: $white !default;
+$breadcrumb-divider-color: #6d6e71 !default;
+$breadcrumb-active-color: #6d6e71 !default;
+$breadcrumb-divider: "" !default;
 
-$code-padding-y: .2rem;
-$code-padding-x: .4rem;
-$code-color: $navy;
-$code-bg: $cloud;
+$code-padding-y: .2rem !default;
+$code-padding-x: .4rem !default;
+$code-color: $navy !default;
+$code-bg: $cloud !default;
 
-$kbd-bg: #333;
+$kbd-bg: #333 !default;
 
 /**
  * Our own global helper variables
@@ -675,25 +667,16 @@ $kbd-bg: #333;
  */
 
 /* Restrain max line width of text */
-$legible-width: 36em;
+$legible-width: 36em !default;
 
 /* Not sure, something with links */
-$stretched-link-pseudo-element: after;
-$stretched-link-z-index: 1;
+$stretched-link-pseudo-element: after !default;
+$stretched-link-z-index: 1 !default;
 
 /* Added link version */
-$link-color-dark: $navy;
-$link-hover-color-dark: #00325c;
+$link-color-dark: $navy !default;
+$link-hover-color-dark: #00325c !default;
 
 /* Adding new grid gutters */
-$grid-gutter: 1.875rem;
-$grid-gutter-tight: 1.25rem;
-
-/* Characters which are escaped escape-svg func. Remove when moving to BS5 */
-$escaped-characters: (
-  ("<", "%3c"),
-  (">", "%3e"),
-  ("#", "%23"),
-  ("(", "%28"),
-  (")", "%29"),
-);
+$grid-gutter: 1.875rem !default;
+$grid-gutter-tight: 1.25rem !default;

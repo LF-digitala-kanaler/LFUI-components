@@ -1,9 +1,3 @@
-// stylelint-disable scss/operator-no-unspaced
-
-/* Get some of the new onces from BS5 */
-@import "bootstrap5/scss/mixins/_visually-hidden.scss";
-@import "bootstrap5/scss/mixins/_text-truncate.scss";
-
 /**
  * Glyphs
  */
@@ -187,7 +181,7 @@
     user-select: none;
     transition: box-shadow 100ms var(--ease-out);
 
-    @include hover () {
+    &:hover {
       color: $link-color;
 
       @include header-block-border($link-color);

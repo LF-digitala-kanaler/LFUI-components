@@ -53,19 +53,19 @@
    */
 
   @page {
-    size: $print-page-size;
+    size: A4 portrait;
   }
 
   body {
-    min-width: $print-body-min-width !important;
+    min-width: 100% !important;
   }
 
   .container {
-    min-width: $print-body-min-width !important;
+    min-width: 100% !important;
   }
 
   .badge {
-    border: $border-width solid $black;
+    border: 1px solid #000;
   }
 
   .table {
@@ -73,14 +73,14 @@
 
     td,
     th {
-      background-color: $white !important;
+      background-color: #fff !important;
     }
   }
 
   .table-bordered {
     th,
     td {
-      border: 1px solid $gray-300 !important;
+      border: 1px solid #f2f2f2 !important;
     }
   }
 
@@ -91,12 +91,12 @@
     td,
     thead th,
     tbody + tbody {
-      border-color: $table-border-color;
+      border-color: #000;
     }
   }
 
   .table .thead-dark th {
     color: inherit;
-    border-color: $table-border-color;
+    border-color: #000;
   }
 }

@@ -1,1 +1,1 @@
-import 'bootstrap5/js/src/alert'
+import 'bootstrap/js/src/alert'
