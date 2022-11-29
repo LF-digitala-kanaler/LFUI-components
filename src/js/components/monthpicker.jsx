@@ -4,8 +4,6 @@ import { useRef, useState, useEffect } from 'preact/hooks'
 import register from 'preact-custom-element'
 import { render } from 'preact'
 
-import '@duetds/date-picker/dist/collection/components/duet-date-picker/duet-date-picker.css'
-
 const FOCUSABLE =
   ':where(button, [href], input, select, textarea, [tabindex]):not([tabindex="-1"], :disabled)'
 
