@@ -3,16 +3,13 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import copy from 'rollup-plugin-copy'
 import autoprefixer from 'autoprefixer'
-import replace from '@rollup/plugin-replace'
 
 export default defineConfig({
   assetsInclude: ['**/*.css'],
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+  },
   plugins: [
-    replace({
-      'process.env.NODE_ENV': JSON.stringify(
-        process.env.NODE_ENV || 'production'
-      )
-    }),
     copy({
       hook: 'writeBundle',
       targets: [
