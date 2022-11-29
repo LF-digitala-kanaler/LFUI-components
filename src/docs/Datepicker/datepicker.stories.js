@@ -3,7 +3,7 @@ import Timepicker from './timepicker.html?raw'
 import Monthpicker from './monthpicker.html?raw'
 
 import { useEffect, useState } from '@storybook/client-api'
-import { monthpickerExample } from './monthpicker.js'
+import { monthpickerExample } from './monthpicker.jsx'
 import { datepickerExample } from './datepicker.js'
 import { html, uid } from '../../js/utils.js'
 

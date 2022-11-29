@@ -30,7 +30,7 @@ export function html(strings, ...values) {
     if (value) {
       if (value instanceof window.DocumentFragment) {
         const temp = document.createElement('div')
-        temp.append(...value.childNodes)
+        temp.append(...Array.from(value.childNodes))
         acc += temp.innerHTML
       } else {
         acc += value
@@ -39,7 +39,7 @@ export function html(strings, ...values) {
     return acc
   }, '')
 
-  frag.append(...div.childNodes)
+  frag.append(...Array.from(div.childNodes))
 
   return frag
 }

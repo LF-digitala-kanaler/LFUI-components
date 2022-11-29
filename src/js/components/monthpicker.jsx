@@ -1,32 +1,31 @@
 // @ts-check
 
-import { useId, useRef, useState, useEffect } from 'preact/hooks'
+import { useRef, useState, useEffect } from 'preact/hooks'
 import register from 'preact-custom-element'
 import { render } from 'preact'
 
 import '@duetds/date-picker/dist/collection/components/duet-date-picker/duet-date-picker.css'
 
 const FOCUSABLE =
-  ':where(button, [href], input, select, textarea, [tabindex]):not([tabindex="-1"])'
+  ':where(button, [href], input, select, textarea, [tabindex]):not([tabindex="-1"], :disabled)'
 
 /**
  * @typedef {object} Localization
  * @property {string} placeholder
- * @property {string} prevMonthLabel
- * @property {string} nextMonthLabel
+ * @property {string} prevYearLabel
+ * @property {string} nextYearLabel
  * @property {string} yearSelectLabel
  * @property {string} closeLabel
  * @property {string} calendarHeading
  * @property {string[]} monthNames
  * @property {string[]} monthNamesShort
- * @property {string} locale
  */
 
 /** @type {Localization} */
 export const LOCALIZATION = {
   placeholder: 'yyyy-mm',
-  prevMonthLabel: 'Föregående månad',
-  nextMonthLabel: 'Nästa månad',
+  prevYearLabel: 'Föregående månad',
+  nextYearLabel: 'Nästa månad',
   yearSelectLabel: 'år',
   closeLabel: 'Stäng',
   calendarHeading: 'Välj en månad',
@@ -57,8 +56,7 @@ export const LOCALIZATION = {
     'Okt',
     'Nov',
     'Dec'
-  ],
-  locale: 'sv-SE'
+  ]
 }
 
 /**
@@ -72,14 +70,19 @@ export function monthpicker(input, localization) {
   div.classList.add('duet-month-picker')
 
   let open = false
-  const update = (props) => render(<MonthPicker {...props} />, div)
+  const update = (props) => render(<Monthpicker {...props} />, div)
   const close = () => {
     open = false
     update({ ...props, open })
   }
+
   const props = {
     localization,
-    onchange: close,
+    onchange({ value }) {
+      close()
+      // Inform upstream that the value has changed
+      div.dispatchEvent(new window.CustomEvent('change', { detail: { value } }))
+    },
     onfocus: close,
     onclose: close,
     onkeydown(event) {
@@ -87,13 +90,16 @@ export function monthpicker(input, localization) {
     }
   }
 
+  // Forward all attributes to the monthpicker
   for (const { name, value } of input.attributes) {
     props[name] = value
   }
 
+  // Find all triggers that control the monthpicker
   const triggers = [...document.querySelectorAll(`[aria-controls=${input.id}]`)]
 
   for (const trigger of triggers) {
+    // Hook up clikc listenrers to toggle open state
     trigger.addEventListener('click', function () {
       open = !open
       update({ ...props, open })
@@ -104,28 +110,34 @@ export function monthpicker(input, localization) {
   document.addEventListener('click', function onclick(event) {
     if (!open) return
     if (!div.isConnected) {
+      // Clean up if the monthpicker has been removed from the DOM
       document.removeEventListener('click', onclick)
       return
     }
 
     /** @type {HTMLElement|null} */
     let el = /** @type {HTMLElement} */ (event.target)
+
+    // Checking if the click was inside the monthpicker or a trigger
     while (el) {
       if (el === div || triggers.includes(el)) return
       el = /** @type {HTMLElement?} */ (el.parentNode)
     }
 
+    // Update state
     open = false
-
     for (const trigger of triggers) {
       trigger.classList.remove('active')
     }
 
+    // Update DOM
     update({ ...props, open })
   })
 
+  // Initial render
   update(props)
 
+  // Replace default month picker with our custom one
   input.replaceWith(div)
 
   return div
@@ -135,7 +147,7 @@ export function monthpicker(input, localization) {
  * @param {import('preact').RenderableProps<{ localization?: Localization, [key: string]: any }>} props
  * @returns {import('preact').VNode}
  */
-export function MonthPicker(props) {
+export function Monthpicker(props) {
   const {
     localization = LOCALIZATION,
     open,
@@ -148,7 +160,7 @@ export function MonthPicker(props) {
     ...attrs
   } = props
 
-  const id = useId()
+  const [id] = useState(Math.random().toString(36).substring(2))
   const initial = useRef(true)
 
   /** @type {import('preact').Ref<HTMLDivElement>} */
@@ -164,11 +176,9 @@ export function MonthPicker(props) {
   const focused = useRef(null)
 
   const now = new Date()
-  const fallback = { year: now.getFullYear(), month: now.getMonth() + 1 }
 
   const isOpen = toBool(open)
   const [value, _setValue] = useState(parse(attrs.value))
-  const [selected, setSelected] = useState(value || fallback)
   const min = parse(attrs.min) || {
     year: now.getFullYear() - 10,
     month: 1
@@ -177,11 +187,20 @@ export function MonthPicker(props) {
     year: now.getFullYear() + 10,
     month: 12
   }
+  const fallback = {
+    year: Math.min(max.year, Math.max(min.year, now.getFullYear())),
+    month: Math.min(max.month, Math.max(now.getMonth() + 1, min.month))
+  }
+  const [selected, setSelected] = useState(value || fallback)
 
-  const setValue = (value) => {
-    _setValue(value)
+  const setValue = (next) => {
+    _setValue(next)
 
-    const str = value ? stringify(value) : null
+    if (!next && next === value && input.current) {
+      input.current.value = ''
+    }
+
+    const str = next ? stringify(next) : null
     if (typeof onChange === 'function') onChange({ value: str })
     if (typeof onchange === 'function') onchange({ value: str })
   }
@@ -257,6 +276,7 @@ export function MonthPicker(props) {
           {...attrs}
           ref={input}
           value={value ? stringify(value) : ''}
+          onChange={() => {}}
           onBlur={(event) => {
             // @ts-ignore
             const value = parse(event.target.value)
@@ -283,7 +303,7 @@ export function MonthPicker(props) {
           className="duet-date__input"
           placeholder={localization.placeholder}
           aria-autocomplete="none"
-          autocomplete="off"
+          autoComplete="off"
           type="text"
         />
       </div>
@@ -330,7 +350,9 @@ export function MonthPicker(props) {
                 aria-atomic="true">
                 {selected.year}
               </h2>
-              <label for={`DuetDateYear-${id}`} className="duet-date__vhidden">
+              <label
+                htmlFor={`DuetDateYear-${id}`}
+                className="duet-date__vhidden">
                 {localization.yearSelectLabel}
               </label>
               <div className="duet-date__select">
@@ -339,6 +361,7 @@ export function MonthPicker(props) {
                   name="year"
                   id={`DuetDateYear-${id}`}
                   className="duet-date__select--year"
+                  value={selected.year}
                   onChange={(event) =>
                     // @ts-ignore
                     setSelected({ ...selected, year: +event.target.value })
@@ -346,11 +369,7 @@ export function MonthPicker(props) {
                   {Array(max.year - min.year + 1)
                     .fill(null)
                     .map((_, i) => (
-                      <option
-                        key={`year-${i}`}
-                        selected={selected.year === min.year + i}>
-                        {min.year + i}
-                      </option>
+                      <option key={`year-${i}`}>{min.year + i}</option>
                     ))}
                 </select>
                 <div className="duet-date__select-label" aria-hidden="true">
@@ -384,7 +403,7 @@ export function MonthPicker(props) {
                   <path d="M14.71 15.88L10.83 12l3.88-3.88c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .38-.39.39-1.03 0-1.42z"></path>
                 </svg>
                 <span className="duet-date__vhidden">
-                  {localization.prevMonthLabel}
+                  {localization.prevYearLabel}
                 </span>
               </button>
               <button
@@ -404,7 +423,7 @@ export function MonthPicker(props) {
                   <path d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"></path>
                 </svg>
                 <span className="duet-date__vhidden">
-                  {localization.nextMonthLabel}
+                  {localization.nextYearLabel}
                 </span>
               </button>
             </div>
@@ -422,10 +441,15 @@ export function MonthPicker(props) {
                       .map((_, col) => {
                         const month = row * 3 + col + 1
                         const isSelected = month === selected.month
+                        const isDisabled =
+                          (selected.year === max.year && month > max.month) ||
+                          (selected.year === min.year && month < min.month)
                         return (
                           <td key={`month-${col}`} className="duet-date__cell">
                             <button
-                              className="duet-date__day is-month"
+                              className={`duet-date__day is-month ${
+                                isDisabled ? 'is-outside' : ''
+                              }`}
                               value={stringify({ ...selected, month })}
                               ref={isSelected ? focused : null}
                               tabIndex={isSelected ? 0 : -1}
@@ -436,6 +460,7 @@ export function MonthPicker(props) {
                                   ? 'true'
                                   : 'false'
                               }
+                              disabled={isDisabled}
                               onClick={(e) => setValue({ ...selected, month })}
                               onKeyDown={(event) => {
                                 const { key } = event
@@ -452,7 +477,7 @@ export function MonthPicker(props) {
                               <span aria-hidden="true">
                                 {localization.monthNames[row * 3 + col]}
                               </span>
-                              <span class="duet-date__vhidden">
+                              <span className="duet-date__vhidden">
                                 {localization.monthNames[row * 3 + col]}{' '}
                                 {selected.year}
                               </span>
@@ -520,7 +545,7 @@ function stringify({ year, month }) {
 }
 
 register(
-  MonthPicker,
+  Monthpicker,
   'duet-month-picker',
   [
     'value',
