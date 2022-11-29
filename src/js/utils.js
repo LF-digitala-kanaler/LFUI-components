@@ -1,3 +1,5 @@
+// @ts-check
+
 const EVENT_PREFIX = /^on/
 
 export const refs = new WeakMap()
@@ -45,8 +47,8 @@ export function html(strings, ...values) {
 /**
  * Iterate through each matching node
  * @param {string} selector Node selector
- * @param {function(Node, number, NodeList): void} callback Iterator callback
- * @param {Node} context Node context to search in
+ * @param {function(Element, number, NodeList): void} callback Iterator callback
+ * @param {Element|Document} [context] Node context to search in
  */
 export function each(selector, callback, context = document) {
   context.querySelectorAll(selector).forEach(callback)
@@ -60,12 +62,9 @@ export function each(selector, callback, context = document) {
  */
 export function delegate(selector, handler) {
   return function (event) {
-    const target = event.target.matches(selector)
-      ? event.target
-      : event.target.closest(selector)
-    if (target) {
-      handler.call(target, event)
-    }
+    const target = /** @type {Element} */ (event.target)
+    const _target = target.matches(selector) ? target : target.closest(selector)
+    if (_target) handler.call(_target, event)
   }
 }
 
@@ -86,7 +85,7 @@ export class Ref {
  * Render node
  * @param {string} type Node type
  * @param {object} attrs Node attributes
- * @param {(str | Node)[]} children Node children
+ * @param {(string | Node)[]} children Node children
  * @returns {Node}
  */
 export function h(type, attrs = {}, children = []) {

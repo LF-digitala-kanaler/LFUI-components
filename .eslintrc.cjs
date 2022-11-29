@@ -5,7 +5,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     'generator-star-spacing': 'off',
     'yield-star-spacing': 'off',
-    'no-unexpected-multiline': 'off'
+    'no-unexpected-multiline': 'off',
+    'multiline-ternary': 'off'
   },
   ignorePatterns: ['dist', 'static', 'node_modules']
 }

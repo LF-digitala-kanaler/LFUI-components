@@ -1,4 +1,5 @@
 import { DuetDatePicker } from '@duetds/date-picker/custom-element'
+import { each } from '../utils.js'
 
 window.customElements.define('duet-date-picker', DuetDatePicker)
 
@@ -71,8 +72,7 @@ export function datepicker(input, opts = input.dataset) {
     customEl.setAttribute(name, value)
   }
 
-  const trigger = document.querySelector(`[aria-controls=${input.id}]`)
-  if (trigger) {
+  each(`[aria-controls=${input.id}]`, function (trigger) {
     let isOpen = false
 
     customEl.classList.add('is-grouped')
@@ -90,7 +90,7 @@ export function datepicker(input, opts = input.dataset) {
     trigger.addEventListener('click', function () {
       if (!isOpen) customEl.show()
     })
-  }
+  })
 
   Object.assign(customEl, DEFAULTS, opts)
   input.replaceWith(customEl)

@@ -7,7 +7,7 @@
     "node": "16"
   },
   "scripts": {
-    "start": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006 --no-open",
     "build": "npm run build:lfui && npm run build:types && npm run build:docs && build-storybook -o static",
     "build:lfui": "vite build",
     "build:docs": "vite build -c docs.vite.config.js",
@@ -25,8 +25,11 @@
     "@lansforsakringar/fonts": "^1.0.3",
     "@lansforsakringar/icons": "^2.2.0",
     "@popperjs/core": "^2.11.6",
+    "@preact/preset-vite": "^2.4.0",
     "bootstrap": "4.3.1",
     "bootstrap5": "npm:bootstrap@^5.2.0",
+    "preact": "^10.11.3",
+    "preact-custom-element": "^4.2.1",
     "vivus": "0.4.6"
   },
   "devDependencies": {
@@ -68,7 +71,8 @@
       "default": "./dist/lfui/main.umd.js"
     },
     "./select": "./src/js/components/select.js",
-    "./datepicker": "./src/js/components/datepicker.js"
+    "./datepicker": "./src/js/components/datepicker.js",
+    "./monthpicker": "./src/js/components/monthpicker.js"
   },
   "homepage": "https://lf-digitala-kanaler.github.io/LFUI-components",
   "files": [

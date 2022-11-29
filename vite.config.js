@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import copy from 'rollup-plugin-copy'
 import autoprefixer from 'autoprefixer'
+import preact from '@preact/preset-vite'
 
 export default defineConfig({
   assetsInclude: ['**/*.css'],
@@ -10,6 +11,7 @@ export default defineConfig({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
   },
   plugins: [
+    preact(),
     copy({
       hook: 'writeBundle',
       targets: [
