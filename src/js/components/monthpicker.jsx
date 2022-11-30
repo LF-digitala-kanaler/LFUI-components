@@ -8,6 +8,11 @@ const FOCUSABLE =
   ':where(button, [href], input, select, textarea, [tabindex]):not([tabindex="-1"], :disabled)'
 
 /**
+ * @typedef {object} Options
+ * @property {Localization} localization
+ */
+
+/**
  * @typedef {object} Localization
  * @property {string} placeholder
  * @property {string} prevYearLabel
@@ -19,51 +24,53 @@ const FOCUSABLE =
  * @property {string[]} monthNamesShort
  */
 
-/** @type {Localization} */
-export const LOCALIZATION = {
-  placeholder: 'yyyy-mm',
-  prevYearLabel: 'Föregående månad',
-  nextYearLabel: 'Nästa månad',
-  yearSelectLabel: 'år',
-  closeLabel: 'Stäng',
-  calendarHeading: 'Välj en månad',
-  monthNames: [
-    'Januari',
-    'Februari',
-    'Mars',
-    'April',
-    'Maj',
-    'Juni',
-    'Juli',
-    'Augusti',
-    'September',
-    'Oktober',
-    'November',
-    'December'
-  ],
-  monthNamesShort: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'Maj',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Okt',
-    'Nov',
-    'Dec'
-  ]
+/** @type {Options} */
+export const DEFAULTS = {
+  localization: {
+    placeholder: 'yyyy-mm',
+    prevYearLabel: 'Föregående månad',
+    nextYearLabel: 'Nästa månad',
+    yearSelectLabel: 'år',
+    closeLabel: 'Stäng',
+    calendarHeading: 'Välj en månad',
+    monthNames: [
+      'Januari',
+      'Februari',
+      'Mars',
+      'April',
+      'Maj',
+      'Juni',
+      'Juli',
+      'Augusti',
+      'September',
+      'Oktober',
+      'November',
+      'December'
+    ],
+    monthNamesShort: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'Maj',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Okt',
+      'Nov',
+      'Dec'
+    ]
+  }
 }
 
 /**
  * Initialize monthpicker element
  * @param {HTMLInputElement} input The date input element
- * @param {Localization} localization
+ * @param {Options} opts
  * @returns {HTMLDivElement}
  */
-export function monthpicker(input, localization) {
+export function monthpicker(input, opts = DEFAULTS) {
   const div = document.createElement('div')
   div.classList.add('duet-month-picker')
 
@@ -75,7 +82,7 @@ export function monthpicker(input, localization) {
   }
 
   const props = {
-    localization,
+    localization: opts.localization,
     onchange({ value }) {
       close()
       // Inform upstream that the value has changed
@@ -144,7 +151,7 @@ export function monthpicker(input, localization) {
  */
 export function Monthpicker(props) {
   const {
-    localization = LOCALIZATION,
+    localization = DEFAULTS.localization,
     open,
     onBlur,
     onblur,
