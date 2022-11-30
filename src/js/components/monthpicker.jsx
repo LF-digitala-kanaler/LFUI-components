@@ -82,10 +82,7 @@ export function monthpicker(input, localization) {
       div.dispatchEvent(new window.CustomEvent('change', { detail: { value } }))
     },
     onfocus: close,
-    onclose: close,
-    onkeydown(event) {
-      if (event.key === 'Escape') close()
-    }
+    onclose: close
   }
 
   // Forward all attributes to the monthpicker
@@ -226,17 +223,22 @@ export function Monthpicker(props) {
 
   // Contain focus within the month picker
   const onkeydown = (event) => {
-    if (event.key !== 'Tab' || !isOpen) return
-    /** @type {NodeListOf<HTMLElement> | []} */
-    const nodes = root.current?.querySelectorAll(FOCUSABLE) || []
-    const elements = [...nodes].filter((el) => el !== input.current)
-    const index = elements.indexOf(event.target)
-    if (!index && event.shiftKey) {
-      elements[elements.length - 1].focus()
-      event.preventDefault()
-    } else if (index === elements.length - 1 && !event.shiftKey) {
-      elements[0].focus()
-      event.preventDefault()
+    if (!isOpen) return
+    if (event.key === 'Escape') {
+      if (typeof onClose === 'function') onClose()
+      if (typeof onclose === 'function') onclose()
+    } else if (event.key !== 'Tab') {
+      /** @type {NodeListOf<HTMLElement> | []} */
+      const nodes = root.current?.querySelectorAll(FOCUSABLE) || []
+      const elements = [...nodes].filter((el) => el !== input.current)
+      const index = elements.indexOf(event.target)
+      if (!index && event.shiftKey) {
+        elements[elements.length - 1].focus()
+        event.preventDefault()
+      } else if (index === elements.length - 1 && !event.shiftKey) {
+        elements[0].focus()
+        event.preventDefault()
+      }
     }
   }
 
