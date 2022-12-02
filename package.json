@@ -23,7 +23,7 @@
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
     "@lansforsakringar/fonts": "^1.0.3",
-    "@lansforsakringar/icons": "^2.2.0",
+    "@lansforsakringar/icons": "^3.3.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "4.3.1",
     "bootstrap5": "npm:bootstrap@^5.2.0",
