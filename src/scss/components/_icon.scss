@@ -1,13 +1,12 @@
-$icon-stroke-width: 1px;
-
 /**
- * Sizes are set using the `width` and `height` attributes
+ * Set sizes using the `width` and `height` attributes
  */
 
 .icon {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  fill: currentcolor;
 }
 
 .icon-block {
@@ -19,7 +18,7 @@ $icon-stroke-width: 1px;
 }
 
 /**
- * Helpers for vertical alignment
+ * Nudge vertical alignment
  */
 
 .icon-nudge { top: -.06em; }
@@ -35,11 +34,3 @@ $icon-stroke-width: 1px;
 .icon-nudge-down-02 { top: .2em; }
 .icon-nudge-down-025 { top: .25em; }
 .icon-nudge-down-030 { top: .3em; }
-
-/**
- * Horizontal spacing
- */
-
-.icon-left { margin-right: 10px; }
-.icon-right { margin-left: 10px; }
-.icon-green { color: $green; }
