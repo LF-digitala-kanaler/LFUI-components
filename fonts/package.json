@@ -1,6 +1,6 @@
 {
-  "name": "@lf-digitala-kanaler/fonts",
-  "version": "1.0.3",
+  "name": "@lansforsakringar/fonts",
+  "version": "1.0.5",
   "description": "Länsförsäkringar web font files",
   "style": "index.css",
   "main": "index.css",

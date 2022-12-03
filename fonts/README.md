@@ -31,12 +31,12 @@ Font display
 ```
 
 ## CSS
-This package includes a complete CSS implementation of the font stack which can
-be imported and configured using CSS custom properties.
+This package includes a complete CSS implementation of the font stacks ready to 
+be imported.
 
-The implementation declares the two custom properties
+The file declares the two custom properties
 `--lf-font-family-sans-serif` and `--lf-font-family-serif` which can be used to
-define the appropriate font family.
+apply the appropriate font family.
 
 ```css
 @import "@lf-digitala-kanaler/fonts";
