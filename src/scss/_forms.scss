@@ -34,14 +34,17 @@ legend {
  */
 
 input[type="number"],
-input[type="date"] {
+input[type="date"],
+input[type="month"] {
   appearance: textfield;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button,
 input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-outer-spin-button {
+input[type="date"]::-webkit-outer-spin-button,
+input[type="month"]::-webkit-inner-spin-button,
+input[type="month"]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0;
 }

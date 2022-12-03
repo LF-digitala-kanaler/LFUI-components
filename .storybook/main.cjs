@@ -1,7 +1,6 @@
 const url = require('postcss-url')
 const { mergeConfig } = require('vite')
 const autoprefixer = require('autoprefixer')
-const { dirname, resolve } = require('path')
 
 module.exports = {
   logLevel: 'debug',
@@ -33,6 +32,12 @@ module.exports = {
   async viteFinal(config, { configType }) {
     if (process.env.NODE_ENV === 'development') {
       return mergeConfig(config, {
+        resolve: {
+          alias: {
+            react: 'preact/compat',
+            'react-dom': 'preact/compat'
+          }
+        },
         css: {
           postcss: {
             plugins: [
@@ -52,6 +57,12 @@ module.exports = {
     }
 
     return mergeConfig(config, {
+      resolve: {
+        alias: {
+          react: 'preact/compat',
+          'react-dom': 'preact/compat'
+        }
+      },
       base: '/LFUI-components/',
       css: {
         postcss: {

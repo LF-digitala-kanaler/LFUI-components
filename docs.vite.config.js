@@ -3,16 +3,15 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import copy from 'rollup-plugin-copy'
 import autoprefixer from 'autoprefixer'
-import replace from '@rollup/plugin-replace'
+import preact from '@preact/preset-vite'
 import increaseSpecificity from 'postcss-increase-specificity'
 
 export default defineConfig({
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+  },
   plugins: [
-    replace({
-      'process.env.NODE_ENV': JSON.stringify(
-        process.env.NODE_ENV || 'production'
-      )
-    }),
+    preact(),
     copy({
       hook: 'writeBundle',
       targets: [

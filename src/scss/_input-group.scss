@@ -186,7 +186,7 @@
  */
 
 form:not([novalidate]) .form-control:valid + .input-group-append .btn,
-.form-control:focus + .input-group-append .btn {
+.form-control:not([type="month"]):focus + .input-group-append .btn {
   border-color: $input-group-addon-focus-border-color;
 
   &:hover {
