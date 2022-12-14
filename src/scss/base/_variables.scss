@@ -35,12 +35,18 @@ $variable-prefix: "" !default;
 
 $wine: #ad1015;
 $red: #e30613;
-$pink: #fcd2d3;
+$pink: #FCD2D3;
+$green: #1B5E20;
+$mint: #e5fff0;
+$orange: #fdd835;
+$yellow: #ffffd6;
 $navy: #00427a;
 $blue: #005aa0;
 $sky: #76bbe7;
 $baby: #badaf3;
+$water: #e5eff7;
 $cloud: #eff4f9;
+$mist: #f9fbfd;
 $black: #222;
 $gray: #6b7070;
 $silver: #b1b3b6;
@@ -49,16 +55,6 @@ $shadow: #e5e5e5;
 $tint: #f3f3f3;
 $white: #fff;
 $offwhite: #fafafa;
-
-/* To-do: remove */
-$orange: #f9b233;
-$green: #95c11f;
-$purple: #bf71bb;
-$turquoise: #02bcb2;
-$indigo: #6610f2;
-$yellow: #ffc107;
-$teal: #20c997;
-$cyan: #17a2b8;
 
 /* Used only by Bootstrap */
 $gray-100: $smoke;
@@ -81,32 +77,23 @@ $grays: (
   800: $gray-800,
   900: $gray-900
 );
-$colors: (
-  blue: $blue,
-  indigo: $indigo,
-  purple: $purple,
-  pink: $pink,
-  red: $red,
-  orange: $orange,
-  yellow: $yellow,
-  green: $green,
-  teal: $teal,
-  cyan: $cyan,
-  white: $white,
-  gray: $gray-600,
-  gray-dark: $gray-800
-);
 
 /* Expose as CSS custom properties */
 :root {
   --#{$variable-prefix}wine: #{$wine};
   --#{$variable-prefix}red: #{$red};
   --#{$variable-prefix}pink: #{$pink};
+  --#{$variable-prefix}green: #{$green};
+  --#{$variable-prefix}mint: #{$mint};
+  --#{$variable-prefix}orange: #{$orange};
+  --#{$variable-prefix}yellow: #{$yellow};
   --#{$variable-prefix}navy: #{$navy};
   --#{$variable-prefix}blue: #{$blue};
   --#{$variable-prefix}sky: #{$sky};
   --#{$variable-prefix}baby: #{$baby};
+  --#{$variable-prefix}mist: #{$mist};
   --#{$variable-prefix}cloud: #{$cloud};
+  --#{$variable-prefix}mist: #{$mist};
   --#{$variable-prefix}black: #{$black};
   --#{$variable-prefix}gray: #{$gray};
   --#{$variable-prefix}silver: #{$silver};
@@ -124,14 +111,14 @@ $colors: (
 $body-bg: $tint;
 $body-color: $black;
 
-$color-info: #e5eff7;
-$color-info-text: $blue;
-$color-success: #e5fff0;
-$color-success-text: #1b5e20;
-$color-warning: #ffffd6;
-$color-warning-text: #996006;
-$color-danger: #ffdfe0;
-$color-danger-text: $wine;
+$color-info: $blue;
+$color-info-light: $water;
+$color-success: $green;
+$color-success-light: $mint;
+$color-warning: $orange;
+$color-warning-light: $yellow;
+$color-danger: $wine;
+$color-danger-light: $pink;
 
 $color-risk-0: #515151;
 $color-risk-1: #2a7fd4;
@@ -159,14 +146,14 @@ $theme-colors: (
 
 /* Expose as CSS custom properties */
 :root {
+  --#{$variable-prefix}color-info-light: #{$color-info-light};
   --#{$variable-prefix}color-info: #{$color-info};
-  --#{$variable-prefix}color-info-text: #{$color-info-text};
+  --#{$variable-prefix}color-success-light: #{$color-success-light};
   --#{$variable-prefix}color-success: #{$color-success};
-  --#{$variable-prefix}color-success-text: #{$color-success-text};
+  --#{$variable-prefix}color-warning-light: #{$color-warning-light};
   --#{$variable-prefix}color-warning: #{$color-warning};
-  --#{$variable-prefix}color-warning-text: #{$color-warning-text};
+  --#{$variable-prefix}color-danger-light: #{$color-danger-light};
   --#{$variable-prefix}color-danger: #{$color-danger};
-  --#{$variable-prefix}color-danger-text: #{$color-danger-text};
   --#{$variable-prefix}color-risk-0: #{$color-risk-0};
   --#{$variable-prefix}color-risk-1: #{$color-risk-1};
   --#{$variable-prefix}color-risk-2: #{$color-risk-2};
@@ -350,26 +337,26 @@ $btn-secondary-border: $navy;
 $btn-secondary-bg-hover: $navy;
 $btn-secondary-border-hover: #00325c;
 $btn-secondary-bg-pressed: #f2f7fb;
-$btn-info-color: $color-info-text;
-$btn-info-bg: $color-info;
-$btn-info-border: $color-info-text;
-$btn-info-border-hover: $color-info-text;
-$btn-info-bg-pressed: mix($color-info-text, $color-info, 15%);
-$btn-success-color: $color-success-text;
-$btn-success-bg: $color-success;
-$btn-success-border: $color-success-text;
-$btn-success-border-hover: $color-success-text;
-$btn-success-bg-pressed: mix($color-success-text, $color-success, 15%);
-$btn-warning-color: $color-warning-text;
-$btn-warning-bg: $color-warning;
-$btn-warning-border: $color-warning-text;
-$btn-warning-border-hover: $color-warning-text;
-$btn-warning-bg-pressed: mix($color-warning-text, $color-warning, 15%);
-$btn-danger-color: $color-danger-text;
-$btn-danger-bg: $color-danger;
-$btn-danger-border: $color-danger-text;
-$btn-danger-border-hover: $color-danger-text;
-$btn-danger-bg-pressed: mix($color-danger-text, $color-danger, 15%);
+$btn-info-color: $color-info;
+$btn-info-bg: $color-info-light;
+$btn-info-border: $color-info;
+$btn-info-border-hover: $color-info;
+$btn-info-bg-pressed: mix($color-info, $color-info-light, 15%);
+$btn-success-color: $color-success;
+$btn-success-bg: $color-success-light;
+$btn-success-border: $color-success;
+$btn-success-border-hover: $color-success;
+$btn-success-bg-pressed: mix($color-success, $color-success-light, 15%);
+$btn-warning-color: $color-warning;
+$btn-warning-bg: $color-warning-light;
+$btn-warning-border: $color-warning;
+$btn-warning-border-hover: $color-warning;
+$btn-warning-bg-pressed: mix($color-warning, $color-warning-light, 15%);
+$btn-danger-color: $color-danger;
+$btn-danger-bg: $color-danger-light;
+$btn-danger-border: $color-danger;
+$btn-danger-border-hover: $color-danger;
+$btn-danger-bg-pressed: mix($color-danger, $color-danger-light, 15%);
 $btn-login-logout-bg: $login-logout-blue;
 $btn-login-logout-bg-hover: darken($login-logout-blue, 6%);
 $btn-login-logout-bg-pressed: darken($login-logout-blue, 11%);

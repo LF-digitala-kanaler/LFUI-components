@@ -58,7 +58,7 @@ module.exports = {
           to: 'docs/data/'
         },
         {
-          from: './node_modules/@lf-digitala-kanaler/lfui-icons/dist',
+          from: './node_modules/@lansforsakringar/icons/dist',
           to: 'docs/lf-icons/'
         }
       ]

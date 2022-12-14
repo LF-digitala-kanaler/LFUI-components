@@ -2,7 +2,7 @@ module.exports = {
   logLevel: 'debug',
   stories: ['../src/**/*.stories.[tj]s'],
   staticDirs: [{
-    from: '../node_modules/@lf-digitala-kanaler/lfui-icons/dist',
+    from: '../node_modules/@lansforsakringar/icons/dist',
     to: 'lf-icons'
   }],
   addons: [
@@ -15,7 +15,7 @@ module.exports = {
   core: {
     builder: 'webpack5'
   },
-  async webpackFinal (config, { configType, presets }) {
+  async webpackFinal(config, { configType, presets }) {
     // Inject options into html-loader to disable attribute resolution
     // This is required to not break relative asset (icons) paths in html files
     const htmlLoader = require.resolve('html-loader')

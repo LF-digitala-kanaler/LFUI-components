@@ -26,7 +26,7 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
     0 5px 7px rgba(0, 0, 0, .06);
 
   /* Default to "info" */
-  @include alert-variant($color-info, transparent, $color-info-text);
+  @include alert-variant($color-info-light, transparent, $color-info);
 }
 
 .alert a,
@@ -39,7 +39,8 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   opacity: .6;
 }
 
-.alert p {
+.alert p,
+.alert-content {
   flex: 1;
   margin: $alert-padding-y 0;
 }
@@ -69,15 +70,15 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
 }
 
 .alert-success {
-  @include alert-variant($color-success, transparent, $color-success-text);
+  @include alert-variant($color-success-light, transparent, $color-success);
 }
 
 .alert-warning {
-  @include alert-variant($color-warning, transparent, $color-warning-text);
+  @include alert-variant($color-warning-light, transparent, $color-warning);
 }
 
 .alert-danger {
-  @include alert-variant($color-danger, transparent, $color-danger-text);
+  @include alert-variant($color-danger-light, transparent, $color-danger);
 }
 
 /**

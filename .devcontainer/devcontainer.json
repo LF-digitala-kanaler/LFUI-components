@@ -1,5 +1,5 @@
 {
-  "name": "@lf-digitala-kanaler/lfui-components",
+  "name": "@lansforsakringar/components",
   "extensions": [
     "github.copilot",
     "stylelint.vscode-stylelint",

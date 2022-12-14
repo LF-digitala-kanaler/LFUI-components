@@ -22,6 +22,7 @@ $btn-close-focus-opacity: 1;
   --#{$variable-prefix}btn-close-path-width: .125rem;
 
   position: relative;
+  z-index: 1;
   background: transparent;
   transition: opacity 200ms ease-out;
 }

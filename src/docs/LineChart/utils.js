@@ -7,12 +7,12 @@ const chartUtils = {
   generateData: function () {
     const unit = 'day'
 
-    function beforeNineThirty (date) {
+    function beforeNineThirty(date) {
       return date.hour() < 9 || (date.hour() === 9 && date.minute() < 30)
     }
 
     // Returns true if outside 9:30am-4pm on a weekday
-    function outsideMarketHours (date) {
+    function outsideMarketHours(date) {
       if (date.isoWeekday() > 5) {
         return true
       }
@@ -22,11 +22,11 @@ const chartUtils = {
       return false
     }
 
-    function randomNumber (min, max) {
+    function randomNumber(min, max) {
       return Math.random() * (max - min) + min
     }
 
-    function randomBar (date, lastClose) {
+    function randomBar(date, lastClose) {
       const open = randomNumber(lastClose * 0.95, lastClose * 1.05).toFixed(2)
       const close = randomNumber(open * 0.95, open * 1.05).toFixed(2)
       return {

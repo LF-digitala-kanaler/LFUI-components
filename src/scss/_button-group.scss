@@ -22,6 +22,7 @@
   transition: 100ms 40ms ease-out;
   transition-property: border-color, background;
   @include font-smoothing(auto);
+  white-space: nowrap;
 
   &:hover,
   &:active {
