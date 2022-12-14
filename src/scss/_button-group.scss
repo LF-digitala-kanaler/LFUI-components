@@ -21,6 +21,7 @@
   border-bottom-left-radius: 0;
   transition: 100ms 40ms ease-out;
   transition-property: border-color, background;
+  white-space: nowrap;
   @include font-smoothing(auto);
 
   &:hover,
