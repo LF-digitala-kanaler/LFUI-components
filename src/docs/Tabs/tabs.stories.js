@@ -1,10 +1,10 @@
-import InPage from './InPageNavigation.html?raw'
-import PageLevel from './PageLevelNavigation.html?raw'
+import LineTabs from './LineTabs.html?raw'
+import ContainedTabs from './ContainedTabs.html?raw'
 
 export default {
   title: 'Tabs',
   parameters: { backgrounds: { default: 'gray' } }
 }
 
-export const inPage = () => InPage
-export const pageLevel = () => PageLevel
+export const lineTabs = () => LineTabs
+export const containedTabs = () => ContainedTabs

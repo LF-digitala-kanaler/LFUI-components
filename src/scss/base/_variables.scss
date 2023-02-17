@@ -49,6 +49,7 @@ $cloud: #eff4f9;
 $mist: #f9fbfd;
 $black: #222;
 $gray: #6b7070;
+$aluminium: #8C8F90;
 $silver: #b1b3b6;
 $smoke: #d9d9d9;
 $shadow: #e5e5e5;
@@ -95,7 +96,9 @@ $grays: (
   --#{$prefix}cloud: #{$cloud};
   --#{$prefix}mist: #{$mist};
   --#{$prefix}black: #{$black};
+
   --#{$prefix}gray: #{$gray};
+  --#{$prefix}aluminium: #{$aluminium};
   --#{$prefix}silver: #{$silver};
   --#{$prefix}smoke: #{$smoke};
   --#{$prefix}shadow: #{$shadow};
@@ -202,7 +205,8 @@ $spacers: (
   "025": ($spacer * .25),
   "03": ($spacer * .3),
   "05": ($spacer * .5),
-  "08": ($spacer * .8),
+  "08": ($spacer * .75),
+  "075": ($spacer * .75),
   1: $spacer,
   15: ($spacer * 1.5),
   2: ($spacer * 2),
@@ -246,7 +250,7 @@ $border-widths: (
 
 $border-radius: .25rem;
 $border-radius-lg: .375rem;
-$border-radius-sm: .2rem;
+$border-radius-sm: $border-radius;
 
 $component-active-color: $white;
 $component-active-bg: $blue;
@@ -532,22 +536,6 @@ $dropdown-link-disabled-color: $gray-600;
 $dropdown-item-padding-y: .25rem;
 $dropdown-item-padding-x: 1.5rem;
 $dropdown-header-color: $gray-600;
-
-$nav-item-margin: 2px;
-$nav-link-padding-y: 1rem;
-$nav-link-padding-x: 2rem;
-$nav-link-disabled-color: $gray;
-$nav-tabs-border-color: transparent;
-$nav-tabs-border-width: $border-width;
-$nav-tabs-border-radius: $border-radius;
-$nav-tabs-link-hover-border-color: $gray-200;
-$nav-tabs-link-active-color: $gray-700;
-$nav-tabs-link-active-bg: $body-bg;
-$nav-tabs-link-active-border-color: #ddd;
-$nav-tabs-grey-bg-color: darken($body-bg, 4%);
-$nav-pills-border-radius: $border-radius;
-$nav-pills-link-active-color: $component-active-color;
-$nav-pills-link-active-bg: $component-active-bg;
 
 $pagination-padding-y: .3rem;
 $pagination-padding-x: .9rem;
