@@ -15,5 +15,5 @@
     "jsxImportSource": "preact",
     "resolveJsonModule": true
   },
-  "exclude": ["node_modules", "dist", "static", "src/docs"]
+  "exclude": ["node_modules", "dist", "static", "src/docs", "public"]
 }

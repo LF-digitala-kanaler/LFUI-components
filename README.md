@@ -151,8 +151,8 @@ npm test
 - Push the changes to GitHub
 - Create a new release from the [tag list](https://github.com/lansforsakringar/components/tags) on Github and add your release notes. Note that this will also be visible to the public. Take extra care to document any breaking changes.
   - Tag version example: v5.0.0
-  - Release Title example: Components 5.0.0
-- Creating a new release will automatically publish a new package version to GitHub Packages.
+- Publish the new package version to npm.
+  - Remember to first build the package
 - Update the version of Components that LFDS depends on by updating `package.json` in the [LFDS repo][lfds-repository].
 - If any components have been added or changed, now is the time to document that in LFDS. See the [LFDS repository][lfds-repository] readme.
 - Deploy the new version of LFDS.

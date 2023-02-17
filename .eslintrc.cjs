@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['standard'],
+  extends: ['standard', 'plugin:storybook/recommended'],
   rules: {
     indent: 'off',
     'space-before-function-paren': 'off',
@@ -9,4 +9,4 @@ module.exports = {
     'multiline-ternary': 'off'
   },
   ignorePatterns: ['dist', 'static', 'node_modules']
-}
+};
