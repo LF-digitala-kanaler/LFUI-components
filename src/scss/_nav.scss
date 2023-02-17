@@ -23,10 +23,10 @@ $nav-link-font-weight: normal;
 
   --nav-tabs-border-width: 2px;
   --nav-tabs-border-radius: .25rem;
-  --nav-tabs-link-active-color: #{$navy};
+  --nav-tabs-link-active-color: #{$blue};
   --nav-tabs-link-active-bg: #{$white};
   --nav-tabs-link-active-border-color: transparent;
-  --nav-tabs-link-hover-border-color: #{$navy};
+  --nav-tabs-link-hover-border-color: #{$blue};
 
   --nav-lines-link-hover-background: var(--background-box-hover);
 
@@ -100,7 +100,7 @@ $nav-link-font-weight: normal;
 
   &:hover {
     &::after {
-      color: var(--nav-tabs-link-active-color);
+      color: $navy;
     }
   }
 
@@ -124,16 +124,16 @@ $nav-link-font-weight: normal;
 
   &:hover {
     background: var(--nav-lines-link-hover-background);
-    border-color: $navy;
+    border-color: $blue;
 
     .icon {
-      color: $navy;
+      color: $blue;
     }
   }
 
   &.active {
     color: transparent;
-    border-color: $navy;
+    border-color: $blue;
 
     &::after {
       font-weight: 700;
@@ -141,7 +141,7 @@ $nav-link-font-weight: normal;
     }
 
     .icon {
-      color: $navy;
+      color: $blue;
     }
   }
 }
@@ -166,6 +166,8 @@ $nav-link-font-weight: normal;
   }
 
   &:hover {
+    border-color: $blue;
+
     &::after {
       color: var(--color-body);
     }
@@ -173,7 +175,7 @@ $nav-link-font-weight: normal;
 
   &.active {
     color: transparent;
-    border-color: $navy;
+    border-color: $blue;
 
     &::after {
       color: var(--nav-tabs-link-active-color);
