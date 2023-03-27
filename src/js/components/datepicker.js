@@ -7,7 +7,7 @@ export const DEFAULTS = {
   firstDayOfWeek: 1,
   localization: {
     buttonLabel: 'Välj datum',
-    placeholder: 'yyyy-mm-dd',
+    placeholder: 'åååå-mm-dd',
     selectedDateMessage: 'Valt datum',
     prevMonthLabel: 'Föregående månad',
     nextMonthLabel: 'Nästa månad',

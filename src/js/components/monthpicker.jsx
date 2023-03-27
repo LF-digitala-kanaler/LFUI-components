@@ -27,7 +27,7 @@ const FOCUSABLE =
 /** @type {Options} */
 export const DEFAULTS = {
   localization: {
-    placeholder: 'yyyy-mm',
+    placeholder: 'åååå-mm',
     prevYearLabel: 'Föregående månad',
     nextYearLabel: 'Nästa månad',
     yearSelectLabel: 'år',
