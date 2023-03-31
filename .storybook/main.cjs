@@ -1,4 +1,6 @@
 const url = require('postcss-url');
+const remarkGfm = require('remark-gfm');
+
 const {
   mergeConfig
 } = require('vite');
@@ -17,7 +19,16 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
     '@storybook/addon-viewport',
-    '@storybook/addon-mdx-gfm'
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
   ],
   managerWebpack: async (config, options) => {
     if (process.env.NODE_ENV === 'production') {
@@ -25,9 +36,7 @@ module.exports = {
     }
     return config;
   },
-  async viteFinal(config, {
-    configType
-  }) {
+  async viteFinal(config, { configType }) {
     if (process.env.NODE_ENV === 'development') {
       return mergeConfig(config, {
         resolve: {
