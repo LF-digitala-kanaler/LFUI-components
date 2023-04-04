@@ -5,7 +5,7 @@ import { useEffect, useState } from '@storybook/client-api'
 import { html, uid } from '../../js/utils'
 import { sliderExample } from './slider'
 
-export default { title: 'Slider' }
+export default { title: 'Forms/Slider' }
 
 export const value = () => {
   const [id] = useState(uid)

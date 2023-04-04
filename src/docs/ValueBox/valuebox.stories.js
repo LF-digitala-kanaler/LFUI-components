@@ -4,7 +4,7 @@ import { useEffect, useState } from '@storybook/client-api'
 import { valueboxExample } from './valuebox'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Value box' }
+export default { title: 'Page content/Value box' }
 
 export const valueBox = () => {
   const [id] = useState(uid)

@@ -2,6 +2,8 @@ import { interval } from '../../js/components/interval'
 import { each } from '../../js/utils'
 
 const sliderExample = (context) => {
+  if (!context) { return }
+
   const intervalInput = context.querySelector('#interval')
   if (intervalInput) {
     const low = context.querySelector('#interval-low')

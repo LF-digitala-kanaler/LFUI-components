@@ -1,6 +1,8 @@
 import { html, delegate } from '../../js/utils'
 
 const uploadExample = (context) => {
+  if (!context) { return }
+
   const element = context.querySelector('.upload')
   if (!element) return null
 

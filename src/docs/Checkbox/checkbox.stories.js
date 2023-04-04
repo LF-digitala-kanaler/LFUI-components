@@ -5,7 +5,7 @@ import { useEffect, useState } from '@storybook/client-api'
 import { checkboxCardExample, intermediateCheckboxExample } from './checkbox'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Checkbox' }
+export default { title: 'Forms/Checkbox' }
 
 export const checkbox = () => {
   const [id] = useState(uid)

@@ -6,7 +6,7 @@ import { tableExample } from './table'
 import { html, uid } from '../../js/utils'
 
 export default {
-  title: 'Tables',
+  title: 'Page content/Tables',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

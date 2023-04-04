@@ -8,7 +8,7 @@ import { datepickerExample } from './datepicker.js'
 import { html, uid } from '../../js/utils.js'
 
 export default {
-  title: 'Datepicker'
+  title: 'Forms/Datepicker'
 }
 
 export const datepicker = () => {

@@ -1,6 +1,7 @@
 import { each } from '../../js/utils'
 
 const paginationExample = (context) => {
+  if (!context) { return }
   each(
     '.pagination a',
     (el, index, list) => {

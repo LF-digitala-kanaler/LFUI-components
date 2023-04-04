@@ -1,4 +1,6 @@
 const tableExample = (context) => {
+  if (!context) { return }
+
   function sortTable(table, col, reverse) {
     const tb = table.tBodies[0] // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows
     let tr = Array.prototype.slice.call(tb.rows, 0) // put rows into array
