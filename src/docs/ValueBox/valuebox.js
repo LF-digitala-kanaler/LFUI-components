@@ -1,7 +1,9 @@
 import { each } from '../../js/utils'
 
 const valueboxExample = (context) => {
-  if (!context) { return }
+  if (!context) {
+    return
+  }
   each(
     '.value-box-text',
     function (el) {

@@ -1,5 +1,7 @@
 const tableExample = (context) => {
-  if (!context) { return }
+  if (!context) {
+    return
+  }
 
   function sortTable(table, col, reverse) {
     const tb = table.tBodies[0] // use `<tbody>` to ignore `<thead>` and `<tfoot>` rows

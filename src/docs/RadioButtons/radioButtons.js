@@ -1,7 +1,9 @@
 import { each } from '../../js/utils'
 
 const radioButtonsExample = (context, selector) => {
-  if (!context) { return }
+  if (!context) {
+    return
+  }
   each(
     '.radio-card, .btn-group .btn',
     function (el, index, list) {

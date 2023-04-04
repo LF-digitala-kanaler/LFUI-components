@@ -7,7 +7,7 @@ import WithCloseButtonRaw from './WithCloseButton.html?raw'
 import WithStrongEmphasisRaw from './withStrongEmphasis.html?raw'
 
 export default {
-    title: 'System display/Alert'
+  title: 'System display/Alert'
 }
 
 export const Defaults = () => DefaultRaw
