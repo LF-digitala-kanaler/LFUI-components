@@ -5,7 +5,10 @@ const {
 const autoprefixer = require('autoprefixer');
 module.exports = {
   logLevel: 'debug',
-  stories: ['../src/docs/**/*.stories.js'],
+  stories: [
+    '../src/docs/**/*.mdx',
+    '../src/docs/**/*.stories.js'
+  ],
   staticDirs: [{
     from: '../node_modules/@lansforsakringar/icons/dist',
     to: 'lf-icons'
@@ -13,7 +16,13 @@ module.exports = {
     from: '../node_modules/@lansforsakringar/fonts',
     to: 'fonts'
   }],
-  addons: ['@storybook/addon-a11y', '@storybook/addon-backgrounds', '@storybook/addon-viewport', '@storybook/addon-mdx-gfm'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-viewport',
+    '@storybook/addon-mdx-gfm',
+    '@storybook/addon-docs'
+  ],
   managerWebpack: async (config, options) => {
     if (process.env.NODE_ENV === 'production') {
       config.output.publicPath = '/LFUI-components/';
