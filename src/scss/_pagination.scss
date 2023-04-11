@@ -32,6 +32,7 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
 
 .pagination {
   font-family: $font-family-sans-serif;
+  gap: 0.125rem;
 }
 
 .page-link,
@@ -111,13 +112,6 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
   .page-item {
     flex-grow: 1;
 
-    &:last-of-type {
-      .page-link {
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-
     &:not(.active) {
       .page-link:hover {
         color: $blue;
@@ -126,9 +120,6 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
     }
 
     .page-link {
-      width: calc(100% - 2px);
-      margin-right: 2px;
-      margin-left: 0;
       text-align: center;
     }
 
@@ -159,13 +150,6 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
     .page-item {
       flex-grow: 1;
 
-      &:last-of-type {
-        .page-link {
-          width: 100%;
-          margin-right: 0;
-        }
-      }
-
       &:not(.active) {
         .page-link:hover {
           color: $blue;
@@ -174,9 +158,6 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
       }
 
       .page-link {
-        width: calc(100% - 2px);
-        margin-right: 2px;
-        margin-left: 0;
         text-align: center;
       }
 
