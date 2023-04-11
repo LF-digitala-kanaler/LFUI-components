@@ -31,8 +31,8 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
 @import "bootstrap5/scss/_pagination.scss";
 
 .pagination {
+  gap: .125rem;
   font-family: $font-family-sans-serif;
-  gap: 0.125rem;
 }
 
 .page-link,
