@@ -28,7 +28,7 @@ $pagination-padding-y-sm: $pagination-padding-y;
 $pagination-padding-y: .3rem;
 $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-@import "bootstrap/scss/_pagination.scss";
+@import "bootstrap5/scss/_pagination.scss";
 
 .pagination {
   font-family: $font-family-sans-serif;
@@ -41,9 +41,20 @@ $pagination-transition: color .15s ease-in-out, background-color .15s ease-in-ou
   margin-left: 2px;
   font-weight: 700;
   text-decoration: none;
-  background-color: $pagination-bg;
 
   @include font-smoothing();
+}
+
+.page-link,
+.page-link:focus {
+  background-color: $pagination-bg;
+}
+
+.page-item.active .page-link {
+  &:hover,
+  &:focus {
+    background-color: $pagination-active-bg;
+  }
 }
 
 .pagination:not(.pagination-flex) .page-item:not(.active) {
