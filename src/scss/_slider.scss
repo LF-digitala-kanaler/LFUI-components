@@ -1,3 +1,5 @@
+@import "base/index";
+
 @mixin lf-slider($background-color: $white, $track-color: $smoke) {
   --range-color: #{$blue} !important;
   --track-background: linear-gradient(to right, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 45% / 100% !important;
