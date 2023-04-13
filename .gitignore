@@ -10,3 +10,4 @@ dist
 public
 static
 .cache
+storybook-static
