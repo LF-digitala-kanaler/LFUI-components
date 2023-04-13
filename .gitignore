@@ -11,3 +11,5 @@ public
 static
 .cache
 storybook-static
+
+__diff_output__

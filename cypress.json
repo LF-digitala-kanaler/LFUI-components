@@ -1,0 +1,7 @@
+{
+    "video": false,
+    "defaultCommandTimeout": 30000,
+    "scaled": true,
+    "viewportWidth": 1920, 
+    "viewportHeight": 1080
+}

@@ -1,5 +1,16 @@
 {
-  "extends": ["standard", "plugin:storybook/recommended"],
+  "extends": [
+    "standard",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "jest",
+    "cypress"
+  ],
+  "env": {
+    "jest/globals": true,
+    "cypress/globals": true
+  },
   "rules": {
     "indent": "off",
     "space-before-function-paren": "off",
