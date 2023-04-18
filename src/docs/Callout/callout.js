@@ -2,6 +2,10 @@ import Vivus from 'vivus'
 import { each } from '../../js/utils'
 
 const calloutExample = (context) => {
+  if (!context) {
+    return
+  }
+
   function draw(el, options = {}, callback) {
     const opts = Object.assign(
       {
@@ -17,17 +21,13 @@ const calloutExample = (context) => {
   each(
     '[data-draw]',
     (el) => {
-      const options = Object.entries(el.dataset).reduce(function (
-        acc,
-        [key, value]
-      ) {
+      const options = Object.entries(el.dataset).reduce(function (acc, [key, value]) {
         if (key.match(/^draw([\w]+)/)) {
           acc[key.replace(/^draw/, '')] = value
         }
 
         return acc
-      },
-      {})
+      }, {})
 
       if (Object.hasOwnProperty.call(options, 'on')) {
         delete options.on

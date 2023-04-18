@@ -1,6 +1,9 @@
 import { each } from '../../js/utils'
 
 const checkboxCardExample = (context) => {
+  if (!context) {
+    return
+  }
   each(
     '.checkbox-card',
     function (el) {
@@ -17,6 +20,9 @@ const checkboxCardExample = (context) => {
 }
 
 const intermediateCheckboxExample = (context) => {
+  if (!context) {
+    return
+  }
   const input = context.querySelector('#checkbox-intermediate')
   if (input) input.indeterminate = true
 }

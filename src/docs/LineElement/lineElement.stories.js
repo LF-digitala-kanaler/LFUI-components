@@ -1,7 +1,7 @@
 import Default from './default.html?raw'
 
 export default {
-  title: 'Line Element',
+  title: 'Page content/Line Element',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

@@ -15,15 +15,7 @@ export const DEFAULTS = {
     yearSelectLabel: 'år',
     closeLabel: 'Stäng',
     calendarHeading: 'Välj ett datum',
-    dayNames: [
-      'söndag',
-      'måndag',
-      'tisdag',
-      'onsdag',
-      'torsdag',
-      'fredag',
-      'lördag'
-    ],
+    dayNames: ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'],
     monthNames: [
       'Januari',
       'Februari',

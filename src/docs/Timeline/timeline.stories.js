@@ -5,7 +5,7 @@ import { timelineExample } from './timeline'
 import { html, uid } from '../../js/utils'
 
 export default {
-  title: 'Timeline',
+  title: 'Page content/Timeline',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

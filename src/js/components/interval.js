@@ -13,10 +13,7 @@
  * @returns {HTMLIntervalElement}
  */
 export function interval(input) {
-  const descriptor = Object.getOwnPropertyDescriptor(
-    window.HTMLInputElement.prototype,
-    'value'
-  )
+  const descriptor = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')
 
   const value = input.getAttribute('value')
   const values = value === null ? [] : value.split(',')
@@ -94,14 +91,8 @@ export function interval(input) {
   }
 
   function update() {
-    ghost.style.setProperty(
-      '--low',
-      100 * ((input.valueLow - min) / (max - min)) + 1 + '%'
-    )
-    ghost.style.setProperty(
-      '--high',
-      100 * ((input.valueHigh - min) / (max - min)) - 1 + '%'
-    )
+    ghost.style.setProperty('--low', 100 * ((input.valueLow - min) / (max - min)) + 1 + '%')
+    ghost.style.setProperty('--high', 100 * ((input.valueHigh - min) / (max - min)) - 1 + '%')
   }
 
   ghost.addEventListener('mousedown', function passClick(evt) {

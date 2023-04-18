@@ -1,21 +1,23 @@
-// Bootstrap variables
-$card-spacer-y:       1rem !default;
-$card-spacer-x:       1.25rem !default;
-$card-title-spacer-y: $spacer * .5 !default;
-$card-border-width:   0 !default;
-$card-cap-bg:         $white !default;
-$card-cap-padding-y:  $card-spacer-y * .5 !default;
-$card-cap-padding-x:  $card-spacer-x !default;
-$card-box-shadow:     null !default;
-$card-height:         null !default;
+@import "base/index";
 
-$card-block-padding:  1rem 1.25rem 1.5rem !default;
-$card-footer-padding: 1.25rem 1.25rem 1.5rem !default;
+// Bootstrap variables
+$card-spacer-y:       1rem ;
+$card-spacer-x:       1.25rem ;
+$card-title-spacer-y: $spacer * .5;
+$card-border-width:   0;
+$card-cap-bg:         $white;
+$card-cap-padding-y:  $card-spacer-y * .5;
+$card-cap-padding-x:  $card-spacer-x;
+$card-box-shadow:     null;
+$card-height:         null;
+
+$card-block-padding:  1rem 1.25rem 1.5rem;
+$card-footer-padding: 1.25rem 1.25rem 1.5rem;
 
 // DEPRICATED IN Bootstrap v5
 // $card-deck-margin:    .625rem !default;
 
-@import "bootstrap5/scss/_card.scss";
+@import "bootstrap/scss/_card.scss";
 
 .card-block {
   padding: $card-block-padding;
