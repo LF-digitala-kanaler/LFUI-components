@@ -20,7 +20,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "visual:test": "playwright test",
-    "visual:update": "playwright test --update-snapshots"
+    "visual:update": "playwright test --update-snapshots",
+    "visual:report": "playwright show-report"
   },
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
