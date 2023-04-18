@@ -2,7 +2,7 @@ import Responsive from './responsive.html?raw'
 import Desktop from './desktop.html?raw'
 
 export default {
-  title: 'Price box',
+  title: 'Page content/Price box',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

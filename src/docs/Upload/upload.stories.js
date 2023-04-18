@@ -4,7 +4,7 @@ import { useEffect, useState } from '@storybook/client-api'
 import { uploadExample } from './upload'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Upload' }
+export default { title: 'Forms/Upload' }
 
 export const upload = () => {
   const [id] = useState(uid)

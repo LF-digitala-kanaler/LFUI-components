@@ -5,7 +5,7 @@ import { paginationExample } from './pagination'
 import { html, uid } from '../../js/utils'
 
 export default {
-  title: 'Pagination',
+  title: 'Navigations/Pagination',
   parameters: { backgrounds: { default: 'gray' } }
 }
 
