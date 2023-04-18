@@ -152,7 +152,7 @@ npm test
 To run the tests use `npm run visual:test`, it's also possible to only test component that contain a specific name like `npm run visual:test button`.
 
 ### Update
-Use `npm run visual:update` to update the base line image.
+Use `npm run visual:update` to update the base line images.
 
 # Making a release
 
