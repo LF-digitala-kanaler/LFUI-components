@@ -2,6 +2,10 @@ import Vivus from 'vivus'
 import { each } from '../../js/utils'
 
 const calloutExample = (context) => {
+  if (!context) {
+    return
+  }
+
   function draw(el, options = {}, callback) {
     const opts = Object.assign(
       {

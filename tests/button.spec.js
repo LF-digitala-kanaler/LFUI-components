@@ -1,6 +1,8 @@
 // @ts-check
 import { visualTest } from '../tools/test.js'
 
-visualTest('button--primary')
-visualTest('button--secondary')
-visualTest('button--login')
+const name = 'button-and-links-button'
+
+visualTest(name + '--primary', { title: 'button--primary' })
+visualTest(name + '--secondary', { title: 'button--secondary' })
+visualTest(name + '--login', { title: 'button--login' })

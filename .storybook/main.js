@@ -4,7 +4,7 @@ import autoprefixer from 'autoprefixer'
 
 export default {
   logLevel: 'debug',
-  stories: ['../src/docs/**/*.stories.js'],
+  stories: ['../src/docs/**/*.mdx', '../src/docs/**/*.stories.js'],
   staticDirs: [
     {
       from: '../node_modules/@lansforsakringar/icons/dist',
@@ -19,7 +19,8 @@ export default {
     '@storybook/addon-a11y',
     '@storybook/addon-backgrounds',
     '@storybook/addon-viewport',
-    '@storybook/addon-mdx-gfm'
+    '@storybook/addon-mdx-gfm',
+    '@storybook/addon-docs'
   ],
   managerWebpack: async (config, options) => {
     if (process.env.NODE_ENV === 'production') {

@@ -3,6 +3,10 @@ import { each } from '../../js/utils'
 const EXPANDED_ATTR = 'aria-expanded'
 
 const timelineExample = (context) => {
+  if (!context) {
+    return
+  }
+
   each(
     '[data-bs-toggle="collapse:timeline"]',
     (el) => {

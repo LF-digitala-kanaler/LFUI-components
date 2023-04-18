@@ -1,7 +1,7 @@
 import Card from './card.html?raw'
 
 export default {
-  title: 'Card',
+  title: 'Page content/Card',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

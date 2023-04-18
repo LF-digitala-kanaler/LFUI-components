@@ -1,7 +1,7 @@
 import Shortcut from './shortcut.html?raw'
 
 export default {
-  title: 'Shortcut',
+  title: 'Button and links/Shortcut',
   parameters: { backgrounds: { default: 'gray' } }
 }
 
