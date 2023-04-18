@@ -9,10 +9,7 @@ const uploadExample = (context) => {
 
   const popoverMarkup = (data) => {
     return html`
-      <div
-        role="alert"
-        id="popover"
-        class="popover-tooltip popover-bottom popover-attach">
+      <div role="alert" id="popover" class="popover-tooltip popover-bottom popover-attach">
         <p class="popover-title">Preview</p>
         <div class="popover-content">
           <div class="card">
@@ -36,12 +33,7 @@ const uploadExample = (context) => {
                   tabindex="-1"
                   class="popover-tooltip-trigger p-0 b-0  mr-05"
                   aria-controls="popover">
-                  <img
-                    class="upload-image"
-                    alt=""
-                    src=${data.src}
-                    width="35"
-                    height="35" />
+                  <img class="upload-image" alt="" src=${data.src} width="35" height="35" />
                   ${popoverMarkup(data)}
                 </span>
               `
@@ -56,9 +48,7 @@ const uploadExample = (context) => {
         </div>
         ${data.popover === false
           ? html`
-              <small class="upload-feedback">
-                Description of error in input
-              </small>
+              <small class="upload-feedback">Description of error in input</small>
             `
           : ''}
       </div>
@@ -136,36 +126,31 @@ const uploadExample = (context) => {
     input.classList.remove('has-focus')
   })
 
-  context
-    .querySelector('#upload-test-btn')
-    .addEventListener('click', function () {
-      const upload = context.querySelector('#upload2')
-      const progress = upload.querySelector('.upload-progress-bar')
+  context.querySelector('#upload-test-btn').addEventListener('click', function () {
+    const upload = context.querySelector('#upload2')
+    const progress = upload.querySelector('.upload-progress-bar')
 
-      upload.classList.add('loading')
-      progress.removeAttribute('style')
-      upload.parentElement.parentElement.classList.remove('has-valid')
+    upload.classList.add('loading')
+    progress.removeAttribute('style')
+    upload.parentElement.parentElement.classList.remove('has-valid')
 
-      let timeleft = 100
-      const loaderTest = setInterval(function () {
-        timeleft--
+    let timeleft = 100
+    const loaderTest = setInterval(function () {
+      timeleft--
 
-        progress.style.setProperty(
-          'transform',
-          'translateX(-' + timeleft + '%)'
-        )
+      progress.style.setProperty('transform', 'translateX(-' + timeleft + '%)')
 
-        if (timeleft <= 0) {
-          clearInterval(loaderTest)
-        }
+      if (timeleft <= 0) {
+        clearInterval(loaderTest)
+      }
 
-        if (timeleft === 0) {
-          upload.parentElement.parentElement.classList.add('has-valid')
-        }
+      if (timeleft === 0) {
+        upload.parentElement.parentElement.classList.add('has-valid')
+      }
 
-        upload.classList.remove('loading')
-      }, 15)
-    })
+      upload.classList.remove('loading')
+    }, 15)
+  })
 }
 
 export { uploadExample }

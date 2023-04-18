@@ -4,12 +4,10 @@
     "plugin:storybook/recommended"
   ],
   "plugins": [
-    "jest",
-    "cypress"
+    "jest"
   ],
   "env": {
-    "jest/globals": true,
-    "cypress/globals": true
+    "jest/globals": true
   },
   "rules": {
     "indent": "off",

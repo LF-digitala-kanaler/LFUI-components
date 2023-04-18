@@ -51,11 +51,7 @@ document.addEventListener(
         { once: true }
       )
 
-      this.addEventListener(
-        'fail',
-        () => this.classList.remove(LOADING_CLASS),
-        { once: true }
-      )
+      this.addEventListener('fail', () => this.classList.remove(LOADING_CLASS), { once: true })
     }
   })
 )
