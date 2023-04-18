@@ -35,9 +35,7 @@ function focusTriggersKeyboardModality(el) {
   let triggers = false
 
   if (matcher) {
-    triggers =
-      matcher.call(el, keyboardModalityWhitelist) &&
-      matcher.call(el, ':not([readonly])')
+    triggers = matcher.call(el, keyboardModalityWhitelist) && matcher.call(el, ':not([readonly])')
   }
 
   return triggers

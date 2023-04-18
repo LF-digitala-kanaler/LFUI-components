@@ -18,16 +18,11 @@ export default class CustomFile {
 
     // Since firefox does not trigger change when you close down the file window we have to use click
     this.element.addEventListener('click', () => {
-      if (
-        classList.contains('has-file') ||
-        classList.contains('has-multiple')
-      ) {
+      if (classList.contains('has-file') || classList.contains('has-multiple')) {
         setTimeout(() => {
           classList.remove('has-file')
           classList.remove('has-focus')
-          this.element.nextElementSibling
-            .querySelector('.custom-file-option')
-            ?.remove()
+          this.element.nextElementSibling.querySelector('.custom-file-option')?.remove()
         }, 350)
       }
     })

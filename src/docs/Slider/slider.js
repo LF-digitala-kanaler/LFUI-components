@@ -20,15 +20,11 @@ const sliderExample = (context) => {
     function (input) {
       if (input === intervalInput) return
       input.addEventListener('input', function () {
-        const percent = Math.ceil(
-          ((input.value - input.min) / (input.max - input.min)) * 100
-        )
+        const percent = Math.ceil(((input.value - input.min) / (input.max - input.min)) * 100)
 
         input.style.setProperty('--progress', percent)
 
-        const output = document.getElementById(
-          input.getAttribute('aria-controls')
-        )
+        const output = document.getElementById(input.getAttribute('aria-controls'))
 
         if (output) {
           output.value = input.value
