@@ -1,20 +1,20 @@
 @import "base/index";
 
-$progress-height:                         .625rem !default;
-$progress-font-size:                      .75rem !default;
-$progress-bg:                             $smoke !default;
-$progress-border-radius:                  $border-radius !default;
-$progress-box-shadow:                     inset 0 .1rem .1rem rgba(0, 0, 0, 10%) !default;
-$progress-bar-color:                      $login-logout-blue !default;
-$progress-bar-bg:                         theme-color("primary") !default;
-$progress-bar-animation-timing:           1s linear infinite !default;
-$progress-bar-transition:                 width .6s ease !default;
-$progress-bar-bg:                         $login-logout-blue !default;
-$progress-bar-success-bg:                 $color-success-light !default;
-$progress-bar-warning-bg:                 $color-warning-light !default;
-$progress-bar-danger-bg:                  $color-danger-light !default;
-$progress-bar-info-bg:                    $color-info !default;
-$progress-bar-circle-default-size:        50px !default;
+$progress-height:                         .625rem;
+$progress-font-size:                      .75rem;
+$progress-bg:                             $smoke;
+$progress-border-radius:                  $border-radius;
+$progress-box-shadow:                     inset 0 .1rem .1rem rgba(0, 0, 0, 10%);
+$progress-bar-color:                      $login-logout-blue;
+$progress-bar-bg:                         theme-color("primary");
+$progress-bar-animation-timing:           1s linear infinite;
+$progress-bar-transition:                 width .6s ease;
+$progress-bar-bg:                         $login-logout-blue;
+$progress-bar-success-bg:                 $color-success-light;
+$progress-bar-warning-bg:                 $color-warning-light;
+$progress-bar-danger-bg:                  $color-danger-light;
+$progress-bar-info-bg:                    $color-info;
+$progress-bar-circle-default-size:        50px;
 
 @import "bootstrap5/scss/_progress.scss";
 
