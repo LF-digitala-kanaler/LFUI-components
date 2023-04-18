@@ -1,3 +1,4 @@
+@import "base/index";
 @import "bootstrap/scss/_dropdown.scss";
 
 // Since we have added the requirement that an .open parent class is to be present for the dropdown-menu to be visible, we need to expose a mixin

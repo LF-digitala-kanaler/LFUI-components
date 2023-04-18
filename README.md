@@ -144,6 +144,22 @@ The project uses [standard][standard] and [stylelint][stylelint]. There are no a
 npm test
 ```
 
+## Visual tests
+
+[Playwright](https://playwright.dev/) is used for our visual testing of components.
+
+### Run tests
+
+To run the tests use `npm run visual:test`, it's also possible to only test component that contain a specific name like `npm run visual:test button`.
+
+### Update
+
+Use `npm run visual:update` to update the base line images.
+
+### Show report
+
+Use `npm run visual:report` to open up the report.
+
 # Making a release
 
 - Update (`componentStatus.json`)[src/data/componentsStatus.json] with changes that have been made to the respective components in this release. This information will be visible on [LFDS][lfds] later on.

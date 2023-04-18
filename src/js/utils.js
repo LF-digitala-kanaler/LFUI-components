@@ -108,9 +108,7 @@ export function h(type, attrs = {}, children = []) {
   if (children.length) {
     el.append(
       ...children.filter(Boolean).map(function (child) {
-        return child instanceof window.Node
-          ? child
-          : document.createTextNode(child)
+        return child instanceof window.Node ? child : document.createTextNode(child)
       })
     )
   }

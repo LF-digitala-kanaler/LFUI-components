@@ -10,3 +10,9 @@ dist
 public
 static
 .cache
+storybook-static
+
+__diff_output__
+/test-results/
+/playwright-report/
+/playwright/.cache/
