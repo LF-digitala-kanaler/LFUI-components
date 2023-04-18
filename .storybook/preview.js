@@ -1,5 +1,6 @@
 import '../src/scss/index.scss'
 import '../src/js/index.js'
+import './iframes.scss'
 
 export const parameters = {
   backgrounds: {

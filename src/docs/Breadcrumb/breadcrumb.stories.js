@@ -1,7 +1,7 @@
 import Breadcrumb from './breadcrumb.html?raw'
 
 export default {
-  title: 'Breadcrumb',
+  title: 'Navigations/Breadcrumb',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

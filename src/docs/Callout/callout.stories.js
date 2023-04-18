@@ -5,7 +5,7 @@ import { calloutExample } from './callout'
 import { html, uid } from '../../js/utils'
 
 export default {
-  title: 'Callout',
+  title: 'Page content/Callout',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

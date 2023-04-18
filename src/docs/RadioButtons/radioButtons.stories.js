@@ -6,7 +6,7 @@ import { useEffect, useState } from '@storybook/client-api'
 import { radioButtonsExample } from './radioButtons'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Radio Buttons' }
+export default { title: 'Forms/Radio Buttons' }
 
 export const styledRadioButtons = () => StyledRadioButtons
 

@@ -6,7 +6,7 @@ import { panelExample } from './panel'
 import { html, uid } from '../../js/utils'
 
 export default {
-  title: 'Panel',
+  title: 'Page content/Panel',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

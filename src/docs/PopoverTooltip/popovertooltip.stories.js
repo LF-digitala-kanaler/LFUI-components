@@ -4,7 +4,7 @@ import { useEffect, useState } from '@storybook/client-api'
 import { popoverTooltipExample } from './popovertooltip'
 import { html, uid } from '../../js/utils'
 
-export default { title: 'Popover Tooltip' }
+export default { title: 'Supportive microinteractions/Popover Tooltip' }
 
 export const popoverTooltip = () => {
   const [id] = useState(uid)

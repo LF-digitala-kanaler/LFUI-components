@@ -1,6 +1,10 @@
 import { each } from '../../js/utils'
 
 const popoverTooltipExample = (context) => {
+  if (!context) {
+    return
+  }
+
   each(
     '.popover-tooltip-trigger',
     (el) => {

@@ -29,9 +29,7 @@ export function select(el, opts = el.dataset) {
   let preventClose = false
   const initiallySelected = [...select.selectedOptions]
   const placeholder = initiallySelected.find(isPlaceholder)
-  const initiallyValid = initiallySelected.filter(
-    (child) => !isPlaceholder(child)
-  )
+  const initiallyValid = initiallySelected.filter((child) => !isPlaceholder(child))
 
   setValidState(select, initiallyValid.length)
 
@@ -155,10 +153,7 @@ export function select(el, opts = el.dataset) {
                       'aria-controls': `group-${index}-list-${id}`,
                       onclick() {
                         expanded = !expanded
-                        this.setAttribute(
-                          'aria-expanded',
-                          expanded ? 'true' : 'false'
-                        )
+                        this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
                         wrapper.current.classList.toggle('show', expanded)
 
                         // Disable automatic closing on click
@@ -199,9 +194,9 @@ export function select(el, opts = el.dataset) {
             disabled,
             ref: button,
             type: 'button',
-            class: `select-option dropdown-item ${
-              select.multiple ? 'multiple' : ''
-            } ${selected ? 'selected' : ''}`,
+            class: `select-option dropdown-item ${select.multiple ? 'multiple' : ''} ${
+              selected ? 'selected' : ''
+            }`,
             onclick(event) {
               child.selected = select.multiple ? !child.selected : true
               select.dispatchEvent(new window.Event('change'))
@@ -254,15 +249,10 @@ export function select(el, opts = el.dataset) {
     // Update group status
     for (const [button, state] of states) {
       button.current.classList.toggle('selected', state === 'selected')
-      button.current.classList.toggle(
-        'indeterminate',
-        state === 'indeterminate'
-      )
+      button.current.classList.toggle('indeterminate', state === 'indeterminate')
     }
 
-    const selected = [...select.selectedOptions].filter(
-      (option) => !isPlaceholder(option)
-    )
+    const selected = [...select.selectedOptions].filter((option) => !isPlaceholder(option))
     const { current: statusNode } = status
 
     setValidState(select, selected.length)
@@ -357,8 +347,5 @@ function concatLabels(labels, regexp) {
 function resolveLabel(label, regexp, className = 'text-muted') {
   const match = label.match(regexp)
   if (!match) return [label]
-  return [
-    label.replace(regexp, ''),
-    h('small', { class: className }, match[1] || match[0])
-  ]
+  return [label.replace(regexp, ''), h('small', { class: className }, match[1] || match[0])]
 }

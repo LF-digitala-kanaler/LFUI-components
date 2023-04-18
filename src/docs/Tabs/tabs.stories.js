@@ -2,7 +2,7 @@ import LineTabs from './LineTabs.html?raw'
 import ContainedTabs from './ContainedTabs.html?raw'
 
 export default {
-  title: 'Tabs',
+  title: 'Navigations/Tabs',
   parameters: { backgrounds: { default: 'gray' } }
 }
 

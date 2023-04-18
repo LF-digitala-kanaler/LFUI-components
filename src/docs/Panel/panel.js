@@ -1,6 +1,8 @@
 import { html } from '../../js/utils'
 
 const panelExample = (context) => {
+  if (!context) return
+
   const trigger = context.querySelector('.js-asyncCollapse')
   if (!trigger) return
 
