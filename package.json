@@ -8,9 +8,10 @@
   },
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
-    "build": "npm run build:lfui && npm run build:types && npm run build:docs && storybook build -o static",
+    "build": "npm run build:lfui && npm run build:components && npm run build:types && npm run build:docs && storybook build -o static",
     "build:lfui": "vite build",
     "build:docs": "vite build -c docs.vite.config.js",
+    "build:components": "vite build -c components.vite.config.js",
     "build:types": "tsc -p ./jsconfig.json --declaration --noEmit false --emitDeclarationOnly --outFile dist/lfui/index.d.ts",
     "deploy": "npm run build && gh-pages -d static",
     "test": "npm run lint:scss && npm run lint:js",
