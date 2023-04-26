@@ -1,5 +1,27 @@
 @import "base/index";
 
+@mixin box-style {
+  flex-direction: column;
+  align-items: center;
+  padding: 1.15rem .5rem 1.3rem;
+
+  &::after {
+    content: none;
+  }
+
+  .icon {
+    margin: 0 auto .5rem;
+    transition: transform var(--ease-in) 100ms;
+    will-change: transform;
+  }
+
+  &:hover {
+    .icon {
+      transition-duration: 150ms;
+      transform: translateY(-2px);
+    }
+  }
+}
 /**
  * Shortcut
  */
@@ -117,51 +139,13 @@
 .shortcut-box,
 .shortcut-md-box {
   @include media-breakpoint-up(md) {
-    flex-direction: column;
-    align-items: center;
-    padding: 1.15rem .5rem 1.3rem;
-
-    &::after {
-      content: none;
-    }
-
-    .icon {
-      margin: 0 auto .5rem;
-      transition: transform var(--ease-in) 100ms;
-      will-change: transform;
-    }
-
-    &:hover {
-      .icon {
-        transition-duration: 150ms;
-        transform: translateY(-2px);
-      }
-    }
+    @include box-style()
   }
 }
 
 .shortcut-lg-box {
   @include media-breakpoint-up(lg) {
-    flex-direction: column;
-    align-items: center;
-    padding: 1.15rem .5rem 1.3rem;
-
-    &::after {
-      content: none;
-    }
-
-    .icon {
-      margin: 0 auto .5rem;
-      transition: transform var(--ease-in) 100ms;
-      will-change: transform;
-    }
-
-    &:hover {
-      .icon {
-        transition-duration: 150ms;
-        transform: translateY(-2px);
-      }
-    }
+    @include box-style()
   }
 }
 
