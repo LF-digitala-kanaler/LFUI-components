@@ -1,6 +1,6 @@
 @import "base/index";
 
-@mixin box-style {
+@mixin shortcut-box-style {
   flex-direction: column;
   align-items: center;
   padding: 1.15rem .5rem 1.3rem;
@@ -139,13 +139,13 @@
 .shortcut-box,
 .shortcut-md-box {
   @include media-breakpoint-up(md) {
-    @include box-style()
+    @include shortcut-box-style()
   }
 }
 
 .shortcut-lg-box {
   @include media-breakpoint-up(lg) {
-    @include box-style()
+    @include shortcut-box-style()
   }
 }
 
