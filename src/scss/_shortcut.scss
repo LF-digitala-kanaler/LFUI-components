@@ -22,6 +22,7 @@
     }
   }
 }
+
 /**
  * Shortcut
  */
@@ -139,14 +140,12 @@
 .shortcut-box,
 .shortcut-md-box {
   @include media-breakpoint-up(md) {
-    @include shortcut-box-style()
-  }
+    @include shortcut-box-style() }
 }
 
 .shortcut-lg-box {
   @include media-breakpoint-up(lg) {
-    @include shortcut-box-style()
-  }
+    @include shortcut-box-style() }
 }
 
 .shortcut-box {
