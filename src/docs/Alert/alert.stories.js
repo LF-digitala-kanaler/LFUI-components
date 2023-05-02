@@ -1,9 +1,9 @@
 import BannerRaw from './banner.html?raw'
-import WithIconRaw from './WithIcon.html?raw'
+import WithIconRaw from './withIcon.html?raw'
 import DefaultRaw from './default.html?raw'
 import WithButtonRaw from './withButton.html?raw'
-import WithShadowRaw from './WithShadow.html?raw'
-import WithCloseButtonRaw from './WithCloseButton.html?raw'
+import WithShadowRaw from './withShadow.html?raw'
+import WithCloseButtonRaw from './withCloseButton.html?raw'
 import WithStrongEmphasisRaw from './withStrongEmphasis.html?raw'
 
 export default {
