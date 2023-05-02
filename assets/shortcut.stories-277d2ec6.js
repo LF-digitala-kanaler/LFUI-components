@@ -1,0 +1,163 @@
+const c=`<a href="#" onclick="return false" class="shortcut mb-1">
+  <strong class="shortcut-title">Digital documents</strong>
+</a>
+
+<p class="text-sm mt-15 mb-05 text-muted">With icon</p>
+<a href="#" onclick="return false" class="shortcut">
+  <svg class="icon d-md-none" width="24" height="24">
+    <use xlink:href="lf-icons/sprite/24/icons.svg#contract-24"></use>
+  </svg>
+  <svg class="icon d-none d-md-block" width="32" height="32">
+    <use xlink:href="lf-icons/sprite/32/icons.svg#contract-32"></use>
+  </svg>
+  <strong class="shortcut-title">Financial Reports</strong>
+</a>
+
+<p class="text-sm mt-15 mb-05 text-muted">With content</p>
+<a href="#" onclick="return false" class="shortcut">
+  <svg class="icon d-md-none" width="24" height="24">
+    <use xlink:href="lf-icons/sprite/24/icons.svg#user-happy-24"></use>
+  </svg>
+  <svg class="icon d-none d-md-block" width="32" height="32">
+    <use xlink:href="lf-icons/sprite/32/icons.svg#user-happy-32"></use>
+  </svg>
+  <div>
+    <strong class="shortcut-title">Contact us</strong>
+    <span class="">Open 09:00-18:00, Monday to Friday</span>
+  </div>
+</a>
+
+<a href="#" onclick="return false" class="shortcut">
+  <svg class="icon d-md-none" width="24" height="24">
+    <use xlink:href="lf-icons/sprite/24/icons.svg#sustainability-24"></use>
+  </svg>
+  <svg class="icon d-none d-md-block" width="32" height="32">
+    <use xlink:href="lf-icons/sprite/32/icons.svg#sustainability-32"></use>
+  </svg>
+  <div>
+    <strong class="shortcut-title">Sustainability</strong>
+    <p>
+      The starting point for the sustainability efforts of Sweden’s largest
+      insurance company, Länsförsäkringar, is a local and long-term
+      responsibility in society. Protecting, making customers secure and helping
+      them to prevent damage has always been part of our core&nbsp;business.
+    </p>
+  </div>
+</a>
+
+<p class="text-sm mt-15 mb-05 text-muted">Box layout</p>
+<div class="row row-tight">
+  <div class="col-6 col-md-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-box">
+      <svg class="icon mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#wallet-40"></use>
+      </svg>
+      <strong class="shortcut-title">Account</strong>
+    </a>
+  </div>
+  <div class="col-6 col-md-3">
+    <a href="#" class="shortcut shortcut-box">
+      <svg class="icon" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#house-40"></use>
+      </svg>
+      <strong class="shortcut-title">Loans</strong>
+    </a>
+  </div>
+</div>
+
+<p class="text-sm mt-15 mb-05 text-muted">Box layout, "sm" viewport and up</p>
+<div class="row row-tight">
+  <div class="col-md-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-md-box">
+      <svg class="icon d-md-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#wallet-24"></use>
+      </svg>
+      <svg class="icon d-none d-md-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#wallet-40"></use>
+      </svg>
+      <strong class="shortcut-title">Account</strong>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-md-box">
+      <svg class="icon d-md-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#house-24"></use>
+      </svg>
+      <svg class="icon d-none d-md-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#house-40"></use>
+      </svg>
+      <strong class="shortcut-title">Loans</strong>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-md-box">
+      <svg class="icon d-md-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#coins-24"></use>
+      </svg>
+      <svg class="icon d-none d-md-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#coins-40"></use>
+      </svg>
+      <strong class="shortcut-title">Transfer</strong>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-md-box">
+      <svg class="icon d-md-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#contract-24"></use>
+      </svg>
+      <svg class="icon d-none d-md-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#contract-40"></use>
+      </svg>
+      <strong class="shortcut-title">Credit score</strong>
+    </a>
+  </div>
+</div>
+
+<p class="text-sm mt-15 mb-05 text-muted">Box layout, "lg" viewport and up</p>
+<div class="row row-tight">
+  <div class="col-lg-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-lg-box">
+      <svg class="icon d-lg-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#wallet-24"></use>
+      </svg>
+      <svg class="icon d-none d-lg-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#wallet-40"></use>
+      </svg>
+      <strong class="shortcut-title">Account</strong>
+    </a>
+  </div>
+  <div class="col-lg-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-lg-box">
+      <svg class="icon d-lg-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#house-24"></use>
+      </svg>
+      <svg class="icon d-none d-lg-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#house-40"></use>
+      </svg>
+      <strong class="shortcut-title">Loans</strong>
+    </a>
+  </div>
+  <div class="col-lg-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-lg-box">
+      <svg class="icon d-lg-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#coins-24"></use>
+      </svg>
+      <svg class="icon d-none d-lg-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#coins-40"></use>
+      </svg>
+      <strong class="shortcut-title">Transfer</strong>
+    </a>
+  </div>
+  <div class="col-lg-3">
+    <a href="#" onclick="return false" class="shortcut shortcut-lg-box">
+      <svg class="icon d-lg-none" width="24" height="24">
+        <use xlink:href="lf-icons/sprite/24/icons.svg#contract-24"></use>
+      </svg>
+      <svg class="icon d-none d-lg-block mb-05" width="40" height="40">
+        <use xlink:href="lf-icons/sprite/40/icons.svg#contract-40"></use>
+      </svg>
+      <strong class="shortcut-title">Credit score</strong>
+    </a>
+  </div>
+</div>`,e={title:"Button and links/Shortcut",parameters:{backgrounds:{default:"gray"}}},s=()=>c;var n,t,o;s.parameters={...s.parameters,docs:{...(n=s.parameters)==null?void 0:n.docs,source:{originalSource:"() => Shortcut",...(o=(t=s.parameters)==null?void 0:t.docs)==null?void 0:o.source}}};const i=["shortcut"];export{i as __namedExportsOrder,e as default,s as shortcut};
+//# sourceMappingURL=shortcut.stories-277d2ec6.js.map
