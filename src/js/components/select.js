@@ -46,9 +46,12 @@ export function select(el, opts = el.dataset) {
       type: 'button',
       title: label.textContent,
       class: 'select-toggle dropdown-toggle',
+      id: 'dropdown-select',
       'data-bs-toggle': 'dropdown',
       'aria-expanded': 'false',
-      'aria-controls': `list-${id}`
+      'aria-controls': `list-${id}`,
+      'aria-labelledby': 'dropdown-label dropdown-select',
+      'aria-haspopup': 'listbox'
     },
     [
       h(
@@ -70,11 +73,15 @@ export function select(el, opts = el.dataset) {
 
   // The list of options
   const list = h(
-    'div',
+    'ul',
     {
       id: `list-${id}`,
-      'aria-labelledby': `label-${id}`,
+      role: 'listbox',
+      // tabindex: '-1',
       class: 'select-list dropdown-menu',
+      'aria-labelledby': 'dropdown-label',
+      // We want this later.
+      // 'aria-activedescendant': select.selectedOptions[0].id,
       onclick() {
         // Disable automatic closing on click
         preventClose = preventClose || select.multiple
@@ -141,16 +148,20 @@ export function select(el, opts = el.dataset) {
             [
               config.groupToggle
                 ? h(
-                    'button',
+                    'li',
                     {
+                      role: 'option',
                       ref: button,
-                      type: 'button',
+                      // type: 'button',
                       id: `group-${index}-trigger-${id}`,
                       class: `select-option ${
                         select.multiple ? 'multiple' : ''
                       } toggle dropdown-item`,
-                      'aria-expanded': 'true',
-                      'aria-controls': `group-${index}-list-${id}`,
+                      // 'aria-expanded': 'true',
+                      // 'aria-controls': `group-${index}-list-${id}`,
+
+                      // TODO: NEED to add keyboard event to handle enter or spacebar to select option.
+
                       onclick() {
                         expanded = !expanded
                         this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
@@ -188,12 +199,17 @@ export function select(el, opts = el.dataset) {
         const button = new Ref()
         buttons.set(child, button)
 
+        console.log('selected', selected)
+
         return h(
-          'button',
+          'li',
           {
             disabled,
             ref: button,
-            type: 'button',
+            // type: 'button',
+            role: 'option',
+            'aria-selected': selected,
+            tabindex: '-1',
             class: `select-option dropdown-item ${select.multiple ? 'multiple' : ''} ${
               selected ? 'selected' : ''
             }`,
@@ -224,10 +240,11 @@ export function select(el, opts = el.dataset) {
 
     // Update proxy buttons
     for (const option of select.options) {
-      if (option.disabled) continue
+      // if (option.disabled) continue
       const ref = buttons.get(option)
       ref?.current.classList.toggle('selected', option.selected)
-
+      ref?.current.setAttribute('aria-selected', option.selected)
+      console.log('butt', buttons)
       // Calculate group status
       if (groups.has(option)) {
         const button = groups.get(option)
@@ -270,7 +287,8 @@ export function select(el, opts = el.dataset) {
 
   // Update DOM
   el.classList.add('initialized')
-  label.id = `label-${id}`
+  // label.id = `label-${id}`
+  label.id = 'dropdown-label'
   select.after(toggle, list)
 
   const dropdown = new Dropdown(toggle)
