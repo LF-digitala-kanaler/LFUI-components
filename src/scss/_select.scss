@@ -58,6 +58,11 @@
   }
 }
 
+[data-bs-theme="on-grey"] .select {
+  --input-bg: var(--white);
+  --input-focus-bg: var(--white);
+}
+
 /**
  * Our different elements that all look like select
  * elements and used in various cases.
@@ -76,7 +81,7 @@
   color: $input-color;
   text-align: left;
   user-select: none;
-  background-color: $input-bg;
+  background-color: var(--input-bg);
   background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
   background-size: 18px 12px;
   border: $input-border-color solid;

@@ -446,6 +446,11 @@ $input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%);
 $input-focus-color: $body-color;
 $input-placeholder-color: #999;
 
+:root {
+  --input-bg: #{$input-bg};
+  --input-focus-bg: #{$tint};
+}
+
 $input-padding-x: .75rem;
 $input-padding-y: .563rem;
 $input-padding-top: .663rem;
