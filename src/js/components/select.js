@@ -2,6 +2,7 @@ import Dropdown from 'bootstrap5/js/src/dropdown'
 import { h, Ref } from '../utils'
 
 function focusSelectOption(position, list) {
+  console.log(position)
   if (typeof position === 'object') {
     if (
       position.classList.contains('select-option') &&
@@ -20,6 +21,7 @@ function focusSelectOption(position, list) {
     if (!focusedItem.nextElementSibling) {
       list.firstElementChild.classList.add('select-option--focus')
     } else {
+      console.log('next', focusedItem.nextElementSibling)
       focusedItem.nextElementSibling.classList.add('select-option--focus')
     }
 
@@ -136,6 +138,8 @@ export function select(el, opts = el.dataset) {
     focusSelectOption('selected', list)
     selectOpen = true
 
+    console.log('open select')
+
     if (window.innerHeight - toggle.getBoundingClientRect().bottom < toggle.scrollHeight) {
       list.classList.add('axs-select__list--top')
     }
@@ -235,7 +239,7 @@ export function select(el, opts = el.dataset) {
       'aria-labelledby': 'dropdown-label',
       hidden: true,
       // We want this later.
-      'aria-activedescendant': select.selectedOptions[0].id,
+      // 'aria-activedescendant': select.selectedOptions[0].id,
       onclick() {
         // Disable automatic closing on click
         preventClose = preventClose || select.multiple
@@ -352,23 +356,22 @@ export function select(el, opts = el.dataset) {
         const button = new Ref()
         buttons.set(child, button)
 
+        console.log('selected', selected)
+
         return h(
           'li',
           {
             disabled,
             ref: button,
             // type: 'button',
-            id: `${id}-${index}`,
             role: 'option',
             'aria-selected': selected,
             tabindex: '-1',
-            class: `select-option dropdown-item ${select.multiple ? 'multiple' : ''} ${
+            class: `select-option xxdropdown-item ${select.multiple ? 'multiple' : ''} ${
               selected ? 'selected select-option--selected' : ''
             }`,
             onclick(event) {
               child.selected = select.multiple ? !child.selected : true
-              closeSelect()
-              toggle.focus()
               select.dispatchEvent(new window.Event('change'))
             }
           },
@@ -379,6 +382,8 @@ export function select(el, opts = el.dataset) {
   )
 
   list.addEventListener('keydown', function (event) {
+    console.log('keydoown')
+
     if (event.key === 'Enter' || event.key === ' ') {
       selectOption(list.querySelector('.select-option--focus'))
       toggle.focus()
