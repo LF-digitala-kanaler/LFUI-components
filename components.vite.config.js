@@ -6,6 +6,8 @@ export default mergeConfig({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
   },
   build: {
+    // minify: false,
+    minifyIdentifiers: false,
     lib: {
       entry: [
         resolve(__dirname, 'src/js/components/monthpicker.jsx'),

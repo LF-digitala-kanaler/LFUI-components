@@ -1,1 +1,1 @@
-import 'bootstrap5/js/src/modal'
+export { default as Modal } from 'bootstrap5/js/src/modal'

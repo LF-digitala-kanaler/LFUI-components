@@ -1,1 +1,1 @@
-import 'bootstrap5/js/src/alert'
+export { default as Alert } from 'bootstrap5/js/src/alert'
