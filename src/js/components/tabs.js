@@ -1,5 +1,5 @@
-import 'bootstrap5/js/src/tab'
 import { delegate } from '../utils'
+export { default as Tab } from 'bootstrap5/js/src/tab'
 
 document.addEventListener(
   'click',

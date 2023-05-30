@@ -1,5 +1,6 @@
-import Collapse from 'bootstrap5/js/src/collapse'
 import { delegate } from '../utils'
+import Collapse from 'bootstrap5/js/src/collapse'
+export { Collapse }
 
 const LOADING_CLASS = 'loading'
 const EXPANDED_ATTR = 'aria-expanded'

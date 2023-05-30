@@ -28,7 +28,7 @@ export function select(el, opts = el.dataset) {
 
   let preventClose = false
   const initiallySelected = [...select.selectedOptions]
-  const placeholder = initiallySelected.find(isPlaceholder)
+  let placeholder = select.querySelector('option[value=""][disabled]')
   const initiallyValid = initiallySelected.filter((child) => !isPlaceholder(child))
 
   setValidState(select, initiallyValid.length)
@@ -68,19 +68,8 @@ export function select(el, opts = el.dataset) {
     ]
   )
 
-  // The list of options
-  const list = h(
-    'div',
-    {
-      id: `list-${id}`,
-      'aria-labelledby': `label-${id}`,
-      class: 'select-list dropdown-menu',
-      onclick() {
-        // Disable automatic closing on click
-        preventClose = preventClose || select.multiple
-      }
-    },
-    [
+  function renderItems() {
+    return [
       // Toggle all button
       select.multiple && config.allLabel
         ? h(
@@ -94,7 +83,7 @@ export function select(el, opts = el.dataset) {
                 for (const option of select.options) {
                   if (!option.disabled) option.selected = selected
                 }
-                select.dispatchEvent(new window.Event('change'))
+                select.dispatchEvent(new window.Event('change', { bubbles: true }))
                 event.preventDefault()
               }
             },
@@ -199,13 +188,28 @@ export function select(el, opts = el.dataset) {
             }`,
             onclick(event) {
               child.selected = select.multiple ? !child.selected : true
-              select.dispatchEvent(new window.Event('change'))
+              select.dispatchEvent(new window.Event('change', { bubbles: true }))
             }
           },
           resolveLabel(label, config.smallPattern, disabled ? '' : undefined)
         )
       })
     ]
+  }
+
+  // The list of options
+  const list = h(
+    'div',
+    {
+      id: `list-${id}`,
+      'aria-labelledby': `label-${id}`,
+      class: 'select-list dropdown-menu',
+      onclick() {
+        // Disable automatic closing on click
+        preventClose = preventClose || select.multiple
+      }
+    },
+    renderItems()
   )
 
   // Prevent automatic close on click
@@ -277,6 +281,30 @@ export function select(el, opts = el.dataset) {
 
   // Cache element to prevent double initialization
   initialized.add(el)
+
+  const callback = (mutationList, observer) => {
+    for (const mutation of mutationList) {
+      if (mutation.type === 'childList' || mutation.type === 'carachterData') {
+        const frag = document.createDocumentFragment()
+        frag.append(...renderItems().filter((item) => item))
+        list.innerHTML = ''
+        list.append(frag)
+        placeholder = placeholder = select.querySelector('option[value=""][disabled]')
+        select.dispatchEvent(new window.Event('change'))
+      }
+    }
+  }
+
+  // Create an observer instance linked to the callback function
+  const observer = new window.MutationObserver(callback)
+
+  // Start observing the target node for configured mutations
+  observer.observe(select, {
+    attributes: false,
+    childList: true,
+    subtree: true,
+    characterData: true
+  })
 }
 
 /**
