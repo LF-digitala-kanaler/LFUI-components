@@ -31,3 +31,14 @@
 [aria-expanded="true"] .pricebox-chevron {
   transform: scaleY(-1);
 }
+
+.price-box-bottom {
+  .pricebox-chevron {
+    transform: scaleY(-1);
+  }
+
+  &[aria-expanded="true"] .pricebox-chevron {
+    transform: scaleY(1);
+  }
+}
+  
