@@ -1,6 +1,6 @@
 {
   "name": "@lansforsakringar/components",
-  "version": "10.5.0",
+  "version": "10.5.1",
   "license": "MIT",
   "engines": {
     "npm": "8",
@@ -32,7 +32,7 @@
     "@preact/preset-vite": "^2.4.0",
     "@storybook/addon-docs": "^7.0.2",
     "bootstrap": "4.3.1",
-    "bootstrap5": "npm:bootstrap@^5.2.0",
+    "bootstrap5": "npm:bootstrap@5.2.0",
     "preact": "^10.11.3",
     "preact-custom-element": "^4.2.1",
     "vivus": "0.4.6"
