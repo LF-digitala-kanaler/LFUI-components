@@ -935,6 +935,7 @@ a.btn:active {
 
   &::after {
     bottom: -3px;
+    height: 17px !important;
     margin-left: .625rem;
   }
 }
@@ -944,6 +945,7 @@ a.btn:active {
 
   &::before {
     bottom: -3px;
+    height: 17px !important;
     margin-right: .625rem;
   }
 }
