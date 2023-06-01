@@ -1,4 +1,5 @@
-import Responsive from './responsive.html?raw'
+import ResponsiveTop from './responsive-top.html?raw'
+import ResponsiveBottom from './responsive-bottom.html?raw'
 import Desktop from './desktop.html?raw'
 
 export default {
@@ -7,4 +8,5 @@ export default {
 }
 
 export const desktop = () => Desktop
-export const responsive = () => Responsive
+export const responsiveTop = () => ResponsiveTop
+export const responsiveBottom = () => ResponsiveBottom
