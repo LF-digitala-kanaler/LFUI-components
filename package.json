@@ -3,8 +3,7 @@
   "version": "10.6.1",
   "license": "MIT",
   "engines": {
-    "npm": "8",
-    "node": "16"
+    "node": ">=16"
   },
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
