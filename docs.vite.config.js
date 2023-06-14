@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 import copy from 'rollup-plugin-copy'
 import autoprefixer from 'autoprefixer'
 import preact from '@preact/preset-vite'
-import increaseSpecificity from 'postcss-increase-specificity'
+// import increaseSpecificity from 'postcss-increase-specificity'
 
 export default defineConfig({
   define: {
@@ -40,10 +40,10 @@ export default defineConfig({
             return url.replace(/^base\//, './')
           }
         }),
-        increaseSpecificity({
-          repeat: 1,
-          stackableRoot: '.lfui-theme'
-        }),
+        // increaseSpecificity({
+        //   repeat: 1,
+        //   stackableRoot: '.lfui-theme'
+        // }),
         autoprefixer
       ]
     }
