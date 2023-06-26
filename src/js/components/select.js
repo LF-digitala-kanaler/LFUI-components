@@ -27,9 +27,13 @@ export function select(el, opts = el.dataset) {
   }
 
   let preventClose = false
-  const initiallySelected = [...select.selectedOptions]
+  const initiallySelected = [...select.querySelectorAll('[selected]')]
   let placeholder = select.querySelector('option[value=""][disabled]')
-  const initiallyValid = initiallySelected.filter((child) => !isPlaceholder(child))
+  const initiallyValid = initiallySelected.filter((child) => {
+    return !isPlaceholder(child)
+  })
+
+  console.log('placeholder for', select.id, placeholder, initiallyValid)
 
   setValidState(select, initiallyValid.length)
 
@@ -255,6 +259,8 @@ export function select(el, opts = el.dataset) {
       button.current.classList.toggle('selected', state === 'selected')
       button.current.classList.toggle('indeterminate', state === 'indeterminate')
     }
+
+    console.log('change')
 
     const selected = [...select.selectedOptions].filter((option) => !isPlaceholder(option))
     const { current: statusNode } = status
