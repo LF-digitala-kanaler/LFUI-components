@@ -921,7 +921,9 @@ a.btn:active {
 }
 
 .primary-link::after,
-.primary-link::before {
+.primary-link::before,
+.btn-link-lg::after,
+.btn-link-lg::before {
   height: 17px !important;
 }
 
