@@ -33,8 +33,6 @@ export function select(el, opts = el.dataset) {
     return !isPlaceholder(child)
   })
 
-  console.log('placeholder for', select.id, placeholder, initiallyValid)
-
   setValidState(select, initiallyValid.length)
 
   // Set up internal lookup mechanisms
@@ -259,8 +257,6 @@ export function select(el, opts = el.dataset) {
       button.current.classList.toggle('selected', state === 'selected')
       button.current.classList.toggle('indeterminate', state === 'indeterminate')
     }
-
-    console.log('change')
 
     const selected = [...select.selectedOptions].filter((option) => !isPlaceholder(option))
     const { current: statusNode } = status
