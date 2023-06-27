@@ -302,6 +302,7 @@
 
     &.is-disabled {
       box-shadow: none;
+      cursor: not-allowed;
     }
 
     &:hover::before,
