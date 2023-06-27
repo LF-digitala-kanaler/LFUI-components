@@ -42,9 +42,11 @@
 
 .modal-header .btn-close {
   --btn-close-width: 1.25rem;
+  align-self: flex-start;
 
   order: 1;
-  margin-right: calc(#{$btn-close-padding-x} * -1);
+  margin-top: calc(.25em + 1px);
+  margin-right: calc((#{$btn-close-padding-x} - 1px) * -1);
   color: $navy;
 }
 
