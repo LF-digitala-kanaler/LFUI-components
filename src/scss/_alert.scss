@@ -158,6 +158,10 @@ $alert-dismissible-padding-r: $alert-padding-x * 2;
   border-right: var(--alert-dismissible-padding-r) solid transparent;
 }
 
+.alert-banner .icon {
+  align-self: flex-start;
+}
+
 /* Minor alignment tweak in this case as well */
 .alert-banner .btn-close {
   top: calc(var(--alert-padding-y) - .9rem);
