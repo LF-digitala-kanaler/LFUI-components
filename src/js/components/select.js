@@ -27,9 +27,11 @@ export function select(el, opts = el.dataset) {
   }
 
   let preventClose = false
-  const initiallySelected = [...select.selectedOptions]
+  const initiallySelected = [...select.querySelectorAll('[selected]')]
   let placeholder = select.querySelector('option[value=""][disabled]')
-  const initiallyValid = initiallySelected.filter((child) => !isPlaceholder(child))
+  const initiallyValid = initiallySelected.filter((child) => {
+    return !isPlaceholder(child)
+  })
 
   setValidState(select, initiallyValid.length)
 
