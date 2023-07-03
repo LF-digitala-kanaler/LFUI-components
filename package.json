@@ -1,6 +1,6 @@
 {
   "name": "@lansforsakringar/components",
-  "version": "10.7.1",
+  "version": "10.8.0",
   "license": "MIT",
   "engines": {
     "node": ">=16"
