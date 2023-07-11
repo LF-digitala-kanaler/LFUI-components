@@ -62,8 +62,8 @@ export function select(el, opts = el.dataset) {
         initiallyValid.length
           ? concatLabels(initiallyValid, config.smallPattern)
           : placeholder
-          ? resolveLabel(placeholder.label, config.smallPattern)
-          : ''
+            ? resolveLabel(placeholder.label, config.smallPattern)
+            : ''
       )
     ]
   )
@@ -73,22 +73,22 @@ export function select(el, opts = el.dataset) {
       // Toggle all button
       select.multiple && config.allLabel
         ? h(
-            'button',
-            {
-              ref: selectAll,
-              type: 'button',
-              class: 'select-option multiple dropdown-item',
-              onclick(event) {
-                const selected = !allAreSelected(select)
-                for (const option of select.options) {
-                  if (!option.disabled) option.selected = selected
-                }
-                select.dispatchEvent(new window.Event('change', { bubbles: true }))
-                event.preventDefault()
+          'button',
+          {
+            ref: selectAll,
+            type: 'button',
+            class: 'select-option multiple dropdown-item',
+            onclick(event) {
+              const selected = !allAreSelected(select)
+              for (const option of select.options) {
+                if (!option.disabled) option.selected = selected
               }
-            },
-            config.allLabel
-          )
+              select.dispatchEvent(new window.Event('change', { bubbles: true }))
+              event.preventDefault()
+            }
+          },
+          config.allLabel
+        )
         : null,
       // Proxies for the option/optgroup elements
       ...[...select.children].map(function eachChild(child, index) {
@@ -130,37 +130,36 @@ export function select(el, opts = el.dataset) {
             [
               config.groupToggle
                 ? h(
-                    'button',
-                    {
-                      ref: button,
-                      type: 'button',
-                      id: `group-${index}-trigger-${id}`,
-                      class: `select-option ${
-                        select.multiple ? 'multiple' : ''
+                  'button',
+                  {
+                    ref: button,
+                    type: 'button',
+                    id: `group-${index}-trigger-${id}`,
+                    class: `select-option ${select.multiple ? 'multiple' : ''
                       } toggle dropdown-item`,
-                      'aria-expanded': 'true',
-                      'aria-controls': `group-${index}-list-${id}`,
-                      onclick() {
-                        expanded = !expanded
-                        this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
-                        wrapper.current.classList.toggle('show', expanded)
+                    'aria-expanded': 'true',
+                    'aria-controls': `group-${index}-list-${id}`,
+                    onclick() {
+                      expanded = !expanded
+                      this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
+                      wrapper.current.classList.toggle('show', expanded)
 
-                        // Disable automatic closing on click
-                        preventClose = true
+                      // Disable automatic closing on click
+                      preventClose = true
 
-                        // Ugly hack to prevent Bootstrap dropdown from including
-                        // hidden items in key navigation
-                        for (const option of child.children) {
-                          const button = buttons.get(option)
-                          button.current.classList.toggle('disabled', !expanded)
-                        }
-
-                        // Update dropdown position
-                        dropdown.update()
+                      // Ugly hack to prevent Bootstrap dropdown from including
+                      // hidden items in key navigation
+                      for (const option of child.children) {
+                        const button = buttons.get(option)
+                        button.current.classList.toggle('disabled', !expanded)
                       }
-                    },
-                    label
-                  )
+
+                      // Update dropdown position
+                      dropdown.update()
+                    }
+                  },
+                  label
+                )
                 : h('legend', { class: 'select-legend' }, label),
               ...children
             ]
@@ -183,9 +182,8 @@ export function select(el, opts = el.dataset) {
             disabled,
             ref: button,
             type: 'button',
-            class: `select-option dropdown-item ${select.multiple ? 'multiple' : ''} ${
-              selected ? 'selected' : ''
-            }`,
+            class: `select-option dropdown-item ${select.multiple ? 'multiple' : ''} ${selected ? 'selected' : ''
+              }`,
             onclick(event) {
               child.selected = select.multiple ? !child.selected : true
               select.dispatchEvent(new window.Event('change', { bubbles: true }))
@@ -213,7 +211,7 @@ export function select(el, opts = el.dataset) {
   )
 
   // Prevent automatic close on click
-  el.addEventListener('hide.bs.dropdown', function (event) {
+  el.addEventListener('hide.bs.dropdown', function(event) {
     if (preventClose) {
       preventClose = false
       event.preventDefault()
@@ -221,7 +219,7 @@ export function select(el, opts = el.dataset) {
   })
 
   // Update status and labels on change
-  select.addEventListener('change', function () {
+  select.addEventListener('change', function() {
     selectAll.current?.classList.toggle('selected', allAreSelected(select))
 
     const states = new Map()
@@ -360,7 +358,7 @@ function allAreSelected(select) {
  * @returns {(string | Node)[]}
  */
 function concatLabels(labels, regexp) {
-  return labels.reduce(function (acc, child) {
+  return labels.reduce(function(acc, child) {
     if (acc.length) acc.push(', ')
     acc.push(...resolveLabel(child.label, regexp))
     return acc
