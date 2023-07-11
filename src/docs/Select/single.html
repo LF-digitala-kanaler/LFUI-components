@@ -1,183 +1,186 @@
 <div class="row">
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">Default</p>
-    <form class="form-group">
-      <div class="select">
-        <label class="select-label" for="select">City</label>
-        <select class="select-options" name="timezone" id="select">
-          <option value="" disabled selected hidden>Select City</option>
-          <option>Stockholm</option>
-          <option>Göteborg</option>
-          <option>Malmö</option>
-          <option>Umeå</option>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">Long list</p>
-    <form class="form-group">
-      <div class="select">
-        <label class="select-label" for="select-hidden-label">City</label>
-        <select class="select-options" name="timezone" id="select-hidden-label">
-          <option value="" disabled selected hidden>Select City</option>
-          <option>Gävle</option>
-          <option>Göteborg</option>
-          <option>Hagfors</option>
-          <option>Halmstad</option>
-          <option>Haparanda</option>
-          <option>Hedemora</option>
-          <option>Helsingborg</option>
-          <option>Hudiksvall</option>
-          <option>Huskvarna</option>
-          <option>Härnösand</option>
-          <option>Hässleholm</option>
-          <option>Hästholmen</option>
-          <option>Höganäs</option>
-          <option>Järle</option>
-          <option>Jönköping</option>
-          <option>Kalmar</option>
-          <option>Karl Johans stad</option>
-          <option>Karlshamn</option>
-          <option>Karlskoga</option>
-          <option>Karlskrona</option>
-          <option>Karlstad</option>
-          <option>Katrineholm</option>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">Label inside</p>
-    <label>&nbsp;</label>
-    <form class="form-group">
-      <div class="select inside">
-        <label class="select-label" for="select-label-inside">
-          Select city
-        </label>
-        <select class="select-options" name="timezone" id="select-label-inside">
-          <option value="" disabled selected hidden>Select asdasd</option>
-          <option>Stockholm</option>
-          <option>Göteborg</option>
-          <option>Malmö</option>
-          <option>Umeå</option>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">With small text</p>
-    <form class="form-group">
-      <div class="select" data-small-pattern="\((.+?)\)">
-        <label class="select-label" for="select-secondary">City</label>
-        <select class="select-options" name="timezone" id="select-secondary">
-          <option value="" disabled selected hidden>Select City</option>
-          <option>Stockholm (Stockholm)</option>
-          <option>Göteborg (Västra Götaland)</option>
-          <option>Malmö (Skåne)</option>
-          <option>Umeå (Västerbottens)</option>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">Required</p>
-    <form class="form-group">
-      <div class="select">
-        <label class="select-label" for="select-required">City</label>
-        <select
-          class="select-options"
-          name="timezone"
-          id="select-required"
-          required>
-          <option>Stockholm</option>
-          <option selected>Göteborg</option>
-          <option>Malmö</option>
-          <option>Umeå</option>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">With Option Groups</p>
-    <form class="form-group">
-      <div class="select">
-        <label class="select-label" for="select-groups">Timezone</label>
-        <select class="select-options" name="timezone" id="select-groups">
-          <option value="" disabled selected hidden>Select Timezone</option>
-          <optgroup label="Alaskan/Hawaiian Time Zone">
-            <option value="AK">Alaska</option>
-            <option value="HI">Hawaii</option>
-          </optgroup>
-          <optgroup label="Stockholm Time Zone">
-            <option value="ST">Stockholm</option>
-          </optgroup>
-          <optgroup label="China Time Zone">
-            <option value="CT">China</option>
-          </optgroup>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">With Toggle Groups</p>
-    <form class="form-group">
-      <div class="select" data-group-toggle>
-        <label class="select-label" for="select-toggle-groups">Timezone</label>
-        <select
-          class="select-options"
-          name="timezone"
-          id="select-toggle-groups">
-          <option value="" disabled selected hidden>Select Timezone</option>
-          <optgroup label="Alaskan/Hawaiian Time Zone">
-            <option value="AK">Alaska</option>
-            <option value="HI">Hawaii</option>
-          </optgroup>
-          <optgroup label="Stockholm Time Zone">
-            <option value="ST">Stockholm</option>
-          </optgroup>
-          <optgroup label="China Time Zone">
-            <option value="CT">China</option>
-          </optgroup>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">Disabled</p>
-    <form class="form-group">
-      <div class="select">
-        <label class="select-label" for="select-disabled">City</label>
-        <select
-          class="select-options"
-          name="timezone"
-          id="select-disabled"
-          disabled>
-          <option value="" disabled selected hidden>Select City</option>
-          <option>Stockholm</option>
-          <option>Göteborg</option>
-          <option>Malmö</option>
-          <option>Umeå</option>
-        </select>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <p class="text-sm mt-15 mb-05 text-muted">Disabled options</p>
-    <form class="form-group">
-      <div class="select">
-        <label class="select-label" for="select-disabled-options">City</label>
-        <select
-          class="select-options"
-          name="timezone"
-          id="select-disabled-options">
-          <option value="" disabled selected hidden>Select City</option>
-          <option disabled>Stockholm</option>
-          <option>Göteborg</option>
-          <option disabled>Malmö</option>
-          <option>Umeå</option>
-        </select>
-      </div>
-    </form>
-  </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Default</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select">City</label>
+                <select class="select-options" name="timezone" id="select">
+                    <option value="" disabled selected hidden>Select City</option>
+                    <option>Stockholm</option>
+                    <option>Göteborg</option>
+                    <option>Malmö</option>
+                    <option>Umeå</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Long list</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select-hidden-label">City</label>
+                <select class="select-options" name="timezone" id="select-hidden-label">
+                    <option value="" disabled selected hidden>Select City</option>
+                    <option>Gävle</option>
+                    <option>Göteborg</option>
+                    <option>Hagfors</option>
+                    <option>Halmstad</option>
+                    <option>Haparanda</option>
+                    <option>Hedemora</option>
+                    <option>Helsingborg</option>
+                    <option>Hudiksvall</option>
+                    <option>Huskvarna</option>
+                    <option>Härnösand</option>
+                    <option>Hässleholm</option>
+                    <option>Hästholmen</option>
+                    <option>Höganäs</option>
+                    <option>Järle</option>
+                    <option>Jönköping</option>
+                    <option>Kalmar</option>
+                    <option>Karl Johans stad</option>
+                    <option>Karlshamn</option>
+                    <option>Karlskoga</option>
+                    <option>Karlskrona</option>
+                    <option>Karlstad</option>
+                    <option>Katrineholm</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Label inside</p>
+        <label>&nbsp;</label>
+        <form class="form-group">
+            <div class="select inside">
+                <label class="select-label" for="select-label-inside">
+                    Select city
+                </label>
+                <select class="select-options" name="timezone" id="select-label-inside">
+                    <option value="" disabled selected hidden>Select asdasd</option>
+                    <option>Stockholm</option>
+                    <option>Göteborg</option>
+                    <option>Malmö</option>
+                    <option>Umeå</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">With small text</p>
+        <form class="form-group">
+            <div class="select" data-small-pattern="\((.+?)\)">
+                <label class="select-label" for="select-secondary">City</label>
+                <select class="select-options" name="timezone" id="select-secondary">
+                    <option value="" disabled selected hidden>Select City</option>
+                    <option>Stockholm (Stockholm)</option>
+                    <option>Göteborg (Västra Götaland)</option>
+                    <option>Malmö (Skåne)</option>
+                    <option>Umeå (Västerbottens)</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Required</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select-required">City</label>
+                <select class="select-options" name="timezone" id="select-required" required>
+                    <option>Stockholm</option>
+                    <option selected>Göteborg</option>
+                    <option>Malmö</option>
+                    <option>Umeå</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Default value</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select-default-value">City</label>
+                <select class="select-options" name="timezone" id="select-default-value" required>
+                    <option disabled hidden value="">Select city</option>
+                    <option value="stockholm">Stockholm</option>
+                    <option value="göteborg" selected>Göteborg</option>
+                    <option value="malmö">Malmö</option>
+                    <option value="umeå">Umeå</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">With Option Groups</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select-groups">Timezone</label>
+                <select class="select-options" name="timezone" id="select-groups">
+                    <option value="" disabled selected hidden>Select Timezone</option>
+                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                        <option value="AK">Alaska</option>
+                        <option value="HI">Hawaii</option>
+                    </optgroup>
+                    <optgroup label="Stockholm Time Zone">
+                        <option value="ST">Stockholm</option>
+                    </optgroup>
+                    <optgroup label="China Time Zone">
+                        <option value="CT">China</option>
+                    </optgroup>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">With Toggle Groups</p>
+        <form class="form-group">
+            <div class="select" data-group-toggle>
+                <label class="select-label" for="select-toggle-groups">Timezone</label>
+                <select class="select-options" name="timezone" id="select-toggle-groups">
+                    <option value="" disabled selected hidden>Select Timezone</option>
+                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                        <option value="AK">Alaska</option>
+                        <option value="HI">Hawaii</option>
+                    </optgroup>
+                    <optgroup label="Stockholm Time Zone">
+                        <option value="ST">Stockholm</option>
+                    </optgroup>
+                    <optgroup label="China Time Zone">
+                        <option value="CT">China</option>
+                    </optgroup>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Disabled</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select-disabled">City</label>
+                <select class="select-options" name="timezone" id="select-disabled" disabled>
+                    <option value="" disabled selected hidden>Select City</option>
+                    <option>Stockholm</option>
+                    <option>Göteborg</option>
+                    <option>Malmö</option>
+                    <option>Umeå</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <p class="text-sm mt-15 mb-05 text-muted">Disabled options</p>
+        <form class="form-group">
+            <div class="select">
+                <label class="select-label" for="select-disabled-options">City</label>
+                <select class="select-options" name="timezone" id="select-disabled-options">
+                    <option value="" disabled selected hidden>Select City</option>
+                    <option disabled>Stockholm</option>
+                    <option>Göteborg</option>
+                    <option disabled>Malmö</option>
+                    <option>Umeå</option>
+                </select>
+            </div>
+        </form>
+    </div>
 </div>

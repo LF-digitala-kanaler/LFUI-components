@@ -1,0 +1,49 @@
+.sb-badge-list {
+    display: inline-flex;
+    gap: 0.5em;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.sb-badge-list--right {
+    justify-content: flex-end;
+}
+
+.sb-badge {
+    font-size: 14px;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    text-transform: capitalize;
+    vertical-align: middle;
+}
+
+.sb-badge-stable {
+    background-color: YellowGreen;
+    color: black;
+    font-weight: bold;
+}
+
+.sb-badge-new {
+    background: gold;
+    color: brown;
+    font-weight: bold;
+}
+
+.sb-badge-deprecated {
+    background: lightgray;
+    color: black;
+    font-weight: bold;
+}
+
+.sb-badge-experimental {
+    background: black;
+    color: white;
+    font-weight: bold;
+}
+
+
+.sb-note {
+    background: #efefef;
+    padding: 1em;
+    border-radius: 2px;
+}
