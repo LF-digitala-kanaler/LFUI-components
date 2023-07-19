@@ -43,7 +43,53 @@
 
 
 .sb-note {
-    background: #efefef;
+    background: AliceBlue;
     padding: 1em;
     border-radius: 2px;
+}
+
+.sb-note p {
+    margin: 0 0 0.25em;
+}
+
+.icon-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: rows;
+    width: 100%;
+    ccolumn-gap: 28px;
+    row-gap: 28px;
+}
+
+@media (min-width: 700px) {
+    .icon-gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .icon-gallery {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.icon-item__sizes {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 4px;
+}
+
+.icon-preview {
+    display: flex;
+    gap: 8px 8px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray
+}
+
+.icon-item span {
+    display: block;
+    width: auto;
 }

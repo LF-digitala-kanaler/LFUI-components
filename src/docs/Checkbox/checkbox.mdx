@@ -1,0 +1,50 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as CheckboxStories from './checkbox.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox <Badges of={CheckboxStories} />
+
+<Canvas of={CheckboxStories.CheckboxDefault} />
+<Controls of={CheckboxStories.CheckboxDefault} />
+
+## How to use
+Since the default checkbox design is not customizable, we will hide it visually and add a pseudo element which we style with css to get the desired look. By visually, I mean to hide it from the UI and keep it in the DOM for screen reader and keyboard users. You shouldn't need to do anything else then use the code posted below.
+
+```html
+<div class="custom-control custom-checkbox mr-1">
+  <input type="checkbox" class="custom-control-input" id="checkbox">
+  <label class="custom-control-label" for="checkbox">Checkbox</label>
+</div>
+```
+
+## States
+
+### Disabled
+<Canvas of={CheckboxStories.Disabled} />
+
+### Checked
+<Canvas of={CheckboxStories.Checked} />
+
+### Intermediate
+<Canvas of={CheckboxStories.Indeterminate} />
+
+<Note>
+#### Note
+You can only set the intermediate state via javascript:
+```javascript
+const input = document.getElementById('my-checkbox')
+input.indeterminate = true
+```
+</Note>
+
+
+## Accessibility
+Remember to always associating the label with the input. Which means `<input>` should always have an ID and this ID should be used as a for attribute for the `<label>`  .
+
+```html
+<input type="checkbox" class="custom-control-input" id="checkbox">
+<label class="custom-control-label" for="checkbox">Checkbox</label>
+```

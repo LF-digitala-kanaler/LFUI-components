@@ -1,0 +1,19 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as CheckboxCardStories from './checkboxCard.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={CheckboxCardStories} />
+
+# Checkbox Card <Badges of={CheckboxCardStories} />
+
+<Canvas of={CheckboxCardStories.Default} />
+<Controls of={CheckboxCardStories.Default} />
+
+## States
+
+### Disabled
+<Canvas of={CheckboxCardStories.Disabled} />
+
+### Checked
+<Canvas of={CheckboxCardStories.Checked} />

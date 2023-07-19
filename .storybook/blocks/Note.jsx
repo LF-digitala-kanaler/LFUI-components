@@ -5,5 +5,5 @@
  * - if nothing is passed, it defaults to the primary story
  */
 export const Note = ({ children }) => {
-  return <div class="sb-storybook-note">{children}</div>
+  return <div class="sb-note">{children}</div>
 }
