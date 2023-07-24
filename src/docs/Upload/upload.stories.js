@@ -72,12 +72,6 @@ function Template(args) {
 }
 
 function PreviewTemplate({ popover, errorMessage = 'Description of error in input', invalid, valid, loading }) {
-  const [id] = useState(uid)
-  // useEffect(() => {
-  //   uploadExample(document.getElementById(id))
-  // }, [])
-
-
   return `
   <div class="upload-preview loading mb-05 ${invalid ? 'has-danger' : ''} ${valid ? 'has-valid' : ''}">
     <div class="upload-body">
