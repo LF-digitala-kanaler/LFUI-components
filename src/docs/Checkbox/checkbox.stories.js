@@ -11,7 +11,7 @@ import {
 export default {
   title: 'Forms/Checkboxes/Checkbox',
   parameters: {
-    backgrounds: { default: 'white' },
+    backgrounds: { default: 'grey' },
     badges: ['stable']
   },
   argTypes: {
