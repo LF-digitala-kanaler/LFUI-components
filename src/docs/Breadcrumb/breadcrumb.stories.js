@@ -3,7 +3,7 @@ import Breadcrumb from './breadcrumb.html?raw'
 export default {
   title: 'Navigations/Breadcrumb',
   parameters: {
-    backgrounds: { default: 'grey' },
+    backgrounds: { default: 'gray' },
     badges: ['stable']
   }
 }
