@@ -1,11 +1,16 @@
-import Bullets from './bullets.html?raw'
-import Checkmarks from './checkmarks.html?raw'
-import Numbers from './numbers.html?raw'
-import LinkLists from './linkLists.html?raw'
+import BulletsMarkup from './bullets.html?raw'
+import CheckmarksMarkup from './checkmarks.html?raw'
+import NumbersMarkup from './numbers.html?raw'
+import LinkListsMarkup from './linkLists.html?raw'
 
-export default { title: 'Typography & text/Lists' }
+export default {
+  title: 'Typography & text/Lists',
+  parameters: {
+    badges: ['stable']
+  }
+}
 
-export const numbers = () => Numbers
-export const checkmarks = () => Checkmarks
-export const bullets = () => Bullets
-export const linkLists = () => LinkLists
+export const Numbers = () => NumbersMarkup
+export const Checkmarks = () => CheckmarksMarkup
+export const Bullets = () => BulletsMarkup
+export const LinkLists = () => LinkListsMarkup

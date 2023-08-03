@@ -1,0 +1,22 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as TagStories from './tag.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={TagStories} />
+
+# Tag <Badges of={TagStories} />
+
+<Canvas of={TagStories.Default} />
+<Controls of={TagStories.Default} />
+
+## With remove action
+<Canvas of={TagStories.WithRemoveAction} />
+
+## Modifiers
+
+### Variants
+<Canvas of={TagStories.Variants} />
+
+### Larger size
+<Canvas of={TagStories.Larger} />
