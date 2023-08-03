@@ -1,2 +1,0 @@
-import{f as o}from"./index-c68e595d.js";const u=o.createContext({});function s(t){return e;function e(r){const n=a(r.components);return o.createElement(t,{...r,allComponents:n})}}function a(t){const e=o.useContext(u);return o.useMemo(()=>typeof t=="function"?t(e):{...e,...t},[e,t])}const f={};function c({components:t,children:e,disableParentContext:r}){let n;return r?n=typeof t=="function"?t({}):t||f:n=a(t),o.createElement(u.Provider,{value:n},e)}export{u as M,c as a,a as u,s as w};
-//# sourceMappingURL=index-fe7a1e23.js.map
