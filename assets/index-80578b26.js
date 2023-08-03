@@ -1,2 +1,0 @@
-import{C as o}from"./index-407a2829.js";const u=o.createContext({});function f(t){return e;function e(r){const n=a(r.components);return o.createElement(t,{...r,allComponents:n})}}function a(t){const e=o.useContext(u);return o.useMemo(()=>typeof t=="function"?t(e):{...e,...t},[e,t])}const i={};function C({components:t,children:e,disableParentContext:r}){let n;return r?n=typeof t=="function"?t({}):t||i:n=a(t),o.createElement(u.Provider,{value:n},e)}export{u as M,C as a,a as u,f as w};
-//# sourceMappingURL=index-80578b26.js.map
