@@ -5,7 +5,7 @@ import Monthpicker from './monthpicker.html?raw'
 import { useEffect, useState } from '@storybook/client-api'
 import { monthpickerExample } from './monthpicker.jsx'
 import { datepickerExample } from './datepicker.js'
-import { html, uid } from '../../js/utils.js'
+import { uid } from '../../js/utils.js'
 
 export default {
   title: 'Forms/Datepicker'
@@ -14,7 +14,7 @@ export default {
 export const datepicker = () => {
   const [id] = useState(uid)
   useEffect(() => datepickerExample(document.getElementById(id)), [])
-  return html`
+  return `
     <div id="${id}">${Datepicker}</div>
   `
 }
@@ -24,7 +24,7 @@ export const timepicker = () => Timepicker
 export const monthpicker = () => {
   const [id] = useState(uid)
   useEffect(() => monthpickerExample(document.getElementById(id)), [])
-  return html`
+  return `
     <div id="${id}">${Monthpicker}</div>
   `
 }
