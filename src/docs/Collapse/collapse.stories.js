@@ -4,14 +4,37 @@ export default {
   title: 'Supportive microinteractions/Collapse',
   parameters: {
     badges: ['stable']
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['button', 'a']
+    },
+    background: {
+      control: 'select',
+      options: ['white', 'gray']
+    }
   }
 }
 
-function Template({ background = 'white' }) {
+function Template({ background = 'white', type = 'button' }) {
   const id = uid()
+
   return `
     <article>
-      <button type="button" id="readMoreCollapse" class="btn btn-more" data-bs-toggle="collapse" href="#${id}" aria-expanded="false" aria-controls="${id}">Read more</button>
+      <${type}
+        id="readMoreCollapse"
+        class="btn btn-more"
+        data-bs-toggle="collapse"
+        ${type === 'button' ? `data-bs-target="#${id}"` : ''}
+        ${type === 'button' ? 'type="button"' : ''}
+        ${type === 'a' ? `href="#${id}"` : ''}
+        ${type === 'a' ? 'role="button"' : ''}
+        aria-expanded="false"
+        aria-controls="${id}"
+      >
+        Read more
+      </${type}>
       <div
         id="${id}"
         class="collapse ${background === 'gray' ? 'bg-body-bg  mb-20' : ''}"
@@ -31,7 +54,8 @@ function Template({ background = 'white' }) {
 
 export const Default = Template.bind({})
 Default.args = {
-  background: 'white'
+  background: 'white',
+  type: 'button'
 }
 
 export const WithGrayBackground = Template.bind({})
