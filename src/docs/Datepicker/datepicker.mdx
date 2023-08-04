@@ -1,0 +1,187 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls, Source } from '@storybook/blocks'
+import * as DatepickerStories from './datepicker.stories'
+import { Badges } from '../../../.storybook/blocks/Badges'
+import { Note } from '../../../.storybook/blocks/Note'
+
+<Meta of={DatepickerStories} name="Datepicker" />
+
+# Datepicker <Badges of={DatepickerStories} right />
+
+<Subtitle>
+  The datepicker is the input field used when a date is the expected input. It is designed in such a
+  way that the user can either choose the date from a calendar or enter it manually.
+</Subtitle>
+
+The datepicker uses `@duetds/date-picker. The datepicker is a progressively enhanced input field which is upgraded to a custom element once initalized.
+
+The datepicker respects native input attributes for controlling e.g. minimum or maximum dates one can select.
+
+The datepicker can be customized further either by providing an options object on initialization or by defining data- attributes on the input field. Refer to the offical documentation for configutation options.
+
+<Canvas of={DatepickerStories.DefaultDatepicker} story={{ inline: false, height: 450 }} />
+<Controls of={DatepickerStories.DefaultDatepicker} />
+
+## Basic usages
+
+### Markup
+
+```html
+<div class="form-group">
+  <label for="my-date">Choose a date</label>
+  <div class="input-group">
+    <input type="date" id="my-date" name="date" class="form-control" required />
+    <span class="input-group-append">
+      <button class="btn" type="button" aria-controls="my-date" title="Välj datum">
+        <svg class="icon" width="26" height="26">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
+        </svg>
+      </button>
+    </span>
+  </div>
+</div>
+```
+
+### Initialization
+
+```javascript
+import { datepicker } from '@lansforsakringar/components'
+
+datepicker(document.getElementById('my-date'))
+```
+
+The default configuration for the datepicker is available as a named export, DEFAULTS. These can be extended upon to selectively override certain options.
+
+```javascript
+import { datepicker, DEFAULTS } from '@lansforsakringar/components/datepicker'
+
+datepicker(document.getElementById('my-date'), {
+  localization: {
+    ...DEFAULTS.localization,
+    closeLabel: 'Abort'
+  }
+})
+```
+
+### Disabled week days
+
+<Story of={DatepickerStories.DisabledWeekdays} />
+<Source of={DatepickerStories.DisabledWeekdays} />
+
+```javascript
+const weekdays = document.getElementById('date-weekdays')
+if (weekdays) {
+  const weekdaysDuetEl = datepicker(weekdays)
+  weekdaysDuetEl.isDateDisabled = function (date) {
+    return date.getDay() % 6 === 0
+  }
+}
+```
+
+### Min max
+
+<Story of={DatepickerStories.MinMax} />
+<Source of={DatepickerStories.MinMax} />
+
+```html
+...
+<input
+  type="date"
+  id="date-minmax"
+  name="date-minmax"
+  min="1984-01-01"
+  max="1984-12-31"
+  class="form-control"
+  required />
+...
+```
+
+```javascript
+const minmax = document.getElementById('date-minmax')
+if (minmax) datepicker(minmax)
+```
+
+### Valid state
+
+<Story of={DatepickerStories.ValidDatepicker} />
+<Source of={DatepickerStories.ValidDatepicker} />
+
+### Custom localization
+
+<Story of={DatepickerStories.FinishDatepicker} />
+<Source of={DatepickerStories.FinishDatepicker} />
+
+```javascript
+const finnish = document.getElementById('date-finnish')
+if (finnish) {
+  datepicker(finnish, {
+    ...DEFAULTS,
+    localization: {
+      buttonLabel: 'Valitse päivämäärä',
+      placeholder: 'pp.kk.vvvv',
+      selectedDateMessage: 'Valittu päivämäärä on',
+      prevMonthLabel: 'Edellinen kuukausi',
+      nextMonthLabel: 'Seuraava kuukausi',
+      monthSelectLabel: 'Kuukausi',
+      yearSelectLabel: 'Vuosi',
+      closeLabel: 'Sulje ikkuna',
+      calendarHeading: 'Valitse päivämäärä',
+      dayNames: [
+        'Sunnuntai',
+        'Maanantai',
+        'Tiistai',
+        'Keskiviikko',
+        'Torstai',
+        'Perjantai',
+        'Lauantai'
+      ],
+      monthNames: [
+        'Tammikuu',
+        'Helmikuu',
+        'Maaliskuu',
+        'Huhtikuu',
+        'Toukokuu',
+        'Kesäkuu',
+        'Heinäkuu',
+        'Elokuu',
+        'Syyskuu',
+        'Lokakuu',
+        'Marraskuu',
+        'Joulukuu'
+      ],
+      monthNamesShort: [
+        'Tammi',
+        'Helmi',
+        'Maalis',
+        'Huhti',
+        'Touko',
+        'Kesä',
+        'Heinä',
+        'Elo',
+        'Syys',
+        'Loka',
+        'Marras',
+        'Joulu'
+      ],
+      locale: 'fi-FI'
+    }
+  })
+}
+```
+
+## Variants
+
+### Timepicker
+
+The timepicker is the system default `input[type=time]` element.
+
+```html
+<div class="form-group" style="width: 336px;">
+  <div class="input-group datepicker" id="timepicker">
+    <input type="time" id="timepicker-input" class="form-control" placeholder="hh:mm" required />
+  </div>
+</div>
+```
+
+### Monthpicker
+
+[Read about the Monthpicker](?path=/docs/forms-datepicker--monthpicker#monthpicker-)
