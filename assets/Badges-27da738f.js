@@ -1,0 +1,2 @@
+import{u as n}from"./index-bcd42f23.js";import{o as a}from"./jsxRuntime.module-532278ff.js";const b=({of:r,right:t})=>{const e=n(r||"story",["story","meta"]);switch(e.type){case"story":{const{badges:s}=e.story.parameters;return o(s,!!t)}case"meta":{const{badges:s}=e.preparedMeta.parameters;return o(s,!!t)}}};function o(r,t){const e=r.map(s=>a("span",{class:`sb-unstyled sb-badge sb-badge-${s}`,children:s}));return a("div",{class:`sb-badge-list ${t?"sb-badge-list--right":""}`,children:e})}export{b as B};
+//# sourceMappingURL=Badges-27da738f.js.map
