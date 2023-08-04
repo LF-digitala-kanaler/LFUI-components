@@ -1,0 +1,39 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as CardStories from './card.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={CardStories} name="Card component" />
+
+# Card <Badges of={CardStories} />
+
+It's not much to say about our Card component. It's built using Bootstrap's card component. Please see Bootstrap card for full details on this use of the component.
+
+You can basically put anything you want inside `.card-block`. We do have some classes to help you with the styling, `.card-title` will give you the heading look, you can use `.card-text` if you don't want the text to fill the card's width( it has a max-width on it).
+
+```html
+<article class="card">
+  <img class="card-img-top" src="http://placehold.it/800x640/ffffff" alt="Card image cap">
+  <div class="card-block">
+    <h3 class="card-title"></h3>
+    <p class="card-text"></p>
+  </div>
+  <div class="card-footer"></div>
+</article>
+```
+
+<Canvas of={CardStories.Card} />
+<Controls of={CardStories.Card} />
+
+
+## Card deck
+
+There is a couple of helpers classes to keep in mind. If you have cards in a row and you want them to have equal height you can wrap them with `.card-deck`
+
+<Canvas of={CardStories.CardDeck} />
+
+## Clickable Card
+
+Sometimes you want your Card to be a link that can be done jsut adding a link inside your card with the class `.link-complex`.
+
+<Canvas of={CardStories.CardLink} />

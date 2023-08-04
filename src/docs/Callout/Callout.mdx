@@ -1,0 +1,32 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as CalloutStories from './callout.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={CalloutStories} name="Callout component" />
+
+# Callout <Badges of={CalloutStories} />
+
+<Subtitle>
+The callout is used to highlight information which we want the user to notice in relation to a chunk of text.
+</Subtitle>
+
+<Canvas of={CalloutStories.Callout} />
+
+## Animation
+Callout uses [Vivus](https://github.com/maxwellito/vivus) for the animation of the SVG. Animation initialise is not part of LFUI and something you have to do yourself. The animation should autostart when the component is in view. This is an example how the initialise script could look like.
+
+```javascript
+$('[data-draw]').each((index, el) => {
+  const $el = $(el);
+  const options = getDataOptions($el.data());
+
+  if (options.hasOwnProperty('on')) {
+    delete options.on;
+    options.start = 'autostart';
+    $el.on(options.on, () => draw(el, options));
+  } else {
+    draw(el, options);
+  }
+});
+```

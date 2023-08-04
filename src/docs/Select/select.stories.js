@@ -10,7 +10,7 @@ export default {
   title: 'Forms/Select',
   parameters: {
     backgrounds: { default: 'white' },
-    badges: ['stable', 'new', 'deprecated', 'experimental']
+    badges: ['stable']
   },
   argTypes: {
     selected: {
@@ -81,7 +81,7 @@ const Basic = (args) => {
     selectExample(document.getElementById(id))
   }, [args])
 
-  return html`
+  return `
     <div id="${id}">
       <form class="form-group">
         <div class="select ${args.labelInside ? 'inside' : ''}">
@@ -91,7 +91,8 @@ const Basic = (args) => {
             name="timezone"
             id="select"
             ${args.disabled === true ? 'disabled' : ''}
-            ${args.multiple ? 'multiple' : ''}>
+            ${args.multiple ? 'multiple' : ''}
+          >
             <option value="" ${args.selected === '' ? 'selected' : ''} disabled hidden>
               Välj stad
             </option>
@@ -110,7 +111,7 @@ const SmallTextTemplate = (args) => {
     selectExample(document.getElementById(id))
   }, [args])
 
-  return html`
+  return `
     <div id="${id}">
       <form class="form-group">
         <div class="select" data-small-pattern="\\((.+?)\\)">
@@ -151,7 +152,7 @@ const OptionGroupTemplate = (args) => {
     selectExample(document.getElementById(id))
   }, [args])
 
-  return html`
+  return `
     <div id="${id}">
       <form class="form-group">
         <div class="select" ${args.groupToggle ? 'data-group-toggle' : ''}>
@@ -186,7 +187,7 @@ export const DisabledOptions = (args) => {
     selectExample(document.getElementById(id))
   }, [args])
 
-  return html`
+  return `
     <div id="${id}">
       <form class="form-group">
         <div class="select">

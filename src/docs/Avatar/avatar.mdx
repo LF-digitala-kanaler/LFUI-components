@@ -1,0 +1,31 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as AvatarStories from './avatar.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={AvatarStories} />
+
+# Avatar <Badges of={AvatarStories} />
+<Subtitle>
+    Avatars are used to give a visual representations of the various parties involved in a conversation.
+</Subtitle>
+
+<Canvas of={AvatarStories.avatarDefault} />
+<Controls of={AvatarStories.avatarDefault} />
+
+## Versions
+Avatar comes in 2 different versions which all share the same base html and modifiers.
+
+### Image
+<Canvas of={AvatarStories.avatarWithImage} />
+
+### Initials
+<Canvas of={AvatarStories.avatarDefault} />
+
+## Modifiers
+
+### Theme
+<Canvas of={AvatarStories.themes} />
+
+### Inverted
+<Canvas of={AvatarStories.themesInverted} />

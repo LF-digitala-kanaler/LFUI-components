@@ -3,39 +3,48 @@ import '../src/js/index.js'
 import './iframes.scss'
 import './blocks/blocks.scss'
 
+
 export const parameters = {
   backgrounds: {
     default: 'white',
     values: [
       { name: 'white', value: '#ffffff' },
-      { name: 'grey', value: '#F3F3F3' },
+      { name: 'gray', value: '#F3F3F3' },
       { name: 'light blue', value: '#E5EFF7' }
     ]
-  },
-  badgesConfig: {
-    beta: {
-      styles: {
-        backgroundColor: '#FFF',
-        borderColor: '#018786',
-        color: '#018786',
-      },
-      title: 'Beta',
-    },
-    stable: {
-      styles: {
-        backgroundColor: '#DCF2EA',
-        borderColor: '#317159',
-        color: '#317159',
-      },
-      title: 'Beta',
-    },
-    deprecated: {
-      styles: {
-        backgroundColor: '#FFF',
-        borderColor: '#6200EE',
-        color: '#6200EE',
-      },
-      title: 'Deprecated',
-    },
-  },
+  }
 }
+
+const backgroundClass = {
+  gray: 'bg-body-bg',
+  white: '',
+  'light blue': ''
+}
+
+function getThemeColor(theme) {
+  const color = parameters.backgrounds.values.find(({ name }) => name === theme)
+
+  return color
+}
+
+function getThemeName(color) {
+  if (!color) return undefined
+
+  const returning = parameters.backgrounds.values.find(({ value }) => value === color.value)
+  return returning
+}
+
+const withThemeProvider = (Story, context) => {
+  const theme = getThemeName(context.globals.backgrounds)?.name || context.parameters.backgrounds.default;
+  const backgroundColor = getThemeColor(theme);
+
+  document.body.style.backgroundColor = backgroundColor;
+
+  return `
+  <div class="${backgroundClass[backgroundColor.name]} p-2" data-bs-theme="on-${backgroundColor.name}">
+   ${Story(context)}
+   </div>
+  `
+};
+
+export const decorators = [withThemeProvider]
