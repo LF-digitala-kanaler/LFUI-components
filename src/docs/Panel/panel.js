@@ -10,8 +10,8 @@ const panelExample = (context) => {
 
   trigger.addEventListener(
     'click',
-    function () {
-      setTimeout(function () {
+    function() {
+      setTimeout(function() {
         target.append(html`
           <table class="table mb-0">
             <colgroup>
@@ -46,7 +46,7 @@ const panelExample = (context) => {
           </table>
         `)
         trigger.dispatchEvent(new window.Event('done'))
-      }, 2500)
+      }, 1500)
     },
     { once: true }
   )

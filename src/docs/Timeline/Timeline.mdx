@@ -1,0 +1,38 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as TimelineStories from './timeline.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={TimelineStories} />
+
+# Timeline <Badges of={TimelineStories} />
+
+<Subtitle>
+The timeline component is an interactive way for the user to follow the progress of an (ongoing) errand, such as a damage claim or loan application.
+</Subtitle>
+
+<Canvas of={TimelineStories.Default} />
+
+Our Timeline uses the [collapse](/docs/supportive-microinteractions-collapse--collapse#collapse-) functionality to handle show and hide states of each timeline item.
+
+Make sure you use the the same markup as in the example above since thee css is kind of complex and the markup needs to be correct to get the desired design.
+
+On entering the detail view, only the active step will be expanded. The rest is collapsed. To expand a card you can click anywhere on the card. To collapse a card you can click on the part above the divider line (or also on Stäng in mobile view). Interacting with one card won’t affect any of the surrounding card state-wise. E.g. You could open all cards if you wish.
+
+You can put whatever you want inside `.timeline-content` but don't forget to add the close button in the end.
+
+## States
+A timeline item may have one of three states:
+
+### Upcoming
+Standard state no class needed.
+
+<Canvas of={TimelineStories.ItemUpcoming} />
+
+### Ongoing
+`.timeline-spacing` should have a class `.is-ongoing` which will make the icon larger in that item.
+<Canvas of={TimelineStories.ItemOngoing} />
+
+### Done
+`.timeline-icon` should have the class `.is-done`.
+<Canvas of={TimelineStories.ItemDone} />

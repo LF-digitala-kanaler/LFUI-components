@@ -1,0 +1,20 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as ListsStories from './lists.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={ListsStories} />
+
+# Lists <Badges of={ListsStories} />
+
+## Numbers
+<Canvas of={ListsStories.Numbers} />
+
+## Checkmars
+<Canvas of={ListsStories.Checkmarks} />
+
+## Bullets
+<Canvas of={ListsStories.Bullets} />
+
+## Link list
+<Canvas of={ListsStories.LinkLists} />

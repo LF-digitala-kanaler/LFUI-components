@@ -1,0 +1,27 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as HeadingsStories from './headings.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta of={HeadingsStories} />
+
+# Headings <Badges of={HeadingsStories} />
+
+<Subtitle>
+Headings are used to give the reader an instantaneous idea of the subject of the following text block. We have two types of headlines - normal headings and hero display headings.
+</Subtitle>
+
+## Standard headings
+<Canvas of={HeadingsStories.Standard} />
+
+### With link
+<Canvas of={HeadingsStories.StandardWithLink} />
+
+### With hidden link
+<Canvas of={HeadingsStories.StandardWithHiddenLink} />
+
+## Hero Display headings
+<Canvas of={HeadingsStories.Display} />
+
+### With highlight
+<Canvas of={HeadingsStories.DisplayWithHighlight} />
