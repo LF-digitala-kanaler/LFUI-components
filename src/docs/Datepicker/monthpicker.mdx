@@ -1,11 +1,12 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls, Source } from '@storybook/blocks'
 import * as DatepickerStories from './datepicker.stories'
-import { Badges } from '../../../.storybook/blocks/Badges';
-import { Note } from '../../../.storybook/blocks/Note';
+import { Badges } from '../../../.storybook/blocks/Badges'
+import { Note } from '../../../.storybook/blocks/Note'
 
-<Meta of={DatepickerStories} name="Monthpicker"/>
+<Meta of={DatepickerStories} name="Monthpicker" />
 
 # Monthpicker <Badges of={DatepickerStories} right />
+
 The monthpicker borrows most of its appearence and functionality from the datepicker. And just as the datepicker, the monthpicker exposes a function for intializing an input (type="month") field. The initialization function returns a container div element which has replaced the input element. To react to changes in the monthpicker, listen to the change event triggered on the returned div element.
 
 ```html
@@ -50,45 +51,54 @@ datepicker(document.getElementById('my-month'), {
 ## Variants
 
 ### Default
-<Story of={DatepickerStories.MonthDefault } />
+
+<Story of={DatepickerStories.MonthDefault} />
+<Source of={DatepickerStories.MonthDefault} />
 
 ### Min max
-<Story of={DatepickerStories.MonthMinMax } />
+
+<Story of={DatepickerStories.MonthMinMax} />
+<Source of={DatepickerStories.MonthMinMax} />
 
 ### Validated
-<Story of={DatepickerStories.MonthValidated } />
+
+<Story of={DatepickerStories.MonthValidated} />
+<Source of={DatepickerStories.MonthValidated} />
 
 #### Preact & Web component
+
 Other than the default initialization function the month picker is also exposed as both a Web Component and as a Preact component. Preact is really an implementation detail but exposing the component should allow for easier use in an JSX environment, with some configuration.
 
 ##### Properties
+
 Both alternate implemnations support the same set of properties which allows for interacting with the monthpicker.
 
-| Property | Type | Description |
-| --- | --- | --- |
-| `open` | `boolean` | Whether the monthpicker widget is open |
-| `value` | `string` | The value of the monthpicker (`YYYY-MM`) |
-| `onchange`/`onChange` | `function` | Callback function for when the value changes |
-| `onfocus`/`onFocus` | `function` | Callback function for when the input element gains focus |
-| `onblur`/`onBlur` | `function` | Callback function for when focus leaves the input element |
-| `onclose`/`onClose` | `function` | Callback function for when the widget is closed |
+| Property              | Type       | Description                                               |
+| --------------------- | ---------- | --------------------------------------------------------- |
+| `open`                | `boolean`  | Whether the monthpicker widget is open                    |
+| `value`               | `string`   | The value of the monthpicker (`YYYY-MM`)                  |
+| `onchange`/`onChange` | `function` | Callback function for when the value changes              |
+| `onfocus`/`onFocus`   | `function` | Callback function for when the input element gains focus  |
+| `onblur`/`onBlur`     | `function` | Callback function for when focus leaves the input element |
+| `onclose`/`onClose`   | `function` | Callback function for when the widget is closed           |
 
 ###### Web component
+
 Other than the default initialization function the monthpicker is exposed as standalone [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components). When using the Web Component you have to manually hook up the controls which e.g. toggle the calendar widget.
 
 ```html
 <div class="form-group">
-<label for="my-month">Choose a month</label>
-<div class="input-group">
+  <label for="my-month">Choose a month</label>
+  <div class="input-group">
     <duet-month-picker id="my-month" name="month" required></duet-month-picker>
     <span class="input-group-append">
-    <button class="btn" type="button" aria-controls="my-month" title="Välj månad">
+      <button class="btn" type="button" aria-controls="my-month" title="Välj månad">
         <svg class="icon" width="26" height="26">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
         </svg>
-    </button>
+      </button>
     </span>
-</div>
+  </div>
 </div>
 ```
 
@@ -99,8 +109,8 @@ const button = document.querySelector('[aria-controls="my-month"]')
 const monthpicker = document.getElementById('my-month')
 
 const toggle = (next = !open) => {
-monthpicker.open = open = next
-button.classList.toggle('active', open)
+  monthpicker.open = open = next
+  button.classList.toggle('active', open)
 }
 
 monthpicker.onclose = () => toggle(false)
@@ -109,37 +119,38 @@ button.addEventListener('click', () => toggle())
 ```
 
 ###### Preact Component
+
 The underlying implementation uses [Preact](https://preactjs.com/) and is hence compatible with React which could ease the implementation if used directly. When using the Preact component you have to manually hook up the controls which e.g. toggle the calendar widget.
 
 ```javascript
 import { Monthpicker } from '@lansforsakringar/components/monthpicker'
 
 function App() {
-const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
-return (
+  return (
     <div class="input-group">
       <div class="duet-month-picker">
-          <Monthpicker
+        <Monthpicker
           open={open}
           id="my-monthpicker"
           onChange={({ value }) => console.log(value)}
           onClose={() => setOpen(false)}
-          />
+        />
       </div>
       <span class="input-group-append">
-          <button
+        <button
           type="button"
           title="Välj månad"
           aria-controls="my-monthpicker"
           class={`btn ${open ? 'active' : ''}`}
           onClick={() => setOpen(!open)}>
           <svg class="icon" width="26" height="26">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
           </svg>
-          </button>
+        </button>
       </span>
-      </div>
+    </div>
   )
 }
 ```
@@ -148,13 +159,13 @@ For use with React you will have to alias `preact/hooks` to `react` and inject t
 
 ```javascript
 export default {
-esbuild: {
+  esbuild: {
     jsxInject: "import React from 'react'"
-},
-resolve: {
-      alias: {
+  },
+  resolve: {
+    alias: {
       'preact/hooks': 'react'
-      }
+    }
   }
 }
 ```

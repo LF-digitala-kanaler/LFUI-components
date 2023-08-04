@@ -1,14 +1,15 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls, Source } from '@storybook/blocks'
 import * as DatepickerStories from './datepicker.stories'
-import { Badges } from '../../../.storybook/blocks/Badges';
-import { Note } from '../../../.storybook/blocks/Note';
+import { Badges } from '../../../.storybook/blocks/Badges'
+import { Note } from '../../../.storybook/blocks/Note'
 
-<Meta of={DatepickerStories} />
+<Meta of={DatepickerStories} name="Datepicker" />
 
 # Datepicker <Badges of={DatepickerStories} right />
 
 <Subtitle>
-    The datepicker is the input field used when a date is the expected input. It is designed in such a way that the user can either choose the date from a calendar or enter it manually.
+  The datepicker is the input field used when a date is the expected input. It is designed in such a
+  way that the user can either choose the date from a calendar or enter it manually.
 </Subtitle>
 
 The datepicker uses `@duetds/date-picker. The datepicker is a progressively enhanced input field which is upgraded to a custom element once initalized.
@@ -17,8 +18,8 @@ The datepicker respects native input attributes for controlling e.g. minimum or 
 
 The datepicker can be customized further either by providing an options object on initialization or by defining data- attributes on the input field. Refer to the offical documentation for configutation options.
 
-<Story of={DatepickerStories.DefaultDatepicker } />
-<Controls of={DatepickerStories.DefaultDatepicker } />
+<Canvas of={DatepickerStories.DefaultDatepicker} story={{ inline: false, height: 450 }} />
+<Controls of={DatepickerStories.DefaultDatepicker} />
 
 ## Basic usages
 
@@ -28,7 +29,7 @@ The datepicker can be customized further either by providing an options object o
 <div class="form-group">
   <label for="my-date">Choose a date</label>
   <div class="input-group">
-    <input type="date" id="my-date" name="date" class="form-control" required>
+    <input type="date" id="my-date" name="date" class="form-control" required />
     <span class="input-group-append">
       <button class="btn" type="button" aria-controls="my-date" title="Välj datum">
         <svg class="icon" width="26" height="26">
@@ -62,33 +63,35 @@ datepicker(document.getElementById('my-date'), {
 ```
 
 ### Disabled week days
-<Story of={DatepickerStories.DisabledWeekdays } />
+
+<Story of={DatepickerStories.DisabledWeekdays} />
+<Source of={DatepickerStories.DisabledWeekdays} />
 
 ```javascript
 const weekdays = document.getElementById('date-weekdays')
 if (weekdays) {
   const weekdaysDuetEl = datepicker(weekdays)
-  weekdaysDuetEl.isDateDisabled = function(date) {
+  weekdaysDuetEl.isDateDisabled = function (date) {
     return date.getDay() % 6 === 0
   }
 }
 ```
 
-
 ### Min max
-<Story of={DatepickerStories.MinMax } />
+
+<Story of={DatepickerStories.MinMax} />
+<Source of={DatepickerStories.MinMax} />
 
 ```html
 ...
 <input
-    type="date"
-    id="date-minmax"
-    name="date-minmax"
-    min="1984-01-01"
-    max="1984-12-31"
-    class="form-control"
-    required
-/>
+  type="date"
+  id="date-minmax"
+  name="date-minmax"
+  min="1984-01-01"
+  max="1984-12-31"
+  class="form-control"
+  required />
 ...
 ```
 
@@ -98,10 +101,14 @@ if (minmax) datepicker(minmax)
 ```
 
 ### Valid state
-<Story of={DatepickerStories.ValidDatepicker } />
+
+<Story of={DatepickerStories.ValidDatepicker} />
+<Source of={DatepickerStories.ValidDatepicker} />
 
 ### Custom localization
-<Story of={DatepickerStories.FinishDatepicker } />
+
+<Story of={DatepickerStories.FinishDatepicker} />
+<Source of={DatepickerStories.FinishDatepicker} />
 
 ```javascript
 const finnish = document.getElementById('date-finnish')
@@ -164,15 +171,17 @@ if (finnish) {
 ## Variants
 
 ### Timepicker
+
 The timepicker is the system default `input[type=time]` element.
 
 ```html
 <div class="form-group" style="width: 336px;">
-    <div class="input-group datepicker" id="timepicker">
-        <input type="time" id="timepicker-input" class="form-control" placeholder="hh:mm" required/>
-    </div>
+  <div class="input-group datepicker" id="timepicker">
+    <input type="time" id="timepicker-input" class="form-control" placeholder="hh:mm" required />
+  </div>
 </div>
 ```
 
 ### Monthpicker
+
 [Read about the Monthpicker](?path=/docs/forms-datepicker--monthpicker#monthpicker-)
