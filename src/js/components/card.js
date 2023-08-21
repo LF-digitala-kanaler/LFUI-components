@@ -7,7 +7,7 @@ const done = []
 
 $(document).on('click', '[data-toggle="collapse:async"]', onClick)
 
-function onClick (event) {
+function onClick(event) {
   const $trigger = $(event.currentTarget)
   const $target = $($trigger.data('target'))
 
@@ -34,7 +34,10 @@ function onClick (event) {
         $target
           .collapse('show')
           .one('shown.bs.collapse', () => {
-            $trigger.removeClass(LOADING_CLASS).prop('disabled', false)
+            $trigger
+              .removeClass(LOADING_CLASS)
+              .prop('disabled', false)
+              .focus()
           })
 
         $trigger.attr(
