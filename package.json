@@ -1,6 +1,6 @@
 {
   "name": "@lansforsakringar/components",
-  "version": "9.1.0",
+  "version": "9.1.1",
   "license": "MIT",
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
