@@ -9,7 +9,7 @@ const collapsibles = new WeakMap()
 
 document.addEventListener(
   'click',
-  delegate('[data-bs-toggle="collapse:async"]', function (event) {
+  delegate('[data-bs-toggle="collapse:async"]', function() {
     const target = document.querySelector(this.dataset.bsTarget)
     if (!target) return
 
@@ -37,6 +37,8 @@ document.addEventListener(
             () => {
               this.classList.remove(LOADING_CLASS)
               this.removeAttribute('disabled')
+              // Disabled controls can't have focus, because of this we loast the focus state when we disabled the button.
+              this.focus()
             },
             { once: true }
           )
