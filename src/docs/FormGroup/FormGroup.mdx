@@ -1,0 +1,32 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+
+import * as FormGroupStories from './FormGroup.stories'
+
+# Form group
+<Meta of={FormGroupStories} />
+
+We use `form-group` for grouping form control (like input, select etc.) with a label, descriptions and error message.
+
+<Canvas of={FormGroupStories.Grouping} />
+
+More information about grouping, form layout and validation, visit [LFDS: Form patterns](https://lfds.netlify.app/patterns/form-patterns)
+
+## Description/helptext
+
+```html
+<small class="form-text text-muted">Helptext here</small>
+```
+
+## Error message
+The text color is controled by the state class `has-danger` on the `form-group` element.
+```html
+<small class="form-control-feedback">This is an error message</small>
+```
+
+## States
+
+### Invalid `has-danger`
+<Canvas of={FormGroupStories.Invalid} />
+
+### Valid `has-success`
+<Canvas of={FormGroupStories.Valid} />
