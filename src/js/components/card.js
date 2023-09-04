@@ -37,7 +37,8 @@ function onClick(event) {
             $trigger
               .removeClass(LOADING_CLASS)
               .prop('disabled', false)
-              .focus()
+
+            $trigger[0].focus({ focusVisible: true })
           })
 
         $trigger.attr(

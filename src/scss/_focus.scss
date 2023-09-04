@@ -10,7 +10,7 @@ html body .focus {
   outline: 0 !important;
 }
 
-html body[data-focus-source="key"] :focus,
+html body[data-focus-source="key"] :focus-visible,
 html body[data-focus-source="key"] .focus {
   z-index: 10;
   outline: 4px solid $orange !important;

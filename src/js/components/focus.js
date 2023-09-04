@@ -12,7 +12,7 @@ const keyboardModalityWhitelist = [
   '[supports-focus=key]'
 ].join(',')
 
-const matcher = (function () {
+const matcher = (function() {
   const el = document.body
 
   if (el.matchesSelector) {
@@ -31,14 +31,14 @@ const matcher = (function () {
   return false
 }())
 
-function focusTriggersKeyboardModality (el) {
+function focusTriggersKeyboardModality(el) {
   let triggers = false
 
   if (matcher) {
     triggers = matcher.call(
       el,
       keyboardModalityWhitelist) && matcher.call(el, ':not([readonly])'
-    )
+      )
   }
 
   return triggers
