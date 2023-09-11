@@ -37,7 +37,7 @@ document.addEventListener(
             () => {
               this.classList.remove(LOADING_CLASS)
               this.removeAttribute('disabled')
-              // Disabled controls can't have focus, because of this we loast the focus state when we disabled the button.
+              // Restore focus state on the button, after losing it on disabled button.
               this.focus()
             },
             { once: true }
