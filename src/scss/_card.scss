@@ -1,4 +1,22 @@
 @import "base/index";
+
+// Bootstrap variables
+$card-spacer-y:       1rem ;
+$card-spacer-x:       1.25rem ;
+$card-title-spacer-y: $spacer * .5;
+$card-border-width:   0;
+$card-cap-bg:         $white;
+$card-cap-padding-y:  $card-spacer-y * .5;
+$card-cap-padding-x:  $card-spacer-x;
+$card-box-shadow:     null;
+$card-height:         null;
+
+$card-block-padding:  1rem 1.25rem 1.5rem;
+$card-footer-padding: 1.25rem 1.25rem 1.5rem;
+
+// DEPRICATED IN Bootstrap v5
+// $card-deck-margin:    .625rem !default;
+
 @import "bootstrap/scss/_card.scss";
 
 .card-block {
