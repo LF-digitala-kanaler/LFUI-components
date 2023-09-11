@@ -1,5 +1,6 @@
+const bodyElement = document.body
 let hadKeyboardEvent = false
-let isHandlingKeyboardThrottle
+let hasClickEvent = false
 const keyboardModalityWhitelist = [
   'input:not([type])',
   'input[type=text]',
@@ -13,19 +14,17 @@ const keyboardModalityWhitelist = [
 ].join(',')
 
 const matcher = (function() {
-  const el = document.body
-
-  if (el.matchesSelector) {
-    return el.matchesSelector
+  if (bodyElement.matchesSelector) {
+    return bodyElement.matchesSelector
   }
-  if (el.webkitMatchesSelector) {
-    return el.webkitMatchesSelector
+  if (bodyElement.webkitMatchesSelector) {
+    return bodyElement.webkitMatchesSelector
   }
-  if (el.mozMatchesSelector) {
-    return el.mozMatchesSelector
+  if (bodyElement.mozMatchesSelector) {
+    return bodyElement.mozMatchesSelector
   }
-  if (el.msMatchesSelector) {
-    return el.msMatchesSelector
+  if (bodyElement.msMatchesSelector) {
+    return bodyElement.msMatchesSelector
   }
 
   return false
@@ -41,36 +40,39 @@ function focusTriggersKeyboardModality(el) {
   return triggers
 }
 
-document.body.addEventListener(
+function resetKeyboardEvent(event) {
+  if (event.detail) {
+    hadKeyboardEvent = false
+    hasClickEvent = false
+  }
+}
+
+bodyElement.addEventListener(
   'keydown',
   () => {
     hadKeyboardEvent = true
 
-    if (isHandlingKeyboardThrottle) {
-      clearTimeout(isHandlingKeyboardThrottle)
+    if (!hasClickEvent) {
+      bodyElement.addEventListener('click', resetKeyboardEvent, { once: true })
     }
-
-    isHandlingKeyboardThrottle = setTimeout(() => {
-      hadKeyboardEvent = false
-    }, 100)
   },
   true
 )
 
-document.body.addEventListener(
+bodyElement.addEventListener(
   'focus',
   (e) => {
     if (hadKeyboardEvent || focusTriggersKeyboardModality(e.target)) {
-      document.body.setAttribute('data-focus-source', 'key')
+      bodyElement.setAttribute('data-focus-source', 'key')
     }
   },
   true
 )
 
-document.body.addEventListener(
+bodyElement.addEventListener(
   'blur',
   () => {
-    document.body.removeAttribute('data-focus-source')
+    bodyElement.removeAttribute('data-focus-source')
   },
   true
 )
