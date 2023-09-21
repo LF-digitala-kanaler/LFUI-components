@@ -31,21 +31,9 @@ export default {
   }
 }
 
-export const single = storyWrapper(() => {
-  const [id] = useState(uid)
-  useEffect(() => selectExample(document.getElementById(id)), [])
-  return html`
-    <div id="${id}">${Single}</div>
-  `
-})
+export const single = () => Single
 
-export const multiple = storyWrapper(() => {
-  const [id] = useState(uid)
-  useEffect(() => selectExample(document.getElementById(id)), [])
-  return html`
-    <div id="${id}">${Multiple}</div>
-  `
-})
+export const multiple = () => Multiple
 
 // export const react = storyWrapper(() => {
 //   const [id] = useState(uid)
@@ -85,15 +73,15 @@ const Basic = (args) => {
     <div id="${id}">
       <form class="form-group">
         <div class="select ${args.labelInside ? 'inside' : ''}">
-          <label class="select-label" for="select">${args.label || 'Stad'}</label>
+          <label class="select-label" for="select-${id}">${args.label || 'Stad'}</label>
           <select
             class="select-options"
             name="timezone"
-            id="select"
+            id="select-${id}"
             ${args.disabled === true ? 'disabled' : ''}
             ${args.multiple ? 'multiple' : ''}
           >
-            <option value="" ${args.selected === '' ? 'selected' : ''} disabled hidden>
+            <option value="" ${args.selected === '' ? 'selected' : ''} disabled>
               Välj stad
             </option>
             ${renderOptions(args.selected)}
@@ -191,13 +179,13 @@ export const DisabledOptions = (args) => {
     <div id="${id}">
       <form class="form-group">
         <div class="select">
-          <label class="select-label" for="select">${args.label || 'Stad'}</label>
+          <label class="select-label" for="select-${id}">${args.label || 'Stad'}</label>
           <select
             class="select-options"
             name="timezone"
-            id="select"
+            id="select-${id}"
             ${args.multiple ? 'multiple' : ''}>
-            <option value="" selected disabled hidden>Välj stad</option>
+            <option value="" selected disabled>Välj stad</option>
             <option value="stockholm" disabled>Stockholm</option>
             <option value="göteborg">Göteborg</option>
             <option value="malmö" disabled>Malmö</option>

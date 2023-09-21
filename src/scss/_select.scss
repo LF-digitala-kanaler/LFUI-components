@@ -1,6 +1,7 @@
 @import "base/index";
 @import "bootstrap/scss/_dropdown.scss";
 
+
 .select {
   /* Disable dropdown list animation */
   --dropdown-menu-open-animation-duration: 0ms;
@@ -163,6 +164,7 @@
   text-overflow: ellipsis;
   white-space: pre;
   user-select: none;
+  pointer-events: none;
 }
 
 /* Multiple select counter */
@@ -432,4 +434,15 @@
       background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
     }
   }
+}
+
+.select-option:focus,
+.select-option--focus {
+  color: #005aa0;
+  background-color: $dropdown-link-hover-bg;
+}
+
+.select-option[aria-disabled="true"] {
+  color: $silver;
+  cursor: not-allowed;
 }

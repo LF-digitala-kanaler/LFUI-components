@@ -1,5 +1,63 @@
 import Dropdown from 'bootstrap5/js/src/dropdown'
-import { h, Ref } from '../utils'
+import { h, Ref, uid } from '../utils'
+
+function focusSelectOption(position, list) {
+  console.log('position', position, list)
+  if (typeof position === 'object') {
+    if (
+      position.classList.contains('select-option') &&
+      !position.classList.contains('select-option--focus')
+    ) {
+      list.querySelector('.select-option--focus').classList.remove('select-option--focus')
+      position.classList.add('select-option--focus')
+    }
+  }
+  if (position === 'selected') {
+    list.querySelector('.select-option--selected').classList.add('select-option--focus')
+  }
+
+  if (position === 'next') {
+    const focusedItem = list.querySelector('.select-option--focus')
+    if (!focusedItem.nextElementSibling) {
+      list.firstElementChild.classList.add('select-option--focus')
+    } else {
+      console.log('next', focusedItem.nextElementSibling)
+      focusedItem.nextElementSibling.classList.add('select-option--focus')
+    }
+
+    focusedItem.classList.remove('select-option--focus')
+  }
+  if (position === 'prev') {
+    const focusedItem = list.querySelector('.select-option--focus')
+    if (!focusedItem.previousElementSibling) {
+      list.lastElementChild.classList.add('select-option--focus')
+    } else {
+      focusedItem.previousElementSibling.classList.add('select-option--focus')
+    }
+    focusedItem.classList.remove('select-option--focus')
+  }
+  if (position === 'first') {
+    const focusedItem = list.querySelector('.select-option--focus')
+    list.firstElementChild.classList.add('select-option--focus')
+    focusedItem.classList.remove('select-option--focus')
+  }
+  if (position === 'last') {
+    const focusedItem = list.querySelector('.select-option--focus')
+    list.lastElementChild.classList.add('select-option--focus')
+    focusedItem.classList.remove('select-option--focus')
+  }
+
+  setTimeout(function () {
+    list.setAttribute('aria-activedescendant', list.querySelector('.select-option--focus').id)
+
+    //For webkit (announces selected on all options though...)
+    //list.querySelector('[aria-selected="true"]').setAttribute('aria-selected','false');
+    //list.querySelector('.select-option--focus').setAttribute('aria-selected','false');
+
+    //Set focus on option.. works better for webkit
+    list.querySelector('.select-option--focus').focus()
+  }, 0)
+}
 
 const initialized = new WeakSet()
 
@@ -20,6 +78,11 @@ export function select(el, opts = el.dataset) {
   const select = el.querySelector('.select-options')
   const label = el.querySelector('.select-label')
   const id = Math.random().toString(36).substr(2, 9)
+  let selectOpen = false
+
+  function toggleSelect() {
+    selectOpen ? closeSelect() : openSelect()
+  }
 
   // Don't bother with disabled or missing elements
   if (!label || !select || select.disabled || initialized.has(el)) {
@@ -28,9 +91,10 @@ export function select(el, opts = el.dataset) {
 
   let preventClose = false
   const initiallySelected = [...select.selectedOptions]
-  let placeholder = select.querySelector('option[value=""][disabled]')
+  const placeholder = initiallySelected.find(isPlaceholder)
   const initiallyValid = initiallySelected.filter((child) => !isPlaceholder(child))
-
+  let clickOutside
+  let hoverFocus
   setValidState(select, initiallyValid.length)
 
   // Set up internal lookup mechanisms
@@ -39,16 +103,113 @@ export function select(el, opts = el.dataset) {
   const selectAll = new Ref()
   const status = new Ref()
 
+  function selectOption(target) {
+    const items = list.querySelectorAll('.select-option')
+    for (const item of items) {
+      item.classList.remove('select-option--selected')
+      item.setAttribute('aria-selected', 'false')
+    }
+
+    target.classList.add('select-option--selected')
+    target.setAttribute('aria-selected', 'true')
+    toggle.innerHTML = target.innerHTML // Works fine with only text.
+    closeSelect()
+  }
+
+  function closeSelect() {
+    list.setAttribute('hidden', true)
+    list.classList.remove('axs-select__list--top')
+    toggle.setAttribute('aria-expanded', 'false')
+    const items = list.querySelectorAll('.axs-select__list-item')
+    for (const item of items) {
+      item.classList.remove('axs-select__list-item--focus')
+    }
+    selectOpen = false
+    document.removeEventListener('click', clickOutside)
+    document.removeEventListener('mouseover', hoverFocus)
+    setTimeout(function () {
+      toggle.setAttribute('tabindex', '0')
+    }, 0)
+  }
+
+  function openSelect(e) {
+    toggle.setAttribute('tabindex', '-1')
+    toggle.setAttribute('aria-expanded', 'true')
+    list.removeAttribute('hidden')
+    focusSelectOption('selected', list)
+    selectOpen = true
+
+    console.log('open select')
+
+    if (window.innerHeight - toggle.getBoundingClientRect().bottom < toggle.scrollHeight) {
+      list.classList.add('axs-select__list--top')
+    }
+    document.addEventListener(
+      'click',
+      (clickOutside = (e) => {
+        if (e.target !== toggle && e.target !== list && !list.contains(e.target)) {
+          closeSelect()
+        }
+      })
+    )
+    list.addEventListener(
+      'mouseover',
+      (hoverFocus = (e) => {
+        if (e.target.classList.contains('select-option') || e.target.closest('.select-option')) {
+          const item = e.target.classList.contains('select-option')
+            ? e.target
+            : e.target.closest('.select-option')
+          focusSelectOption(item, list)
+        }
+      })
+    )
+  }
+
   // The button which open the custom select list
   const toggle = h(
     'button',
     {
       type: 'button',
-      title: label.textContent,
-      class: 'select-toggle dropdown-toggle',
-      'data-bs-toggle': 'dropdown',
+      class: 'select-toggle',
+      id: `dropdown-select-${id}`,
       'aria-expanded': 'false',
-      'aria-controls': `list-${id}`
+      'aria-controls': `list-${id}`,
+      'aria-labelledby': `dropdown-label-${id} dropdown-select-${id}`,
+      'aria-haspopup': 'listbox',
+      onclick() {
+        toggleSelect()
+        setTimeout(function () {
+          if (!selectOpen) {
+            toggle.focus()
+          } else {
+            list.focus()
+          }
+        }, 0)
+      },
+      onkeydown(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          toggleSelect()
+          setTimeout(function () {
+            if (!selectOpen) {
+              toggle.focus()
+            } else {
+              list.focus()
+            }
+          }, 0)
+          e.preventDefault()
+        }
+
+        if (e.key === 'Escape') {
+          closeSelect()
+          toggle.focus()
+          e.preventDefault()
+        }
+        if (e.key === 'ArrowDown') {
+          openSelect()
+          list.focus()
+          e.preventDefault()
+        }
+      }
     },
     [
       h(
@@ -68,8 +229,25 @@ export function select(el, opts = el.dataset) {
     ]
   )
 
-  function renderItems() {
-    return [
+  // The list of options
+  const list = h(
+    'ul',
+    {
+      id: `list-${id}`,
+      role: 'listbox',
+      tabindex: '-1',
+      class: 'select-list',
+      'aria-labelledby': `dropdown-label-${id}`,
+      hidden: true,
+      // We want this later.
+      // 'aria-activedescendant': select.selectedOptions[0].id,
+      onclick() {
+        // Disable automatic closing on click
+        preventClose = preventClose || select.multiple
+        console.log('prevent clode?', preventClose)
+      }
+    },
+    [
       // Toggle all button
       select.multiple && config.allLabel
         ? h(
@@ -83,7 +261,7 @@ export function select(el, opts = el.dataset) {
                 for (const option of select.options) {
                   if (!option.disabled) option.selected = selected
                 }
-                select.dispatchEvent(new window.Event('change', { bubbles: true }))
+                select.dispatchEvent(new window.Event('change'))
                 event.preventDefault()
               }
             },
@@ -130,16 +308,19 @@ export function select(el, opts = el.dataset) {
             [
               config.groupToggle
                 ? h(
-                    'button',
+                    'li',
                     {
+                      role: 'option',
                       ref: button,
-                      type: 'button',
+                      // type: 'button',
                       id: `group-${index}-trigger-${id}`,
                       class: `select-option ${
                         select.multiple ? 'multiple' : ''
                       } toggle dropdown-item`,
-                      'aria-expanded': 'true',
-                      'aria-controls': `group-${index}-list-${id}`,
+                      // 'aria-expanded': 'true',
+                      // 'aria-controls': `group-${index}-list-${id}`,
+
+                      // TODO: NEED to add keyboard event to handle enter or spacebar to select option.
                       onclick() {
                         expanded = !expanded
                         this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
@@ -177,40 +358,102 @@ export function select(el, opts = el.dataset) {
         const button = new Ref()
         buttons.set(child, button)
 
+        console.log('selected', selected)
+
         return h(
-          'button',
+          'li',
           {
-            disabled,
+            id: `select-option-${index}-${id}`,
+            'aria-disabled': disabled,
             ref: button,
-            type: 'button',
-            class: `select-option dropdown-item ${select.multiple ? 'multiple' : ''} ${
-              selected ? 'selected' : ''
+            // type: 'button',
+            role: 'option',
+            'aria-selected': selected,
+            tabindex: '-1',
+            class: `select-option ${select.multiple ? 'multiple' : ''} ${
+              selected ? 'selected select-option--selected' : ''
             }`,
             onclick(event) {
-              child.selected = select.multiple ? !child.selected : true
-              select.dispatchEvent(new window.Event('change', { bubbles: true }))
+              if (!child.disabled) {
+                child.selected = select.multiple ? !child.selected : true
+                select.dispatchEvent(new window.Event('change'))
+              }
             }
           },
           resolveLabel(label, config.smallPattern, disabled ? '' : undefined)
         )
       })
     ]
-  }
-
-  // The list of options
-  const list = h(
-    'div',
-    {
-      id: `list-${id}`,
-      'aria-labelledby': `label-${id}`,
-      class: 'select-list dropdown-menu',
-      onclick() {
-        // Disable automatic closing on click
-        preventClose = preventClose || select.multiple
-      }
-    },
-    renderItems()
   )
+
+  list.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      const item = list.querySelector('.select-option--focus')
+
+      if (item.ariaDisabled === 'true') {
+        console.log('is disabled')
+        event.stopPropagation()
+      } else {
+        selectOption(item)
+        toggle.focus()
+      }
+
+      event.preventDefault()
+    }
+    if (event.key === 'Escape') {
+      closeSelect()
+      toggle.focus()
+      event.preventDefault()
+    }
+    if (event.key === 'Tab') {
+      closeSelect()
+    }
+    if (event.key === 'ArrowDown') {
+      focusSelectOption('next', list)
+      event.preventDefault()
+    }
+    if (event.key === 'ArrowUp') {
+      focusSelectOption('prev', list)
+      event.preventDefault()
+    }
+    if (event.key === 'Home') {
+      focusSelectOption('first', list)
+      event.preventDefault()
+    }
+    if (event.key === 'End') {
+      focusSelectOption('last', list)
+      event.preventDefault()
+    }
+
+    // Search functionality
+    // if (/^.$/u.test(e.key)) {
+    //   keyString += e.key
+    //   clearTimeout(typingTimer)
+    //   if (keyString) {
+    //     let matchedItems = filterSelect(keyString, options)
+    //     focusSelectOption(matchedItems[0])
+    //     typingTimer = setTimeout(function () {
+    //       keyString = ''
+    //     }, 250)
+    //   }
+    // }
+  })
+
+  list.addEventListener('click', function (event) {
+    if (
+      event.target.classList.contains('select-option') ||
+      event.target.closest('.select-option')
+    ) {
+      const item = event.target.classList.contains('select-option')
+        ? event.target
+        : event.target.closest('.select-option')
+
+      if (item.ariaDisabled === 'false') {
+        selectOption(item)
+        toggle.focus()
+      }
+    }
+  })
 
   // Prevent automatic close on click
   el.addEventListener('hide.bs.dropdown', function (event) {
@@ -223,15 +466,15 @@ export function select(el, opts = el.dataset) {
   // Update status and labels on change
   select.addEventListener('change', function () {
     selectAll.current?.classList.toggle('selected', allAreSelected(select))
-
+    console.log('select changed')
     const states = new Map()
 
     // Update proxy buttons
     for (const option of select.options) {
-      if (option.disabled) continue
+      // if (option.disabled) continue
       const ref = buttons.get(option)
       ref?.current.classList.toggle('selected', option.selected)
-
+      ref?.current.setAttribute('aria-selected', option.selected)
       // Calculate group status
       if (groups.has(option)) {
         const button = groups.get(option)
@@ -274,37 +517,13 @@ export function select(el, opts = el.dataset) {
 
   // Update DOM
   el.classList.add('initialized')
-  label.id = `label-${id}`
+  label.id = `dropdown-label-${id}`
   select.after(toggle, list)
 
   const dropdown = new Dropdown(toggle)
 
   // Cache element to prevent double initialization
   initialized.add(el)
-
-  const callback = (mutationList, observer) => {
-    for (const mutation of mutationList) {
-      if (mutation.type === 'childList' || mutation.type === 'carachterData') {
-        const frag = document.createDocumentFragment()
-        frag.append(...renderItems().filter((item) => item))
-        list.innerHTML = ''
-        list.append(frag)
-        placeholder = placeholder = select.querySelector('option[value=""][disabled]')
-        select.dispatchEvent(new window.Event('change'))
-      }
-    }
-  }
-
-  // Create an observer instance linked to the callback function
-  const observer = new window.MutationObserver(callback)
-
-  // Start observing the target node for configured mutations
-  observer.observe(select, {
-    attributes: false,
-    childList: true,
-    subtree: true,
-    characterData: true
-  })
 }
 
 /**
