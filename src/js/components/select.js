@@ -115,7 +115,6 @@ export function select(el, opts = el.dataset) {
 
     target.classList.add('select-option--selected')
     target.setAttribute('aria-selected', 'true')
-    console.log('set', target._selectElement.selected, select.multiple)
     target._selectElement.selected = select.multiple ? !target._selectElement.selected : true
 
 
@@ -248,6 +247,7 @@ export function select(el, opts = el.dataset) {
       tabindex: '-1',
       class: 'select-list',
       'aria-labelledby': `dropdown-label-${id}`,
+      'aria-multiselectable': select.multiple,
       hidden: true,
       // We want this later.
       // 'aria-activedescendant': select.selectedOptions[0].id,
