@@ -385,8 +385,8 @@
       transition: $input-transition;
     }
 
-    &.selected::before,
-    &.indeterminate::before {
+    &.select-option--selected::before,
+    &.select-option--indeterminate::before {
       border-color: $link_color;
     }
 
@@ -402,7 +402,7 @@
       transform: translateY(-50%);
     }
 
-    &.indeterminate::after {
+    &.select-option--indeterminate::after {
       left: 1rem;
       width: .625rem;
       height: $border-width;
@@ -414,7 +414,7 @@
       left: calc(#{$input-padding-x} + 2.0625rem);
     }
 
-    &.selected::after {
+    &.select-option--selected::after {
       background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
       background-repeat: no-repeat;
       background-position: center;
@@ -426,11 +426,11 @@
       border-color: $smoke;
     }
 
-    &.selected[disabled]::before {
+    &.select-option--selected[disabled]::before {
       border-color: #bfd4e5;
     }
 
-    &[disabled].selected::after {
+    &[disabled].select-option--selected::after {
       background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
     }
   }
