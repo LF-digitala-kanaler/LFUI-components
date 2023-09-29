@@ -248,8 +248,12 @@
  * The custom select list that is popping up/down
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
-
 .select-list {
+  position: absolute;
+  top:100%;
+  left:0;
+  xxxmax-height: 280px;
+
   z-index: 1004;
   width: 100%;
   max-height: 25.25rem;
@@ -284,6 +288,11 @@
     margin-left: .125rem;
     background-color: $blue;
   }
+}
+
+.select-list--top {
+  top:auto;
+  bottom:100%;
 }
 
 @media (max-height: 29rem) {

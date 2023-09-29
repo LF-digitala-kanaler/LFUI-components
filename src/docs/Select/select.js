@@ -1,4 +1,5 @@
-import { select } from '../../js/components/select.js'
+// import { select } from '../../js/components/select.js'
+import { Select } from '../../js/components/select_new.js'
 
 export function selectExample(context) {
   if (!context) {
@@ -8,6 +9,6 @@ export function selectExample(context) {
   context.addEventListener('change', (event) => console.log('change!', [...event.target.selectedOptions].map((option) => option.value)))
 
   for (const el of context.querySelectorAll('.select')) {
-    select(el)
+    new Select(el)
   }
 }

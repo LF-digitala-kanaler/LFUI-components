@@ -1,12 +1,8 @@
-import Dropdown from 'bootstrap5/js/src/dropdown'
-import { h, Ref } from '../utils'
+import { h, Ref, uid } from '../utils'
 
-function focusSelectOption(position, list) {
+function moveFocusTo(position, list) {
   if (typeof position === 'object') {
-    if (
-      position.classList.contains('select-option') &&
-      !position.classList.contains('select-option--focus')
-    ) {
+    if (!position.classList.contains('select-option--focus')) {
       list.querySelector('.select-option--focus').classList.remove('select-option--focus')
       position.classList.add('select-option--focus')
     }
@@ -76,8 +72,11 @@ export function select(el, opts = el.dataset) {
   const config = getConfig(opts)
   const select = el.querySelector('.select-options')
   const label = el.querySelector('.select-label')
-  const id = Math.random().toString(36).substr(2, 9)
+  const id = uid()
   let selectOpen = false
+  let preventClose = false
+  let clickOutside
+  let hoverFocus
 
   function toggleSelect() {
     selectOpen ? closeSelect() : openSelect()
@@ -88,16 +87,13 @@ export function select(el, opts = el.dataset) {
     return
   }
 
-  let preventClose = false
   const initiallySelected = [...select.selectedOptions]
   const placeholder = initiallySelected.find(isPlaceholder)
   const initiallyValid = initiallySelected.filter((child) => !isPlaceholder(child))
-  let clickOutside
-  let hoverFocus
   setValidState(select, initiallyValid.length)
 
   // Set up internal lookup mechanisms
-  const buttons = new WeakMap()
+  const menuItems = new WeakMap()
   const groups = new WeakMap()
   const selectAll = new Ref()
   const status = new Ref()
@@ -127,11 +123,11 @@ export function select(el, opts = el.dataset) {
 
   function closeSelect() {
     list.setAttribute('hidden', true)
-    list.classList.remove('axs-select__list--top')
+    list.classList.remove('select-list--top')
     toggle.setAttribute('aria-expanded', 'false')
-    const items = list.querySelectorAll('.axs-select__list-item')
+    const items = list.querySelectorAll('.select-option')
     for (const item of items) {
-      item.classList.remove('axs-select__list-item--focus')
+      item.classList.remove('select-option--focus')
     }
     selectOpen = false
     document.removeEventListener('click', clickOutside)
@@ -145,11 +141,11 @@ export function select(el, opts = el.dataset) {
     toggle.setAttribute('tabindex', '-1')
     toggle.setAttribute('aria-expanded', 'true')
     list.removeAttribute('hidden')
-    focusSelectOption('selected', list)
+    moveFocusTo('selected', list)
     selectOpen = true
 
     if (window.innerHeight - toggle.getBoundingClientRect().bottom < toggle.scrollHeight) {
-      list.classList.add('axs-select__list--top')
+      list.classList.add('select-list--top')
     }
 
     document.addEventListener(
@@ -168,7 +164,7 @@ export function select(el, opts = el.dataset) {
           const item = e.target.classList.contains('select-option')
             ? e.target
             : e.target.closest('.select-option')
-          focusSelectOption(item, list)
+          moveFocusTo(item, list)
         }
       })
     )
@@ -340,12 +336,14 @@ export function select(el, opts = el.dataset) {
                       // Ugly hack to prevent Bootstrap dropdown from including
                       // hidden items in key navigation
                       for (const option of child.children) {
-                        const button = buttons.get(option)
+                        const button = menuItems.get(option)
                         button.current.classList.toggle('disabled', !expanded)
                       }
 
                       // Update dropdown position
-                      dropdown.update()
+                      // dropdown.update()
+                      //
+                      // TODO: we need to update the position maybe
                     }
                   },
                   label
@@ -364,7 +362,7 @@ export function select(el, opts = el.dataset) {
 
         // Add to internal element reverse lookup table
         const button = new Ref()
-        buttons.set(child, button)
+        menuItems.set(child, button)
 
         const listItem = h(
           'li',
@@ -413,19 +411,19 @@ export function select(el, opts = el.dataset) {
       closeSelect()
     }
     if (event.key === 'ArrowDown') {
-      focusSelectOption('next', list)
+      moveFocusTo('next', list)
       event.preventDefault()
     }
     if (event.key === 'ArrowUp') {
-      focusSelectOption('prev', list)
+      moveFocusTo('prev', list)
       event.preventDefault()
     }
     if (event.key === 'Home') {
-      focusSelectOption('first', list)
+      moveFocusTo('first', list)
       event.preventDefault()
     }
     if (event.key === 'End') {
-      focusSelectOption('last', list)
+      moveFocusTo('last', list)
       event.preventDefault()
     }
 
@@ -435,7 +433,7 @@ export function select(el, opts = el.dataset) {
     //   clearTimeout(typingTimer)
     //   if (keyString) {
     //     let matchedItems = filterSelect(keyString, options)
-    //     focusSelectOption(matchedItems[0])
+    //     moveFocusTo(matchedItems[0])
     //     typingTimer = setTimeout(function () {
     //       keyString = ''
     //     }, 250)
@@ -475,7 +473,7 @@ export function select(el, opts = el.dataset) {
     // Update proxy buttons
     for (const option of select.options) {
       // if (option.disabled) continue
-      const ref = buttons.get(option)
+      const ref = menuItems.get(option)
       ref?.current.classList.toggle('select-option--selected', option.selected)
       ref?.current.setAttribute('aria-selected', option.selected)
       // Calculate group status
@@ -524,8 +522,6 @@ export function select(el, opts = el.dataset) {
   el.classList.add('initialized')
   label.id = `dropdown-label-${id}`
   select.after(toggle, list)
-
-  const dropdown = new Dropdown(toggle)
 
   // Cache element to prevent double initialization
   initialized.add(el)
