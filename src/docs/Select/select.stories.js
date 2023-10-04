@@ -1,8 +1,7 @@
-import Multiple from './multiple.html?raw'
-import Single from './single.html?raw'
+import SingleMarkup from './single.html?raw'
 import { useEffect, useState } from '@storybook/client-api'
 import { selectExample } from './select'
-import { html, uid, storyWrapper } from '../../js/utils'
+import { uid } from '../../js/utils'
 // import { ReactSelect } from './reactExample.jsx'
 // import { render } from 'preact'
 
@@ -31,10 +30,20 @@ export default {
   }
 }
 
-export const single = () => Single
+export const Single = () => {
+  const [id] = useState(uid)
+  useEffect(() => {
+    selectExample(document.getElementById(id))
+  }, [])
 
-// export const multiple = () => Multiple
-export const multiple = (args) => {
+  return `
+    <div id="${id}">
+      ${SingleMarkup}
+    </div>
+  `
+}
+
+export const Multiple = () => {
   const [id] = useState(uid)
   useEffect(() => selectExample(document.getElementById(id)), [])
   return `

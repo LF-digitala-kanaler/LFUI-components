@@ -1,7 +1,6 @@
 @import "base/index";
 @import "bootstrap/scss/_dropdown.scss";
 
-
 .select {
   /* Disable dropdown list animation */
   --dropdown-menu-open-animation-duration: 0ms;
@@ -320,6 +319,14 @@
   }
 }
 
+/* Toggle group visibility */
+.select-group .select-list {
+    display: none;
+}
+.select-group.show .select-list {
+    display: block;
+}
+
 /**
  * 1. Preserve whitespace in flex context, needed for small text
  */
@@ -355,7 +362,6 @@
     padding-right: calc(#{$input-padding-x} * 2 + 18px);
     background-position: calc(100% - #{$input-padding-x} + 1px) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2 + 1px);
     background-size: 18px 12px;
-
     .text-muted {
       flex: 1;
       text-align: right;
