@@ -56,6 +56,10 @@ export class Select {
     // Cache element to prevent double initialization
     initialized.add(element)
 
+    this.initMarkupChangeObserver()
+  }
+
+  initMarkupChangeObserver() {
     const callback = (mutationList) => {
       for (const mutation of mutationList) {
         if (mutation.type === 'childList' || mutation.type === 'characterData') {
@@ -118,7 +122,8 @@ export class Select {
       }
     }
     if (position === 'selected') {
-      const selectedItem = list.querySelector('.select-option--selected') || list.querySelector('.select-option')
+      const selectedItem =
+        list.querySelector('.select-option--selected') || list.querySelector('.select-option')
       selectedItem.classList.add('select-option--focus')
     }
 
@@ -184,26 +189,17 @@ export class Select {
     statusNode.dataset.count = selected.length || ''
 
     // Update status label
-    const items = selected.length
-      ? selected
-      : this.placeholder
-        ? [this.placeholder]
-        : []
+    const items = selected.length ? selected : this.placeholder ? [this.placeholder] : []
 
     const [first, ...rest] = statusNode.childNodes
-    const next = items.length
-      ? concatLabels(items, this.config.smallPattern)
-      : ['']
+    const next = items.length ? concatLabels(items, this.config.smallPattern) : ['']
 
     for (const child of rest) child.remove()
     first.replaceWith(...next)
   }
 
   onClickHandler({ target }) {
-    if (
-      target.classList.contains('select-option') ||
-      target.closest('.select-option')
-    ) {
+    if (target.classList.contains('select-option') || target.closest('.select-option')) {
       const item = target.classList.contains('select-option')
         ? target
         : target.closest('.select-option')
@@ -295,7 +291,11 @@ export class Select {
     }
 
     this.moveFocusTo(item)
-    this.selectableItems = [...this.list.querySelectorAll('.select-group:not(.show) .select-option.toggle, .select-group.show .select-option')]
+    this.selectableItems = [
+      ...this.list.querySelectorAll(
+        '.select-group:not(.show) .select-option.toggle, .select-group.show .select-option'
+      )
+    ]
 
     item.setAttribute('aria-expanded', !expanded)
   }
@@ -312,6 +312,7 @@ export class Select {
         'aria-controls': `list-${id}`,
         'aria-labelledby': `dropdown-label-${id} dropdown-select-${id}`,
         'aria-haspopup': 'listbox',
+        role: 'combobox',
         onclick: () => {
           this.toggleSelect()
           setTimeout(() => {
@@ -405,18 +406,18 @@ export class Select {
   }
 
   createOptions() {
-    const { id, select, config, _selectAll, _menuItems, _groups } = this
+    const { id, select, config, _selectAll } = this
 
     return [
       // Toggle all button
       select.multiple && config.allLabel
         ? h(
-          'li',
+          'button',
           {
             ref: _selectAll,
             role: 'option',
             id: `select-all-option-${id}`,
-            class: 'select-option multiple',
+            class: 'select-option select-all-options multiple',
             'aria-selected': !allAreSelected(select),
             tabindex: '-1',
             onclick: (event) => {
@@ -434,104 +435,117 @@ export class Select {
         )
         : null,
       // Proxies for the option/optgroup elements
-      ...[...select.children].map(function eachChild(child, index) {
-        if (child.nodeName === 'OPTGROUP') {
-          const label = resolveLabel(child.label, config.smallPattern)
-          let children = [...child.children].map(eachChild)
-          const wrapper = new Ref()
-          const button = new Ref()
-          let expanded = true
-
-          // Wrap children in a dropdown menu
-          if (config.groupToggle) {
-            const group = h(
-              'fieldset',
-              {
-                id: `group-${index}-list-${id}`,
-                class: 'select-list',
-                'aria-labelledby': `group-${index}-trigger-${id}`
-              },
-              children
-            )
-
-            // Add to internal lookup table)
-            for (const option of child.children) {
-              _groups.set(option, button)
-            }
-
-            // Wrap children
-            children = [group]
-          }
-
-          return h(
-            config.groupToggle ? 'div' : 'fieldset',
-            {
-              ref: wrapper,
-              class: `select-group ${config.groupToggle ? 'show' : ''}`
-            },
-            [
-              config.groupToggle
-                ? h(
-                  'li',
-                  {
-                    role: 'option',
-                    ref: button,
-                    id: `group-${index}-trigger-${id}`,
-                    class: `select-option ${select.multiple ? 'multiple' : ''
-                      } toggle`,
-                    'aria-expanded': 'true',
-                    tabindex: '-1',
-                    'aria-controls': `group-${index}-list-${id}`,
-
-                    onclick(event) {
-                      expanded = !expanded
-
-                      this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
-                      wrapper.current.classList.toggle('show', expanded)
-
-                      // Disable automatic closing on click
-                      this.preventClose = true
-                    }
-                  },
-                  label
-                )
-                : h('legend', { class: 'select-legend' }, label),
-              ...children
-            ]
-          )
-        }
-
-        // Don't include the typical leading placeholder option
-        // E.g. <option value="" disabled selected>Choose something</option>
-        if (isPlaceholder(child, index)) return null
-
-        const { label, disabled, selected } = child
-
-        // Add to internal element reverse lookup table
-        const button = new Ref()
-        _menuItems.set(child, button)
-
-        const listItem = h(
-          'li',
-          {
-            id: `select-option-${index}-${id}`,
-            'aria-disabled': disabled,
-            ref: button,
-            // type: 'button',
-            role: 'option',
-            'aria-selected': selected,
-            tabindex: '-1',
-            class: `select-option ${select.multiple ? 'multiple' : ''} ${selected ? 'selected select-option--selected' : ''
-              }`
-          },
-          resolveLabel(label, config.smallPattern, disabled ? '' : undefined)
-        )
-
-        // store reference to the option element.
-        listItem._selectElement = child
-        return listItem
-      })
+      ...[...select.children].map((child, index) => this.createListItem(child, index))
     ]
+  }
+
+  createListItem(child, index) {
+    if (child.nodeName === 'OPTGROUP') {
+      return this.createGroup(child, index)
+    }
+
+    return this.createOptionItem(child, index)
+  }
+
+  createOptionItem(child, index) {
+    // Don't include the typical leading placeholder option
+    // E.g. <option value="" disabled selected>Choose something</option>
+    if (isPlaceholder(child, index)) return null
+
+    const { label, disabled, selected } = child
+
+    // Add to internal element reverse lookup table
+    const itemRef = new Ref()
+    this._menuItems.set(child, itemRef)
+
+    const listItem = h(
+      'li',
+      {
+        id: `select-option-${index}-${this.id}`,
+        'aria-disabled': disabled,
+        ref: itemRef,
+        // type: 'button',
+        role: 'option',
+        'aria-selected': selected,
+        tabindex: '-1',
+        class: `select-option ${this.select.multiple ? 'multiple' : ''} ${selected ? 'selected select-option--selected' : ''
+          }`
+      },
+      resolveLabel(label, this.config.smallPattern, disabled ? '' : undefined)
+    )
+
+    // store reference to the option element.
+    listItem._selectElement = child
+    return listItem
+  }
+
+  createGroup(child, index) {
+    const { config, id } = this
+    const label = resolveLabel(child.label, config.smallPattern)
+    let children = [...child.children].map((c, i) => this.createListItem(c, i))
+    const wrapper = new Ref()
+    const button = new Ref()
+    let expanded = true
+
+    // Wrap children in a dropdown menu
+    if (config.groupToggle) {
+      const group = h(
+        'ul',
+        {
+          id: `group-${index}-list-${id}`,
+          class: 'select-list',
+          'aria-labelledby': `group-${index}-trigger-${id}`,
+          role: 'listbox'
+        },
+        children
+      )
+
+      // Add to internal lookup table)
+      for (const option of child.children) {
+        this._groups.set(option, button)
+      }
+
+      // Wrap children
+      children = [group]
+    }
+
+    return h(
+      config.groupToggle ? 'div' : 'fieldset',
+      {
+        ref: wrapper,
+        class: `select-group ${config.groupToggle ? 'show' : ''}`,
+        role: config.groupToggle ? 'group' : '',
+        'aria-labelledby': `group-${index}-trigger-${id}`
+      },
+      [
+        config.groupToggle
+          ? h(
+            'button',
+            {
+              // role: 'option',
+              type: 'button',
+              ref: button,
+              id: `group-${index}-trigger-${id}`,
+              class: `select-option select-group-toggle ${select.multiple ? 'multiple' : ''} toggle`,
+              'aria-expanded': expanded,
+              tabindex: '-1',
+              'aria-controls': `group-${index}-list-${id}`,
+              onclick() {
+                expanded = !expanded
+
+                this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
+                wrapper.current.classList.toggle('show', expanded)
+
+                // Disable automatic closing on click
+                this.preventClose = true
+              }
+            },
+            label
+          )
+          : h('legend', { class: 'select-legend' }, label),
+        ...children
+      ]
+    )
   }
 
   toggleSelect() {
@@ -611,7 +625,6 @@ export class Select {
     if (target._selectElement) {
       target._selectElement.selected = this.multiselectable ? !target._selectElement.selected : true
     }
-
 
     if (!this.multiselectable) {
       this.closeSelect()

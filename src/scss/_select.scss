@@ -327,6 +327,11 @@
     display: block;
 }
 
+/* Toggle group toggle button */
+.select-group-toggle {
+    border: none;
+}
+
 /**
  * 1. Preserve whitespace in flex context, needed for small text
  */
@@ -457,7 +462,16 @@
   background-color: $dropdown-link-hover-bg;
 }
 
+/* Focus css change the zindex to 10, we want to ensure that the select dropdown still have the correct zindex */
+html body[data-focus-source="key"] .select-list:focus {
+    z-index: 1004;
+}
+
 .select-option[aria-disabled="true"] {
   color: $silver;
   cursor: not-allowed;
+}
+
+.select-all-options {
+    border: none;
 }
