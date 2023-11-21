@@ -1,6 +1,6 @@
 {
   "name": "@lansforsakringar/components",
-  "version": "10.9.0",
+  "version": "10.9.1",
   "license": "MIT",
   "engines": {
     "node": ">=16"
@@ -26,7 +26,7 @@
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
     "@lansforsakringar/fonts": "^1.0.3",
-    "@lansforsakringar/icons": "^3.5.0",
+    "@lansforsakringar/icons": "^3.6.0",
     "@popperjs/core": "^2.11.6",
     "@preact/preset-vite": "^2.4.0",
     "@storybook/addon-docs": "^7.0.2",
