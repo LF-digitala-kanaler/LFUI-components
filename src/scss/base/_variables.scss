@@ -444,7 +444,7 @@ $input-box-shadow: none;
 $input-focus-border-color: $blue;
 $input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%);
 $input-focus-color: $body-color;
-$input-placeholder-color: #999;
+$input-placeholder-color: $gray;
 
 :root {
   --input-bg: #{$input-bg};
