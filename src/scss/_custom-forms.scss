@@ -43,8 +43,13 @@
 html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control-label::before {
   color: $body-color;
   background: $orange !important;
+}
+
+html body[data-focus-source="key"] .custom-checkbox:has(.custom-control-input:focus),
+html body[data-focus-source="key"] .custom-radio:has(.custom-control-input:focus) {
   outline: 4px solid $orange;
 }
+
 
 /* Checked state */
 
