@@ -1,19 +1,23 @@
+:root {
+  --infobox-padding: var(--size-4, 16px);
+  --infobox-gap: var(--size-2, 8px);
+  --infobox-border-width: 1px;
+  --infobox-border-radius: var(--border-radius-xl, var(--size-2, 8px));
+  --infobox-border-color: var(--sky, #76bbe7);
+  --infobox-background: var(--water, #e5eff7);
+  --infobox-heading-color: var(--black, #222);
+  --infobox-icon-color: var(--blue, #005aa0);
+}
+
 .infobox {
   display: flex;
-  padding: var(--infobox-padding, 16px);
+  padding: var(--infobox-padding);
   align-items: center;
-  gap: var(--infobox-gap, 8px);
-  border-radius: var(--infobox-border-radius, 8px);
-  border: var(--infobox-border-width, 1px) solid var(--infobox-border, #76bbe7);
-  background: var(--infobox-background, #e5eff7);
+  gap: var(--infobox-gap);
+  border-radius: var(--infobox-border-radius);
+  border: var(--infobox-border-width) solid var(--infobox-border-color);
+  background: var(--infobox-background);
   width: 100%;
-
-  /* Body/Body text */
-  font-family: Arial;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px; /* 131.25% */
 }
 
 .infobox h2,
@@ -23,33 +27,25 @@
 .infobox h5,
 .infobox h6 {
   margin: 0;
-  color: var(--infobox-heading-color, #222);
-
-  /* Body/Body text bold */
+  color: var(--infobox-heading-color);
   font-family: inherit;
-  font-size: 16px;
+  font-size: inherit;
   font-style: normal;
   font-weight: 700;
   line-height: inherit;
 }
 
 .infobox-icon {
-  color: var(--infobox-icon-color, #005aa0);
+  color: var(--infobox-icon-color);
   align-self: self-start;
 }
 
-.infobox-body {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 4px;
-  align-item: center;
-}
-
+.infobox-body,
 .infobox-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 4px;
-  align-item: center;
+  gap: var(--infobox-gap) calc(var(--infobox-gap) / 2);
+  align-items: center;
 }
 
 .infobox-body p {
