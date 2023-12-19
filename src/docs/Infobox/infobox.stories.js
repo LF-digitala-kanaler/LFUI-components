@@ -26,7 +26,7 @@ function Template({ icon, heading, text, link }) {
       ${IconTemplate(icon)}
       <div class="infobox-body">
         <div class="infobox-content">
-          ${heading ? '<h3>' + heading + '</h3>' : ''}
+          ${heading ? '<h3 class="infobox-heading">' + heading + '</h3>' : ''}
           <p>${text}</p>
         </div>
         ${link ? '<a href="#link">' + link + '</a>' : ''}
