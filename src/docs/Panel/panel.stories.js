@@ -86,6 +86,7 @@ export const LazyLoad = () => {
     aria-controls="${id}"
     data-bs-toggle="collapse:async"
     data-bs-target="#${id}"
+    supports-focus="key"
     aria-expanded="false">
     Your transactions
   </button>

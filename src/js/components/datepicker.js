@@ -64,7 +64,7 @@ export function datepicker(input, opts = input.dataset) {
     customEl.setAttribute(name, value)
   }
 
-  each(`[aria-controls=${input.id}]`, function (trigger) {
+  each(`[aria-controls=${input.id}]`, function(trigger) {
     let isOpen = false
 
     customEl.classList.add('is-grouped')
@@ -72,6 +72,7 @@ export function datepicker(input, opts = input.dataset) {
     customEl.addEventListener('duetOpen', function onopen() {
       isOpen = true
       trigger.classList.add('active')
+      customEl.querySelector('select').focus({ focusVisible: true })
     })
 
     customEl.addEventListener('duetClose', function onclose() {
@@ -79,7 +80,7 @@ export function datepicker(input, opts = input.dataset) {
       trigger.classList.remove('active')
     })
 
-    trigger.addEventListener('click', function () {
+    trigger.addEventListener('click', function() {
       if (!isOpen) customEl.show()
     })
   })
