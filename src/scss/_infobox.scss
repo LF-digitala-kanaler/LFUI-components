@@ -1,0 +1,57 @@
+.infobox {
+  display: flex;
+  padding: var(--infobox-padding, 16px);
+  align-items: center;
+  gap: var(--infobox-gap, 8px);
+  border-radius: var(--infobox-border-radius, 8px);
+  border: var(--infobox-border-width, 1px) solid var(--infobox-border, #76bbe7);
+  background: var(--infobox-background, #e5eff7);
+  width: 100%;
+
+  /* Body/Body text */
+  font-family: Arial;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 131.25% */
+}
+
+.infobox h2,
+.infobox h3,
+.infobox h4,
+.infobox h4,
+.infobox h5,
+.infobox h6 {
+  margin: 0;
+  color: var(--infobox-heading-color, #222);
+
+  /* Body/Body text bold */
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: inherit;
+}
+
+.infobox-icon {
+  color: var(--infobox-icon-color, #005aa0);
+  align-self: self-start;
+}
+
+.infobox-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+  align-item: center;
+}
+
+.infobox-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+  align-item: center;
+}
+
+.infobox-body p {
+  margin: 0;
+}
