@@ -167,8 +167,7 @@
 }
 
 /* Multiple select counter */
-.select-options[multiple] ~ .select-toggle .select-status:not([data-count=""]) {
-  &::after {
+.select-options[multiple]~.select-toggle .select-count {
     position: absolute;
     top: 50%;
     right: 0;
@@ -185,7 +184,6 @@
     background-color: $link_color;
     border-radius: 100%;
     transform: translateY(-50%);
-  }
 }
 
 .select-options {

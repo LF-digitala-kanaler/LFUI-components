@@ -192,7 +192,9 @@ export class Select {
     const items = selected.length ? selected : this.placeholder ? [this.placeholder] : []
 
     const [first, ...rest] = statusNode.childNodes
-    const next = items.length ? concatLabels(items, this.config.smallPattern) : ['']
+    const next = items.length
+      ? concatLabels(items, this.config.smallPattern, this.multiselectable)
+      : ['']
 
     for (const child of rest) child.remove()
     first.replaceWith(...next)
@@ -312,7 +314,6 @@ export class Select {
         'aria-controls': `list-${id}`,
         'aria-labelledby': `dropdown-label-${id} dropdown-select-${id}`,
         'aria-haspopup': 'listbox',
-        role: 'combobox',
         onclick: () => {
           this.toggleSelect()
           setTimeout(() => {
@@ -354,14 +355,21 @@ export class Select {
           {
             'data-count': this.initiallyValid.length || '',
             class: 'select-status',
-            role: 'status',
             ref: this._status
           },
-          this.initiallyValid.length
-            ? concatLabels(this.initiallyValid, this.config.smallPattern)
-            : this.placeholder
-              ? resolveLabel(this.placeholder.label, this.config.smallPattern)
-              : ''
+          [h('span')]
+            .concat(
+              this.initiallyValid.length
+                ? concatLabels(this.initiallyValid, this.config.smallPattern, this.multiselectable)
+                : this.placeholder
+                ? resolveLabel(
+                    this.placeholder.label,
+                    this.config.smallPatter,
+                    this.multiselectable
+                  )
+                : ''
+            )
+            .concat([h('span')])
         )
       ]
     )
@@ -380,7 +388,7 @@ export class Select {
   createOptionList() {
     const { id, select } = this
     const list = h(
-      'ul',
+      'div',
       {
         id: `list-${id}`,
         role: 'listbox',
@@ -412,27 +420,28 @@ export class Select {
       // Toggle all button
       select.multiple && config.allLabel
         ? h(
-          'button',
-          {
-            ref: _selectAll,
-            role: 'option',
-            id: `select-all-option-${id}`,
-            class: 'select-option select-all-options multiple',
-            'aria-selected': !allAreSelected(select),
-            tabindex: '-1',
-            onclick: (event) => {
-              this.toggleAll()
-              event.preventDefault()
-            },
-            onkeydown: (event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
+            'span',
+            {
+              ref: _selectAll,
+              role: 'option',
+              id: `select-all-option-${id}`,
+              class: 'select-option select-all-options multiple',
+              'aria-selected': allAreSelected(select),
+              tabindex: '-1',
+              onclick: (event) => {
                 this.toggleAll()
                 event.preventDefault()
+                event.target.Element.setAttribute('aria-selected'.allAreSelected(select))
+              },
+              onkeydown: (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  this.toggleAll()
+                  event.preventDefault()
+                }
               }
-            }
-          },
-          config.allLabel
-        )
+            },
+            config.allLabel
+          )
         : null,
       // Proxies for the option/optgroup elements
       ...[...select.children].map((child, index) => this.createListItem(child, index))
@@ -459,7 +468,7 @@ export class Select {
     this._menuItems.set(child, itemRef)
 
     const listItem = h(
-      'li',
+      'span',
       {
         id: `select-option-${index}-${this.id}`,
         'aria-disabled': disabled,
@@ -468,8 +477,9 @@ export class Select {
         role: 'option',
         'aria-selected': selected,
         tabindex: '-1',
-        class: `select-option ${this.select.multiple ? 'multiple' : ''} ${selected ? 'selected select-option--selected' : ''
-          }`
+        class: `select-option ${this.select.multiple ? 'multiple' : ''} ${
+          selected ? 'selected select-option--selected' : ''
+        }`
       },
       resolveLabel(label, this.config.smallPattern, disabled ? '' : undefined)
     )
@@ -490,7 +500,7 @@ export class Select {
     // Wrap children in a dropdown menu
     if (config.groupToggle) {
       const group = h(
-        'ul',
+        'div',
         {
           id: `group-${index}-list-${id}`,
           class: 'select-list',
@@ -520,28 +530,30 @@ export class Select {
       [
         config.groupToggle
           ? h(
-            'button',
-            {
-              // role: 'option',
-              type: 'button',
-              ref: button,
-              id: `group-${index}-trigger-${id}`,
-              class: `select-option select-group-toggle ${select.multiple ? 'multiple' : ''} toggle`,
-              'aria-expanded': expanded,
-              tabindex: '-1',
-              'aria-controls': `group-${index}-list-${id}`,
-              onclick() {
-                expanded = !expanded
+              'button',
+              {
+                // role: 'option',
+                type: 'button',
+                ref: button,
+                id: `group-${index}-trigger-${id}`,
+                class: `select-option select-group-toggle ${
+                  select.multiple ? 'multiple' : ''
+                } toggle`,
+                'aria-expanded': expanded,
+                tabindex: '-1',
+                'aria-controls': `group-${index}-list-${id}`,
+                onclick() {
+                  expanded = !expanded
 
-                this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
-                wrapper.current.classList.toggle('show', expanded)
+                  this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
+                  wrapper.current.classList.toggle('show', expanded)
 
-                // Disable automatic closing on click
-                this.preventClose = true
-              }
-            },
-            label
-          )
+                  // Disable automatic closing on click
+                  this.preventClose = true
+                }
+              },
+              label
+            )
           : h('legend', { class: 'select-legend' }, label),
         ...children
       ]
@@ -678,6 +690,11 @@ function isPlaceholder(option) {
  * @returns {boolean}
  */
 function allAreSelected(select) {
+  console.log(
+    select.selectedOptions.length,
+    select.options.length,
+    select.selectedOptions.length === select.options.length
+  )
   return select.selectedOptions.length === select.options.length
 }
 
@@ -686,12 +703,33 @@ function allAreSelected(select) {
  * @param {RegExp} regexp
  * @returns {(string | Node)[]}
  */
-function concatLabels(labels, regexp) {
-  return labels.reduce(function(acc, child) {
+function concatLabels(labels, regexp, isMulti) {
+  const clabel = labels.reduce(function (acc, child) {
     if (acc.length) acc.push(', ')
     acc.push(...resolveLabel(child.label, regexp))
     return acc
   }, [])
+
+  const chooseText = labels.length > 1 ? 'valda' : 'vald'
+
+  return [
+    h(
+      'span',
+      {
+        class: 'sr-only'
+      },
+      isMulti ? `${labels.length} ${chooseText} ` : ''
+    ),
+    ...clabel,
+    h(
+      'span',
+      {
+        class: 'select-count',
+        'aria-hidden': true
+      },
+      isMulti ? labels.length : ''
+    )
+  ]
 }
 
 /**
