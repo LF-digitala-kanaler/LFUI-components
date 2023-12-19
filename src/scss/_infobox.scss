@@ -1,22 +1,22 @@
 :root {
-  --infobox-padding: var(--size-4, 16px);
-  --infobox-gap: var(--size-2, 8px);
+  --infobox-padding: var(--size-4);
+  --infobox-gap: var(--size-2);
   --infobox-border-width: 1px;
-  --infobox-border-radius: var(--border-radius-xl, var(--size-2, 8px));
-  --infobox-border-color: var(--sky, #76bbe7);
-  --infobox-background: var(--water, #e5eff7);
-  --infobox-heading-color: var(--black, #222);
-  --infobox-icon-color: var(--blue, #005aa0);
+  --infobox-border-radius: var(--border-radius-xl, var(--size-2));
+  --infobox-border-color: var(--sky);
+  --infobox-background: var(--water);
+  --infobox-heading-color: var(--black);
+  --infobox-icon-color: var(--blue);
 }
 
 .infobox {
   display: flex;
-  padding: var(--infobox-padding);
+  padding: var(--infobox-padding, 16px);
   align-items: center;
-  gap: var(--infobox-gap);
-  border-radius: var(--infobox-border-radius);
-  border: var(--infobox-border-width) solid var(--infobox-border-color);
-  background: var(--infobox-background);
+  gap: var(--infobox-gap, 8px);
+  border-radius: var(--infobox-border-radius, 8px);
+  border: var(--infobox-border-width, 1px) solid var(--infobox-border-color, #76bbe7);
+  background: var(--infobox-background, #e5eff7);
   width: 100%;
 }
 
@@ -27,7 +27,7 @@
 .infobox h5,
 .infobox h6 {
   margin: 0;
-  color: var(--infobox-heading-color);
+  color: var(--infobox-heading-color, #222);
   font-family: inherit;
   font-size: inherit;
   font-style: normal;
@@ -36,7 +36,7 @@
 }
 
 .infobox-icon {
-  color: var(--infobox-icon-color);
+  color: var(--infobox-icon-color, #005aa0);
   align-self: self-start;
 }
 
@@ -44,7 +44,7 @@
 .infobox-content {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--infobox-gap) calc(var(--infobox-gap) / 2);
+  gap: var(--infobox-gap, 8px) calc(var(--infobox-gap, 8px) / 2);
   align-items: center;
 }
 
