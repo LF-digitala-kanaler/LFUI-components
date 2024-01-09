@@ -2,6 +2,10 @@ import { h, Ref, uid } from '../utils'
 
 const initialized = new WeakSet()
 
+function notDisabled(item) {
+  return item.getAttribute('aria-disabled') !== 'true'
+}
+
 // For backward compatibility
 export function select(element, opts = element.dataset) {
   return new Select(element, opts)
@@ -41,9 +45,7 @@ export class Select {
     this.list = this.createOptionList()
 
     this.selectableItems = [...this.list.querySelectorAll('.select-option')]
-    this.searchableItems = this.selectableItems.filter((item) => {
-      return !item.classList.contains('toggle')
-    })
+    this.searchableItems = this.selectableItems.filter(notDisabled)
     // Update status and labels on change
     this.select.addEventListener('change', (event) => {
       this.onChangeHandler(event)
@@ -69,9 +71,7 @@ export class Select {
           this.list.append(frag)
           this.placeholder = this.select.querySelector('option[value=""][disabled]')
           this.selectableItems = [...this.list.querySelectorAll('.select-option')]
-          this.searchableItems = this.selectableItems.filter((item) => {
-            return !item.classList.contains('toggle')
-          })
+          this.searchableItems = this.selectableItems.filter(notDisabled)
 
           this.select.dispatchEvent(new window.Event('change'))
         }
@@ -431,7 +431,7 @@ export class Select {
               onclick: (event) => {
                 this.toggleAll()
                 event.preventDefault()
-                event.target.Element.setAttribute('aria-selected'.allAreSelected(select))
+                event.target.setAttribute('aria-selected', allAreSelected(select))
               },
               onkeydown: (event) => {
                 if (event.key === 'Enter' || event.key === ' ') {
@@ -690,11 +690,6 @@ function isPlaceholder(option) {
  * @returns {boolean}
  */
 function allAreSelected(select) {
-  console.log(
-    select.selectedOptions.length,
-    select.options.length,
-    select.selectedOptions.length === select.options.length
-  )
   return select.selectedOptions.length === select.options.length
 }
 
@@ -711,6 +706,7 @@ function concatLabels(labels, regexp, isMulti) {
   }, [])
 
   const chooseText = labels.length > 1 ? 'valda' : 'vald'
+  const labelCount = labels.filter((label) => label.value).length // removoe placeholder option
 
   return [
     h(
@@ -718,17 +714,19 @@ function concatLabels(labels, regexp, isMulti) {
       {
         class: 'sr-only'
       },
-      isMulti ? `${labels.length} ${chooseText} ` : ''
+      isMulti ? `${labelCount} ${chooseText} ` : ''
     ),
     ...clabel,
-    h(
-      'span',
-      {
-        class: 'select-count',
-        'aria-hidden': true
-      },
-      isMulti ? labels.length : ''
-    )
+    labelCount
+      ? h(
+          'span',
+          {
+            class: 'select-count',
+            'aria-hidden': true
+          },
+          isMulti ? labelCount : ''
+        )
+      : ''
   ]
 }
 
