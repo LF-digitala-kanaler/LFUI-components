@@ -1,5 +1,6 @@
 const refs = new WeakMap();
 const initialized = new WeakSet();
+const EVENT_PREFIX = /^on/;
 
 function notDisabled(item) {
   return item.getAttribute("aria-disabled") !== "true";
@@ -841,4 +842,12 @@ class Ref {
   get current() {
     return refs.get(this);
   }
+}
+
+/**
+ * Generate unique(-ish) identifier
+ * @returns {string}
+ */
+export function uid() {
+  return `u${Math.random().toString(36).substring(2)}`;
 }
