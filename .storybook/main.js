@@ -12,7 +12,7 @@ export default {
     },
     {
       from: '../node_modules/@lansforsakringar/fonts',
-      to: 'assets/fonts'
+      to: 'fonts'
     },
     {
       from: '../test-fonts',
