@@ -1,3 +1,5 @@
+
+@import "base/index";
 @import "bootstrap/scss/_dropdown.scss";
 
 .select {
@@ -28,6 +30,11 @@
   .select.initialized.inside.show & {
     z-index: 1004;
   }
+
+  /* For single select, with inside label */
+  .has-valid .select:not([multiple]).initialized.inside & {
+    opacity: 0;
+  }
 }
 
 /* Ignore "inside" option on noscript touch devices */
@@ -52,6 +59,11 @@
   }
 }
 
+[data-bs-theme="on-gray"] .select {
+  --input-bg: var(--white);
+  --input-focus-bg: var(--white);
+}
+
 /**
  * Our different elements that all look like select
  * elements and used in various cases.
@@ -66,12 +78,12 @@
   display: block;
   width: 100%;
   height: $input-height;
-  padding: $input-padding-y $input-padding-x calc($input-padding-y - $input-btn-border-width);
+  padding: $input-padding-y $input-padding-x calc(#{$input-padding-y} - #{$input-btn-border-width});
   color: $input-color;
   text-align: left;
   user-select: none;
-  background-color: $input-bg;
-  background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
+  background-color: var(--input-bg);
+  background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
   background-size: 18px 12px;
   border: $input-border-color solid;
   border-width: 0 0 $input-btn-border-width;
@@ -127,6 +139,11 @@
     color: transparent;
   }
 
+  /* For single select, show the resulte when valid */
+  .form-group.has-valid .select:not([multiple]).inside & {
+    color: inherit;
+  }
+
   /* Fallback to native select elements on touch devices */
   @media (pointer: coarse) {
     pointer-events: none;
@@ -142,16 +159,16 @@
   display: block;
   width: calc(100% - 1.7rem);
   height: 1.5rem;
-  padding-right: calc($input-padding-x + .75rem);
+  padding-right: calc(#{$input-padding-x} + .75rem);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: pre;
   user-select: none;
+  pointer-events: none;
 }
 
 /* Multiple select counter */
-.select-options[multiple] ~ .select-toggle .select-status:not([data-count=""]) {
-  &::after {
+.select-options[multiple]~.select-toggle .select-count {
     position: absolute;
     top: 50%;
     right: 0;
@@ -168,7 +185,6 @@
     background-color: $link_color;
     border-radius: 100%;
     transform: translateY(-50%);
-  }
 }
 
 .select-options {
@@ -200,7 +216,7 @@
       bottom: 0;
       z-index: 1;
       height: auto;
-      transform: translateY(calc(100% - $input-height));
+      transform: translateY(calc(100% - #{$input-height}));
     }
 
     /* Visually hidden but keyboard accessible */
@@ -230,8 +246,12 @@
  * The custom select list that is popping up/down
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
-
 .select-list {
+  position: absolute;
+  top:100%;
+  left:0;
+  xxxmax-height: 280px;
+
   z-index: 1004;
   width: 100%;
   max-height: 25.25rem;
@@ -268,6 +288,11 @@
   }
 }
 
+.select-list--top {
+  top:auto;
+  bottom:100%;
+}
+
 @media (max-height: 29rem) {
   .select-list {
     max-height: 90vh;
@@ -291,6 +316,19 @@
   .select-group:first-child & {
     border-top: 0;
   }
+}
+
+/* Toggle group visibility */
+.select-group .select-list {
+    display: none;
+}
+.select-group.show .select-list {
+    display: block;
+}
+
+/* Toggle group toggle button */
+.select-group-toggle {
+    border: none;
 }
 
 /**
@@ -325,10 +363,9 @@
     width: 100%;
     height: auto;
     min-height: $input-height;
-    padding-right: calc($input-padding-x * 2 + 18px);
-    background-position: calc(100% - $input-padding-x + 1px) calc($input-height / 2 - 6px + $input-btn-border-width / 2 + 1px);
+    padding-right: calc(#{$input-padding-x} * 2 + 18px);
+    background-position: calc(100% - #{$input-padding-x} + 1px) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2 + 1px);
     background-size: 18px 12px;
-
     .text-muted {
       flex: 1;
       text-align: right;
@@ -340,7 +377,7 @@
       width: 100%;
       height: auto;
       min-height: $input-height;
-      background-position: calc(100% - $input-padding-x) calc($input-height / 2 - 6px + $input-btn-border-width / 2);
+      background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
     }
   }
 
@@ -367,8 +404,8 @@
       transition: $input-transition;
     }
 
-    &.selected::before,
-    &.indeterminate::before {
+    &.select-option--selected::before,
+    &.select-option--indeterminate::before {
       border-color: $link_color;
     }
 
@@ -376,15 +413,15 @@
       position: absolute;
       top: 50%;
       left: .875rem;
-      width: calc(1.13rem - $border-width * 2);
-      height: calc(1.13rem - $border-width * 2);
+      width: calc(1.13rem - #{$border-width} * 2);
+      height: calc(1.13rem - #{$border-width} * 2);
       content: "";
       opacity: 0;
       transition: opacity ease-in-out .15s;
       transform: translateY(-50%);
     }
 
-    &.indeterminate::after {
+    &.select-option--indeterminate::after {
       left: 1rem;
       width: .625rem;
       height: $border-width;
@@ -393,11 +430,11 @@
     }
 
     .select-list .select-list &::after {
-      left: calc($input-padding-x + 2.0625rem);
+      left: calc(#{$input-padding-x} + 2.0625rem);
     }
 
-    &.selected::after {
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTNweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTMgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+UGFnZSAxPC90aXRsZT4KICAgIDxnIGlkPSJTeW1ib2xzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0FjdGl2ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcuMDAwMDAwLCAtNi4wMDAwMDApIiBmaWxsPSIjMDA1QUEwIj4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlBhZ2UtMSIgcG9pbnRzPSIxNy45MDg5NjE5IDYgMTEuMzI4MTAzNiAxMi45MTkyNjE1IDguNDExMzE2NiA5LjgwMDY3NjkyIDcgMTEuMjcwNTIzMSAxMS4zMTQyMjgzIDE1Ljg4MzAxNTQgMTkuMzA1NDEyMSA3LjQ4MzQ0NjE1Ij48L3BvbHlnb24+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=");
+    &.select-option--selected::after {
+      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
       background-repeat: no-repeat;
       background-position: center;
       background-size: 80%;
@@ -405,15 +442,35 @@
     }
 
     &[disabled]::before {
-      border-color: #d9d9d9;
+      border-color: $smoke;
     }
 
-    &.selected[disabled]::before {
+    &.select-option--selected[disabled]::before {
       border-color: #bfd4e5;
     }
 
-    &[disabled].selected::after {
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSIxM3B4IiBoZWlnaHQ9IjEwcHgiIHZpZXdCb3g9IjAgMCAxMyAxMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4gICAgICAgIDx0aXRsZT5QYWdlIDE8L3RpdGxlPiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4gICAgPGcgaWQ9IkN1c3RvbS1mb3JtcyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0ieEF0b21zL0N1c3RvbS1mb3JtL0NoZWNrYm94L0NoZWNrZWQtYW5kLWRpc2FibGVkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNy4wMDAwMDAsIC02LjAwMDAwMCkiIGZpbGw9IiNCRkQ0RTUiPiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYWdlLTEiIHBvaW50cz0iMTcuOTA4OTYxOSA2IDExLjMyODEwMzYgMTIuOTE5MjYxNSA4LjQxMTMxNjYgOS44MDA2NzY5MiA3IDExLjI3MDUyMzEgMTEuMzE0MjI4MyAxNS44ODMwMTU0IDE5LjMwNTQxMjEgNy40ODM0NDYxNSI+PC9wb2x5Z29uPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+");
+    &[disabled].select-option--selected::after {
+      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
     }
   }
+}
+
+.select-option:focus,
+.select-option--focus {
+  color: #005aa0;
+  background-color: $dropdown-link-hover-bg;
+}
+
+/* Focus css change the zindex to 10, we want to ensure that the select dropdown still have the correct zindex */
+html body[data-focus-source="key"] .select-list:focus {
+    z-index: 1004;
+}
+
+.select-option[aria-disabled="true"] {
+  color: $silver;
+  cursor: not-allowed;
+}
+
+.select-all-options {
+    border: none;
 }
