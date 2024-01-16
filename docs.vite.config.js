@@ -27,7 +27,7 @@ export default defineConfig({
         },
         {
           src: './test-fonts/*.woff2',
-          dest: 'dist/docs/fonts'
+          dest: 'dist/docs/test-fonts'
         }
       ]
     })
