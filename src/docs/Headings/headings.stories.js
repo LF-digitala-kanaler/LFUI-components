@@ -37,10 +37,16 @@ export const Display = () => `
   <h1 class="display-4">Länsförsäkringar Display 4</h1>
 `
 
+export const DisplayBeta = () => `
+  <h1 class="display-1 display-beta-1">Länsförsäkringar Display 1</h1>
+  <h1 class="display-2 display-beta-2">Länsförsäkringar Display 2</h1>
+  <h1 class="display-3 display-beta-3">Länsförsäkringar Display 3</h1>
+  <h1 class="display-4 display-beta-4">Länsförsäkringar Display 4</h1>
+`
+
 export const DisplayWithHighlight = () => `
   <h4 class="display-4">Länsförsäkringar <em>Display</em> 2</h4>
 `
-
 
 export const defaultsExamples = () => DefaultExample
 export const displayExamples = () => DisplayExample

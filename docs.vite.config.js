@@ -24,6 +24,10 @@ export default defineConfig({
         {
           src: './node_modules/@lansforsakringar/fonts/*.woff2',
           dest: 'dist/docs/fonts'
+        },
+        {
+          src: './test-fonts/*.woff2',
+          dest: 'dist/docs/test-fonts'
         }
       ]
     })

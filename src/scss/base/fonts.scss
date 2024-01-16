@@ -8,6 +8,15 @@
 }
 
 @font-face {
+  font-family: "LF Rubrik Beta";
+  font-style: normal;
+  font-weight: normal;
+  font-kerning: normal;
+  src: url("./test-fonts/lf-nova-rubrik-beta-vf.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Intro Cond";
   font-style: normal;
   font-weight: normal;
