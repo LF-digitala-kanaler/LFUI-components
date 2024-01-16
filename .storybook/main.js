@@ -15,6 +15,10 @@ export default {
       to: 'fonts'
     },
     {
+      from: '../node_modules/@lansforsakringar/fonts',
+      to: 'assets/fonts'
+    },
+    {
       from: '../test-fonts',
       to: 'assets/test-fonts'
     }
