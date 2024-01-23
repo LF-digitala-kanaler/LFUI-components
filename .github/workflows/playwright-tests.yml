@@ -4,7 +4,8 @@ env:
   NETLIFY_SITE_NAME: 'thriving-crumble-878d05' # This is the "https://deploy-preview-1--${NETLIFY_SITE_NAME}.netlify.app"
   GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
 
-on: push
+on:
+  pull_request
 jobs:
   tests_e2e_netlify_prepare:
     name: Wait for deployment on Netlify
