@@ -2,49 +2,49 @@
 @import "bootstrap/scss/_dropdown.scss";
 
 .select {
-  /* Disable dropdown list animation */
-  --dropdown-menu-open-animation-duration: 0ms;
+	/* Disable dropdown list animation */
+	--dropdown-menu-open-animation-duration: 0ms;
 
-  position: relative;
-  width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 .select-label {
-  position: relative;
-  z-index: 0;
-  display: block;
+	position: relative;
+	z-index: 0;
+	display: block;
 
-  /**
+	/**
    * 1. Override global focus style to keep text visible
    */
-  .select.initialized.inside & {
-    position: absolute;
-    top: $input-padding-y;
-    left: $input-padding-x;
-    z-index: 1001; /* 1 */
-    pointer-events: none;
-    user-select: none;
-  }
+	.select.initialized.inside & {
+		position: absolute;
+		top: $input-padding-y;
+		left: $input-padding-x;
+		z-index: 1001; /* 1 */
+		pointer-events: none;
+		user-select: none;
+	}
 
-  .select.initialized.inside.show & {
-    z-index: 1004;
-  }
+	.select.initialized.inside.show & {
+		z-index: 1004;
+	}
 
-  /* For single select, with inside label */
-  .has-valid .select:not([multiple]).initialized.inside & {
-    opacity: 0;
-  }
+	/* For single select, with inside label */
+	.has-valid .select:not([multiple]).initialized.inside & {
+		opacity: 0;
+	}
 }
 
 /* Ignore "inside" option on noscript touch devices */
 @media (pointer: coarse) {
-  .select.inside:not(.initialized) .select-label {
-    height: auto;
-    padding: 0;
-    user-select: auto;
-    background: none;
-    border: 0;
-  }
+	.select.inside:not(.initialized) .select-label {
+		height: auto;
+		padding: 0;
+		user-select: auto;
+		background: none;
+		border: 0;
+	}
 }
 
 /*
@@ -52,15 +52,15 @@
  * 1. Match default label bottom margin
  */
 @media (pointer: fine), (pointer: none) {
-  .select:not(.initialized, .inside) .select-label::after {
-    margin-top: .3em; /* 1 */
-    content: "";
-  }
+	.select:not(.initialized, .inside) .select-label::after {
+		margin-top: 0.3em; /* 1 */
+		content: "";
+	}
 }
 
 [data-bs-theme="on-gray"] .select {
-  --input-bg: var(--white);
-  --input-focus-bg: var(--white);
+	--input-bg: var(--white);
+	--input-focus-bg: var(--white);
 }
 
 /**
@@ -71,38 +71,39 @@
 .select-options,
 .select.inside:not(.initialized) .select-label,
 .select-label::after {
-  @include glyph-chevron-down($blue);
+	@include glyph-chevron-down($blue);
 
-  position: relative;
-  display: block;
-  width: 100%;
-  height: $input-height;
-  padding: $input-padding-y $input-padding-x calc(#{$input-padding-y} - #{$input-btn-border-width});
-  color: $input-color;
-  text-align: left;
-  user-select: none;
-  background-color: var(--input-bg);
-  background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
-  background-size: 18px 12px;
-  border: $input-border-color solid;
-  border-width: 0 0 $input-btn-border-width;
-  border-radius: 0;
-  box-shadow: $input-box-shadow;
-  appearance: none;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: $input-height;
+	padding: $input-padding-y $input-padding-x calc(#{$input-padding-y} - #{$input-btn-border-width});
+	color: $input-color;
+	text-align: left;
+	user-select: none;
+	background-color: var(--input-bg);
+	background-position: calc(100% - #{$input-padding-x})
+		calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
+	background-size: 18px 12px;
+	border: $input-border-color solid;
+	border-width: 0 0 $input-btn-border-width;
+	border-radius: 0;
+	box-shadow: $input-box-shadow;
+	appearance: none;
 
-  .select.disabled & {
-    @include glyph-chevron-down($gray);
-    width: 100%;
-    height: $input-height;
-    cursor: not-allowed;
-    background-color: $input-disabled-bg;
-  }
+	.select.disabled & {
+		@include glyph-chevron-down($gray);
+		width: 100%;
+		height: $input-height;
+		cursor: not-allowed;
+		background-color: $input-disabled-bg;
+	}
 
-  /* Handle disabled state for noscript multiple selects */
-  .select:has(select:disabled) & {
-    cursor: not-allowed;
-    background-color: $input-disabled-bg;
-  }
+	/* Handle disabled state for noscript multiple selects */
+	.select:has(select:disabled) & {
+		cursor: not-allowed;
+		background-color: $input-disabled-bg;
+	}
 }
 
 /*
@@ -110,136 +111,134 @@
  */
 .select-toggle,
 .select-options {
-  &[aria-expanded="true"] {
-    position: relative;
-    color: $input-focus-color;
-    background-color: $input-focus-bg;
-    border-bottom-color: $input-focus-border-color;
-    box-shadow:
-      0 .2px .2px rgba(0, 0, 0, .019),
-      0 .4px .6px rgba(0, 0, 0, .027),
-      0 .9px 1.2px rgba(0, 0, 0, .033);
-  }
+	&[aria-expanded="true"] {
+		position: relative;
+		color: $input-focus-color;
+		background-color: $input-focus-bg;
+		border-bottom-color: $input-focus-border-color;
+		box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.019), 0 0.4px 0.6px rgba(0, 0, 0, 0.027),
+			0 0.9px 1.2px rgba(0, 0, 0, 0.033);
+	}
 
-  &:disabled {
-    cursor: not-allowed;
-    background-color: $input-disabled-bg;
-  }
+	&:disabled {
+		cursor: not-allowed;
+		background-color: $input-disabled-bg;
+	}
 
-  &:hover:not([disabled]) {
-    background-color: $input-hover;
-    transition: background .2s;
-  }
+	&:hover:not([disabled]) {
+		background-color: $input-hover;
+		transition: background 0.2s;
+	}
 }
 
 .select-toggle {
-  /* Camouflage toggle button to not interfere with "inside" label */
-  .select.inside & {
-    color: transparent;
-  }
+	/* Camouflage toggle button to not interfere with "inside" label */
+	.select.inside & {
+		color: transparent;
+	}
 
-  /* For single select, show the resulte when valid */
-  .form-group.has-valid .select:not([multiple]).inside & {
-    color: inherit;
-  }
+	/* For single select, show the resulte when valid */
+	.form-group.has-valid .select:not([multiple]).inside & {
+		color: inherit;
+	}
 
-  /* Fallback to native select elements on touch devices */
-  @media (pointer: coarse) {
-    pointer-events: none;
-  }
+	/* Fallback to native select elements on touch devices */
+	@media (pointer: coarse) {
+		pointer-events: none;
+	}
 }
 
 /*
  * Showing the selected options
  */
 .select-status {
-  position: relative;
-  top: -1px;
-  display: block;
-  width: calc(100% - 1.7rem);
-  height: 1.5rem;
-  padding-right: calc(#{$input-padding-x} + .75rem);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: pre;
-  user-select: none;
+	position: relative;
+	top: -1px;
+	display: block;
+	width: calc(100% - 1.7rem);
+	height: 1.5rem;
+	padding-right: calc(#{$input-padding-x} + 0.75rem);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: pre;
+	user-select: none;
 }
 
 /* Multiple select counter */
 .select-options[multiple] ~ .select-toggle .select-status:not([data-count=""]) {
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    width: 1.25rem;
-    height: 1.25rem;
-    font-size: .875rem;
-    font-weight: $font-weight-bold;
-    color: $input-bg;
-    content: attr(data-count);
-    background-color: $link_color;
-    border-radius: 100%;
-    transform: translateY(-50%);
-  }
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		display: flex;
+		flex: 0 0 auto;
+		align-items: center;
+		justify-content: center;
+		width: 1.25rem;
+		height: 1.25rem;
+		font-size: 0.875rem;
+		font-weight: $font-weight-bold;
+		color: $input-bg;
+		content: attr(data-count);
+		background-color: $link_color;
+		border-radius: 100%;
+		transform: translateY(-50%);
+	}
 }
 
 .select-options {
-  /* Hide native select once JavaScript has kicked in */
-  .select.initialized & {
-    display: none;
-  }
+	/* Hide native select once JavaScript has kicked in */
+	.select.initialized & {
+		display: none;
+	}
 
-  @media (pointer: coarse) {
-    /* Make interactive but invisible on touch devices  */
-    .select.initialized & {
-      position: absolute;
-      display: block;
-      opacity: 0;
-    }
-  }
+	@media (pointer: coarse) {
+		/* Make interactive but invisible on touch devices  */
+		.select.initialized & {
+			position: absolute;
+			display: block;
+			opacity: 0;
+		}
+	}
 
-  /* Manage toggling select during noscript */
-  @media (pointer: fine), (pointer: none) {
-    /* Position on top of placeholder */
-    .select:not(.initialized) &:not([multiple]) {
-      position: absolute;
-      bottom: 0;
-    }
+	/* Manage toggling select during noscript */
+	@media (pointer: fine), (pointer: none) {
+		/* Position on top of placeholder */
+		.select:not(.initialized) &:not([multiple]) {
+			position: absolute;
+			bottom: 0;
+		}
 
-    /* Align multiple selects with top of placeholder */
-    .select:not(.initialized) &[multiple] {
-      position: absolute;
-      bottom: 0;
-      z-index: 1;
-      height: auto;
-      transform: translateY(calc(100% - #{$input-height}));
-    }
+		/* Align multiple selects with top of placeholder */
+		.select:not(.initialized) &[multiple] {
+			position: absolute;
+			bottom: 0;
+			z-index: 1;
+			height: auto;
+			transform: translateY(calc(100% - #{$input-height}));
+		}
 
-    /* Visually hidden but keyboard accessible */
-    .select:not(.initialized) &[multiple]:not(:focus) {
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(1px, 1px, 1px, 1px);
-      border: 0;
-    }
-  }
+		/* Visually hidden but keyboard accessible */
+		.select:not(.initialized) &[multiple]:not(:focus) {
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			overflow: hidden;
+			clip: rect(1px, 1px, 1px, 1px);
+			border: 0;
+		}
+	}
 
-  /* Valid state */
-  .has-valid & ~ .select-toggle {
-    background-color: $cloud;
-    border-bottom-color: $input-focus-border-color;
+	/* Valid state */
+	.has-valid & ~ .select-toggle {
+		background-color: $cloud;
+		border-bottom-color: $input-focus-border-color;
 
-    &:hover,
-    &:focus {
-      background-color: $input-valid-hover;
-    }
-  }
+		&:hover,
+		&:focus {
+			background-color: $input-valid-hover;
+		}
+	}
 }
 
 /**
@@ -248,65 +247,62 @@
  */
 
 .select-list {
-  z-index: 1004;
-  width: 100%;
-  max-height: 25.25rem;
-  padding: 0;
-  margin: 0;
-  overflow-y: auto;
-  background-color: #fbfbfb;
-  border: 0;
-  box-shadow:
-    0 .2px .2px rgba(0, 0, 0, .019),
-    0 .4px .6px rgba(0, 0, 0, .027),
-    0 .9px 1.2px rgba(0, 0, 0, .033),
-    0 1.8px 2.6px rgba(0, 0, 0, .041),
-    0 5px 7px rgba(0, 0, 0, .06);
+	z-index: 1004;
+	width: 100%;
+	max-height: 25.25rem;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	background-color: #fbfbfb;
+	border: 0;
+	box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.019), 0 0.4px 0.6px rgba(0, 0, 0, 0.027),
+		0 0.9px 1.2px rgba(0, 0, 0, 0.033), 0 1.8px 2.6px rgba(0, 0, 0, 0.041),
+		0 5px 7px rgba(0, 0, 0, 0.06);
 
-  .select-list {
-    position: static;
-    box-shadow: none;
-    opacity: 1;
-    animation: none;
-  }
+	.select-list {
+		position: static;
+		box-shadow: none;
+		opacity: 1;
+		animation: none;
+	}
 
-  &::-webkit-scrollbar {
-    appearance: none;
-    width: .5rem;
-    background-color: $white;
-    border-left: 1px solid #eee;
-  }
+	&::-webkit-scrollbar {
+		appearance: none;
+		width: 0.5rem;
+		background-color: $white;
+		border-left: 1px solid #eee;
+	}
 
-  &::-webkit-scrollbar-thumb {
-    width: calc(100% - .25rem);
-    margin-left: .125rem;
-    background-color: $blue;
-  }
+	&::-webkit-scrollbar-thumb {
+		width: calc(100% - 0.25rem);
+		margin-left: 0.125rem;
+		background-color: $blue;
+	}
 }
 
 @media (max-height: 29rem) {
-  .select-list {
-    max-height: 90vh;
-  }
+	.select-list {
+		max-height: 90vh;
+	}
 }
 
 .select-legend {
-  display: block;
-  width: 100%;
-  padding: .375rem $input-padding-x .3125rem;
-  margin: 0;
-  font-size: .75rem;
-  line-height: $line-height-base;
-  color: $gray;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  user-select: none;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #eee;
+	display: block;
+	width: 100%;
+	padding: 0.375rem $input-padding-x 0.3125rem;
+	margin: 0;
+	font-size: 0.75rem;
+	line-height: $line-height-base;
+	color: $gray;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	user-select: none;
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #eee;
 
-  .select-group:first-child & {
-    border-top: 0;
-  }
+	.select-group:first-child & {
+		border-top: 0;
+	}
 }
 
 /**
@@ -314,122 +310,124 @@
  */
 
 .select-option {
-  position: relative;
-  display: flex;
-  align-items: baseline;
-  width: 100%;
-  min-height: $input-height;
-  padding: $input-padding-y $input-padding-x;
-  font-weight: 400;
-  color: #000;
-  white-space: pre-wrap; /* 1 */
-  cursor: pointer;
-  user-select: none;
-  background-color: #fbfbfb;
-  border-bottom: 1px solid #eee;
-  outline-offset: -4px !important;
-  appearance: none;
+	position: relative;
+	display: flex;
+	align-items: baseline;
+	width: 100%;
+	min-height: $input-height;
+	padding: $input-padding-y $input-padding-x;
+	font-weight: 400;
+	color: #000;
+	white-space: pre-wrap; /* 1 */
+	cursor: pointer;
+	user-select: none;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #eee;
+	outline-offset: -4px !important;
+	appearance: none;
 
-  &:hover {
-    color: $link_color;
-    background-color: $white;
-  }
+	&:hover {
+		color: $link_color;
+		background-color: $white;
+	}
 
-  &.toggle {
-    @include glyph-chevron-down($silver);
+	&.toggle {
+		@include glyph-chevron-down($silver);
 
-    width: 100%;
-    height: auto;
-    min-height: $input-height;
-    padding-right: calc(#{$input-padding-x} * 2 + 18px);
-    background-position: calc(100% - #{$input-padding-x} + 1px) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2 + 1px);
-    background-size: 18px 12px;
+		width: 100%;
+		height: auto;
+		min-height: $input-height;
+		padding-right: calc(#{$input-padding-x} * 2 + 18px);
+		background-position: calc(100% - #{$input-padding-x} + 1px)
+			calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2 + 1px);
+		background-size: 18px 12px;
 
-    .text-muted {
-      flex: 1;
-      text-align: right;
-    }
+		.text-muted {
+			flex: 1;
+			text-align: right;
+		}
 
-    &[aria-expanded="true"] {
-      @include glyph-chevron-up($silver);
+		&[aria-expanded="true"] {
+			@include glyph-chevron-up($silver);
 
-      width: 100%;
-      height: auto;
-      min-height: $input-height;
-      background-position: calc(100% - #{$input-padding-x}) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
-    }
-  }
+			width: 100%;
+			height: auto;
+			min-height: $input-height;
+			background-position: calc(100% - #{$input-padding-x})
+				calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2);
+		}
+	}
 
-  .select-list .select-list & {
-    padding-left: 2.6875rem;
-  }
+	.select-list .select-list & {
+		padding-left: 2.6875rem;
+	}
 
-  .select-list .select-list &:not(.multiple) {
-    padding-left: 1.625rem;
-  }
+	.select-list .select-list &:not(.multiple) {
+		padding-left: 1.625rem;
+	}
 
-  /* Faux checkbox */
-  &.multiple {
-    &::before {
-      display: inline-block;
-      flex: 0 0 auto;
-      align-self: center;
-      width: 1.13rem;
-      height: 1.13rem;
-      margin-right: $input-padding-x;
-      content: "";
-      background-color: #fff;
-      border: $border-width solid $silver;
-      transition: $input-transition;
-    }
+	/* Faux checkbox */
+	&.multiple {
+		&::before {
+			display: inline-block;
+			flex: 0 0 auto;
+			align-self: center;
+			width: 1.13rem;
+			height: 1.13rem;
+			margin-right: $input-padding-x;
+			content: "";
+			background-color: #fff;
+			border: $border-width solid $silver;
+			transition: $input-transition;
+		}
 
-    &.selected::before,
-    &.indeterminate::before {
-      border-color: $link_color;
-    }
+		&.selected::before,
+		&.indeterminate::before {
+			border-color: $link_color;
+		}
 
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: .875rem;
-      width: calc(1.13rem - #{$border-width} * 2);
-      height: calc(1.13rem - #{$border-width} * 2);
-      content: "";
-      opacity: 0;
-      transition: opacity ease-in-out .15s;
-      transform: translateY(-50%);
-    }
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 0.875rem;
+			width: calc(1.13rem - #{$border-width} * 2);
+			height: calc(1.13rem - #{$border-width} * 2);
+			content: "";
+			opacity: 0;
+			transition: opacity ease-in-out 0.15s;
+			transform: translateY(-50%);
+		}
 
-    &.indeterminate::after {
-      left: 1rem;
-      width: .625rem;
-      height: $border-width;
-      background: $link_color;
-      opacity: 1;
-    }
+		&.indeterminate::after {
+			left: 1rem;
+			width: 0.625rem;
+			height: $border-width;
+			background: $link_color;
+			opacity: 1;
+		}
 
-    .select-list .select-list &::after {
-      left: calc(#{$input-padding-x} + 2.0625rem);
-    }
+		.select-list .select-list &::after {
+			left: calc(#{$input-padding-x} + 2.0625rem);
+		}
 
-    &.selected::after {
-      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 80%;
-      opacity: 1;
-    }
+		&.selected::after {
+			background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 80%;
+			opacity: 1;
+		}
 
-    &[disabled]::before {
-      border-color: $smoke;
-    }
+		&[disabled]::before {
+			border-color: $smoke;
+		}
 
-    &.selected[disabled]::before {
-      border-color: #bfd4e5;
-    }
+		&.selected[disabled]::before {
+			border-color: #bfd4e5;
+		}
 
-    &[disabled].selected::after {
-      background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
-    }
-  }
+		&[disabled].selected::after {
+			background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
+		}
+	}
 }

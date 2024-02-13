@@ -2,8 +2,8 @@
 @import "bootstrap/scss/_card.scss";
 
 .card-block {
-  padding: $card-block-padding;
-  background-color: $card-cap-bg;
+	padding: $card-block-padding;
+	background-color: $card-cap-bg;
 }
 
 /**
@@ -12,9 +12,9 @@
  *    Card decks/groups have the same issue, but we can't apply the same rule as that breaks the flexbox row... so they remain broken for now :/
  */
 .card {
-  display: block; /* 1 */
-  min-height: 4rem;
-  margin-bottom: $card-spacer-y;
+	display: block; /* 1 */
+	min-height: 4rem;
+	margin-bottom: $card-spacer-y;
 }
 
 /**
@@ -24,29 +24,29 @@
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  background-color: $card-cap-bg;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	background-color: $card-cap-bg;
 }
 
 .card-img-top {
-  + .card-block {
-    border: solid $navy;
-    border-width: $border-width 0 0;
-  }
+	+ .card-block {
+		border: solid $navy;
+		border-width: $border-width 0 0;
+	}
 }
 
 .card-img-bottom {
-  + .card-block {
-    border: solid $navy;
-    border-width: 0 0 $border-width;
-  }
+	+ .card-block {
+		border: solid $navy;
+		border-width: 0 0 $border-width;
+	}
 }
 
 .card-img-overlay {
-  width: 100%;
+	width: 100%;
 }
 
 /**
@@ -54,7 +54,7 @@
  */
 
 .card-title {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 /**
@@ -63,8 +63,8 @@
  */
 
 .card-text {
-  max-width: $legible-width; /* 1 */
-  margin-bottom: $card-spacer-y;
+	max-width: $legible-width; /* 1 */
+	margin-bottom: $card-spacer-y;
 }
 
 /**
@@ -72,33 +72,33 @@
  */
 
 .card-header {
-  @include header-block();
-  margin-bottom: 0;
+	@include header-block();
+	margin-bottom: 0;
 
-  color: $navy;
+	color: $navy;
 }
 
 .card-footer {
-  padding: $card-footer-padding;
-  border: solid $body-bg;
-  border-width: $border-width 0 0;
-  box-shadow: none;
+	padding: $card-footer-padding;
+	border: solid $body-bg;
+	border-width: $border-width 0 0;
+	box-shadow: none;
 }
 
 .card.card-text-float {
-  position: relative;
-  background-color: transparent;
+	position: relative;
+	background-color: transparent;
 
-  .card-block {
-    position: relative;
-    bottom: 4rem;
-    margin: 0 1rem;
-    border-top: none;
-  }
+	.card-block {
+		position: relative;
+		bottom: 4rem;
+		margin: 0 1rem;
+		border-top: none;
+	}
 
-  .card-footer {
-    position: relative;
-    bottom: 4rem;
-    margin: 0 1rem;
-  }
+	.card-footer {
+		position: relative;
+		bottom: 4rem;
+		margin: 0 1rem;
+	}
 }

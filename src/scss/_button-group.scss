@@ -2,93 +2,93 @@
 @import "bootstrap/scss/_button-group.scss";
 
 .btn-group .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 4rem;
-  padding: $input-padding;
-  padding-right: calc(#{$input-padding-right} + .5rem);
-  padding-left: calc(#{$input-padding-left} + .5rem);
-  margin-bottom: 0;
-  font-family: $font-family-base;
-  font-size: $font-size-md;
-  font-weight: 400;
-  line-height: $input-line-height;
-  color: inherit;
-  white-space: nowrap;
-  background-color: $body-bg;
-  border: 0;
-  border-bottom: 2px solid $gray-200;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  transition: 100ms 40ms ease-out;
-  transition-property: border-color, background;
-  @include font-smoothing(auto);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 4rem;
+	padding: $input-padding;
+	padding-right: calc(#{$input-padding-right} + 0.5rem);
+	padding-left: calc(#{$input-padding-left} + 0.5rem);
+	margin-bottom: 0;
+	font-family: $font-family-base;
+	font-size: $font-size-md;
+	font-weight: 400;
+	line-height: $input-line-height;
+	color: inherit;
+	white-space: nowrap;
+	background-color: $body-bg;
+	border: 0;
+	border-bottom: 2px solid $gray-200;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	transition: 100ms 40ms ease-out;
+	transition-property: border-color, background;
+	@include font-smoothing(auto);
 
-  &:hover,
-  &:active {
-    background-color: $input-hover;
-    border-color: $blue;
-  }
+	&:hover,
+	&:active {
+		background-color: $input-hover;
+		border-color: $blue;
+	}
 
-  + .btn {
-    margin-left: 2px;
-  }
+	+ .btn {
+		margin-left: 2px;
+	}
 
-  &:not(:last-child) {
-    border-top-right-radius: 0;
-  }
+	&:not(:last-child) {
+		border-top-right-radius: 0;
+	}
 
-  &:not(:first-child) {
-    border-top-left-radius: 0;
-  }
+	&:not(:first-child) {
+		border-top-left-radius: 0;
+	}
 
-  /**
+	/**
    * Rely on an absolute positioned psudo element for the bolded active text,
    * to prevent the width of the button to change with the bolded text.
    */
 
-  &.active {
-    color: transparent;
-    background-color: $cloud;
-    border-color: $blue;
-    @include font-smoothing();
+	&.active {
+		color: transparent;
+		background-color: $cloud;
+		border-color: $blue;
+		@include font-smoothing();
 
-    &:hover {
-      background-color: $input-valid-hover;
-    }
+		&:hover {
+			background-color: $input-valid-hover;
+		}
 
-    &::after {
-      position: absolute;
-      left: 50%;
-      font-weight: 700;
-      color: $blue;
-      text-shadow: none;
-      content: attr(data-text);
-      transform: translateX(-50%);
-    }
-  }
+		&::after {
+			position: absolute;
+			left: 50%;
+			font-weight: 700;
+			color: $blue;
+			text-shadow: none;
+			content: attr(data-text);
+			transform: translateX(-50%);
+		}
+	}
 
-  &.disabled {
-    pointer-events: none;
-    background-color: $input-disabled-bg;
+	&.disabled {
+		pointer-events: none;
+		background-color: $input-disabled-bg;
 
-    &:hover {
-      background-color: $input-disabled-bg;
-      border-color: $input-disabled-bg;
-    }
-  }
+		&:hover {
+			background-color: $input-disabled-bg;
+			border-color: $input-disabled-bg;
+		}
+	}
 }
 
 .btn-group > .btn input[type="radio"],
 .btn-group > .btn input[type="checkbox"] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	pointer-events: none;
 }
 
 .btn-group [class*="btn-"] {
-  @include warning("Supports regular 'btn' only");
+	@include warning("Supports regular 'btn' only");
 }
 
 /**
@@ -96,40 +96,40 @@
  */
 
 .btn-group-stretch {
-  display: flex;
-  flex-direction: column;
-  .btn + .btn {
-    margin-top: 2px;
-    margin-left: 0;
-  }
+	display: flex;
+	flex-direction: column;
+	.btn + .btn {
+		margin-top: 2px;
+		margin-left: 0;
+	}
 
-  @include media-breakpoint-up(sm) {
-    flex-direction: row;
+	@include media-breakpoint-up(sm) {
+		flex-direction: row;
 
-    .btn + .btn {
-      margin-top: 0;
-      margin-left: 2px;
-    }
-  }
+		.btn + .btn {
+			margin-top: 0;
+			margin-left: 2px;
+		}
+	}
 }
 
 .btn-group-stretch > .btn {
-  flex-basis: 0;
-  flex-grow: 1;
-  min-height: 40px;
+	flex-basis: 0;
+	flex-grow: 1;
+	min-height: 40px;
 
-  /* No need for the psudo element fix for stretched buttons */
+	/* No need for the psudo element fix for stretched buttons */
 
-  &.active {
-    font-weight: 700;
-    color: $blue;
-    text-shadow: none;
-    letter-spacing: -.01em;
+	&.active {
+		font-weight: 700;
+		color: $blue;
+		text-shadow: none;
+		letter-spacing: -0.01em;
 
-    ::after {
-      content: none;
-    }
-  }
+		::after {
+			content: none;
+		}
+	}
 }
 
 /**
@@ -138,14 +138,14 @@
 
 .btn-group.has-danger,
 .btn-group-stretch.has-danger {
-  > .btn:not(.disabled) {
-    border-color: $red;
-  }
+	> .btn:not(.disabled) {
+		border-color: $red;
+	}
 }
 
 /* ? */
 
 .input-group-btn .btn {
-  padding-right: .75rem !important;
-  padding-left: .75rem !important;
+	padding-right: 0.75rem !important;
+	padding-left: 0.75rem !important;
 }

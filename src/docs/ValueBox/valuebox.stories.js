@@ -1,20 +1,20 @@
-import { useEffect, useState } from '@storybook/client-api'
-import { valueboxExample } from './valuebox'
-import { uid } from '../../js/utils'
+import { useEffect, useState } from '@storybook/client-api';
+import { valueboxExample } from './valuebox';
+import { uid } from '../../js/utils';
 
 export default {
-  title: 'Page content/Value box',
-  parameters: {
-    badges: ['stable']
-  }
-}
+	title: 'Page content/Value box',
+	parameters: {
+		badges: ['stable'],
+	},
+};
 
 export const Default = () => {
-  const [id] = useState(uid)
-  useEffect(() => {
-    valueboxExample(document.getElementById(id))
-  }, [])
-  return `
+	const [id] = useState(uid);
+	useEffect(() => {
+		valueboxExample(document.getElementById(id));
+	}, []);
+	return `
   <div class="row" >
     <div class="col-md-4">
       <div class="value-box mb-1" id="${id}">
@@ -27,15 +27,15 @@ export const Default = () => {
       </div>
     </div>
   </div>
-  `
-}
+  `;
+};
 
 export const Expandable = () => {
-  const [id] = useState(uid)
-  useEffect(() => {
-    valueboxExample(document.getElementById(id))
-  }, [])
-  return `
+	const [id] = useState(uid);
+	useEffect(() => {
+		valueboxExample(document.getElementById(id));
+	}, []);
+	return `
   <div class="row" id="${id}">
     <div class="col-md-4">
       <div class="value-box">
@@ -55,5 +55,5 @@ export const Expandable = () => {
       </div>
     </div>
   </div>
-  `
-}
+  `;
+};

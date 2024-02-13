@@ -35,8 +35,8 @@ $prefix: "" !default;
 
 $wine: #ad1015;
 $red: #e30613;
-$pink: #FCD2D3;
-$green: #1B5E20;
+$pink: #fcd2d3;
+$green: #1b5e20;
 $mint: #e5fff0;
 $orange: #fdd835;
 $yellow: #ffffd6;
@@ -49,7 +49,7 @@ $cloud: #eff4f9;
 $mist: #f9fbfd;
 $black: #222;
 $gray: #6b7070;
-$aluminium: #8C8F90;
+$aluminium: #8c8f90;
 $silver: #b1b3b6;
 $smoke: #d9d9d9;
 $shadow: #e5e5e5;
@@ -68,42 +68,42 @@ $gray-700: $gray;
 $gray-800: $gray;
 $gray-900: $black;
 $grays: (
-  100: $gray-100,
-  200: $gray-200,
-  300: $gray-300,
-  400: $gray-400,
-  500: $gray-500,
-  600: $gray-600,
-  700: $gray-700,
-  800: $gray-800,
-  900: $gray-900
+	100: $gray-100,
+	200: $gray-200,
+	300: $gray-300,
+	400: $gray-400,
+	500: $gray-500,
+	600: $gray-600,
+	700: $gray-700,
+	800: $gray-800,
+	900: $gray-900,
 );
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$prefix}wine: #{$wine};
-  --#{$prefix}red: #{$red};
-  --#{$prefix}pink: #{$pink};
-  --#{$prefix}green: #{$green};
-  --#{$prefix}mint: #{$mint};
-  --#{$prefix}orange: #{$orange};
-  --#{$prefix}yellow: #{$yellow};
-  --#{$prefix}navy: #{$navy};
-  --#{$prefix}blue: #{$blue};
-  --#{$prefix}sky: #{$sky};
-  --#{$prefix}baby: #{$baby};
-  --#{$prefix}mist: #{$mist};
-  --#{$prefix}cloud: #{$cloud};
-  --#{$prefix}mist: #{$mist};
-  --#{$prefix}black: #{$black};
+	--#{$prefix}wine: #{$wine};
+	--#{$prefix}red: #{$red};
+	--#{$prefix}pink: #{$pink};
+	--#{$prefix}green: #{$green};
+	--#{$prefix}mint: #{$mint};
+	--#{$prefix}orange: #{$orange};
+	--#{$prefix}yellow: #{$yellow};
+	--#{$prefix}navy: #{$navy};
+	--#{$prefix}blue: #{$blue};
+	--#{$prefix}sky: #{$sky};
+	--#{$prefix}baby: #{$baby};
+	--#{$prefix}mist: #{$mist};
+	--#{$prefix}cloud: #{$cloud};
+	--#{$prefix}mist: #{$mist};
+	--#{$prefix}black: #{$black};
 
-  --#{$prefix}gray: #{$gray};
-  --#{$prefix}aluminium: #{$aluminium};
-  --#{$prefix}silver: #{$silver};
-  --#{$prefix}smoke: #{$smoke};
-  --#{$prefix}shadow: #{$shadow};
-  --#{$prefix}tint: #{$tint};
-  --#{$prefix}white: #{$white};
+	--#{$prefix}gray: #{$gray};
+	--#{$prefix}aluminium: #{$aluminium};
+	--#{$prefix}silver: #{$silver};
+	--#{$prefix}smoke: #{$smoke};
+	--#{$prefix}shadow: #{$shadow};
+	--#{$prefix}tint: #{$tint};
+	--#{$prefix}white: #{$white};
 }
 
 /**
@@ -137,37 +137,37 @@ $login-logout-blue: #007db0;
 
 /* Used only by Bootstrap */
 $theme-colors: (
-  primary: $blue,
-  secondary: $red,
-  info: $color-info,
-  success: $color-success,
-  warning: $color-warning,
-  danger: $color-danger,
-  light: $gray-100,
-  dark: $gray-800
+	primary: $blue,
+	secondary: $red,
+	info: $color-info,
+	success: $color-success,
+	warning: $color-warning,
+	danger: $color-danger,
+	light: $gray-100,
+	dark: $gray-800,
 );
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$prefix}color-body: #{$body-color};
+	--#{$prefix}color-body: #{$body-color};
 
-  --#{$prefix}color-info: #{$color-info};
-  --#{$prefix}color-info-light: #{$color-info-light};
-  --#{$prefix}color-success: #{$color-success};
-  --#{$prefix}color-success-light: #{$color-success-light};
-  --#{$prefix}color-warning: #{$color-warning};
-  --#{$prefix}color-warning-light: #{$color-warning-light};
-  --#{$prefix}color-danger: #{$color-danger};
-  --#{$prefix}color-danger-light: #{$color-danger-light};
-  --#{$prefix}color-risk-0: #{$color-risk-0};
-  --#{$prefix}color-risk-1: #{$color-risk-1};
-  --#{$prefix}color-risk-2: #{$color-risk-2};
-  --#{$prefix}color-risk-3: #{$color-risk-3};
-  --#{$prefix}color-risk-4: #{$color-risk-4};
-  --#{$prefix}color-risk-5: #{$color-risk-5};
-  --#{$prefix}color-risk-6: #{$color-risk-6};
-  --#{$prefix}color-risk-7: #{$color-risk-7};
-  --#{$prefix}login-logout-blue: #{$login-logout-blue};
+	--#{$prefix}color-info: #{$color-info};
+	--#{$prefix}color-info-light: #{$color-info-light};
+	--#{$prefix}color-success: #{$color-success};
+	--#{$prefix}color-success-light: #{$color-success-light};
+	--#{$prefix}color-warning: #{$color-warning};
+	--#{$prefix}color-warning-light: #{$color-warning-light};
+	--#{$prefix}color-danger: #{$color-danger};
+	--#{$prefix}color-danger-light: #{$color-danger-light};
+	--#{$prefix}color-risk-0: #{$color-risk-0};
+	--#{$prefix}color-risk-1: #{$color-risk-1};
+	--#{$prefix}color-risk-2: #{$color-risk-2};
+	--#{$prefix}color-risk-3: #{$color-risk-3};
+	--#{$prefix}color-risk-4: #{$color-risk-4};
+	--#{$prefix}color-risk-5: #{$color-risk-5};
+	--#{$prefix}color-risk-6: #{$color-risk-6};
+	--#{$prefix}color-risk-7: #{$color-risk-7};
+	--#{$prefix}login-logout-blue: #{$login-logout-blue};
 }
 
 /**
@@ -176,9 +176,9 @@ $theme-colors: (
  */
 
 :root {
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+	--ease-in: cubic-bezier(0.4, 0, 1, 1);
+	--ease-out: cubic-bezier(0, 0, 0.2, 1);
+	--ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /**
@@ -201,32 +201,49 @@ $color-contrast-light: $white;
 
 $spacer: 1rem;
 $spacers: (
-  0: 0,
-  "025": ($spacer * .25),
-  "03": ($spacer * .3),
-  "05": ($spacer * .5),
-  "08": ($spacer * .75),
-  "075": ($spacer * .75),
-  1: $spacer,
-  15: ($spacer * 1.5),
-  2: ($spacer * 2),
-  23: ($spacer * 2.3),
-  3: ($spacer * 3),
+	0: 0,
+	"025": (
+		$spacer * 0.25,
+	),
+	"03": (
+		$spacer * 0.3,
+	),
+	"05": (
+		$spacer * 0.5,
+	),
+	"08": (
+		$spacer * 0.75,
+	),
+	"075": (
+		$spacer * 0.75,
+	),
+	1: $spacer,
+	15: (
+		$spacer * 1.5,
+	),
+	2: (
+		$spacer * 2,
+	),
+	23: (
+		$spacer * 2.3,
+	),
+	3: (
+		$spacer * 3,
+	),
 );
 
 $position-values: (
-  0: 0,
-  50: 50%,
-  100: 100%
+	0: 0,
+	50: 50%,
+	100: 100%,
 ) !default;
 
 $aspect-ratios: (
-  "1x1": 100%,
-  "4x3": calc(3 / 4 * 100%),
-  "16x9": calc(9 / 16 * 100%),
-  "21x9": calc(9 / 21 * 100%)
+	"1x1": 100%,
+	"4x3": calc(3 / 4 * 100%),
+	"16x9": calc(9 / 16 * 100%),
+	"21x9": calc(9 / 21 * 100%),
 ) !default;
-
 
 $paragraph-margin-bottom: 1rem;
 
@@ -241,15 +258,15 @@ $line-height-lg: 1.3333333333;
 $border-width: 2px;
 $border-color: $gray-200;
 $border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px
+	1: 1px,
+	2: 2px,
+	3: 3px,
+	4: 4px,
+	5: 5px,
 ) !default;
 
-$border-radius: .25rem;
-$border-radius-lg: .375rem;
+$border-radius: 0.25rem;
+$border-radius-lg: 0.375rem;
 $border-radius-sm: $border-radius;
 
 $component-active-color: $white;
@@ -257,28 +274,28 @@ $component-active-bg: $blue;
 
 /* Change something with grids? */
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
 );
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 @include _assert-starts-at-zero($grid-breakpoints);
 
 /* Adding xxl */
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1662px
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1662px,
 );
 
 /* From BS5 */
-$grid-columns:                12 !default;
-$grid-gutter-width:           1.875rem;
-$grid-row-columns:            6 !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.875rem;
+$grid-row-columns: 6 !default;
 $container-padding-x: $grid-gutter-width !default;
 
 /**
@@ -287,29 +304,32 @@ $container-padding-x: $grid-gutter-width !default;
 
 $font-family-sans-serif: var(--lf-font-family-sans-serif);
 $font-family-serif: var(--lf-font-family-serif);
-$font-family-base: arial, "Helvetica Neue", sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base: arial, "Helvetica Neue", sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+	"Helvetica Neue", "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji",
+	"Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+	monospace;
 
 $font-size-xl: 1.25rem;
 $font-size-lg: 1.125rem;
 $font-size-md: 1rem;
-$font-size-sm: .875rem;
-$font-size-xs: .75rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
 
 $line-height-base: 1.45;
 
 /* Expose as CSS custom properties */
 :root {
-  --#{$prefix}font-family-sans-serif: #{$font-family-sans-serif};
-  --#{$prefix}font-family-serif: #{$font-family-serif};
-  --#{$prefix}font-family-base: #{$font-family-base};
-  --#{$prefix}font-family-monospace: #{$font-family-monospace};
-  --#{$prefix}font-size-xl: #{$font-size-xl};
-  --#{$prefix}font-size-lg: #{$font-size-lg};
-  --#{$prefix}font-size-md: #{$font-size-md};
-  --#{$prefix}font-size-sm: #{$font-size-sm};
-  --#{$prefix}font-size-xs: #{$font-size-xs};
-  --#{$prefix}font-line-height: #{$line-height-base};
+	--#{$prefix}font-family-sans-serif: #{$font-family-sans-serif};
+	--#{$prefix}font-family-serif: #{$font-family-serif};
+	--#{$prefix}font-family-base: #{$font-family-base};
+	--#{$prefix}font-family-monospace: #{$font-family-monospace};
+	--#{$prefix}font-size-xl: #{$font-size-xl};
+	--#{$prefix}font-size-lg: #{$font-size-lg};
+	--#{$prefix}font-size-md: #{$font-size-md};
+	--#{$prefix}font-size-sm: #{$font-size-sm};
+	--#{$prefix}font-size-xs: #{$font-size-xs};
+	--#{$prefix}font-line-height: #{$line-height-base};
 }
 
 $h1-font-size: 2.5rem;
@@ -317,15 +337,15 @@ $h2-font-size: 1.8125rem;
 $h3-font-size: 1.4375rem;
 $h4-font-size: 1.25rem;
 $h5-font-size: 1.125rem;
-$h6-font-size: .75rem;
+$h6-font-size: 0.75rem;
 
 $font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
+	1: $h1-font-size,
+	2: $h2-font-size,
+	3: $h3-font-size,
+	4: $h4-font-size,
+	5: $h5-font-size,
+	6: $h6-font-size,
 ) !default;
 
 $headings-font-family: $font-family-sans-serif;
@@ -354,7 +374,7 @@ $blockquote-small-color: $gray;
 
 $hr-border-color: $gray-200;
 $hr-border-width: $border-width;
-$hr-opacity: .18;
+$hr-opacity: 0.18;
 
 $list-inline-padding: 5px;
 
@@ -365,9 +385,10 @@ $mark-bg: $orange;
  * To-do: To be moved to each component SCSS file
  */
 
-$table-cell-padding-y: .75rem;
-$table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem calc(#{$table-cell-padding-y} - 1px);
-$table-cell-padding-sm: .5625rem 1.25rem;
+$table-cell-padding-y: 0.75rem;
+$table-cell-padding: calc(#{$table-cell-padding-y} + 1px) 1.25rem
+	calc(#{$table-cell-padding-y} - 1px);
+$table-cell-padding-sm: 0.5625rem 1.25rem;
 $table-bg: $white;
 $table-accent-bg: $offwhite;
 $table-hover-bg: $mist;
@@ -377,8 +398,8 @@ $table-footer-color: $table-accent-bg;
 $table-head-bg: $white;
 $table-head-color: $black;
 $table-dark-bg: $gray-900;
-$table-dark-accent-bg: rgba($white, .05);
-$table-dark-hover-bg: rgba($white, .075);
+$table-dark-accent-bg: rgba($white, 0.05);
+$table-dark-hover-bg: rgba($white, 0.075);
 $table-dark-border-color: lighten($gray-900, 7.5%);
 $table-dark-color: $body-bg;
 
@@ -386,7 +407,8 @@ $btn-font-weight: 700;
 $btn-box-shadow: none;
 $btn-focus-box-shadow: 0 0 0 rgba(0, 0, 0, 10%);
 $btn-active-box-shadow: none;
-$btn-transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$btn-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+	box-shadow 0.15s ease-in-out;
 $btn-primary-color: $white;
 $btn-primary-bg: $wine;
 $btn-primary-border: $wine;
@@ -422,16 +444,16 @@ $btn-login-logout-bg-hover: darken($login-logout-blue, 6%);
 $btn-login-logout-bg-pressed: darken($login-logout-blue, 11%);
 
 $input-btn-padding-x: 1rem;
-$input-btn-padding-y: .5rem;
+$input-btn-padding-y: 0.5rem;
 $input-btn-line-height: 1.34;
-$input-btn-padding-x-sm: .75rem;
-$input-btn-padding-y-sm: .25rem;
+$input-btn-padding-x-sm: 0.75rem;
+$input-btn-padding-y-sm: 0.25rem;
 $input-btn-line-height-sm: 1.5;
 $input-btn-padding-x-lg: 1.25rem;
-$input-btn-padding-y-lg: .625rem;
+$input-btn-padding-y-lg: 0.625rem;
 $input-btn-line-height-lg: 1.2;
-$input-btn-focus-width: .2rem;
-$input-btn-focus-color: rgba($blue, .25);
+$input-btn-focus-width: 0.2rem;
+$input-btn-focus-color: rgba($blue, 0.25);
 $input-btn-focus-box-shadow: none;
 
 $input-bg: $body-bg;
@@ -447,16 +469,16 @@ $input-focus-color: $body-color;
 $input-placeholder-color: #999;
 
 :root {
-  --input-bg: #{$input-bg};
-  --input-focus-bg: #{$tint};
+	--input-bg: #{$input-bg};
+	--input-focus-bg: #{$tint};
 }
 
-$input-padding-x: .75rem;
-$input-padding-y: .563rem;
-$input-padding-top: .663rem;
-$input-padding-right: .75rem;
-$input-padding-bottom: .463rem;
-$input-padding-left: .75rem;
+$input-padding-x: 0.75rem;
+$input-padding-y: 0.563rem;
+$input-padding-top: 0.663rem;
+$input-padding-right: 0.75rem;
+$input-padding-bottom: 0.463rem;
+$input-padding-left: 0.75rem;
 $input-padding: $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left;
 
 $input-border-width: $border-width;
@@ -468,8 +490,8 @@ $input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border});
 $input-height-inner-lg: ($font-size-lg * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
 $input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border});
 
-$input-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-$form-check-input-margin-y: .25rem;
+$input-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+$form-check-input-margin-y: 0.25rem;
 $input-line-height: 1.25;
 $input-hover: #ececec;
 $input-valid-hover: #e5ecf5;
@@ -483,17 +505,17 @@ $cursor-disabled: not-allowed;
 
 $custom-control-gutter: 1.75rem;
 $custom-control-spacer-x: 1.25rem;
-$custom-control-spacer-y: .625rem;
+$custom-control-spacer-y: 0.625rem;
 $custom-control-indicator-size: 1.13rem;
 $custom-control-indicator-bg: $white;
 $custom-control-indicator-bg-size: 70% 70%;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba(0, 0, 0, 10%);
+$custom-control-indicator-box-shadow: inset 0 0.25rem 0.25rem rgba(0, 0, 0, 10%);
 $custom-control-indicator-disabled-bg: $white;
 $custom-control-description-disabled-color: #767676;
 $custom-control-indicator-checked-color: $blue;
 $custom-control-indicator-checked-bg: $white;
 $custom-control-indicator-checked-disabled-bg: none;
-$custom-control-indicator-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9;
+$custom-control-indicator-focus-box-shadow: 0 0 0 0.075rem $white, 0 0 0 0.2rem #0074d9;
 $custom-control-indicator-active-color: $white;
 $custom-control-indicator-active-bg: $white;
 
@@ -503,7 +525,7 @@ $custom-radio-indicator-icon-checked: none;
 
 $custom-file-height: $input-height;
 $custom-file-width: 14rem;
-$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem #0074d9;
+$custom-file-focus-box-shadow: 0 0 0 0.075rem $white, 0 0 0 0.2rem #0074d9;
 
 $custom-file-padding-y: 1rem;
 $custom-file-padding-x: $input-padding-right;
@@ -513,37 +535,36 @@ $custom-file-bg: $input-bg;
 $custom-file-border-width: $border-width;
 $custom-file-border-color: #ddd;
 $custom-file-border-radius: $border-radius;
-$custom-file-box-shadow: inset 0 .2rem .4rem rgba(0, 0, 0, 5%);
+$custom-file-box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 5%);
 $custom-file-button-color: $custom-file-color;
 $custom-file-button-bg: transparent;
 $custom-file-text: (
-  sv: "Välj fil…",
-  en: "Choose file…"
+	sv: "Välj fil…",
+	en: "Choose file…",
 );
 $custom-file-text-multiple: (
-  sv: "filer",
-  en: "files"
+	sv: "filer",
+	en: "files",
 );
 
 $distribution-duration: 1000ms;
-
 
 $dropdown-margin-top: 0;
 $dropdown-bg: $white;
 $dropdown-border-color: $blue;
 $dropdown-border-width: $border-width;
 $dropdown-divider-bg: $shadow;
-$dropdown-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 17.5%);
+$dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 17.5%);
 $dropdown-link-color: $gray-900;
 $dropdown-link-hover-color: darken($gray-900, 5%);
 $dropdown-link-hover-bg: #f5f5f5;
 $dropdown-link-disabled-color: $gray-600;
-$dropdown-item-padding-y: .25rem;
+$dropdown-item-padding-y: 0.25rem;
 $dropdown-item-padding-x: 1.5rem;
 $dropdown-header-color: $gray-600;
 
-$pagination-padding-y: .3rem;
-$pagination-padding-x: .9rem;
+$pagination-padding-y: 0.3rem;
+$pagination-padding-x: 0.9rem;
 $pagination-padding-y-sm: $pagination-padding-y;
 $pagination-padding-x-sm: $pagination-padding-x;
 $pagination-padding-y-lg: $pagination-padding-y;
@@ -574,7 +595,7 @@ $card-border-width: 0;
 $card-cap-bg: $white;
 $card-block-padding: 1rem 1.25rem 1.5rem;
 $card-footer-padding: 1.25rem 1.25rem 1.5rem;
-$card-deck-margin: .625rem;
+$card-deck-margin: 0.625rem;
 
 $tooltip-padding-y: 3px;
 $tooltip-padding-x: 8px;
@@ -593,10 +614,10 @@ $popover-body-padding-x: 14px;
 $popover-arrow-width: 0;
 $popover-arrow-height: 5px;
 
-$transition-base:             all .2s ease-in-out !default;
-$transition-fade:             opacity .15s linear !default;
-$transition-collapse:         height .35s ease !default;
-$transition-collapse-width:   width .35s ease !default;
+$transition-base: all 0.2s ease-in-out !default;
+$transition-fade: opacity 0.15s linear !default;
+$transition-collapse: height 0.35s ease !default;
+$transition-collapse-width: width 0.35s ease !default;
 
 // Badges
 
@@ -613,7 +634,7 @@ $range-slider-height: 4px;
 $range-slider-thumb-size: 1.13rem;
 $range-slider-thumb-bg: $white;
 
-$spinner-animation-curve: cubic-bezier(.53, 0, .49, 1);
+$spinner-animation-curve: cubic-bezier(0.53, 0, 0.49, 1);
 $spinner-size: 60px;
 $spinner-animation-time: 1.9s;
 
@@ -639,8 +660,8 @@ $breadcrumb-divider-color: #6d6e71;
 $breadcrumb-active-color: #6d6e71;
 $breadcrumb-divider: "";
 
-$code-padding-y: .2rem;
-$code-padding-x: .4rem;
+$code-padding-y: 0.2rem;
+$code-padding-x: 0.4rem;
 $code-color: $navy;
 $code-bg: $cloud;
 
@@ -667,10 +688,4 @@ $grid-gutter: 1.875rem;
 $grid-gutter-tight: 1.25rem;
 
 /* Characters which are escaped escape-svg func. Remove when moving to BS5 */
-$escaped-characters: (
-  ("<", "%3c"),
-  (">", "%3e"),
-  ("#", "%23"),
-  ("(", "%28"),
-  (")", "%29"),
-);
+$escaped-characters: (("<", "%3c"), (">", "%3e"), ("#", "%23"), ("(", "%28"), (")", "%29"));

@@ -1,9 +1,9 @@
 export default {
-  title: 'Typography & text/Lead Paragraph',
-  parameters: {
-    badges: ['stable']
-  }
-}
+	title: 'Typography & text/Lead Paragraph',
+	parameters: {
+		badges: ['stable'],
+	},
+};
 
 export const Default = () => `
   <div style="max-width: 45rem">
@@ -13,7 +13,7 @@ export const Default = () => `
       strength of a large company.
     </p>
   </div>
-`
+`;
 export const PayOff = () => `
   <h1 class="display-1 mt-0">Pension</h1>
   <p class="payoff" role="doc-subtitle">
@@ -22,4 +22,4 @@ export const PayOff = () => `
       An introduction to pensions
     </a>
   </p>
-`
+`;

@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as SelectStories from './select.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as SelectStories from './select.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -8,7 +8,8 @@ import { Note } from '../../../.storybook/blocks/Note';
 # Select <Badges of={SelectStories} right />
 
 <Subtitle>
-    The dropdown select provides the user with given options in a list which expands over the webpage when the user interacts with it.
+	The dropdown select provides the user with given options in a list which expands over the webpage
+	when the user interacts with it.
 </Subtitle>
 
 The dropdown select component is an extension of the native HTML form element select. The extension allows for custom styling and different behavior depending on the device used. Only when using a pointer device, such as a mouse or trackpad, is the custom-designed dropdown list visible. In other cases, i.e. touch-based devices, the native select element is used that often displays as a native menu.
@@ -24,37 +25,38 @@ The select component has two variations that both share the bellow traits:
 ## Basic usages
 
 ### Markup
+
 ```html
 <div class="select">
-    <label class="select-label" for="select">City</label>
-    <select class="select-options" name="timezone" id="select">
-        <option value="" disabled selected hidden>Select City</option>
-        <option>Stockholm</option>
-        <option>Göteborg</option>
-        <option>Malmö</option>
-        <option>Umeå</option>
-    </select>
+	<label class="select-label" for="select">City</label>
+	<select class="select-options" name="timezone" id="select">
+		<option value="" disabled selected hidden>Select City</option>
+		<option>Stockholm</option>
+		<option>Göteborg</option>
+		<option>Malmö</option>
+		<option>Umeå</option>
+	</select>
 </div>
 ```
 
 ### Javascript
 
 The select component is imported and initialized with a given element.
-```javascript
-import select from '@lansforsakringar/components/select'
-const mySelectElement = document.querySelector('#my-select')
 
-select(mySelectElement)
+```javascript
+import select from '@lansforsakringar/components/select';
+const mySelectElement = document.querySelector('#my-select');
+
+select(mySelectElement);
 ```
 
 It is also available as an export of the main js bundle.
 
 ```javascript
-import { select } from '@lansforsakringar/components'
+import { select } from '@lansforsakringar/components';
 ```
 
 #### React
-
 
 ## Variations
 
@@ -62,37 +64,44 @@ import { select } from '@lansforsakringar/components'
 <Controls of={SelectStories.DefaultButton} />
 
 ### Select single option
+
 The standard alternative pretty much follows the common traits. It's a select one and only one option setup, much like a radio button.
 
 ### Select multiple options
+
 This multi-select alternative allows for selecting one or several options, which means it works like checkboxes.
 
 ```html
 <select class="select-options" name="..." id="..." multiple>
-...
+	...
 </select>
 ```
 
 ## Modifiers
-<Subtitle>To further customize the dropdown to your needs, you can use any combination of the available modifiers.</Subtitle>
+
+<Subtitle>
+	To further customize the dropdown to your needs, you can use any combination of the available
+	modifiers.
+</Subtitle>
 
 The modifiers can be set with `data-` attribute or when initilizing the element:
 
 ```javascript
-import select from '@lansforsakringar/components/select'
+import select from '@lansforsakringar/components/select';
 
-const element = document.querySelector('#my-select')
+const element = document.querySelector('#my-select');
 
 const options = {
-  allLabel: 'All the things',
-  groupToggle: true,
-  smallPattern: /\((.+?)\)/
-}
+	allLabel: 'All the things',
+	groupToggle: true,
+	smallPattern: /\((.+?)\)/,
+};
 
-select(element, options)
+select(element, options);
 ```
 
 ### Small text
+
 Adds a smaller text used to aid the user in selecting an option.
 Use the `small-pattern` data-attribute to specify with regex wich part should be small. for example, to making text small that is between parateces: `data-small-pattern="\((.+?)\)"`
 
@@ -100,16 +109,20 @@ Use the `small-pattern` data-attribute to specify with regex wich part should be
 <Controls of={SelectStories.SmallText} />
 ```html
 <form class="form-group">
-    <div class="select" data-small-pattern="\((.+?)\)">
-        <label class="select-label" for="select-secondary">City</label>
-        <select class="select-options" name="timezone" id="select-secondary">
-            <option value="" disabled selected hidden>Select City</option>
-            <option>Stockholm (Stockholm)</option>
-            <option>Göteborg (Västra Götaland)</option>
-            <option>Malmö (Skåne)</option>
-            <option>Umeå (Västerbottens)</option>
-        </select>
-    </div>
+	<div class="select" data-small-pattern="\((.+?)\)">
+		<label class="select-label" for="select-secondary">
+			City
+		</label>
+		<select class="select-options" name="timezone" id="select-secondary">
+			<option value="" disabled selected hidden>
+				Select City
+			</option>
+			<option>Stockholm (Stockholm)</option>
+			<option>Göteborg (Västra Götaland)</option>
+			<option>Malmö (Skåne)</option>
+			<option>Umeå (Västerbottens)</option>
+		</select>
+	</div>
 </form>
 ```
 
@@ -121,22 +134,22 @@ Group the options to convey a hierarchical categorization.
 
 ```html
 <form class="form-group">
-    <div class="select">
-        <label class="select-label" for="select-groups">Timezone</label>
-        <select class="select-options" name="timezone" id="select-groups">
-            <option value="" disabled selected hidden>Select Timezone</option>
-            <optgroup label="Alaskan/Hawaiian Time Zone">
-                <option value="AK">Alaska</option>
-                <option value="HI">Hawaii</option>
-            </optgroup>
-            <optgroup label="Stockholm Time Zone">
-                <option value="ST">Stockholm</option>
-            </optgroup>
-            <optgroup label="China Time Zone">
-                <option value="CT">China</option>
-            </optgroup>
-        </select>
-    </div>
+	<div class="select">
+		<label class="select-label" for="select-groups">Timezone</label>
+		<select class="select-options" name="timezone" id="select-groups">
+			<option value="" disabled selected hidden>Select Timezone</option>
+			<optgroup label="Alaskan/Hawaiian Time Zone">
+				<option value="AK">Alaska</option>
+				<option value="HI">Hawaii</option>
+			</optgroup>
+			<optgroup label="Stockholm Time Zone">
+				<option value="ST">Stockholm</option>
+			</optgroup>
+			<optgroup label="China Time Zone">
+				<option value="CT">China</option>
+			</optgroup>
+		</select>
+	</div>
 </form>
 ```
 
@@ -147,24 +160,23 @@ Allow for toggling (expanding/collapsing) the option groups for easier navigatio
 <Story of={SelectStories.OptionToggleGroup} />
 
 ```html
-<div class="select" data-group-toggle>
-    ...
-</div>
+<div class="select" data-group-toggle>...</div>
 ```
 
 ### Label inside
+
 <Story of={SelectStories.LabelInside} />
 
 ```html
-<div class="select inside">
-    ...
-</div>
+<div class="select inside">...</div>
 ```
 
 ## Disable
+
 Add `disabled` to the `<select>` or `<option>`.
 
 <Story of={SelectStories.Disabled} />
 
 ### Options
+
 <Story of={SelectStories.DisabledOptions} />

@@ -1,22 +1,22 @@
-import StyledRadioButtons from './styledRadioButtons.html?raw'
-import ButtonGroup from './buttonGroup.html?raw'
-import RadioCards from './radioCards.html?raw'
+import StyledRadioButtons from './styledRadioButtons.html?raw';
+import ButtonGroup from './buttonGroup.html?raw';
+import RadioCards from './radioCards.html?raw';
 
-import { useEffect, useState } from '@storybook/client-api'
-import { radioButtonsExample } from './radioButtons'
-import { html, uid } from '../../js/utils'
+import { useEffect, useState } from '@storybook/client-api';
+import { radioButtonsExample } from './radioButtons';
+import { html, uid } from '../../js/utils';
 
 export default {
-  title: 'Forms/Radio Buttons',
-  parameters: {
-    backgrounds: { default: 'white' },
-    badges: ['stable']
-  },
-  argTypes: {}
-}
+	title: 'Forms/Radio Buttons',
+	parameters: {
+		backgrounds: { default: 'white' },
+		badges: ['stable'],
+	},
+	argTypes: {},
+};
 
 function StyledRadioButtonTemplate({ valid }) {
-  return `
+	return `
   <div class="form-group ${valid ? 'has-valid' : ''}">
     <div class="d-md-inline-block">
       <div class="custom-control custom-radio mr-05 mb-05">
@@ -31,11 +31,11 @@ function StyledRadioButtonTemplate({ valid }) {
       </div>
     </div>
   </div>
-  `
+  `;
 }
 
 function RenderButtonGroupItem({ active, value = 'Yes' }) {
-  return `
+	return `
   <label class="btn ${active ? 'active' : ''}" data-text="${value}">
     <input
       type="radio"
@@ -46,26 +46,23 @@ function RenderButtonGroupItem({ active, value = 'Yes' }) {
     />
   ${value}
   </label >
-  `
+  `;
 }
 
 function ButtonGroupTemplate({ items = [] }) {
-  const id = uid()
+	const id = uid();
 
-  useEffect(
-    () => radioButtonsExample(document.getElementById(id)),
-    []
-  )
+	useEffect(() => radioButtonsExample(document.getElementById(id)), []);
 
-  return `
+	return `
   <div id="${id}" class="btn-group" data-bs-toggle="buttons">
     ${items.map((item) => RenderButtonGroupItem(item)).join('')}
   </div >
-    `
+    `;
 }
 
 function RenderRadioCard({ name, disabled, active, value = 'Rekomenderad' }) {
-  return `
+	return `
   <div class="radio-card ${active ? 'active' : ''}" >
     <label class="custom-control custom-radio">
       <input
@@ -89,100 +86,94 @@ function RenderRadioCard({ name, disabled, active, value = 'Rekomenderad' }) {
       </span>
     </label>
 </div >
-  `
+  `;
 }
 
 function RadioCardsTemplate({ items }) {
-  const id = uid()
+	const id = uid();
 
-  useEffect(
-    () => radioButtonsExample(document.getElementById(id)),
-    []
-  )
+	useEffect(() => radioButtonsExample(document.getElementById(id)), []);
 
-  return `
+	return `
   <div id="${id}" class="row row-tight form-group">
-      ${items.map((item) => `
+      ${items
+				.map(
+					(item) => `
         <div class="col-6 col-md-3 mb-1">
           ${RenderRadioCard({ name: id, ...item })}
         </div>
-        `).join('')}
+        `
+				)
+				.join('')}
   </div
-  `
+  `;
 }
 
 function RadioCardTemplate(args) {
-  const id = uid()
+	const id = uid();
 
-  useEffect(
-    () => radioButtonsExample(document.getElementById(id)),
-    []
-  )
+	useEffect(() => radioButtonsExample(document.getElementById(id)), []);
 
-  return `
+	return `
   <div id="${id}" class="row row-tight form-group">
     <div class="col-6 col-md-3 mb-1">
       ${RenderRadioCard(args)}
     </div>
   </div
-  `
+  `;
 }
 
-export const Default = StyledRadioButtonTemplate.bind({})
+export const Default = StyledRadioButtonTemplate.bind({});
 
-export const Card = RadioCardTemplate.bind({})
+export const Card = RadioCardTemplate.bind({});
 Card.args = {
-  disabled: false,
-  active: false
-}
+	disabled: false,
+	active: false,
+};
 
-export const Cards = RadioCardsTemplate.bind({})
+export const Cards = RadioCardsTemplate.bind({});
 Cards.args = {
-  items: [
-    { value: 'Val 1', active: true },
-    { value: 'Val 2' }
-  ]
-}
+	items: [{ value: 'Val 1', active: true }, { value: 'Val 2' }],
+};
 
-export const CardDisabled = RadioCardTemplate.bind({})
+export const CardDisabled = RadioCardTemplate.bind({});
 CardDisabled.args = {
-  disabled: true,
-  value: 'Rekomenderad'
-}
+	disabled: true,
+	value: 'Rekomenderad',
+};
 
-export const CardActive = RadioCardTemplate.bind({})
+export const CardActive = RadioCardTemplate.bind({});
 CardActive.args = {
-  active: true,
-  value: 'Rekomenderad'
-}
+	active: true,
+	value: 'Rekomenderad',
+};
 
-
-export const Group = ButtonGroupTemplate.bind({})
+export const Group = ButtonGroupTemplate.bind({});
 Group.args = {
-  items: [
-    { active: true, value: 'Yes' },
-    { active: false, value: 'No' }
-  ]
-}
+	items: [
+		{ active: true, value: 'Yes' },
+		{ active: false, value: 'No' },
+	],
+};
 
-export const styledRadioButtons = () => StyledRadioButtons
+export const styledRadioButtons = () => StyledRadioButtons;
 
 export const buttonGroup = () => {
-  const [id] = useState(uid)
-  useEffect(() => {
-    radioButtonsExample(document.getElementById(id))
-  }, [])
-  return html`
+	const [id] = useState(uid);
+	useEffect(() => {
+		radioButtonsExample(document.getElementById(id));
+	}, []);
+	return html`
   < div id = "${id}" > ${ButtonGroup}</div >
-    `
-}
+    `;
+};
 
 export const radioCards = () => {
-  const [id] = useState(uid)
-  useEffect(() => {
-    radioButtonsExample(document.getElementById(id))
-  }, [])
-  return html`
+	const [id] = useState(uid);
+	useEffect(() => {
+		radioButtonsExample(document.getElementById(id));
+	}, []);
+	return html`
     < div id = "${id}" > ${RadioCards}</div >
-      `
-}
+      `;
+};

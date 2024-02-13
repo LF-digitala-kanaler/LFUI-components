@@ -1,11 +1,12 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as InputFieldStories from './inputfield.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as InputFieldStories from './inputfield.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
 <Meta of={InputFieldStories} />
 
 # Input field <Badges of={InputFieldStories} />
+
 <Canvas of={InputFieldStories.Default} />
 <Controls of={InputFieldStories.Default} />
 
@@ -16,26 +17,34 @@ The form control is only intended to be used with textual inputs such as email, 
 We will only focus on the `<input>` here but remember to always have a label with a for attribute that's equal to the id attribute of the related element to bind them together. This will give screen reader users a better experience.
 
 <Note>
-### Your design friend don't want a label?
-If you add an input of any sort you need a label to bind them together. However it is possible to hide it visually but still have it available for screen readers. Since LFUI is based on Bootstrap we have their helper class available for this. `.sr-only` will hide the element but keep it for screen readers to use.
+	### Your design friend don't want a label? If you add an input of any sort you need a label to
+	bind them together. However it is possible to hide it visually but still have it available for
+	screen readers. Since LFUI is based on Bootstrap we have their helper class available for this.
+	`.sr-only` will hide the element but keep it for screen readers to use.
 </Note>
 
 ## Modifiers
 
 ### Pattern
+
 <Canvas of={InputFieldStories.Pattern} />
 
 ### Prefix
+
 <Canvas of={InputFieldStories.Prefix} />
 
 ### Prefix with image
+
 <Canvas of={InputFieldStories.PrefixImage} />
 
 ### Suffix
+
 <Canvas of={InputFieldStories.Suffix} />
 
 ## Accessibility
+
 ### Placeholder
+
 To give users a hint of what to enter in an input it's always a good idea to att a placeholder attribute.
 
 Placeholder text disappears after the user begins entering data into the Input and should not contain crucial information.

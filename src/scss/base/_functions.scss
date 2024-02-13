@@ -2,5 +2,5 @@
 @import "bootstrap/scss/_functions.scss";
 
 @function encodeHEX($color) {
-  @return "%23" + str-slice(#{$color}, 2, str-length(#{$color}));
+	@return "%23" + str-slice(#{$color}, 2, str-length(#{$color}));
 }

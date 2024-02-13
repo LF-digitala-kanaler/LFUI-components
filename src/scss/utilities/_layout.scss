@@ -3,7 +3,7 @@
  */
 
 .layout-nbfc {
-  overflow: hidden !important;
+	overflow: hidden !important;
 }
 
 /**
@@ -11,8 +11,8 @@
  */
 
 .layout-zbump {
-  position: relative;
-  z-index: 1;
+	position: relative;
+	z-index: 1;
 }
 
 /**
@@ -20,45 +20,45 @@
  */
 
 .layout-block {
-  @extend .d-block;
+	@extend .d-block;
 }
 
 .layout-inline-block {
-  @extend .d-inline-block;
+	@extend .d-inline-block;
 }
 
 .layout-inline {
-  @extend .d-inline;
+	@extend .d-inline;
 }
 
 .layout-flex {
-  @extend .d-flex;
+	@extend .d-flex;
 }
 
 .layout-column {
-  @extend .flex-column;
+	@extend .flex-column;
 }
 
 .layout-row {
-  @extend .flex-row;
+	@extend .flex-row;
 }
 
 .layout-grow {
-  @extend .flex-grow-1;
+	@extend .flex-grow-1;
 }
 
 .layout-shrink {
-  @extend .flex-shrink-1;
+	@extend .flex-shrink-1;
 }
 
 .layout-no-flex {
-  flex: 0 0 auto !important;
+	flex: 0 0 auto !important;
 }
 
 /* <3 */
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 /**
@@ -66,15 +66,15 @@
  */
 
 .clear-both {
-  clear: both;
+	clear: both;
 }
 
 .clear-left {
-  clear: left;
+	clear: left;
 }
 
 .clear-right {
-  clear: right;
+	clear: right;
 }
 
 /**
@@ -82,7 +82,7 @@
  */
 
 .layout-full {
-  width: 100%;
+	width: 100%;
 }
 
 /**
@@ -90,19 +90,19 @@
  */
 
 .pos-static {
-  position: static;
+	position: static;
 }
 
 .pos-relative {
-  position: relative;
+	position: relative;
 }
 
 .pos-absolute {
-  position: absolute;
+	position: absolute;
 }
 
 .pos-fixed {
-  position: fixed;
+	position: fixed;
 }
 
 /**
@@ -110,15 +110,15 @@
  */
 
 .align-top {
-  vertical-align: top !important;
+	vertical-align: top !important;
 }
 
 .align-middle {
-  vertical-align: middle !important;
+	vertical-align: middle !important;
 }
 
 .align-bottom {
-  vertical-align: bottom !important;
+	vertical-align: bottom !important;
 }
 
 /**
@@ -126,19 +126,19 @@
  */
 
 .delimiter-xs {
-  border-top: solid 2px $body-bg !important;
+	border-top: solid 2px $body-bg !important;
 }
 
 .delimiter-sm {
-  border-top: solid ($spacer * .5) $body-bg !important;
+	border-top: solid ($spacer * 0.5) $body-bg !important;
 }
 
 .delimiter-lg {
-  border-top: solid ($spacer * 1) $body-bg !important;
+	border-top: solid ($spacer * 1) $body-bg !important;
 }
 
 .delimiter-xl {
-  border-top: solid ($spacer * 1.5) $body-bg !important;
+	border-top: solid ($spacer * 1.5) $body-bg !important;
 }
 
 /**
@@ -146,5 +146,5 @@
  */
 
 .sr-only {
-  @include visually-hidden;
+	@include visually-hidden;
 }

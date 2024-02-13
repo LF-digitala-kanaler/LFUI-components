@@ -1,26 +1,26 @@
 @import "base/index";
 
 @mixin shortcut-box-style {
-  flex-direction: column;
-  align-items: center;
-  padding: 1.15rem .5rem 1.3rem;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.15rem 0.5rem 1.3rem;
 
-  &::after {
-    content: none;
-  }
+	&::after {
+		content: none;
+	}
 
-  .icon {
-    margin: 0 auto .5rem;
-    transition: transform var(--ease-in) 100ms;
-    will-change: transform;
-  }
+	.icon {
+		margin: 0 auto 0.5rem;
+		transition: transform var(--ease-in) 100ms;
+		will-change: transform;
+	}
 
-  &:hover {
-    .icon {
-      transition-duration: 150ms;
-      transform: translateY(-2px);
-    }
-  }
+	&:hover {
+		.icon {
+			transition-duration: 150ms;
+			transform: translateY(-2px);
+		}
+	}
 }
 
 /**
@@ -28,98 +28,98 @@
  */
 
 .shortcut {
-  --#{$prefix}shortcut-text-color: var(--#{$prefix}color-body);
-  --#{$prefix}shortcut-border-color: var(--#{$prefix}smoke);
-  --#{$prefix}shortcut-border-accent-color: var(--#{$prefix}blue);
+	--#{$prefix}shortcut-text-color: var(--#{$prefix}color-body);
+	--#{$prefix}shortcut-border-color: var(--#{$prefix}smoke);
+	--#{$prefix}shortcut-border-accent-color: var(--#{$prefix}blue);
 
-  position: relative;
+	position: relative;
 
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  min-height: 2.75rem;
-  padding: .75rem 3.25rem .75rem 1.125rem;
-  margin-bottom: .5rem;
-  overflow: hidden;
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+	min-height: 2.75rem;
+	padding: 0.75rem 3.25rem 0.75rem 1.125rem;
+	margin-bottom: 0.5rem;
+	overflow: hidden;
 
-  font-size: 1rem;
-  color: var(--#{$prefix}shortcut-text-color);
-  text-align: left;
-  text-decoration: none;
-  user-select: none;
+	font-size: 1rem;
+	color: var(--#{$prefix}shortcut-text-color);
+	text-align: left;
+	text-decoration: none;
+	user-select: none;
 
-  background: $white;
-  border: 0;
-  border-bottom: 2px solid var(--#{$prefix}shortcut-border-color);
-  border-radius: $border-radius-lg $border-radius-lg 0 0;
-  transition: border-color 100ms var(--ease-out);
+	background: $white;
+	border: 0;
+	border-bottom: 2px solid var(--#{$prefix}shortcut-border-color);
+	border-radius: $border-radius-lg $border-radius-lg 0 0;
+	transition: border-color 100ms var(--ease-out);
 
-  &:hover {
-    color: var(--#{$prefix}shortcut-text-color);
-    text-decoration: none;
-    border-bottom: 2px solid var(--#{$prefix}shortcut-border-accent-color);
-    transition-duration: 150ms;
-  }
+	&:hover {
+		color: var(--#{$prefix}shortcut-text-color);
+		text-decoration: none;
+		border-bottom: 2px solid var(--#{$prefix}shortcut-border-accent-color);
+		transition-duration: 150ms;
+	}
 
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    content: "";
-    transition: right 100ms linear;
-    transform: translateY(-50%);
-    @include btn-arrow-small-right($link-color);
-  }
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: 1rem;
+		content: "";
+		transition: right 100ms linear;
+		transform: translateY(-50%);
+		@include btn-arrow-small-right($link-color);
+	}
 
-  &:active::after,
-  &:active:focus::after,
-  &:active:focus:hover::after {
-    transition: transform 100ms var(--ease-out);
-    transform: translate(.25rem, -50%);
-  }
+	&:active::after,
+	&:active:focus::after,
+	&:active:focus:hover::after {
+		transition: transform 100ms var(--ease-out);
+		transform: translate(0.25rem, -50%);
+	}
 
-  .icon {
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin: -.125rem .75rem -.125rem 0;
-    color: var(--#{$prefix}shortcut-border-accent-color);
-  }
+	.icon {
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin: -0.125rem 0.75rem -0.125rem 0;
+		color: var(--#{$prefix}shortcut-border-accent-color);
+	}
 
-  > :last-child,
-  > div > :last-child {
-    margin-bottom: 0;
-  }
+	> :last-child,
+	> div > :last-child {
+		margin-bottom: 0;
+	}
 
-  @include media-breakpoint-up(md) {
-    min-height: 3.5rem;
-    padding: 1rem 3.75rem 1rem 1.125rem;
+	@include media-breakpoint-up(md) {
+		min-height: 3.5rem;
+		padding: 1rem 3.75rem 1rem 1.125rem;
 
-    &::after {
-      @include btn-arrow-large-right($link-color);
-    }
+		&::after {
+			@include btn-arrow-large-right($link-color);
+		}
 
-    .icon {
-      margin: -.25rem .75rem -.25rem 0;
-    }
-  }
+		.icon {
+			margin: -0.25rem 0.75rem -0.25rem 0;
+		}
+	}
 }
 
 .shortcut-title {
-  display: block;
-  font-family: var(--lf-font-family-sans-serif);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--#{$prefix}shortcut-border-accent-color);
-  @include font-smoothing();
+	display: block;
+	font-family: var(--lf-font-family-sans-serif);
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: var(--#{$prefix}shortcut-border-accent-color);
+	@include font-smoothing();
 
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-xl;
-  }
+	@include media-breakpoint-up(md) {
+		font-size: $font-size-xl;
+	}
 
-  + * {
-    margin-top: .25rem;
-  }
+	+ * {
+		margin-top: 0.25rem;
+	}
 }
 
 /**
@@ -129,47 +129,47 @@
 .shortcut-sm-box,
 .shortcut-md-box,
 .shortcut-lg-box {
-  font-size: 1rem;
-  text-align: left;
-  border-radius: $border-radius-lg $border-radius-lg 0 0;
+	font-size: 1rem;
+	text-align: left;
+	border-radius: $border-radius-lg $border-radius-lg 0 0;
 
-  .shortcut-title {
-    font-size: 1rem;
-  }
+	.shortcut-title {
+		font-size: 1rem;
+	}
 }
 
 .shortcut-box,
 .shortcut-md-box {
-  @include media-breakpoint-up(md) {
-    @include shortcut-box-style();
-  }
+	@include media-breakpoint-up(md) {
+		@include shortcut-box-style();
+	}
 }
 
 .shortcut-lg-box {
-  @include media-breakpoint-up(lg) {
-    @include shortcut-box-style();
-  }
+	@include media-breakpoint-up(lg) {
+		@include shortcut-box-style();
+	}
 }
 
 .shortcut-box {
-  flex-direction: column;
-  align-items: center;
-  padding: 1.15rem .5rem 1.3rem;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.15rem 0.5rem 1.3rem;
 
-  &::after {
-    content: none;
-  }
+	&::after {
+		content: none;
+	}
 
-  .icon {
-    margin: 0 auto .5rem;
-    transition: transform var(--ease-in) 100ms;
-    will-change: transform;
-  }
+	.icon {
+		margin: 0 auto 0.5rem;
+		transition: transform var(--ease-in) 100ms;
+		will-change: transform;
+	}
 
-  &:hover {
-    .icon {
-      transition-duration: 150ms;
-      transform: translateY(-2px);
-    }
-  }
+	&:hover {
+		.icon {
+			transition-duration: 150ms;
+			transform: translateY(-2px);
+		}
+	}
 }

@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as CardStories from './card.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as CardStories from './card.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -13,18 +13,17 @@ You can basically put anything you want inside `.card-block`. We do have some cl
 
 ```html
 <article class="card">
-  <img class="card-img-top" src="http://placehold.it/800x640/ffffff" alt="Card image cap">
-  <div class="card-block">
-    <h3 class="card-title"></h3>
-    <p class="card-text"></p>
-  </div>
-  <div class="card-footer"></div>
+	<img class="card-img-top" src="http://placehold.it/800x640/ffffff" alt="Card image cap" />
+	<div class="card-block">
+		<h3 class="card-title"></h3>
+		<p class="card-text"></p>
+	</div>
+	<div class="card-footer"></div>
 </article>
 ```
 
 <Canvas of={CardStories.Card} />
 <Controls of={CardStories.Card} />
-
 
 ## Card deck
 

@@ -8,8 +8,8 @@ $collapse-duration: 350ms;
  */
 
 .collapsing {
-  transition-timing-function: $collapse-timing-function;
-  transition-duration: $collapse-duration;
+	transition-timing-function: $collapse-timing-function;
+	transition-duration: $collapse-duration;
 }
 
 /**
@@ -17,31 +17,31 @@ $collapse-duration: 350ms;
  */
 
 .collapse-chevron {
-  &::after {
-    position: relative;
-    top: -1px;
-    display: inline-block;
-    width: 19px;
-    height: 19px;
+	&::after {
+		position: relative;
+		top: -1px;
+		display: inline-block;
+		width: 19px;
+		height: 19px;
 
-    padding: 0;
-    margin-left: .7rem;
-    vertical-align: middle;
-    cursor: pointer;
-    content: "";
-    background-position: center;
-    // background-color: currentcolor;
-    background-size: 11px;
+		padding: 0;
+		margin-left: 0.7rem;
+		vertical-align: middle;
+		cursor: pointer;
+		content: "";
+		background-position: center;
+		// background-color: currentcolor;
+		background-size: 11px;
 
-    @include glyph-chevron-down($blue);
-  }
+		@include glyph-chevron-down($blue);
+	}
 }
 
 [aria-expanded="true"].collapse-chevron,
 [aria-expanded="true"] > .collapse-chevron {
-  &::after {
-    transform: scaleY(-1);
-  }
+	&::after {
+		transform: scaleY(-1);
+	}
 }
 
 /**
@@ -49,35 +49,35 @@ $collapse-duration: 350ms;
  */
 
 .collapse-toggle {
-  @include header-block(true);
-  position: relative;
+	@include header-block(true);
+	position: relative;
 
-  padding-right: 3rem;
-  cursor: pointer;
+	padding-right: 3rem;
+	cursor: pointer;
 
-  /* Chevron icon */
+	/* Chevron icon */
 
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 1.2rem;
-    content: "";
-    transition: opacity 100ms ease;
-    transform: translateY(-50%);
-    @include glyph-chevron-down($blue);
-  }
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: 1.2rem;
+		content: "";
+		transition: opacity 100ms ease;
+		transform: translateY(-50%);
+		@include glyph-chevron-down($blue);
+	}
 
-  &[aria-expanded="true"]::after {
-    transform: translateY(-50%) rotate(180deg);
-  }
+	&[aria-expanded="true"]::after {
+		transform: translateY(-50%) rotate(180deg);
+	}
 
-  &[disabled]::after {
-    opacity: .3;
-  }
+	&[disabled]::after {
+		opacity: 0.3;
+	}
 
-  &[aria-expanded="true"] {
-    @include header-block-border($link-color);
-  }
+	&[aria-expanded="true"] {
+		@include header-block-border($link-color);
+	}
 }
 
 /**
@@ -85,13 +85,13 @@ $collapse-duration: 350ms;
  */
 
 .collapse-simple {
-  &[aria-expanded="true"] {
-    @include header-block-border($body-bg);
+	&[aria-expanded="true"] {
+		@include header-block-border($body-bg);
 
-    &:hover {
-      @include header-block-border($link-color);
-    }
-  }
+		&:hover {
+			@include header-block-border($link-color);
+		}
+	}
 }
 
 /**
@@ -99,34 +99,34 @@ $collapse-duration: 350ms;
  */
 
 .collapse-toggle.loading {
-  @include header-block-border($link-color);
+	@include header-block-border($link-color);
 }
 
 .collapse-toggle::before {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: calc(100% + .5rem);
-  height: $border-width;
-  content: "";
-  background-color: $red;
-  border-right: .5rem solid $white;
-  opacity: 0;
-  transform: translateX(-100%);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: calc(100% + 0.5rem);
+	height: $border-width;
+	content: "";
+	background-color: $red;
+	border-right: 0.5rem solid $white;
+	opacity: 0;
+	transform: translateX(-100%);
 }
 
 .collapse-toggle:not(.loading)[aria-expanded="true"]::before {
-  transition: opacity 250ms 100ms ease, transform 0ms 350ms linear;
+	transition: opacity 250ms 100ms ease, transform 0ms 350ms linear;
 }
 
 .collapse-toggle.loading::before {
-  opacity: 1;
-  transition: transform 15000ms cubic-bezier(.02, .96, .37, .81);
-  transform: translateX($border-width * 2);
-  transform-origin: left;
+	opacity: 1;
+	transition: transform 15000ms cubic-bezier(0.02, 0.96, 0.37, 0.81);
+	transform: translateX($border-width * 2);
+	transform-origin: left;
 }
 
 .collapse-toggle.loading[aria-expanded="true"]::before {
-  transition: transform $collapse-duration $collapse-timing-function;
-  transform: scaleX(1);
+	transition: transform $collapse-duration $collapse-timing-function;
+	transform: scaleX(1);
 }

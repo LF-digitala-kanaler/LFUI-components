@@ -6,174 +6,174 @@ $timeline-icon-size-large: 32px;
 $timeline-icon-background: $blue;
 $timeline-padding-left: 2.875rem;
 $timeline-padding-left-large: 5.3rem;
-$timeline-header-padding: .35rem 1.25rem 0 $timeline-padding-left;
-$timeline-header-padding-large: .6rem 1.25rem .5rem $timeline-padding-left-large;
+$timeline-header-padding: 0.35rem 1.25rem 0 $timeline-padding-left;
+$timeline-header-padding-large: 0.6rem 1.25rem 0.5rem $timeline-padding-left-large;
 $timeline-icon-x: 12px;
 $timeline-icon-y: 18px;
 $timeline-icon-x-large: 22px;
 $timeline-icon-y-large: 27px;
 
 .timeline {
-  position: relative;
+	position: relative;
 }
 
 .timeline-list {
-  @include reset-list();
-  margin-bottom: 0;
+	@include reset-list();
+	margin-bottom: 0;
 
-  background-color: $body-bg; // need to have this to be able to get the wave diveder to work with the blue line
+	background-color: $body-bg; // need to have this to be able to get the wave diveder to work with the blue line
 
-  &::before {
-    position: absolute;
-    top: calc(#{$timeline-icon-size} + #{$timeline-icon-size} / 2);
-    left: 23px;
-    z-index: 2;
-    width: 2px;
-    height: calc(100% - (#{$timeline-icon-size} + #{$timeline-icon-size} * 2));
-    content: "";
-    background-color: $timeline-icon-background;
+	&::before {
+		position: absolute;
+		top: calc(#{$timeline-icon-size} + #{$timeline-icon-size} / 2);
+		left: 23px;
+		z-index: 2;
+		width: 2px;
+		height: calc(100% - (#{$timeline-icon-size} + #{$timeline-icon-size} * 2));
+		content: "";
+		background-color: $timeline-icon-background;
 
-    @include media-breakpoint-up(md) {
-      top: calc(#{$timeline-icon-size-large} + #{$timeline-icon-size-large} / 2);
-      left: 42px;
-      height: calc(100% - (#{$timeline-icon-size-large} + #{$timeline-icon-size-large} + 10px));
-    }
-  }
+		@include media-breakpoint-up(md) {
+			top: calc(#{$timeline-icon-size-large} + #{$timeline-icon-size-large} / 2);
+			left: 42px;
+			height: calc(100% - (#{$timeline-icon-size-large} + #{$timeline-icon-size-large} + 10px));
+		}
+	}
 
-  .timeline-item:first-child {
-    margin-top: 0;
-  }
+	.timeline-item:first-child {
+		margin-top: 0;
+	}
 }
 
 .timeline-item {
-  position: relative;
-  margin: 4px 0;
+	position: relative;
+	margin: 4px 0;
 }
 
 .timeline-spacing {
-  position: absolute;
-  top: $timeline-icon-y;
-  left: $timeline-icon-x;
-  z-index: 2;
-  padding: 2px 0;
-  background-color: $white;
+	position: absolute;
+	top: $timeline-icon-y;
+	left: $timeline-icon-x;
+	z-index: 2;
+	padding: 2px 0;
+	background-color: $white;
 
-  &.is-ongoing {
-    top: 15px;
-    left: 9px;
-    padding: 0;
-  }
+	&.is-ongoing {
+		top: 15px;
+		left: 9px;
+		padding: 0;
+	}
 
-  @include media-breakpoint-up(md) {
-    top: $timeline-icon-x-large;
-    left: $timeline-icon-y-large;
+	@include media-breakpoint-up(md) {
+		top: $timeline-icon-x-large;
+		left: $timeline-icon-y-large;
 
-    &.is-ongoing {
-      top: 20px;
-      left: 22px;
-    }
-  }
+		&.is-ongoing {
+			top: 20px;
+			left: 22px;
+		}
+	}
 }
 
 .timeline-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: $timeline-icon-size;
-  height: $timeline-icon-size;
-  background-color: $white;
-  border: $timeline-icon-border-size solid $timeline-icon-background;
-  border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: $timeline-icon-size;
+	height: $timeline-icon-size;
+	background-color: $white;
+	border: $timeline-icon-border-size solid $timeline-icon-background;
+	border-radius: 50%;
 
-  @include media-breakpoint-up(md) {
-    width: $timeline-icon-size-large;
-    height: $timeline-icon-size-large;
-  }
+	@include media-breakpoint-up(md) {
+		width: $timeline-icon-size-large;
+		height: $timeline-icon-size-large;
+	}
 
-  &.is-done {
-    color: $white;
-    background-color: $blue;
-  }
+	&.is-done {
+		color: $white;
+		background-color: $blue;
+	}
 
-  .is-ongoing & {
-    width: 30px;
-    height: 30px;
-    color: $blue;
+	.is-ongoing & {
+		width: 30px;
+		height: 30px;
+		color: $blue;
 
-    @include media-breakpoint-up(md) {
-      width: 2.625rem;
-      height: 2.625rem;
-    }
-  }
+		@include media-breakpoint-up(md) {
+			width: 2.625rem;
+			height: 2.625rem;
+		}
+	}
 }
 
 .timeline-container {
-  background-color: $white;
-  transition: background-color 40ms linear, margin 300ms linear;
+	background-color: $white;
+	transition: background-color 40ms linear, margin 300ms linear;
 
-  &.is-open {
-    margin: 16px 0;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 15%);
+	&.is-open {
+		margin: 16px 0;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 15%);
 
-    &::after {
-      width: 100%;
-      content: "";
-    }
-  }
+		&::after {
+			width: 100%;
+			content: "";
+		}
+	}
 }
 
 .timeline-header {
-  width: 100%;
-  min-height: 4rem;
-  padding: $timeline-header-padding;
-  text-align: left;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  -webkit-appearence: none;
+	width: 100%;
+	min-height: 4rem;
+	padding: $timeline-header-padding;
+	text-align: left;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	-webkit-appearence: none;
 
-  small {
-    display: block;
-    font-size: .875rem;
+	small {
+		display: block;
+		font-size: 0.875rem;
 
-    @include media-breakpoint-up(md) {
-      margin-top: -5px;
-    }
-  }
+		@include media-breakpoint-up(md) {
+			margin-top: -5px;
+		}
+	}
 
-  @include media-breakpoint-up(md) {
-    min-height: 5rem;
-    padding: $timeline-header-padding-large;
+	@include media-breakpoint-up(md) {
+		min-height: 5rem;
+		padding: $timeline-header-padding-large;
 
-    &:hover {
-      background-color: $mist;
+		&:hover {
+			background-color: $mist;
 
-      .timeline-spacing {
-        background-color: $mist;
-      }
-    }
-  }
+			.timeline-spacing {
+				background-color: $mist;
+			}
+		}
+	}
 }
 
 .timeline-heading {
-  margin: 0 0 6px;
-  color: $gray;
+	margin: 0 0 6px;
+	color: $gray;
 
-  @include media-breakpoint-down(md) {
-    font-size: 1.25rem;
-    line-height: .9;
-  }
+	@include media-breakpoint-down(md) {
+		font-size: 1.25rem;
+		line-height: 0.9;
+	}
 }
 
 .timeline-content {
-  padding: .8rem 0;
-  margin-right: .8rem;
-  margin-left: $timeline-padding-left;
-  border-top: 2px solid $body-bg;
+	padding: 0.8rem 0;
+	margin-right: 0.8rem;
+	margin-left: $timeline-padding-left;
+	border-top: 2px solid $body-bg;
 
-  @include media-breakpoint-up(md) {
-    padding: 1.3rem 0;
-    margin-right: 4.5rem;
-    margin-left: $timeline-padding-left-large;
-  }
+	@include media-breakpoint-up(md) {
+		padding: 1.3rem 0;
+		margin-right: 4.5rem;
+		margin-left: $timeline-padding-left-large;
+	}
 }

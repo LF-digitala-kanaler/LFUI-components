@@ -36,17 +36,17 @@ Import `index.scss` at the very beginning of your main SCSS file:
 The JavaScript bundle can be imported as a whole.
 
 ```js
-import '@lansforsakringar/components'
+import '@lansforsakringar/components';
 ```
 
 Some components are also exported, both as part of the bundle as well as individual modules.
 
 ```js
 // Extract from bundle
-import { select } from '@lansforsakringar/components'
+import { select } from '@lansforsakringar/components';
 
 // Import only the specific component
-import select from '@lansforsakringar/components/select'
+import select from '@lansforsakringar/components/select';
 ```
 
 ## Compiled alternative

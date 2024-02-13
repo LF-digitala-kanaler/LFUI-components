@@ -9,21 +9,21 @@
 
 html body :focus,
 html body .focus {
-  outline: 0 !important;
+	outline: 0 !important;
 }
 
 html body[data-focus-source="key"] :focus,
 html body[data-focus-source="key"] .focus {
-  z-index: 10;
-  outline: 4px solid $orange !important;
-  outline-offset: 0;
+	z-index: 10;
+	outline: 4px solid $orange !important;
+	outline-offset: 0;
 }
 
 html body[data-focus-source="key"] [tabindex="-1"]:focus,
 html body[data-focus-source="key"] input:focus,
 html body[data-focus-source="key"] select:focus,
 html body[data-focus-source="key"] textarea:focus {
-  outline: 0 !important;
+	outline: 0 !important;
 }
 
 /**
@@ -31,5 +31,5 @@ html body[data-focus-source="key"] textarea:focus {
  */
 
 a[href="#"] {
-  -webkit-touch-callout: none;
+	-webkit-touch-callout: none;
 }

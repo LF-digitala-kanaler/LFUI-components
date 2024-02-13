@@ -1,22 +1,22 @@
-import Upload from './upload.html?raw'
+import Upload from './upload.html?raw';
 
-import { useEffect, useState } from '@storybook/client-api'
-import { uploadExample } from './upload'
-import { html, uid } from '../../js/utils'
+import { useEffect, useState } from '@storybook/client-api';
+import { uploadExample } from './upload';
+import { html, uid } from '../../js/utils';
 
 export default {
-  title: 'Forms/Upload',
-  parameters: {
-    backgrounds: { default: 'white' },
-    badges: ['stable']
-  },
-  argTypes: {}
-}
+	title: 'Forms/Upload',
+	parameters: {
+		backgrounds: { default: 'white' },
+		badges: ['stable'],
+	},
+	argTypes: {},
+};
 
 function renderPopover() {
-  // const popoverId = `${id}-popover`
-  const image = 'https://avatars.githubusercontent.com/u/21335758'
-  return `
+	// const popoverId = `${id}-popover`
+	const image = 'https://avatars.githubusercontent.com/u/21335758';
+	return `
   <span
     role="button"
     tabindex="-1"
@@ -35,19 +35,18 @@ function renderPopover() {
     </div>
   </span>
 
-    `
+    `;
 }
 
-
 function Template(args) {
-  const [id] = useState(uid)
-  const inputId = `${id}-upload`
+	const [id] = useState(uid);
+	const inputId = `${id}-upload`;
 
-  useEffect(() => {
-    uploadExample(document.getElementById(id))
-  }, [])
+	useEffect(() => {
+		uploadExample(document.getElementById(id));
+	}, []);
 
-  return `
+	return `
   <div id="${id}" class="upload w-100">
     <div class="upload-placeholder"></div>
     <input
@@ -68,12 +67,20 @@ function Template(args) {
       Bifoga fil
     </label>
   </div>
-  `
+  `;
 }
 
-function PreviewTemplate({ popover, errorMessage = 'Description of error in input', invalid, valid, loading }) {
-  return `
-  <div class="upload-preview loading mb-05 ${invalid ? 'has-danger' : ''} ${valid ? 'has-valid' : ''}">
+function PreviewTemplate({
+	popover,
+	errorMessage = 'Description of error in input',
+	invalid,
+	valid,
+	loading,
+}) {
+	return `
+  <div class="upload-preview loading mb-05 ${invalid ? 'has-danger' : ''} ${
+		valid ? 'has-valid' : ''
+	}">
     <div class="upload-body">
       ${popover ? renderPopover() : '<div class="upload-image mr-05"></div>'}
       <span class="upload-name">the-file-name.jpg</span>
@@ -88,43 +95,42 @@ function PreviewTemplate({ popover, errorMessage = 'Description of error in inpu
     </div>
     ${invalid ? `<small class="upload-feedback">${errorMessage}</small>` : ''}
   </div>
-  `
+  `;
 }
 
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = Template.bind({});
+Default.args = {};
 
-export const Preview = PreviewTemplate.bind({})
-Preview.args = {
-}
+export const Preview = PreviewTemplate.bind({});
+Preview.args = {};
 
-export const PreviewValid = PreviewTemplate.bind({})
+export const PreviewValid = PreviewTemplate.bind({});
 PreviewValid.args = {
-  valid: true
-}
+	valid: true,
+};
 
-export const PreviewInvalid = PreviewTemplate.bind({})
+export const PreviewInvalid = PreviewTemplate.bind({});
 PreviewInvalid.args = {
-  invalid: true,
-  errorMessage: 'Description of error in input'
-}
+	invalid: true,
+	errorMessage: 'Description of error in input',
+};
 
-export const PreviewPopover = PreviewTemplate.bind({})
+export const PreviewPopover = PreviewTemplate.bind({});
 PreviewPopover.args = {
-  popover: true
-}
+	popover: true,
+};
 
-export const PreviewLoading = PreviewTemplate.bind({})
+export const PreviewLoading = PreviewTemplate.bind({});
 PreviewLoading.args = {
-  loading: 90
-}
+	loading: 90,
+};
 
 export const Example = () => {
-  const [id] = useState(uid)
-  useEffect(() => {
-    uploadExample(document.getElementById(id))
-  }, [])
-  return html`
-    <div id="${id}">${Upload}</div>
-  `
-}
+	const [id] = useState(uid);
+	useEffect(() => {
+		uploadExample(document.getElementById(id));
+	}, []);
+	return html`
+		<div id="${id}">${Upload}</div>
+	`;
+};

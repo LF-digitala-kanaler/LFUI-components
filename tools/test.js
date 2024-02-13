@@ -1,12 +1,12 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '@playwright/test';
 
-const url = '/iframe.html?id='
+const url = '/iframe.html?id=';
 
 export async function visualTest(variant, { title = {}, options = undefined } = {}) {
-  test(title || variant, async ({ page }) => {
-    await page.goto(url + variant)
-    await page
-      .waitForSelector('body')
-      .then(async () => await expect(page).toHaveScreenshot(options || { fullPage: true }))
-  })
+	test(title || variant, async ({ page }) => {
+		await page.goto(url + variant);
+		await page
+			.waitForSelector('body')
+			.then(async () => await expect(page).toHaveScreenshot(options || { fullPage: true }));
+	});
 }

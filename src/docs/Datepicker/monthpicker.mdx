@@ -1,7 +1,7 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls, Source } from '@storybook/blocks'
-import * as DatepickerStories from './datepicker.stories'
-import { Badges } from '../../../.storybook/blocks/Badges'
-import { Note } from '../../../.storybook/blocks/Note'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls, Source } from '@storybook/blocks';
+import * as DatepickerStories from './datepicker.stories';
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
 
 <Meta of={DatepickerStories} name="Monthpicker" />
 
@@ -11,41 +11,41 @@ The monthpicker borrows most of its appearence and functionality from the datepi
 
 ```html
 <div class="form-group">
-  <label for="my-month">Choose a month</label>
-  <div class="input-group">
-    <input type="month" id="my-month" name="month" class="form-control" required />
-    <span class="input-group-append">
-      <button class="btn" type="button" aria-controls="my-month" title="Välj månad">
-        <svg class="icon" width="26" height="26">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
-        </svg>
-      </button>
-    </span>
-  </div>
+	<label for="my-month">Choose a month</label>
+	<div class="input-group">
+		<input type="month" id="my-month" name="month" class="form-control" required />
+		<span class="input-group-append">
+			<button class="btn" type="button" aria-controls="my-month" title="Välj månad">
+				<svg class="icon" width="26" height="26">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
+				</svg>
+			</button>
+		</span>
+	</div>
 </div>
 ```
 
 ```javascript
-import { monthpicker } from '@lansforsakringar/components'
+import { monthpicker } from '@lansforsakringar/components';
 
-const container = monthpicker(document.getElementById('my-month'))
+const container = monthpicker(document.getElementById('my-month'));
 
 container.addEventListener('change', ({ value }) => {
-  console.log(value)
-})
+	console.log(value);
+});
 ```
 
 The default configuration for the datepicker is available as a named export, DEFAULTS. These can be extended upon to selectively override certain options.
 
 ```javascript
-import { monthpicker, DEFAULTS } from '@lansforsakringar/components/monthpicker'
+import { monthpicker, DEFAULTS } from '@lansforsakringar/components/monthpicker';
 
 datepicker(document.getElementById('my-month'), {
-  localization: {
-    ...DEFAULTS.localization,
-    closeLabel: 'Abort'
-  }
-})
+	localization: {
+		...DEFAULTS.localization,
+		closeLabel: 'Abort',
+	},
+});
 ```
 
 ## Variants
@@ -88,34 +88,34 @@ Other than the default initialization function the monthpicker is exposed as sta
 
 ```html
 <div class="form-group">
-  <label for="my-month">Choose a month</label>
-  <div class="input-group">
-    <duet-month-picker id="my-month" name="month" required></duet-month-picker>
-    <span class="input-group-append">
-      <button class="btn" type="button" aria-controls="my-month" title="Välj månad">
-        <svg class="icon" width="26" height="26">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
-        </svg>
-      </button>
-    </span>
-  </div>
+	<label for="my-month">Choose a month</label>
+	<div class="input-group">
+		<duet-month-picker id="my-month" name="month" required></duet-month-picker>
+		<span class="input-group-append">
+			<button class="btn" type="button" aria-controls="my-month" title="Välj månad">
+				<svg class="icon" width="26" height="26">
+					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
+				</svg>
+			</button>
+		</span>
+	</div>
 </div>
 ```
 
 ```javascript
-let open = false
+let open = false;
 
-const button = document.querySelector('[aria-controls="my-month"]')
-const monthpicker = document.getElementById('my-month')
+const button = document.querySelector('[aria-controls="my-month"]');
+const monthpicker = document.getElementById('my-month');
 
 const toggle = (next = !open) => {
-  monthpicker.open = open = next
-  button.classList.toggle('active', open)
-}
+	monthpicker.open = open = next;
+	button.classList.toggle('active', open);
+};
 
-monthpicker.onclose = () => toggle(false)
-monthpicker.onchange = ({ value }) => console.log(value)
-button.addEventListener('click', () => toggle())
+monthpicker.onclose = () => toggle(false);
+monthpicker.onchange = ({ value }) => console.log(value);
+button.addEventListener('click', () => toggle());
 ```
 
 ###### Preact Component
@@ -123,35 +123,36 @@ button.addEventListener('click', () => toggle())
 The underlying implementation uses [Preact](https://preactjs.com/) and is hence compatible with React which could ease the implementation if used directly. When using the Preact component you have to manually hook up the controls which e.g. toggle the calendar widget.
 
 ```javascript
-import { Monthpicker } from '@lansforsakringar/components/monthpicker'
+import { Monthpicker } from '@lansforsakringar/components/monthpicker';
 
 function App() {
-  const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(false);
 
-  return (
-    <div class="input-group">
-      <div class="duet-month-picker">
-        <Monthpicker
-          open={open}
-          id="my-monthpicker"
-          onChange={({ value }) => console.log(value)}
-          onClose={() => setOpen(false)}
-        />
-      </div>
-      <span class="input-group-append">
-        <button
-          type="button"
-          title="Välj månad"
-          aria-controls="my-monthpicker"
-          class={`btn ${open ? 'active' : ''}`}
-          onClick={() => setOpen(!open)}>
-          <svg class="icon" width="26" height="26">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
-          </svg>
-        </button>
-      </span>
-    </div>
-  )
+	return (
+		<div class="input-group">
+			<div class="duet-month-picker">
+				<Monthpicker
+					open={open}
+					id="my-monthpicker"
+					onChange={({ value }) => console.log(value)}
+					onClose={() => setOpen(false)}
+				/>
+			</div>
+			<span class="input-group-append">
+				<button
+					type="button"
+					title="Välj månad"
+					aria-controls="my-monthpicker"
+					class={`btn ${open ? 'active' : ''}`}
+					onClick={() => setOpen(!open)}
+				>
+					<svg class="icon" width="26" height="26">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar-26"></use>
+					</svg>
+				</button>
+			</span>
+		</div>
+	);
 }
 ```
 
@@ -159,13 +160,13 @@ For use with React you will have to alias `preact/hooks` to `react` and inject t
 
 ```javascript
 export default {
-  esbuild: {
-    jsxInject: "import React from 'react'"
-  },
-  resolve: {
-    alias: {
-      'preact/hooks': 'react'
-    }
-  }
-}
+	esbuild: {
+		jsxInject: "import React from 'react'",
+	},
+	resolve: {
+		alias: {
+			'preact/hooks': 'react',
+		},
+	},
+};
 ```

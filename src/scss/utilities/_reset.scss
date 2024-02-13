@@ -3,30 +3,30 @@
  */
 
 .reset-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 .reset-link {
-  @include reset-link();
+	@include reset-link();
 }
 
 .reset-button {
-  @include reset-button();
+	@include reset-button();
 }
 
 .reset-table th,
 .reset-table td {
-  padding: 0;
-  margin: 0;
-  border: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
 
 .reset-text {
-  margin: initial;
-  font: inherit;
-  color: inherit;
+	margin: initial;
+	font: inherit;
+	color: inherit;
 }
 
 /**
@@ -34,6 +34,6 @@
  */
 
 .reset-interaction {
-  cursor: default;
-  user-select: none;
+	cursor: default;
+	user-select: none;
 }

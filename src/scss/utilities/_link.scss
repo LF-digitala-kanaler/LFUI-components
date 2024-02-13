@@ -5,8 +5,8 @@
 /* Looks like link */
 
 .link {
-  @include reset-button();
-  @include link();
+	@include reset-button();
+	@include link();
 }
 
 /**
@@ -20,59 +20,59 @@
 .link-complex:active,
 .link-complex:hover,
 .link-complex:visited {
-  @include reset-button();
-  @include reset-link();
+	@include reset-button();
+	@include reset-link();
 }
 
 .link-complex {
-  cursor: pointer;
+	cursor: pointer;
 
-  .link-complex-target {
-    @include link-still();
-  }
+	.link-complex-target {
+		@include link-still();
+	}
 
-  /* link-complex-adaptive-target is like link-complex (& link-complex-target),
+	/* link-complex-adaptive-target is like link-complex (& link-complex-target),
    * but the link does not get the default link styling, and instead gets the adaptive,
    * inherit styling.
    * Used in the header.
    */
 
-  .link-complex-adaptive-target {
-    @include link-still();
-    @include reset-link();
-  }
+	.link-complex-adaptive-target {
+		@include link-still();
+		@include reset-link();
+	}
 
-  &:hover .link-complex-target,
-  &:focus .link-complex-target {
-    @include link-hover-focus();
-  }
+	&:hover .link-complex-target,
+	&:focus .link-complex-target {
+		@include link-hover-focus();
+	}
 
-  &:hover .link-complex-adaptive-target,
-  &:focus .link-complex-adaptive-target {
-    @include link-hover-focus();
+	&:hover .link-complex-adaptive-target,
+	&:focus .link-complex-adaptive-target {
+		@include link-hover-focus();
 
-    color: inherit;
-  }
+		color: inherit;
+	}
 
-  &:hover .link-complex-target {
-    @include link-hover();
-  }
+	&:hover .link-complex-target {
+		@include link-hover();
+	}
 
-  &:hover .link-complex-adaptive-target {
-    @include link-hover();
+	&:hover .link-complex-adaptive-target {
+		@include link-hover();
 
-    color: inherit;
-  }
+		color: inherit;
+	}
 
-  &:active .link-complex-target {
-    @include link-active();
-  }
+	&:active .link-complex-target {
+		@include link-active();
+	}
 
-  &:active .link-complex-adaptive-target {
-    @include link-active();
+	&:active .link-complex-adaptive-target {
+		@include link-active();
 
-    color: inherit;
-  }
+		color: inherit;
+	}
 }
 
 /**
@@ -82,16 +82,16 @@
  */
 
 .link-adaptive {
-  @extend .link;
+	@extend .link;
 
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .link-adaptive,
 .link-adaptive:hover,
 .link-adaptive:focus,
 .link-adaptive:active {
-  color: inherit;
+	color: inherit;
 }
 
 /**
@@ -99,7 +99,7 @@
  */
 
 .cursor-pointer:not([disabled]) {
-  cursor: pointer !important;
+	cursor: pointer !important;
 }
 
 /**
@@ -110,15 +110,15 @@
 .link-no-underline:hover,
 .link-no-underline:focus,
 .link-no-underline:active {
-  text-decoration: none !important;
+	text-decoration: none !important;
 }
 
 .link-dark {
-  color: $link-color-dark;
+	color: $link-color-dark;
 
-  &:hover {
-    color: $link-hover-color-dark;
-  }
+	&:hover {
+		color: $link-hover-color-dark;
+	}
 }
 
 /**
@@ -126,8 +126,8 @@
  */
 
 .link-transition {
-  transition: 200ms linear;
-  transition-property: all;
+	transition: 200ms linear;
+	transition-property: all;
 }
 
 /**
@@ -135,19 +135,19 @@
  */
 
 .icon-link-text-underline {
-  text-decoration: underline;
-  text-underline-position: under;
+	text-decoration: underline;
+	text-underline-position: under;
 }
 
 .icon-link,
 .icon-link:hover,
 .icon-link:focus {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .icon-link:hover,
 .icon-link:focus {
-  > .icon-link-text {
-    text-decoration: underline;
-  }
+	> .icon-link-text {
+		text-decoration: underline;
+	}
 }

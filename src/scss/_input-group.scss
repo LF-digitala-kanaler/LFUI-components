@@ -2,15 +2,15 @@
 @import "bootstrap/scss/_input-group.scss";
 
 .input-group.disabled {
-  .input-group-append,
-  .input-group-prepend {
-    span,
-    div {
-      cursor: not-allowed;
-      background-color: $input-disabled-bg;
-      opacity: 1;
-    }
-  }
+	.input-group-append,
+	.input-group-prepend {
+		span,
+		div {
+			cursor: not-allowed;
+			background-color: $input-disabled-bg;
+			opacity: 1;
+		}
+	}
 }
 
 /**
@@ -19,109 +19,109 @@
 
 .input-group-append,
 .input-group-prepend {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: $input-group-addon-min-width;
-  height: 40px;
-  margin: 0;
-  font-weight: 700;
-  background-color: $input-bg;
-  border-width: 0 0 $input-btn-border-width;
-  border-bottom: $border-width solid $input-group-addon-border-color;
-  transition: border-color 60ms linear;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: $input-group-addon-min-width;
+	height: 40px;
+	margin: 0;
+	font-weight: 700;
+	background-color: $input-bg;
+	border-width: 0 0 $input-btn-border-width;
+	border-bottom: $border-width solid $input-group-addon-border-color;
+	transition: border-color 60ms linear;
 
-  .icon {
-    display: block;
-    margin: 0 auto;
-  }
+	.icon {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
 .input-group-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: $input-group-addon-min-width;
-  max-height: 38px;
-  padding-top: .69rem;
-  margin: 0;
-  font-weight: 700;
-  background-color: $input-bg;
-  border-width: 0 0 $input-btn-border-width;
-  border-bottom: none;
-  transition: border-color 60ms linear;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: $input-group-addon-min-width;
+	max-height: 38px;
+	padding-top: 0.69rem;
+	margin: 0;
+	font-weight: 700;
+	background-color: $input-bg;
+	border-width: 0 0 $input-btn-border-width;
+	border-bottom: none;
+	transition: border-color 60ms linear;
 }
 
 // fixed width input. Room for a value of 3 numbers
 .input-group-fixed {
-  flex-wrap: nowrap;
-  width: 90px;
+	flex-wrap: nowrap;
+	width: 90px;
 
-  input.form-control {
-    width: auto;
-  }
+	input.form-control {
+		width: auto;
+	}
 }
 
 // Bug fix for FireFox and IE11 when using flex. See https://github.com/twbs/bootstrap/issues/17784#issuecomment-237840119
 .form-control {
-  min-width: 0;
+	min-width: 0;
 }
 
 // Padding control for the input field.
 .input-group {
-  // If the input field is before the addon
-  input.form-control:first-child:not([type="date"]) {
-    padding-right: 0;
-  }
-  // or in the middle between two addons
-  input.form-control:nth-child(2) {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  // or after the addon
-  input.form-control:last-child {
-    padding-right: .75rem;
-    padding-left: 0;
-  }
-  // or default
-  input.form-control:only-child {
-    padding-right: .75rem;
-    padding-left: .75rem;
-  }
+	// If the input field is before the addon
+	input.form-control:first-child:not([type="date"]) {
+		padding-right: 0;
+	}
+	// or in the middle between two addons
+	input.form-control:nth-child(2) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	// or after the addon
+	input.form-control:last-child {
+		padding-right: 0.75rem;
+		padding-left: 0;
+	}
+	// or default
+	input.form-control:only-child {
+		padding-right: 0.75rem;
+		padding-left: 0.75rem;
+	}
 }
 
 // Or if the first addon is an image
 .input-group-prepend-img {
-  padding: 0 2px;
-  border-width: 0;
+	padding: 0 2px;
+	border-width: 0;
 
-  + input.form-control,
-  + input.form-control:last-child {
-    padding-left: .75rem !important;
-  }
+	+ input.form-control,
+	+ input.form-control:last-child {
+		padding-left: 0.75rem !important;
+	}
 }
 
 // ... or a button
 .input-group-append {
-  ~ input.form-control,
-  ~ input.form-control:last-child {
-    padding-left: .75rem !important;
-  }
+	~ input.form-control,
+	~ input.form-control:last-child {
+		padding-left: 0.75rem !important;
+	}
 }
 
 .input-group-prepend-reg {
-  min-width: 1.5rem;
-  padding: 0 2px;
-  background-color: #039; // Special color to match the offical color
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="14" height="28" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cpath d="M4 25.5c0 1.7 1.3 2.4 2.7 2.4s2.6-.5 2.6-2.4c0-1.4-1-2-2.6-2.2-.6-.1-1-.3-1-1 0-.6.4-.9 1-.9.4 0 1 .3 1 1H9c0-1.8-1.3-2.4-2.5-2.4-1.5 0-2.5.9-2.5 2.4 0 1.1.8 2 2.4 2.2.5 0 1.3 0 1.3 1 0 .7-.6.9-1.1.9-.6 0-1.2-.3-1.2-1H4z" fill="%23FFF"/%3E%3Cg fill="%23FC0"%3E%3Cpath d="m7 0-.3 1 .5.1z"/%3E%3Cpath d="m7 0 .3 1-.5.1z"/%3E%3Cpath d="M8 .7H7v.5z"/%3E%3Cpath d="m8 .7-.9.6-.3-.4z"/%3E%3Cpath d="m7.6 1.8-.3-1-.5.2z"/%3E%3Cpath d="m7.6 1.8-.8-.6.3-.4z"/%3E%3Cpath d="M6 .7h1v.5z"/%3E%3Cpath d="m6 .7.9.6.3-.4z"/%3E%3Cpath d="m6.4 1.8.3-1 .5.2z"/%3E%3Cpath d="m6.4 1.8.8-.6L7 .8z"/%3E%3Cg%3E%3Cpath d="m7 12-.3 1 .5.1z"/%3E%3Cpath d="m7 12 .3 1-.5.1z"/%3E%3Cpath d="M8 12.7H7v.5z"/%3E%3Cpath d="m8 12.7-.9.6-.3-.4z"/%3E%3Cpath d="m7.6 13.8-.3-1-.5.2z"/%3E%3Cpath d="m7.6 13.8-.8-.6.3-.4z"/%3E%3Cg%3E%3Cpath d="M6 12.7h1v.5z"/%3E%3Cpath d="m6 12.7.9.6.3-.4z"/%3E%3Cpath d="m6.4 13.8.3-1 .5.2z"/%3E%3Cpath d="m6.4 13.8.8-.6-.3-.4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M1 6 .7 7l.5.1z"/%3E%3Cpath d="m1 6 .3 1-.5.1z"/%3E%3Cpath d="M2 6.7H1v.5z"/%3E%3Cpath d="m2 6.7-.9.6-.3-.4z"/%3E%3Cpath d="m1.6 7.8-.3-1-.5.2z"/%3E%3Cpath d="m1.6 7.8-.8-.6.3-.4z"/%3E%3Cpath d="M0 6.7h1v.5z"/%3E%3Cpath d="m0 6.7.9.6.3-.4z"/%3E%3Cpath d="m.4 7.8.3-1 .5.2z"/%3E%3Cpath d="m.4 7.8.8-.6-.3-.4zM3.4 2.6l.8-.6-.3-.4z"/%3E%3Cpath d="m3.4 2.6.3-1 .5.2z"/%3E%3Cpath d="m3 1.5.9.6.3-.4z"/%3E%3Cpath d="M3 1.5h1V2z"/%3E%3Cpath d="m4 .8-.3 1 .5.1z"/%3E%3Cpath d="m4 .8.3 1-.5.1z"/%3E%3Cg%3E%3Cpath d="M4.6 2.6 3.8 2l.3-.4z"/%3E%3Cpath d="m4.6 2.6-.3-1-.5.2z"/%3E%3Cpath d="m5 1.5-.9.6-.3-.4z"/%3E%3Cpath d="M5 1.5H4V2z"/%3E%3C/g%3E%3Cg%3E%3Cpath d="m2.4 4.8-.3-1-.5.2z"/%3E%3Cpath d="m2.4 4.8-.8-.6.3-.4z"/%3E%3Cpath d="m1.2 4.8.8-.6-.3-.4z"/%3E%3Cpath d="m1.2 4.8.3-1L2 4z"/%3E%3Cpath d="m.9 3.7.8.6.3-.4z"/%3E%3Cpath d="M.9 3.7h1v.5z"/%3E%3Cg%3E%3Cpath d="m2.8 3.7-.9.6-.2-.4z"/%3E%3Cpath d="M2.8 3.7h-1v.5z"/%3E%3Cpath d="m1.8 3 .3 1-.5.1z"/%3E%3Cpath d="m1.8 3-.3 1L2 4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M2.8 9.7h-1v.5z"/%3E%3Cpath d="m2.8 9.7-.9.6-.2-.4z"/%3E%3Cpath d="m2.4 10.8-.3-1-.5.2z"/%3E%3Cpath d="m2.4 10.8-.8-.6.3-.4z"/%3E%3Cpath d="m1.2 10.8.8-.6-.3-.4z"/%3E%3Cpath d="m1.2 10.8.3-1 .5.2z"/%3E%3Cg%3E%3Cpath d="m1.8 9 .3 1-.5.1z"/%3E%3Cpath d="m1.8 9-.3 1 .5.1z"/%3E%3Cpath d="M.9 9.7h1v.5z"/%3E%3Cpath d="m.9 9.7.8.6.3-.4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M5 11.9H4v.5z"/%3E%3Cpath d="m5 11.9-.9.6-.3-.4z"/%3E%3Cpath d="m4.6 13-.3-1-.5.2z"/%3E%3Cpath d="m4.6 13-.8-.6.3-.4z"/%3E%3Cpath d="m3.4 13 .8-.6L4 12z"/%3E%3Cpath d="m3.4 13 .3-1 .5.2z"/%3E%3Cg%3E%3Cpath d="m4 11.2.3 1-.5.1z"/%3E%3Cpath d="m4 11.2-.3 1 .5.1z"/%3E%3Cpath d="M3 11.9h1v.5z"/%3E%3Cpath d="m3 11.9.9.6.3-.4z"/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="m13 6 .3 1-.5.1z"/%3E%3Cpath d="m13 6-.3 1 .5.1z"/%3E%3Cpath d="M12 6.7h1v.5z"/%3E%3Cpath d="m12 6.7.9.6.3-.4z"/%3E%3Cpath d="m12.4 7.8.3-1 .5.2z"/%3E%3Cpath d="m12.4 7.8.8-.6-.3-.4z"/%3E%3Cpath d="M14 6.7h-1v.5z"/%3E%3Cpath d="m14 6.7-.9.6-.3-.4z"/%3E%3Cpath d="m13.6 7.8-.3-1-.5.2z"/%3E%3Cpath d="m13.6 7.8-.8-.6.3-.4zM10.6 2.6 9.8 2l.3-.4z"/%3E%3Cpath d="m10.6 2.6-.3-1-.5.2z"/%3E%3Cpath d="m11 1.5-.9.6-.3-.4z"/%3E%3Cpath d="M11 1.5h-1V2z"/%3E%3Cpath d="m10 .8.3 1-.5.1z"/%3E%3Cpath d="m10 .8-.3 1 .5.1z"/%3E%3Cg%3E%3Cpath d="m9.4 2.6.8-.6-.3-.4z"/%3E%3Cpath d="m9.4 2.6.3-1 .5.2z"/%3E%3Cpath d="m9 1.5.9.6.3-.4z"/%3E%3Cpath d="M9 1.5h1V2z"/%3E%3C/g%3E%3Cg%3E%3Cpath d="m11.6 4.8.3-1 .5.2z"/%3E%3Cpath d="m11.6 4.8.8-.6-.3-.4z"/%3E%3Cpath d="m12.8 4.8-.8-.6.3-.4z"/%3E%3Cpath d="m12.8 4.8-.3-1-.5.2z"/%3E%3Cpath d="m13.1 3.7-.8.6-.3-.4z"/%3E%3Cpath d="M13.1 3.7h-1v.5z"/%3E%3Cg%3E%3Cpath d="m11.2 3.7.9.6.2-.4z"/%3E%3Cpath d="M11.2 3.7h1v.5z"/%3E%3Cpath d="m12.2 3-.3 1 .5.1z"/%3E%3Cpath d="m12.2 3 .3 1-.5.1z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M11.2 9.7h1v.5z"/%3E%3Cpath d="m11.2 9.7.9.6.2-.4z"/%3E%3Cpath d="m11.6 10.8.3-1 .5.2z"/%3E%3Cpath d="m11.6 10.8.8-.6-.3-.4z"/%3E%3Cpath d="m12.8 10.8-.8-.6.3-.4z"/%3E%3Cpath d="m12.8 10.8-.3-1-.5.2z"/%3E%3Cg%3E%3Cpath d="m12.2 9-.3 1 .5.1z"/%3E%3Cpath d="m12.2 9 .3 1-.5.1z"/%3E%3Cpath d="M13.1 9.7h-1v.5z"/%3E%3Cpath d="m13.1 9.7-.8.6-.3-.4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M9 11.9h1v.5z"/%3E%3Cpath d="m9 11.9.9.6.3-.4z"/%3E%3Cpath d="m9.4 13 .3-1 .5.2z"/%3E%3Cpath d="m9.4 13 .8-.6-.3-.4z"/%3E%3Cpath d="m10.6 13-.8-.6.3-.4z"/%3E%3Cpath d="m10.6 13-.3-1-.5.2z"/%3E%3Cg%3E%3Cpath d="m10 11.2-.3 1 .5.1z"/%3E%3Cpath d="m10 11.2.3 1-.5.1z"/%3E%3Cpath d="M11 11.9h-1v.5z"/%3E%3Cpath d="m11 11.9-.9.6-.3-.4z"/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  border-width: 0;
+	min-width: 1.5rem;
+	padding: 0 2px;
+	background-color: #039; // Special color to match the offical color
+	background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="14" height="28" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cpath d="M4 25.5c0 1.7 1.3 2.4 2.7 2.4s2.6-.5 2.6-2.4c0-1.4-1-2-2.6-2.2-.6-.1-1-.3-1-1 0-.6.4-.9 1-.9.4 0 1 .3 1 1H9c0-1.8-1.3-2.4-2.5-2.4-1.5 0-2.5.9-2.5 2.4 0 1.1.8 2 2.4 2.2.5 0 1.3 0 1.3 1 0 .7-.6.9-1.1.9-.6 0-1.2-.3-1.2-1H4z" fill="%23FFF"/%3E%3Cg fill="%23FC0"%3E%3Cpath d="m7 0-.3 1 .5.1z"/%3E%3Cpath d="m7 0 .3 1-.5.1z"/%3E%3Cpath d="M8 .7H7v.5z"/%3E%3Cpath d="m8 .7-.9.6-.3-.4z"/%3E%3Cpath d="m7.6 1.8-.3-1-.5.2z"/%3E%3Cpath d="m7.6 1.8-.8-.6.3-.4z"/%3E%3Cpath d="M6 .7h1v.5z"/%3E%3Cpath d="m6 .7.9.6.3-.4z"/%3E%3Cpath d="m6.4 1.8.3-1 .5.2z"/%3E%3Cpath d="m6.4 1.8.8-.6L7 .8z"/%3E%3Cg%3E%3Cpath d="m7 12-.3 1 .5.1z"/%3E%3Cpath d="m7 12 .3 1-.5.1z"/%3E%3Cpath d="M8 12.7H7v.5z"/%3E%3Cpath d="m8 12.7-.9.6-.3-.4z"/%3E%3Cpath d="m7.6 13.8-.3-1-.5.2z"/%3E%3Cpath d="m7.6 13.8-.8-.6.3-.4z"/%3E%3Cg%3E%3Cpath d="M6 12.7h1v.5z"/%3E%3Cpath d="m6 12.7.9.6.3-.4z"/%3E%3Cpath d="m6.4 13.8.3-1 .5.2z"/%3E%3Cpath d="m6.4 13.8.8-.6-.3-.4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M1 6 .7 7l.5.1z"/%3E%3Cpath d="m1 6 .3 1-.5.1z"/%3E%3Cpath d="M2 6.7H1v.5z"/%3E%3Cpath d="m2 6.7-.9.6-.3-.4z"/%3E%3Cpath d="m1.6 7.8-.3-1-.5.2z"/%3E%3Cpath d="m1.6 7.8-.8-.6.3-.4z"/%3E%3Cpath d="M0 6.7h1v.5z"/%3E%3Cpath d="m0 6.7.9.6.3-.4z"/%3E%3Cpath d="m.4 7.8.3-1 .5.2z"/%3E%3Cpath d="m.4 7.8.8-.6-.3-.4zM3.4 2.6l.8-.6-.3-.4z"/%3E%3Cpath d="m3.4 2.6.3-1 .5.2z"/%3E%3Cpath d="m3 1.5.9.6.3-.4z"/%3E%3Cpath d="M3 1.5h1V2z"/%3E%3Cpath d="m4 .8-.3 1 .5.1z"/%3E%3Cpath d="m4 .8.3 1-.5.1z"/%3E%3Cg%3E%3Cpath d="M4.6 2.6 3.8 2l.3-.4z"/%3E%3Cpath d="m4.6 2.6-.3-1-.5.2z"/%3E%3Cpath d="m5 1.5-.9.6-.3-.4z"/%3E%3Cpath d="M5 1.5H4V2z"/%3E%3C/g%3E%3Cg%3E%3Cpath d="m2.4 4.8-.3-1-.5.2z"/%3E%3Cpath d="m2.4 4.8-.8-.6.3-.4z"/%3E%3Cpath d="m1.2 4.8.8-.6-.3-.4z"/%3E%3Cpath d="m1.2 4.8.3-1L2 4z"/%3E%3Cpath d="m.9 3.7.8.6.3-.4z"/%3E%3Cpath d="M.9 3.7h1v.5z"/%3E%3Cg%3E%3Cpath d="m2.8 3.7-.9.6-.2-.4z"/%3E%3Cpath d="M2.8 3.7h-1v.5z"/%3E%3Cpath d="m1.8 3 .3 1-.5.1z"/%3E%3Cpath d="m1.8 3-.3 1L2 4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M2.8 9.7h-1v.5z"/%3E%3Cpath d="m2.8 9.7-.9.6-.2-.4z"/%3E%3Cpath d="m2.4 10.8-.3-1-.5.2z"/%3E%3Cpath d="m2.4 10.8-.8-.6.3-.4z"/%3E%3Cpath d="m1.2 10.8.8-.6-.3-.4z"/%3E%3Cpath d="m1.2 10.8.3-1 .5.2z"/%3E%3Cg%3E%3Cpath d="m1.8 9 .3 1-.5.1z"/%3E%3Cpath d="m1.8 9-.3 1 .5.1z"/%3E%3Cpath d="M.9 9.7h1v.5z"/%3E%3Cpath d="m.9 9.7.8.6.3-.4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M5 11.9H4v.5z"/%3E%3Cpath d="m5 11.9-.9.6-.3-.4z"/%3E%3Cpath d="m4.6 13-.3-1-.5.2z"/%3E%3Cpath d="m4.6 13-.8-.6.3-.4z"/%3E%3Cpath d="m3.4 13 .8-.6L4 12z"/%3E%3Cpath d="m3.4 13 .3-1 .5.2z"/%3E%3Cg%3E%3Cpath d="m4 11.2.3 1-.5.1z"/%3E%3Cpath d="m4 11.2-.3 1 .5.1z"/%3E%3Cpath d="M3 11.9h1v.5z"/%3E%3Cpath d="m3 11.9.9.6.3-.4z"/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="m13 6 .3 1-.5.1z"/%3E%3Cpath d="m13 6-.3 1 .5.1z"/%3E%3Cpath d="M12 6.7h1v.5z"/%3E%3Cpath d="m12 6.7.9.6.3-.4z"/%3E%3Cpath d="m12.4 7.8.3-1 .5.2z"/%3E%3Cpath d="m12.4 7.8.8-.6-.3-.4z"/%3E%3Cpath d="M14 6.7h-1v.5z"/%3E%3Cpath d="m14 6.7-.9.6-.3-.4z"/%3E%3Cpath d="m13.6 7.8-.3-1-.5.2z"/%3E%3Cpath d="m13.6 7.8-.8-.6.3-.4zM10.6 2.6 9.8 2l.3-.4z"/%3E%3Cpath d="m10.6 2.6-.3-1-.5.2z"/%3E%3Cpath d="m11 1.5-.9.6-.3-.4z"/%3E%3Cpath d="M11 1.5h-1V2z"/%3E%3Cpath d="m10 .8.3 1-.5.1z"/%3E%3Cpath d="m10 .8-.3 1 .5.1z"/%3E%3Cg%3E%3Cpath d="m9.4 2.6.8-.6-.3-.4z"/%3E%3Cpath d="m9.4 2.6.3-1 .5.2z"/%3E%3Cpath d="m9 1.5.9.6.3-.4z"/%3E%3Cpath d="M9 1.5h1V2z"/%3E%3C/g%3E%3Cg%3E%3Cpath d="m11.6 4.8.3-1 .5.2z"/%3E%3Cpath d="m11.6 4.8.8-.6-.3-.4z"/%3E%3Cpath d="m12.8 4.8-.8-.6.3-.4z"/%3E%3Cpath d="m12.8 4.8-.3-1-.5.2z"/%3E%3Cpath d="m13.1 3.7-.8.6-.3-.4z"/%3E%3Cpath d="M13.1 3.7h-1v.5z"/%3E%3Cg%3E%3Cpath d="m11.2 3.7.9.6.2-.4z"/%3E%3Cpath d="M11.2 3.7h1v.5z"/%3E%3Cpath d="m12.2 3-.3 1 .5.1z"/%3E%3Cpath d="m12.2 3 .3 1-.5.1z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M11.2 9.7h1v.5z"/%3E%3Cpath d="m11.2 9.7.9.6.2-.4z"/%3E%3Cpath d="m11.6 10.8.3-1 .5.2z"/%3E%3Cpath d="m11.6 10.8.8-.6-.3-.4z"/%3E%3Cpath d="m12.8 10.8-.8-.6.3-.4z"/%3E%3Cpath d="m12.8 10.8-.3-1-.5.2z"/%3E%3Cg%3E%3Cpath d="m12.2 9-.3 1 .5.1z"/%3E%3Cpath d="m12.2 9 .3 1-.5.1z"/%3E%3Cpath d="M13.1 9.7h-1v.5z"/%3E%3Cpath d="m13.1 9.7-.8.6-.3-.4z"/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3Cpath d="M9 11.9h1v.5z"/%3E%3Cpath d="m9 11.9.9.6.3-.4z"/%3E%3Cpath d="m9.4 13 .3-1 .5.2z"/%3E%3Cpath d="m9.4 13 .8-.6-.3-.4z"/%3E%3Cpath d="m10.6 13-.8-.6.3-.4z"/%3E%3Cpath d="m10.6 13-.3-1-.5.2z"/%3E%3Cg%3E%3Cpath d="m10 11.2-.3 1 .5.1z"/%3E%3Cpath d="m10 11.2.3 1-.5.1z"/%3E%3Cpath d="M11 11.9h-1v.5z"/%3E%3Cpath d="m11 11.9-.9.6-.3-.4z"/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border-width: 0;
 
-  + input.form-control,
-  + input.form-control:last-child {
-    padding-left: .75rem !important;
-  }
+	+ input.form-control,
+	+ input.form-control:last-child {
+		padding-left: 0.75rem !important;
+	}
 }
 
 /**
@@ -136,11 +136,11 @@
  * 1. Bare date input has built-in addon
  */
 .form-control[type="date"] + .input-group-append {
-  display: none;
+	display: none;
 }
 
 .input-group-append [class*="btn-"] {
-  @include warning("Supports regular 'btn' only");
+	@include warning("Supports regular 'btn' only");
 }
 
 .input-group-append > .btn,
@@ -149,38 +149,38 @@
 .input-group-append > .btn.focus,
 .input-group-append > .btn:active,
 .input-group-append > .btn.active {
-  @include reset-button();
-  min-width: $input-group-addon-min-width;
-  height: 100%;
-  min-height: 40px;
-  padding-right: calc(#{$input-padding-right} - 2px);
-  padding-left: calc(#{$input-padding-left} - 2px);
-  margin-top: 2px;
+	@include reset-button();
+	min-width: $input-group-addon-min-width;
+	height: 100%;
+	min-height: 40px;
+	padding-right: calc(#{$input-padding-right} - 2px);
+	padding-left: calc(#{$input-padding-left} - 2px);
+	margin-top: 2px;
 
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-md;
-  color: $blue;
-  background: $input-bg;
-  border-width: 0 0 $input-btn-border-width;
-  border-bottom: $border-width solid $input-border-color;
-  border-radius: 0;
-  transition: border-color 60ms linear;
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-md;
+	color: $blue;
+	background: $input-bg;
+	border-width: 0 0 $input-btn-border-width;
+	border-bottom: $border-width solid $input-border-color;
+	border-radius: 0;
+	transition: border-color 60ms linear;
 }
 
 .input-group-append:hover > .btn,
 .input-group-append > .btn:focus {
-  background: $input-hover;
+	background: $input-hover;
 }
 
 .input-group-append > .btn[disabled] {
-  color: $input-placeholder-color;
-  cursor: not-allowed;
-  background: $input-disabled-bg;
-  opacity: 1;
+	color: $input-placeholder-color;
+	cursor: not-allowed;
+	background: $input-disabled-bg;
+	opacity: 1;
 }
 
 .input-group-append > .btn:active {
-  color: rgba($blue, .7);
+	color: rgba($blue, 0.7);
 }
 
 /**
@@ -189,44 +189,44 @@
 
 form:not([novalidate]) .form-control:valid + .input-group-append .btn,
 .form-control:not([type="month"]):focus + .input-group-append .btn {
-  border-color: $input-group-addon-focus-border-color;
+	border-color: $input-group-addon-focus-border-color;
 
-  &:hover {
-    background: $input-hover;
-  }
+	&:hover {
+		background: $input-hover;
+	}
 }
 
 form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .btn {
-  background: $cloud;
+	background: $cloud;
 
-  &:hover {
-    background: $input-valid-hover !important;
-  }
+	&:hover {
+		background: $input-valid-hover !important;
+	}
 }
 
 .has-valid .input-group-append .btn {
-  background-color: $cloud !important;
-  border-color: $input-group-addon-focus-border-color;
+	background-color: $cloud !important;
+	border-color: $input-group-addon-focus-border-color;
 
-  &:hover {
-    background: $input-valid-hover !important;
-  }
+	&:hover {
+		background: $input-valid-hover !important;
+	}
 }
 
 .has-valid .input-group-white .input-group-append .btn {
-  background-color: $input-white-bg !important;
+	background-color: $input-white-bg !important;
 }
 
 .has-success .input-group-append .btn {
-  border-color: $green !important;
+	border-color: $green !important;
 }
 
 .has-warning .input-group-append .btn {
-  border-color: $orange !important;
+	border-color: $orange !important;
 }
 
 .has-danger .input-group-append .btn {
-  border-color: $red !important;
+	border-color: $red !important;
 }
 
 /**
@@ -234,8 +234,8 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
  */
 
 .input-group-append > .btn.active {
-  background: $input-hover;
-  border-color: $blue;
+	background: $input-hover;
+	border-color: $blue;
 }
 
 /**
@@ -243,16 +243,16 @@ form:not([novalidate]) .form-control:valid:not(:focus) + .input-group-append .bt
  */
 
 .input-group-white {
-  .input-group-append,
-  .input-group-prepend {
-    span,
-    div,
-    .btn {
-      background-color: $input-white-bg;
-    }
+	.input-group-append,
+	.input-group-prepend {
+		span,
+		div,
+		.btn {
+			background-color: $input-white-bg;
+		}
 
-    &:hover > .btn {
-      background: $input-white-bg-hover;
-    }
-  }
+		&:hover > .btn {
+			background: $input-white-bg-hover;
+		}
+	}
 }

@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as CollapseStories from './collapse.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as CollapseStories from './collapse.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -8,7 +8,9 @@ import { Note } from '../../../.storybook/blocks/Note';
 # Collapse <Badges of={CollapseStories} />
 
 <Subtitle>
-Lets the user expand the current page and displays examples or a longer explanation which support the user in performing their task. This is the most common way of showing Read more in relation to forms.
+	Lets the user expand the current page and displays examples or a longer explanation which support
+	the user in performing their task. This is the most common way of showing Read more in relation to
+	forms.
 </Subtitle>
 
 <Canvas of={CollapseStories.Default} />
@@ -19,6 +21,7 @@ Collapse uses the built in collapse functionality from Bootstrap. You can use a 
 Your hidden container will need an ID that matches that that-target or href.
 
 ## Variants
+
 There is 2 different versions of collapse, one where the expanded area have a white background and one with grey background.
 
 White is the default. To add a grey background, add `.bg-body-bg` to your collapse target like this:
@@ -26,6 +29,7 @@ White is the default. To add a grey background, add `.bg-body-bg` to your collap
 <Canvas of={CollapseStories.WithGrayBackground} />
 
 ## Accessibility
+
 Be sure to add aria-expanded to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`.
 
 If you’ve set the collapsible element to be open by default using the show class, set aria-expanded="true" on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsible element). If the control element’s HTML element is not a button (e.g., an `<a>`or `<div>`), the attribute `role="button"` should be added to the element.

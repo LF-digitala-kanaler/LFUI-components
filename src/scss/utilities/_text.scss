@@ -3,19 +3,19 @@
  */
 
 .font-base {
-  font-family: $font-family-base;
+	font-family: $font-family-base;
 }
 
 .font-sans-serif {
-  font-family: $font-family-sans-serif;
+	font-family: $font-family-sans-serif;
 }
 
 .font-serif {
-  font-family: $font-family-serif;
+	font-family: $font-family-serif;
 }
 
 .font-smooth {
-  @include font-smoothing();
+	@include font-smoothing();
 }
 
 /**
@@ -23,15 +23,15 @@
  */
 
 .text-left {
-  text-align: left !important;
+	text-align: left !important;
 }
 
 .text-right {
-  text-align: right !important;
+	text-align: right !important;
 }
 
 .text-center {
-  text-align: center !important;
+	text-align: center !important;
 }
 
 /**
@@ -39,33 +39,33 @@
  */
 
 .text-xs {
-  font-size: $font-size-xs;
-  line-height: 1.36 !important;
+	font-size: $font-size-xs;
+	line-height: 1.36 !important;
 }
 
 .text-sm {
-  font-size: $font-size-sm;
-  line-height: 1.36 !important;
+	font-size: $font-size-sm;
+	line-height: 1.36 !important;
 }
 
 .text-md {
-  font-size: $font-size-md;
+	font-size: $font-size-md;
 }
 
 .text-lg {
-  font-size: $font-size-lg;
+	font-size: $font-size-lg;
 }
 
 .text-xl {
-  font-size: $font-size-xl;
+	font-size: $font-size-xl;
 }
 
 .text-price {
-  margin: 0;
-  font-size: 3.3rem;
-  line-height: 1;
-  color: $blue;
-  white-space: nowrap;
+	margin: 0;
+	font-size: 3.3rem;
+	line-height: 1;
+	color: $blue;
+	white-space: nowrap;
 }
 
 /**
@@ -73,12 +73,12 @@
  */
 
 .text-legible-width {
-  max-width: $legible-width;
-  word-break: break-word;
+	max-width: $legible-width;
+	word-break: break-word;
 }
 
 .text-base-line {
-  line-height: 1;
+	line-height: 1;
 }
 
 /**
@@ -87,47 +87,107 @@
 
 [dir="RTL"],
 [dir="rtl"] {
-  direction: rtl;
-  text-align: right;
+	direction: rtl;
+	text-align: right;
 }
 
 /**
  * Color utilities
  */
 
-.text-inherit { color: inherit !important; }
-.text-base { color: $body-color !important; }
-.text-link { color: $link-color !important; }
+.text-inherit {
+	color: inherit !important;
+}
+.text-base {
+	color: $body-color !important;
+}
+.text-link {
+	color: $link-color !important;
+}
 
-.text-wine { color: $wine !important; }
-.text-red { color: $red !important; }
-.text-pink { color: $pink !important; }
+.text-wine {
+	color: $wine !important;
+}
+.text-red {
+	color: $red !important;
+}
+.text-pink {
+	color: $pink !important;
+}
 
-.text-navy { color: $navy !important; }
-.text-blue { color: $blue !important; }
-.text-sky { color: $sky !important; }
-.text-baby { color: $baby !important; }
-.text-cloud { color: $cloud !important; }
+.text-navy {
+	color: $navy !important;
+}
+.text-blue {
+	color: $blue !important;
+}
+.text-sky {
+	color: $sky !important;
+}
+.text-baby {
+	color: $baby !important;
+}
+.text-cloud {
+	color: $cloud !important;
+}
 
-.text-black { color: $black !important; }
-.text-gray { color: $gray !important; }
-.text-silver { color: $silver !important; }
-.text-smoke { color: $smoke !important; }
-.text-white { color: $white !important; }
+.text-black {
+	color: $black !important;
+}
+.text-gray {
+	color: $gray !important;
+}
+.text-silver {
+	color: $silver !important;
+}
+.text-smoke {
+	color: $smoke !important;
+}
+.text-white {
+	color: $white !important;
+}
 
-.text-orange { color: $orange !important; }
-.text-green { color: $green !important; }
+.text-orange {
+	color: $orange !important;
+}
+.text-green {
+	color: $green !important;
+}
 
-.text-risk-0 { color: $color-risk-0 !important; }
-.text-risk-1 { color: $color-risk-1 !important; }
-.text-risk-2 { color: $color-risk-2 !important; }
-.text-risk-3 { color: $color-risk-3 !important; }
-.text-risk-4 { color: $color-risk-4 !important; }
-.text-risk-5 { color: $color-risk-5 !important; }
-.text-risk-6 { color: $color-risk-6 !important; }
-.text-risk-7 { color: $color-risk-7 !important; }
+.text-risk-0 {
+	color: $color-risk-0 !important;
+}
+.text-risk-1 {
+	color: $color-risk-1 !important;
+}
+.text-risk-2 {
+	color: $color-risk-2 !important;
+}
+.text-risk-3 {
+	color: $color-risk-3 !important;
+}
+.text-risk-4 {
+	color: $color-risk-4 !important;
+}
+.text-risk-5 {
+	color: $color-risk-5 !important;
+}
+.text-risk-6 {
+	color: $color-risk-6 !important;
+}
+.text-risk-7 {
+	color: $color-risk-7 !important;
+}
 
-.text-info-light { color: $color-info-light !important; }
-.text-success-light { color: $color-success-light !important; }
-.text-warning-light { color: $color-warning-light !important; }
-.text-danger-light { color: $color-danger-light !important; }
+.text-info-light {
+	color: $color-info-light !important;
+}
+.text-success-light {
+	color: $color-success-light !important;
+}
+.text-warning-light {
+	color: $color-warning-light !important;
+}
+.text-danger-light {
+	color: $color-danger-light !important;
+}

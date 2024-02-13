@@ -1,30 +1,30 @@
-import TimelineMarkup from './timeline.html?raw'
+import TimelineMarkup from './timeline.html?raw';
 
-import { useEffect, useState } from '@storybook/client-api'
-import { timelineExample } from './timeline'
-import { uid } from '../../js/utils'
+import { useEffect, useState } from '@storybook/client-api';
+import { timelineExample } from './timeline';
+import { uid } from '../../js/utils';
 
 export default {
-  title: 'Page content/Timeline',
-  parameters: {
-    backgrounds: { default: 'gray' },
-    badges: ['stable']
-  }
-}
+	title: 'Page content/Timeline',
+	parameters: {
+		backgrounds: { default: 'gray' },
+		badges: ['stable'],
+	},
+};
 
 export const Default = () => {
-  const [id] = useState(uid)
-  useEffect(() => {
-    timelineExample(document.getElementById(id))
-  }, [])
-  return `
+	const [id] = useState(uid);
+	useEffect(() => {
+		timelineExample(document.getElementById(id));
+	}, []);
+	return `
     <div id="${id}">${TimelineMarkup}</div>
-  `
-}
+  `;
+};
 
 const iconUpcoming = `
   <div class="timeline-icon"></div>
-  `
+  `;
 
 const iconDone = `
   <div class="timeline-icon is-done">
@@ -32,7 +32,7 @@ const iconDone = `
       <use xlink:href="lf-icons/sprite/24/icons.svg#check-24"></use>
     </svg>
   </div>
-  `
+  `;
 
 const iconOnGoing = `
   <div class="timeline-icon">
@@ -51,28 +51,34 @@ const iconOnGoing = `
       <use xlink:href="lf-icons/sprite/24/icons.svg#flag-24"></use>
     </svg>
   </div>
-  `
+  `;
 
 function spacingClass(state = 'upcoming') {
-  switch (state) {
-    case 'done': return 'is-done'
-    case 'ongoing': return 'is-ongoing'
-    case 'upcoming': return ''
-  }
+	switch (state) {
+		case 'done':
+			return 'is-done';
+		case 'ongoing':
+			return 'is-ongoing';
+		case 'upcoming':
+			return '';
+	}
 }
 
 function icon(state = 'upcoming') {
-  switch (state) {
-    case 'upcoming': return iconUpcoming
-    case 'done': return iconDone
-    case 'ongoing': return iconOnGoing
-  }
+	switch (state) {
+		case 'upcoming':
+			return iconUpcoming;
+		case 'done':
+			return iconDone;
+		case 'ongoing':
+			return iconOnGoing;
+	}
 }
 
 function ItemTemplate({ state }) {
-  const id = uid()
+	const id = uid();
 
-  return `
+	return `
   <div class="timeline">
     <ul class="timeline-list">
       <li class="timeline-item">
@@ -110,20 +116,20 @@ function ItemTemplate({ state }) {
       </li>
     </ul>
   </div>
-  `
+  `;
 }
 
-export const ItemUpcoming = ItemTemplate.bind({})
+export const ItemUpcoming = ItemTemplate.bind({});
 ItemUpcoming.args = {
-  state: 'upcoming'
-}
+	state: 'upcoming',
+};
 
-export const ItemDone = ItemTemplate.bind({})
+export const ItemDone = ItemTemplate.bind({});
 ItemDone.args = {
-  state: 'done'
-}
+	state: 'done',
+};
 
-export const ItemOngoing = ItemTemplate.bind({})
+export const ItemOngoing = ItemTemplate.bind({});
 ItemOngoing.args = {
-  state: 'ongoing'
-}
+	state: 'ongoing',
+};

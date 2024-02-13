@@ -1,14 +1,14 @@
-import { useEffect, useState } from '@storybook/client-api'
-import { tableExample } from './table'
-import { uid } from '../../js/utils'
+import { useEffect, useState } from '@storybook/client-api';
+import { tableExample } from './table';
+import { uid } from '../../js/utils';
 
 export default {
-  title: 'Page content/Tables',
-  parameters: {
-    backgrounds: { default: 'gray' },
-    badges: ['stable']
-  }
-}
+	title: 'Page content/Tables',
+	parameters: {
+		backgrounds: { default: 'gray' },
+		badges: ['stable'],
+	},
+};
 
 export const PresentDefault = () => `
   <table class="table">
@@ -37,8 +37,7 @@ export const PresentDefault = () => `
       </tr>
     </tbody>
   </table>
-  `
-
+  `;
 
 export const PresentSizing = () => `
   <table class="table table-sm">
@@ -67,7 +66,7 @@ export const PresentSizing = () => `
       </tr>
     </tbody>
   </table>
-`
+`;
 export const PresentSummaryRow = () => `
   <table class="table">
     <thead>
@@ -102,7 +101,7 @@ export const PresentSummaryRow = () => `
       </tr>
     </tfoot>
   </table>
-  `
+  `;
 
 export const PresentBandedRows = () => `
   <table class="table table-varied">
@@ -131,7 +130,7 @@ export const PresentBandedRows = () => `
       </tr>
     </tbody>
   </table>
-  `
+  `;
 
 export const PresentInTableGrouping = () => `
   <table class="table">
@@ -173,10 +172,10 @@ export const PresentInTableGrouping = () => `
       </tr>
     </tbody>
   </table>
-  `
+  `;
 
 export const PresentExpandableRows = () => {
-  return `
+	return `
   <table class="table table-clickable">
     <tbody>
       <tr
@@ -279,11 +278,11 @@ export const PresentExpandableRows = () => {
       </tr>
     </tbody>
   </table>
-  `
-}
+  `;
+};
 
 export const PresentClickableRows = () => {
-  return `
+	return `
   <table class="table table-clickable">
     <thead>
       <tr>
@@ -317,8 +316,8 @@ export const PresentClickableRows = () => {
       </tr>
     </tbody>
   </table>
-  `
-}
+  `;
+};
 
 export const PresentSubGrouping = () => `
   <table class="table">
@@ -367,16 +366,16 @@ export const PresentSubGrouping = () => `
       </tr>
     </tbody>
   </table>
-`
+`;
 
 export const PresentSorting = () => {
-  const [id] = useState(uid)
+	const [id] = useState(uid);
 
-  useEffect(() => {
-    tableExample(document.getElementById(id))
-  }, [])
+	useEffect(() => {
+		tableExample(document.getElementById(id));
+	}, []);
 
-  return `
+	return `
   <div id="${id}">
     <table id="table-sort" class="table">
       <thead>
@@ -414,11 +413,11 @@ export const PresentSorting = () => {
       </tbody>
     </table>
   </div>
-  `
-}
+  `;
+};
 
 export const Comparative = () => {
-  return `
+	return `
   <div class="table table-comparative">
     <div class="table-comparative-header">
       <div class="table-comparative-head">Innehåll</div>
@@ -546,5 +545,5 @@ export const Comparative = () => {
       </div>
     </div>
   </div>
-  `
-}
+  `;
+};

@@ -1,13 +1,13 @@
 export default {
-  title: 'Page content/Price box',
-  parameters: {
-    backgrounds: { default: 'gray' },
-    badges: ['stable']
-  }
-}
+	title: 'Page content/Price box',
+	parameters: {
+		backgrounds: { default: 'gray' },
+		badges: ['stable'],
+	},
+};
 
 function Template({ footer }) {
-  return `
+	return `
   <aside class="pricebox">
     <div class="p-1">
       <p class="h4 m-0 text-blue"> Ditt pris </p>
@@ -57,7 +57,9 @@ function Template({ footer }) {
         </div>
       </div>
     </div>
-    ${footer ? `
+    ${
+			footer
+				? `
     <div class="delimiter-xs py-1">
       <div class="container">
         <h5 class="h6 mb-0">Är du kund hos oss?</h5>
@@ -66,13 +68,15 @@ function Template({ footer }) {
         </p>
       </div>
     </div>
-    ` : ''}
+    `
+				: ''
+		}
   </aside>
-  `
+  `;
 }
 
 function FixedTemplate({ position = 'bottom' }) {
-  const toggler = `
+	const toggler = `
     <div class="p-05">
       <div class="d-flex justify-content-between px-05">
         <p class="h4 m-0 text-blue"> Ditt pris </p>
@@ -86,11 +90,11 @@ function FixedTemplate({ position = 'bottom' }) {
         <div class="pricebox-chevron"></div>
       </div>
     </div>
-  `
+  `;
 
-  const wavepattern = '<div class="wave-pattern"></div>'
+	const wavepattern = '<div class="wave-pattern"></div>';
 
-  return `
+	return `
   <aside class="pricebox-fixed price-box-bottom" data-bs-toggle="collapse" href="#price-box-content" aria-expanded="false" aria-controls="price-box-content">
     ${position === 'bottom' ? toggler : ''}
     <div id="price-box-content" class="collapse">
@@ -136,20 +140,20 @@ function FixedTemplate({ position = 'bottom' }) {
     </div>
     ${position === 'top' ? toggler : ''}
   </aside>
-  `
+  `;
 }
 
-export const Desktop = Template.bind({})
+export const Desktop = Template.bind({});
 Desktop.args = {
-  footer: true
-}
+	footer: true,
+};
 
-export const FixedBottom = FixedTemplate.bind({})
+export const FixedBottom = FixedTemplate.bind({});
 FixedBottom.args = {
-  position: 'bottom'
-}
+	position: 'bottom',
+};
 
-export const FixedTop = FixedTemplate.bind({})
+export const FixedTop = FixedTemplate.bind({});
 FixedTop.args = {
-  position: 'top'
-}
+	position: 'top',
+};

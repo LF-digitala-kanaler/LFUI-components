@@ -1,19 +1,19 @@
 @import "base/index";
 
 .pricebox {
-  background: $white;
+	background: $white;
 }
 
 .pricebox-fixed {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: $zindex-fixed;
-  width: 100%;
-  cursor: pointer;
-  background: $white;
-  border-top: $navy solid 2px;
-  box-shadow: 0 0 1rem .25rem $smoke;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: $zindex-fixed;
+	width: 100%;
+	cursor: pointer;
+	background: $white;
+	border-top: $navy solid 2px;
+	box-shadow: 0 0 1rem 0.25rem $smoke;
 }
 
 /**
@@ -21,23 +21,23 @@
  */
 
 .pricebox-chevron {
-  @include glyph-chevron-down($blue);
-  width: 2rem;
-  height: 2rem;
-  background-position: center center;
-  background-size: 1.125rem .75rem;
+	@include glyph-chevron-down($blue);
+	width: 2rem;
+	height: 2rem;
+	background-position: center center;
+	background-size: 1.125rem 0.75rem;
 }
 
 [aria-expanded="true"] .pricebox-chevron {
-  transform: scaleY(-1);
+	transform: scaleY(-1);
 }
 
 .price-box-bottom {
-  .pricebox-chevron {
-    transform: scaleY(-1);
-  }
+	.pricebox-chevron {
+		transform: scaleY(-1);
+	}
 
-  &[aria-expanded="true"] .pricebox-chevron {
-    transform: scaleY(1);
-  }
+	&[aria-expanded="true"] .pricebox-chevron {
+		transform: scaleY(1);
+	}
 }

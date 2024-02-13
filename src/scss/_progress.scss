@@ -1,139 +1,139 @@
 @import "base/index";
 
-$progress-height:                         .625rem;
-$progress-font-size:                      .75rem;
-$progress-bg:                             $smoke;
-$progress-border-radius:                  $border-radius;
-$progress-box-shadow:                     inset 0 .1rem .1rem rgba(0, 0, 0, 10%);
-$progress-bar-color:                      $login-logout-blue;
-$progress-bar-bg:                         theme-color("primary");
-$progress-bar-animation-timing:           1s linear infinite;
-$progress-bar-transition:                 width .6s ease;
-$progress-bar-bg:                         $login-logout-blue;
-$progress-bar-success-bg:                 $color-success-light;
-$progress-bar-warning-bg:                 $color-warning-light;
-$progress-bar-danger-bg:                  $color-danger-light;
-$progress-bar-info-bg:                    $color-info;
-$progress-bar-circle-default-size:        50px;
+$progress-height: 0.625rem;
+$progress-font-size: 0.75rem;
+$progress-bg: $smoke;
+$progress-border-radius: $border-radius;
+$progress-box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, 10%);
+$progress-bar-color: $login-logout-blue;
+$progress-bar-bg: theme-color("primary");
+$progress-bar-animation-timing: 1s linear infinite;
+$progress-bar-transition: width 0.6s ease;
+$progress-bar-bg: $login-logout-blue;
+$progress-bar-success-bg: $color-success-light;
+$progress-bar-warning-bg: $color-warning-light;
+$progress-bar-danger-bg: $color-danger-light;
+$progress-bar-info-bg: $color-info;
+$progress-bar-circle-default-size: 50px;
 
 @import "bootstrap5/scss/_progress.scss";
 
 // Since the text/value/description can be placed anywhere we give it a separate class
 .progress-text {
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm;
-  font-weight: 700;
+	font-family: $font-family-sans-serif;
+	font-size: $font-size-sm;
+	font-weight: 700;
 }
 
 // Filled-in portion of the bar
 .progress-bar {
-  box-shadow: 4px 0 0 0 $white;
+	box-shadow: 4px 0 0 0 $white;
 }
 
 .progress-container {
-  display: flex;
-  padding: 0 4rem;
+	display: flex;
+	padding: 0 4rem;
 
-  .progress-divider-text {
-    position: absolute;
-    top: -5px;
-    right: 0;
-    left: 0;
-    font-family: $font-family-sans-serif;
-    text-align: center;
-  }
+	.progress-divider-text {
+		position: absolute;
+		top: -5px;
+		right: 0;
+		left: 0;
+		font-family: $font-family-sans-serif;
+		text-align: center;
+	}
 
-  .progress-circle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: start;
-    width: $progress-bar-circle-default-size;
-  }
+	.progress-circle-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-self: start;
+		width: $progress-bar-circle-default-size;
+	}
 
-  .progress-circle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: $progress-bar-circle-default-size;
-    min-width: $progress-bar-circle-default-size;
-    height: $progress-bar-circle-default-size;
-    min-height: $progress-bar-circle-default-size;
-    color: $blue;
-    background: $white;
-    border: 2px solid $blue;
-    border-radius: 50%;
-  }
+	.progress-circle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: $progress-bar-circle-default-size;
+		min-width: $progress-bar-circle-default-size;
+		height: $progress-bar-circle-default-size;
+		min-height: $progress-bar-circle-default-size;
+		color: $blue;
+		background: $white;
+		border: 2px solid $blue;
+		border-radius: 50%;
+	}
 
-  .progress-circle.success {
-    background: $cloud;
-    border: 3px solid $blue;
-  }
+	.progress-circle.success {
+		background: $cloud;
+		border: 3px solid $blue;
+	}
 
-  .progress-circle-text {
-    width: 160px;
-    padding-top: 10px;
-    font-family: $font-family-sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: $blue;
-    text-align: center;
-  }
+	.progress-circle-text {
+		width: 160px;
+		padding-top: 10px;
+		font-family: $font-family-sans-serif;
+		font-size: 15px;
+		font-weight: 700;
+		color: $blue;
+		text-align: center;
+	}
 
-  .progress-divider {
-    position: relative;
-    display: flex;
-    flex-grow: 1;
-    align-self: start;
-    justify-content: center;
-    height: $progress-bar-circle-default-size;
-    color: $blue;
-  }
+	.progress-divider {
+		position: relative;
+		display: flex;
+		flex-grow: 1;
+		align-self: start;
+		justify-content: center;
+		height: $progress-bar-circle-default-size;
+		color: $blue;
+	}
 
-  .progress-divider-line {
-    align-self: center;
-    width: 100%;
-    border: 1px solid $blue;
-  }
+	.progress-divider-line {
+		align-self: center;
+		width: 100%;
+		border: 1px solid $blue;
+	}
 
-  &.progress-container-vertical {
-    display: inline-flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
+	&.progress-container-vertical {
+		display: inline-flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 0;
 
-    .progress-circle-container {
-      flex-direction: row;
-      width: 100%;
-      height: $progress-bar-circle-default-size;
-    }
+		.progress-circle-container {
+			flex-direction: row;
+			width: 100%;
+			height: $progress-bar-circle-default-size;
+		}
 
-    .progress-circle {
-      margin-right: 10px;
-    }
+		.progress-circle {
+			margin-right: 10px;
+		}
 
-    .progress-circle-text {
-      width: auto;
-      padding: 0;
-      text-align: left;
-    }
+		.progress-circle-text {
+			width: auto;
+			padding: 0;
+			text-align: left;
+		}
 
-    .progress-divider {
-      align-items: center;
-      height: 60px;
-    }
+		.progress-divider {
+			align-items: center;
+			height: 60px;
+		}
 
-    .progress-divider-line {
-      width: auto;
-      height: 100%;
-      margin-right: 10px;
-      margin-left: calc(#{$progress-bar-circle-default-size} / 2);
-    }
+		.progress-divider-line {
+			width: auto;
+			height: 100%;
+			margin-right: 10px;
+			margin-left: calc(#{$progress-bar-circle-default-size} / 2);
+		}
 
-    .progress-divider-text {
-      position: relative;
-      top: 0;
-      font-size: 14px;
-    }
-  }
+		.progress-divider-text {
+			position: relative;
+			top: 0;
+			font-size: 14px;
+		}
+	}
 }

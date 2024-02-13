@@ -1,13 +1,15 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as ProgressBarStories from './progressBar.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as ProgressBarStories from './progressBar.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
 <Meta of={ProgressBarStories} />
 
 # Progressbar <Badges of={ProgressBarStories} />
+
 <Subtitle>
-The progress bar helps the user to understand how much of a flow has been completed if there is much to do in the flow. For shorter flows, pagination is preferred.
+	The progress bar helps the user to understand how much of a flow has been completed if there is
+	much to do in the flow. For shorter flows, pagination is preferred.
 </Subtitle>
 
 <Canvas of={ProgressBarStories.Default} />
@@ -18,4 +20,5 @@ The progress bar is used to display how much of a flow that has been completed. 
 The progress bar consists of a visual indicator and a percentage which shows how large part of the flow which has been completed.
 
 ## Please consider
+
 The progress bar shows how much of the flow which has been completed, meaning that you (hypothetically) can have completed 78% and be on page 2 of 7. In contrast, the pagination only tells you on which page you are without taking into account how much of the flow you have completed. Usage together with arrow step navigation is encouraged.

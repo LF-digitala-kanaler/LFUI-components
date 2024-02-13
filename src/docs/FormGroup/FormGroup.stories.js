@@ -1,11 +1,11 @@
 export default {
-  title: 'Forms/Form groups',
-  parameters: {
-    backgrounds: { default: 'white' },
-    badges: ['stable'],
-  },
-  argTypes: {}
-}
+	title: 'Forms/Form groups',
+	parameters: {
+		backgrounds: { default: 'white' },
+		badges: ['stable'],
+	},
+	argTypes: {},
+};
 
 export const Grouping = () => `
   <form>
@@ -27,7 +27,7 @@ export const Grouping = () => `
       </div>
     </div>
   </form>
-`
+`;
 
 export const Invalid = () => `
   <form>
@@ -41,7 +41,7 @@ export const Invalid = () => `
       </div>
     </div>
   </form>
-  `
+  `;
 
 export const Valid = () => `
   <form>
@@ -55,4 +55,4 @@ export const Valid = () => `
       </div>
     </div>
   </form>
-  `
+  `;

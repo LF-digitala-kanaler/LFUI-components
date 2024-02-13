@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as TabsStories from './tabs.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as TabsStories from './tabs.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -8,44 +8,52 @@ import { Note } from '../../../.storybook/blocks/Note';
 # Tabs <Badges of={TabsStories} />
 
 <Note>
-Please see [Bootstraps Navs and tabs](https://getbootstrap.com/docs/4.0/components/navs/) for instructions.
+	Please see [Bootstraps Navs and tabs](https://getbootstrap.com/docs/4.0/components/navs/) for
+	instructions.
 </Note>
 
 ## Variations
+
 We offer three varieties: standard tabs `.nav-tabs`, line tabs `.nav-lines` and sub nav `.nav-sub`. line tabs and sub nav are custom and not part of Bootstrap.
 
 ### Standard tabs
-<Canvas of={TabsStories.StandardDefault } />
+
+<Canvas of={TabsStories.StandardDefault} />
 
 ### Line tabs
-<Canvas of={TabsStories.LineDefault } />
+
+<Canvas of={TabsStories.LineDefault} />
 
 ### Sub navigation
-<Canvas of={TabsStories.SubNavigation } />
 
+<Canvas of={TabsStories.SubNavigation} />
 
 ## Modifiers
 
 ### With icons
-<Canvas of={TabsStories.StandardWithIcons } />
-<Canvas of={TabsStories.LineWithIcons } />
+
+<Canvas of={TabsStories.StandardWithIcons} />
+<Canvas of={TabsStories.LineWithIcons} />
 
 ### Fill width
-<Canvas of={TabsStories.StandardFillWidth } />
-<Canvas of={TabsStories.LineFillWidth } />
+
+<Canvas of={TabsStories.StandardFillWidth} />
+<Canvas of={TabsStories.LineFillWidth} />
 
 ## Setting theme
+
 Themes are used to modify Nav styles for a desired background color. See how the hover color for Line Tabs changes from white to blue on a white background.
 
 The theme is best applied to a containing element – likely the same element that applies the background color – with the `data-bs-theme="on-gray"` class. Tabs currently support on-gray and on-white.
 
 ```html
 <div class="bg-body-bg" data-bs-theme="on-gray">
-  <div class="nav-tabs">…</div>
+	<div class="nav-tabs">…</div>
 </div>
 ```
 
 ## Accessibility
+
 If using a nav bar, add a role="navigation" to the most logical parent container of the `<ul>` or wrap a `<nav>` element around the navigation. Don't add the role to the `<ul>` as this will prevent it from being announced as a list by assistive technologies.
 
 Note that navigation bars - even if styled as tabs with the `.nav-tabs` class - should not have `role="tablist"`, `role="tab"`, or `role="tabpanel"` attributes. See (this soruce) for more information.

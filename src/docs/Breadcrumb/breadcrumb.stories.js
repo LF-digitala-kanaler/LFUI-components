@@ -1,15 +1,15 @@
-import Breadcrumb from './breadcrumb.html?raw'
+import Breadcrumb from './breadcrumb.html?raw';
 
 export default {
-  title: 'Navigations/Breadcrumb',
-  parameters: {
-    backgrounds: { default: 'gray' },
-    badges: ['stable']
-  }
-}
+	title: 'Navigations/Breadcrumb',
+	parameters: {
+		backgrounds: { default: 'gray' },
+		badges: ['stable'],
+	},
+};
 
 function Template({ transparent }) {
-  return `
+	return `
   <nav aria-label="Breadcrumb">
     <ol class="breadcrumb ${transparent ? 'breadcrumb-transparent' : ''}">
       <li class="breadcrumb-item">
@@ -21,17 +21,17 @@ function Template({ transparent }) {
       <li class="breadcrumb-item active" aria-current="page">Car insurance</li>
     </ol>
   </nav>
-  `
+  `;
 }
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
-  transparent: false
-}
+	transparent: false,
+};
 
-export const Transparent = Template.bind({})
+export const Transparent = Template.bind({});
 Transparent.args = {
-  transparent: true
-}
+	transparent: true,
+};
 
-export const breadcrumbExample = () => Breadcrumb
+export const breadcrumbExample = () => Breadcrumb;

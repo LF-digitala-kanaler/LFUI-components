@@ -7,25 +7,25 @@ import { useOf } from '@storybook/blocks';
  * - if nothing is passed, it defaults to the primary story
  */
 export const Badges = ({ of, right }) => {
-  const resolvedOf = useOf(of || 'story', ['story', 'meta']);
-  switch (resolvedOf.type) {
-    case 'story': {
-      const { badges } = resolvedOf.story.parameters
-      return renderBadges(badges, !!right)
-    }
-    case 'meta': {
-      const { badges } = resolvedOf.preparedMeta.parameters
-      return renderBadges(badges, !!right)
-    }
-  }
-}
+	const resolvedOf = useOf(of || 'story', ['story', 'meta']);
+	switch (resolvedOf.type) {
+		case 'story': {
+			const { badges } = resolvedOf.story.parameters;
+			return renderBadges(badges, !!right);
+		}
+		case 'meta': {
+			const { badges } = resolvedOf.preparedMeta.parameters;
+			return renderBadges(badges, !!right);
+		}
+	}
+};
 
 function renderBadges(badges, rightAligned) {
-  const badgeElements = badges.map((badge) => <span class={`sb-unstyled sb-badge sb-badge-${badge}`}>{badge}</span>)
+	const badgeElements = badges.map((badge) => (
+		<span class={`sb-unstyled sb-badge sb-badge-${badge}`}>{badge}</span>
+	));
 
-  return (
-    <div class={`sb-badge-list ${rightAligned ? 'sb-badge-list--right' : ''}`}>
-      {badgeElements}
-    </div>
-  )
+	return (
+		<div class={`sb-badge-list ${rightAligned ? 'sb-badge-list--right' : ''}`}>{badgeElements}</div>
+	);
 }

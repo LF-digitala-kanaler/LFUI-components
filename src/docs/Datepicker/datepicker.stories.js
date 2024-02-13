@@ -1,50 +1,50 @@
-import Datepicker from './datepicker.html?raw'
-import Timepicker from './timepicker.html?raw'
-import Monthpicker from './monthpicker.html?raw'
+import Datepicker from './datepicker.html?raw';
+import Timepicker from './timepicker.html?raw';
+import Monthpicker from './monthpicker.html?raw';
 
-import { useEffect, useState } from '@storybook/client-api'
-import { monthpickerExample } from './monthpicker.jsx'
-import { datepickerExample } from './datepicker.js'
+import { useEffect, useState } from '@storybook/client-api';
+import { monthpickerExample } from './monthpicker.jsx';
+import { datepickerExample } from './datepicker.js';
 
-import { html, uid } from '../../js/utils.js'
-import { DEFAULTS, datepicker } from '../../js/components/datepicker.js'
+import { html, uid } from '../../js/utils.js';
+import { DEFAULTS, datepicker } from '../../js/components/datepicker.js';
 
-import { monthpicker } from '../../js/components/monthpicker.jsx'
+import { monthpicker } from '../../js/components/monthpicker.jsx';
 
 export default {
-  title: 'Forms/Datepicker',
-  parameters: {
-    backgrounds: { default: 'white' },
-    badges: ['stable']
-  }
-}
+	title: 'Forms/Datepicker',
+	parameters: {
+		backgrounds: { default: 'white' },
+		badges: ['stable'],
+	},
+};
 
 export const DatepickerExamples = () => {
-  const [id] = useState(uid)
-  useEffect(() => datepickerExample(document.getElementById(id)), [])
-  return `
+	const [id] = useState(uid);
+	useEffect(() => datepickerExample(document.getElementById(id)), []);
+	return `
     <div id="${id}">${Datepicker}</div>
-  `
-}
+  `;
+};
 
-export const TimepickerExamples = () => Timepicker
+export const TimepickerExamples = () => Timepicker;
 
 export const MonthpickerExamples = () => {
-  const [id] = useState(uid)
-  useEffect(() => monthpickerExample(document.getElementById(id)), [])
-  return `
+	const [id] = useState(uid);
+	useEffect(() => monthpickerExample(document.getElementById(id)), []);
+	return `
     <div id="${id}">${Monthpicker}</div>
-  `
-}
+  `;
+};
 
 function DatepickerTemplate(args) {
-  const [id] = useState(uid)
+	const [id] = useState(uid);
 
-  useEffect(() => {
-    datepickerExample(document.getElementById(id))
-  }, [args])
+	useEffect(() => {
+		datepickerExample(document.getElementById(id));
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25">
       <label for="date-standard">Välj datum</label>
       <div class="input-group">
@@ -69,22 +69,22 @@ function DatepickerTemplate(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 
 function DisabledWeekendsTemplate(args) {
-  useEffect(() => {
-    const weekdays = document.getElementById('date-weekdays')
-    console.log('week', weekdays)
-    if (weekdays) {
-      const weekdaysDuetEl = datepicker(weekdays)
-      weekdaysDuetEl.isDateDisabled = function (date) {
-        return date.getDay() % 6 === 0
-      }
-    }
-  }, [args])
+	useEffect(() => {
+		const weekdays = document.getElementById('date-weekdays');
+		console.log('week', weekdays);
+		if (weekdays) {
+			const weekdaysDuetEl = datepicker(weekdays);
+			weekdaysDuetEl.isDateDisabled = function (date) {
+				return date.getDay() % 6 === 0;
+			};
+		}
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25">
       <label for="date-standard">Välj datum</label>
       <div class="input-group">
@@ -98,22 +98,22 @@ function DisabledWeekendsTemplate(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 
 function ValidTemplate(args) {
-  useEffect(() => {
-    const validated = document.getElementById('date-validated')
-    if (validated) {
-      const validatedGroup = validated.closest('.form-group')
-      const validatedDuetEl = datepicker(validated)
-      validatedDuetEl.addEventListener('duetChange', function ({ details }) {
-        validatedGroup.classList.add('has-valid')
-      })
-    }
-  }, [args])
+	useEffect(() => {
+		const validated = document.getElementById('date-validated');
+		if (validated) {
+			const validatedGroup = validated.closest('.form-group');
+			const validatedDuetEl = datepicker(validated);
+			validatedDuetEl.addEventListener('duetChange', function ({ details }) {
+				validatedGroup.classList.add('has-valid');
+			});
+		}
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25 has-valid">
       <label for="date-validated">Välj datum</label>
       <div class="input-group">
@@ -132,16 +132,16 @@ function ValidTemplate(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 
 function MinMaxTemplate(args) {
-  useEffect(() => {
-    const minmax = document.getElementById('date-minmax')
-    if (minmax) datepicker(minmax)
-  }, [args])
+	useEffect(() => {
+		const minmax = document.getElementById('date-minmax');
+		if (minmax) datepicker(minmax);
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25">
       <label for="date-minmax">Välj datum</label>
       <div class="input-group">
@@ -162,68 +162,68 @@ function MinMaxTemplate(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 function CustomLocationTemplate(args) {
-  useEffect(() => {
-    const finnish = document.getElementById('date-finnish')
-    if (finnish) {
-      datepicker(finnish, {
-        ...DEFAULTS,
-        localization: {
-          buttonLabel: 'Valitse päivämäärä',
-          placeholder: 'pp.kk.vvvv',
-          selectedDateMessage: 'Valittu päivämäärä on',
-          prevMonthLabel: 'Edellinen kuukausi',
-          nextMonthLabel: 'Seuraava kuukausi',
-          monthSelectLabel: 'Kuukausi',
-          yearSelectLabel: 'Vuosi',
-          closeLabel: 'Sulje ikkuna',
-          calendarHeading: 'Valitse päivämäärä',
-          dayNames: [
-            'Sunnuntai',
-            'Maanantai',
-            'Tiistai',
-            'Keskiviikko',
-            'Torstai',
-            'Perjantai',
-            'Lauantai'
-          ],
-          monthNames: [
-            'Tammikuu',
-            'Helmikuu',
-            'Maaliskuu',
-            'Huhtikuu',
-            'Toukokuu',
-            'Kesäkuu',
-            'Heinäkuu',
-            'Elokuu',
-            'Syyskuu',
-            'Lokakuu',
-            'Marraskuu',
-            'Joulukuu'
-          ],
-          monthNamesShort: [
-            'Tammi',
-            'Helmi',
-            'Maalis',
-            'Huhti',
-            'Touko',
-            'Kesä',
-            'Heinä',
-            'Elo',
-            'Syys',
-            'Loka',
-            'Marras',
-            'Joulu'
-          ],
-          locale: 'fi-FI'
-        }
-      })
-    }
-  }, [args])
+	useEffect(() => {
+		const finnish = document.getElementById('date-finnish');
+		if (finnish) {
+			datepicker(finnish, {
+				...DEFAULTS,
+				localization: {
+					buttonLabel: 'Valitse päivämäärä',
+					placeholder: 'pp.kk.vvvv',
+					selectedDateMessage: 'Valittu päivämäärä on',
+					prevMonthLabel: 'Edellinen kuukausi',
+					nextMonthLabel: 'Seuraava kuukausi',
+					monthSelectLabel: 'Kuukausi',
+					yearSelectLabel: 'Vuosi',
+					closeLabel: 'Sulje ikkuna',
+					calendarHeading: 'Valitse päivämäärä',
+					dayNames: [
+						'Sunnuntai',
+						'Maanantai',
+						'Tiistai',
+						'Keskiviikko',
+						'Torstai',
+						'Perjantai',
+						'Lauantai',
+					],
+					monthNames: [
+						'Tammikuu',
+						'Helmikuu',
+						'Maaliskuu',
+						'Huhtikuu',
+						'Toukokuu',
+						'Kesäkuu',
+						'Heinäkuu',
+						'Elokuu',
+						'Syyskuu',
+						'Lokakuu',
+						'Marraskuu',
+						'Joulukuu',
+					],
+					monthNamesShort: [
+						'Tammi',
+						'Helmi',
+						'Maalis',
+						'Huhti',
+						'Touko',
+						'Kesä',
+						'Heinä',
+						'Elo',
+						'Syys',
+						'Loka',
+						'Marras',
+						'Joulu',
+					],
+					locale: 'fi-FI',
+				},
+			});
+		}
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25">
       <label for="date-finnish">Välj datum</label>
       <div class="input-group">
@@ -237,33 +237,33 @@ function CustomLocationTemplate(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 
-export const DefaultDatepicker = DatepickerTemplate.bind({})
+export const DefaultDatepicker = DatepickerTemplate.bind({});
 DefaultDatepicker.args = {
-  disabled: false
-}
+	disabled: false,
+};
 
-export const DisabledWeekdays = DisabledWeekendsTemplate.bind({})
-DisabledWeekdays.args = {}
+export const DisabledWeekdays = DisabledWeekendsTemplate.bind({});
+DisabledWeekdays.args = {};
 
-export const MinMax = MinMaxTemplate.bind({})
-MinMax.args = {}
+export const MinMax = MinMaxTemplate.bind({});
+MinMax.args = {};
 
-export const ValidDatepicker = ValidTemplate.bind({})
-ValidDatepicker.args = {}
+export const ValidDatepicker = ValidTemplate.bind({});
+ValidDatepicker.args = {};
 
-export const FinishDatepicker = CustomLocationTemplate.bind({})
-FinishDatepicker.args = {}
+export const FinishDatepicker = CustomLocationTemplate.bind({});
+FinishDatepicker.args = {};
 
 export function MonthDefault(args) {
-  useEffect(() => {
-    const standard = document.getElementById('date-month')
-    if (standard) monthpicker(standard)
-  }, [args])
+	useEffect(() => {
+		const standard = document.getElementById('date-month');
+		if (standard) monthpicker(standard);
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25">
       <label for="date-month">Välj månad</label>
       <div class="input-group">
@@ -277,16 +277,16 @@ export function MonthDefault(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 
 export function MonthMinMax(args) {
-  useEffect(() => {
-    const minmax = document.getElementById('date-month-minmax')
-    if (minmax) monthpicker(minmax)
-  }, [args])
+	useEffect(() => {
+		const minmax = document.getElementById('date-month-minmax');
+		if (minmax) monthpicker(minmax);
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group w-25">
       <label for="date-month">Välj månad</label>
       <div class="input-group">
@@ -307,22 +307,22 @@ export function MonthMinMax(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }
 
 export function MonthValidated(args) {
-  useEffect(() => {
-    const validated = document.getElementById('date-month-validated')
-    if (validated) {
-      const validatedGroup = validated.closest('.form-group')
-      const container = monthpicker(validated)
-      container.addEventListener('change', () => {
-        validatedGroup.classList.add('has-valid')
-      })
-    }
-  }, [args])
+	useEffect(() => {
+		const validated = document.getElementById('date-month-validated');
+		if (validated) {
+			const validatedGroup = validated.closest('.form-group');
+			const container = monthpicker(validated);
+			container.addEventListener('change', () => {
+				validatedGroup.classList.add('has-valid');
+			});
+		}
+	}, [args]);
 
-  return `
+	return `
     <div class="form-group has-valid w-25">
       <label for="date-month-validated">Choose a date</label>
       <div class="input-group">
@@ -341,5 +341,5 @@ export function MonthValidated(args) {
         </span>
       </div>
     </div>
-  `
+  `;
 }

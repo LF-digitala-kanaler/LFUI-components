@@ -1,18 +1,21 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
-import * as ShortcutStories from './shortcut.stories'
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import * as ShortcutStories from './shortcut.stories';
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
 <Meta of={ShortcutStories} />
 
 # Shortcut <Badges of={ShortcutStories} />
+
 <Subtitle>
-Shortcuts are highly flexible. They can go with our without icons, and contain pretty much any type of content – such as a paragraph.
+	Shortcuts are highly flexible. They can go with our without icons, and contain pretty much any
+	type of content – such as a paragraph.
 </Subtitle>
 
 <Canvas of={ShortcutStories.Default} />
 
 ## Configurations
+
 Configuration
 Three options, with their default values.
 
@@ -23,22 +26,27 @@ Three options, with their default values.
 ```
 
 ## With Icon
+
 <Canvas of={ShortcutStories.WithIcon} />
 
 ## With content
+
 <Canvas of={ShortcutStories.WithContent} />
 
 ## Modifiers
 
 ### Box Layout
+
 You can build landing page shortcuts by adding `.shortcut-box` to your shortcut.
 
 <Canvas of={ShortcutStories.BoxLayout} />
 
 #### Responsivness
+
 If you would like for the box shortcuts to go horizontal and stacked on narrow viewpoints, consider the shortcut-md-box modifier instead. In this case, icon size needs to be taken into account. Since LFUI dosen't scale icons, two different icons will need to be defined. The visibility of the icons can then be controlled with bootstraps display classes. Use a 24px icon for small screens and a 40px icon for larger screens.
 
 ##### Small viewport
+
 <Canvas of={ShortcutStories.BoxLayoutSmall} />
 ##### Large viewport
 <Canvas of={ShortcutStories.BoxLayoutLarge} />
