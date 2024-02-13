@@ -250,6 +250,7 @@ $border-widths: (
 
 $border-radius: .25rem;
 $border-radius-lg: .375rem;
+$border-radius-xl: .5rem;
 $border-radius-sm: $border-radius;
 
 $component-active-color: $white;
@@ -645,6 +646,19 @@ $code-color: $navy;
 $code-bg: $cloud;
 
 $kbd-bg: #333;
+
+
+$alert-padding-y: .9375rem;
+$alert-padding-x: 1.5rem;
+$alert-padding-y-small: 1rem;
+$alert-padding-x-small: 1rem;
+$alert-margin-bottom: .5rem;
+$alert-border-radius: $border-radius-xl !default;
+$alert-border-width: 0px;
+$alert-bg-scale: -80% !default;
+$alert-border-scale: -70% !default;
+$alert-color-scale: 40% !default;
+$alert-dismissible-padding-r: $alert-padding-x * 2;
 
 /**
  * Our own global helper variables
