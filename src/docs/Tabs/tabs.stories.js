@@ -1,93 +1,69 @@
-import LineTabs from './LineTabs.html?raw';
-import ContainedTabs from './ContainedTabs.html?raw';
+import LineTabs from './LineTabs.html?raw'
+import ContainedTabs from './ContainedTabs.html?raw'
 
 export default {
-	title: 'Navigations/Tabs',
-	parameters: {
-		backgrounds: { default: 'gray' },
-		badges: ['stable'],
-	},
-};
+  title: 'Navigations/Tabs',
+  parameters: {
+    backgrounds: { default: 'gray' },
+    badges: ['stable']
+  }
+}
 
 function LineTemplate({ icons, fill }) {
-	return `
+  return `
   <ul class="nav nav-lines ${fill ? 'nav-fill' : ''}" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" data-bs-toggle="tab" href="#contentA1" role="tab" data-text="Bilförsäkring">
-        ${
-					icons
-						? `<svg role="presentation" class="icon" width="24" height="24">
+        ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
           <use xlink:href="lf-icons/sprite/24/icons.svg#car-24"></use>
-        </svg>`
-						: ''
-				}
+        </svg>` : ''}
         Bilförsäkring
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="tab" href="#contentA2" role="tab" data-text="Båtförsäkring">
-        ${
-					icons
-						? `<svg role="presentation" class="icon" width="24" height="24">
+        ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
           <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-        </svg>`
-						: ''
-				}
+        </svg>` : ''}
         Båtförsäkring
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="tab" href="#contentA3" role="tab" data-text="Mc-försäkring">
-        ${
-					icons
-						? `<svg role="presentation" class="icon" width="24" height="24">
+        ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
           <use xlink:href="lf-icons/sprite/24/icons.svg#mc-24"></use>
-        </svg>`
-						: ''
-				}
+        </svg>` : ''}
         Mc-försäkring
       </a>
     </li>
   </ul>
-  `;
+  `
 }
 
 function StandardTemplate({ icons, fill }) {
-	return `
+  return `
     <ul class="nav nav-tabs ${fill ? 'nav-fill' : ''}" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" data-bs-toggle="tab" href="#contentA1" role="tab" data-text="Bilförsäkring">
-          ${
-						icons
-							? `<svg role="presentation" class="icon" width="24" height="24">
+          ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
             <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-          </svg>`
-							: ''
-					}
+          </svg>` : ''}
           Bilförsäkring
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#contentA2" role="tab" data-text="Båtförsäkring">
-          ${
-						icons
-							? `<svg role="presentation" class="icon" width="24" height="24">
+          ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
             <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-          </svg>`
-							: ''
-					}
+          </svg>` : ''}
           Båtförsäkring
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#contentA3" role="tab" data-text="Mc-försäkring">
-          ${
-						icons
-							? `<svg role="presentation" class="icon" width="24" height="24">
+          ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
             <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-          </svg>`
-							: ''
-					}
+          </svg>` : ''}
           Mc-försäkring
         </a>
       </li>
@@ -120,11 +96,11 @@ function StandardTemplate({ icons, fill }) {
         </div>
       </div>
     </div>
-  `;
+  `
 }
 
 function SubNavigationTemplate() {
-	return `
+  return `
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" data-bs-toggle="tab" href="#contentD1" role="tab" data-text="Bilförsäkring">
@@ -203,53 +179,53 @@ function SubNavigationTemplate() {
       </div>
     </div>
   </div>
-  `;
+  `
 }
 
-export const LineDefault = LineTemplate.bind({});
+export const LineDefault = LineTemplate.bind({})
 LineDefault.args = {
-	icons: false,
-	fill: false,
-};
+  icons: false,
+  fill: false
+}
 LineDefault.parameters = {
-	backgrounds: { default: 'white' },
-};
+  backgrounds: { default: 'white' }
+}
 
-export const LineWithIcons = LineTemplate.bind({});
+export const LineWithIcons = LineTemplate.bind({})
 LineWithIcons.args = {
-	icons: true,
-};
+  icons: true
+}
 LineWithIcons.parameters = {
-	backgrounds: { default: 'white' },
-};
+  backgrounds: { default: 'white' }
+}
 
-export const LineFillWidth = LineTemplate.bind({});
+export const LineFillWidth = LineTemplate.bind({})
 LineFillWidth.args = {
-	fill: true,
-};
+  fill: true
+}
 LineFillWidth.parameters = {
-	backgrounds: { default: 'white' },
-};
+  backgrounds: { default: 'white' }
+}
 
-export const StandardDefault = StandardTemplate.bind({});
+export const StandardDefault = StandardTemplate.bind({})
 StandardDefault.args = {
-	icons: false,
-	fill: false,
-	subNavigation: false,
-};
+  icons: false,
+  fill: false,
+  subNavigation: false
+}
 
-export const StandardWithIcons = StandardTemplate.bind({});
+export const StandardWithIcons = StandardTemplate.bind({})
 StandardWithIcons.args = {
-	icons: true,
-};
+  icons: true
+}
 
-export const StandardFillWidth = StandardTemplate.bind({});
+export const StandardFillWidth = StandardTemplate.bind({})
 StandardFillWidth.args = {
-	fill: true,
-};
+  fill: true
+}
 
-export const SubNavigation = SubNavigationTemplate.bind({});
-SubNavigation.args = {};
+export const SubNavigation = SubNavigationTemplate.bind({})
+SubNavigation.args = {}
 
-export const lineTabs = () => LineTabs;
-export const containedTabs = () => ContainedTabs;
+export const lineTabs = () => LineTabs
+export const containedTabs = () => ContainedTabs

@@ -1,15 +1,15 @@
-import Shortcut from './shortcut.html?raw';
+import Shortcut from './shortcut.html?raw'
 
 export default {
-	title: 'Button and links/Shortcut',
-	parameters: {
-		backgrounds: { default: 'gray' },
-		badges: ['stable'],
-	},
-	args: {
-		title: 'Shortcut title',
-	},
-};
+  title: 'Button and links/Shortcut',
+  parameters: {
+    backgrounds: { default: 'gray' },
+    badges: ['stable']
+  },
+  args: {
+    title: 'Shortcut title'
+  }
+}
 
 const iconMarkup = `
   <svg class="icon d-md-none" width="24" height="24">
@@ -18,10 +18,10 @@ const iconMarkup = `
   <svg class="icon d-none d-md-block" width="32" height="32">
     <use xlink:href="lf-icons/sprite/32/icons.svg#contract-32"></use>
   </svg>
-`;
+`
 
 function Template({ title, content, icon }) {
-	return `
+  return `
   <a
     href="#"
     onclick="return false"
@@ -33,11 +33,11 @@ function Template({ title, content, icon }) {
     ${content || ''}
     ${content ? '</div>' : ''}
   </a>
-  `;
+  `
 }
 
 function TemplateBoxLayout() {
-	return `
+  return `
   <div class="row row-tight">
     <div class="col-6 col-md-3">
       <a href="#" onclick="return false" class="shortcut shortcut-box">
@@ -56,11 +56,11 @@ function TemplateBoxLayout() {
       </a>
     </div>
   </div>
-  `;
+  `
 }
 
 function TemplateBoxLayoutSmall({ viewport }) {
-	return `
+  return `
   <div class="row row-tight">
     <div class="col-6 col-md-3">
       <a href="#" onclick="return false" class="shortcut shortcut-box">
@@ -79,11 +79,11 @@ function TemplateBoxLayoutSmall({ viewport }) {
       </a>
     </div>
   </div>
-  `;
+  `
 }
 
 function TemplateBoxLayoutLarge() {
-	return `
+  return `
   <div class="row row-tight">
     <div class="col-lg-3">
       <a href="#" onclick="return false" class="shortcut shortcut-lg-box">
@@ -130,43 +130,43 @@ function TemplateBoxLayoutLarge() {
       </a>
     </div>
   </div>
-  `;
+  `
 }
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-	title: 'Digital documents',
-};
+  title: 'Digital documents'
+}
 
-export const WithIcon = Template.bind({});
+export const WithIcon = Template.bind({})
 WithIcon.args = {
-	title: 'Financial Reports',
-	icon: true,
-};
+  title: 'Financial Reports',
+  icon: true
+}
 
 export const WithContent = {
-	render: () => `
+  render: () => `
     ${Template({
-			title: 'Contact us',
-			content: `
+    title: 'Contact us',
+    content: `
         <span class="">Open 09:00-18:00, Monday to Friday</span>
-      `,
-		})}
+      `
+  })}
     ${Template({
-			title: 'Sustainability',
-			content: `
+    title: 'Sustainability',
+    content: `
       <p>
         The starting point for the sustainability efforts of Sweden’s largest
         insurance company, Länsförsäkringar, is a local and long-term
         responsibility in society. Protecting, making customers secure and helping
         them to prevent damage has always been part of our core&nbsp;business.
       </p>
-      `,
-		})}
-  `,
-};
-export const BoxLayout = TemplateBoxLayout.bind({});
-export const BoxLayoutSmall = TemplateBoxLayoutSmall.bind({});
-export const BoxLayoutLarge = TemplateBoxLayoutLarge.bind({});
+      `
+  })}
+  `
+}
+export const BoxLayout = TemplateBoxLayout.bind({})
+export const BoxLayoutSmall = TemplateBoxLayoutSmall.bind({})
+export const BoxLayoutLarge = TemplateBoxLayoutLarge.bind({})
 
-export const shortcutExample = () => Shortcut;
+export const shortcutExample = () => Shortcut

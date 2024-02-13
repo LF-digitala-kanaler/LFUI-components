@@ -1,1 +1,1 @@
-export { default as Button } from 'bootstrap5/js/src/button';
+export { default as Button } from 'bootstrap5/js/src/button'

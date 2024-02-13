@@ -1,56 +1,56 @@
 @import "base/index";
 
-$breadcrumb-font-size: null !default;
-$breadcrumb-padding-y: 0 !default;
-$breadcrumb-padding-x: 0 !default;
-$breadcrumb-item-padding-x: 0.5rem !default;
-$breadcrumb-margin-bottom: 1rem !default;
-$breadcrumb-bg: null !default;
-$breadcrumb-divider-color: $gray-600 !default;
-$breadcrumb-active-color: $gray-600 !default;
-$breadcrumb-divider: quote("/") !default;
-$breadcrumb-divider-flipped: $breadcrumb-divider !default;
-$breadcrumb-border-radius: null !default;
+$breadcrumb-font-size:              null !default;
+$breadcrumb-padding-y:              0 !default;
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding-x:         .5rem !default;
+$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-bg:                     null !default;
+$breadcrumb-divider-color:          $gray-600 !default;
+$breadcrumb-active-color:           $gray-600 !default;
+$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-divider-flipped:        $breadcrumb-divider !default;
+$breadcrumb-border-radius:          null !default;
 
 @import "bootstrap5/scss/_breadcrumb.scss";
 
 .breadcrumb {
-	font-family: $font-family-sans-serif;
-	font-size: $font-size-sm;
-	cursor: default;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-sm;
+  cursor: default;
 }
 
 .breadcrumb-item {
-	padding-bottom: 0.275rem;
+  padding-bottom: .275rem;
 }
 
 .breadcrumb-item + .breadcrumb-item {
-	padding-left: 0;
+  padding-left: 0;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-	content: none;
+  content: none;
 }
 
 .breadcrumb-item::after {
-	position: relative;
-	bottom: 0;
-	display: inline-block;
-	width: 0.667rem;
-	height: 1.0625rem;
-	padding: 0 0.2rem;
-	margin: 0 0.3rem 0 0.6rem;
-	vertical-align: middle;
-	content: "";
-	background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="8" height="17" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1.354 2.646L6.707 8l-5.353 5.354-.708-.708L5.293 8 .646 3.354z" fill="%23747578" fill-rule="nonzero"/%3E%3C/svg%3E');
-	background-repeat: no-repeat;
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  width: .667rem;
+  height: 1.0625rem;
+  padding: 0 .2rem;
+  margin: 0 .3rem 0 .6rem;
+  vertical-align: middle;
+  content: "";
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="8" height="17" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1.354 2.646L6.707 8l-5.353 5.354-.708-.708L5.293 8 .646 3.354z" fill="%23747578" fill-rule="nonzero"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
 }
 
 .breadcrumb-item.active::after {
-	content: none;
+  content: none;
 }
 
 .breadcrumb-transparent {
-	padding: 0;
-	background: none;
+  padding: 0;
+  background: none;
 }

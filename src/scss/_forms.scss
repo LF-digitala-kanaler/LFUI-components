@@ -8,17 +8,17 @@
 .label,
 label,
 legend {
-	margin-bottom: 0.3rem;
-	font-family: $font-family-sans-serif;
-	font-weight: 700;
+  margin-bottom: .3rem;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 legend {
-	display: inline-block;
-	width: auto;
-	font-size: inherit;
+  display: inline-block;
+  width: auto;
+  font-size: inherit;
 }
 
 /**
@@ -27,7 +27,7 @@ legend {
  */
 
 .form-align {
-	margin-top: 27.8px;
+  margin-top: 27.8px;
 }
 
 /**
@@ -37,7 +37,7 @@ legend {
 input[type="number"],
 input[type="date"],
 input[type="month"] {
-	appearance: textfield;
+  appearance: textfield;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -46,8 +46,8 @@ input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-outer-spin-button,
 input[type="month"]::-webkit-inner-spin-button,
 input[type="month"]::-webkit-outer-spin-button {
-	appearance: none;
-	margin: 0;
+  appearance: none;
+  margin: 0;
 }
 
 // Bootstrap issue https://github.com/twbs/bootstrap/issues/18842
@@ -57,11 +57,11 @@ input[type="datetime-local"],
 input[type="month"],
 input[type="week"],
 input[type="time"] {
-	height: $input-height;
+  height: $input-height;
 }
 
 input[disabled] {
-	cursor: $cursor-disabled;
+  cursor: $cursor-disabled;
 }
 
 /**
@@ -72,51 +72,51 @@ input[disabled] {
  */
 
 .form-control {
-	min-height: $input-height;
-	padding: $input-padding;
-	font-weight: 400;
-	line-height: $input-line-height;
-	background-clip: inherit; /* 1 */
-	border-width: 0 0 $input-btn-border-width 0;
-	transition: border-color 60ms linear;
+  min-height: $input-height;
+  padding: $input-padding;
+  font-weight: 400;
+  line-height: $input-line-height;
+  background-clip: inherit; /* 1 */
+  border-width: 0 0 $input-btn-border-width 0;
+  transition: border-color 60ms linear;
 
-	&:disabled {
-		color: $input-placeholder-color;
-	}
+  &:disabled {
+    color: $input-placeholder-color;
+  }
 
-	&:disabled + .input-group-append,
-	&[readonly] + .input-group-append {
-		cursor: not-allowed;
-		background-color: $input-disabled-bg;
-		opacity: 1;
+  &:disabled + .input-group-append,
+  &[readonly] + .input-group-append {
+    cursor: not-allowed;
+    background-color: $input-disabled-bg;
+    opacity: 1;
 
-		span,
-		div {
-			cursor: not-allowed;
-			background-color: $input-disabled-bg;
-			opacity: 1;
-		}
-	}
+    span,
+    div {
+      cursor: not-allowed;
+      background-color: $input-disabled-bg;
+      opacity: 1;
+    }
+  }
 }
 
 .form-control:focus {
-	border-color: $input-focus-border-color; /* 2 */
+  border-color: $input-focus-border-color; /* 2 */
 
-	+ .input-group-append,
-	+ .input-group-append > .input-group-text {
-		border-color: $input-focus-border-color;
-	}
+  + .input-group-append,
+  + .input-group-append > .input-group-text {
+    border-color: $input-focus-border-color;
+  }
 }
 
 .form-control:hover:not([disabled]) {
-	background: $input-hover;
-	transition: background 0.2s;
+  background: $input-hover;
+  transition: background .2s;
 
-	+ .input-group-append,
-	+ .input-group-append > .input-group-text {
-		background: $input-hover;
-		transition: background 0.2s;
-	}
+  + .input-group-append,
+  + .input-group-append > .input-group-text {
+    background: $input-hover;
+    transition: background .2s;
+  }
 }
 
 /**
@@ -124,21 +124,21 @@ input[disabled] {
  */
 
 .form-control-white {
-	background-color: $input-white-bg;
+  background-color: $input-white-bg;
 
-	&:focus,
-	.has-valid & {
-		background-color: $input-white-bg !important;
-	}
+  &:focus,
+  .has-valid & {
+    background-color: $input-white-bg !important;
+  }
 
-	&:hover:not([disabled]) {
-		background-color: $input-white-bg-hover !important;
+  &:hover:not([disabled]) {
+    background-color: $input-white-bg-hover !important;
 
-		+ .input-group-append,
-		+ .input-group-append > .input-group-text {
-			background: $input-white-bg-hover;
-		}
-	}
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      background: $input-white-bg-hover;
+    }
+  }
 }
 
 /**
@@ -147,32 +147,32 @@ input[disabled] {
 
 .form-text,
 .form-control-feedback {
-	margin-top: 4px;
-	font-size: $font-size-sm;
-	line-height: 1.2;
+  margin-top: 4px;
+  font-size: $font-size-sm;
+  line-height: 1.2;
 }
 
 .form-control-feedback {
-	font-family: $font-family-sans-serif;
-	font-weight: 700;
-	transition: color 60ms linear;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  transition: color 60ms linear;
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 // Overwrite Bootstrap's non-vertically-centered shit.
 .col-form-label {
-	height: $input-height;
-	padding-top: $input-padding-y;
-	padding-bottom: $input-padding-y;
-	margin-bottom: 0; // Override the `<label>` default
-	line-height: $line-height-base;
+  height: $input-height;
+  padding-top: $input-padding-y;
+  padding-bottom: $input-padding-y;
+  margin-bottom: 0; // Override the `<label>` default
+  line-height: $line-height-base;
 }
 
 .form-control-plaintext {
-	padding: $input-padding-y 0;
-	line-height: 1.25;
-	border-width: 1px 0;
+  padding: $input-padding-y 0;
+  line-height: 1.25;
+  border-width: 1px 0;
 }
 
 /**
@@ -180,7 +180,7 @@ input[disabled] {
  */
 
 .form-control:invalid {
-	box-shadow: none;
+  box-shadow: none;
 }
 
 /**
@@ -190,13 +190,13 @@ input[disabled] {
 .form-control-success,
 .form-control-warning,
 .form-control-danger {
-	padding-right: $input-padding-right;
+  padding-right: $input-padding-right;
 }
 
 .has-success .form-control,
 .has-warning .form-control,
 .has-danger .form-control {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /**
@@ -204,91 +204,91 @@ input[disabled] {
  */
 
 .has-valid {
-	@include form-control-validation($blue);
+  @include form-control-validation($blue);
 
-	.form-control,
-	.form-control-valid {
-		background-color: $cloud;
+  .form-control,
+  .form-control-valid {
+    background-color: $cloud;
 
-		&:hover {
-			background: $input-valid-hover;
-			transition: background 0.2s;
+    &:hover {
+      background: $input-valid-hover;
+      transition: background .2s;
 
-			+ .input-group-append,
-			+ .input-group-append > .input-group-text {
-				background: $input-valid-hover !important;
-			}
-		}
-	}
+      + .input-group-append,
+      + .input-group-append > .input-group-text {
+        background: $input-valid-hover !important;
+      }
+    }
+  }
 
-	.input-group-append,
-	.input-group-append > .input-group-text {
-		color: $black;
-		background-color: $cloud;
-	}
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $cloud;
+  }
 
-	.form-control-feedback {
-		color: $body-color;
-	}
+  .form-control-feedback {
+    color: $body-color;
+  }
 }
 
 .has-danger {
-	@include form-control-validation($red);
+  @include form-control-validation($red);
 
-	.form-control:focus {
-		+ .input-group-append,
-		+ .input-group-append > .input-group-text {
-			border-color: $red;
-		}
-	}
+  .form-control:focus {
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      border-color: $red;
+    }
+  }
 
-	.input-group-append,
-	.input-group-append > .input-group-text {
-		color: $black;
-		background-color: $input-bg;
-		border-color: $red;
-	}
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $input-bg;
+    border-color: $red;
+  }
 }
 
 .has-warning {
-	@include form-control-validation($orange);
+  @include form-control-validation($orange);
 
-	.form-control:focus {
-		+ .input-group-append,
-		+ .input-group-append > .input-group-text {
-			border-color: $orange;
-		}
-	}
+  .form-control:focus {
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      border-color: $orange;
+    }
+  }
 
-	.input-group-append,
-	.input-group-append > .input-group-text {
-		color: $black;
-		background-color: $input-bg;
-		border-color: $orange;
-	}
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $input-bg;
+    border-color: $orange;
+  }
 }
 
 .has-success {
-	@include form-control-validation($green);
+  @include form-control-validation($green);
 
-	.form-control:focus {
-		+ .input-group-append,
-		+ .input-group-append > .input-group-text {
-			border-color: $green;
-		}
-	}
+  .form-control:focus {
+    + .input-group-append,
+    + .input-group-append > .input-group-text {
+      border-color: $green;
+    }
+  }
 
-	.input-group-append,
-	.input-group-append > .input-group-text {
-		color: $black;
-		background-color: $input-bg;
-		border-color: $green;
-	}
+  .input-group-append,
+  .input-group-append > .input-group-text {
+    color: $black;
+    background-color: $input-bg;
+    border-color: $green;
+  }
 }
 
 .form-check {
-	padding-left: 0;
-	margin-bottom: 0.5rem;
+  padding-left: 0;
+  margin-bottom: .5rem;
 }
 
 /**
@@ -296,5 +296,5 @@ input[disabled] {
  */
 
 .form-control-fixed {
-	width: 90px !important;
+  width: 90px !important;
 }

@@ -6,13 +6,13 @@
  */
 
 .row-tight {
-	margin-right: calc(#{$grid-gutter-tight} / -2);
-	margin-left: calc(#{$grid-gutter-tight} / -2);
+  margin-right: calc(#{$grid-gutter-tight} / -2);
+  margin-left: calc(#{$grid-gutter-tight} / -2);
 }
 
 .row-tight [class*="col-"] {
-	padding-right: calc(#{$grid-gutter-tight} / 2);
-	padding-left: calc(#{$grid-gutter-tight} / 2);
+  padding-right: calc(#{$grid-gutter-tight} / 2);
+  padding-left: calc(#{$grid-gutter-tight} / 2);
 }
 
 /**
@@ -20,13 +20,13 @@
  */
 
 .row-no-gutter {
-	margin-right: 0;
-	margin-left: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .row-no-gutter [class*="col-"] {
-	padding-right: 0;
-	padding-left: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /**
@@ -34,6 +34,6 @@
  */
 
 .col-fill {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }

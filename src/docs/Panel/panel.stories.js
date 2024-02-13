@@ -1,34 +1,34 @@
 // import AlwaysOpen from './alwaysOpen.html?raw'
 // import CollapseExpand from './collapseExpand.html?raw'
 
-import { useEffect, useState } from '@storybook/client-api';
-import { panelExample } from './panel';
-import { uid } from '../../js/utils';
+import { useEffect, useState } from '@storybook/client-api'
+import { panelExample } from './panel'
+import { uid } from '../../js/utils'
 
 export default {
-	title: 'Page content/Panel',
-	parameters: {
-		backgrounds: { default: 'gray' },
-		badges: ['stable'],
-	},
-};
+  title: 'Page content/Panel',
+  parameters: {
+    backgrounds: { default: 'gray' },
+    badges: ['stable']
+  }
+}
 
 function Template({ header, text }) {
-	return `
+  return `
   <article class="card">
     <h3 class="card-header">${header}</h3>
     <div class="card-block">
       <p class="card-text">${text}</p>
     </div>
   </article>
-  `;
+  `
 }
 
 function CollapsedTemplate({ header, text, collapsed = false }) {
-	const [id] = useState(uid);
-	useEffect(() => panelExample(document.getElementById(id)), []);
+  const [id] = useState(uid)
+  useEffect(() => panelExample(document.getElementById(id)), [])
 
-	return `
+  return `
   <button
     class="collapse-toggle"
     role="button"
@@ -49,35 +49,35 @@ function CollapsedTemplate({ header, text, collapsed = false }) {
       </div>
     </div>
   </article>
-  `;
+  `
 }
 
-export const AlwaysOpen = Template.bind({});
+export const AlwaysOpen = Template.bind({})
 AlwaysOpen.args = {
-	header: 'Become a banking customer online',
-	text: 'Become a banking customer online in five easy steps. If you have a personal identity number and a BankID, you can become a banking customer instantly online.',
-};
+  header: 'Become a banking customer online',
+  text: 'Become a banking customer online in five easy steps. If you have a personal identity number and a BankID, you can become a banking customer instantly online.'
+}
 
-export const Expanded = CollapsedTemplate.bind({});
+export const Expanded = CollapsedTemplate.bind({})
 Expanded.args = {
-	header: 'Become a banking customer online',
-	text: 'Become a banking customer online in five easy steps. If you have a personal identity number and a BankID, you can become a banking customer instantly online.',
-	collapsed: false,
-};
+  header: 'Become a banking customer online',
+  text: 'Become a banking customer online in five easy steps. If you have a personal identity number and a BankID, you can become a banking customer instantly online.',
+  collapsed: false
+}
 
-export const Collapsed = CollapsedTemplate.bind({});
+export const Collapsed = CollapsedTemplate.bind({})
 Collapsed.args = {
-	header: 'Become a banking customer online',
-	text: 'Become a banking customer online in five easy steps. If you have a personal identity number and a BankID, you can become a banking customer instantly online.',
-	collapsed: true,
-};
+  header: 'Become a banking customer online',
+  text: 'Become a banking customer online in five easy steps. If you have a personal identity number and a BankID, you can become a banking customer instantly online.',
+  collapsed: true
+}
 
 export const LazyLoad = () => {
-	const id = uid();
-	const wrapperId = uid();
-	useEffect(() => panelExample(document.getElementById(wrapperId)), []);
+  const id = uid()
+  const wrapperId = uid()
+  useEffect(() => panelExample(document.getElementById(wrapperId)), [])
 
-	return `
+  return `
   <div id="${wrapperId}">
   <button
     class="collapse-toggle js-asyncCollapse"
@@ -91,8 +91,9 @@ export const LazyLoad = () => {
   </button>
   <div class="collapse" id="${id}"></div>
   </div>
-  `;
-};
+  `
+}
+
 
 /*
 export const alwaysOpen = () => AlwaysOpen

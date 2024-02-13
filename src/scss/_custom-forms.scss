@@ -9,117 +9,115 @@
  */
 
 .custom-control {
-	display: inline-block; /* 1 */
-	padding-left: $custom-control-gutter;
-	margin-bottom: 0;
-	color: inherit;
-	user-select: none;
+  display: inline-block; /* 1 */
+  padding-left: $custom-control-gutter;
+  margin-bottom: 0;
+  color: inherit;
+  user-select: none;
 }
 
 .custom-control-label::before,
 .custom-control-input:focus ~ .custom-control-label::before {
-	border: 0;
-	box-shadow: inset 0 0 0 $border-width $silver;
+  border: 0;
+  box-shadow: inset 0 0 0 $border-width $silver;
 }
 
 .custom-control-label {
-	display: inline;
-	margin-bottom: 0;
-	font-family: $font-family-base;
-	font-weight: 400;
-	cursor: pointer;
+  display: inline;
+  margin-bottom: 0;
+  font-family: $font-family-base;
+  font-weight: 400;
+  cursor: pointer;
 
-	@include font-smoothing(auto);
+  @include font-smoothing(auto);
 
-	&::before,
-	&::after {
-		top: 2px;
-		left: 0;
-	}
+  &::before,
+  &::after {
+    top: 2px;
+    left: 0;
+  }
 }
 
 /* Focus state */
 
 html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control-label::before {
-	color: $body-color;
-	background: $orange !important;
-	outline: 4px solid $orange;
+  color: $body-color;
+  background: $orange !important;
+  outline: 4px solid $orange;
 }
 
 /* Checked state */
 
 .custom-control-input:checked ~ .custom-control-label::before {
-	box-shadow: inset 0 0 0 5px $blue;
+  box-shadow: inset 0 0 0 5px $blue;
 }
 
 /* Disabled state */
 
 .custom-control-input[disabled] ~ .custom-control-label::before {
-	pointer-events: none;
-	box-shadow: inset 0 0 0 2px $gray-200;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 2px $gray-200;
 }
 
 .custom-control-input:checked[disabled] ~ .custom-control-label::before {
-	box-shadow: inset 0 0 0 2px #bfd4e5;
+  box-shadow: inset 0 0 0 2px #bfd4e5;
 }
 
 /* Hover state */
 
-.custom-control:hover
-	.custom-control-input:not([disabled]):not(:checked)
-	~ .custom-control-label::before {
-	box-shadow: inset 0 0 0 $border-width $blue;
+.custom-control:hover .custom-control-input:not([disabled]):not(:checked) ~ .custom-control-label::before {
+  box-shadow: inset 0 0 0 $border-width $blue;
 }
 
 .custom-control:hover .custom-control-input:not([disabled]) {
-	~ .custom-switch-label {
-		text-decoration: underline;
-	}
+  ~ .custom-switch-label {
+    text-decoration: underline;
+  }
 
-	~ .custom-control-label {
-		text-decoration: underline;
-	}
+  ~ .custom-control-label {
+    text-decoration: underline;
+  }
 }
 
 /**
  * Radio tweaks
  */
 .custom-radio {
-	.custom-control-input:checked ~ .custom-control-label {
-		&::before {
-			background-color: $blue;
-			box-shadow: inset 0 0 0 5px $white;
-			transition: none !important;
-		}
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      background-color: $blue;
+      box-shadow: inset 0 0 0 5px $white;
+      transition: none !important;
+    }
 
-		&::after {
-			border-radius: 50%;
-			box-shadow: inset 0 0 0 2px $blue;
-		}
-	}
+    &::after {
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px $blue;
+    }
+  }
 
-	.custom-control-label::before,
-	.custom-control-label::after {
-		width: 18px;
-		height: 18px;
-	}
+  .custom-control-label::before,
+  .custom-control-label::after {
+    width: 18px;
+    height: 18px;
+  }
 
-	.custom-control-label::before,
-	.custom-control-input:focus ~ .custom-control-label::before {
-		top: 2px;
-	}
+  .custom-control-label::before,
+  .custom-control-input:focus ~ .custom-control-label::before {
+    top: 2px;
+  }
 
-	.custom-control-input:disabled:checked ~ .custom-control-label::after {
-		box-shadow: inset 0 0 0 2px #bfd4e5;
-	}
+  .custom-control-input:disabled:checked ~ .custom-control-label::after {
+    box-shadow: inset 0 0 0 2px #bfd4e5;
+  }
 
-	.custom-control-input:disabled:checked ~ .custom-control-label::before {
-		background-color: #bfd4e5;
-	}
+  .custom-control-input:disabled:checked ~ .custom-control-label::before {
+    background-color: #bfd4e5;
+  }
 
-	.custom-control-label {
-		position: static;
-	}
+  .custom-control-label {
+    position: static;
+  }
 }
 
 /**
@@ -127,60 +125,60 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
  */
 
 .custom-checkbox {
-	.custom-control-input:not(:checked) ~ .custom-control-label::after {
-		background-size: 10% 10%;
-		transition: 100ms var(--ease-out);
-		transition-property: box-shadow, background-size;
-	}
+  .custom-control-input:not(:checked) ~ .custom-control-label::after {
+    background-size: 10% 10%;
+    transition: 100ms var(--ease-out);
+    transition-property: box-shadow, background-size;
+  }
 
-	.custom-control-input:checked:not([disabled]) ~ .custom-control-label::before {
-		box-shadow: inset 0 0 0 2px $blue;
-	}
+  .custom-control-input:checked:not([disabled]) ~ .custom-control-label::before {
+    box-shadow: inset 0 0 0 2px $blue;
+  }
 
-	.custom-control-input:checked:not([disabled]) ~ .custom-control-label::after {
-		background-color: none;
-		// Uh. For some reason, the $custom-checkbox-checked-icon variable does not function in IE
-		// so we copy-paste the variable string here, which solves it.
-		background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
-		box-shadow: none;
-	}
+  .custom-control-input:checked:not([disabled]) ~ .custom-control-label::after {
+    background-color: none;
+    // Uh. For some reason, the $custom-checkbox-checked-icon variable does not function in IE
+    // so we copy-paste the variable string here, which solves it.
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
+    box-shadow: none;
+  }
 
-	.custom-control-input:checked[disabled] ~ .custom-control-label::after {
-		background-color: $white;
-		background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
-		box-shadow: inset 0 0 0 2px #bfd4e5;
-	}
+  .custom-control-input:checked[disabled] ~ .custom-control-label::after {
+    background-color: $white;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
+    box-shadow: inset 0 0 0 2px #bfd4e5;
+  }
 
-	.custom-control-input:indeterminate ~ .custom-control-label::before {
-		background: transparent;
-		box-shadow: inset 0 0 0 2px $blue;
-	}
+  .custom-control-input:indeterminate ~ .custom-control-label::before {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px $blue;
+  }
 
-	.custom-control-input:indeterminate ~ .custom-control-label::after {
-		top: 0.625rem;
-		left: 0.25rem;
-		width: 0.625rem;
-		height: $border-width;
-		background: $link_color;
-		opacity: 1;
-	}
+  .custom-control-input:indeterminate ~ .custom-control-label::after {
+    top: .625rem;
+    left: .25rem;
+    width: .625rem;
+    height: $border-width;
+    background: $link_color;
+    opacity: 1;
+  }
 
-	label + .form-text,
-	label + .form-control-feedback {
-		margin-top: 0;
-	}
+  label + .form-text,
+  label + .form-control-feedback {
+    margin-top: 0;
+  }
 
-	.custom-control-label {
-		position: static;
+  .custom-control-label {
+    position: static;
 
-		&::after {
-			width: 18px;
-			height: 18px;
-			background-repeat: no-repeat;
-			background-position: 3px 4px;
-			background-size: auto;
-		}
-	}
+    &::after {
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      background-position: 3px 4px;
+      background-size: auto;
+    }
+  }
 }
 
 /**
@@ -189,12 +187,12 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
  */
 
 .custom-control-label::before {
-	transition: 100ms var(--ease-in);
-	transition-property: box-shadow, background-size;
+  transition: 100ms var(--ease-in);
+  transition-property: box-shadow, background-size;
 }
 
 .custom-control:hover .custom-control-input ~ .custom-control-label::before {
-	transition-delay: 4ms; /* 1 */
+  transition-delay: 4ms; /* 1 */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -204,18 +202,18 @@ html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control
  */
 
 select {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 select.form-control:not([size]):not([multiple]) {
-	height: $input-height;
+  height: $input-height;
 }
 
 .form-group.has-warning .custom-control,
 .form-group.has-danger .custom-control,
 .form-group.has-success .custom-control,
 .form-group.has-valid .custom-control {
-	color: $black;
+  color: $black;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -225,107 +223,107 @@ select.form-control:not([size]):not([multiple]) {
  */
 
 .custom-file {
-	width: 100%;
-	font-family: $font-family-base;
-	font-weight: 400;
+  width: 100%;
+  font-family: $font-family-base;
+  font-weight: 400;
 
-	@include font-smoothing(auto);
+  @include font-smoothing(auto);
 
-	&:hover {
-		.custom-file-label {
-			background-color: $input-hover;
-		}
-	}
+  &:hover {
+    .custom-file-label {
+      background-color: $input-hover;
+    }
+  }
 }
 
 .custom-file-white {
-	.custom-file-label {
-		background-color: $input-white-bg;
-	}
+  .custom-file-label {
+    background-color: $input-white-bg;
+  }
 
-	&:hover {
-		.custom-file-label {
-			background-color: $input-white-bg-hover;
-		}
-	}
+  &:hover {
+    .custom-file-label {
+      background-color: $input-white-bg-hover;
+    }
+  }
 }
 
 .custom-file-input {
-	&:focus ~ .custom-file-label {
-		border-color: $input-focus-border-color;
-		box-shadow: none;
-	}
+  &:focus ~ .custom-file-label {
+    border-color: $input-focus-border-color;
+    box-shadow: none;
+  }
 }
 
 .custom-file-label {
-	z-index: 2;
-	max-width: 100%;
-	padding: $input-padding-top 2.6rem $input-padding-right $input-padding-left !important;
-	font-family: $font-family-base;
-	font-weight: 400;
-	cursor: pointer;
-	border-width: 0 0 $custom-file-border-width;
+  z-index: 2;
+  max-width: 100%;
+  padding: $input-padding-top 2.6rem $input-padding-right $input-padding-left !important;
+  font-family: $font-family-base;
+  font-weight: 400;
+  cursor: pointer;
+  border-width: 0 0 $custom-file-border-width;
 
-	&::after {
-		top: 0.625rem;
-		right: auto;
-		padding: 0;
-		font-family: $font-family-base;
-		border: 0;
-	}
+  &::after {
+    top: .625rem;
+    right: auto;
+    padding: 0;
+    font-family: $font-family-base;
+    border: 0;
+  }
 }
 
 .custom-file-option {
-	width: calc(100% - 10px);
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  width: calc(100% - 10px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-	&::after {
-		content: "";
-	}
+  &::after {
+    content: "";
+  }
 
-	.has-multiple & {
-		@each $lang, $text in $custom-file-text-multiple {
-			&:lang(#{$lang})::after {
-				margin-left: 2px;
-				content: $text;
-			}
-		}
-	}
+  .has-multiple & {
+    @each $lang, $text in $custom-file-text-multiple {
+      &:lang(#{$lang})::after {
+        margin-left: 2px;
+        content: $text;
+      }
+    }
+  }
 }
 
 .custom-file-input.has-file ~ .custom-file-label {
-	&::after {
-		content: none;
-	}
+  &::after {
+    content: none;
+  }
 }
 
 form:not([novalidate]) .custom-file-input.has-file ~ .custom-file-label {
-	background-color: $cloud;
-	border-color: $blue;
+  background-color: $cloud;
+  border-color: $blue;
 
-	&:hover {
-		background-color: $input-valid-hover;
-	}
+  &:hover {
+    background-color: $input-valid-hover;
+  }
 }
 
 .custom-file-label::before {
-	position: absolute;
-	top: 50%;
-	right: $custom-file-padding-x;
-	bottom: auto;
-	width: 24px;
-	height: 20px;
-	padding: 0;
-	content: "" !important;
+  position: absolute;
+  top: 50%;
+  right: $custom-file-padding-x;
+  bottom: auto;
+  width: 24px;
+  height: 20px;
+  padding: 0;
+  content: "" !important;
 
-	background-size: 24px 20px;
-	border: 0;
-	transition: opacity 100ms var(--ease-in);
-	transform: translateY(-50%);
+  background-size: 24px 20px;
+  border: 0;
+  transition: opacity 100ms var(--ease-in);
+  transform: translateY(-50%);
 
-	@include glyph-navigation-accounts($blue);
+  @include glyph-navigation-accounts($blue);
 }
 
 /* Focus state */
@@ -335,10 +333,10 @@ form:not([novalidate]) .custom-file-input.has-file ~ .custom-file-label {
  */
 
 html body[data-focus-source="key"] {
-	.custom-file-input:focus + .custom-file-label,
+  .custom-file-input:focus + .custom-file-label,
   .custom-file-input.has-focus + .custom-file-label /* 1 */ {
-		outline: 4px solid $orange;
-	}
+    outline: 4px solid $orange;
+  }
 }
 
 /**
@@ -346,8 +344,8 @@ html body[data-focus-source="key"] {
  */
 
 .form-group.has-valid .custom-file-label {
-	background-color: $cloud;
-	border-color: $blue;
+  background-color: $cloud;
+  border-color: $blue;
 }
 
 /**
@@ -355,9 +353,9 @@ html body[data-focus-source="key"] {
  */
 
 .form-group.has-danger {
-	.custom-file-label {
-		border-color: $red;
-	}
+  .custom-file-label {
+    border-color: $red;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -367,106 +365,106 @@ html body[data-focus-source="key"] {
  */
 
 .custom-control.custom-switch {
-	padding-left: 3rem;
+  padding-left: 3rem;
 }
 
 .custom-switch-label {
-	margin-bottom: 0;
-	font-family: $font-family-base;
-	font-weight: 400;
-	cursor: pointer;
+  margin-bottom: 0;
+  font-family: $font-family-base;
+  font-weight: 400;
+  cursor: pointer;
 
-	@include font-smoothing(auto);
+  @include font-smoothing(auto);
 
-	&::before {
-		position: absolute;
-		top: 3px;
-		left: 0;
-		width: 38px;
-		height: 16px;
-		content: "";
-		background: $smoke;
-		border-radius: 10px;
-		transition: background 100ms var(--ease-in);
-	}
+  &::before {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 38px;
+    height: 16px;
+    content: "";
+    background: $smoke;
+    border-radius: 10px;
+    transition: background 100ms var(--ease-in);
+  }
 
-	&::after {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 22px;
-		height: 22px;
-		content: "";
-		background-color: $white;
-		border-radius: 50%;
-		box-shadow: inset 0 0 0 5px $gray;
-		transition: left 100ms var(--ease-in);
-		transition-property: box-shadow, left;
-	}
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    content: "";
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 5px $gray;
+    transition: left 100ms var(--ease-in);
+    transition-property: box-shadow, left;
+  }
 }
 
 .custom-switch {
-	.custom-control-input:not(:checked) ~ .custom-switch-label::after {
-		left: 0;
-	}
+  .custom-control-input:not(:checked) ~ .custom-switch-label::after {
+    left: 0;
+  }
 
-	.custom-control-input:checked ~ .custom-switch-label::after {
-		left: 20px;
-		box-shadow: inset 0 0 0 5px $blue;
-	}
+  .custom-control-input:checked ~ .custom-switch-label::after {
+    left: 20px;
+    box-shadow: inset 0 0 0 5px $blue;
+  }
 
-	.custom-control-input:checked ~ .custom-switch-label::before {
-		background: $baby;
-		transition: background 100ms var(--ease-in);
-	}
+  .custom-control-input:checked ~ .custom-switch-label::before {
+    background: $baby;
+    transition: background 100ms var(--ease-in);
+  }
 
-	// Disabled
-	.custom-control-input:disabled,
-	.custom-control-input.disabled {
-		~ .custom-switch-label::after {
-			pointer-events: none;
-			box-shadow: inset 0 0 0 5px #c0c1c2;
-		}
+  // Disabled
+  .custom-control-input:disabled,
+  .custom-control-input.disabled {
+    ~ .custom-switch-label::after {
+      pointer-events: none;
+      box-shadow: inset 0 0 0 5px #c0c1c2;
+    }
 
-		~ .custom-switch-label::before {
-			background: #f4f4f4;
-		}
-	}
+    ~ .custom-switch-label::before {
+      background: #f4f4f4;
+    }
+  }
 
-	.custom-control-input:checked:disabled,
-	.custom-control-input:checked.disabled {
-		~ .custom-switch-label::after {
-			pointer-events: none;
-			box-shadow: inset 0 0 0 5px #bfd4e5;
-		}
+  .custom-control-input:checked:disabled,
+  .custom-control-input:checked.disabled {
+    ~ .custom-switch-label::after {
+      pointer-events: none;
+      box-shadow: inset 0 0 0 5px #bfd4e5;
+    }
 
-		~ .custom-switch-label::before {
-			background: #f4f4f4;
-		}
-	}
+    ~ .custom-switch-label::before {
+      background: #f4f4f4;
+    }
+  }
 
-	label + .form-text,
-	label + .form-control-feedback {
-		margin-top: 0;
-	}
+  label + .form-text,
+  label + .form-control-feedback {
+    margin-top: 0;
+  }
 }
 // Custom search
 
 .custom-search {
-	padding-right: 40px !important;
-	background-color: $input-bg;
-	background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg fill="#{encodeHEX($blue)}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M22.1 23.5 17 18.4l1.4-1.4 5.1 5.1zM2 9.5a7.5 7.5 0 1 0 15 0 7.5 7.5 0 0 0-15 0Zm-2 0a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z"/%3E%3C/svg%3E') !important;
-	background-repeat: no-repeat !important;
-	background-position-x: right !important;
-	background-position-y: 9px !important;
-	background-size: 40px 28px !important;
+  padding-right: 40px !important;
+  background-color: $input-bg;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg fill="#{encodeHEX($blue)}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M22.1 23.5 17 18.4l1.4-1.4 5.1 5.1zM2 9.5a7.5 7.5 0 1 0 15 0 7.5 7.5 0 0 0-15 0Zm-2 0a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0Z"/%3E%3C/svg%3E') !important;
+  background-repeat: no-repeat !important;
+  background-position-x: right !important;
+  background-position-y: 9px !important;
+  background-size: 40px 28px !important;
 
-	&:hover {
-		background-repeat: no-repeat !important;
-		background-position-x: right !important;
-		background-position-y: 9px !important;
-		background-size: 40px 28px !important;
-	}
+  &:hover {
+    background-repeat: no-repeat !important;
+    background-position-x: right !important;
+    background-position-y: 9px !important;
+    background-size: 40px 28px !important;
+  }
 }
 
 /**
@@ -487,134 +485,134 @@ html body[data-focus-source="key"] {
 
 .radio-card,
 .checkbox-card {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	background-color: $white;
-	border-radius: $border-radius-lg $border-radius-lg 0 0;
-	box-shadow: inset 0 -2px 0 0 $smoke, inset 0 0 0 0.5px $smoke;
-	transition: box-shadow var(--ease-in) 100ms, background var(--ease-in) 100ms;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  background-color: $white;
+  border-radius: $border-radius-lg $border-radius-lg 0 0;
+  box-shadow: inset 0 -2px 0 0 $smoke, inset 0 0 0 .5px $smoke;
+  transition: box-shadow var(--ease-in) 100ms, background var(--ease-in) 100ms;
 
-	.custom-control {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		height: auto;
-		padding-left: 0;
-		margin-right: 0;
-		font-weight: 400;
-		cursor: pointer;
-	}
+  .custom-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    margin-right: 0;
+    font-weight: 400;
+    cursor: pointer;
+  }
 
-	.custom-control-label {
-		width: 100%;
-		padding: 1.15rem 0.5rem 1.3rem;
-		font-family: $font-family-sans-serif;
-		font-size: 1rem;
-		font-weight: 700;
-		hyphens: auto;
-		line-height: 1.3;
-		color: $navy;
-		text-align: center;
-		@include font-smoothing();
+  .custom-control-label {
+    width: 100%;
+    padding: 1.15rem .5rem 1.3rem;
+    font-family: $font-family-sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    hyphens: auto;
+    line-height: 1.3;
+    color: $navy;
+    text-align: center;
+    @include font-smoothing();
 
-		&::before,
-		&::after {
-			margin: 0.5rem 0.6rem;
-		}
-	}
+    &::before,
+    &::after {
+      margin: .5rem .6rem;
+    }
+  }
 
-	.icon {
-		transition: transform var(--ease-in) 100ms;
-		will-change: transform;
-	}
+  .icon {
+    transition: transform var(--ease-in) 100ms;
+    will-change: transform;
+  }
 
-	&:hover {
-		background-color: $mist;
-		box-shadow: inset 0 -2px 0 0 $navy, inset 0 0 0 0.5px $smoke;
-		transition-duration: 150ms;
+  &:hover {
+    background-color: $mist;
+    box-shadow: inset 0 -2px 0 0 $navy, inset 0 0 0 .5px $smoke;
+    transition-duration: 150ms;
 
-		.custom-control-label {
-			text-decoration: none !important;
-		}
+    .custom-control-label {
+      text-decoration: none !important;
+    }
 
-		.icon {
-			transition-duration: 150ms;
-			transform: translateY(-2px);
-		}
+    .icon {
+      transition-duration: 150ms;
+      transform: translateY(-2px);
+    }
 
-		.custom-control-label::before {
-			transition-duration: 150ms;
-		}
-	}
+    .custom-control-label::before {
+      transition-duration: 150ms;
+    }
+  }
 
-	.active,
-	&:has(.custom-control-input:checked) {
-		box-shadow: inset 0 0 0 2px $navy;
-		transition: background var(--ease-in) 100ms;
-	}
+  .active,
+  &:has(.custom-control-input:checked) {
+    box-shadow: inset 0 0 0 2px $navy;
+    transition: background var(--ease-in) 100ms;
+  }
 }
 
 /* Support putting other stuff, rich content, in these (price box) */
 
 .radio-content-card {
-	width: 100%;
-	padding: 0 1.25rem 1.25rem 2.75rem;
-	margin: 0.5rem 0;
-	border-radius: 0;
+  width: 100%;
+  padding: 0 1.25rem 1.25rem 2.75rem;
+  margin: .5rem 0;
+  border-radius: 0;
 
-	.custom-control {
-		position: static;
-	}
+  .custom-control {
+    position: static;
+  }
 
-	.custom-control-label {
-		padding: 0.65rem 0 0.2rem;
-		font-size: 1.25rem;
-		text-align: left;
+  .custom-control-label {
+    padding: .65rem 0 .2rem;
+    font-size: 1.25rem;
+    text-align: left;
 
-		&::before,
-		&::after {
-			margin: 0.75rem 1rem;
-		}
-	}
+    &::before,
+    &::after {
+      margin: .75rem 1rem;
+    }
+  }
 
-	label {
-		font-family: $font-family-base;
-	}
+  label {
+    font-family: $font-family-base;
+  }
 
-	ul {
-		margin-left: -2.25rem;
-	}
+  ul {
+    margin-left: -2.25rem;
+  }
 
-	.radio-content-card-footer {
-		display: flex;
-		flex-grow: 1;
-		flex-wrap: wrap;
-		align-items: flex-end;
-		justify-content: space-between;
-		padding-top: 0.75rem;
-		margin-left: -1.5rem;
-	}
+  .radio-content-card-footer {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: .75rem;
+    margin-left: -1.5rem;
+  }
 
-	&.active,
-	&:has(.custom-control-input:checked) {
-		position: relative;
-		z-index: 1;
-		background-color: $white;
-		box-shadow: none;
+  &.active,
+  &:has(.custom-control-input:checked) {
+    position: relative;
+    z-index: 1;
+    background-color: $white;
+    box-shadow: none;
 
-		&:hover {
-			background-color: $white;
-		}
+    &:hover {
+      background-color: $white;
+    }
 
-		&::before {
-			position: absolute;
-			top: -0.25rem;
-			left: 0;
-			width: 100%;
-			height: calc(100% + 0.5rem);
-			content: "";
-			box-shadow: inset 0 0 0 2px $navy;
-		}
-	}
+    &::before {
+      position: absolute;
+      top: -.25rem;
+      left: 0;
+      width: 100%;
+      height: calc(100% + .5rem);
+      content: "";
+      box-shadow: inset 0 0 0 2px $navy;
+    }
+  }
 }

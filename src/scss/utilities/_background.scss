@@ -4,149 +4,73 @@
  * Note: these do not alter text color as the original Bootstrap utils do
  */
 
-.bg-wine {
-	background-color: $wine !important;
-}
-.bg-red {
-	background-color: $red !important;
-}
-.bg-pink {
-	background-color: $pink !important;
-}
+.bg-wine { background-color: $wine !important; }
+.bg-red { background-color: $red !important; }
+.bg-pink { background-color: $pink !important; }
 
-.bg-navy {
-	background-color: $navy !important;
-}
-.bg-blue {
-	background-color: $blue !important;
-}
-.bg-sky {
-	background-color: $sky !important;
-}
-.bg-baby {
-	background-color: $baby !important;
-}
-.bg-cloud {
-	background-color: $cloud !important;
-}
+.bg-navy { background-color: $navy !important; }
+.bg-blue { background-color: $blue !important; }
+.bg-sky { background-color: $sky !important; }
+.bg-baby { background-color: $baby !important; }
+.bg-cloud { background-color: $cloud !important; }
 
-.bg-black {
-	background-color: $black !important;
-}
-.bg-gray {
-	background-color: $gray !important;
-}
-.bg-silver {
-	background-color: $silver !important;
-}
-.bg-smoke {
-	background-color: $smoke !important;
-}
-.bg-shadow {
-	background-color: $shadow !important;
-}
-.bg-body-bg {
-	background-color: $body-bg !important;
-}
-.bg-white {
-	background-color: $white !important;
-}
+.bg-black { background-color: $black !important; }
+.bg-gray { background-color: $gray !important; }
+.bg-silver { background-color: $silver !important; }
+.bg-smoke { background-color: $smoke !important; }
+.bg-shadow { background-color: $shadow !important; }
+.bg-body-bg { background-color: $body-bg !important; }
+.bg-white { background-color: $white !important; }
 
-.bg-orange {
-	background-color: $orange !important;
-}
-.bg-green {
-	background-color: $green !important;
-}
+.bg-orange { background-color: $orange !important; }
+.bg-green { background-color: $green !important; }
 
-.bg-info-light {
-	background-color: $color-info-light !important;
-}
-.bg-success-light {
-	background-color: $color-success-light !important;
-}
-.bg-warning-light {
-	background-color: $color-warning-light !important;
-}
-.bg-danger-light {
-	background-color: $color-danger-light !important;
-}
+.bg-info-light { background-color: $color-info-light !important; }
+.bg-success-light { background-color: $color-success-light !important; }
+.bg-warning-light { background-color: $color-warning-light !important; }
+.bg-danger-light { background-color: $color-danger-light !important; }
 
 /* Change background on hover */
 
-.bg-info-light-hover:hover {
-	background-color: $color-info-light !important;
-}
-.bg-success-light-hover:hover {
-	background-color: $color-success-light !important;
-}
-.bg-warning-light-hover:hover {
-	background-color: $color-warning-light !important;
-}
-.bg-danger-light-hover:hover {
-	background-color: $color-danger-light !important;
-}
+.bg-info-light-hover:hover { background-color: $color-info-light !important; }
+.bg-success-light-hover:hover { background-color: $color-success-light !important; }
+.bg-warning-light-hover:hover { background-color: $color-warning-light !important; }
+.bg-danger-light-hover:hover { background-color: $color-danger-light !important; }
 
 /* Legacy */
 
-.bg-lf-info {
-	@extend .bg-info;
-}
-.bg-lf-success {
-	@extend .bg-success;
-}
-.bg-lf-warning {
-	@extend .bg-warning;
-}
-.bg-lf-danger {
-	@extend .bg-danger;
-}
+.bg-lf-info { @extend .bg-info; }
+.bg-lf-success { @extend .bg-success; }
+.bg-lf-warning { @extend .bg-warning; }
+.bg-lf-danger { @extend .bg-danger; }
 
 /* Risk colors */
 
-.bg-risk-0 {
-	background-color: $color-risk-0 !important;
-}
-.bg-risk-1 {
-	background-color: $color-risk-1 !important;
-}
-.bg-risk-2 {
-	background-color: $color-risk-2 !important;
-}
-.bg-risk-3 {
-	background-color: $color-risk-3 !important;
-}
-.bg-risk-4 {
-	background-color: $color-risk-4 !important;
-}
-.bg-risk-5 {
-	background-color: $color-risk-5 !important;
-}
-.bg-risk-6 {
-	background-color: $color-risk-6 !important;
-}
-.bg-risk-7 {
-	background-color: $color-risk-7 !important;
-}
+.bg-risk-0 { background-color: $color-risk-0 !important; }
+.bg-risk-1 { background-color: $color-risk-1 !important; }
+.bg-risk-2 { background-color: $color-risk-2 !important; }
+.bg-risk-3 { background-color: $color-risk-3 !important; }
+.bg-risk-4 { background-color: $color-risk-4 !important; }
+.bg-risk-5 { background-color: $color-risk-5 !important; }
+.bg-risk-6 { background-color: $color-risk-6 !important; }
+.bg-risk-7 { background-color: $color-risk-7 !important; }
 
-.bg-active {
-	background: $mist !important;
-}
+.bg-active { background: $mist !important; }
 
 /* Patterns */
 
 .wave-pattern {
-	@include pattern-wave-horizontal();
+  @include pattern-wave-horizontal();
 }
 
 .wave-pattern-sm {
-	@include pattern-wave-horizontal();
-	background-size: 150px 10px;
+  @include pattern-wave-horizontal();
+  background-size: 150px 10px;
 }
 
 .stripe-pattern {
-	@include pattern-diagonal-stripes($pattern-diagonal-stripes-gray-stripes);
-	color: $pattern-diagonal-stripes-gray-font-color;
-	background-color: $pattern-diagonal-stripes-gray-bg;
-	border: 2px solid $pattern-diagonal-stripes-gray-border;
+  @include pattern-diagonal-stripes($pattern-diagonal-stripes-gray-stripes);
+  color: $pattern-diagonal-stripes-gray-font-color;
+  background-color: $pattern-diagonal-stripes-gray-bg;
+  border: 2px solid $pattern-diagonal-stripes-gray-border;
 }

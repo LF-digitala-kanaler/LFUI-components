@@ -1,23 +1,23 @@
-import { useEffect, useState } from '@storybook/client-api';
-import { popoverTooltipExample } from './popovertooltip';
-import { uid } from '../../js/utils';
+import { useEffect, useState } from '@storybook/client-api'
+import { popoverTooltipExample } from './popovertooltip'
+import { uid } from '../../js/utils'
 
 export default {
-	title: 'Supportive microinteractions/Popover Tooltip',
-	parameters: {
-		backgrounds: { default: 'white' },
-		badges: ['stable'],
-	},
-};
+  title: 'Supportive microinteractions/Popover Tooltip',
+  parameters: {
+    backgrounds: { default: 'white' },
+    badges: ['stable']
+  }
+}
 
 function Template({ centered = false }) {
-	const [id] = useState(uid);
+  const [id] = useState(uid)
 
-	useEffect(() => {
-		popoverTooltipExample(document.getElementById(id));
-	}, []);
+  useEffect(() => {
+    popoverTooltipExample(document.getElementById(id))
+  }, [])
 
-	return `
+  return `
     <section id="${id}">
       Our
       <span
@@ -29,9 +29,7 @@ function Template({ centered = false }) {
         <div
           role="alert"
           id="toggable2"
-          class="popover-tooltip popover-bottom popover-attach ${
-						centered ? 'popover-sm-center' : ''
-					}">
+          class="popover-tooltip popover-bottom popover-attach ${centered ? 'popover-sm-center' : ''}">
           <p class="popover-title">Occupational pension</p>
           <div class="popover-content">
             <div class="card">
@@ -47,15 +45,15 @@ function Template({ centered = false }) {
       </span>
       plan gives you a pension plan suited to you and your living conditions.
     </section>
-  `;
+  `
 }
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-	centered: false,
-};
+  centered: false
+}
 
-export const Centered = Template.bind({});
+export const Centered = Template.bind({})
 Centered.args = {
-	centered: true,
-};
+  centered: true
+}

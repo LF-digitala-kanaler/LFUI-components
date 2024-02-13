@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
-import * as BreadcrumbStories from './breadcrumb.stories';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as BreadcrumbStories from './breadcrumb.stories'
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -16,11 +16,9 @@ You can inform the current page using the active modifier on a li tag
 ## Variants
 
 ### Transparent background
-
 <Canvas of={BreadcrumbStories.Transparent} />
 
 ## Accessibility
-
 - A nav with `aria-label="Breadcrumb"` identifies the structure as a breadcrumb trail and makes it a navigation landmark so that it is easy to locate.
 - The set of links is structured using an ordered list
 - To prevent screen reader announcement of the visual separators between links, they are added via CSS

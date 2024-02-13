@@ -1,76 +1,77 @@
 @import "base/index";
 
 $checkmark-color: $navy;
-$checkmark-curve: cubic-bezier(0.6, 0, 0.45, 1);
+$checkmark-curve: cubic-bezier(.6, 0, .45, 1);
 $checkmark-container: 2.5rem;
 $checkmark-width: 1.25rem;
-$checkmark-height: 0.9375rem;
+$checkmark-height: .9375rem;
 $checkmark-stroke-width: 3;
 
 .checkmark {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: $checkmark-container;
-	height: $checkmark-container;
-	padding-left: 0;
-	margin-top: 0;
-	overflow: visible;
-	border-radius: 50%;
-	stroke: $navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $checkmark-container;
+  height: $checkmark-container;
+  padding-left: 0;
+  margin-top: 0;
+  overflow: visible;
+  border-radius: 50%;
+  stroke: $navy;
 }
 
 .checkmark-circle {
-	opacity: 1;
-	fill: none;
-	stroke: $navy;
-	stroke-dasharray: 120px;
-	stroke-dashoffset: 120px;
-	stroke-width: $checkmark-stroke-width;
-	transform-origin: 50% 50%;
-	animation: checkmark-circle 0.6s $checkmark-curve 0.5s forwards,
-		checkmark-remove 0.6s ease-out 1.4s forwards;
+  opacity: 1;
+  fill: none;
+  stroke: $navy;
+  stroke-dasharray: 120px;
+  stroke-dashoffset: 120px;
+  stroke-width: $checkmark-stroke-width;
+  transform-origin: 50% 50%;
+  animation:
+    checkmark-circle .6s $checkmark-curve .5s forwards,
+    checkmark-remove .6s ease-out 1.4s forwards;
 }
 
 .checkmark-check {
-	color: $navy;
-	stroke-width: $checkmark-stroke-width;
+  color: $navy;
+  stroke-width: $checkmark-stroke-width;
 
-	@supports (animation-name: checkmark-stroke) {
-		stroke-dasharray: 40px;
-		stroke-dashoffset: 40px;
-		transform-origin: 50% 50%;
-		animation: checkmark-stroke 0.8s $checkmark-curve 0.6s forwards;
-	}
+  @supports (animation-name: checkmark-stroke) {
+    stroke-dasharray: 40px;
+    stroke-dashoffset: 40px;
+    transform-origin: 50% 50%;
+    animation: checkmark-stroke .8s $checkmark-curve .6s forwards;
+  }
 }
 
 @keyframes checkmark-circle {
-	0% {
-		stroke-dashoffset: 120px;
-	}
+  0% {
+    stroke-dashoffset: 120px;
+  }
 
-	100% {
-		/* stylelint-disable-next-line */
-		stroke-dashoffset: 0px; // px needed for edge
-	}
+  100% {
+    /* stylelint-disable-next-line */
+    stroke-dashoffset: 0px;  // px needed for edge
+  }
 }
 
 @keyframes checkmark-remove {
-	100% {
-		stroke-dashoffset: 120px;
-	}
+  100% {
+    stroke-dashoffset: 120px;
+  }
 
-	0% {
-		stroke-dashoffset: 240px;
-	}
+  0% {
+    stroke-dashoffset: 240px;
+  }
 }
 
 @keyframes checkmark-stroke {
-	0% {
-		stroke-dashoffset: 40px;
-	}
+  0% {
+    stroke-dashoffset: 40px;
+  }
 
-	100% {
-		stroke-dashoffset: 80px;
-	}
+  100% {
+    stroke-dashoffset: 80px;
+  }
 }

@@ -8,12 +8,12 @@
 
 .table,
 .table .table {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 .table > thead > tr,
 .table > tbody > tr {
-	background-color: $table-bg;
+  background-color: $table-bg;
 }
 
 /**
@@ -22,9 +22,9 @@
 
 .table:not(.table-sm) > * > tr > td,
 .table:not(.table-sm) > * > tr > th:not(.th-sub):not(.th-main) {
-	/* Height on table cells acts like min-height */
-	height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) + 1px);
-	line-height: calc(#{$line-height-base} * 1rem);
+  /* Height on table cells acts like min-height */
+  height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) + 1px);
+  line-height: calc(#{$line-height-base} * 1rem);
 }
 
 /**
@@ -33,36 +33,36 @@
 
 .table th,
 .th-main {
-	font-family: $font-family-sans-serif;
-	font-weight: 700;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 .th-sub {
-	font-size: $h6-font-size;
-	line-height: $line-height-base;
-	color: $gray;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
+  font-size: $h6-font-size;
+  line-height: $line-height-base;
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: .5px;
 }
 
 .table-sm .th-sub {
-	padding-top: 1.125rem !important;
+  padding-top: 1.125rem !important;
 }
 
 /* Border and button font fix */
 
 .table thead th {
-	border-width: 0 0 $table-border-width;
+  border-width: 0 0 $table-border-width;
 
-	button {
-		font: inherit;
-	}
+  button {
+    font: inherit;
+  }
 }
 
 .table tbody + tbody {
-	border: 0;
+  border: 0;
 }
 
 /**
@@ -71,7 +71,7 @@
 
 .table tbody:first-child tr:first-child > td,
 .table :first-child:not(thead) + tbody tr:first-child > td {
-	border-top: 0;
+  border-top: 0;
 }
 
 /**
@@ -79,17 +79,17 @@
  */
 
 .table > tfoot > tr {
-	background-color: $table-footer-color;
+  background-color: $table-footer-color;
 }
 
 /* Text design */
 
 .table-summary {
-	font-weight: 700;
-	text-align: right;
-	white-space: nowrap;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 /**
@@ -97,11 +97,11 @@
  */
 
 .table caption {
-	@include header-block();
-	display: table-caption;
+  @include header-block();
+  display: table-caption;
 
-	color: $navy;
-	caption-side: top;
+  color: $navy;
+  caption-side: top;
 }
 
 /**
@@ -109,10 +109,10 @@
  */
 
 .table.table-varied caption {
-	padding-bottom: 1rem;
-	padding-left: 1rem;
-	color: $navy;
-	box-shadow: none;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  color: $navy;
+  box-shadow: none;
 }
 
 /**
@@ -120,28 +120,28 @@
  */
 
 .table.table-varied {
-	td:not(:last-child),
-	th:not(:last-child) {
-		border-right: 2px solid $white;
-	}
+  td:not(:last-child),
+  th:not(:last-child) {
+    border-right: 2px solid $white;
+  }
 
-	th {
-		border-bottom: none;
-	}
+  th {
+    border-bottom: none;
+  }
 
-	thead tr,
-	tr:nth-child(even) {
-		background-color: $table-accent-bg;
-	}
+  thead tr,
+  tr:nth-child(even) {
+    background-color: $table-accent-bg;
+  }
 
-	tfoot tr {
-		background-color: $body-bg;
-	}
+  tfoot tr {
+    background-color: $body-bg;
+  }
 }
 
 .table.table-varied th,
 .table.table-varied td {
-	border-top: none;
+  border-top: none;
 }
 
 /**
@@ -150,7 +150,7 @@
  */
 
 .table-cell-fit {
-	width: 1px;
+  width: 1px;
 }
 
 /**
@@ -159,13 +159,13 @@
  */
 
 .table-cell-fill {
-	max-width: 0;
+  max-width: 0;
 }
 
 .table-cell-number {
-	width: 1px;
-	text-align: right;
-	white-space: nowrap;
+  width: 1px;
+  text-align: right;
+  white-space: nowrap;
 }
 
 /**
@@ -174,55 +174,55 @@
  */
 
 .table:not(.table-sm) tr.table-sub-group {
-	height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) - 14px);
+  height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) - 14px);
 
-	td {
-		height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) - 25px);
-	}
+  td {
+    height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) - 25px);
+  }
 
-	&.last {
-		height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) - 14px);
-		padding-bottom: 1.125rem;
-	}
+  &.last {
+    height: calc((#{$line-height-base} * 1rem) + (#{$table-cell-padding-y} * 2) - 14px);
+    padding-bottom: 1.125rem;
+  }
 }
 
 .table tr.table-sub-group {
-	td {
-		padding: 8px 20px;
-		border: 0;
-	}
+  td {
+    padding: 8px 20px;
+    border: 0;
+  }
 
-	td:first-child {
-		padding-left: 3rem;
-	}
+  td:first-child {
+    padding-left: 3rem;
+  }
 
-	&.first {
-		td {
-			padding-top: 2px;
-		}
-	}
+  &.first {
+    td {
+      padding-top: 2px;
+    }
+  }
 
-	&.last {
-		td {
-			padding-bottom: 18px;
-		}
-	}
+  &.last {
+    td {
+      padding-bottom: 18px;
+    }
+  }
 }
 
 .table.table-sm tr.table-sub-group {
-	td {
-		padding: 6px 20px;
-	}
+  td {
+    padding: 6px 20px;
+  }
 
-	td:first-child {
-		padding-left: 2.5rem;
-	}
+  td:first-child {
+    padding-left: 2.5rem;
+  }
 
-	&.last {
-		td {
-			padding-bottom: 9px;
-		}
-	}
+  &.last {
+    td {
+      padding-bottom: 9px;
+    }
+  }
 }
 
 /**
@@ -233,21 +233,21 @@
 
 .table-hover > tbody > tr:not(.table-ignore-hover):hover,
 .table-clickable > tbody > tr:not(.table-ignore-clickable):hover {
-	background-color: $table-hover-bg;
+  background-color: $table-hover-bg;
 }
 
 .table-hover > tbody > tr:not(.table-ignore-hover),
 .table-clickable > tbody > tr:not(.table-ignore-clickable) {
-	transition: background 40ms linear;
+  transition: background 40ms linear;
 }
 
 .table-clickable > tbody > tr:not(.table-ignore-clickable) {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .table-clickable > tbody > tr:not(.table-ignore-clickable):active {
-	background-color: darken($table-hover-bg, 2%);
-	transition: none;
+  background-color: darken($table-hover-bg, 2%);
+  transition: none;
 }
 
 /**
@@ -256,29 +256,29 @@
  */
 
 .table-clickable tbody tr:not(.table-ignore-clickable):not(.table-row-collapse) {
-	button:not([data-no-expand]) {
-		@include reset-button();
-	}
+  button:not([data-no-expand]) {
+    @include reset-button();
+  }
 
-	a[href]:not(.link-complex):not([data-no-expand]),
-	button:not(.link-complex):not([data-no-expand]):not(.btn:not(.btn-link)) {
-		@include link-still();
-	}
+  a[href]:not(.link-complex):not([data-no-expand]),
+  button:not(.link-complex):not([data-no-expand]):not(.btn:not(.btn-link)) {
+    @include link-still();
+  }
 
-	&:hover,
-	&:focus {
-		a[href]:not(.link-complex):not([data-no-expand]),
-		button:not(.link-complex):not([data-no-expand]):not(.btn:not(.btn-link)) {
-			@include link-hover-focus();
-		}
-	}
+  &:hover,
+  &:focus {
+    a[href]:not(.link-complex):not([data-no-expand]),
+    button:not(.link-complex):not([data-no-expand]):not(.btn:not(.btn-link)) {
+      @include link-hover-focus();
+    }
+  }
 
-	&:hover {
-		a[href]:not(.link-complex):not([data-no-expand]),
-		button:not(.link-complex):not([data-no-expand]):not(.btn) {
-			@include link-hover();
-		}
-	}
+  &:hover {
+    a[href]:not(.link-complex):not([data-no-expand]),
+    button:not(.link-complex):not([data-no-expand]):not(.btn) {
+      @include link-hover();
+    }
+  }
 }
 
 /**
@@ -288,16 +288,13 @@
  */
 
 .table-responsive {
-	background-color: $white;
-	background-image: linear-gradient(to right, $white, rgba(255, 255, 255, 0%)),
-		linear-gradient(to left, $white, rgba(255, 255, 255, 0%)),
-		linear-gradient(to right, rgba(0, 0, 0, 10%), rgba(255, 255, 255, 0%)),
-		linear-gradient(to left, rgba(0, 0, 0, 10%), rgba(255, 255, 255, 0%));
-	background-repeat: no-repeat;
-	background-attachment: local, local, scroll, scroll;
-	background-position: 0 0, 100% 0, 0 0, 100% 0;
-	background-size: 30px 100%, 30px 100%, 6px 100%, 6px 100%;
-	border-radius: $border-radius;
+  background-color: $white;
+  background-image: linear-gradient(to right, $white, rgba(255, 255, 255, 0%)), linear-gradient(to left, $white, rgba(255, 255, 255, 0%)), linear-gradient(to right, rgba(0, 0, 0, 10%), rgba(255, 255, 255, 0%)), linear-gradient(to left, rgba(0, 0, 0, 10%), rgba(255, 255, 255, 0%));
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+  background-position: 0 0, 100% 0, 0 0, 100% 0;
+  background-size: 30px 100%, 30px 100%, 6px 100%, 6px 100%;
+  border-radius: $border-radius;
 }
 
 /**
@@ -309,61 +306,61 @@
 
 .table .table-row-collapse,
 .table .table-row-collapse:hover {
-	// border-left: 2px solid transparent;
-	cursor: auto;
+  // border-left: 2px solid transparent;
+  cursor: auto;
 }
 
 .table tbody tr.table-active + .table-row-collapse {
-	box-shadow: -7px 3px 9px -6px $smoke;
-	// border-left: 2px solid $blue;
-	transition: border-left linear;
-	transition-delay: 360ms;
+  box-shadow: -7px 3px 9px -6px $smoke;
+  // border-left: 2px solid $blue;
+  transition: border-left linear;
+  transition-delay: 360ms;
 }
 
 .table .table-row-collapse > td {
-	height: auto !important;
-	padding: 0 !important;
-	background-color: $body-bg;
-	border: 0;
+  height: auto !important;
+  padding: 0 !important;
+  background-color: $body-bg;
+  border: 0;
 }
 
 .table .table-row-collapse-block {
-	position: relative;
-	padding: $table-cell-padding;
-	margin-bottom: 0.5rem;
-	box-shadow: 7px 3px 9px -6px $smoke;
+  position: relative;
+  padding: $table-cell-padding;
+  margin-bottom: .5rem;
+  box-shadow: 7px 3px 9px -6px $smoke;
 
-	&::after {
-		position: absolute;
-		top: 100%;
-		left: -1px;
-		display: block;
-		width: calc(100% + 2px);
-		height: 0.5rem;
-		content: "";
-		background-color: $body-bg;
-		box-shadow: inset 0 4px 4px -2px $smoke;
-		transition: opacity linear;
-		transition-delay: 360ms;
-	}
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    display: block;
+    width: calc(100% + 2px);
+    height: .5rem;
+    content: "";
+    background-color: $body-bg;
+    box-shadow: inset 0 4px 4px -2px $smoke;
+    transition: opacity linear;
+    transition-delay: 360ms;
+  }
 }
 
 .table .collapse.in,
 .table .collapse.show,
 .table .collapsing {
-	background-color: $white;
+  background-color: $white;
 }
 
 .table .table-row-collapse-block > :last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 // If the expandable is the last child in the table, make the ::after element slightly higher
 // to prevent the shadow from looking bonkers.
 .table tbody tr.table-active + .table-row-collapse:last-child .table-row-collapse-block {
-	&::after {
-		height: 0.8rem;
-	}
+  &::after {
+    height: .8rem;
+  }
 }
 
 /**
@@ -373,15 +370,15 @@
 
 .table-active > td,
 .table-active > th {
-	background: none;
+  background: none;
 }
 
 .table tbody tr.table-active {
-	z-index: 4;
-	background-color: $white;
-	border-top: 10px solid $body-bg;
-	box-shadow: 0 8px 5px 1px $smoke;
-	transition: background 40ms, border 40ms linear;
+  z-index: 4;
+  background-color: $white;
+  border-top: 10px solid $body-bg;
+  box-shadow: 0 8px 5px 1px $smoke;
+  transition: background 40ms, border 40ms linear;
 }
 
 /**
@@ -389,45 +386,45 @@
  */
 
 .table-sort {
-	@include reset-button();
-	text-decoration: underline;
+  @include reset-button();
+  text-decoration: underline;
 
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .table-sort:hover,
 .table-sort:active {
-	color: $link-color;
-	outline: 0;
+  color: $link-color;
+  outline: 0;
 }
 
 .table-sort:active {
-	opacity: 0.7;
+  opacity: .7;
 }
 
 th[aria-sort="descending"] .table-sort,
 th[aria-sort="ascending"] .table-sort {
-	position: relative;
+  position: relative;
 
-	&::after {
-		position: absolute;
-		bottom: -8px;
-		left: 50%;
-		width: 8px;
-		height: 6px;
-		content: "";
-		background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="8" height="6" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="m1 5 3-3 3 3" stroke="%23222" stroke-width="2" fill="none"/%3E%3C/svg%3E');
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		transform: translateX(-50%);
-	}
+  &::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 8px;
+    height: 6px;
+    content: "";
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="8" height="6" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="m1 5 3-3 3 3" stroke="%23222" stroke-width="2" fill="none"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform: translateX(-50%);
+  }
 }
 
 th[aria-sort="descending"] .table-sort {
-	&::after {
-		margin-left: -4px;
-		transform: rotateX(180deg);
-	}
+  &::after {
+    margin-left: -4px;
+    transform: rotateX(180deg);
+  }
 }
 
 // Comparative table
@@ -436,94 +433,94 @@ th[aria-sort="descending"] .table-sort {
 
 // }
 .table-comparative {
-	background-color: $white;
+  background-color: $white;
 }
 
 .table-comparative-header {
-	display: flex;
-	flex-grow: 1;
-	align-items: center;
-	border-bottom: 2px solid $shadow;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  border-bottom: 2px solid $shadow;
 
-	:first-child {
-		flex-grow: 2;
-		justify-content: flex-start;
-		text-align: left;
-	}
+  :first-child {
+    flex-grow: 2;
+    justify-content: flex-start;
+    text-align: left;
+  }
 }
 
 .table-comparative-head {
-	display: flex;
-	flex-basis: 0;
-	flex-flow: row nowrap;
-	flex-grow: 1;
-	align-self: stretch;
-	justify-content: center;
-	min-width: 0;
-	padding: calc(0.75rem + 1px) 1.25rem calc(0.75rem - 1px);
-	font-family: $font-family-sans-serif;
-	font-size: 1rem;
-	font-weight: 700;
-	text-align: center;
+  display: flex;
+  flex-basis: 0;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  align-self: stretch;
+  justify-content: center;
+  min-width: 0;
+  padding: calc(.75rem + 1px) 1.25rem calc(.75rem - 1px);
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 .table-comparative-cell {
-	display: flex;
-	flex-basis: 0;
-	flex-flow: row nowrap;
-	flex-grow: 1;
-	align-items: center;
-	width: auto;
-	min-width: 0;
-	padding: calc(0.75rem + 1px) 1.25rem calc(0.75rem - 1px);
-	text-align: center;
+  display: flex;
+  flex-basis: 0;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  align-items: center;
+  width: auto;
+  min-width: 0;
+  padding: calc(.75rem + 1px) 1.25rem calc(.75rem - 1px);
+  text-align: center;
 
-	@include media-breakpoint-down(sm) {
-		order: 3;
-	}
+  @include media-breakpoint-down(sm) {
+    order: 3;
+  }
 }
 
 .table-comparative-cell-hidden {
-	flex-grow: 2;
+  flex-grow: 2;
 }
 
 .table-comparative-row {
-	display: flex;
-	flex-grow: 1;
-	flex-wrap: wrap;
-	align-items: center;
-	width: 100%;
-	border-bottom: 2px solid $body-bg;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid $body-bg;
 
-	:first-child {
-		flex-grow: 2;
-		text-align: left;
+  :first-child {
+    flex-grow: 2;
+    text-align: left;
 
-		@include media-breakpoint-down(sm) {
-			order: 1;
-			min-width: 100%;
-		}
-	}
+    @include media-breakpoint-down(sm) {
+      order: 1;
+      min-width: 100%;
+    }
+  }
 }
 
 .table-comparative-body {
-	.table-comparative-row:nth-child(odd) {
-		background: $table-accent-bg;
-	}
+  .table-comparative-row:nth-child(odd) {
+    background: $table-accent-bg;
+  }
 }
 
 .table-comparative-collapse {
-	width: 100%;
-	background-color: inherit !important;
-	border-top: 2px solid $tint;
+  width: 100%;
+  background-color: inherit !important;
+  border-top: 2px solid $tint;
 
-	@include media-breakpoint-down(sm) {
-		border-top: none;
-	}
+  @include media-breakpoint-down(sm) {
+    border-top: none;
+  }
 
-	@include media-breakpoint-down(sm) {
-		order: 2;
-	}
+  @include media-breakpoint-down(sm) {
+    order: 2;
+  }
 }

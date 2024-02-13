@@ -1,9 +1,8 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
 
-import * as FormGroupStories from './FormGroup.stories';
+import * as FormGroupStories from './FormGroup.stories'
 
 # Form group
-
 <Meta of={FormGroupStories} />
 
 We use `form-group` for grouping form control (like input, select etc.) with a label, descriptions and error message.
@@ -19,9 +18,7 @@ More information about grouping, form layout and validation, visit [LFDS: Form p
 ```
 
 ## Error message
-
 The text color is controled by the state class `has-danger` on the `form-group` element.
-
 ```html
 <small class="form-control-feedback">This is an error message</small>
 ```
@@ -29,9 +26,7 @@ The text color is controled by the state class `has-danger` on the `form-group` 
 ## States
 
 ### Invalid `has-danger`
-
 <Canvas of={FormGroupStories.Invalid} />
 
 ### Valid `has-success`
-
 <Canvas of={FormGroupStories.Valid} />

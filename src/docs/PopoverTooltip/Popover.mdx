@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
-import * as PopoverStories from './popovertooltip.stories';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as PopoverStories from './popovertooltip.stories'
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -7,7 +7,10 @@ import { Note } from '../../../.storybook/blocks/Note';
 
 # Popover tooltip <Badges of={PopoverStories} />
 
-<Canvas of={PopoverStories.Default} story={{ inline: false, height: 250 }} />
+<Canvas
+    of={PopoverStories.Default}
+    story={{inline:false, height: 250}}
+/>
 
 The popover is triggered on both click and hover.
 
@@ -18,15 +21,15 @@ The popover-tooltip extends on the popover class, and is triggered by wrapping t
 Like popovers, we need some simple triggering javascript in order for the popover to appear.
 
 ```javascript
-$('.popover-tooltip-trigger').on('focus blur', function () {
-	$('#' + $(this).attr('aria-controls'))
-		.parent()
-		.toggleClass('open');
+$('.popover-tooltip-trigger').on('focus blur', function() {
+  $('#' + $(this).attr('aria-controls')).parent().toggleClass('open');
 });
 ```
 
 ## Center popup box on small screens
-
 There is an option to center the popup box on smaller screens. If you add `popover-sm-center` to both `popover-tooltip-trigger` and popover-tooltip the box will be centered on small screens right aligned on wider.
 
-<Canvas of={PopoverStories.Centered} story={{ inline: false, height: 250 }} />
+<Canvas
+    of={PopoverStories.Centered}
+    story={{inline:false, height: 250}}
+/>

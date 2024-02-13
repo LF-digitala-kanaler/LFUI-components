@@ -14,54 +14,54 @@ $avatar-border-width-light: 1px;
  */
 
 .avatar {
-	position: relative;
-	display: block;
-	width: 2em;
-	height: 2em;
-	overflow: hidden;
-	font-size: 1em;
-	line-height: 1;
-	color: currentcolor;
-	text-align: center;
-	text-indent: -100vw;
-	border: $avatar-border-width solid currentcolor;
-	border-radius: 50%;
+  position: relative;
+  display: block;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  font-size: 1em;
+  line-height: 1;
+  color: currentcolor;
+  text-align: center;
+  text-indent: -100vw;
+  border: $avatar-border-width solid currentcolor;
+  border-radius: 50%;
 }
 
 .avatar::before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	font-size: 0.85em;
-	font-weight: 700;
-	color: currentcolor;
-	text-indent: 0.05em;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	content: attr(data-initials);
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: .85em;
+  font-weight: 700;
+  color: currentcolor;
+  text-indent: .05em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  content: attr(data-initials);
+  transform: translate(-50%, -50%);
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 .avatar.has-image {
-	background-color: $white;
+  background-color: $white;
 }
 
 .avatar-inline {
-	display: inline-block;
-	vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .avatar-image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	text-indent: 0;
-	object-fit: cover;
-	object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: 0;
+  object-fit: cover;
+  object-position: center;
 }
 
 /**
@@ -69,20 +69,20 @@ $avatar-border-width-light: 1px;
  */
 
 .avatar-sm {
-	font-size: 0.75rem;
-	border-width: $avatar-border-width-light;
+  font-size: .75rem;
+  border-width: $avatar-border-width-light;
 }
 
 .avatar-sm::before {
-	font-size: 0.8em;
+  font-size: .8em;
 }
 
 .avatar-md {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 .avatar-lg {
-	font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 /**
@@ -92,62 +92,62 @@ $avatar-border-width-light: 1px;
 /* White */
 
 .avatar-white {
-	background-color: $avatar-theme-white;
-	border-color: $avatar-theme-white;
+  background-color: $avatar-theme-white;
+  border-color: $avatar-theme-white;
 }
 
 .avatar-white.avatar-inverted {
-	color: $avatar-theme-white;
+  color: $avatar-theme-white;
 }
 
 /* Gray */
 
 .avatar-gray {
-	color: darken($avatar-theme-gray, 45%);
-	background-color: $avatar-theme-gray;
-	border-color: $avatar-theme-gray;
+  color: darken($avatar-theme-gray, 45%);
+  background-color: $avatar-theme-gray;
+  border-color: $avatar-theme-gray;
 }
 
 .avatar-gray.avatar-inverted {
-	color: $avatar-theme-gray;
+  color: $avatar-theme-gray;
 }
 
 /* Black */
 
 .avatar-black {
-	color: $white;
-	background-color: $avatar-theme-black;
-	border-color: $avatar-theme-black;
+  color: $white;
+  background-color: $avatar-theme-black;
+  border-color: $avatar-theme-black;
 }
 
 .avatar-black.avatar-inverted {
-	color: $avatar-theme-black;
+  color: $avatar-theme-black;
 }
 
 /* Blue */
 
 .avatar-blue {
-	color: $white;
-	background-color: $avatar-theme-blue;
-	border-color: $avatar-theme-blue;
+  color: $white;
+  background-color: $avatar-theme-blue;
+  border-color: $avatar-theme-blue;
 }
 
 .avatar-blue.avatar-inverted {
-	color: $avatar-theme-blue;
+  color: $avatar-theme-blue;
 }
 
 /* Red */
 
 .avatar-red {
-	color: $white;
-	background-color: $avatar-theme-red;
-	border-color: $avatar-theme-red;
+  color: $white;
+  background-color: $avatar-theme-red;
+  border-color: $avatar-theme-red;
 }
 
 .avatar-red.avatar-inverted {
-	color: $avatar-theme-red;
+  color: $avatar-theme-red;
 }
 
 .avatar-inverted {
-	background-color: transparent;
+  background-color: transparent;
 }

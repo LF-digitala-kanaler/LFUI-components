@@ -1,19 +1,19 @@
 @import "base/index";
 
 :root {
-	--duet-color-primary: $blue;
-	--duet-color-text: inherit;
-	--duet-color-text-active: $black;
-	--duet-color-placeholder: #666;
-	--duet-color-button: $black;
-	--duet-color-surface: $white;
-	--duet-color-overlay: rgba(0, 0, 0, 0.7);
-	--duet-color-border: #eee;
-	--duet-font: inherit;
-	--duet-font-normal: normal;
-	--duet-font-bold: bold;
-	--duet-radius: 0;
-	--duet-z-index: 1070; // zindex-popover
+  --duet-color-primary: $blue;
+  --duet-color-text: inherit;
+  --duet-color-text-active: $black;
+  --duet-color-placeholder: #666;
+  --duet-color-button: $black;
+  --duet-color-surface: $white;
+  --duet-color-overlay: rgba(0, 0, 0, .7);
+  --duet-color-border: #eee;
+  --duet-font: inherit;
+  --duet-font-normal: normal;
+  --duet-font-bold: bold;
+  --duet-radius: 0;
+  --duet-z-index: 1070; // zindex-popover
 }
 
 /**
@@ -31,280 +31,284 @@
 .input-group > duet-date-picker,
 .input-group > duet-month-picker,
 .input-group > .duet-month-picker {
-	flex: 1 1 auto; /* 1 */
-	width: 1%; /* 1 */
+  flex: 1 1 auto; /* 1 */
+  width: 1%; /* 1 */
 }
 
 .duet-date {
-	/* stylelint-disable selector-class-pattern */
-	.duet-date__input {
-		@extend .form-control;
-		cursor: text;
-	}
+  /* stylelint-disable selector-class-pattern */
+  .duet-date__input {
+    @extend .form-control;
+    cursor: text;
+  }
 
-	.duet-date__toggle {
-		top: 0;
-		z-index: 1;
-		height: 100%;
-		background: none;
-		border: $input-border-width solid $input-border-color;
-		border-width: 0 0 $input-border-width;
+  .duet-date__toggle {
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    background: none;
+    border: $input-border-width solid $input-border-color;
+    border-width: 0 0 $input-border-width;
 
-		&:hover,
-		&:focus {
-			background-color: $input-hover;
-			box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
-		}
-	}
+    &:hover,
+    &:focus {
+      background-color: $input-hover;
+      box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
+    }
+  }
 
-	.input-group & .duet-date__toggle {
-		display: none;
-	}
+  .input-group & .duet-date__toggle {
+    display: none;
+  }
 
-	@media (min-width: 36rem) {
-		.duet-date__dialog {
-			width: calc(100% + 2.9rem);
-			transition: none;
-			will-change: none;
-		}
-	}
+  @media (min-width: 36rem) {
+    .duet-date__dialog {
+      width: calc(100% + 2.9rem);
+      transition: none;
+      will-change: none;
+    }
+  }
 
-	.duet-date__dialog-content {
-		max-width: 100%;
-		min-height: auto;
-		padding: 0;
-		margin-top: 0;
-		cursor: default;
-		user-select: none;
-		background: $white;
-		border: 0;
-		box-shadow: 0 0.2px 0.2px rgba(0, 0, 0, 0.019), 0 0.4px 0.6px rgba(0, 0, 0, 0.027),
-			0 0.9px 1.2px rgba(0, 0, 0, 0.033), 0 1.8px 2.6px rgba(0, 0, 0, 0.041),
-			0 5px 7px rgba(0, 0, 0, 0.06);
-	}
+  .duet-date__dialog-content {
+    max-width: 100%;
+    min-height: auto;
+    padding: 0;
+    margin-top: 0;
+    cursor: default;
+    user-select: none;
+    background: $white;
+    border: 0;
+    box-shadow:
+      0 .2px .2px rgba(0, 0, 0, .019),
+      0 .4px .6px rgba(0, 0, 0, .027),
+      0 .9px 1.2px rgba(0, 0, 0, .033),
+      0 1.8px 2.6px rgba(0, 0, 0, .041),
+      0 5px 7px rgba(0, 0, 0, .06);
+  }
 
-	.duet-date__mobile {
-		padding: 0.63rem 1.25rem;
-		margin: 0;
+  .duet-date__mobile {
+    padding: .63rem 1.25rem;
+    margin: 0;
 
-		@media (max-width: 35rem) {
-			width: 100%;
-			background: $offwhite;
-		}
-	}
+    @media (max-width: 35rem) {
+      width: 100%;
+      background: $offwhite;
+    }
+  }
 
-	.duet-date__close {
-		--btn-close-width: 1.15rem;
+  .duet-date__close {
+    --btn-close-width: 1.15rem;
 
-		@extend .btn-close;
-		position: absolute;
-		right: 0;
-		z-index: 1;
-		width: calc(100% / 7);
-		padding: 0;
-		margin: -1rem 0;
+    @extend .btn-close;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    width: calc(100% / 7);
+    padding: 0;
+    margin: -1rem 0;
 
-		svg {
-			display: none;
-		}
+    svg {
+      display: none;
+    }
 
-		@media (min-width: 36rem) {
-			width: 1.5rem;
-			height: 1.5rem;
-			margin: -0.35rem -0.35rem 0 0;
-			color: $blue;
-			background: $white;
-			border: 1px solid $input-border-color;
-			box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.1);
-			opacity: 0;
+    @media (min-width: 36rem) {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: -.35rem -.35rem 0 0;
+      color: $blue;
+      background: $white;
+      border: 1px solid $input-border-color;
+      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .1);
+      opacity: 0;
 
-			--btn-close-width: 1rem;
+      --btn-close-width: 1rem;
 
-			&:focus-within {
-				outline: 0 !important;
-			}
-		}
-	}
+      &:focus-within {
+        outline: 0 !important;
+      }
+    }
+  }
 
-	.duet-date__header {
-		position: relative;
-		height: 45px;
-		margin-bottom: 0;
-		font-family: $font-family-sans-serif;
-		font-weight: 700;
-		background: $offwhite;
-	}
+  .duet-date__header {
+    position: relative;
+    height: 45px;
+    margin-bottom: 0;
+    font-family: $font-family-sans-serif;
+    font-weight: 700;
+    background: $offwhite;
+  }
 
-	.duet-date__header > div:first-child {
-		min-width: calc((100% / 7) * 2);
+  .duet-date__header > div:first-child {
+    min-width: calc((100% / 7) * 2);
 
-		@media (min-width: 36rem) {
-			min-width: auto;
-		}
-	}
+    @media (min-width: 36rem) {
+      min-width: auto;
+    }
+  }
 
-	.duet-date__select {
-		width: 50%;
-		min-width: 4.5rem;
-		margin: 0;
-		color: $blue;
-		text-align: center;
+  .duet-date__select {
+    width: 50%;
+    min-width: 4.5rem;
+    margin: 0;
+    color: $blue;
+    text-align: center;
 
-		span {
-			margin-right: 1px;
-		}
+    span {
+      margin-right: 1px;
+    }
 
-		select {
-			font-size: 1rem;
-			border: 0;
-		}
+    select {
+      font-size: 1rem;
+      border: 0;
+    }
 
-		&:hover {
-			background-color: $input-hover;
-		}
+    &:hover {
+      background-color: $input-hover;
+    }
 
-		html body[data-focus-source="key"] &:focus-within {
-			outline: 4px solid $orange;
-		}
+    html body[data-focus-source="key"] &:focus-within {
+      outline: 4px solid $orange;
+    }
 
-		@media (min-width: 36rem) {
-			width: auto;
-		}
-	}
+    @media (min-width: 36rem) {
+      width: auto;
+    }
+  }
 
-	.duet-date__select-label {
-		height: 45px;
-		padding: 0 0.4rem 0 1.25rem;
-		font-size: 1.125rem;
+  .duet-date__select-label {
+    height: 45px;
+    padding: 0 .4rem 0 1.25rem;
+    font-size: 1.125rem;
 
-		@media (min-width: 36rem) {
-			padding: 0 0.4rem 0 0.85rem;
-		}
+    @media (min-width: 36rem) {
+      padding: 0 .4rem 0 .85rem;
+    }
 
-		svg {
-			display: none;
-		}
+    svg {
+      display: none;
+    }
 
-		&::after {
-			display: block;
-			width: 1.25rem;
-			height: 1.25rem;
-			content: "";
-			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='none' height='21' viewBox='0 0 20 21' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m15.5999 8.47992-1.414-1.414-3.999 3.99998-4.00105-3.99998-1.414 1.414 4 4.00098 1.41505 1.413 1.413-1.413z' fill='%23005aa0' fill-rule='evenodd'/%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: 1.25rem;
-		}
-	}
+    &::after {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      content: "";
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='none' height='21' viewBox='0 0 20 21' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m15.5999 8.47992-1.414-1.414-3.999 3.99998-4.00105-3.99998-1.414 1.414 4 4.00098 1.41505 1.413 1.413-1.413z' fill='%23005aa0' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.25rem;
+    }
+  }
 
-	.duet-date__nav {
-		display: flex;
-		justify-content: flex-end;
-		width: calc((100% / 7) * 3);
-		color: $blue;
-	}
+  .duet-date__nav {
+    display: flex;
+    justify-content: flex-end;
+    width: calc((100% / 7) * 3);
+    color: $blue;
+  }
 
-	.duet-date__prev,
-	.duet-date__next {
-		width: calc((100% / 3) - 1px);
-		min-width: 45px;
-		height: 45px;
-		margin: 0;
-		border-radius: 0;
-		transition: none;
+  .duet-date__prev,
+  .duet-date__next {
+    width: calc((100% / 3) - 1px);
+    min-width: 45px;
+    height: 45px;
+    margin: 0;
+    border-radius: 0;
+    transition: none;
 
-		&:hover {
-			background-color: $input-hover;
-		}
 
-		&::after {
-			display: block;
-			width: 1.5rem;
-			height: 1.5rem;
-			content: "";
-			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.532 7 20 8.3954 12 16 4 8.3954 5.468 7 12 13.2084 18.532 7Z' fill='%23005AA0'/%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: 1.5rem;
-			transform: rotate(90deg);
-		}
+    &:hover {
+      background-color: $input-hover;
+    }
 
-		svg {
-			display: none;
-		}
-	}
+    &::after {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      content: "";
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.532 7 20 8.3954 12 16 4 8.3954 5.468 7 12 13.2084 18.532 7Z' fill='%23005AA0'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.5rem;
+      transform: rotate(90deg);
+    }
 
-	.duet-date__next::after {
-		transform: rotate(-90deg);
-	}
+    svg {
+      display: none;
+    }
+  }
 
-	.duet-date__table-header {
-		padding: 0.5rem 0;
-		font-size: 0.875rem;
-		font-weight: 400;
-		text-transform: capitalize;
-		letter-spacing: 0;
-	}
+  .duet-date__next::after {
+    transform: rotate(-90deg);
+  }
 
-	.duet-date__cell {
-		@include font-smoothing();
+  .duet-date__table-header {
+    padding: .5rem 0;
+    font-size: .875rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0;
+  }
 
-		padding: 0;
-		background-color: $white;
-		border: solid 1px var(--duet-color-border);
+  .duet-date__cell {
+    @include font-smoothing();
 
-		&:first-child {
-			border-left: none;
-		}
+    padding: 0;
+    background-color: $white;
+    border: solid 1px var(--duet-color-border);
 
-		&:last-child {
-			border-right: none;
-		}
-	}
+    &:first-child {
+      border-left: none;
+    }
 
-	.duet-date__row:last-child .duet-date__cell {
-		border-bottom: none;
-	}
+    &:last-child {
+      border-right: none;
+    }
+  }
 
-	.duet-date__day {
-		width: 100%;
-		min-width: 44px;
-		height: 44px;
-		font-size: 1rem;
-		border-radius: 0;
-		box-shadow: none;
+  .duet-date__row:last-child .duet-date__cell {
+    border-bottom: none;
+  }
 
-		&.is-today {
-			box-shadow: none;
-		}
+  .duet-date__day {
+    width: 100%;
+    min-width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    border-radius: 0;
+    box-shadow: none;
 
-		&:not(.is-month),
-		&[aria-disabled="true"] {
-			color: $silver;
-			opacity: 1;
-		}
+    &.is-today {
+      box-shadow: none;
+    }
 
-		&[aria-pressed="true"] {
-			font-weight: 700;
-			color: $blue;
-			background-color: $cloud;
-			box-shadow: inset 0 -2px 0 0 $blue;
-		}
+    &:not(.is-month),
+    &[aria-disabled="true"] {
+      color: $silver;
+      opacity: 1;
+    }
 
-		&:hover,
-		&:focus {
-			background-color: $input-hover;
-		}
+    &[aria-pressed="true"] {
+      font-weight: 700;
+      color: $blue;
+      background-color: $cloud;
+      box-shadow: inset 0 -2px 0 0 $blue;
+    }
 
-		&.is-disabled {
-			cursor: not-allowed;
-			box-shadow: none;
-		}
+    &:hover,
+    &:focus {
+      background-color: $input-hover;
+    }
 
-		&:hover::before,
-		&.is-today::before {
-			content: none;
-		}
-	}
-	/* stylelint-enable selector-class-pattern */
+    &.is-disabled {
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    &:hover::before,
+    &.is-today::before {
+      content: none;
+    }
+  }
+  /* stylelint-enable selector-class-pattern */
 }

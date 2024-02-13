@@ -7,73 +7,41 @@ $icon-stroke-width: 1px;
  */
 
 .icon {
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .icon-block {
-	display: block;
+  display: block;
 }
 
 .icon-flipped {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /**
  * Helpers for vertical alignment
  */
 
-.icon-nudge {
-	top: -0.06em;
-}
-.icon-nudge-up {
-	top: -0.06em;
-}
-.icon-nudge-up-01 {
-	top: -0.1em;
-}
-.icon-nudge-up-015 {
-	top: -0.15em;
-}
-.icon-nudge-up-02 {
-	top: -0.2em;
-}
-.icon-nudge-up-025 {
-	top: -0.25em;
-}
-.icon-nudge-up-030 {
-	top: -0.3em;
-}
-.icon-nudge-down {
-	top: 0.06em;
-}
-.icon-nudge-down-01 {
-	top: 0.1em;
-}
-.icon-nudge-down-015 {
-	top: 0.15em;
-}
-.icon-nudge-down-02 {
-	top: 0.2em;
-}
-.icon-nudge-down-025 {
-	top: 0.25em;
-}
-.icon-nudge-down-030 {
-	top: 0.3em;
-}
+.icon-nudge { top: -.06em; }
+.icon-nudge-up { top: -.06em; }
+.icon-nudge-up-01 { top: -.1em; }
+.icon-nudge-up-015 { top: -.15em; }
+.icon-nudge-up-02 { top: -.2em; }
+.icon-nudge-up-025 { top: -.25em; }
+.icon-nudge-up-030 { top: -.3em; }
+.icon-nudge-down { top: .06em; }
+.icon-nudge-down-01 { top: .1em; }
+.icon-nudge-down-015 { top: .15em; }
+.icon-nudge-down-02 { top: .2em; }
+.icon-nudge-down-025 { top: .25em; }
+.icon-nudge-down-030 { top: .3em; }
 
 /**
  * Horizontal spacing
  */
 
-.icon-left {
-	margin-right: 10px;
-}
-.icon-right {
-	margin-left: 10px;
-}
-.icon-green {
-	color: $green;
-}
+.icon-left { margin-right: 10px; }
+.icon-right { margin-left: 10px; }
+.icon-green { color: $green; }

@@ -1,26 +1,26 @@
-import { uid } from '../../js/utils';
+import { uid } from '../../js/utils'
 
 export default {
-	title: 'Supportive microinteractions/Collapse',
-	parameters: {
-		badges: ['stable'],
-	},
-	argTypes: {
-		type: {
-			control: 'select',
-			options: ['button', 'a'],
-		},
-		background: {
-			control: 'select',
-			options: ['white', 'gray'],
-		},
-	},
-};
+  title: 'Supportive microinteractions/Collapse',
+  parameters: {
+    badges: ['stable']
+  },
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['button', 'a']
+    },
+    background: {
+      control: 'select',
+      options: ['white', 'gray']
+    }
+  }
+}
 
 function Template({ background = 'white', type = 'button' }) {
-	const id = uid();
+  const id = uid()
 
-	return `
+  return `
     <article>
       <${type}
         id="readMoreCollapse"
@@ -49,16 +49,16 @@ function Template({ background = 'white', type = 'button' }) {
         ${background === 'gray' ? '</div>' : ''}
       </div>
     </article>
-    `;
+    `
 }
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-	background: 'white',
-	type: 'button',
-};
+  background: 'white',
+  type: 'button'
+}
 
-export const WithGrayBackground = Template.bind({});
+export const WithGrayBackground = Template.bind({})
 WithGrayBackground.args = {
-	background: 'gray',
-};
+  background: 'gray'
+}

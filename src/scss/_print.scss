@@ -1,104 +1,104 @@
 @import "base/index";
 
 @media print {
-	*,
-	*::before,
-	*::after {
-		text-shadow: none !important;
-		box-shadow: none !important;
-	}
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
 
-	a {
-		&:not(.btn) {
-			text-decoration: underline;
-		}
-	}
+  a {
+    &:not(.btn) {
+      text-decoration: underline;
+    }
+  }
 
-	pre {
-		white-space: pre-wrap !important;
-	}
+  pre {
+    white-space: pre-wrap !important;
+  }
 
-	pre,
-	blockquote {
-		page-break-inside: avoid;
-	}
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
 
-	/**
+  /**
    * Printing Tables
    */
 
-	thead {
-		display: table-header-group;
-	}
+  thead {
+    display: table-header-group;
+  }
 
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 
-	/**
+  /**
    * Specify a size and min-width to make printing closer across browsers.
    * We don't set margin here because it breaks `size` in Chrome. We also
    * don't use `!important` on `size` as it breaks in Chrome.
    */
 
-	@page {
-		size: $print-page-size;
-	}
+  @page {
+    size: $print-page-size;
+  }
 
-	body {
-		min-width: $print-body-min-width !important;
-	}
+  body {
+    min-width: $print-body-min-width !important;
+  }
 
-	.container {
-		min-width: $print-body-min-width !important;
-	}
+  .container {
+    min-width: $print-body-min-width !important;
+  }
 
-	.badge {
-		border: $border-width solid $black;
-	}
+  .badge {
+    border: $border-width solid $black;
+  }
 
-	.table {
-		border-collapse: collapse !important;
+  .table {
+    border-collapse: collapse !important;
 
-		td,
-		th {
-			background-color: $white !important;
-		}
-	}
+    td,
+    th {
+      background-color: $white !important;
+    }
+  }
 
-	.table-bordered {
-		th,
-		td {
-			border: 1px solid $gray-300 !important;
-		}
-	}
+  .table-bordered {
+    th,
+    td {
+      border: 1px solid $gray-300 !important;
+    }
+  }
 
-	.table-dark {
-		color: inherit;
+  .table-dark {
+    color: inherit;
 
-		th,
-		td,
-		thead th,
-		tbody + tbody {
-			border-color: $table-border-color;
-		}
-	}
+    th,
+    td,
+    thead th,
+    tbody + tbody {
+      border-color: $table-border-color;
+    }
+  }
 
-	.table .thead-dark th {
-		color: inherit;
-		border-color: $table-border-color;
-	}
+  .table .thead-dark th {
+    color: inherit;
+    border-color: $table-border-color;
+  }
 }

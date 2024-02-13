@@ -1,27 +1,23 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
-import * as BodyTextStories from './bodyText.stories';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as BodyTextStories from './bodyText.stories'
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
 <Meta of={BodyTextStories} />
 
 # Body text <Badges of={BodyTextStories} />
-
 <Subtitle>
-	The body text is the standard text style and the one which is used for all 'normal' text, that is
-	text which isn't a heading or lead paragraph.
+The body text is the standard text style and the one which is used for all 'normal' text, that is text which isn't a heading or lead paragraph.
 </Subtitle>
 
 <Canvas of={BodyTextStories.Default} />
 
 ## Links in body text
-
 For accessibility reasons we recommend that links aren't placed in a paragraph, but rather after it. This improves accessibility in many ways such as readability of text, navigation with screen readers or tabbing and for those who are just glancing through a page in search of a link.
 
 There is however a conflict between accessibility and SEO, as search engines prefer links in text blocks. Thus we have an exception from the general recommendation, the first time one of our offerings is mentioned after the lead paragraph, the word can be linked inside the paragraph. It is important to use this exception with moderation and only link to offerings which fit in the context of the page you're working on.
 
 ## To consider
-
 Keep general recommendations on text length online in mind. A good rule of thumb is to keep the width of each line to 65-85 characters (including blanks).
 Don't use CAPS for anything except first letters of sentences and names.
 Do not use bold to highlight words, find ways of getting your point across which are more accessible.

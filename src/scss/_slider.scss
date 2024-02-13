@@ -1,331 +1,321 @@
 @import "base/index";
 
 @mixin lf-slider($background-color: $white, $track-color: $smoke) {
-	--range-color: #{$blue} !important;
-	--track-background: linear-gradient(
-			to right,
-			transparent var(--low),
-			var(--range-color) 0,
-			var(--range-color) var(--high),
-			transparent 0
-		)
-		no-repeat 0 45% / 100% !important;
+  --range-color: #{$blue} !important;
+  --track-background: linear-gradient(to right, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 45% / 100% !important;
 
-	width: 100%;
-	padding: 0;
-	margin: 10px 0;
-	background: linear-gradient(
-		to right,
-		$blue 0%,
-		$blue calc(1% * var(--progress, 0)),
-		#{$track-color} calc(1% * var(--progress, 0))
-	);
-	appearance: none;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  background: linear-gradient(to right, $blue 0%, $blue calc(1% * var(--progress, 0)), #{$track-color} calc(1% * var(--progress, 0)));
+  appearance: none;
 
-	// input[type="range"] is one of those fun html-elements that render
-	// completely differently in each browser, so we'll need completely separate
-	// rules for each browser.
-	// Webkit
-	// Track
-	&::-webkit-slider-runnable-track {
-		height: $range-slider-height;
-		padding: 0;
-		cursor: pointer;
-		border-radius: 0;
-		outline: 0;
-	}
+  // input[type="range"] is one of those fun html-elements that render
+  // completely differently in each browser, so we'll need completely separate
+  // rules for each browser.
+  // Webkit
+  // Track
+  &::-webkit-slider-runnable-track {
+    height: $range-slider-height;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 0;
+    outline: 0;
+  }
 
-	// Range Handle
-	&::-webkit-slider-thumb {
-		width: $range-slider-thumb-size;
-		height: $range-slider-thumb-size;
-		margin-top: -7px;
-		cursor: grab;
-		background: $range-slider-thumb-bg;
-		border-radius: 50%;
-		outline: 2px solid $background-color;
-		box-shadow: inset 0 0 0 2px $blue;
-		transition: 200ms ease-in-out;
-		appearance: none;
+  // Range Handle
+  &::-webkit-slider-thumb {
+    width: $range-slider-thumb-size;
+    height: $range-slider-thumb-size;
+    margin-top: -7px;
+    cursor: grab;
+    background: $range-slider-thumb-bg;
+    border-radius: 50%;
+    outline: 2px solid $background-color;
+    box-shadow: inset 0 0 0 2px $blue;
+    transition: 200ms ease-in-out;
+    appearance: none;
 
-		&:hover {
-			box-shadow: inset 0 0 0 5px $blue;
-			transition: 200ms ease-in-out;
-		}
-	}
+    &:hover {
+      box-shadow: inset 0 0 0 5px $blue;
+      transition: 200ms ease-in-out;
+    }
+  }
 
-	&:active::-webkit-slider-thumb {
-		cursor: grabbing;
-		box-shadow: inset 0 0 0 5px $blue;
-	}
+  &:active::-webkit-slider-thumb {
+    cursor: grabbing;
+    box-shadow: inset 0 0 0 5px $blue;
+  }
 
-	&[disabled] {
-		&::-webkit-slider-thumb {
-			box-shadow: inset 0 0 0 5px #bfd4e5;
-		}
+  &[disabled] {
+    &::-webkit-slider-thumb {
+      box-shadow: inset 0 0 0 5px #bfd4e5;
+    }
 
-		&::-moz-range-thumb {
-			box-shadow: inset 0 0 0 5px #bfd4e5;
-		}
+    &::-moz-range-thumb {
+      box-shadow: inset 0 0 0 5px #bfd4e5;
+    }
 
-		&::-ms-thumb {
-			box-shadow: inset 0 0 0 5px #bfd4e5;
-		}
-	}
-	// Firefox
-	// Track
-	&::-moz-range-track {
-		height: $range-slider-height;
-		padding: 0;
-		cursor: pointer;
-		background: transparent;
-		border: 9px solid $background-color;
-		border-radius: 0;
-		outline: 0;
-	}
+    &::-ms-thumb {
+      box-shadow: inset 0 0 0 5px #bfd4e5;
+    }
+  }
+  // Firefox
+  // Track
+  &::-moz-range-track {
+    height: $range-slider-height;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 9px solid $background-color;
+    border-radius: 0;
+    outline: 0;
+  }
 
-	// Range Handle
-	&::-moz-range-thumb {
-		width: $range-slider-thumb-size;
-		height: $range-slider-thumb-size;
-		cursor: grab;
-		background: $range-slider-thumb-bg;
-		border: 0;
-		border-radius: 50%;
-		outline: 2px solid $background-color;
-		box-shadow: inset 0 0 0 2px $blue;
-		transition: 200ms ease-in-out;
+  // Range Handle
+  &::-moz-range-thumb {
+    width: $range-slider-thumb-size;
+    height: $range-slider-thumb-size;
+    cursor: grab;
+    background: $range-slider-thumb-bg;
+    border: 0;
+    border-radius: 50%;
+    outline: 2px solid $background-color;
+    box-shadow: inset 0 0 0 2px $blue;
+    transition: 200ms ease-in-out;
 
-		&:hover {
-			box-shadow: inset 0 0 0 5px $blue;
-			transition: 200ms ease-in-out;
-		}
-	}
+    &:hover {
+      box-shadow: inset 0 0 0 5px $blue;
+      transition: 200ms ease-in-out;
+    }
+  }
 
-	&:active::-moz-range-thumb {
-		cursor: grabbing;
-		box-shadow: inset 0 0 0 5px $blue;
-	}
+  &:active::-moz-range-thumb {
+    cursor: grabbing;
+    box-shadow: inset 0 0 0 5px $blue;
+  }
 
-	&::-moz-focus-inner,
-	&::-moz-focus-outer {
-		border: 0;
-	}
+  &::-moz-focus-inner,
+  &::-moz-focus-outer {
+    border: 0;
+  }
 
-	// IE (10+)
-	// Track
-	&::-ms-track {
-		width: 100%;
-		height: 4px;
-		color: transparent;
-		cursor: pointer;
-		background: transparent;
-		border-color: transparent;
-		border-width: 10px 0;
-	}
+  // IE (10+)
+  // Track
+  &::-ms-track {
+    width: 100%;
+    height: 4px;
+    color: transparent;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 10px 0;
+  }
 
-	// Range Handle
-	&::-ms-thumb {
-		width: $range-slider-thumb-size;
-		height: $range-slider-thumb-size;
-		cursor: grab;
-		background: $range-slider-thumb-bg;
-		border-radius: 50%;
-		outline: 0;
-		box-shadow: inset 0 0 0 2px $blue;
-		transition: 200ms ease-in-out;
+  // Range Handle
+  &::-ms-thumb {
+    width: $range-slider-thumb-size;
+    height: $range-slider-thumb-size;
+    cursor: grab;
+    background: $range-slider-thumb-bg;
+    border-radius: 50%;
+    outline: 0;
+    box-shadow: inset 0 0 0 2px $blue;
+    transition: 200ms ease-in-out;
 
-		&:hover {
-			box-shadow: inset 0 0 0 5px $blue;
-			transition: 200ms ease-in-out;
-		}
-	}
+    &:hover {
+      box-shadow: inset 0 0 0 5px $blue;
+      transition: 200ms ease-in-out;
+    }
+  }
 
-	&:active::-ms-thumb {
-		cursor: grabbing;
-		box-shadow: inset 0 0 0 5px $blue;
-	}
+  &:active::-ms-thumb {
+    cursor: grabbing;
+    box-shadow: inset 0 0 0 5px $blue;
+  }
 
-	&::-ms-fill-lower {
-		background: $blue;
-	}
+  &::-ms-fill-lower {
+    background: $blue;
+  }
 
-	&::-ms-fill-upper {
-		background: $track-color;
-	}
-	// fix for edge background size bug
-	@supports (-ms-ime-align: auto) {
-		margin-top: 0;
-		background-size: 0 !important;
+  &::-ms-fill-upper {
+    background: $track-color;
+  }
+  // fix for edge background size bug
+  @supports (-ms-ime-align: auto) {
+    margin-top: 0;
+    background-size: 0 !important;
 
-		&::-ms-thumb {
-			margin-top: 2px;
-		}
-	}
+    &::-ms-thumb {
+      margin-top: 2px;
+    }
+  }
 }
 
 // We add a custom, proper keyboard focus appearance.
 html body[data-focus-source="key"] input[class*="lf-slider"]:focus {
-	&::-webkit-slider-thumb {
-		outline: 0;
-		box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-	}
+  &::-webkit-slider-thumb {
+    outline: 0;
+    box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
+  }
 
-	&::-moz-range-thumb {
-		outline: 0;
-		box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-	}
+  &::-moz-range-thumb {
+    outline: 0;
+    box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
+  }
 
-	&::-ms-thumb {
-		outline: 0;
-		box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
-	}
+  &::-ms-thumb {
+    outline: 0;
+    box-shadow: inset 0 0 0 5px $blue, 0 0 0 5px $orange;
+  }
 }
 
 .lf-slider {
-	@include lf-slider($white, $smoke);
+  @include lf-slider($white, $smoke);
 }
 
 .lf-slider-gray {
-	@include lf-slider($body-bg, $smoke);
+  @include lf-slider($body-bg, $smoke);
 }
 
 .slider-wrapper {
-	position: relative;
-	padding: 0 3.5rem;
+  position: relative;
+  padding: 0 3.5rem;
 }
 
 .lf-slider,
 .lf-slider-gray {
-	position: relative;
+  position: relative;
 }
 
 // Interval
 
 .lf-slider.interval {
-	vertical-align: top;
+  vertical-align: top;
 }
 
 .lf-slider.interval::-moz-range-thumb {
-	transform: scale(1); /* FF doesn't apply position it seems */
+  transform: scale(1); /* FF doesn't apply position it seems */
 }
 
 .lf-slider.interval.original {
-	position: absolute;
+  position: absolute;
 }
 
 .lf-slider.interval.original::-webkit-slider-thumb {
-	position: relative;
-	z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .lf-slider.interval.original::-moz-range-thumb {
-	z-index: 2;
+  z-index: 2;
 }
 
 .lf-slider.interval::-moz-range-track {
-	border-color: transparent; /* needed to switch FF to "styleable" control */
+  border-color: transparent; /* needed to switch FF to "styleable" control */
 }
 
 .lf-slider.interval.ghost {
-	position: relative;
-	background: var(--track-background);
-	--track-background: linear-gradient(
-			to right,
-			transparent var(--low),
-			var(--range-color) 0,
-			var(--range-color) var(--high),
-			transparent 0
-		)
-		no-repeat 0 45% / 100% 40%;
-	--range-color: hsl(190deg, 80%, 40%);
+  position: relative;
+  background: var(--track-background);
+  --track-background:
+    linear-gradient(
+      to right,
+      transparent var(--low),
+      var(--range-color) 0,
+      var(--range-color) var(--high),
+      transparent 0
+    ) no-repeat 0 45% / 100% 40%;
+  --range-color: hsl(190deg, 80%, 40%);
 }
 
 .lf-slider.interval.ghost::-webkit-slider-runnable-track {
-	background: var(--track-background);
+  background: var(--track-background);
 }
 
 .lf-slider.interval.ghost::-moz-range-track {
-	background: var(--track-background);
+  background: var(--track-background);
 }
 .lf-slider.interval.ghost::-webkit-slider-thumb {
-	position: relative;
-	z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 .lf-slider.interval.ghost::-moz-range-thumb {
-	z-index: 2;
+  z-index: 2;
 }
 
 // Labels
 
 .slider-label-right,
 .slider-label-left {
-	@include font-smoothing();
+  @include font-smoothing();
 
-	position: absolute;
-	top: 3px;
-	left: 0;
-	width: 50px;
-	font-family: $font-family-sans-serif;
-	font-weight: 700;
-	text-align: right;
-	white-space: nowrap;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 50px;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
 
-	&.distribution-label {
-		position: absolute;
-		top: auto !important;
-		right: 0;
-		bottom: 30px;
-		z-index: 1;
-		width: 1.2rem;
-		padding: 1em 0 0.8rem;
-		font-family: $font-family-sans-serif;
-		font-size: $font-size-xs;
-		text-align: left;
-		text-transform: uppercase;
-		pointer-events: none;
-		word-spacing: -0.15em;
-		transition: transform 200ms cubic-bezier(0.29, 0.86, 0.58, 1.35), opacity 150ms linear;
-		transform: none;
+  &.distribution-label {
+    position: absolute;
+    top: auto !important;
+    right: 0;
+    bottom: 30px;
+    z-index: 1;
+    width: 1.2rem;
+    padding: 1em 0 .8rem;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-xs;
+    text-align: left;
+    text-transform: uppercase;
+    pointer-events: none;
+    word-spacing: -.15em;
+    transition:
+      transform 200ms cubic-bezier(.29, .86, .58, 1.35),
+      opacity 150ms linear;
+    transform: none;
 
-		&::before {
-			@include glyph-arrow-right($gray);
-			position: absolute;
-			right: 100%;
-			bottom: -0.25rem;
-			left: -0.3rem;
-			display: block;
-			width: 18px;
-			height: 10px;
-			content: "";
-			border: 0;
-			opacity: 0.5;
-			transform: rotate(90deg);
-		}
+    &::before {
+      @include glyph-arrow-right($gray);
+      position: absolute;
+      right: 100%;
+      bottom: -.25rem;
+      left: -.3rem;
+      display: block;
+      width: 18px;
+      height: 10px;
+      content: "";
+      border: 0;
+      opacity: .5;
+      transform: rotate(90deg);
+    }
 
-		@supports (-ms-ime-align: auto) {
-			bottom: 40px;
-		}
-	}
+    @supports (-ms-ime-align: auto) {
+      bottom: 40px;
+    }
+  }
 }
 
 .slider-label-right {
-	right: 0;
-	left: auto;
-	text-align: left;
-	white-space: nowrap;
+  right: 0;
+  left: auto;
+  text-align: left;
+  white-space: nowrap;
 
-	&.distribution-label {
-		width: 2rem;
-		text-align: right;
+  &.distribution-label {
+    width: 2rem;
+    text-align: right;
 
-		&::before {
-			right: 0;
-			left: 1.15rem;
-		}
+    &::before {
+      right: 0;
+      left: 1.15rem;
+    }
 
-		@supports (-ms-ime-align: auto) {
-			bottom: 40px;
-		}
-	}
+    @supports (-ms-ime-align: auto) {
+      bottom: 40px;
+    }
+  }
 }

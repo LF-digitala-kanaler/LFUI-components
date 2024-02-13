@@ -1,24 +1,34 @@
 <p class="text-sm text-muted">Default</p>
 <div class="upload w-100">
-	<div class="upload-placeholder"></div>
-	<input class="upload-input" type="file" name="filename" id="upload" multiple />
-	<label class="upload-label btn btn-secondary px-1" for="upload">
-		<svg focusable="false" aria-hidden="true" class="icon mr-025" width="24" height="24">
-			<use xlink:href="lf-icons/sprite/24/icons.svg#attachment-24"></use>
-		</svg>
-		Bifoga fil
-	</label>
+  <div class="upload-placeholder"></div>
+  <input
+    class="upload-input"
+    type="file"
+    name="filename"
+    id="upload"
+    multiple />
+  <label class="upload-label btn btn-secondary px-1" for="upload">
+    <svg
+      focusable="false"
+      aria-hidden="true"
+      class="icon mr-025"
+      width="24"
+      height="24">
+      <use xlink:href="lf-icons/sprite/24/icons.svg#attachment-24"></use>
+    </svg>
+    Bifoga fil
+  </label>
 </div>
 
 <p class="text-sm mt-15 mb-05 text-muted">Loading state test</p>
 <div class="upload-preview mb-05">
-	<div class="upload-body">
-		<div class="upload-image mr-05"></div>
-		<span class="upload-name">the-file-name.jpg</span>
+  <div class="upload-body">
+    <div class="upload-image mr-05"></div>
+    <span class="upload-name">the-file-name.jpg</span>
 
-		<div id="upload2" class="upload-progress">
-			<div class="upload-progress-bar" role="progressbar"></div>
-		</div>
-	</div>
+    <div id="upload2" class="upload-progress">
+      <div class="upload-progress-bar" role="progressbar"></div>
+    </div>
+  </div>
 </div>
 <button class="link" id="upload-test-btn">Trigger</button>

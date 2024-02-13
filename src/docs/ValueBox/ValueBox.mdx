@@ -1,15 +1,13 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
-import * as ValueboxStories from './valuebox.stories';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as ValueboxStories from './valuebox.stories'
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
 <Meta of={ValueboxStories} />
 
 # ValueBox <Badges of={ValueboxStories} />
-
 <Subtitle>
-	The value box is intended to draw the users attention and for them to at-a-glance see the total
-	value of the related content.
+The value box is intended to draw the users attention and for them to at-a-glance see the total value of the related content.
 </Subtitle>
 
 <Canvas of={ValueboxStories.Default} />
@@ -18,15 +16,13 @@ Text in value box should resize to fit it's parent. That's not included in LFUI 
 
 ```javascript
 for (const el of document.querySelectorAll('.value-box-text')) {
-	const text = svg.firstElementChild;
-	const width = text.getBBox().width || text.getComputedTextLength();
-	const height = 18;
-	el.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  const text = svg.firstElementChild;
+  const width = text.getBBox().width || text.getComputedTextLength();
+  const height = 18;
+  el.setAttribute('viewBox', `0 0 ${ width } ${ height }`);
 }
 ```
 
 ## Expandable
-
 There is also a possibility to add a value description in combination with the collapse component.
-
 <Canvas of={ValueboxStories.Expandable} />

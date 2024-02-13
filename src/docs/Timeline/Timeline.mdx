@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
-import * as TimelineStories from './timeline.stories';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as TimelineStories from './timeline.stories'
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -8,8 +8,7 @@ import { Note } from '../../../.storybook/blocks/Note';
 # Timeline <Badges of={TimelineStories} />
 
 <Subtitle>
-	The timeline component is an interactive way for the user to follow the progress of an (ongoing)
-	errand, such as a damage claim or loan application.
+The timeline component is an interactive way for the user to follow the progress of an (ongoing) errand, such as a damage claim or loan application.
 </Subtitle>
 
 <Canvas of={TimelineStories.Default} />
@@ -23,23 +22,17 @@ On entering the detail view, only the active step will be expanded. The rest is 
 You can put whatever you want inside `.timeline-content` but don't forget to add the close button in the end.
 
 ## States
-
 A timeline item may have one of three states:
 
 ### Upcoming
-
 Standard state no class needed.
 
 <Canvas of={TimelineStories.ItemUpcoming} />
 
 ### Ongoing
-
 `.timeline-spacing` should have a class `.is-ongoing` which will make the icon larger in that item.
-
 <Canvas of={TimelineStories.ItemOngoing} />
 
 ### Done
-
 `.timeline-icon` should have the class `.is-done`.
-
 <Canvas of={TimelineStories.ItemDone} />

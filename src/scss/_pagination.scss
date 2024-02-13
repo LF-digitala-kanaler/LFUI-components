@@ -24,77 +24,76 @@ $pagination-hover-color: $link-hover-color;
 $pagination-margin-start: 0;
 $pagination-padding-x-lg: $pagination-padding-x;
 $pagination-padding-x-sm: $pagination-padding-x;
-$pagination-padding-x: 0.9rem;
+$pagination-padding-x: .9rem;
 $pagination-padding-y-lg: $pagination-padding-y;
 $pagination-padding-y-sm: $pagination-padding-y;
-$pagination-padding-y: 0.3rem;
-$pagination-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-	border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$pagination-padding-y: .3rem;
+$pagination-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 @import "bootstrap5/scss/_pagination.scss";
 
 .pagination {
-	gap: 0.125rem;
-	font-family: $font-family-sans-serif;
+  gap: .125rem;
+  font-family: $font-family-sans-serif;
 }
 
 .page-link,
 .page-link:hover,
 .page-link:focus,
 .page-link:active {
-	margin-left: 2px;
-	font-weight: 700;
-	text-decoration: none;
+  margin-left: 2px;
+  font-weight: 700;
+  text-decoration: none;
 
-	@include font-smoothing();
+  @include font-smoothing();
 }
 
 .page-link,
 .page-link:focus {
-	background-color: $pagination-bg;
+  background-color: $pagination-bg;
 }
 
 .page-item.active .page-link {
-	&:hover,
-	&:focus {
-		background-color: $pagination-active-bg;
-	}
+  &:hover,
+  &:focus {
+    background-color: $pagination-active-bg;
+  }
 }
 
 .pagination:not(.pagination-flex) .page-item:not(.active) {
-	.page-link:hover,
-	.page-link:focus {
-		color: $pagination-hover-color;
-		cursor: pointer;
-		background-color: $pagination-hover-bg;
-		border-color: $pagination-hover-border-color;
+  .page-link:hover,
+  .page-link:focus {
+    color: $pagination-hover-color;
+    cursor: pointer;
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border-color;
 
-		&::after {
-			position: absolute;
-			right: 11px;
-			bottom: 7px;
-			left: 11px;
-			height: 2px;
-			margin: auto;
-			content: "";
-			background: $pagination-hover-color;
-		}
-	}
+    &::after {
+      position: absolute;
+      right: 11px;
+      bottom: 7px;
+      left: 11px;
+      height: 2px;
+      margin: auto;
+      content: "";
+      background: $pagination-hover-color;
+    }
+  }
 }
 
 .pagination .page-item.active ~ .page-item {
-	.page-link {
-		&,
-		&:focus {
-			font-weight: 700;
-			color: $smoke !important;
-			pointer-events: none;
+  .page-link {
+    &,
+    &:focus {
+      font-weight: 700;
+      color: $smoke !important;
+      pointer-events: none;
 
-			&::after {
-				content: none !important;
-			}
-		}
-	}
+      &::after {
+        content: none !important;
+      }
+    }
+  }
 }
 
 /**
@@ -103,81 +102,81 @@ $pagination-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-
  */
 
 .pagination-static {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 // "Stretchy"
 
 .pagination-flex {
-	display: flex;
-	align-items: stretch;
+  display: flex;
+  align-items: stretch;
 
-	.page-item {
-		flex-grow: 1;
+  .page-item {
+    flex-grow: 1;
 
-		&:not(.active) {
-			.page-link:hover {
-				color: $blue;
-				background-color: $white;
-			}
-		}
+    &:not(.active) {
+      .page-link:hover {
+        color: $blue;
+        background-color: $white;
+      }
+    }
 
-		.page-link {
-			text-align: center;
-		}
+    .page-link {
+      text-align: center;
+    }
 
-		a.page-link:hover,
-		a.page-link:focus {
-			&::after {
-				position: absolute;
-				right: 11px;
-				bottom: 7px;
-				left: 11px;
-				width: 12px;
-				height: 2px;
-				margin: auto;
-				content: "";
-				background: $blue;
-			}
-		}
-	}
+    a.page-link:hover,
+    a.page-link:focus {
+      &::after {
+        position: absolute;
+        right: 11px;
+        bottom: 7px;
+        left: 11px;
+        width: 12px;
+        height: 2px;
+        margin: auto;
+        content: "";
+        background: $blue;
+      }
+    }
+  }
 }
 
 // stretchy on small devices
 
 .pagination-sm-flex {
-	@include media-breakpoint-down(sm) {
-		display: flex;
-		align-items: stretch;
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    align-items: stretch;
 
-		.page-item {
-			flex-grow: 1;
+    .page-item {
+      flex-grow: 1;
 
-			&:not(.active) {
-				.page-link:hover {
-					color: $blue;
-					background-color: $white;
-				}
-			}
+      &:not(.active) {
+        .page-link:hover {
+          color: $blue;
+          background-color: $white;
+        }
+      }
 
-			.page-link {
-				text-align: center;
-			}
+      .page-link {
+        text-align: center;
+      }
 
-			a.page-link:hover,
-			a.page-link:focus {
-				&::after {
-					position: absolute;
-					right: 11px;
-					bottom: 7px;
-					left: 11px;
-					width: 12px;
-					height: 2px;
-					margin: auto;
-					content: "";
-					background: $blue;
-				}
-			}
-		}
-	}
+      a.page-link:hover,
+      a.page-link:focus {
+        &::after {
+          position: absolute;
+          right: 11px;
+          bottom: 7px;
+          left: 11px;
+          width: 12px;
+          height: 2px;
+          margin: auto;
+          content: "";
+          background: $blue;
+        }
+      }
+    }
+  }
 }

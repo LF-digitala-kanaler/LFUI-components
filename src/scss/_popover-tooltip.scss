@@ -1,121 +1,121 @@
 @import "base/index";
 
 .popover-tooltip {
-	@extend .popover;
-	left: 0;
+  @extend .popover;
+  left: 0;
 
-	display: block;
-	min-width: 250px !important;
-	visibility: hidden;
-	opacity: 0;
-	transition: 200ms all;
-	transition-delay: 0s;
+  display: block;
+  min-width: 250px !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: 200ms all;
+  transition-delay: 0s;
 
-	.popover-title {
-		@extend .h6;
-		padding: 0.6rem 1.25rem;
-		margin-bottom: 0;
-		color: $black;
+  .popover-title {
+    @extend .h6;
+    padding: .6rem 1.25rem;
+    margin-bottom: 0;
+    color: $black;
 
-		background-color: $cloud;
-		border-bottom: none;
-	}
+    background-color: $cloud;
+    border-bottom: none;
+  }
 
-	.card {
-		margin-bottom: 0;
-	}
+  .card {
+    margin-bottom: 0;
+  }
 
-	.card-block {
-		padding: 0.6rem 1.25rem 1.3rem;
-	}
+  .card-block {
+    padding: .6rem 1.25rem 1.3rem;
+  }
 
-	.card-text {
-		margin-bottom: 0.6rem;
-	}
+  .card-text {
+    margin-bottom: .6rem;
+  }
 }
 
 .popover-tooltip-trigger.open {
-	background-color: $cloud;
-	transition: 100ms all;
-	transition-delay: 0.5s;
+  background-color: $cloud;
+  transition: 100ms all;
+  transition-delay: .5s;
 
-	.popover-tooltip {
-		visibility: visible;
-		transition-delay: 0.8s;
-	}
+  .popover-tooltip {
+    visibility: visible;
+    transition-delay: .8s;
+  }
 }
 
 .popover-tooltip-trigger {
-	position: relative;
-	padding: 4px 0 2px;
-	cursor: default;
-	border-bottom: 1px dashed #888;
-	transition: 100ms all;
-	transition-delay: 0.2s;
+  position: relative;
+  padding: 4px 0 2px;
+  cursor: default;
+  border-bottom: 1px dashed #888;
+  transition: 100ms all;
+  transition-delay: .2s;
 
-	&:hover,
-	&:focus,
-	&:hover:focus {
-		padding: 4px 0 2px;
-		background-color: $cloud;
-		border-bottom: 1px dashed transparent;
-		transition: 100ms background-color padding;
-		transition-delay: 0.5s;
+  &:hover,
+  &:focus,
+  &:hover:focus {
+    padding: 4px 0 2px;
+    background-color: $cloud;
+    border-bottom: 1px dashed transparent;
+    transition: 100ms background-color padding;
+    transition-delay: .5s;
 
-		> .popover-tooltip {
-			display: block;
-			min-width: 250px;
-			visibility: visible;
-			opacity: 1;
-			transition-delay: 0.6s;
-		}
-	}
+    > .popover-tooltip {
+      display: block;
+      min-width: 250px;
+      visibility: visible;
+      opacity: 1;
+      transition-delay: .6s;
+    }
+  }
 }
 
 // We remove the bottom padding from labels as they'd "push" everything down
 label.popover-tooltip-trigger,
 .label.popover-tooltip-trigger {
-	padding: 4px 0 0;
+  padding: 4px 0 0;
 
-	&:hover,
-	&:focus,
-	&:hover:focus {
-		padding: 4px 0 0;
-	}
+  &:hover,
+  &:focus,
+  &:hover:focus {
+    padding: 4px 0 0;
+  }
 }
 
 .popover-tooltip.popover-attach.popover-top {
-	bottom: 100%;
+  bottom: 100%;
 }
 
 .popover-tooltip.popover-attach.popover-bottom {
-	top: 100%;
+  top: 100%;
 }
 
 .popover-tooltip.popover-attach.popover-left {
-	right: 100%;
+  right: 100%;
 }
 
 .popover-tooltip.popover-attach.popover-right {
-	left: 100%;
+  left: 100%;
 }
 
 .popover-tooltip.popover-attach.popover-bottom-right {
-	right: 0;
-	left: auto;
+  right: 0;
+  left: auto;
 }
 
 .popover-tooltip-trigger.popover-sm-center {
-	@include media-breakpoint-down(sm) {
-		position: static;
-	}
+  @include media-breakpoint-down(sm) {
+    position: static;
+  }
 }
 
 .popover-tooltip.popover-attach.popover-sm-center {
-	@include media-breakpoint-down(sm) {
-		top: auto;
-		right: auto;
-		left: 50%;
-		transform: translate(-50%, 0);
-	}
+  @include media-breakpoint-down(sm) {
+    top: auto;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }

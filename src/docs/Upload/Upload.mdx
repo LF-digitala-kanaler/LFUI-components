@@ -1,5 +1,5 @@
-import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks';
-import * as UploadStories from './upload.stories';
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as UploadStories from './upload.stories'
 import { Badges } from '../../../.storybook/blocks/Badges';
 import { Note } from '../../../.storybook/blocks/Note';
 
@@ -25,14 +25,12 @@ Note the empty `.upload-placeholder` this is where our preview panes will be pla
 
 ```html
 <div class="upload w-100">
-	<div class="upload-placeholder"></div>
-	<input class="upload-input" type="file" name="filename" id="upload" />
-	<label class="upload-label btn btn-secondary  mt-1 px-1" for="upload">
-		<svg focusable="false" aria-hidden="true" class="icon mr-025" width="20" height="20">
-			<use xlink:href="#icon-attach-20"></use>
-		</svg>
-		Bifoga fil
-	</label>
+  <div class="upload-placeholder"></div>
+  <input class="upload-input" type="file" name="filename" id="upload">
+  <label class="upload-label btn btn-secondary  mt-1 px-1" for="upload">
+    <svg focusable="false" aria-hidden="true" class="icon mr-025" width="20" height="20"><use xlink:href="#icon-attach-20"></use></svg>
+    Bifoga fil
+  </label>
 </div>
 ```
 
@@ -40,13 +38,14 @@ After the user clicks on the button and have chosen a file we want to show a pre
 
 The functionality to add the preview pane and validation is not included in LFUI.
 
+
 ## Preview
 
 <Canvas of={UploadStories.Preview} />
 <Controls of={UploadStories.Preview} />
 
-### Template
 
+### Template
 ```html
 <div class="upload-preview ${validation} mb-05">
     <div class="upload-body">
@@ -67,21 +66,18 @@ We will use this template for each uploaded file and place it inside the `.uploa
 
 Note, if you are uploading anything that's not an image change remove the `<img>` element and replace it with `<div class="upload-image mr-05"></div>`
 
-### Validation
 
+### Validation
 Notice the `${validation}` above. In our example we will do validation as soon as a file is selected and add either `.has-valid` or `.has-danger` depending on the validation status of the file. If you want to validate your file when for example a form is posting you can add these classes then instead.
 
 #### Valid
-
 <Canvas of={UploadStories.PreviewValid} />
 
 #### Invalid
-
 <Canvas of={UploadStories.PreviewInvalid} />
 
 ### Thumbnail
-
-<Canvas of={UploadStories.PreviewPopover} story={{ height: '350px' }} />
+<Canvas of={UploadStories.PreviewPopover} story={{height: '350px'}} />
 
 If the file is an image it should be possible to hover over the image to show a larger version of it. This is should only be added if the file is an image.
 
@@ -89,14 +85,14 @@ So if the file is an image we want to replace `${popover}` in the template previ
 
 ```html
 <div role="alert" id="popover" class="popover-tooltip popover-bottom popover-attach">
-	<p class="popover-title">Preview</p>
-	<div class="popover-content">
-		<div class="card">
-			<div class="card-block">
-				<img class="img-fluid w-100" src="${data.src}" alt="" />
-			</div>
-		</div>
-	</div>
+  <p class="popover-title">Preview</p>
+  <div class="popover-content">
+    <div class="card">
+      <div class="card-block">
+        <img class="img-fluid w-100" src=${data.src} alt=""  />
+      </div>
+    </div>
+  </div>
 </div>
 ```
 
@@ -110,12 +106,13 @@ If you are building a service that will handle file's like `.pdf` or `.doc` you 
 If you are going to process large files or you want to save the files to the server on form submit you can add a progress element shown in the example at the top. You will have to add `.loading` to `.upload-preview` and change translateX for `.upload-progress-bar` to match how much of the file that's been uploaded in procent .
 
 #### Example javascript implementation of loading state
-
 ```javascript
 reader.onprogress = (event) => {
-	if (event.lengthComputable) {
-		let value = (event.loaded / event.total) * 100;
-		progress.style.transform = 'translateX(-' + value + '%)';
-	}
+  if (event.lengthComputable)
+    {
+      let value = (event.loaded / event.total) * 100;
+      progress.style.transform = 'translateX(-' + value + '%)';
+      ;
+    }
 };
 ```

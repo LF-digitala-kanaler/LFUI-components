@@ -1,9 +1,9 @@
 export default {
-	title: 'Typography & text/Body Text',
-	parameters: {
-		badges: ['stable'],
-	},
-};
+  title: 'Typography & text/Body Text',
+  parameters: {
+    badges: ['stable']
+  }
+}
 
 export const Default = () => `
   <p>
@@ -22,4 +22,4 @@ export const Default = () => `
     <em>exclusively</em>
     on customer needs.
   </p>
-`;
+`

@@ -5,39 +5,39 @@
 // so that other entities may handle the visibility of the dropdown-menu in other ways. Needed for the datepicker for example, because it does not
 // add a parent .open class (as not required with unmodified bootstrap).
 @mixin dropdown-menu-open() {
-	display: block;
-	animation-name: dropdown-appear;
-	animation-duration: var(--dropdown-menu-open-animation-duration, 200ms);
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-out;
+  display: block;
+  animation-name: dropdown-appear;
+  animation-duration: var(--dropdown-menu-open-animation-duration, 200ms);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 @keyframes dropdown-appear {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	100% {
-		opacity: 1;
-	}
+  100% {
+    opacity: 1;
+  }
 }
 
 .dropdown-menu {
-	margin: 0;
-	border-width: $dropdown-border-width 0 0;
-	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 6%), 0 0 1px 1px rgba(0, 0, 0, 5%);
+  margin: 0;
+  border-width: $dropdown-border-width 0 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 6%), 0 0 1px 1px rgba(0, 0, 0, 5%);
 }
 
 .show > .dropdown-menu {
-	@include dropdown-menu-open();
+  @include dropdown-menu-open();
 }
 
 .dropdown-item:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .dropdown-header {
-	margin-bottom: 0.25rem;
+  margin-bottom: .25rem;
 }
 
 /**
@@ -45,9 +45,9 @@
  */
 
 .dropdown-toggle {
-	&::after {
-		display: none;
-	}
+  &::after {
+    display: none;
+  }
 }
 
 /**
@@ -55,11 +55,11 @@
  */
 
 .dropdown-arrow.show {
-	.dropdown-menu {
-		width: auto;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+  .dropdown-menu {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 /**
@@ -67,11 +67,11 @@
  */
 
 .dropdown.dropdown-arrow {
-	.dropdown-menu {
-		@include drop-arrow(down, middle, middle, $white, #eeeeee);
+  .dropdown-menu {
+    @include drop-arrow(down, middle, middle, $white, #eeeeee);
 
-		margin: 1rem 0;
-	}
+    margin: 1rem 0;
+  }
 }
 
 /**
@@ -79,9 +79,9 @@
  */
 
 .dropup.dropdown-arrow {
-	.dropdown-menu {
-		@include drop-arrow(up, middle, middle, $white, #eeeeee);
+  .dropdown-menu {
+    @include drop-arrow(up, middle, middle, $white, #eeeeee);
 
-		margin: 1rem 0;
-	}
+    margin: 1rem 0;
+  }
 }

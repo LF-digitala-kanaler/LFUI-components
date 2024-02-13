@@ -6,10 +6,8 @@
  */
 
 :root {
-	--lf-font-family-sans-serif: "Intro Cond", arial, "Helvetica Neue", sans-serif, system-ui,
-		-apple-system, "Segoe UI", roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans",
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--lf-font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
+  --lf-font-family-sans-serif: "Intro Cond", arial, "Helvetica Neue", sans-serif, system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --lf-font-family-serif: "LF Rubrik", georgia, "Times New Roman", times, serif;
 }
 
 /**
@@ -24,13 +22,13 @@
  */
 
 html {
-	position: relative; /* 1 */
+  position: relative; /* 1 */
 }
 
 body {
-	position: relative; /* 1 */
-	overflow-y: scroll; /* 2 */
-	-ms-overflow-style: scrollbar; /* 2 */
+  position: relative; /* 1 */
+  overflow-y: scroll; /* 2 */
+  -ms-overflow-style: scrollbar; /* 2 */
 }
 
 /**
@@ -43,8 +41,8 @@ input[type="month"]::-webkit-inner-spin-button,
 input[type="time"]::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="month"]::-webkit-calendar-picker-indicator {
-	display: none;
-	appearance: none;
+  display: none;
+  appearance: none;
 }
 
 /**
@@ -53,12 +51,12 @@ input[type="month"]::-webkit-calendar-picker-indicator {
  */
 
 * {
-	text-decoration-thickness: 1px !important; /* 1 */
-	text-underline-offset: 0.1em;
+  text-decoration-thickness: 1px !important; /* 1 */
+  text-underline-offset: .1em;
 }
 
 [role="link"] {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /**
@@ -66,7 +64,7 @@ input[type="month"]::-webkit-calendar-picker-indicator {
  */
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 // Override font-family: sans-serif in normalize 5.0
@@ -75,7 +73,7 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit;
+  font-family: inherit;
 }
 
 /**
@@ -83,12 +81,12 @@ textarea {
  */
 
 code {
-	padding: 0.2rem 0.4rem;
-	background-color: $code-bg;
+  padding: .2rem .4rem;
+  background-color: $code-bg;
 }
 
 pre code {
-	display: block;
-	padding: 1.25rem;
-	overflow-x: auto;
+  display: block;
+  padding: 1.25rem;
+  overflow-x: auto;
 }

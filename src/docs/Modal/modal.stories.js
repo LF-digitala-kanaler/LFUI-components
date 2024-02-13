@@ -1,11 +1,11 @@
-import Modal from './modal.html?raw';
+import Modal from './modal.html?raw'
 
 export default {
-	title: 'Supportive microinteractions/Modal',
-	parameters: {
-		badges: ['stable'],
-	},
-};
+  title: 'Supportive microinteractions/Modal',
+  parameters: {
+    badges: ['stable']
+  }
+}
 
 export const Default = () => `
   <button class="link" data-bs-toggle="modal" data-bs-target="#myModal">Open modal</button>
@@ -38,4 +38,4 @@ export const Default = () => `
       </div>
     </div>
   </div>
-  `;
+  `

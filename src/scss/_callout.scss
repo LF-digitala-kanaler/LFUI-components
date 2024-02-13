@@ -8,43 +8,43 @@ $callout-figure-size: 27px;
  */
 
 .callout {
-	@include clearfix();
-	position: relative;
+  @include clearfix();
+  position: relative;
 
-	display: block;
-	padding: 1.25rem 1rem 1.625rem 1.5rem;
-	margin-bottom: 1rem;
-	color: $body-color;
-	background: $white;
-	border: $callout-border-width solid $blue;
+  display: block;
+  padding: 1.25rem 1rem 1.625rem 1.5rem;
+  margin-bottom: 1rem;
+  color: $body-color;
+  background: $white;
+  border: $callout-border-width solid $blue;
 }
 
 .callout-figure {
-	position: absolute;
-	top: 4px;
-	left: 4px;
-	width: $callout-figure-size;
-	height: $callout-figure-size;
-	pointer-events: none;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: $callout-figure-size;
+  height: $callout-figure-size;
+  pointer-events: none;
 }
 
 .callout > :last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .callout-title {
-	@extend .h3;
+  @extend .h3;
 
-	display: block;
-	margin: 0 0 0.5rem;
-	font-weight: 700;
-	color: $navy;
+  display: block;
+  margin: 0 0 .5rem;
+  font-weight: 700;
+  color: $navy;
 }
 
 .callout-text {
-	max-width: $legible-width;
+  max-width: $legible-width;
 }
 
 .callout-text:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
