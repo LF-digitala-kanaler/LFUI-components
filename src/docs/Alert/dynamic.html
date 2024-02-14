@@ -1,0 +1,18 @@
+<template id="alert-info">
+    <section aria-label="Meddelande" tabindex="-1">
+        <div class="alert alert-info" role="alert" aria-live="polite">
+
+        </div>
+    </section>
+</template>
+<template id="alert-info-content">
+    <svg class="icon" width="24" height="24" role="img" aria-label="Information">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="lf-icons/sprite/24/icons.svg#chat-24"></use>
+    </svg>
+    <p class="alert-content">
+        Please answer the
+        <a href="#" onclick="return false">below questions</a>
+        to continue using the app.
+    </p>
+</template>
+<button id="trigger-alert-info">Visa info alert</button>
