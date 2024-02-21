@@ -31,7 +31,7 @@ function CollapsedTemplate({ header, text, collapsed = false }) {
 
   return `
     <section aria-labelledby="${id}" id="${id}">
-      <h2 class='heading' tabindex="-1">
+      <h2 class='mb-0' tabindex="-1">
         <button
           class="collapse-toggle"
           type="button"
@@ -44,7 +44,7 @@ function CollapsedTemplate({ header, text, collapsed = false }) {
         </button>
       </h2>
       
-      <div id="${id}-content" class="mb-0 collapse ${collapsed ? '' : 'show'}" hidden="until-found">
+      <div id="${id}-content" class="mb-0 collapse ${collapsed ? '' : 'show'}">
         <div class="card">  
           <div class="card-block">
           <p class="card-text">
@@ -96,6 +96,7 @@ export const LazyLoad = () => {
   </button>
   <div class="collapse" id="${id}"></div>
   </div>
+  <button style="display: block; width: 100%;" onclick="document.querySelector('.js-asyncCollapse').classList.add('loading')">loading</button>
   `
 }
 
