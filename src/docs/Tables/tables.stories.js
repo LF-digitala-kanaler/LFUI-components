@@ -39,7 +39,6 @@ export const PresentDefault = () => `
   </table>
   `
 
-
 export const PresentSizing = () => `
   <table class="table table-sm">
     <thead>

@@ -7,22 +7,16 @@ export default {
     backgrounds: { default: 'white' },
     badges: ['stable']
   },
-  argTypes: {
-  }
+  argTypes: {}
 }
 
-function Template({
-  label,
-  disabled,
-  checked,
-  iconUrl = '40/icons.svg#thumb-up-40'
-}) {
+function Template({ label, disabled, checked, iconUrl = '40/icons.svg#thumb-up-40' }) {
   const [id] = useState(uid)
 
   useEffect(() => {
     const element = document.getElementById(id)
 
-    element.addEventListener('change', function() {
+    element.addEventListener('change', function () {
       if (!this.classList.contains('active')) {
         this.classList.add('active')
       } else {

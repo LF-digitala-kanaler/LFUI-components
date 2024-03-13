@@ -62,19 +62,21 @@ function Template(args) {
 
   const arrowClass = arrow ? 'btn-arrow' : ''
   const textAlign = secondRowLabel ? 'text-left' : ''
-  const sizeClass = type === 'a' && size === 'lg'
-    ? 'btn-link-lg'
-    : size ? `btn-${size}` : ''
-  const iconMarkup = icon ? `
+  const sizeClass = type === 'a' && size === 'lg' ? 'btn-link-lg' : size ? `btn-${size}` : ''
+  const iconMarkup = icon
+    ? `
     <svg class="icon align-bottom text-white" width="24" height="24">
       <use href="lf-icons/sprite/24/icons.svg#bankid-24"></use>
     </svg>
-  ` : ''
-  const secondLabel = secondRowLabel ? `
+  `
+    : ''
+  const secondLabel = secondRowLabel
+    ? `
     <span class="d-block text-sm font-weight-normal font-base">
      ${secondRowLabel}
     </span>
-  ` : ''
+  `
+    : ''
 
   return `
     <${type}

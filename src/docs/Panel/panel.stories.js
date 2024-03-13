@@ -94,7 +94,6 @@ export const LazyLoad = () => {
   `
 }
 
-
 /*
 export const alwaysOpen = () => AlwaysOpen
 

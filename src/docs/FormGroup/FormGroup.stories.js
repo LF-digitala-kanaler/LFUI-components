@@ -2,7 +2,7 @@ export default {
   title: 'Forms/Form groups',
   parameters: {
     backgrounds: { default: 'white' },
-    badges: ['stable'],
+    badges: ['stable']
   },
   argTypes: {}
 }

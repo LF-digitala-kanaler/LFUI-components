@@ -52,10 +52,7 @@ function RenderButtonGroupItem({ active, value = 'Yes' }) {
 function ButtonGroupTemplate({ items = [] }) {
   const id = uid()
 
-  useEffect(
-    () => radioButtonsExample(document.getElementById(id)),
-    []
-  )
+  useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
   return `
   <div id="${id}" class="btn-group" data-bs-toggle="buttons">
@@ -95,18 +92,19 @@ function RenderRadioCard({ name, disabled, active, value = 'Rekomenderad' }) {
 function RadioCardsTemplate({ items }) {
   const id = uid()
 
-  useEffect(
-    () => radioButtonsExample(document.getElementById(id)),
-    []
-  )
+  useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
   return `
   <div id="${id}" class="row row-tight form-group">
-      ${items.map((item) => `
+      ${items
+        .map(
+          (item) => `
         <div class="col-6 col-md-3 mb-1">
           ${RenderRadioCard({ name: id, ...item })}
         </div>
-        `).join('')}
+        `
+        )
+        .join('')}
   </div
   `
 }
@@ -114,10 +112,7 @@ function RadioCardsTemplate({ items }) {
 function RadioCardTemplate(args) {
   const id = uid()
 
-  useEffect(
-    () => radioButtonsExample(document.getElementById(id)),
-    []
-  )
+  useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
   return `
   <div id="${id}" class="row row-tight form-group">
@@ -138,10 +133,7 @@ Card.args = {
 
 export const Cards = RadioCardsTemplate.bind({})
 Cards.args = {
-  items: [
-    { value: 'Val 1', active: true },
-    { value: 'Val 2' }
-  ]
+  items: [{ value: 'Val 1', active: true }, { value: 'Val 2' }]
 }
 
 export const CardDisabled = RadioCardTemplate.bind({})
@@ -155,7 +147,6 @@ CardActive.args = {
   active: true,
   value: 'Rekomenderad'
 }
-
 
 export const Group = ButtonGroupTemplate.bind({})
 Group.args = {

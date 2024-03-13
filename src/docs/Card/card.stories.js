@@ -18,22 +18,30 @@ function Template({ title, text, footer, pretext, link = false, image = '' }) {
     ${link ? '<a href="#foo" class="link-complex">' : ''}
       ${image ? `<img class="card-img-top" src="${image}" alt="example image"/>` : ''}
       <div class="card-block">
-        ${pretext ? `
+        ${
+          pretext
+            ? `
           <p class="card-text">
             ${pretext}
           </p>
-          ` : ''}
+          `
+            : ''
+        }
         <h3 class="card-title">${title}</h3>
         <p class="card-text">
           ${text}
         </p>
       </div>
-      ${footer ? `
+      ${
+        footer
+          ? `
       <div class="card-footer">
         ${footer}
       </div>
       ${link ? '</div>' : ''}
-    ` : ''}
+    `
+          : ''
+      }
   </article>
   `
 }
@@ -42,21 +50,21 @@ export const CardDeck = {
   render: () => `
   <section class="card-deck">
     ${Template({
-    image: exampleImageSrc,
-    footer: '<span class="text-muted">A minor note</span>',
-    pretext: '<small class="text-muted">2030-01-01</small>',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet.',
-    title: 'Card title here'
-  })}
+      image: exampleImageSrc,
+      footer: '<span class="text-muted">A minor note</span>',
+      pretext: '<small class="text-muted">2030-01-01</small>',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet.',
+      title: 'Card title here'
+    })}
     ${Template({
-    pretext: '<small class="text-muted">2030-01-01</small>',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet.',
-    title: 'Card title here'
-  })}
+      pretext: '<small class="text-muted">2030-01-01</small>',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet.',
+      title: 'Card title here'
+    })}
     ${Template({
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet.',
-    title: 'Card title here'
-  })}
+      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet.',
+      title: 'Card title here'
+    })}
   </section>
   `
 }

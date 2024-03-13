@@ -14,25 +14,37 @@ function LineTemplate({ icons, fill }) {
   <ul class="nav nav-lines ${fill ? 'nav-fill' : ''}" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" data-bs-toggle="tab" href="#contentA1" role="tab" data-text="Bilförsäkring">
-        ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
+        ${
+          icons
+            ? `<svg role="presentation" class="icon" width="24" height="24">
           <use xlink:href="lf-icons/sprite/24/icons.svg#car-24"></use>
-        </svg>` : ''}
+        </svg>`
+            : ''
+        }
         Bilförsäkring
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="tab" href="#contentA2" role="tab" data-text="Båtförsäkring">
-        ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
+        ${
+          icons
+            ? `<svg role="presentation" class="icon" width="24" height="24">
           <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-        </svg>` : ''}
+        </svg>`
+            : ''
+        }
         Båtförsäkring
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="tab" href="#contentA3" role="tab" data-text="Mc-försäkring">
-        ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
+        ${
+          icons
+            ? `<svg role="presentation" class="icon" width="24" height="24">
           <use xlink:href="lf-icons/sprite/24/icons.svg#mc-24"></use>
-        </svg>` : ''}
+        </svg>`
+            : ''
+        }
         Mc-försäkring
       </a>
     </li>
@@ -45,25 +57,37 @@ function StandardTemplate({ icons, fill }) {
     <ul class="nav nav-tabs ${fill ? 'nav-fill' : ''}" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" data-bs-toggle="tab" href="#contentA1" role="tab" data-text="Bilförsäkring">
-          ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
+          ${
+            icons
+              ? `<svg role="presentation" class="icon" width="24" height="24">
             <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-          </svg>` : ''}
+          </svg>`
+              : ''
+          }
           Bilförsäkring
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#contentA2" role="tab" data-text="Båtförsäkring">
-          ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
+          ${
+            icons
+              ? `<svg role="presentation" class="icon" width="24" height="24">
             <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-          </svg>` : ''}
+          </svg>`
+              : ''
+          }
           Båtförsäkring
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="tab" href="#contentA3" role="tab" data-text="Mc-försäkring">
-          ${icons ? `<svg role="presentation" class="icon" width="24" height="24">
+          ${
+            icons
+              ? `<svg role="presentation" class="icon" width="24" height="24">
             <use xlink:href="lf-icons/sprite/24/icons.svg#boat-24"></use>
-          </svg>` : ''}
+          </svg>`
+              : ''
+          }
           Mc-försäkring
         </a>
       </li>

@@ -41,6 +41,5 @@ export const DisplayWithHighlight = () => `
   <h4 class="display-4">Länsförsäkringar <em>Display</em> 2</h4>
 `
 
-
 export const defaultsExamples = () => DefaultExample
 export const displayExamples = () => DisplayExample
