@@ -19,7 +19,7 @@
 .custom-control-label::before,
 .custom-control-input:focus ~ .custom-control-label::before {
   border: 0;
-  box-shadow: inset 0 0 0 $border-width $silver;
+  box-shadow: inset 0 0 0 $border-width $aluminium;
 }
 
 .custom-control-label {
@@ -43,8 +43,13 @@
 html body[data-focus-source="key"] .custom-control-input:focus ~ .custom-control-label::before {
   color: $body-color;
   background: $orange !important;
+}
+
+html body[data-focus-source="key"] .custom-checkbox:has(.custom-control-input:focus),
+html body[data-focus-source="key"] .custom-radio:has(.custom-control-input:focus) {
   outline: 4px solid $orange;
 }
+
 
 /* Checked state */
 
