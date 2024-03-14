@@ -182,6 +182,40 @@ $theme-colors: (
 }
 
 /**
+ * Borders
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
+:root {
+    --border-radius-md: .25rem;
+    --border-radius-lg: .375rem;
+    --border-radius-xl: .5rem;
+}
+
+
+/**
+ * Sizes
+ * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+ */
+:root {
+    --size-0_5: 0.125rem;
+    --size-1: 0.25rem;
+    --size-1_5: 0.375rem;
+    --size-2: 0.5rem; // 4
+    --size-2_5: 0.625rem;
+    --size-3: 0.75rem;
+    --size-3_5: 0.875rem;
+    --size-4: 1rem; // 8
+    --size-5: 1.25rem;
+    --size-6: 1.5rem;
+    --size-7: 1.75rem;
+    --size-8: 2rem;
+    --size-9: 2.25rem;
+    --size-10: 2.5rem;
+}
+
+
+
+/**
  * Bootstrap configuration
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
@@ -250,6 +284,7 @@ $border-widths: (
 
 $border-radius: .25rem;
 $border-radius-lg: .375rem;
+$border-radius-xl: var(--border-radius-xl, .425rem);
 $border-radius-sm: $border-radius;
 
 $component-active-color: $white;
@@ -444,7 +479,7 @@ $input-box-shadow: none;
 $input-focus-border-color: $blue;
 $input-focus-box-shadow: $input-box-shadow, 0 0 8px rgba(102, 175, 233, 60%);
 $input-focus-color: $body-color;
-$input-placeholder-color: #999;
+$input-placeholder-color: $gray;
 
 :root {
   --input-bg: #{$input-bg};
@@ -645,6 +680,18 @@ $code-color: $navy;
 $code-bg: $cloud;
 
 $kbd-bg: #333;
+
+$alert-padding-y: .9375rem;
+$alert-padding-x: 1.5rem;
+$alert-padding-y-small: 1rem;
+$alert-padding-x-small: 1rem;
+$alert-margin-bottom: .5rem;
+$alert-border-radius: $border-radius-xl !default;
+$alert-border-width: 0px;
+$alert-bg-scale: -80% !default;
+$alert-border-scale: -70% !default;
+$alert-color-scale: 40% !default;
+$alert-dismissible-padding-r: $alert-padding-x * 2;
 
 /**
  * Our own global helper variables

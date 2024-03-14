@@ -8,7 +8,7 @@ const datepickerExample = () => {
   if (validated) {
     const validatedGroup = validated.closest('.form-group')
     const validatedDuetEl = datepicker(validated)
-    validatedDuetEl.addEventListener('duetChange', function({ details }) {
+    validatedDuetEl.addEventListener('duetChange', function ({ details }) {
       validatedGroup.classList.add('has-valid')
     })
   }
@@ -16,7 +16,7 @@ const datepickerExample = () => {
   const weekdays = document.getElementById('date-weekdays')
   if (weekdays) {
     const weekdaysDuetEl = datepicker(weekdays)
-    weekdaysDuetEl.isDateDisabled = function(date) {
+    weekdaysDuetEl.isDateDisabled = function (date) {
       return date.getDay() % 6 === 0
     }
   }

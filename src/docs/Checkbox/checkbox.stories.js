@@ -3,10 +3,7 @@ import Checkbox from './styledCheckbox.html?raw'
 
 import { html, uid } from '../../js/utils'
 import { useEffect, useState } from '@storybook/client-api'
-import {
-  checkboxCardExample,
-  intermediateCheckboxExample
-} from './checkbox'
+import { checkboxCardExample, intermediateCheckboxExample } from './checkbox'
 
 export default {
   title: 'Forms/Checkboxes/Checkbox',
@@ -14,8 +11,7 @@ export default {
     backgrounds: { default: 'gray' },
     badges: ['stable']
   },
-  argTypes: {
-  }
+  argTypes: {}
 }
 
 function checkboxTemplate({ label, disabled, checked, indeterminate }) {
@@ -52,13 +48,13 @@ CheckboxDefault.args = {
 export const Disabled = checkboxTemplate.bind({})
 Disabled.args = {
   label: 'Disabled checkbox',
-  disabled: true,
+  disabled: true
 }
 
 export const Checked = checkboxTemplate.bind({})
 Checked.args = {
   label: 'Checked checkbox',
-  checked: true,
+  checked: true
 }
 
 export const Indeterminate = checkboxTemplate.bind({})

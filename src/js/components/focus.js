@@ -12,7 +12,7 @@ const keyboardModalityWhitelist = [
   '[supports-focus=key]'
 ].join(',')
 
-const matcher = (function () {
+const matcher = (function() {
   const el = document.body
 
   if (el.matchesSelector) {

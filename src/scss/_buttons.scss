@@ -193,7 +193,7 @@
 
   &:not([disabled]):not(.disabled):active,
   &:not([disabled]):not(.disabled).active,
-  .show > &.dropdown-toggle {
+  .show > &.rdropdown-toggle {
     &,
     &:hover,
     &:focus,
@@ -330,34 +330,18 @@
 }
 
 // alert buttons
-@mixin button-custom-outline-alert-variant($border) {
+@mixin button-custom-outline-alert-variant($border, $background) {
   padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
   font-size: $font-size-md;
   color: inherit;
   background-color: transparent;
   border-color: $border;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: inherit;
-    background-color: transparent;
-    border-color: $border;
-    box-shadow:
-      inset 0 0 0 1px $border,
-      inset 0 0 0 1px $border,
-      inset 0 0 0 1px $border,
-      inset 0 0 0 1px $border;
-  }
 
-  &:not([disabled]):not(.disabled):active,
-  &:not([disabled]):not(.disabled).active {
-    &,
-    &:hover,
-    &:focus:hover,
-    &.focus {
-      color: $border;
-      background-color: transparent;
+  &:hover,
+    &:focus,
+    &:active {
+      color: #222;
       border-color: $border;
       box-shadow:
         inset 0 0 0 1px $border,
@@ -365,23 +349,47 @@
         inset 0 0 0 1px $border,
         inset 0 0 0 1px $border;
     }
-  }
 
-  &.disabled,
-  &:disabled {
-    &,
-    &:focus,
-    &.focus,
     &:hover,
-    &.hover {
-      color: $border;
-      pointer-events: none;
-      background-color: transparent;
-      border-color: $border;
-      box-shadow: none;
-      opacity: .65;
+    &:focus {
+	background-color: transparent;
     }
-  }
+
+    &:active {
+	background-color: $background;
+    }
+
+    &:not([disabled]):not(.disabled):active,
+    &:not([disabled]):not(.disabled).active,
+    &:not([disabled]):not(.disabled):active:hover,
+    &:not([disabled]):not(.disabled).active:hover,
+    &:not([disabled]):not(.disabled):active:focus:hover,
+    &:not([disabled]):not(.disabled).active:focus:hover,
+    &:not([disabled]):not(.disabled):active:focus,
+    &:not([disabled]):not(.disabled).active:focus {
+	color: #222;
+        border-color: $border;
+        box-shadow:
+          inset 0 0 0 1px $border,
+          inset 0 0 0 1px $border,
+          inset 0 0 0 1px $border,
+          inset 0 0 0 1px $border;
+    }
+
+    &:not([disabled]):not(.disabled):active,
+    &:not([disabled]):not(.disabled).active {
+	background-color: $background;
+	color: #222;
+    }
+
+    &:disabled.hover {
+        color: $border;
+        pointer-events: none;
+        background-color: transparent;
+        border-color: $border;
+        box-shadow: none;
+        opacity: .65;
+    }
 }
 
 // Secondary buttons
@@ -405,6 +413,11 @@
       inset 0 0 0 1px $border-hover,
       inset 0 0 0 1px $border-hover,
       inset 0 0 0 1px $border-hover;
+  }
+
+  &:not(:disabled):not(.disabled):active:focus {
+  	background-color: $bg-pressed;
+   	color: $color;
   }
 
   &:active,
@@ -592,20 +605,42 @@
   @include button-custom-outline-variant($btn-secondary-color, $btn-secondary-border, transparent, $btn-secondary-border-hover, $btn-secondary-bg-pressed);
 }
 
-.btn-outline-info {
-  @include button-custom-outline-alert-variant($btn-info-border);
-}
 
-.btn-outline-success {
-  @include button-custom-outline-alert-variant($btn-success-border);
-}
+/* ALERT BUTTONS
+================================================================================================= */
 
-.btn-outline-warning {
-  @include button-custom-outline-alert-variant($btn-warning-border);
-}
-
+.btn-outline-info,
+.btn-outline-success,
+.btn-outline-warning,
 .btn-outline-danger {
-  @include button-custom-outline-alert-variant($btn-danger-border);
+	padding: calc(#{$input-btn-padding-y-sm} - (#{$input-btn-border-width})) calc(#{$input-btn-padding-x-sm} - #{$input-btn-border-width});
+	font-size: $font-size-md;
+	color: inherit;
+	background-color: transparent;
+}
+
+ /* Info variant
+ ------------------------------------------------------------------------------------------------ */
+.btn-outline-info {
+  @include button-custom-outline-alert-variant($btn-info-border, $btn-info-bg-pressed);
+}
+
+/* Info variant
+------------------------------------------------------------------------------------------------ */
+.btn-outline-success {
+  @include button-custom-outline-alert-variant($btn-success-border, $btn-success-bg-pressed);
+}
+
+/* Info variant
+------------------------------------------------------------------------------------------------ */
+.btn-outline-warning {
+  @include button-custom-outline-alert-variant($btn-warning-border, $btn-warning-bg-pressed);
+}
+
+/* Info variant
+------------------------------------------------------------------------------------------------ */
+.btn-outline-danger {
+  @include button-custom-outline-alert-variant($btn-danger-border, $btn-danger-bg-pressed);
 }
 
 /**

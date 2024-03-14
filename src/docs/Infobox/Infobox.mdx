@@ -1,0 +1,26 @@
+import { Meta, Canvas, Stories, Subtitle, Controls } from '@storybook/blocks'
+import * as InfoboxStories from './infobox.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+
+<Meta of={InfoboxStories} />
+
+# Infobox <Badges of={InfoboxStories} />
+
+<Subtitle>
+    The Infobox is a permanent component to highlight short crucial information so it doesn’t disappear in a chunk of text.
+</Subtitle>
+
+<Canvas of={InfoboxStories.Default} />
+<Controls of={InfoboxStories.Default} />
+
+## Guidelines
+
+### Use an Infobox:
+- To highlight short crucial information so it doesn’t disappear in a chunk of text.
+- When the message needs to be permanently on the screen.
+- When you need to tell something without shouting, just by raising your voice slightly.
+
+### Don´t use an Infobox:
+- If the message needs to be temporary (use alert instead)
+- For error messages, then use another way (for examples helptexts, fullside error, alert...)
+- For longer texts, information in an Infobox is short.
