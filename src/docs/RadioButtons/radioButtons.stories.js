@@ -43,10 +43,11 @@ function RenderButtonGroupItem({ active, value = 'Yes' }) {
   return `
   <div class="button-group-item">
   <label
+    aria-hidden="true"
     class="btn ${active ? 'active' : ''}"
     for="${id}"
   >
-    <span aria-hidden="true">${value}</span>
+    ${value}
     <span aria-hidden="true" data-text="${value}"></span>
   </label>
   <input
