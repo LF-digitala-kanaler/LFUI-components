@@ -43,13 +43,12 @@ function RenderButtonGroupItem({ active, value = 'Yes' }) {
   return `
   <div class="button-group-item">
   <label
-    aria-hidden="true"
     class="btn ${active ? 'active' : ''}"
     for="${id}"
   >
-    ${value}
+    <span aria-hidden="true">${value}</span>
     <span aria-hidden="true" data-text="${value}"></span>
-  </label >
+  </label>
   <input
     aria-label="${value} is test"
     type="radio"
