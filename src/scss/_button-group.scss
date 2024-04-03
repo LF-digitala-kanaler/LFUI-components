@@ -9,6 +9,16 @@
 
   gap: 2px;
 
+  .button-group-item {
+    &:not(:last-child) .btn {
+      border-top-right-radius: 0;
+    }
+  
+    &:not(:first-child) .btn {
+      border-top-left-radius: 0;
+    }
+  }
+
   .button-group-item:has(input:checked) .btn {
     color: transparent;
     background-color: $cloud;
@@ -69,13 +79,13 @@
       margin-left: 2px;
     }
 
-    &:not(:last-child) {
-      border-top-right-radius: 0;
-    }
+    // &:not(:last-child) {
+    //   border-top-right-radius: 0;
+    // }
 
-    &:not(:first-child) {
-      border-top-left-radius: 0;
-    }
+    // &:not(:first-child) {
+    //   border-top-left-radius: 0;
+    // }
 
     &.active {
       &:hover {
