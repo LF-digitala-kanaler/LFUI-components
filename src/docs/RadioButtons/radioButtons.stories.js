@@ -37,6 +37,12 @@ function StyledRadioButtonTemplate({ valid }) {
   `
 }
 
+/* Custom aria-label... add to input and aria-hidden on the label.  */
+/*
+  Inplicit label is bugy with screen readers, thats why we
+  move the input outside of the label.
+*/
+
 function RenderButtonGroupItem({ active, value = 'Yes' }) {
   const id = uid()
 
@@ -51,7 +57,6 @@ function RenderButtonGroupItem({ active, value = 'Yes' }) {
     <span aria-hidden="true" data-text="${value}"></span>
   </label>
   <input
-    aria-label="${value} is test"
     type="radio"
     name="ButtonGroupOptions"
     value="${value}"
