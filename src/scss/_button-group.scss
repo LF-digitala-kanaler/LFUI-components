@@ -1,87 +1,104 @@
 @import "base/index";
 @import "bootstrap/scss/_button-group.scss";
 
-.btn-group .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 4rem;
-  padding: $input-padding;
-  padding-right: calc(#{$input-padding-right} + .5rem);
-  padding-left: calc(#{$input-padding-left} + .5rem);
-  margin-bottom: 0;
-  font-family: $font-family-base;
-  font-size: $font-size-md;
-  font-weight: 400;
-  line-height: $input-line-height;
-  color: inherit;
-  white-space: nowrap;
-  background-color: $body-bg;
-  border: 0;
-  border-bottom: 2px solid $gray-200;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  transition: 100ms 40ms ease-out;
-  transition-property: border-color, background;
-  @include font-smoothing(auto);
-
-  &:hover,
-  &:active {
-    background-color: $input-hover;
-    border-color: $blue;
-  }
-
-  + .btn {
-    margin-left: 2px;
-  }
-
-  &:not(:last-child) {
-    border-top-right-radius: 0;
-  }
-
-  &:not(:first-child) {
-    border-top-left-radius: 0;
-  }
-
+.btn-group{
   /**
-   * Rely on an absolute positioned psudo element for the bolded active text,
-   * to prevent the width of the button to change with the bolded text.
-   */
+     * Rely on an absolute positioned psudo element for the bolded active text,
+     * to prevent the width of the button to change with the bolded text.
+     */
 
-  &.active {
+  gap: 2px;
+
+  .button-group-item:has(input:checked) .btn {
     color: transparent;
     background-color: $cloud;
     border-color: $blue;
     @include font-smoothing();
 
-    &:hover {
-      background-color: $input-valid-hover;
-    }
-
-    &::after {
+    [data-text] {
       position: absolute;
-      left: 50%;
+      inset: 0;
+      outline: 1px solid #000;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      place-content: center;
+      place-items: center;
+      padding: 0.663rem 0.75rem 0.463rem 0.75rem;
+    }
+  
+    [data-text]::after {
       font-weight: 700;
       color: $blue;
       text-shadow: none;
       content: attr(data-text);
-      transform: translateX(-50%);
     }
   }
 
-  &.disabled {
-    pointer-events: none;
-    background-color: $input-disabled-bg;
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    padding: $input-padding;
+    padding-right: calc(#{$input-padding-right} + .5rem);
+    padding-left: calc(#{$input-padding-left} + .5rem);
+    margin-bottom: 0;
+    font-family: $font-family-base;
+    font-size: $font-size-md;
+    font-weight: 400;
+    line-height: $input-line-height;
+    color: inherit;
+    white-space: nowrap;
+    background-color: $body-bg;
+    border: 0;
+    border-bottom: 2px solid $gray-200;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: 100ms 40ms ease-out;
+    transition-property: border-color, background;
+    @include font-smoothing(auto);
 
-    &:hover {
+    &:hover,
+    &:active {
+      background-color: $input-hover;
+      border-color: $blue;
+    }
+
+    + .btn {
+      margin-left: 2px;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+    }
+
+    &.active {
+      &:hover {
+        background-color: $input-valid-hover;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
       background-color: $input-disabled-bg;
-      border-color: $input-disabled-bg;
+
+      &:hover {
+        background-color: $input-disabled-bg;
+        border-color: $input-disabled-bg;
+      }
     }
   }
 }
 
 .btn-group > .btn input[type="radio"],
-.btn-group > .btn input[type="checkbox"] {
+.btn-group > .btn input[type="checkbox"],
+.button-group-item > input[type="radio"],
+.button-group-item > input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;

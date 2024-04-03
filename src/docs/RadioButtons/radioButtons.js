@@ -8,6 +8,7 @@ const radioButtonsExample = (context, selector) => {
     '.radio-card, .btn-group .btn',
     function (el, index, list) {
       el.addEventListener('change', function (event) {
+        console.log('button group, change')
         for (const item of list) {
           const input = item.matches('input') ? item : item.querySelector('input')
           if (input.name !== event.target.name) continue

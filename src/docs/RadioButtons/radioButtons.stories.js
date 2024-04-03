@@ -38,17 +38,27 @@ function StyledRadioButtonTemplate({ valid }) {
 }
 
 function RenderButtonGroupItem({ active, value = 'Yes' }) {
+  const id = uid()
+
   return `
-  <label class="btn ${active ? 'active' : ''}" data-text="${value}">
-    <input
-      type="radio"
-      name="ButtonGroupOptions"
-      value="${value}"
-      id="option1"
-      ${active ? 'checked' : ''}
-    />
-  ${value}
+  <div class="button-group-item">
+  <label
+    aria-hidden="true"
+    class="btn ${active ? 'active' : ''}"
+    for="${id}"
+  >
+    ${value}
+    <span aria-hidden="true" data-text="${value}"></span>
   </label >
+  <input
+    aria-label="${value} is test"
+    type="radio"
+    name="ButtonGroupOptions"
+    value="${value}"
+    id="${id}"
+    ${active ? 'checked' : ''}
+  />
+  </div>
   `
 }
 
