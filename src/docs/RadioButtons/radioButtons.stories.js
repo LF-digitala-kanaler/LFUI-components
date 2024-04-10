@@ -43,6 +43,9 @@ function StyledRadioButtonTemplate({ valid }) {
   move the input outside of the label.
 */
 
+// Custom aria-label is possible by adding text to `aria-label` on the input element.
+// aria-label="${value}. I want to subcribe to newsletter."
+
 function RenderButtonGroupItem({ active, value = 'Yes' }) {
   const id = uid()
 
@@ -62,6 +65,7 @@ function RenderButtonGroupItem({ active, value = 'Yes' }) {
     value="${value}"
     id="${id}"
     ${active ? 'checked' : ''}
+    aria-label="${value}"
   />
   </div>
   `
@@ -90,6 +94,7 @@ function OldRenderButtonGroupItem({ active, value = 'Yes' }, id) {
         name="${id}"
         value="${value}"
         ${active ? 'checked' : ''}
+        aria-label="${value}"
       />
     ${value}
     </label >
