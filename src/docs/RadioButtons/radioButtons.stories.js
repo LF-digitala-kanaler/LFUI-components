@@ -83,11 +83,14 @@ function ButtonGroupTemplate({ items = [] }) {
 }
 
 function OldRenderButtonGroupItem({ active, value = 'Yes' }, id, index) {
+  const itemId = `${id}-${index}`
+
   return `
-    <label class="btn ${active ? 'active' : ''}" data-text="${value}">
+    <label class="btn ${active ? 'active' : ''}" data-text="${value}" for="${itemId}">
       <input
         type="radio"
         name="${id}"
+        id="${itemId}"
         value="${value}"
         ${active ? 'checked' : ''}
       />
