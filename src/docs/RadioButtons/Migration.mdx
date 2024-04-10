@@ -1,0 +1,25 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as RadioButtonsStories from './radioButtons.stories'
+import { Badges } from '../../../.storybook/blocks/Badges';
+import { Note } from '../../../.storybook/blocks/Note';
+
+<Meta title="Forms/Radio Buttons/Migration guide" />
+
+# Migration guide
+
+## 10.0.0 -> 11.0.0
+
+### Button Group
+#### Each button (label + input) is now wrapped with `<div class="button-group-item>`.
+#### Input element is moved outside of `<label class="btn">`. Don't forget to add for attribute on the label that points to the coresponding input element.
+#### Label updated with a `<span>`
+`<span aria-hidden="true" data-text="Yes"></span>` is added to the label. This is instead of the previuos solution using `::after` to handle font weight changes.
+```html
+<label
+  class="btn"
+  for="button-1"
+>
+  Yes
+  <span aria-hidden="true" data-text="Yes"></span>
+</label>
+```

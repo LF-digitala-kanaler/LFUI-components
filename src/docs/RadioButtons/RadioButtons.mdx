@@ -12,6 +12,30 @@ import { Note } from '../../../.storybook/blocks/Note';
 ## Button Group
 <Canvas of={RadioButtonsStories.Group} />
 
+### Accesibility
+
+#### Inplicit label issues
+Inplicit label is bugy with screen readers, thats why we should not use them.
+
+```html
+<div class="btn-group" data-bs-toggle="buttons">
+    <div class="button-group-item">
+        <label class="btn" for="radio-1">
+            Yes
+            <span aria-hidden="true" data-text="Yes"></span>
+        </label>
+        <input id="radio-1" type="radio" ...>
+    </div>
+    <div class="button-group-item">
+        <label class="btn" for="radio-1">
+            No
+            <span aria-hidden="true" data-text="No"></span>
+        </label>
+        <input id="radio-1" type="radio" ...>
+    </div>
+</div>
+```
+
 ## Radio Card
 <Canvas of={RadioButtonsStories.Cards} />
 
