@@ -106,8 +106,6 @@ function OldButtonGroupTemplate({ items = [] }) {
 
   useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
-  console.log('items', items)
-
   return `
   <fieldset>
     <legend>Pick one</legend>
