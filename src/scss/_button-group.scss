@@ -1,13 +1,14 @@
 @import "base/index";
 @import "bootstrap/scss/_button-group.scss";
 
-.btn-group{
+.btn-group {
   /**
      * Rely on an absolute positioned psudo element for the bolded active text,
      * to prevent the width of the button to change with the bolded text.
      */
-
-  gap: 2px;
+  &:has(.button-group-item) {
+    gap: 2px;
+  }
 
   .button-group-item {
     &:not(:last-child) .btn {
@@ -17,6 +18,12 @@
     &:not(:first-child) .btn {
       border-top-left-radius: 0;
     }
+  }
+
+  .button-group-item .btn.active {
+    color: inherit;
+    background-color: $body-bg;
+    border-color: $gray-200;
   }
 
   .button-group-item:has(input:checked) .btn {
@@ -45,6 +52,15 @@
     }
   }
 
+  > .btn {
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+    }
+  }
   .btn {
     display: flex;
     align-items: center;
@@ -87,9 +103,29 @@
     //   border-top-left-radius: 0;
     // }
 
+    /**
+    * Rely on an absolute positioned psudo element for the bolded active text,
+    * to prevent the width of the button to change with the bolded text.
+    */
+
     &.active {
+      color: transparent;
+      background-color: $cloud;
+      border-color: $blue;
+      @include font-smoothing();
+
       &:hover {
         background-color: $input-valid-hover;
+      }
+
+      &::after {
+        position: absolute;
+        left: 50%;
+        font-weight: 700;
+        color: $blue;
+        text-shadow: none;
+        content: attr(data-text);
+        transform: translateX(-50%);
       }
     }
 

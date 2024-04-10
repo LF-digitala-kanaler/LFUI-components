@@ -82,6 +82,37 @@ function ButtonGroupTemplate({ items = [] }) {
   `
 }
 
+function OldRenderButtonGroupItem({ active, value = 'Yes' }, id, index) {
+  return `
+    <label class="btn ${active ? 'active' : ''}" data-text="${value}">
+      <input
+        type="radio"
+        name="${id}"
+        value="${value}"
+        ${active ? 'checked' : ''}
+      />
+    ${value}
+    </label >
+  `
+}
+
+function OldButtonGroupTemplate({ items = [] }) {
+  const id = uid()
+
+  useEffect(() => radioButtonsExample(document.getElementById(id)), [])
+
+  console.log('items', items)
+
+  return `
+  <fieldset>
+    <legend>Pick one</legend>
+    <div id="${id}" class="btn-group" data-bs-toggle="buttons">
+      ${items.map((item, index) => OldRenderButtonGroupItem(item, id, index)).join('')}
+    </div>
+  </fieldset>
+  `
+}
+
 function RenderRadioCard({ name, disabled, active, value = 'Rekomenderad' }) {
   return `
   <div class="radio-card ${active ? 'active' : ''}" >
@@ -174,6 +205,14 @@ CardActive.args = {
 
 export const Group = ButtonGroupTemplate.bind({})
 Group.args = {
+  items: [
+    { active: true, value: 'Yes' },
+    { active: false, value: 'No' }
+  ]
+}
+
+export const OldGroup = OldButtonGroupTemplate.bind({})
+OldGroup.args = {
   items: [
     { active: true, value: 'Yes' },
     { active: false, value: 'No' }
