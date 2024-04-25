@@ -1,0 +1,21 @@
+import { Meta, Canvas, Stories, Story, Subtitle, Controls } from '@storybook/blocks'
+import * as ValidationStories from './Validation.stories'
+
+<Meta title="Forms/Validation/Form validation" />
+
+# Form validation
+
+<Canvas of={ValidationStories.Validation} />
+
+## A11y notes
+
+### Form control
+- The form control (input, textarea ...) should be labelled by the label and the error message. `aria-labelledby="email-label-id email-error-id"`.
+- Order of label read out:
+    - label always first, suffix should be added to the label with `sr-only`.
+    - help text (optional)
+    - error messsage, always last
+- use `aria-invalid` on invalid controls to make screen readers read out the state.
+
+### Error messages
+- Container of error messages should have `aria-live="assertive"`.

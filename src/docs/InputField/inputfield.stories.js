@@ -13,31 +13,46 @@ export default {
   argTypes: {}
 }
 
-function Template({ placeholder, pattern, required, type = 'text', prepend, append, disabled }) {
+function Template({
+  placeholder,
+  pattern,
+  required,
+  type = 'text',
+  prepend,
+  append,
+  disabled,
+  helpTextId = '',
+  labelledBy = ''
+}) {
   return `
     <div class="form-group">
-      ${(prepend || append) ? '<div class="input-group">' : ''}
-      ${prepend
-      ? `<div class="input-group-prepend">
+      ${prepend || append ? '<div class="input-group">' : ''}
+      ${
+        prepend
+          ? `<div class="input-group-prepend">
             <span class="input-group-text">${prepend}</span>
           </div>`
-      : ''}
+          : ''
+      }
       <input
         type="${type}"
         class="form-control"
         id="${uid()}"
-        aria-describedby="helpTextId"
+        aria-labelledby="${labelledBy}"
+        aria-describedby="${helpTextId}"
         ${pattern ? `pattern="${pattern}"` : ''}
         ${placeholder ? `placeholder="${placeholder}"` : ''}
         ${required ? 'required' : ''}
         ${disabled ? 'disabled' : ''}
       >
-      ${append
-      ? `<div class="input-group-append">
-            <span class="input-group-text">${append}</span>
+      ${
+        append
+          ? `<div class="input-group-append">
+            <span class="input-group-text" aria-hidden="true">${append}</span>
           </div>`
-      : ''}
-      ${(prepend || append) ? '</div>' : ''}
+          : ''
+      }
+      ${prepend || append ? '</div>' : ''}
     </div>
   `
 }
@@ -88,6 +103,30 @@ Suffix.args = {
   append: 'kr'
 }
 
-
 export const oneLined = () => OneLined
 export const severalLines = () => SeveralLines
+
+export const SuffixFullExample = () => `
+  <div class="form-group">
+    <label id="amount-label" for="amount">Belopp<span class="sr-only"> i kronor</span></label>
+    <div class="input-group">
+        <input
+            type="number"
+            inputmode="numeric"
+            class="form-control"
+            id="amount"
+            min="0"
+            max="9000"
+            aria-labelledby="amount-label amount-feedback"
+            aria-describedby="amount-help"
+            required
+        >
+        <div class="input-group-append">
+            <span class="input-group-text" aria-hidden="true">kr</span>
+        </div>
+    </div>
+
+    <div id="amount-feedback" aria-live="assertive"></div>
+    <small id="amount-help" class="form-text text-muted">Mellan 0 till 9000</small>
+  </div>
+`
