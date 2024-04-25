@@ -1,7 +1,6 @@
-import { useEffect, useState } from '@storybook/client-api'
+import { useEffect } from '@storybook/client-api'
 import { ValidationExample } from './FormValidationExample'
 import { uid } from '../../js/utils'
-import { StyledRadioButtonTemplate } from '../RadioButtons/radioButtons.stories'
 import { SuffixFullExample } from '../InputField/inputfield.stories'
 import { selectExample } from '../Select/select'
 
