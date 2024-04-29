@@ -13,8 +13,8 @@ jobs:
         with:
           registry-url: 'https://registry.npmjs.org'
           scope: '@lansforsakringar'
-          node-version: 'latest'
-          npm-version: 'latest'
+          node-version: '16.11.0 '
+          npm-version: '7'
       
       - name: Clear npm cache
         run: npm cache clean --force
@@ -23,6 +23,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Display npm log
+        run: cat /home/runner/.npm/_logs/2024-04-29T13_31_19_299Z-debug-0.log
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.8
