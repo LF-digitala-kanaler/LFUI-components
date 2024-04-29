@@ -55,17 +55,23 @@ const iconOnGoing = `
 
 function spacingClass(state = 'upcoming') {
   switch (state) {
-    case 'done': return 'is-done'
-    case 'ongoing': return 'is-ongoing'
-    case 'upcoming': return ''
+    case 'done':
+      return 'is-done'
+    case 'ongoing':
+      return 'is-ongoing'
+    case 'upcoming':
+      return ''
   }
 }
 
 function icon(state = 'upcoming') {
   switch (state) {
-    case 'upcoming': return iconUpcoming
-    case 'done': return iconDone
-    case 'ongoing': return iconOnGoing
+    case 'upcoming':
+      return iconUpcoming
+    case 'done':
+      return iconDone
+    case 'ongoing':
+      return iconOnGoing
   }
 }
 

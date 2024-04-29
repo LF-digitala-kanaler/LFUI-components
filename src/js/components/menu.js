@@ -93,7 +93,6 @@ import { h, Ref } from '../utils'
 
 */
 
-
 export class LFdropdown {
   constructor(element, options = element.dataset) {
     this.id = Math.random().toString(36).substr(2, 9)
@@ -171,22 +170,22 @@ export class LFdropdown {
         // Toggle all button
         this.multiselectable && allLabel
           ? h(
-            'button',
-            {
-              ref: selectAll,
-              type: 'button',
-              class: 'select-option multiple dropdown-item',
-              onclick(event) {
-                const selected = !allAreSelected(select)
-                for (const option of select.options) {
-                  if (!option.disabled) option.selected = selected
+              'button',
+              {
+                ref: selectAll,
+                type: 'button',
+                class: 'select-option multiple dropdown-item',
+                onclick(event) {
+                  const selected = !allAreSelected(select)
+                  for (const option of select.options) {
+                    if (!option.disabled) option.selected = selected
+                  }
+                  select.dispatchEvent(new window.Event('change'))
+                  event.preventDefault()
                 }
-                select.dispatchEvent(new window.Event('change'))
-                event.preventDefault()
-              }
-            },
-            config.allLabel
-          )
+              },
+              config.allLabel
+            )
           : null,
         // Proxies for the option/optgroup elements
         ...[...select.children].map(function eachChild(child, index) {
@@ -228,39 +227,40 @@ export class LFdropdown {
               [
                 groupToggle
                   ? h(
-                    'li',
-                    {
-                      role: 'option',
-                      ref: button,
-                      // type: 'button',
-                      id: `group-${index}-trigger-${id}`,
-                      class: `select-option ${select.multiple ? 'multiple' : ''
+                      'li',
+                      {
+                        role: 'option',
+                        ref: button,
+                        // type: 'button',
+                        id: `group-${index}-trigger-${id}`,
+                        class: `select-option ${
+                          select.multiple ? 'multiple' : ''
                         } toggle dropdown-item`,
-                      // 'aria-expanded': 'true',
-                      // 'aria-controls': `group-${index}-list-${id}`,
+                        // 'aria-expanded': 'true',
+                        // 'aria-controls': `group-${index}-list-${id}`,
 
-                      // TODO: NEED to add keyboard event to handle enter or spacebar to select option.
-                      onclick() {
-                        expanded = !expanded
-                        this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
-                        wrapper.current.classList.toggle('show', expanded)
+                        // TODO: NEED to add keyboard event to handle enter or spacebar to select option.
+                        onclick() {
+                          expanded = !expanded
+                          this.setAttribute('aria-expanded', expanded ? 'true' : 'false')
+                          wrapper.current.classList.toggle('show', expanded)
 
-                        // Disable automatic closing on click
-                        preventClose = true
+                          // Disable automatic closing on click
+                          preventClose = true
 
-                        // Ugly hack to prevent Bootstrap dropdown from including
-                        // hidden items in key navigation
-                        for (const option of child.children) {
-                          const button = buttons.get(option)
-                          button.current.classList.toggle('disabled', !expanded)
+                          // Ugly hack to prevent Bootstrap dropdown from including
+                          // hidden items in key navigation
+                          for (const option of child.children) {
+                            const button = buttons.get(option)
+                            button.current.classList.toggle('disabled', !expanded)
+                          }
+
+                          // Update dropdown position
+                          dropdown.update()
                         }
-
-                        // Update dropdown position
-                        dropdown.update()
-                      }
-                    },
-                    label
-                  )
+                      },
+                      label
+                    )
                   : h('legend', { class: 'select-legend' }, label),
                 ...children
               ]
@@ -287,8 +287,9 @@ export class LFdropdown {
               role: 'option',
               'aria-selected': selected,
               tabindex: '-1',
-              class: `select-option ${select.multiple ? 'multiple' : ''} ${selected ? 'selected select-option--selected' : ''
-                }`
+              class: `select-option ${select.multiple ? 'multiple' : ''} ${
+                selected ? 'selected select-option--selected' : ''
+              }`
             },
             resolveLabel(label, config.smallPattern, disabled ? '' : undefined)
           )

@@ -147,14 +147,14 @@ WithIcon.args = {
 export const WithContent = {
   render: () => `
     ${Template({
-    title: 'Contact us',
-    content: `
+      title: 'Contact us',
+      content: `
         <span class="">Open 09:00-18:00, Monday to Friday</span>
       `
-  })}
+    })}
     ${Template({
-    title: 'Sustainability',
-    content: `
+      title: 'Sustainability',
+      content: `
       <p>
         The starting point for the sustainability efforts of Sweden’s largest
         insurance company, Länsförsäkringar, is a local and long-term
@@ -162,7 +162,7 @@ export const WithContent = {
         them to prevent damage has always been part of our core&nbsp;business.
       </p>
       `
-  })}
+    })}
   `
 }
 export const BoxLayout = TemplateBoxLayout.bind({})

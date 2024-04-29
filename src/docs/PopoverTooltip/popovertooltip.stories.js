@@ -29,7 +29,9 @@ function Template({ centered = false }) {
         <div
           role="alert"
           id="toggable2"
-          class="popover-tooltip popover-bottom popover-attach ${centered ? 'popover-sm-center' : ''}">
+          class="popover-tooltip popover-bottom popover-attach ${
+            centered ? 'popover-sm-center' : ''
+          }">
           <p class="popover-title">Occupational pension</p>
           <div class="popover-content">
             <div class="card">
