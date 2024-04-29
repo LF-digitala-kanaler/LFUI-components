@@ -24,9 +24,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Display npm log
-        run: cat /home/runner/.npm/_logs/2024-04-29T13_31_19_299Z-debug-0.log
-
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
