@@ -16,7 +16,7 @@ export default {
 }
 
 function initSlider(input) {
-  input.addEventListener('input', function() {
+  input.addEventListener('input', function () {
     const percent = Math.ceil(((input.value - input.min) / (input.max - input.min)) * 100)
 
     input.style.setProperty('--progress', percent)
@@ -89,7 +89,6 @@ WithDistributionLabel.args = {
   value: 50,
   distributionLabel: true
 }
-
 
 export const Interval = IntervalTemplate.bind({})
 Interval.args = {}

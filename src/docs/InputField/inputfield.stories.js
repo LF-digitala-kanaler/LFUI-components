@@ -16,12 +16,14 @@ export default {
 function Template({ placeholder, pattern, required, type = 'text', prepend, append, disabled }) {
   return `
     <div class="form-group">
-      ${(prepend || append) ? '<div class="input-group">' : ''}
-      ${prepend
-      ? `<div class="input-group-prepend">
+      ${prepend || append ? '<div class="input-group">' : ''}
+      ${
+        prepend
+          ? `<div class="input-group-prepend">
             <span class="input-group-text">${prepend}</span>
           </div>`
-      : ''}
+          : ''
+      }
       <input
         type="${type}"
         class="form-control"
@@ -32,12 +34,14 @@ function Template({ placeholder, pattern, required, type = 'text', prepend, appe
         ${required ? 'required' : ''}
         ${disabled ? 'disabled' : ''}
       >
-      ${append
-      ? `<div class="input-group-append">
+      ${
+        append
+          ? `<div class="input-group-append">
             <span class="input-group-text">${append}</span>
           </div>`
-      : ''}
-      ${(prepend || append) ? '</div>' : ''}
+          : ''
+      }
+      ${prepend || append ? '</div>' : ''}
     </div>
   `
 }
@@ -87,7 +91,6 @@ Suffix.args = {
   type: 'text',
   append: 'kr'
 }
-
 
 export const oneLined = () => OneLined
 export const severalLines = () => SeveralLines

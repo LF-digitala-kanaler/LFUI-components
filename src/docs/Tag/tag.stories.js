@@ -25,7 +25,9 @@ function Template({ text, large, variant, closable }) {
     modifiers.push(`tag-${variant}`)
   }
 
-  const closeButton = closable ? '<button type="button" class="btn-close" aria-label="Close"></button>' : ''
+  const closeButton = closable
+    ? '<button type="button" class="btn-close" aria-label="Close"></button>'
+    : ''
 
   return `
     <div class="mt-05 tag ${modifiers.join(' ')}">

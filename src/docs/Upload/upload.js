@@ -31,7 +31,7 @@ const uploadExample = (context) => {
       <div class="upload-preview  mb-05 ${data.validationClass}">
         <div class="upload-body">
           ${data.popover === true
-        ? html`
+            ? html`
                 <span
                   role="button"
                   tabindex="-1"
@@ -41,7 +41,7 @@ const uploadExample = (context) => {
                   ${popoverMarkup(data)}
                 </span>
               `
-        : html`
+            : html`
                 <div class="upload-image mr-05">${data.src}</div>
               `}
           <span class="upload-name">${data.name}</span>
@@ -51,10 +51,10 @@ const uploadExample = (context) => {
             aria-label="Remove"></button>
         </div>
         ${data.popover === false
-        ? html`
+          ? html`
               <small class="upload-feedback">Description of error in input</small>
             `
-        : ''}
+          : ''}
       </div>
     `
   }
@@ -117,20 +117,20 @@ const uploadExample = (context) => {
 
   context.addEventListener(
     'click',
-    delegate('.upload-remove', function() {
+    delegate('.upload-remove', function () {
       this.parentElement.parentElement.remove()
     })
   )
 
-  input.addEventListener('focus', function() {
+  input.addEventListener('focus', function () {
     input.classList.add('has-focus')
   })
 
-  input.addEventListener('blur', function() {
+  input.addEventListener('blur', function () {
     input.classList.remove('has-focus')
   })
 
-  context.querySelector('#upload-test-btn')?.addEventListener('click', function() {
+  context.querySelector('#upload-test-btn')?.addEventListener('click', function () {
     const upload = context.querySelector('#upload2')
     const progress = upload.querySelector('.upload-progress-bar')
 
@@ -139,7 +139,7 @@ const uploadExample = (context) => {
     upload.parentElement.parentElement.classList.remove('has-valid')
 
     let timeleft = 100
-    const loaderTest = setInterval(function() {
+    const loaderTest = setInterval(function () {
       timeleft--
 
       progress.style.setProperty('transform', 'translateX(-' + timeleft + '%)')
