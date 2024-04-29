@@ -17,6 +17,8 @@ export default {
 
 export function StyledRadioButtonTemplate({ valid }) {
   return `
+  <fieldset>
+  <legend>Pick one</legend>
   <div class="form-group ${valid ? 'has-valid' : ''}">
     <div class="d-md-inline-block">
       <div class="custom-control custom-radio mr-05 mb-05">
@@ -31,6 +33,7 @@ export function StyledRadioButtonTemplate({ valid }) {
       </div>
     </div>
   </div>
+  </fieldset>
   `
 }
 
@@ -55,10 +58,13 @@ function ButtonGroupTemplate({ items = [] }) {
   useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
   return `
-  <div id="${id}" class="btn-group" data-bs-toggle="buttons">
-    ${items.map((item) => RenderButtonGroupItem(item)).join('')}
-  </div >
-    `
+  <fieldset>
+    <legend>Pick one</legend>
+    <div id="${id}" class="btn-group" data-bs-toggle="buttons">
+      ${items.map((item) => RenderButtonGroupItem(item)).join('')}
+    </div>
+  </fieldset>
+  `
 }
 
 function RenderRadioCard({ name, disabled, active, value = 'Rekomenderad' }) {
@@ -95,17 +101,20 @@ function RadioCardsTemplate({ items }) {
   useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
   return `
-  <div id="${id}" class="row row-tight form-group">
-      ${items
-        .map(
-          (item) => `
-        <div class="col-6 col-md-3 mb-1">
-          ${RenderRadioCard({ name: id, ...item })}
-        </div>
-        `
-        )
-        .join('')}
-  </div
+  <fieldset>
+    <legend>Pick on</legend>
+    <div id="${id}" class="row row-tight form-group">
+        ${items
+          .map(
+            (item) => `
+          <div class="col-6 col-md-3 mb-1">
+            ${RenderRadioCard({ name: id, ...item })}
+          </div>
+          `
+          )
+          .join('')}
+    </div>
+    </fieldset>
   `
 }
 
@@ -115,11 +124,11 @@ function RadioCardTemplate(args) {
   useEffect(() => radioButtonsExample(document.getElementById(id)), [])
 
   return `
-  <div id="${id}" class="row row-tight form-group">
-    <div class="col-6 col-md-3 mb-1">
-      ${RenderRadioCard(args)}
-    </div>
-  </div
+    <div id="${id}" class="row row-tight form-group">
+      <div class="col-6 col-md-3 mb-1">
+        ${RenderRadioCard(args)}
+      </div>
+    </div
   `
 }
 

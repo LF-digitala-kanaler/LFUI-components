@@ -7,22 +7,16 @@ export default {
     backgrounds: { default: 'white' },
     badges: ['stable']
   },
-  argTypes: {
-  }
+  argTypes: {}
 }
 
-function Template({
-  label,
-  disabled,
-  checked,
-  iconUrl = '40/icons.svg#thumb-up-40'
-}) {
+function Template({ label, disabled, checked, iconUrl = '40/icons.svg#thumb-up-40' }) {
   const [id] = useState(uid)
 
   useEffect(() => {
     const element = document.getElementById(id)
 
-    element.addEventListener('change', function() {
+    element.addEventListener('change', function () {
       if (!this.classList.contains('active')) {
         this.classList.add('active')
       } else {
@@ -75,4 +69,23 @@ export const Checked = Template.bind({})
 Checked.args = {
   label: 'Checked checkbox',
   checked: true
+}
+
+export const Grouped = () => {
+  const card1 = Template({ label: 'Checkbox 1' })
+  const card2 = Template({ label: 'Checkbox 2' })
+
+  return `
+  <fieldset>
+    <legend>Group of checkbox cards</legend>
+    <div class="row row-tight form-group">
+      <div class="col-6 col-md-3 mb-1">
+        ${card1}
+      </div>
+      <div class="col-6 col-md-3 mb-1">
+        ${card2}
+      </div>
+    </div>
+  </fieldset>
+  `
 }

@@ -1,5 +1,6 @@
-import { useEffect, useState } from '@storybook/client-api'
+import { useEffect } from '@storybook/client-api'
 import { formGroupExample } from './FormgroupExample'
+import { uid } from '../../js/utils'
 
 export default {
   title: 'Forms/Form groups',
@@ -10,20 +11,22 @@ export default {
   argTypes: {}
 }
 
-export const Grouping = () => `
+export const Grouping = () => {
+  const id = uid()
+  return `
   <form>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label for="validationCustom01">Label</label>
-          <input type="text" class="form-control" id="validationCustom01" placeholder="Placeholder text" required="">
+          <label for="validationCustom${id}">Label</label>
+          <input type="text" class="form-control" id="validationCustom${id}" placeholder="Placeholder text" required="">
           <small class="form-text text-muted">Helptext here</small>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group has-danger">
-          <label for="validationCustom01">Label</label>
-          <input type="text" class="form-control" id="validationCustom01" placeholder="Placeholder text" required="">
+          <label for="validationCustom${id}2">Label</label>
+          <input type="text" class="form-control" id="validationCustom${id}2" placeholder="Placeholder text" required="">
           <small class="form-control-feedback">This is an error message</small>
           <small class="form-text text-muted">Helptext here</small>
         </div>
@@ -31,6 +34,7 @@ export const Grouping = () => `
     </div>
   </form>
 `
+}
 
 export const FormGroup = () => {
   const formId = 'form-group-example'
@@ -71,20 +75,22 @@ export const Invalid = () => `
           <small class="form-control-feedback">This is an error message</small>
         </div>
       </div>
-    </div>
-  </form>
-  `
+    </form>
+    `
 
-export const Valid = () => `
+export const Valid = () => {
+  const id = uid()
+  return `
   <form>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group has-success">
-          <label for="validationCustom01">Label</label>
-          <input type="text" class="form-control" id="validationCustom01" placeholder="Something is wrong with this input" required="">
+          <label for="validationCustom${id}">Label</label>
+          <input type="text" class="form-control" id="validationCustom${id}" placeholder="Something is wrong with this input" required="">
           <small class="form-text text-muted">Helptext here</small>
         </div>
       </div>
     </div>
   </form>
   `
+}
