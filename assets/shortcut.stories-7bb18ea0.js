@@ -296,4 +296,3 @@ const v=`<a href="#" onclick="return false" class="shortcut mb-1">
   })}
   \`
 }`,...(l=(i=s.parameters)==null?void 0:i.docs)==null?void 0:l.source}}};var r,a,h;n.parameters={...n.parameters,docs:{...(r=n.parameters)==null?void 0:r.docs,source:{originalSource:"() => Shortcut",...(h=(a=n.parameters)==null?void 0:a.docs)==null?void 0:h.source}}};const L=["Default","WithIcon","WithContent","BoxLayout","BoxLayoutSmall","BoxLayoutLarge","shortcutExample"],S=Object.freeze(Object.defineProperty({__proto__:null,BoxLayout:k,BoxLayoutLarge:y,BoxLayoutSmall:w,Default:g,WithContent:s,WithIcon:u,__namedExportsOrder:L,default:f,shortcutExample:n},Symbol.toStringTag,{value:"Module"}));export{k as B,g as D,S,u as W,s as a,w as b,y as c};
-//# sourceMappingURL=shortcut.stories-7bb18ea0.js.map

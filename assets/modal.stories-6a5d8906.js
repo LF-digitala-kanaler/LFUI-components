@@ -61,4 +61,3 @@ const l={title:"Supportive microinteractions/Modal",parameters:{badges:["stable"
     </div>
   </div>
   \``,...(o=(t=a.parameters)==null?void 0:t.docs)==null?void 0:o.source}}};const d=["Default"],n=Object.freeze(Object.defineProperty({__proto__:null,Default:a,__namedExportsOrder:d,default:l},Symbol.toStringTag,{value:"Module"}));export{a as D,n as M};
-//# sourceMappingURL=modal.stories-6a5d8906.js.map

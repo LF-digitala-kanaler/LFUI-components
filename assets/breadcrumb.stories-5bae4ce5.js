@@ -38,4 +38,3 @@ const i=`<p class="text-sm mb-15 text-muted">White background</p>
     </ol>
   </nav>
   `}const c=s.bind({});c.args={transparent:!1};const t=s.bind({});t.args={transparent:!0};const a=()=>i;var r,e,n;a.parameters={...a.parameters,docs:{...(r=a.parameters)==null?void 0:r.docs,source:{originalSource:"() => Breadcrumb",...(n=(e=a.parameters)==null?void 0:e.docs)==null?void 0:n.source}}};const u=["Default","Transparent","breadcrumbExample"],m=Object.freeze(Object.defineProperty({__proto__:null,Default:c,Transparent:t,__namedExportsOrder:u,breadcrumbExample:a,default:b},Symbol.toStringTag,{value:"Module"}));export{m as B,c as D,t as T};
-//# sourceMappingURL=breadcrumb.stories-5bae4ce5.js.map

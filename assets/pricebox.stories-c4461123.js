@@ -120,4 +120,3 @@ const c={title:"Page content/Price box",parameters:{backgrounds:{default:"gray"}
     ${t==="top"?s:""}
   </aside>
   `}const o=n.bind({});o.args={footer:!0};const l=a.bind({});l.args={position:"bottom"};const r=a.bind({});r.args={position:"top"};const p=["Desktop","FixedBottom","FixedTop"],i=Object.freeze(Object.defineProperty({__proto__:null,Desktop:o,FixedBottom:l,FixedTop:r,__namedExportsOrder:p,default:c},Symbol.toStringTag,{value:"Module"}));export{o as D,l as F,i as P,r as a};
-//# sourceMappingURL=pricebox.stories-c4461123.js.map

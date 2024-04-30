@@ -45,4 +45,3 @@ const o=`<div class="lf-spinner">
   </svg>
 </div>
 `,x={title:"System display/Spinner"},c=()=>o,s=()=>t;var n,e,i;c.parameters={...c.parameters,docs:{...(n=c.parameters)==null?void 0:n.docs,source:{originalSource:"() => Default",...(i=(e=c.parameters)==null?void 0:e.docs)==null?void 0:i.source}}};var r,l,a;s.parameters={...s.parameters,docs:{...(r=s.parameters)==null?void 0:r.docs,source:{originalSource:"() => Red",...(a=(l=s.parameters)==null?void 0:l.docs)==null?void 0:a.source}}};const d=["defaults","red"];export{d as __namedExportsOrder,x as default,c as defaults,s as red};
-//# sourceMappingURL=spinner.stories-2794e718.js.map

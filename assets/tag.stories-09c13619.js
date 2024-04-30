@@ -126,4 +126,3 @@ const A={title:"System display/Tag",parameters:{badges:["stable"]},argTypes:{var
     <button type="button" class="btn-close" aria-label="Close"></button>
   </div>
 \``,...(C=(y=e.parameters)==null?void 0:y.docs)==null?void 0:C.source}}};const T=["Default","Variants","WithRemoveAction","Larger","LargeWithRemoveAction"],P=Object.freeze(Object.defineProperty({__proto__:null,Default:f,LargeWithRemoveAction:e,Larger:s,Variants:a,WithRemoveAction:n,__namedExportsOrder:T,default:A},Symbol.toStringTag,{value:"Module"}));export{f as D,s as L,P as T,a as V,n as W};
-//# sourceMappingURL=tag.stories-09c13619.js.map

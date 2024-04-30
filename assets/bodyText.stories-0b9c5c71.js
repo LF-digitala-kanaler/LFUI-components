@@ -33,4 +33,3 @@ const s={title:"Typography & text/Body Text",parameters:{badges:["stable"]}},e=(
     on customer needs.
   </p>
 \``,...(o=(t=e.parameters)==null?void 0:t.docs)==null?void 0:o.source}}};const a=["Default"],r=Object.freeze(Object.defineProperty({__proto__:null,Default:e,__namedExportsOrder:a,default:s},Symbol.toStringTag,{value:"Module"}));export{r as B,e as D};
-//# sourceMappingURL=bodyText.stories-0b9c5c71.js.map

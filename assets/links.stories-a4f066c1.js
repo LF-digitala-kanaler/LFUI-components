@@ -31,4 +31,3 @@ const r=`<p class="text-sm mb-05 text-muted">Internal link</p>
 <a href="#" role="button" class="arrow-right">
   <span class="d-none d-sm-inline-block">Nästa</span>
 </a>`,a={title:"Button and links/Links"},n=()=>r;var e,s,t;n.parameters={...n.parameters,docs:{...(e=n.parameters)==null?void 0:e.docs,source:{originalSource:"() => Links",...(t=(s=n.parameters)==null?void 0:s.docs)==null?void 0:t.source}}};const i=["links"];export{i as __namedExportsOrder,a as default,n as links};
-//# sourceMappingURL=links.stories-a4f066c1.js.map

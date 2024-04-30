@@ -31,4 +31,3 @@ const c={title:"Typography & text/Lead Paragraph",parameters:{badges:["stable"]}
     </a>
   </p>
 \``,...(i=(n=a.parameters)==null?void 0:n.docs)==null?void 0:i.source}}};const l=["Default","PayOff"],p=Object.freeze(Object.defineProperty({__proto__:null,Default:e,PayOff:a,__namedExportsOrder:l,default:c},Symbol.toStringTag,{value:"Module"}));export{e as D,p as L,a as P};
-//# sourceMappingURL=leadParagraph.stories-ef63dbc3.js.map
