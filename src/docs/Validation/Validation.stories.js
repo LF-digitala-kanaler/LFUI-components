@@ -3,6 +3,7 @@ import { ValidationExample } from './FormValidationExample'
 import { uid } from '../../js/utils'
 import { StyledRadioButtonTemplate } from '../RadioButtons/radioButtons.stories'
 import { SuffixFullExample } from '../InputField/inputfield.stories'
+import { selectExample } from '../Select/select'
 
 export default {
   title: 'Forms/Validation/Form validation',
@@ -15,10 +16,15 @@ export default {
 
 export const Validation = () => {
   const formId = 'form-group-example'
-  useEffect(() => ValidationExample(document.getElementById(formId)), [])
   const textId = uid()
   const emailId = uid()
+  const selectId = uid()
   const radioId = uid()
+
+  useEffect(() => {
+    ValidationExample(document.getElementById(formId))
+    selectExample(document.getElementById(formId))
+  }, [])
 
   return `
     <form id="${formId}" novalidate>
@@ -92,6 +98,26 @@ export const Validation = () => {
           </div>
 
           ${SuffixFullExample()}
+          <div class="form-group">
+            <div class="select">
+              <label id="${selectId}-label" class="select-label" for="${selectId}-select">Custom Select</label>
+              <select
+                class="select-options"
+                name="timezone"
+                id="${selectId}-select"
+              >
+                <option value="" disabled hidden>
+                  Välj stad
+                </option>
+                <option value="stockholm">Stockholm</option>
+                <option value="göteborg">Göteborg</option>
+                <option value="malmö">Malmö</option>
+              </select>
+            </div>
+
+            <div id="${selectId}-select-feedback" aria-live="assertive"></div>
+            <small id="${selectId}-help" class="form-text text-muted">Helptext here</small>
+          </div>
       <button type="submit" formnovalidate="false">Skicka</button>
     </form>
   `
