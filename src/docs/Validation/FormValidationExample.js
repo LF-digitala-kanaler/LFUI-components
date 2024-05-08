@@ -1,8 +1,13 @@
 export function ValidationExample(form) {
   const controls = [...form.querySelectorAll('input, select')]
-  const email = form.querySelector('[type="email"]')
 
   controls.forEach((control) => {
+    // const helpTextId = `${control.id.split('-')[0]}-help`
+
+    // if (control.closest('.form-group').getElementById(helpTextId)) {
+    //   control.setAttribute('aria-describedBy', helpTextId)
+    // }
+
     control.addEventListener('invalid', (event) => {
       console.log('I am invalid', event.target)
       showError(control)
@@ -14,7 +19,7 @@ export function ValidationExample(form) {
       // If the field is empty,
       // display the following error message.
       return errors[element.type].valueMissing
-    } else if (email.validity.typeMismatch) {
+    } else if (element.validity.typeMismatch) {
       // If the field doesn't contain an email address,
       // display the following error message.
       return errors[element.type].typeMismatch
@@ -46,6 +51,10 @@ export function ValidationExample(form) {
       valueMax: 'Pick a lower amount',
       min: 'To low!',
       rangeUnderflow: 'Pick a higher amount'
+    },
+
+    'select-one': {
+      valueMissing: 'Field is required'
     }
   }
 
@@ -53,7 +62,6 @@ export function ValidationExample(form) {
     const isCheckRadio = 'radio' || element.type === 'checkbox'
     const id = element.type === isCheckRadio ? element.id.split('-')[0] : element.id
     const feedback = document.getElementById(`${id}-feedback`)
-    console.log('feedback', feedback)
 
     const formGroup = element.closest('.form-group')
     formGroup.classList.add('has-danger')
@@ -69,6 +77,9 @@ export function ValidationExample(form) {
 
   function hideError(element) {
     const formGroup = element.closest('.form-group')
+    if (!formGroup) {
+      return
+    }
     formGroup.classList.remove('has-danger')
     formGroup.querySelector('.form-control-feedback')?.remove()
     element.removeAttribute('aria-invalid')
@@ -89,5 +100,11 @@ export function ValidationExample(form) {
     } else {
       showError(target)
     }
+  })
+
+  form.addEventListener('reset', ({ target }) => {
+    ;[...target.elements].forEach((element) => {
+      hideError(element)
+    })
   })
 }

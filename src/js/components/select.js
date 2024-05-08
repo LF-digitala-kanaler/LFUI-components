@@ -23,6 +23,12 @@ export class Select {
     this.hoverFocus = undefined
     this.multiselectable = this.select.multiple
 
+    // We want to move aria-describedby to toggle button.
+    this.describedBy = this.select.getAttribute('aria-describedby')
+    if (this.describedBy) {
+      this.select.removeAttribute('aria-describedby')
+    }
+
     // Search
     this.keyString = ''
     this.typingTimer = undefined
@@ -47,9 +53,11 @@ export class Select {
     this.selectableItems = [...this.list.querySelectorAll('.select-option')]
     this.searchableItems = this.selectableItems.filter(notDisabled)
     // Update status and labels on change
-    this.select.addEventListener('change', (event) => {
-      this.onChangeHandler(event)
-    })
+    this.select.addEventListener('change', (event) => this.onChangeHandler(event))
+    console.dir(this.select)
+    this.select.form.addEventListener('reset', (event) =>
+      setTimeout(() => this.onChangeHandler(event), 0)
+    )
 
     // Update DOM
     element.classList.add('initialized')
@@ -373,6 +381,10 @@ export class Select {
         )
       ]
     )
+
+    if (this.describedBy) {
+      toggle.setAttribute('aria-describedby', this.describedBy)
+    }
 
     return toggle
   }

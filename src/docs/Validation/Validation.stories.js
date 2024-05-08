@@ -54,7 +54,7 @@ export const Validation = () => {
               placeholder="email@example.com"
               required=""
               aria-labelledby="${emailId}-label ${emailId}-email-feedback"
-              ${emailId}-help
+              aria-describedby="${emailId}-help"
             >
             <div id="${emailId}-email-feedback" aria-live="assertive"></div>
             <small id="${emailId}-help" class="form-text text-muted">Helptext here</small>
@@ -93,7 +93,7 @@ export const Validation = () => {
             </div>
 
             <div id="${radioId}-feedback" aria-live="assertive"></div>
-            <small id="${radioId}-help" class="form-text text-muted">Helptext here</small>
+            <small id="${radioId}-help" data-for="${radioId}-1-label ${radioId}-2-label" class="form-text text-muted">Helptext here</small>
           </div>
 
           ${SuffixFullExample()}
@@ -104,8 +104,10 @@ export const Validation = () => {
                 class="select-options"
                 name="timezone"
                 id="${selectId}-select"
+                aria-describedby="${emailId}-help"
+                required
               >
-                <option value="" disabled hidden>
+                <option value="" selected hidden disabled>
                   Välj stad
                 </option>
                 <option value="stockholm">Stockholm</option>
@@ -118,6 +120,8 @@ export const Validation = () => {
             <small id="${selectId}-help" class="form-text text-muted">Helptext here</small>
           </div>
       <button type="submit" formnovalidate="false">Skicka</button>
+      <button type="reset">Reset</button>
+
     </form>
   `
 }
