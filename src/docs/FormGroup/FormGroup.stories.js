@@ -1,8 +1,6 @@
 import { useEffect } from '@storybook/client-api'
 import { formGroupExample } from './FormgroupExample'
 import { uid } from '../../js/utils'
-import { useEffect } from '@storybook/client-api'
-import { formGroupExample } from './FormgroupExample'
 
 export default {
   title: 'Forms/Form groups',
