@@ -51,24 +51,24 @@ function ThemeTemplate(args) {
   const baseOptions = initOptions(args)
   return `
     ${renderAvatar({
-    ...baseOptions,
-    theme: 'avatar-blue'
-  })}
+      ...baseOptions,
+      theme: 'avatar-blue'
+    })}
 
     ${renderAvatar({
-    ...baseOptions,
-    theme: 'avatar-red'
-  })}
+      ...baseOptions,
+      theme: 'avatar-red'
+    })}
 
     ${renderAvatar({
-    ...baseOptions,
-    theme: 'avatar-black'
-  })}
+      ...baseOptions,
+      theme: 'avatar-black'
+    })}
 
     ${renderAvatar({
-    ...baseOptions,
-    theme: 'avatar-gray'
-  })}
+      ...baseOptions,
+      theme: 'avatar-gray'
+    })}
   `
 }
 

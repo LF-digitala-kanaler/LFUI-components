@@ -1,9 +1,9 @@
 {
   "name": "@lansforsakringar/components",
-  "version": "10.9.1",
+  "version": "10.10.1",
   "license": "MIT",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "start": "storybook dev -p 6006 --no-open",
@@ -14,8 +14,8 @@
     "build:types": "tsc -p ./jsconfig.json --declaration --noEmit false --emitDeclarationOnly --outFile dist/lfui/index.d.ts",
     "deploy": "npm run build && gh-pages -d static",
     "test": "",
-    "lint:js": "prettier --check '**/*.(js)'",
-    "lint:scss": "stylelint src/**/*.scss",
+    "lint:js": "prettier --check 'src/**/*.js'",
+    "lint:scss": "stylelint src/**/*.scss --fix",
     "format": "prettier --write 'src/**/*.js'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -29,7 +29,6 @@
     "@lansforsakringar/icons": "^3.6.0",
     "@popperjs/core": "^2.11.6",
     "@preact/preset-vite": "^2.4.0",
-    "@storybook/addon-docs": "^7.0.2",
     "bootstrap": "4.3.1",
     "bootstrap5": "npm:bootstrap@5.2.0",
     "preact": "^10.11.3",
@@ -40,6 +39,7 @@
     "@playwright/test": "^1.32.3",
     "@storybook/addon-a11y": "^7.0.0",
     "@storybook/addon-backgrounds": "^7.0.0",
+    "@storybook/addon-docs": "^7.0.2",
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-mdx-gfm": "^7.0.0",
     "@storybook/addon-storysource": "^7.0.26",

@@ -149,3 +149,11 @@
   padding-right: .75rem !important;
   padding-left: .75rem !important;
 }
+
+
+/**
+ * Focus
+ */
+.btn-group:has(input:focus-visible) {
+  outline: 4px solid $orange;
+}

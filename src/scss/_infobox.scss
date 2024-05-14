@@ -1,0 +1,48 @@
+:root {
+  --infobox-padding: var(--size-4);
+  --infobox-gap: var(--size-2);
+  --infobox-border-width: 1px;
+  --infobox-border-radius: var(--border-radius-xl, var(--size-2));
+  --infobox-border-color: var(--sky);
+  --infobox-background: var(--water);
+  --infobox-heading-color: var(--black);
+  --infobox-icon-color: var(--blue);
+}
+
+.infobox {
+  display: flex;
+  gap: var(--infobox-gap, 8px);
+  align-items: center;
+  width: 100%;
+  padding: var(--infobox-padding, 16px);
+  background: var(--infobox-background, #e5eff7);
+  border: var(--infobox-border-width, 1px) solid var(--infobox-border-color, #76bbe7);
+  border-radius: var(--infobox-border-radius, 8px);
+}
+
+.infobox-heading {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: inherit;
+  color: var(--infobox-heading-color, #222);
+}
+
+.infobox-icon {
+  align-self: self-start;
+  color: var(--infobox-icon-color, #005aa0);
+}
+
+.infobox-body,
+.infobox-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--infobox-gap, 8px) calc(var(--infobox-gap, 8px) / 2);
+  align-items: center;
+}
+
+.infobox-body p {
+  margin: 0;
+}

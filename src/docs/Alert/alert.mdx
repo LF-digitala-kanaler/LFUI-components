@@ -1,13 +1,77 @@
 import { Meta, Canvas, Stories, Subtitle } from '@storybook/blocks'
+import { Note } from '../../../.storybook/blocks/Note';
+import { Badges } from '../../../.storybook/blocks/Badges';
 import * as AlertStories from './alert.stories'
 
 <Meta of={AlertStories} />
 
-# Alert
+# Alert <Badges of={AlertStories} />
 
 <Subtitle>
     Alerts are used to provide contextual messages for typical user actions and for important
     communication from Länsförsäkringar of a non-commercial nature.
 </Subtitle>
 
-<Stories />
+<Canvas of={AlertStories.WithIcon} />
+
+<Note>
+### Accessibility
+We use `aria-label` on the icon inside the alert to make the screen reader read out the type of alert. Icon should also have `role="img"`.
+
+```html
+<div class="alert alert-info">
+    <svg class="icon" width="24" height="24"
+     	aria-label="Informationmeddelande" role="img">
+        	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="lf-icons/sprite/24/icons.svg#chat-24"></use>
+    </svg>
+    <p class="alert-content">
+        ...
+    </p>
+</div>
+```
+</Note>
+## Closable
+
+### Close button
+<Canvas of={AlertStories.WithCloseButton} />
+
+<Note>
+#### Accessibility
+Use good names on the close button.
+```html
+<button
+	type="button"
+ 	class="btn-close"
+  	data-bs-dismiss="alert"
+   	aria-label="Stäng meddelande">
+</button>
+```
+</Note>
+
+### Button with vissible label
+<Canvas of={AlertStories.WithButton} />
+
+## Heading
+Alerts can contain inline heading.
+
+<Canvas of={AlertStories.WithStrongEmphasis} />
+
+
+## Dynamic alerts
+<Canvas of={AlertStories.Dynamic} />
+
+<Note>
+### Accessibility
+Alert added dynamicly with Javascript should have `role="alert"` and `aria-live="polite"`.
+
+```html
+<div class="alert alert-info" role="alert" aria-live="polite">
+    <p class="alert-content">
+       ...
+    </p>
+</div>
+```
+</Note>
+
+## Banner
+<Canvas of={AlertStories.Banner} />

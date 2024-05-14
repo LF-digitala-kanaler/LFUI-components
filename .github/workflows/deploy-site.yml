@@ -13,10 +13,13 @@ jobs:
         with:
           registry-url: 'https://registry.npmjs.org'
           scope: '@lansforsakringar'
-          node-version: '16'
-
+          node-version: '16.11.0 '
+          npm-version: '7'
+      
+      - name: Clear npm cache
+        run: npm cache clean --force
       - name: Install
-        run: npm install
+        run: npm install --verbose
 
       - name: Build
         run: npm run build

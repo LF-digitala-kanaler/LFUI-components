@@ -15,7 +15,7 @@ jobs:
         with:
           registry-url: 'https://registry.npmjs.org'
           scope: '@lansforsakringar'
-          node-version: '16'
+          node-version: '20'
 
       - name: Install
         run: npm install

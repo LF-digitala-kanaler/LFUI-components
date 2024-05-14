@@ -19,6 +19,12 @@
     "selector-no-qualifying-type": null,
     "selector-max-combinators": null,
     "value-list-comma-space-after": null,
-    "value-list-comma-newline-after": null
+    "value-list-comma-newline-after": null,
+    "selector-class-pattern": [
+        "^([_a-z][a-z0-9]*)([-_a-z0-9]+)*$",
+        {
+            "message": ""
+        }
+    ]
   }
 }

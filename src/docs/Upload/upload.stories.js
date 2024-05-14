@@ -38,7 +38,6 @@ function renderPopover() {
     `
 }
 
-
 function Template(args) {
   const [id] = useState(uid)
   const inputId = `${id}-upload`
@@ -71,9 +70,17 @@ function Template(args) {
   `
 }
 
-function PreviewTemplate({ popover, errorMessage = 'Description of error in input', invalid, valid, loading }) {
+function PreviewTemplate({
+  popover,
+  errorMessage = 'Description of error in input',
+  invalid,
+  valid,
+  loading
+}) {
   return `
-  <div class="upload-preview loading mb-05 ${invalid ? 'has-danger' : ''} ${valid ? 'has-valid' : ''}">
+  <div class="upload-preview loading mb-05 ${invalid ? 'has-danger' : ''} ${
+    valid ? 'has-valid' : ''
+  }">
     <div class="upload-body">
       ${popover ? renderPopover() : '<div class="upload-image mr-05"></div>'}
       <span class="upload-name">the-file-name.jpg</span>
@@ -95,8 +102,7 @@ export const Default = Template.bind({})
 Default.args = {}
 
 export const Preview = PreviewTemplate.bind({})
-Preview.args = {
-}
+Preview.args = {}
 
 export const PreviewValid = PreviewTemplate.bind({})
 PreviewValid.args = {

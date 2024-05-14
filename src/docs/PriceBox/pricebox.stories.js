@@ -57,7 +57,9 @@ function Template({ footer }) {
         </div>
       </div>
     </div>
-    ${footer ? `
+    ${
+      footer
+        ? `
     <div class="delimiter-xs py-1">
       <div class="container">
         <h5 class="h6 mb-0">Är du kund hos oss?</h5>
@@ -66,7 +68,9 @@ function Template({ footer }) {
         </p>
       </div>
     </div>
-    ` : ''}
+    `
+        : ''
+    }
   </aside>
   `
 }

@@ -16,7 +16,9 @@ export default {
 function Template({ flex, flexSmall }) {
   return `
   <nav aria-label="Pagination Navigation">
-    <ul class="pagination ${flex ? 'pagination-flex' : ''} ${flexSmall ? 'pagination-sm-flex' : ''}">
+    <ul class="pagination ${flex ? 'pagination-flex' : ''} ${
+    flexSmall ? 'pagination-sm-flex' : ''
+  }">
       <li class="page-item"><a href="#" class="page-link" aria-label="Goto Page 1">1</a></li>
       <li class="page-item"><a href="#" class="page-link" aria-label="Goto Page 1">2</a></li>
       <li class="page-item active"><a aria-label="Current Page, Page 3" href="#" class="page-link" aria-current="true">3</a></li>

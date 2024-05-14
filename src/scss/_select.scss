@@ -162,29 +162,28 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: pre;
+  pointer-events: none;
   user-select: none;
 }
 
 /* Multiple select counter */
-.select-options[multiple] ~ .select-toggle .select-status:not([data-count=""]) {
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    width: 1.25rem;
-    height: 1.25rem;
-    font-size: .875rem;
-    font-weight: $font-weight-bold;
-    color: $input-bg;
-    content: attr(data-count);
-    background-color: $link_color;
-    border-radius: 100%;
-    transform: translateY(-50%);
-  }
+.select-options[multiple] ~ .select-toggle .select-count {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: .875rem;
+  font-weight: $font-weight-bold;
+  color: $input-bg;
+  content: attr(data-count);
+  background-color: $link_color;
+  border-radius: 100%;
+  transform: translateY(-50%);
 }
 
 .select-options {
@@ -246,8 +245,11 @@
  * The custom select list that is popping up/down
  * –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
  */
-
 .select-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
   z-index: 1004;
   width: 100%;
   max-height: 25.25rem;
@@ -284,6 +286,11 @@
   }
 }
 
+.select-list--top {
+  top: auto;
+  bottom: 100%;
+}
+
 @media (max-height: 29rem) {
   .select-list {
     max-height: 90vh;
@@ -307,6 +314,19 @@
   .select-group:first-child & {
     border-top: 0;
   }
+}
+
+/* Toggle group visibility */
+.select-group .select-list {
+  display: none;
+}
+.select-group.show .select-list {
+  display: block;
+}
+
+/* Toggle group toggle button */
+.select-group-toggle {
+  border-width: 0;
 }
 
 /**
@@ -344,7 +364,6 @@
     padding-right: calc(#{$input-padding-x} * 2 + 18px);
     background-position: calc(100% - #{$input-padding-x} + 1px) calc(#{$input-height} / 2 - 6px + #{$input-btn-border-width} / 2 + 1px);
     background-size: 18px 12px;
-
     .text-muted {
       flex: 1;
       text-align: right;
@@ -383,8 +402,8 @@
       transition: $input-transition;
     }
 
-    &.selected::before,
-    &.indeterminate::before {
+    &.select-option--selected::before,
+    &.select-option--indeterminate::before {
       border-color: $link_color;
     }
 
@@ -400,7 +419,7 @@
       transform: translateY(-50%);
     }
 
-    &.indeterminate::after {
+    &.select-option--indeterminate::after {
       left: 1rem;
       width: .625rem;
       height: $border-width;
@@ -412,7 +431,7 @@
       left: calc(#{$input-padding-x} + 2.0625rem);
     }
 
-    &.selected::after {
+    &.select-option--selected::after {
       background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23005AA0" fill-rule="evenodd"/%3E%3C/svg%3E');
       background-repeat: no-repeat;
       background-position: center;
@@ -424,12 +443,32 @@
       border-color: $smoke;
     }
 
-    &.selected[disabled]::before {
+    &.select-option--selected[disabled]::before {
       border-color: #bfd4e5;
     }
 
-    &[disabled].selected::after {
+    &[disabled].select-option--selected::after {
       background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="13" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10.9 0 4.3 6.9 1.4 3.8 0 5.3l4.3 4.6 8-8.4z" fill="%23BFD4E5" fill-rule="evenodd"/%3E%3C/svg%3E');
     }
   }
+}
+
+.select-option:focus,
+.select-option--focus {
+  color: #005aa0;
+  background-color: $dropdown-link-hover-bg;
+}
+
+/* Focus css change the zindex to 10, we want to ensure that the select dropdown still have the correct zindex */
+html body[data-focus-source="key"] .select-list:focus {
+  z-index: 1004;
+}
+
+.select-option[aria-disabled="true"] {
+  color: $silver;
+  cursor: not-allowed;
+}
+
+.select-all-options {
+  border-width: 0;
 }
