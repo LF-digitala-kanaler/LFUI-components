@@ -1,5 +1,11 @@
 import { h, Ref, uid } from '../utils'
 
+/**
+ * TODO: Koppla felmeddelande med aria-laballedby. Vi behöver uppdatera laballedby som redan finns med att lägga till/tabort id-et för feedback id.
+ * TODO: Aria-required och aria-invalid på toggle knappen. Kanske behöva sätta role="combobox" på den också.
+ * TODO: Click på label sätter fokus på toggle button.
+*/
+
 const initialized = new WeakSet()
 
 function notDisabled(item) {
@@ -58,6 +64,8 @@ export class Select {
     this.select.form.addEventListener('reset', (event) =>
       setTimeout(() => this.onChangeHandler(event), 0)
     )
+
+    this.select.addEventListener('invalid', (event) => this.onInvalidHandler(event))
 
     // Update DOM
     element.classList.add('initialized')
@@ -277,6 +285,10 @@ export class Select {
 
       event.stopPropagation()
     }
+  }
+
+  onInvalidHandler(event) {
+    console.log('invalid!', event.target)
   }
 
   search() {
