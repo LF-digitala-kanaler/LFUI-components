@@ -98,13 +98,14 @@ export const Validation = () => {
 
           ${SuffixFullExample()}
           <div class="form-group">
-            <div class="select">
+            <div class="select" data-feedback-id="${selectId}-select-feedback">
               <label id="${selectId}-label" class="select-label" for="${selectId}-select">Custom Select</label>
               <select
                 class="select-options"
                 name="timezone"
                 id="${selectId}-select"
                 aria-describedby="${emailId}-help"
+                aria-labelledBy="${selectId}-select-feedback"
                 required
               >
                 <option value="" selected hidden disabled>

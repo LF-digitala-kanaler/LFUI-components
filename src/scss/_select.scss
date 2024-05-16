@@ -9,6 +9,30 @@
   width: 100%;
 }
 
+ .has-valid select {
+   border-color: $input-focus-border-color;
+ }
+
+ .has-danger select,
+ .has-danger .select-toggle {
+   border-color: $red;
+ }
+
+.select-label {
+  position: relative;
+}
+
+
+// TODO: Set FOCUS on toggle button.
+// TOOD: set display none on ghost-label
+// TODO: Refactor, the name of the class?
+ .ghost-label {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255,0,0,0.5);
+  display: block;
+ }
+
 .select-label {
   position: relative;
   z-index: 0;
@@ -195,9 +219,11 @@
   @media (pointer: coarse) {
     /* Make interactive but invisible on touch devices  */
     .select.initialized & {
-      position: absolute;
       display: block;
-      opacity: 0;
+    }
+
+    .select.initialized & + .select-toggle {
+      display: none;
     }
   }
 

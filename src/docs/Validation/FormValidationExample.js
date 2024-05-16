@@ -16,12 +16,8 @@ export function ValidationExample(form) {
 
   function showErrorText(element) {
     if (element.validity.valueMissing) {
-      // If the field is empty,
-      // display the following error message.
       return errors[element.type].valueMissing
     } else if (element.validity.typeMismatch) {
-      // If the field doesn't contain an email address,
-      // display the following error message.
       return errors[element.type].typeMismatch
     } else if (element.validity.rangeUnderflow) {
       return errors[element.type].rangeUnderflow

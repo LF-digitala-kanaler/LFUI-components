@@ -61,6 +61,7 @@ document.body.addEventListener(
   'focus',
   (e) => {
     if (hadKeyboardEvent || focusTriggersKeyboardModality(e.target)) {
+      console.log('focus!')
       document.body.setAttribute('data-focus-source', 'key')
     }
   },
