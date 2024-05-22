@@ -72,7 +72,6 @@ export class Select {
 
     // Update status and labels on change
     this.select.addEventListener('change', (event) => this.onChangeHandler(event))
-    console.dir(this.select)
     this.select.form.addEventListener('reset', (event) =>
       setTimeout(() => this.onChangeHandler(event), 0)
     )
@@ -313,7 +312,6 @@ export class Select {
   }
 
   onInvalidHandler(event) {
-    console.log('invalid!', event.target)
     this.toggle.setAttribute('aria-invalid', true)
   }
 
@@ -713,7 +711,6 @@ export class Select {
 function getConfig(options) {
   let { smallPattern, allLabel, groupToggle, feedbackId } = options
 
-  console.log('feedbackId', feedbackId, options)
   if (smallPattern && !(smallPattern instanceof RegExp)) {
     smallPattern = new RegExp(smallPattern)
   }
