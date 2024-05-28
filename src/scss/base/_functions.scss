@@ -1,2 +1,6 @@
 @import "_functions-bs5.scss";
 @import "bootstrap/scss/_functions.scss";
+
+@function encodeHEX($color) {
+  @return "%23" + str-slice(#{$color}, 2, str-length(#{$color}));
+}
