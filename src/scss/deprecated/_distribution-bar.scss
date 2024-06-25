@@ -1,4 +1,29 @@
 /**
+ * Distribution bar values
+ */
+
+@mixin distribution-color-value($background-color, $color) {
+  color: $color;
+  background: none;
+  background-color: $background-color;
+  border: 0;
+
+  &.distribution-value-with-pointer::after {
+    border-left-color: $background-color;
+  }
+}
+
+@mixin distribution-color-value-bordered($background-color, $border-color, $color) {
+  color: $color;
+  background-color: $background-color;
+  border: 2px solid $border-color;
+
+  &.distribution-value-with-pointer::after {
+    border-left-color: $background-color;
+  }
+}
+
+/**
  * Much like a progress bar
  */
 $tooltip-background-color: $white;
