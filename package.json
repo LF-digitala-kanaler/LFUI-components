@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
-    "@lansforsakringar/fonts": "^1.0.3",
+    "@lansforsakringar/fonts": "^1.1.0",
     "@lansforsakringar/icons": "^3.6.0",
     "@popperjs/core": "^2.11.6",
     "@preact/preset-vite": "^2.4.0",

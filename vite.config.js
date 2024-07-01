@@ -18,6 +18,10 @@ export default defineConfig({
         {
           src: './node_modules/@lansforsakringar/fonts/*.woff2',
           dest: 'dist/lfui/fonts'
+        },
+        {
+          src: './test-fonts/*.woff2',
+          dest: 'dist/lfui/test-fonts'
         }
       ]
     })

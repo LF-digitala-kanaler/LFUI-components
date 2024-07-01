@@ -36,7 +36,6 @@ export const Display = () => `
   <h1 class="display-3">Länsförsäkringar Display 3</h1>
   <h1 class="display-4">Länsförsäkringar Display 4</h1>
 `
-
 export const DisplayWithHighlight = () => `
   <h4 class="display-4">Länsförsäkringar <em>Display</em> 2</h4>
 `
