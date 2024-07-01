@@ -1,5 +1,16 @@
 import { h, Ref, uid } from '../utils'
 
+/**
+ * TODO: [x] Aria-required och aria-invalid på toggle knappen. Kanske behöva sätta role="combobox" på den också.
+ * TODO: Click på label sätter fokus på toggle button. Add hidden element over label to handle click to focus.
+ * span i label, som lägger sig över allt.
+ * touch: då vill vi bara clicka igenom det, och klick blir på vanliga label.
+ * mus: sätter focus på select toggle knappen
+ *
+ * bug: focus syns inte på touch på label
+ * bug: tabar man efter att select har focus får select toggle knappen fokus.
+ */
+
 const initialized = new WeakSet()
 
 function notDisabled(item) {
@@ -22,6 +33,18 @@ export class Select {
     this.clickOutside = undefined
     this.hoverFocus = undefined
     this.multiselectable = this.select.multiple
+    this.selectLabelledBy = this.select.getAttribute('aria-labelledBy') || ''
+
+    // Sync aria labels between native select and our custom select.
+    this.describedBy = this.select.getAttribute('aria-describedby')
+    this.select.setAttribute('aria-labelledBy', this.labelledBy())
+
+    // On devices with touch the native select is displayed, so we want to make sure it has the same behaviour
+    // in screen readers for the dropdown menu.
+    this.select.setAttribute(
+      'aria-labelledBy',
+      `dropdown-label-${this.id} dropdown-select-${this.id} ${this.config.feedbackId || ''}`
+    )
 
     // Search
     this.keyString = ''
@@ -46,15 +69,29 @@ export class Select {
 
     this.selectableItems = [...this.list.querySelectorAll('.select-option')]
     this.searchableItems = this.selectableItems.filter(notDisabled)
+
     // Update status and labels on change
-    this.select.addEventListener('change', (event) => {
-      this.onChangeHandler(event)
+    this.select.addEventListener('change', (event) => this.onChangeHandler(event))
+    this.select.form.addEventListener('reset', (event) =>
+      setTimeout(() => this.onChangeHandler(event), 0)
+    )
+
+    this.select.addEventListener('invalid', (event) => this.onInvalidHandler(event))
+
+    // Add hidden span from mouse users
+    const ghostLabel = document.createElement('span')
+    ghostLabel.classList.add('ghost-label')
+    ghostLabel.addEventListener('click', () => {
+      this.toggle.focus()
     })
+
+    this.label.append(ghostLabel)
 
     // Update DOM
     element.classList.add('initialized')
     this.label.id = `dropdown-label-${this.id}`
     this.select.after(this.toggle, this.list)
+
     // Cache element to prevent double initialization
     initialized.add(element)
 
@@ -147,6 +184,9 @@ export class Select {
       'select-option--selected',
       allAreSelected(this.select)
     )
+
+    // Add aria-invalid on the toggle button to be synced with the select element.
+    this.toggle.setAttribute('aria-invalid', this.select.validity.valid === false)
 
     const states = new Map()
 
@@ -271,6 +311,10 @@ export class Select {
     }
   }
 
+  onInvalidHandler(event) {
+    this.toggle.setAttribute('aria-invalid', true)
+  }
+
   search() {
     return this.searchableItems.filter((item) => {
       const regex = new RegExp('^' + this.keyString, 'gi')
@@ -302,8 +346,16 @@ export class Select {
     item.setAttribute('aria-expanded', !expanded)
   }
 
+  /**
+   * @returns {String} collection of ids that should be used for screen readers to label the select component correctly.
+   */
+  labelledBy() {
+    return `dropdown-label-${this.id} dropdown-select-${this.id} ${this.selectLabelledBy}`
+  }
+
   createToggle() {
     const { id } = this
+
     const toggle = h(
       'button',
       {
@@ -312,8 +364,10 @@ export class Select {
         id: `dropdown-select-${id}`,
         'aria-expanded': 'false',
         'aria-controls': `list-${id}`,
-        'aria-labelledby': `dropdown-label-${id} dropdown-select-${id}`,
+        'aria-labelledby': this.labelledBy(),
         'aria-haspopup': 'listbox',
+        'aria-required': this.select.required,
+        role: 'combobox',
         onclick: () => {
           this.toggleSelect()
           setTimeout(() => {
@@ -373,6 +427,10 @@ export class Select {
         )
       ]
     )
+
+    if (this.describedBy) {
+      toggle.setAttribute('aria-describedby', this.describedBy)
+    }
 
     return toggle
   }
@@ -651,7 +709,7 @@ export class Select {
  * @returns {SelectOptions}
  */
 function getConfig(options) {
-  let { smallPattern, allLabel, groupToggle } = options
+  let { smallPattern, allLabel, groupToggle, feedbackId } = options
 
   if (smallPattern && !(smallPattern instanceof RegExp)) {
     smallPattern = new RegExp(smallPattern)
@@ -661,7 +719,7 @@ function getConfig(options) {
     groupToggle = groupToggle !== false
   }
 
-  return { smallPattern, allLabel, groupToggle }
+  return { smallPattern, allLabel, groupToggle, feedbackId }
 }
 
 /**

@@ -43,3 +43,31 @@ Placeholder text disappears after the user begins entering data into the Input a
 ```
 <input type="text" class="form-control" placeholder="ååååmmdd-nnnn">
 ```
+### Prefix & Suffix
+It's a good practice when using prefix or suffix to hide it from screen readers and use `sr-only` element in label for a better screen reader experience.
+
+```
+    <div class="form-group">
+        <label id="amount-label" for="amount">Belopp<span class="sr-only"> i kronor</span></label>
+        <div class="input-group">
+            <input
+                type="number"
+                inputmode="numeric"
+                class="form-control"
+                id="amount"
+                min="0"
+                max="9000"
+                aria-labelledby="amount-label amount-feedback"
+                aria-describedby="amount-help"
+            >
+            <div class="input-group-append">
+                <span class="input-group-text" aria-hidden="true">kr</span>
+            </div>
+        </div>
+
+        <div id="amount-feedback" aria-live="assertive"></div>
+        <small id="amount-help" class="form-text text-muted">Mellan 0 till 9000</small>
+    </div>
+```
+
+<Canvas of={InputFieldStories.SuffixFullExample } />

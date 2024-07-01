@@ -9,10 +9,27 @@
   width: 100%;
 }
 
+ .has-valid select {
+   border-color: $input-focus-border-color;
+ }
+
+ .has-danger select,
+ .has-danger .select-toggle {
+   border-color: $red;
+ }
+
 .select-label {
   position: relative;
-  z-index: 0;
-  display: block;
+}
+
+.select-toggle:focus {
+  background-color: $input-hover;
+}
+
+ .select-label {
+   position: relative;
+   z-index: 0;
+   display: block;
 
   /**
    * 1. Override global focus style to keep text visible
@@ -34,7 +51,14 @@
   .has-valid .select:not([multiple]).initialized.inside & {
     opacity: 0;
   }
-}
+} 
+
+/* Ghost label: On desktop we want to hijack the click behaviour on label to focus on the select-toggle. */
+ .ghost-label {
+   position: absolute;
+   inset: 0;
+   display: block;
+ }
 
 /* Ignore "inside" option on noscript touch devices */
 @media (pointer: coarse) {
@@ -44,6 +68,11 @@
     user-select: auto;
     background: none;
     border: 0;
+  }
+
+  /* We hide the ghost-label on touch devices for the native bahavour */
+  .ghost-label {
+    display: none;
   }
 }
 
@@ -126,7 +155,8 @@
     background-color: $input-disabled-bg;
   }
 
-  &:hover:not([disabled]) {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
     background-color: $input-hover;
     transition: background .2s;
   }
@@ -195,9 +225,11 @@
   @media (pointer: coarse) {
     /* Make interactive but invisible on touch devices  */
     .select.initialized & {
-      position: absolute;
       display: block;
-      opacity: 0;
+    }
+
+    .select.initialized & + .select-toggle {
+      display: none;
     }
   }
 

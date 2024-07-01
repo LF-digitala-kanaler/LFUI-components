@@ -15,7 +15,7 @@ export default {
   argTypes: {}
 }
 
-function StyledRadioButtonTemplate({ valid }) {
+export function StyledRadioButtonTemplate({ valid }) {
   return `
   <fieldset>
   <legend>Pick one</legend>

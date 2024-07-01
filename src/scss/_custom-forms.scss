@@ -221,6 +221,10 @@ select.form-control:not([size]):not([multiple]) {
   color: $black;
 }
 
+html body[data-focus-source="key"] .select .select-options:focus {
+  outline: 4px solid $orange !important;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /**
