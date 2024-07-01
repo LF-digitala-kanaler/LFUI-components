@@ -14,13 +14,14 @@ export default {
 }
 
 function Template({ header, text }) {
+  const id = uid()
   return `
-  <article class="card">
-    <h3 class="card-header">${header}</h3>
-    <div class="card-block">
-      <p class="card-text">${text}</p>
-    </div>
-  </article>
+    <section aria-labelledby="${id}" class="card">
+      <h3 id="${id}" class="card-header">${header}</h3>
+      <div class="card-block">
+        <p class="card-text">${text}</p>
+      </div>
+    </section>
   `
 }
 
@@ -29,26 +30,30 @@ function CollapsedTemplate({ header, text, collapsed = false }) {
   useEffect(() => panelExample(document.getElementById(id)), [])
 
   return `
-  <button
-    class="collapse-toggle"
-    role="button"
-    type="button"
-    aria-controls="${id}"
-    data-bs-toggle="collapse"
-    data-bs-target="#${id}"
-    aria-expanded="${collapsed ? 'false' : 'true'}">
-    ${header}
-  </button>
-  <article class="collapse ${collapsed ? '' : 'show'}" id="${id}">
-    <h1 class="visually-hidden">${header}</h1>
-    <div class="card mb-0">
-      <div class="card-block">
-        <p class="card-text">
-          ${text}
-        </p>
+    <section aria-labelledby="${id}" id="${id}">
+      <h2 class='mb-0' tabindex="-1">
+        <button
+          class="collapse-toggle"
+          type="button"
+          aria-controls="${id}-content"
+          data-bs-toggle="collapse"
+          data-bs-target="#${id}-content"
+          aria-expanded="${collapsed ? 'false' : 'true'}"
+        >
+          ${header}
+        </button>
+      </h2>
+      
+      <div id="${id}-content" class="mb-0 collapse ${collapsed ? '' : 'show'}">
+        <div class="card">  
+          <div class="card-block">
+          <p class="card-text">
+            ${text}
+          </p>
+        </div>
       </div>
-    </div>
-  </article>
+    </section>
+
   `
 }
 
@@ -91,6 +96,7 @@ export const LazyLoad = () => {
   </button>
   <div class="collapse" id="${id}"></div>
   </div>
+  <button style="display: block; width: 100%;" onclick="document.querySelector('.js-asyncCollapse').classList.add('loading')">loading</button>
   `
 }
 
